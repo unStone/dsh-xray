@@ -34,25 +34,25 @@
  "domains": {},
  "env": {
   "DSH_HOME": 11,
-  "USERPROFILE": 1,
-  "SystemRoot": 1,
   "DSH_ZH_VERIFY_ARGS": 3,
   "DSH_ZH_VERIFY_SHIM_ARGS": 3,
   "DSH_ZH_VERIFY_CMD_ARGS": 3,
   "DSH_ZH_VERIFY_PS1_ARGS": 2,
   "DSH_ZH_VERIFY_PNPM_ARGS": 3,
-  "DSH_ZH_VERIFY_UNSAFE_ARGS": 3
+  "DSH_ZH_VERIFY_UNSAFE_ARGS": 3,
+  "USERPROFILE": 1,
+  "SystemRoot": 1
  },
  "behaviors": {
   "exec": {
    "src": 10,
    "dev": 0,
    "evidence": [
+    "verify-cli.mjs:5",
+    "verify-cli.mjs:5",
+    "verify-cli.mjs:45",
     "bin/dsh-zh.mjs:19",
-    "bin/dsh-zh.mjs:19",
-    "bin/dsh-zh.mjs:185",
-    "bin/dsh-zh.mjs:191",
-    "bin/dsh-zh.mjs:197"
+    "bin/dsh-zh.mjs:19"
    ]
   },
   "eval": {
@@ -76,19 +76,19 @@
    "src": 34,
    "dev": 0,
    "evidence": [
-    "bin/dsh-zh.mjs:20",
-    "bin/dsh-zh.mjs:237",
-    "bin/dsh-zh.mjs:245",
-    "bin/dsh-zh.mjs:256",
-    "bin/dsh-zh.mjs:270"
+    "verify-cli.mjs:3",
+    "verify-cli.mjs:3",
+    "verify-cli.mjs:35",
+    "verify-cli.mjs:44",
+    "verify-cli.mjs:59"
    ]
   },
   "dyn_import": {
    "src": 2,
    "dev": 0,
    "evidence": [
-    "lib/index.js:465",
-    "verify-cli.mjs:219"
+    "verify-cli.mjs:219",
+    "lib/index.js:465"
    ]
   }
  },
@@ -107,7 +107,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×10 src, e.g. bin/dsh-zh.mjs:19, bin/dsh-zh.mjs:19"
+   "evidence": "×10 src, e.g. verify-cli.mjs:5, verify-cli.mjs:5"
   },
   {
    "id": "eval",

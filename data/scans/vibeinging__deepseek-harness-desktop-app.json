@@ -12,23 +12,6 @@
  "pkg_name": "dsh-desktop",
  "deps": [
   "electron-updater",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-agent",
-  "@deepseek-ai/dsh-invariants",
-  "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-client-locale",
-  "@deepseek-ai/dsh-client-runtime",
-  "@deepseek-ai/dsh-client-ui-conversation",
-  "@deepseek-ai/dsh-client-ui-layout",
-  "@deepseek-ai/dsh-client-ui-sidebar",
-  "@deepseek-ai/dsh-client-ui-settings",
-  "@deepseek-ai/dsh-client-ui-slots",
-  "@deepseek-ai/dsh-client-ui-theme",
-  "@deepseek-ai/dsh-client-web-react",
-  "react",
-  "react-dom",
   "@codemirror/autocomplete",
   "@codemirror/commands",
   "@codemirror/lang-sql",
@@ -83,10 +66,50 @@
   "react-router-dom",
   "sql-formatter",
   "xlsx",
-  "zustand"
+  "zustand",
+  "@clickhouse/client",
+  "@deepseek-ai/dsh",
+  "@duckdb/node-api",
+  "@openai/codex",
+  "@pdf-lib/fontkit",
+  "@vscode/ripgrep",
+  "@xmldom/xmldom",
+  "@yitrace/db",
+  "better-sqlite3",
+  "docx",
+  "express",
+  "jszip",
+  "mammoth",
+  "mssql",
+  "mysql2",
+  "oracledb",
+  "pdf-lib",
+  "pdf-parse",
+  "pg",
+  "pptx-viewer-core",
+  "pptxgenjs",
+  "undici",
+  "xlsx",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-web-react",
+  "react",
+  "react-dom"
  ],
  "install_scripts": {
-  "postinstall": "node scripts/run-with-project-node.mjs node scripts/bootstrap.mjs"
+  "postinstall": "patch-package"
  },
  "injects": [
   "agents",
@@ -135,34 +158,34 @@
   "DSH_UPDATE_CHANNEL": 1,
   "DSH_EVAL_MODE": 5,
   "DSH_EVAL_SITE_EXPORT_PATH": 3,
+  "DSH_EVAL_ISOLATED": 14,
+  "DSH_EVAL_HOME": 16,
+  "DSH_README_SCREENSHOT": 2,
+  "DSH_EVAL_VERBOSE": 3,
+  "DSH_EVAL_RETAIN": 1,
+  "EVAL_REPORT_DIR": 2,
+  "DSH_EVAL_PACKAGED_APP": 2,
+  "DSH_AGENT_RUNTIME_HOME": 1,
+  "DSH_SKILLS_ROOT": 1,
+  "CDP_PORT": 1,
+  "DEEPSEEK_SEARCH_BASE_URL": 2,
+  "VITE_APP_DEV_PORT": 1,
+  "VITE_DEV_PORT": 1,
+  "DSH_SERVER_PORT": 1,
+  "SERVER_PORT": 1,
+  "VITE_PROXY_URL": 1,
   "DSH_PACKAGE_NODE_REEXEC": 1,
   "DSH_PACKAGE_NODE_BIN": 1,
   "npm_execpath": 1,
   "npm_config_cache": 1,
   "npm_config_devdir": 1,
   "DSH_SMOKE_TIMEOUT_MS": 2,
-  "DSH_EVAL_ISOLATED": 14,
-  "DSH_EVAL_HOME": 16,
-  "DSH_README_SCREENSHOT": 2,
-  "DSH_EVAL_VERBOSE": 3,
   "DSH_RENDERER_PORT": 1,
   "DSH_EVAL_DATA_ROOT": 1,
   "DSH_EVAL_REUSE_DATA": 1,
   "DSH_EVAL_DB_SQLITE_PATH": 4,
-  "DSH_EVAL_PACKAGED_APP": 2,
   "DSH_DEV_URL": 1,
-  "DSH_EVAL_RETAIN": 1,
-  "EVAL_REPORT_DIR": 2,
-  "DSH_AGENT_RUNTIME_HOME": 1,
-  "DSH_SKILLS_ROOT": 1,
-  "CDP_PORT": 1,
-  "DEEPSEEK_SEARCH_BASE_URL": 2,
-  "DSH_RUNTIME_VERSION": 1,
-  "VITE_APP_DEV_PORT": 1,
-  "VITE_DEV_PORT": 1,
-  "DSH_SERVER_PORT": 1,
-  "SERVER_PORT": 1,
-  "VITE_PROXY_URL": 1
+  "DSH_RUNTIME_VERSION": 1
  },
  "behaviors": {
   "exec": {
@@ -172,8 +195,8 @@
     "electron/artifact-context-menu.js:3",
     "electron/main.js:16",
     "electron/main.js:767",
-    "electron/scripts/prepare-package.mjs:1",
-    "electron/scripts/prepare-package.mjs:1"
+    "eval/readme-worktree-media-capture.mjs:2",
+    "eval/readme-worktree-media-capture.mjs:2"
    ]
   },
   "eval": {
@@ -189,18 +212,18 @@
     "electron/main.js:1419",
     "electron/main.js:1559",
     "eval/canvas-workspace-ui-smoke.mjs:35",
-    "eval/lib/runner.mjs:342"
+    "eval/local-site-ui-smoke.mjs:57"
    ]
   },
   "net_server": {
    "src": 24,
    "dev": 6,
    "evidence": [
-    "electron/scripts/browser-workspace-smoke.cjs:17",
-    "electron/scripts/browser-workspace-smoke.cjs:35",
     "eval/browser-workspace-ui-smoke.mjs:14",
     "eval/browser-workspace-ui-smoke.mjs:26",
-    "eval/chat-context-ui-smoke.mjs:39"
+    "eval/chat-context-ui-smoke.mjs:39",
+    "eval/chat-context-ui-smoke.mjs:77",
+    "eval/global-chat-memory-ui-smoke.mjs:31"
    ]
   },
   "fs_write": {
@@ -233,7 +256,7 @@
   },
   {
    "id": "install_script",
-   "evidence": "postinstall: node scripts/run-with-project-node.mjs node scripts/bootstrap.mjs"
+   "evidence": "postinstall: patch-package"
   },
   {
    "id": "prompt_surface",
@@ -253,7 +276,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×24 src, e.g. electron/scripts/browser-workspace-smoke.cjs:17, electron/scripts/browser-workspace-smoke.cjs:35"
+   "evidence": "×24 src, e.g. eval/browser-workspace-ui-smoke.mjs:14, eval/browser-workspace-ui-smoke.mjs:26"
   }
  ],
  "level": 3

@@ -50,23 +50,23 @@
   "github.dev": 1,
   "api.picgo.app": 1,
   "cloud.picgo.app": 1,
+  "developer.qiniu.com": 2,
   "api.github.com": 1,
   "api.imgur.com": 1,
   "docs.imgur.com": 1,
   "v0.api.upyun.com": 1,
-  "docs.upyun.com": 1,
-  "developer.qiniu.com": 2
+  "docs.upyun.com": 1
  },
  "env": {
   "VERSION": 1,
   "PICGO_VERSION": 3,
+  "PICGO_API_URL": 1,
+  "PICGO_CLOUD_URL": 1,
   "ENABLE_PICGO_CLOUD_DEV_MODE": 1,
   "CF_ACCESS_CLIENT_ID": 1,
   "CF_ACCESS_CLIENT_SECRET": 1,
-  "PICGO_MOCK_LIFECYCLE": 1,
   "PICGO_SERVER_SECRET": 1,
-  "PICGO_API_URL": 1,
-  "PICGO_CLOUD_URL": 1
+  "PICGO_MOCK_LIFECYCLE": 1
  },
  "behaviors": {
   "exec": {
@@ -89,11 +89,11 @@
    "src": 8,
    "dev": 2,
    "evidence": [
-    "src/lib/Cloud/services/FileService.ts:164",
-    "src/lib/Cloud/services/multipart/MultipartUploadService.ts:121",
     "src/lib/ConfigSyncManager/E2ECryptoService.ts:51",
     "src/lib/ConfigSyncManager/E2ECryptoService.ts:71",
-    "src/plugins/uploader/aliyun.ts:50"
+    "src/plugins/uploader/aliyun.ts:50",
+    "src/plugins/uploader/smms.ts:37",
+    "src/plugins/uploader/tcyun.ts:123"
    ]
   },
   "net_server": {
@@ -105,11 +105,11 @@
    "src": 6,
    "dev": 48,
    "evidence": [
-    "src/lib/ConfigSyncManager/utils.ts:109",
     "src/lib/Logger.ts:107",
     "src/lib/Logger.ts:127",
     "src/lib/PluginLoader.ts:30",
-    "src/lib/Server/routes.ts:164"
+    "src/utils/getClipboardImage.ts:77",
+    "src/lib/ConfigSyncManager/utils.ts:109"
    ]
   },
   "dyn_import": {
@@ -129,7 +129,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×8 src, e.g. src/lib/Cloud/services/FileService.ts:164, src/lib/Cloud/services/multipart/MultipartUploadService.ts:121"
+   "evidence": "×8 src, e.g. src/lib/ConfigSyncManager/E2ECryptoService.ts:51, src/lib/ConfigSyncManager/E2ECryptoService.ts:71"
   },
   {
    "id": "token_env",

@@ -2,16 +2,11 @@
  "repo": "drewnekota/cetus",
  "stars": 116,
  "description": "One macOS app for Claude Code, Codex, and every agent runtime you use — scheduled runs, global hotkey launcher, per-run git worktrees, one review board.",
- "pushed_at": "2026-08-18T06:11:57Z",
+ "pushed_at": "2026-08-18T07:48:12Z",
  "status": "ok",
  "manifest": null,
- "pkg_name": "@dsh-external/dsh-companion-bridge",
+ "pkg_name": "cetus",
  "deps": [
-  "schemastery",
-  "@deepseek-ai/dsh-host-apiproxy",
-  "@deepseek-ai/dsh-system-prompt",
-  "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/cordis",
   "@dnd-kit/core",
   "@dnd-kit/sortable",
   "@dnd-kit/utilities",
@@ -45,6 +40,11 @@
   "tw-animate-css",
   "xlsx",
   "zustand",
+  "schemastery",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-system-prompt",
   "@deepseek-ai/dsh-tools",
   "cordis",
@@ -63,27 +63,21 @@
  "domains": {
   "api.tavily.com": 3,
   "api.deepseek.com": 2,
-  "open.bigmodel.cn": 3,
   "generativelanguage.googleapis.com": 3,
+  "api.exa.ai": 2,
+  "x.com": 1,
+  "open.bigmodel.cn": 3,
   "ark.cn-beijing.volces.com": 1,
   "dashscope.aliyuncs.com": 1,
   "api.moonshot.cn": 1,
-  "api.exa.ai": 2,
-  "agentskills.io": 1,
-  "x.com": 1
+  "agentskills.io": 1
  },
  "env": {
+  "CETUS_DEVTEST_SOCK": 4,
+  "XDG_DATA_HOME": 1,
   "DSH_COMPANION_BRIDGE_PORT": 1,
   "DSH_COMPANION_BRIDGE_TOKEN": 1,
-  "CETUS_DEVTEST_SOCK": 4,
   "CETUS_BENCH_TIMEOUT_MS": 2,
-  "DSH_VISION_API_KEY": 1,
-  "ZHIPUAI_API_KEY": 1,
-  "DASHSCOPE_API_KEY": 1,
-  "XDG_DATA_HOME": 1,
-  "CETUS_VISION_FALLBACK_MODEL": 1,
-  "CETUS_VISION_CONFIG": 1,
-  "VISION_API_KEY": 1,
   "CETUS_BROWSER_USE": 1,
   "CETUS_COMPUTER_USE": 2,
   "DEEPSEEK_BASE_URL": 1,
@@ -98,7 +92,13 @@
   "PI_CODING_AGENT_DIR": 1,
   "TAVILY_API_KEY": 1,
   "EXA_API_KEY": 1,
-  "NEXT_PUBLIC_CETUS_DEVTEST": 2
+  "NEXT_PUBLIC_CETUS_DEVTEST": 2,
+  "DSH_VISION_API_KEY": 1,
+  "ZHIPUAI_API_KEY": 1,
+  "DASHSCOPE_API_KEY": 1,
+  "CETUS_VISION_FALLBACK_MODEL": 1,
+  "CETUS_VISION_CONFIG": 1,
+  "VISION_API_KEY": 1
  },
  "behaviors": {
   "exec": {
@@ -108,8 +108,8 @@
     "evals/general-benchmark/run.mjs:6",
     "evals/general-benchmark/run.mjs:6",
     "evals/general-benchmark/run.mjs:138",
-    "evals/general-benchmark/v2/run.mjs:6",
-    "evals/general-benchmark/v2/run.mjs:6"
+    "src-tauri/cetus-extensions/browser-use.ts:16",
+    "src-tauri/cetus-extensions/browser-use.ts:72"
    ]
   },
   "eval": {
@@ -123,8 +123,8 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "src/components/workspace/workspace-panel.tsx:1457",
-    "src/lib/dropped-files.ts:36"
+    "src/lib/dropped-files.ts:36",
+    "src/components/workspace/workspace-panel.tsx:1457"
    ]
   },
   "net_server": {
@@ -138,11 +138,11 @@
    "src": 12,
    "dev": 0,
    "evidence": [
+    "scripts/updater-manifest.mjs:129",
+    "scripts/updater-manifest.mjs:152",
+    "scripts/updater-manifest.mjs:172",
     "evals/general-benchmark/run.mjs:39",
-    "evals/general-benchmark/run.mjs:44",
-    "evals/general-benchmark/run.mjs:326",
-    "evals/general-benchmark/v2/run.mjs:46",
-    "evals/general-benchmark/v2/run.mjs:50"
+    "evals/general-benchmark/run.mjs:44"
    ]
   },
   "dyn_import": {
@@ -170,7 +170,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. src/components/workspace/workspace-panel.tsx:1457, src/lib/dropped-files.ts:36"
+   "evidence": "×2 src, e.g. src/lib/dropped-files.ts:36, src/components/workspace/workspace-panel.tsx:1457"
   },
   {
    "id": "net_server",

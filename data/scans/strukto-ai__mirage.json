@@ -4,10 +4,27 @@
  "description": "The World's First Unified Virtual Filesystem For AI Agents",
  "pushed_at": "2026-08-18T04:46:04Z",
  "status": "ok",
- "manifest": null,
- "pkg_name": "@struktoai/mirage-examples-browser",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@struktoai/mirage-integ",
  "deps": [
+  "@aws-sdk/client-s3",
+  "@prisma/client",
+  "@lancedb/lancedb",
+  "@qdrant/js-client-rest",
+  "@modelcontextprotocol/sdk",
+  "chromadb",
   "@struktoai/mirage-browser",
+  "@struktoai/mirage-core",
+  "@struktoai/mirage-node",
+  "imapflow",
+  "mongodb",
+  "pg",
+  "ssh2",
+  "@pydantic/monty",
   "@ai-sdk/openai",
   "@anthropic-ai/claude-agent-sdk",
   "@deepseek-ai/cordis",
@@ -33,20 +50,7 @@
   "deepagents",
   "langchain",
   "zod",
-  "@aws-sdk/client-s3",
-  "@prisma/client",
-  "@lancedb/lancedb",
-  "@qdrant/js-client-rest",
-  "@modelcontextprotocol/sdk",
-  "chromadb",
   "@struktoai/mirage-browser",
-  "@struktoai/mirage-core",
-  "@struktoai/mirage-node",
-  "imapflow",
-  "mongodb",
-  "pg",
-  "ssh2",
-  "@pydantic/monty",
   "@modelcontextprotocol/sdk",
   "@struktoai/mirage-core",
   "picomatch",
@@ -84,7 +88,46 @@
   "chromadb",
   "pyodide",
   "quickjs-emscripten",
-  "redis"
+  "redis",
+  "@struktoai/mirage-core",
+  "@struktoai/mirage-node",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-shell",
+  "@napi-rs/lzma",
+  "@struktoai/mirage-core",
+  "fast-xml-parser",
+  "fast-xml-validator",
+  "fs-monkey",
+  "http-proxy-agent",
+  "https-proxy-agent",
+  "seek-bzip",
+  "tree-sitter-bash",
+  "web-tree-sitter",
+  "yaml",
+  "@daytonaio/sdk",
+  "@lancedb/lancedb",
+  "@zkochan/fuse-native",
+  "e2b",
+  "imapflow",
+  "mailparser",
+  "mongodb",
+  "nodemailer",
+  "opendal",
+  "pg",
+  "redis",
+  "ssh2",
+  "@struktoai/mirage-agents",
+  "@struktoai/mirage-server",
+  "@opencode-ai/plugin",
+  "@fastify/multipart",
+  "@fastify/rate-limit",
+  "@struktoai/mirage-core",
+  "@struktoai/mirage-node",
+  "fastify",
+  "isomorphic-git",
+  "jose",
+  "rate-limiter-flexible"
  ],
  "install_scripts": {},
  "injects": [],
@@ -108,7 +151,12 @@
   "S3_BUCKET": 1,
   "NTN_BIN": 1,
   "NTN_CONFORMANCE_TRACE": 1,
+  "STORE_BACKEND": 1,
+  "STORE_S3_ENDPOINT": 1,
+  "STORE_S3_BUCKET": 1,
   "MONGODB_URI": 4,
+  "INTEG_RUNTIME_STRICT": 1,
+  "INTEG_DB_URL": 2,
   "DATABRICKS_ENDPOINT": 1,
   "NEXTCLOUD_URL": 1,
   "NEXTCLOUD_USERNAME": 1,
@@ -139,12 +187,7 @@
   "LANGFUSE_PUBLIC_KEY": 1,
   "LANGFUSE_SECRET_KEY": 1,
   "HTTP_ENDPOINT": 3,
-  "MIRAGE_PYTHON": 1,
-  "INTEG_RUNTIME_STRICT": 1,
-  "INTEG_DB_URL": 2,
-  "STORE_BACKEND": 1,
-  "STORE_S3_ENDPOINT": 1,
-  "STORE_S3_BUCKET": 1
+  "MIRAGE_PYTHON": 1
  },
  "behaviors": {
   "exec": {
@@ -185,11 +228,11 @@
    "src": 39,
    "dev": 262,
    "evidence": [
-    "integ/fuse/fuse.ts:15",
-    "integ/fuse/fuse.ts:143",
     "integ/metadata.ts:29",
     "integ/metadata.ts:92",
-    "integ/metadata.ts:133"
+    "integ/metadata.ts:133",
+    "integ/ntn_conformance.ts:25",
+    "integ/ntn_conformance.ts:180"
    ]
   },
   "dyn_import": {
@@ -203,6 +246,10 @@
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
   {
    "id": "exec",
    "evidence": "×22 src, e.g. integ/ntn_conformance.ts:24, integ/ntn_conformance.ts:24"
@@ -218,11 +265,7 @@
   {
    "id": "token_env",
    "evidence": "AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, NEXTCLOUD_PASSWORD"
-  },
-  {
-   "id": "no_manifest",
-   "evidence": "uses 0 services, 14 tool regs, no manifest"
   }
  ],
- "level": 2
+ "level": 3
 }

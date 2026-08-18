@@ -5,7 +5,7 @@
  "pushed_at": "2026-08-18T06:15:17Z",
  "status": "ok",
  "manifest": null,
- "pkg_name": "@agi-fans/oh-my-dsh",
+ "pkg_name": "oh-my-dsh",
  "deps": [
   "@deepseek-ai/cordis-plugin-loader",
   "@deepseek-ai/cordis-plugin-timer",
@@ -119,6 +119,7 @@
   "api.deepseek.com": 1
  },
  "env": {
+  "OMDSH_RUN_MODE": 1,
   "OMDSH_MODEL": 2,
   "OMDSH_PROVIDER": 2,
   "WAYLAND_DISPLAY": 1,
@@ -128,19 +129,18 @@
   "WSL_DISTRO_NAME": 1,
   "WSL_INTEROP": 1,
   "OMDSH_HOME": 2,
-  "DSH_HOME": 2,
-  "OMDSH_RUN_MODE": 1
+  "DSH_HOME": 2
  },
  "behaviors": {
   "exec": {
    "src": 15,
    "dev": 10,
    "evidence": [
-    "packages/tui/omdsh-tui/src/commands/auth.ts:3",
-    "packages/tui/omdsh-tui/src/commands/auth.ts:113",
-    "packages/tui/omdsh-tui/src/input/clipboard.ts:6",
-    "packages/tui/omdsh-tui/src/input/external-editor.ts:6",
-    "packages/tui/omdsh-tui/src/input/external-editor.ts:6"
+    "scripts/happy-smoke.mjs:6",
+    "scripts/happy-smoke.mjs:26",
+    "scripts/pty-smoke.mjs:7",
+    "scripts/pty-smoke.mjs:30",
+    "packages/tui/omdsh-tui/src/commands/auth.ts:3"
    ]
   },
   "eval": {
@@ -164,11 +164,11 @@
    "src": 17,
    "dev": 27,
    "evidence": [
-    "packages/tui/omdsh-tui/src/commands/export.ts:30",
-    "packages/tui/omdsh-tui/src/input/external-editor.ts:3",
-    "packages/tui/omdsh-tui/src/input/external-editor.ts:3",
-    "packages/tui/omdsh-tui/src/input/external-editor.ts:20",
-    "packages/tui/omdsh-tui/src/input/external-editor.ts:26"
+    "scripts/format-markdown.mjs:103",
+    "scripts/happy-smoke.mjs:7",
+    "scripts/happy-smoke.mjs:7",
+    "scripts/happy-smoke.mjs:15",
+    "scripts/happy-smoke.mjs:16"
    ]
   },
   "dyn_import": {
@@ -184,7 +184,7 @@
  "flags": [
   {
    "id": "exec",
-   "evidence": "×15 src, e.g. packages/tui/omdsh-tui/src/commands/auth.ts:3, packages/tui/omdsh-tui/src/commands/auth.ts:113"
+   "evidence": "×15 src, e.g. scripts/happy-smoke.mjs:6, scripts/happy-smoke.mjs:26"
   },
   {
    "id": "base64_decode",

@@ -12,7 +12,7 @@
    ]
   }
  },
- "pkg_name": "dsh-profile-web",
+ "pkg_name": "flowboard-plugin-workspace",
  "deps": [
   "zod",
   "@ant-design/icons",
@@ -80,26 +80,26 @@
  "tool_regs": 34,
  "domains": {},
  "env": {
+  "FLOWBOARD_DEV_DSH_HOME": 1,
+  "FLOWBOARD_API_BASE": 1,
+  "FLOWBOARD_TOKEN": 2,
   "FLOWBOARD_HOST": 1,
   "FLOWBOARD_PORT": 1,
-  "FLOWBOARD_TOKEN": 2,
   "FLOWBOARD_DB": 2,
   "FLOWBOARD_PUBLIC_URL": 2,
   "FLOWBOARD_UPLOAD_DIR": 1,
-  "DSH_HOME": 1,
-  "FLOWBOARD_DEV_DSH_HOME": 1,
-  "FLOWBOARD_API_BASE": 1
+  "DSH_HOME": 1
  },
  "behaviors": {
   "exec": {
    "src": 12,
    "dev": 0,
    "evidence": [
-    "packages/server/src/worker.ts:2",
-    "packages/server/src/worker.ts:23",
     "scripts/dev.mjs:2",
     "scripts/dev.mjs:22",
-    "scripts/dev.mjs:46"
+    "scripts/dev.mjs:46",
+    "scripts/stage-plugin-assets.mjs:4",
+    "scripts/stage-plugin-assets.mjs:22"
    ]
   },
   "eval": {
@@ -126,11 +126,11 @@
    "src": 5,
    "dev": 1,
    "evidence": [
-    "packages/server/src/application.ts:105",
     "scripts/reload-dynamic.mjs:43",
     "scripts/reload-dynamic.mjs:44",
     "scripts/stage-plugin-assets.mjs:17",
-    "scripts/stage-plugin-assets.mjs:19"
+    "scripts/stage-plugin-assets.mjs:19",
+    "packages/server/src/application.ts:105"
    ]
   },
   "dyn_import": {
@@ -150,7 +150,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×12 src, e.g. packages/server/src/worker.ts:2, packages/server/src/worker.ts:23"
+   "evidence": "×12 src, e.g. scripts/dev.mjs:2, scripts/dev.mjs:22"
   },
   {
    "id": "eval",

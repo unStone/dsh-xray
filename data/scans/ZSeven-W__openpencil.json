@@ -1,19 +1,87 @@
 {
  "repo": "ZSeven-W/openpencil",
- "stars": 5278,
+ "stars": 5279,
  "description": "The world's first open-source AI-native vector design tool and the first to feature concurrent Agent Teams. Design-as-Code. Turn prompts into UI directly on the live canvas. A modern alternative to Pe",
- "pushed_at": "2026-08-17T01:28:36Z",
- "status": "skipped: repo too large",
- "type": "unknown",
- "level": -1,
- "flags": [],
+ "pushed_at": "2026-08-18T07:54:20Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@zseven-w/openpencil-packages",
+ "deps": [
+  "@zseven-w/op-web-sdk",
+  "react",
+  "react-dom",
+  "@zseven-w/op-web-sdk",
+  "vue"
+ ],
+ "install_scripts": {},
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
  "env": {},
- "files_scanned": 0,
- "manifest": null,
- "install_scripts": {},
- "behaviors": {}
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 10,
+   "evidence": [
+    "packages/scripts/sync-version.mjs:1",
+    "packages/scripts/sync-version.mjs:1",
+    "packages/scripts/sync-version.mjs:396",
+    "packages/op-vscode/src/extension.ts:161",
+    "packages/op-vscode/src/daemon/daemon-client.ts:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "packages/op-vscode/src/extension.ts:116",
+    "packages/op-vscode/src/mcp/mcp-proxy.ts:36"
+   ]
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 10,
+   "evidence": [
+    "packages/op-vscode/build.mjs:2",
+    "packages/op-vscode/build.mjs:19",
+    "packages/scripts/generate-iconify-catalog.mjs:165",
+    "packages/scripts/generate-iconify-catalog.mjs:166",
+    "packages/op-vscode/src/session/pen-session.ts:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/op-chrome-extension/wasm-core.js:46",
+    "crates/op-host-web/src/figma_temp_worker.js:233"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 105,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. packages/scripts/sync-version.mjs:1, packages/scripts/sync-version.mjs:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. packages/op-vscode/src/extension.ts:116, packages/op-vscode/src/mcp/mcp-proxy.ts:36"
+  }
+ ],
+ "level": 2
 }

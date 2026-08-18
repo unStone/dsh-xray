@@ -1,6 +1,6 @@
 {
  "repo": "hust-open-atom-club/oh-dsh",
- "stars": 246,
+ "stars": 248,
  "description": " 一套 DSH runtime，Desktop、Web 与 TUI 三种开发体验。",
  "pushed_at": "2026-08-18T06:08:04Z",
  "status": "ok",
@@ -64,18 +64,6 @@
   "open.bigmodel.cn": 2
  },
  "env": {
-  "OH_DSH_TUI_LANG": 1,
-  "CC_TUI_LANG": 2,
-  "OH_DSH_MARKETPLACE_PREVIEW": 1,
-  "OH_DSH_READ_ONLY": 2,
-  "OH_DSH_TUI_CONFIG_HOME": 11,
-  "OH_DSH_TUI_MARKETPLACE_PREVIEW_PROBE": 1,
-  "DSH_OH_TUI_HOME": 2,
-  "OH_DSH_HOME": 1,
-  "DSH_HOME": 1,
-  "DSH_OH_TUI_PROFILE": 1,
-  "DSH_OH_TUI_VERSION": 3,
-  "OH_DSH_TUI_TITLE": 5,
   "CSC_LINK": 3,
   "CSC_NAME": 3,
   "APPLE_ID": 1,
@@ -86,25 +74,37 @@
   "DSH_SMOKE_RUNTIME_URL": 1,
   "DSH_SMOKE_SURFACE": 1,
   "DSH_DESKTOP_NODE_VERSION": 1,
+  "OH_DSH_TUI_CONFIG_HOME": 11,
+  "OH_DSH_TUI_TITLE": 5,
+  "DSH_OH_TUI_VERSION": 3,
   "DSH_ARCHIVE_BASE_REF": 1,
   "DSH_DESKTOP_APP_DATA": 1,
   "DSH_DESKTOP_PROFILE": 1,
   "DSH_DESKTOP_VERSION": 1,
   "APPIMAGE": 2,
+  "OH_DSH_READ_ONLY": 2,
   "DSH_OH_WEB_DATA": 1,
   "DSH_OH_WEB_PROFILE": 1,
-  "DSH_OH_WEB_VERSION": 1
+  "DSH_OH_WEB_VERSION": 1,
+  "OH_DSH_MARKETPLACE_PREVIEW": 1,
+  "OH_DSH_TUI_MARKETPLACE_PREVIEW_PROBE": 1,
+  "CC_TUI_LANG": 2,
+  "DSH_OH_TUI_HOME": 2,
+  "OH_DSH_HOME": 1,
+  "DSH_HOME": 1,
+  "DSH_OH_TUI_PROFILE": 1,
+  "OH_DSH_TUI_LANG": 1
  },
  "behaviors": {
   "exec": {
    "src": 77,
    "dev": 10,
    "evidence": [
-    "plugins/plugin-marketplace/src/host/platform.ts:1",
-    "plugins/plugin-marketplace/src/host/platform.ts:184",
-    "plugins/plugin-marketplace/src/host/surface.ts:132",
-    "plugins/plugin-marketplace/src/host/surface.ts:132",
-    "plugins/plugin-marketplace/src/host/surface.ts:135"
+    "scripts/after-pack.cjs:1",
+    "scripts/after-pack.cjs:1",
+    "scripts/after-pack.cjs:18",
+    "scripts/build-dsh.mjs:1",
+    "scripts/build-dsh.mjs:1"
    ]
   },
   "eval": {
@@ -116,29 +116,29 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "plugins/vision/src/vlm.ts:98",
-    "scripts/smoke-client.cjs:137"
+    "scripts/smoke-client.cjs:137",
+    "plugins/vision/src/vlm.ts:98"
    ]
   },
   "net_server": {
    "src": 4,
    "dev": 3,
    "evidence": [
-    "plugins/plugin-marketplace/src/host/agent-gateway.ts:77",
-    "plugins/plugin-marketplace/src/host/agent-gateway.ts:130",
     "scripts/smoke-web.mjs:66",
-    "scripts/smoke-web.mjs:69"
+    "scripts/smoke-web.mjs:69",
+    "plugins/plugin-marketplace/src/host/agent-gateway.ts:77",
+    "plugins/plugin-marketplace/src/host/agent-gateway.ts:130"
    ]
   },
   "fs_write": {
    "src": 150,
    "dev": 177,
    "evidence": [
-    "plugins/plugin-marketplace/src/host/platform.ts:10",
-    "plugins/plugin-marketplace/src/host/platform.ts:169",
-    "plugins/plugin-marketplace/src/host/platform.ts:291",
-    "plugins/plugin-marketplace/src/host/surface.ts:1",
-    "plugins/plugin-marketplace/src/host/surface.ts:104"
+    "scripts/build-dsh.mjs:2",
+    "scripts/build-dsh.mjs:27",
+    "scripts/build-dsh.mjs:31",
+    "scripts/build-dsh.mjs:76",
+    "scripts/build-dsh.mjs:100"
    ]
   },
   "dyn_import": {
@@ -166,15 +166,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×77 src, e.g. plugins/plugin-marketplace/src/host/platform.ts:1, plugins/plugin-marketplace/src/host/platform.ts:184"
+   "evidence": "×77 src, e.g. scripts/after-pack.cjs:1, scripts/after-pack.cjs:1"
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. plugins/vision/src/vlm.ts:98, scripts/smoke-client.cjs:137"
+   "evidence": "×2 src, e.g. scripts/smoke-client.cjs:137, plugins/vision/src/vlm.ts:98"
   },
   {
    "id": "net_server",
-   "evidence": "×4 src, e.g. plugins/plugin-marketplace/src/host/agent-gateway.ts:77, plugins/plugin-marketplace/src/host/agent-gateway.ts:130"
+   "evidence": "×4 src, e.g. scripts/smoke-web.mjs:66, scripts/smoke-web.mjs:69"
   }
  ],
  "level": 3

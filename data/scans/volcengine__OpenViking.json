@@ -1,19 +1,202 @@
 {
  "repo": "volcengine/OpenViking",
- "stars": 28969,
+ "stars": 28970,
  "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
  "pushed_at": "2026-08-18T07:38:36Z",
- "status": "skipped: repo too large",
- "type": "unknown",
- "level": -1,
- "flags": [],
- "injects": [],
- "hooks": [],
- "tool_regs": 0,
- "domains": {},
- "env": {},
- "files_scanned": 0,
- "manifest": null,
- "install_scripts": {},
- "behaviors": {}
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "bot",
+ "deps": [
+  "@anthropic-ai/sandbox-runtime",
+  "@base-ui/react",
+  "@codemirror/autocomplete",
+  "@codemirror/commands",
+  "@codemirror/lang-cpp",
+  "@codemirror/lang-css",
+  "@codemirror/lang-html",
+  "@codemirror/lang-java",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/lang-python",
+  "@codemirror/lang-rust",
+  "@codemirror/lang-sql",
+  "@codemirror/lang-xml",
+  "@codemirror/lang-yaml",
+  "@codemirror/language",
+  "@codemirror/lint",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/theme-one-dark",
+  "@codemirror/view",
+  "@fontsource-variable/noto-sans",
+  "@microsoft/fetch-event-source",
+  "@streamdown/cjk",
+  "@streamdown/code",
+  "@tailwindcss/vite",
+  "@tanstack/react-devtools",
+  "@tanstack/react-form",
+  "@tanstack/react-query",
+  "@tanstack/react-router",
+  "@tanstack/react-router-devtools",
+  "@tanstack/react-table",
+  "@tanstack/router-plugin",
+  "@uiw/react-heat-map",
+  "axios",
+  "class-variance-authority",
+  "clsx",
+  "file-type",
+  "gsap",
+  "highlight.js",
+  "i18next",
+  "i18next-browser-languagedetector",
+  "lucide-react",
+  "next-themes",
+  "postprocessing",
+  "react",
+  "react-dom",
+  "react-dropzone",
+  "react-i18next",
+  "react-markdown",
+  "recharts",
+  "rehype-raw",
+  "rehype-sanitize",
+  "remark-gfm",
+  "shadcn",
+  "sonner",
+  "streamdown",
+  "tailwind-merge",
+  "tailwindcss",
+  "three",
+  "tw-animate-css",
+  "@whiskeysockets/baileys",
+  "ws",
+  "qrcode-terminal",
+  "pino",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@sinclair/typebox",
+  "fflate"
+ ],
+ "install_scripts": {
+  "postinstall": "node bin/postinstall.mjs"
+ },
+ "injects": [
+  "agents",
+  "sessions",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start",
+  "session/event",
+  "session/flush",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 98,
+ "domains": {
+  "docs.openviking.ai": 3,
+  "swagger.io": 1,
+  "example.feishu.cn": 2
+ },
+ "env": {
+  "OPENVIKING_URL": 1,
+  "OPENVIKING_BASE_URL": 1,
+  "OPENVIKING_BEARER_TOKEN": 1,
+  "OPENVIKING_API_KEY": 1,
+  "OPENVIKING_ACCOUNT": 1,
+  "OPENVIKING_USER": 1,
+  "OPENVIKING_PEER_ID": 1,
+  "OPENVIKING_TIMEOUT_MS": 1,
+  "OPENVIKING_DEBUG_LOG": 1,
+  "OPENVIKING_CLI_CONFIG_FILE": 1,
+  "OPENVIKING_CONFIG_FILE": 1,
+  "BRIDGE_PORT": 1,
+  "AUTH_DIR": 1,
+  "BRIDGE_TOKEN": 1,
+  "npm_config_prefix": 1,
+  "npm_config_global": 1,
+  "OPENVIKING_PLUGIN_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 76,
+   "evidence": [
+    "npm/cli/bin/ov.mjs:2",
+    "npm/cli/bin/ov.mjs:2",
+    "npm/cli/bin/ov.mjs:26",
+    "npm/cli/bin/postinstall.mjs:2",
+    "npm/cli/bin/postinstall.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 34,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 235,
+   "evidence": [
+    "agent-plugins/servers/shared/debug-log.mjs:9",
+    "agent-plugins/servers/shared/debug-log.mjs:20",
+    "sdk/typescript/src/node-files.ts:142",
+    "web-studio/script/gen-server-client/polishOpId.js:193",
+    "benchmark/locomo/claudecode/scripts/auto-capture.mjs:89"
+   ]
+  },
+  "dyn_import": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "benchmark/locomo/claudecode/scripts/auto-capture.mjs:38",
+    "benchmark/locomo/claudecode/scripts/auto-capture.mjs:39",
+    "benchmark/locomo/claudecode/scripts/auto-capture.mjs:47",
+    "benchmark/locomo/claudecode/scripts/auto-capture.mjs:48",
+    "benchmark/locomo/claudecode/scripts/auto-capture.mjs:49"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 564,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node bin/postinstall.mjs"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. npm/cli/bin/ov.mjs:2, npm/cli/bin/ov.mjs:2"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AUTH_DIR, BRIDGE_TOKEN, OPENVIKING_API_KEY, OPENVIKING_BEARER_TOKEN"
+  }
+ ],
+ "level": 3
 }

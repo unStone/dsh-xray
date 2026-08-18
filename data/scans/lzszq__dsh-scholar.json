@@ -1,6 +1,6 @@
 {
  "repo": "lzszq/dsh-scholar",
- "stars": 23,
+ "stars": 24,
  "description": "dsh-scholar",
  "pushed_at": "2026-08-17T15:31:37Z",
  "status": "ok",
@@ -20,7 +20,7 @@
    "platform": "web"
   }
  },
- "pkg_name": "golden-path-v2-fixture",
+ "pkg_name": "@dsh-scholar/research-plugin",
  "deps": [
   "@dsh-scholar/research-client",
   "@dsh-scholar/research-kernel",
@@ -84,26 +84,26 @@
   "export.arxiv.org": 1
  },
  "env": {
-  "DSH_RUN_ID": 2,
+  "DSH_SCHOLAR_STANDALONE_DATA": 2,
   "DSH_HOME": 4,
-  "DSH_SCHOLAR_BACKUP_ON_START": 1,
+  "DSH_RUN_ID": 2,
+  "DSH_IMAGES_LOCK": 2,
   "DSH_SCHOLAR_KERNEL_TOKEN": 3,
+  "DSH_SCHOLAR_BACKUP_ON_START": 1,
   "DSH_SCHOLAR_SERVICE_TOKEN": 2,
   "DSH_SCHOLAR_DSH_PLUGIN_TOKEN": 1,
-  "DSH_SCHOLAR_KERNEL_ENDPOINT_FILE": 1,
-  "DSH_IMAGES_LOCK": 2,
-  "DSH_SCHOLAR_STANDALONE_DATA": 2
+  "DSH_SCHOLAR_KERNEL_ENDPOINT_FILE": 1
  },
  "behaviors": {
   "exec": {
    "src": 23,
    "dev": 25,
    "evidence": [
-    "packages/dsh-research-ui/src/standalone/sidecar.ts:17",
-    "packages/dsh-research-ui/src/standalone/sidecar.ts:446",
-    "packages/research-kernel/src/kernel.ts:6987",
-    "packages/research-kernel/src/pty-local.ts:45",
-    "packages/research-kernel/src/pty-local.ts:45"
+    "scripts/verify-docs.mjs:183",
+    "scripts/verify-docs.mjs:183",
+    "scripts/verify-docs.mjs:184",
+    "src/plugin/sidecar.ts:19",
+    "src/plugin/sidecar.ts:471"
    ]
   },
   "eval": {
@@ -126,22 +126,22 @@
    "src": 7,
    "dev": 13,
    "evidence": [
-    "packages/dsh-research-ui/src/standalone/server.ts:1126",
-    "packages/research-kernel/src/server.ts:3551",
     "src/plugin/chat-agent-service.ts:93",
     "src/plugin/chat-agent-service.ts:131",
-    "workers/runner-gateway/src/fleet-cli.ts:131"
+    "packages/research-kernel/src/server.ts:3551",
+    "workers/runner-gateway/src/fleet-cli.ts:131",
+    "workers/runner-gateway/src/remote-fleet-server.ts:1121"
    ]
   },
   "fs_write": {
    "src": 91,
    "dev": 165,
    "evidence": [
-    "evals/golden-path-v2/fixture-repo/baseline.js:87",
-    "evals/golden-path-v2/fixture-repo/train.js:96",
-    "packages/dsh-research-ui/src/standalone/server.ts:25",
-    "packages/dsh-research-ui/src/standalone/server.ts:260",
-    "packages/dsh-research-ui/src/standalone/server.ts:353"
+    "scripts/generate-config-artifacts.mjs:16",
+    "scripts/generate-config-artifacts.mjs:26",
+    "scripts/generate-config-artifacts.mjs:29",
+    "scripts/generate-config-artifacts.mjs:32",
+    "src/plugin/chat-agent-service.ts:2"
    ]
   },
   "dyn_import": {
@@ -165,7 +165,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×23 src, e.g. packages/dsh-research-ui/src/standalone/sidecar.ts:17, packages/dsh-research-ui/src/standalone/sidecar.ts:446"
+   "evidence": "×23 src, e.g. scripts/verify-docs.mjs:183, scripts/verify-docs.mjs:183"
   },
   {
    "id": "base64_decode",
@@ -173,7 +173,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×7 src, e.g. packages/dsh-research-ui/src/standalone/server.ts:1126, packages/research-kernel/src/server.ts:3551"
+   "evidence": "×7 src, e.g. src/plugin/chat-agent-service.ts:93, src/plugin/chat-agent-service.ts:131"
   },
   {
    "id": "token_env",

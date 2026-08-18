@@ -1,6 +1,6 @@
 {
  "repo": "tt-a1i/archify",
- "stars": 14031,
+ "stars": 14036,
  "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
  "pushed_at": "2026-08-17T15:47:26Z",
  "status": "ok",
@@ -112,24 +112,24 @@
   "brand.zoom.us": 2
  },
  "env": {
+  "ARCHIFY_CHROME": 1,
+  "RUNNER_TEMP": 2,
   "ARCHIFY_BRAND_ALLOW_PRIVATE": 2,
   "ARCHIFY_BRAND_CAPTURE_TIMEOUT_MS": 1,
   "ARCHIFY_REPO_ROOT": 1,
   "ARCHIFY_QUALITY_PROFILE": 6,
-  "ARCHIFY_DIAGNOSTIC_FORMAT": 1,
-  "ARCHIFY_CHROME": 1,
-  "RUNNER_TEMP": 2
+  "ARCHIFY_DIAGNOSTIC_FORMAT": 1
  },
  "behaviors": {
   "exec": {
    "src": 43,
    "dev": 256,
    "evidence": [
-    "archify/bin/archify.mjs:3",
-    "archify/bin/archify.mjs:3",
-    "archify/bin/archify.mjs:50",
-    "archify/bin/open-artifact.mjs:1",
-    "archify/bin/open-artifact.mjs:1"
+    "scripts/build-gallery.mjs:3",
+    "scripts/build-gallery.mjs:3",
+    "scripts/build-gallery.mjs:252",
+    "scripts/build-gallery.mjs:259",
+    "scripts/build-readme-showcase.mjs:7"
    ]
   },
   "eval": {
@@ -141,8 +141,8 @@
    "src": 2,
    "dev": 13,
    "evidence": [
-    "archify/bin/visual-check.mjs:324",
-    "scripts/build-readme-showcase.mjs:288"
+    "scripts/build-readme-showcase.mjs:288",
+    "archify/bin/visual-check.mjs:324"
    ]
   },
   "net_server": {
@@ -157,11 +157,11 @@
    "src": 45,
    "dev": 239,
    "evidence": [
-    "archify/bin/archify.mjs:354",
-    "archify/bin/archify.mjs:361",
-    "archify/bin/archify.mjs:573",
-    "archify/bin/archify.mjs:574",
-    "archify/bin/archify.mjs:620"
+    "scripts/build-gallery.mjs:239",
+    "scripts/build-gallery.mjs:240",
+    "scripts/build-gallery.mjs:325",
+    "scripts/build-gallery.mjs:342",
+    "scripts/build-guide.mjs:35"
    ]
   },
   "dyn_import": {
@@ -185,11 +185,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×43 src, e.g. archify/bin/archify.mjs:3, archify/bin/archify.mjs:3"
+   "evidence": "×43 src, e.g. scripts/build-gallery.mjs:3, scripts/build-gallery.mjs:3"
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. archify/bin/visual-check.mjs:324, scripts/build-readme-showcase.mjs:288"
+   "evidence": "×2 src, e.g. scripts/build-readme-showcase.mjs:288, archify/bin/visual-check.mjs:324"
   },
   {
    "id": "net_server",

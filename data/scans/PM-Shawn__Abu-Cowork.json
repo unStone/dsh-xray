@@ -5,10 +5,8 @@
  "pushed_at": "2026-08-18T06:01:27Z",
  "status": "ok",
  "manifest": null,
- "pkg_name": "abu-browser-bridge",
+ "pkg_name": "abu",
  "deps": [
-  "@modelcontextprotocol/sdk",
-  "ws",
   "@anthropic-ai/sdk",
   "@cfworker/json-schema",
   "@codemirror/theme-one-dark",
@@ -63,7 +61,9 @@
   "xlsx",
   "yaml",
   "zod",
-  "zustand"
+  "zustand",
+  "@modelcontextprotocol/sdk",
+  "ws"
  ],
  "install_scripts": {
   "prepare": "husky"
@@ -73,16 +73,16 @@
  "tool_regs": 0,
  "domains": {
   "tauri.localhost": 2,
-  "ex.com": 4,
-  "evil.com": 1,
-  "queued.example.com": 2,
-  "live.example.com": 2,
-  "evil.example.com": 2,
   "www.apache.org": 1,
   "www.xfa.org": 9,
   "ns.adobe.com": 4,
   "models.dev": 1,
   "abu-agent.oss-cn-beijing.aliyuncs.com": 1,
+  "ex.com": 4,
+  "evil.com": 1,
+  "queued.example.com": 2,
+  "live.example.com": 2,
+  "evil.example.com": 2,
   "cdnjs.cloudflare.com": 1,
   "cdn.jsdelivr.net": 2,
   "unpkg.com": 1,
@@ -111,17 +111,14 @@
   "lmstudio.ai": 1
  },
  "env": {
-  "ABU_BROWSER_RUNTIME_ENDPOINT": 1,
-  "ABU_BROWSER_RUNTIME_TOKEN": 1,
   "SystemRoot": 6,
   "USERNAME": 1,
-  "ABU_F3_VERIFY_TEST": 2,
-  "ABU_UPDATER_FEED_URL": 3,
   "LOCALAPPDATA": 2,
   "XDG_CACHE_HOME": 2,
   "ABU_MIGRATE_FROM_TAURI": 1,
   "ABU_E2E_MIGRATION_DIAGNOSTICS_PATH": 1,
   "ABU_PACKAGED_E2E": 1,
+  "ABU_UPDATER_FEED_URL": 3,
   "ABU_BUILD_TARGET": 2,
   "ABU_SHIM_DEBUG": 1,
   "ABU_ELECTRON_SMOKE_OUTPUT": 1,
@@ -131,7 +128,10 @@
   "CSC_KEYCHAIN": 1,
   "npm_execpath": 1,
   "VITE_CONSOLE_URL": 1,
-  "ABU_EXPECTED_ELECTRON_FEED": 1
+  "ABU_EXPECTED_ELECTRON_FEED": 1,
+  "ABU_BROWSER_RUNTIME_ENDPOINT": 1,
+  "ABU_BROWSER_RUNTIME_TOKEN": 1,
+  "ABU_F3_VERIFY_TEST": 2
  },
  "behaviors": {
   "exec": {
@@ -149,11 +149,11 @@
    "src": 7,
    "dev": 1,
    "evidence": [
-    "abu-chrome-extension/src/background/index.ts:489",
     "electron/browserHost.cjs:35",
     "public/pdf.worker.min.mjs:25",
     "public/pdf.worker.min.mjs:28",
-    "scripts/electron-packaged-smoke.mjs:1026"
+    "scripts/electron-packaged-smoke.mjs:1026",
+    "scripts/electron-packaged-smoke.mjs:1198"
    ]
   },
   "base64_decode": {
@@ -171,11 +171,11 @@
    "src": 18,
    "dev": 2,
    "evidence": [
-    "abu-browser-bridge/src/wsServer.ts:60",
     "electron/browserAutomationHost.cjs:114",
     "electron/browserAutomationHost.cjs:139",
     "electron/networkProxy.cjs:427",
-    "electron/networkProxy.cjs:433"
+    "electron/networkProxy.cjs:433",
+    "electron/previewServer.cjs:156"
    ]
   },
   "fs_write": {
@@ -193,11 +193,11 @@
    "src": 6,
    "dev": 1,
    "evidence": [
+    "public/pdf.worker.min.mjs:25",
     "electron/spike/deepLinkVerify.cjs:120",
     "electron/spike/f4Verify.cjs:85",
     "electron/spike/f9Verify.cjs:123",
-    "electron/spike/shellGlobalShortcutVerify.cjs:121",
-    "electron/spike/updaterVerify.cjs:127"
+    "electron/spike/shellGlobalShortcutVerify.cjs:121"
    ]
   }
  },
@@ -212,7 +212,7 @@
   },
   {
    "id": "eval",
-   "evidence": "×7 src, e.g. abu-chrome-extension/src/background/index.ts:489, electron/browserHost.cjs:35"
+   "evidence": "×7 src, e.g. electron/browserHost.cjs:35, public/pdf.worker.min.mjs:25"
   },
   {
    "id": "base64_decode",
@@ -220,7 +220,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×18 src, e.g. abu-browser-bridge/src/wsServer.ts:60, electron/browserAutomationHost.cjs:114"
+   "evidence": "×18 src, e.g. electron/browserAutomationHost.cjs:114, electron/browserAutomationHost.cjs:139"
   },
   {
    "id": "token_env",

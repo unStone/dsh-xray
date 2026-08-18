@@ -21,7 +21,11 @@
   "@deepseek-ai/dsh-mygo",
   "pg",
   "cordis",
-  "schemastery",
+  "@deepseek-ai/dsh-mygo",
+  "@deepseek-ai/dsh-mygo-api",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom",
   "@deepseek-ai/dsh-mygo",
   "@deepseek-ai/cordis",
   "@deepseek-ai/cordis",
@@ -34,7 +38,6 @@
   "@deepseek-ai/dsh-storage",
   "@deepseek-ai/dsh-storage-domain",
   "schemastery",
-  "cordis",
   "@deepseek-ai/cordis",
   "schemastery",
   "@deepseek-ai/cordis",
@@ -42,14 +45,11 @@
   "@deepseek-ai/dsh-session",
   "schemastery",
   "cordis",
-  "@deepseek-ai/dsh-mygo",
-  "@deepseek-ai/dsh-mygo-api",
-  "@deepseek-ai/cordis",
-  "react",
-  "react-dom"
+  "schemastery",
+  "cordis"
  ],
  "install_scripts": {
-  "prepare": "node build.mjs"
+  "prepare": "node scripts/prepare.mjs"
  },
  "injects": [
   "absent",
@@ -92,23 +92,23 @@
  "tool_regs": 65,
  "domains": {},
  "env": {
+  "DSH_CHECKOUT": 3,
   "DSH_HOME": 5,
   "DSH_RDB_POSTGRES": 1,
+  "DSH_PROFILE": 1,
   "DSH_BIN": 1,
-  "DSH_INSTALL_DIR": 1,
-  "DSH_CHECKOUT": 3,
-  "DSH_PROFILE": 1
+  "DSH_INSTALL_DIR": 1
  },
  "behaviors": {
   "exec": {
    "src": 27,
    "dev": 8,
    "evidence": [
-    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5",
-    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5",
-    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:26",
-    "packages/cordis/mygo-cli/scripts/prepare.mjs:5",
-    "packages/cordis/mygo-cli/scripts/prepare.mjs:5"
+    "scripts/publish-mygo.mjs:11",
+    "scripts/publish-mygo.mjs:11",
+    "scripts/publish-mygo.mjs:20",
+    "vendor/dsh-mygo-panel/build.mjs:7",
+    "vendor/dsh-mygo-panel/build.mjs:7"
    ]
   },
   "eval": {
@@ -134,22 +134,22 @@
    "src": 55,
    "dev": 121,
    "evidence": [
-    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:1",
-    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:19",
-    "packages/cordis/mygo-cli/scripts/prepare.mjs:1",
-    "packages/cordis/mygo-cli/scripts/prepare.mjs:19",
-    "packages/cordis/mygo-cli/src/init.ts:145"
+    "scripts/bom-scaffold.mjs:96",
+    "scripts/bom-scaffold.mjs:97",
+    "scripts/bom-scaffold.mjs:98",
+    "vendor/dsh-mygo-panel/build.mjs:8",
+    "vendor/dsh-mygo-panel/build.mjs:19"
    ]
   },
   "dyn_import": {
    "src": 5,
    "dev": 5,
    "evidence": [
+    "vendor/dsh-mygo-panel/tsdown.config.mjs:13",
+    "vendor/dsh-mygo-panel/src/index.ts:331",
     "packages/cordis/mygo/src/package/entry-loader.ts:17",
     "packages/cordis/mygo/src/package/mixin-engine.ts:134",
-    "packages/cordis/mygo/src/package/symbol-verify.ts:100",
-    "vendor/dsh-mygo-panel/src/index.ts:331",
-    "vendor/dsh-mygo-panel/tsdown.config.mjs:13"
+    "packages/cordis/mygo/src/package/symbol-verify.ts:100"
    ]
   }
  },
@@ -164,7 +164,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×27 src, e.g. packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5, packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5"
+   "evidence": "×27 src, e.g. scripts/publish-mygo.mjs:11, scripts/publish-mygo.mjs:11"
   },
   {
    "id": "eval",

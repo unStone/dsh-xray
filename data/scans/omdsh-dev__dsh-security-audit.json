@@ -5,13 +5,11 @@
  "pushed_at": "2026-08-18T04:08:40Z",
  "status": "ok",
  "manifest": {
-  "profile": {
-   "bundles": [
-    "@deepseek-ai/dsh-tool-missing"
-   ]
+  "bundle": {
+   "patch": "./cordis.patch.yml"
   }
  },
- "pkg_name": "@deepseek-ai/dsh-tool-eval-fixture",
+ "pkg_name": "@deepseek-ai/dsh-security-audit",
  "deps": [
   "@deepseek-ai/dsh-invariants",
   "@deepseek-ai/dsh-tools",
@@ -33,11 +31,11 @@
    "src": 6,
    "dev": 1,
    "evidence": [
+    "lib/rules.js:24",
+    "src/rules.ts:38",
     "lib/plugins/source-capabilities.js:13",
     "lib/plugins/source-capabilities.js:110",
-    "lib/rules.js:24",
-    "src/plugins/source-capabilities.ts:22",
-    "src/plugins/source-capabilities.ts:127"
+    "src/plugins/source-capabilities.ts:22"
    ]
   },
   "eval": {
@@ -72,13 +70,17 @@
  "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
    "id": "install_script",
    "evidence": "postinstall: node scripts/install.js"
   },
   {
    "id": "exec",
-   "evidence": "×6 src, e.g. lib/plugins/source-capabilities.js:13, lib/plugins/source-capabilities.js:110"
+   "evidence": "×6 src, e.g. lib/rules.js:24, src/rules.ts:38"
   }
  ],
- "level": 2
+ "level": 3
 }

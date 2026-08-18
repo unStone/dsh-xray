@@ -87,19 +87,31 @@
   "tailwind-merge",
   "tailwindcss",
   "tw-animate-css",
-  "yaml"
+  "yaml",
+  "id-agent",
+  "@vostride/agent-qa-core",
+  "webdriverio",
+  "@modelcontextprotocol/sdk",
+  "@vostride/agent-qa-core",
+  "@vostride/agent-qa-ids",
+  "glob",
+  "yaml",
+  "zod",
+  "@axe-core/playwright",
+  "@vostride/agent-qa-core",
+  "playwright-core"
  ],
  "install_scripts": {},
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
  "domains": {
+  "us.i.posthog.com": 1,
   "docker.com": 1,
   "automationexercise.com": 1,
   "www.iana.org": 2,
   "hacker-news.firebaseio.com": 2,
   "news.ycombinator.com": 1,
-  "us.i.posthog.com": 1,
   "api-cloud.browserstack.com": 3,
   "automate.browserstack.com": 1,
   "app-automate.browserstack.com": 1,
@@ -109,6 +121,7 @@
  "env": {
   "AGENT_QA_ANDROID_USE_MOBILE_SHELL": 1,
   "AGENT_QA_APPIUM_URL": 7,
+  "VITEST": 1,
   "ANDROID_HOME": 1,
   "ANDROID_SDK_ROOT": 1,
   "AGENT_QA_DASHBOARD_URL": 1,
@@ -123,7 +136,6 @@
   "NO_COLOR": 1,
   "AGENT_QA_ATTEMPT_NUMBER": 2,
   "AGENT_QA_MAX_RETRIES": 2,
-  "VITEST": 1,
   "AGENT_QA_CLI_BIN": 1
  },
  "behaviors": {
@@ -131,11 +143,11 @@
    "src": 31,
    "dev": 24,
    "evidence": [
+    "packages/core/src/sqlite.ts:1",
+    "packages/core/src/sqlite.ts:1",
+    "packages/core/src/sqlite.ts:184",
     "packages/cli/src/commands/auth.ts:2",
-    "packages/cli/src/commands/dashboard.ts:100",
-    "packages/cli/src/commands/devices.ts:2",
-    "packages/cli/src/commands/devices.ts:2",
-    "packages/cli/src/commands/devices.ts:80"
+    "packages/cli/src/commands/dashboard.ts:100"
    ]
   },
   "eval": {
@@ -165,9 +177,9 @@
    "evidence": [
     "packages/android/src/adapter.ts:469",
     "packages/android/src/adapter.ts:475",
-    "packages/cli/src/commands/config.ts:81",
-    "packages/cli/src/commands/create-suite.ts:36",
-    "packages/cli/src/commands/create-test.ts:34"
+    "packages/core/scripts/ensure-posthog-project.cjs:1",
+    "packages/core/scripts/ensure-posthog-project.cjs:8",
+    "packages/core/src/sqlite.ts:2"
    ]
   },
   "dyn_import": {
@@ -185,7 +197,7 @@
  "flags": [
   {
    "id": "exec",
-   "evidence": "×31 src, e.g. packages/cli/src/commands/auth.ts:2, packages/cli/src/commands/dashboard.ts:100"
+   "evidence": "×31 src, e.g. packages/core/src/sqlite.ts:1, packages/core/src/sqlite.ts:1"
   },
   {
    "id": "base64_decode",

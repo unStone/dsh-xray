@@ -63,11 +63,14 @@
  ],
  "tool_regs": 15,
  "domains": {
-  "opencode.ai": 1,
   "agent-plugins.org": 3,
-  "mathiasbynens.be": 1
+  "mathiasbynens.be": 1,
+  "opencode.ai": 1
  },
  "env": {
+  "GITHUB_ACTIONS": 1,
+  "RELEASE_VERSION": 1,
+  "GITHUB_REF_NAME": 1,
   "MSTAR_WORKING_BRANCH": 2,
   "MSTAR_CLI_PROJECT_ROOT": 2,
   "INIT_CWD": 1,
@@ -75,21 +78,18 @@
   "MSTAR_CONTROL_ROOT": 1,
   "SDD_DIR": 2,
   "MSTAR_GIT_PROBE_TIMEOUT_MS": 1,
-  "OPENCODE_CONFIG_DIR": 1,
-  "GITHUB_ACTIONS": 1,
-  "RELEASE_VERSION": 1,
-  "GITHUB_REF_NAME": 1
+  "OPENCODE_CONFIG_DIR": 1
  },
  "behaviors": {
   "exec": {
    "src": 32,
    "dev": 51,
    "evidence": [
-    "packages/cli/src/adapters/dsh.ts:1",
-    "packages/cli/src/adapters/dsh.ts:1",
-    "packages/cli/src/adapters/dsh.ts:69",
-    "packages/cli/src/adapters/omp.ts:3",
-    "packages/cli/src/adapters/omp.ts:3"
+    "scripts/drift-lint.ts:54",
+    "scripts/drift-lint.ts:54",
+    "scripts/drift-lint.ts:112",
+    "scripts/drift-lint.ts:118",
+    "packages/cli/src/index.ts:3"
    ]
   },
   "eval": {
@@ -111,8 +111,8 @@
    "src": 31,
    "dev": 603,
    "evidence": [
-    "packages/cli/src/adapters/shared-install.ts:89",
-    "packages/cli/src/adapters/shared-install.ts:206",
+    "scripts/escape-dist-literals.ts:21",
+    "scripts/escape-dist-literals.ts:58",
     "packages/dsh/scripts/build-client-bundle.ts:29",
     "packages/dsh/scripts/build-client-bundle.ts:364",
     "packages/dsh/scripts/bundle-harness-assets.ts:28"
@@ -143,7 +143,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×32 src, e.g. packages/cli/src/adapters/dsh.ts:1, packages/cli/src/adapters/dsh.ts:1"
+   "evidence": "×32 src, e.g. scripts/drift-lint.ts:54, scripts/drift-lint.ts:54"
   }
  ],
  "level": 3

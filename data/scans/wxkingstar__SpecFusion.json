@@ -9,7 +9,7 @@
    "patch": "./cordis.patch.yml"
   }
  },
- "pkg_name": "@specfusion/api",
+ "pkg_name": "specfusion",
  "deps": [
   "fastify",
   "@fastify/cors",
@@ -43,15 +43,15 @@
  "hooks": [],
  "tool_regs": 10,
  "domains": {
-  "specfusion.inagora.org": 2,
   "developer.work.weixin.qq.com": 4,
+  "open.pinduoduo.com": 3,
+  "specfusion.inagora.org": 2,
   "open.feishu.cn": 2,
   "open.dingtalk.com": 2,
   "open.taobao.com": 2,
   "open.xiaohongshu.com": 2,
   "op.jinritemai.com": 2,
   "developers.weixin.qq.com": 4,
-  "open.pinduoduo.com": 3,
   "doc.youzanyun.com": 2,
   "pay.weixin.qq.com": 2,
   "opendocs.alipay.com": 2,
@@ -74,9 +74,9 @@
  "env": {
   "PORT": 1,
   "DB_PATH": 1,
+  "SPECFUSION_API_URL": 5,
   "ADMIN_TOKEN": 7,
   "USERDICT_PATH": 2,
-  "SPECFUSION_API_URL": 5,
   "PDD_COOKIE": 1,
   "PDD_JSON_PATH": 1,
   "WECOM_COOKIES": 1,
@@ -113,9 +113,9 @@
    "src": 3,
    "dev": 2,
    "evidence": [
-    "scrapers/src/utils/cookies.ts:60",
     "scripts/ego-bridge.mjs:177",
-    "scripts/pdd-refresh.mjs:159"
+    "scripts/pdd-refresh.mjs:159",
+    "scrapers/src/utils/cookies.ts:60"
    ]
   },
   "dyn_import": {

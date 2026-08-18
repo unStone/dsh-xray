@@ -37,30 +37,14 @@
  ],
  "tool_regs": 7,
  "domains": {
+  "cdn.jsdelivr.net": 4,
   "api.deepseek.com": 4,
   "api.example.com": 1,
   "api.openai.com": 2,
   "api.anthropic.com": 2,
-  "generativelanguage.googleapis.com": 2,
-  "cdn.jsdelivr.net": 4
+  "generativelanguage.googleapis.com": 2
  },
  "env": {
-  "npm_execpath": 2,
-  "ODAI_LANG": 1,
-  "ANTHROPIC_API_KEY": 1,
-  "ODAI_ANTHROPIC_MODEL": 1,
-  "ODAI_ANTHROPIC_MAX_TOKENS": 1,
-  "GEMINI_API_KEY": 1,
-  "ODAI_GEMINI_MODEL": 1,
-  "ODAI_OLLAMA_MODEL": 1,
-  "OPENAI_API_KEY": 1,
-  "ODAI_OPENAI_MODEL": 1,
-  "DSH_BIN": 8,
-  "DSH_PACKAGE_ROOT": 4,
-  "KEEP_ODAI_SCOPE_PROBE": 1,
-  "INIT_CWD": 2,
-  "ODAI_COMPACTION_CACHE_RETENTION": 2,
-  "ODAI_SKILL_PATH": 2,
   "ODAI_PYTHON": 2,
   "CODEX_HOME": 7,
   "API_SECRET": 4,
@@ -86,7 +70,23 @@
   "ODAI_OPENAI_COMPATIBLE_MODEL": 1,
   "ODAI_OPENAI_COMPATIBLE_BASE_URL": 1,
   "ODAI_OPENAI_COMPATIBLE_API_KEY": 1,
+  "npm_execpath": 2,
+  "DSH_BIN": 8,
   "KEEP_ODAI_COEXISTENCE_PROBE": 1,
+  "ODAI_LANG": 1,
+  "ANTHROPIC_API_KEY": 1,
+  "ODAI_ANTHROPIC_MODEL": 1,
+  "ODAI_ANTHROPIC_MAX_TOKENS": 1,
+  "GEMINI_API_KEY": 1,
+  "ODAI_GEMINI_MODEL": 1,
+  "ODAI_OLLAMA_MODEL": 1,
+  "OPENAI_API_KEY": 1,
+  "ODAI_OPENAI_MODEL": 1,
+  "DSH_PACKAGE_ROOT": 4,
+  "KEEP_ODAI_SCOPE_PROBE": 1,
+  "INIT_CWD": 2,
+  "ODAI_COMPACTION_CACHE_RETENTION": 2,
+  "ODAI_SKILL_PATH": 2,
   "CLAUDE_CONFIG_DIR": 1,
   "COPILOT_HOME": 1,
   "ODAI_ROUTING_ACTIVE": 1
@@ -96,11 +96,11 @@
    "src": 104,
    "dev": 12,
    "evidence": [
-    "cli/scripts/run-pack.mjs:3",
-    "cli/scripts/run-pack.mjs:22",
-    "cli/src/config/provider-config.mjs:1",
-    "cli/src/config/provider-config.mjs:1",
-    "cli/src/config/provider-config.mjs:532"
+    "scripts-temp-c20/odai-canary-harness.mjs:3",
+    "scripts-temp-c20/odai-canary-harness.mjs:3",
+    "scripts-temp-c20/odai-canary-harness.mjs:586",
+    "scripts-temp-c20/odai-canary-harness.mjs:614",
+    "scripts/antigravity-canary-runner.mjs:7"
    ]
   },
   "eval": {
@@ -121,33 +121,33 @@
    "src": 6,
    "dev": 1,
    "evidence": [
-    "dsh/agent/scripts/verify-agent-load.mjs:98",
-    "dsh/agent/scripts/verify-agent-load.mjs:100",
     "scripts/dsh-canary-runner.mjs:682",
     "scripts/dsh-canary-runner.mjs:684",
-    "scripts/verify-dsh-coexistence.mjs:63"
+    "scripts/verify-dsh-coexistence.mjs:63",
+    "scripts/verify-dsh-coexistence.mjs:65",
+    "dsh/agent/scripts/verify-agent-load.mjs:98"
    ]
   },
   "fs_write": {
    "src": 224,
    "dev": 248,
    "evidence": [
-    "cli/src/core/auth-config.mjs:589",
-    "cli/src/core/auth-config.mjs:617",
-    "cli/src/core/canary-runner-helpers.mjs:156",
-    "cli/src/core/init-workspace.mjs:266",
-    "cli/src/core/phase0-demo.mjs:21"
+    "scripts-temp-c20/odai-canary-harness.mjs:5",
+    "scripts-temp-c20/odai-canary-harness.mjs:5",
+    "scripts-temp-c20/odai-canary-harness.mjs:33",
+    "scripts-temp-c20/odai-canary-harness.mjs:42",
+    "scripts-temp-c20/odai-canary-harness.mjs:731"
    ]
   },
   "dyn_import": {
    "src": 9,
    "dev": 0,
    "evidence": [
+    "scripts/validate-odai-skill.mjs:610",
+    "scripts/validate-odai-skill.mjs:698",
     "dsh/agent/src/installer.mjs:242",
     "dsh/plugin/bin/odai-dsh-plugin.mjs:31",
-    "dsh/plugin/scripts/live-compaction-cache-smoke.mjs:246",
-    "dsh/plugin/scripts/verify-session-compat.mjs:29",
-    "dsh/plugin/scripts/verify-session-compat.mjs:30"
+    "dsh/plugin/scripts/live-compaction-cache-smoke.mjs:246"
    ]
   }
  },
@@ -166,7 +166,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×104 src, e.g. cli/scripts/run-pack.mjs:3, cli/scripts/run-pack.mjs:22"
+   "evidence": "×104 src, e.g. scripts-temp-c20/odai-canary-harness.mjs:3, scripts-temp-c20/odai-canary-harness.mjs:3"
   },
   {
    "id": "base64_decode",
@@ -174,7 +174,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×6 src, e.g. dsh/agent/scripts/verify-agent-load.mjs:98, dsh/agent/scripts/verify-agent-load.mjs:100"
+   "evidence": "×6 src, e.g. scripts/dsh-canary-runner.mjs:682, scripts/dsh-canary-runner.mjs:684"
   },
   {
    "id": "token_env",

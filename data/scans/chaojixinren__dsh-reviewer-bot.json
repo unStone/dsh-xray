@@ -9,7 +9,7 @@
    "patch": "./cordis.patch.yml"
   }
  },
- "pkg_name": "@dshrb/bundle",
+ "pkg_name": "@dshrb/root",
  "deps": [
   "@dshrb/config",
   "@dshrb/forge",
@@ -165,21 +165,21 @@
   "gitlab.com": 2
  },
  "env": {
+  "IMAGE": 4,
   "GITHUB_OUTPUT": 1,
   "DEEPSEEK_API_KEY": 1,
-  "FORGE_TOKEN": 1,
-  "IMAGE": 4
+  "FORGE_TOKEN": 1
  },
  "behaviors": {
   "exec": {
    "src": 16,
    "dev": 3,
    "evidence": [
-    "packages/core/review-runtime/src/index.ts:11",
-    "packages/core/review-runtime/src/index.ts:226",
-    "packages/core/review-runtime/src/index.ts:1974",
-    "packages/drivers/driver-webhook/src/index.ts:17",
-    "packages/drivers/driver-webhook/src/index.ts:770"
+    "scripts/e2e-docker-sandbox.mjs:27",
+    "scripts/e2e-docker-sandbox.mjs:27",
+    "scripts/e2e-docker-sandbox.mjs:27",
+    "scripts/e2e-docker-sandbox.mjs:55",
+    "scripts/e2e-docker-sandbox.mjs:56"
    ]
   },
   "eval": {
@@ -196,20 +196,20 @@
    "src": 3,
    "dev": 0,
    "evidence": [
-    "packages/drivers/driver-webhook/src/index.ts:994",
     "scripts/e2e-install-modes.mjs:222",
-    "scripts/e2e-install-modes.mjs:224"
+    "scripts/e2e-install-modes.mjs:224",
+    "packages/drivers/driver-webhook/src/index.ts:994"
    ]
   },
   "fs_write": {
    "src": 18,
    "dev": 8,
    "evidence": [
-    "packages/drivers/driver-action/src/index.ts:10",
-    "packages/drivers/driver-action/src/index.ts:233",
-    "packages/drivers/driver-cli/src/index.ts:216",
     "scripts/build-release.mjs:19",
-    "scripts/build-release.mjs:31"
+    "scripts/build-release.mjs:31",
+    "scripts/e2e-docker-sandbox.mjs:28",
+    "scripts/e2e-docker-sandbox.mjs:76",
+    "scripts/e2e-docker-sandbox.mjs:85"
    ]
   },
   "dyn_import": {
@@ -243,11 +243,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×16 src, e.g. packages/core/review-runtime/src/index.ts:11, packages/core/review-runtime/src/index.ts:226"
+   "evidence": "×16 src, e.g. scripts/e2e-docker-sandbox.mjs:27, scripts/e2e-docker-sandbox.mjs:27"
   },
   {
    "id": "net_server",
-   "evidence": "×3 src, e.g. packages/drivers/driver-webhook/src/index.ts:994, scripts/e2e-install-modes.mjs:222"
+   "evidence": "×3 src, e.g. scripts/e2e-install-modes.mjs:222, scripts/e2e-install-modes.mjs:224"
   },
   {
    "id": "token_env",

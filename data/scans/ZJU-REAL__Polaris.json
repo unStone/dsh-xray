@@ -1,6 +1,6 @@
 {
  "repo": "ZJU-REAL/Polaris",
- "stars": 166,
+ "stars": 167,
  "description": "Toward Autonomous Scientific Discovery",
  "pushed_at": "2026-08-17T01:01:23Z",
  "status": "ok",
@@ -9,7 +9,7 @@
    "patch": "./cordis.patch.yml"
   }
  },
- "pkg_name": "@polaris-ai/deepseek-harness-plugin",
+ "pkg_name": "polaris-website",
  "deps": [
   "@deepseek-ai/dsh-mcp-client",
   "@deepseek-ai/schemastery",
@@ -53,21 +53,21 @@
  ],
  "tool_regs": 2,
  "domains": {
-  "api.github.com": 1,
   "polaris.example.edu": 3,
   "zju-real.github.io": 1,
+  "hf-mirror.com": 2,
+  "api.github.com": 1,
   "arxiv.org": 10,
   "pypi.tuna.tsinghua.edu.cn": 1,
-  "hf-mirror.com": 2,
   "oapi.dingtalk.com": 1,
   "open.dingtalk.com": 1,
   "open.feishu.cn": 2,
   "api.example.com": 1
  },
  "env": {
-  "POLARIS_DEFAULT_SERVER_URL": 1,
+  "VITE_PROXY_TARGET": 3,
   "POLARIS_SMOKE_SHOT": 3,
-  "VITE_PROXY_TARGET": 3
+  "POLARIS_DEFAULT_SERVER_URL": 1
  },
  "behaviors": {
   "exec": {
@@ -78,7 +78,7 @@
     "src/desktop/build/after-pack.cjs:13",
     "src/desktop/build/after-pack.cjs:31",
     "src/desktop/build/after-pack.cjs:35",
-    "src/desktop/src/main/agent/supervisor.ts:4"
+    "src/desktop/src/main/capabilities.ts:7"
    ]
   },
   "eval": {
@@ -100,11 +100,11 @@
    "src": 17,
    "dev": 0,
    "evidence": [
+    "src/desktop/src/smoke.ts:18",
+    "src/desktop/src/smoke.ts:437",
+    "src/desktop/src/smoke.ts:449",
     "src/desktop/src/main/store.ts:8",
-    "src/desktop/src/main/store.ts:59",
-    "src/desktop/src/main/updates/index.ts:18",
-    "src/desktop/src/main/updates/index.ts:148",
-    "src/desktop/src/main/updates/renderer-store.ts:18"
+    "src/desktop/src/main/store.ts:59"
    ]
   },
   "dyn_import": {

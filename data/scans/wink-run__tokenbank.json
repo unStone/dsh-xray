@@ -38,16 +38,19 @@
   "api.ip.sb": 1,
   "api.openai.com": 5,
   "generativelanguage.googleapis.com": 2,
+  "openrouter.ai": 4,
+  "codeload.github.com": 5,
+  "api.github.com": 5,
+  "tokenbank.wink.run": 2,
+  "unpkg.com": 3,
+  "vuejs.org": 2,
   "apihub.agnes-ai.com": 3,
   "claude.ai": 8,
   "platform.claude.com": 2,
   "api.anthropic.com": 3,
   "auth.openai.com": 5,
   "chatgpt.com": 3,
-  "api.github.com": 5,
   "api.githubcopilot.com": 1,
-  "openrouter.ai": 4,
-  "codeload.github.com": 5,
   "api.agnes-ai.cn": 2,
   "apihub.agnes-ai.cn": 1,
   "cursor.com": 3,
@@ -68,10 +71,7 @@
   "www.volcengine.com": 1,
   "open.bigmodel.cn": 3,
   "api.z.ai": 1,
-  "bigmodel.cn": 1,
-  "tokenbank.wink.run": 2,
-  "unpkg.com": 3,
-  "vuejs.org": 2
+  "bigmodel.cn": 1
  },
  "env": {
   "TOKENBANK_CLI": 2,
@@ -106,17 +106,6 @@
   "FNM_DIR": 2,
   "NVM_DIR": 2,
   "CODEX_CLI_PATH": 1,
-  "HTTPS_PROXY": 2,
-  "https_proxy": 2,
-  "HTTP_PROXY": 2,
-  "http_proxy": 2,
-  "ARKCLI_PATH": 2,
-  "VOLCENGINE_ACCESS_KEY_ID": 1,
-  "VOLC_ACCESSKEY": 1,
-  "VOLCENGINE_AK": 1,
-  "VOLCENGINE_SECRET_ACCESS_KEY": 1,
-  "VOLC_SECRETKEY": 1,
-  "VOLCENGINE_SK": 1,
   "CHANGELOG_TO": 1,
   "GITHUB_REF_NAME": 2,
   "CHANGELOG_FROM": 1,
@@ -130,8 +119,19 @@
   "CONTAINER": 1,
   "DOCKER_CONTAINER": 1,
   "COMPUTERNAME": 1,
+  "HTTP_PROXY": 2,
+  "HTTPS_PROXY": 2,
+  "http_proxy": 2,
+  "https_proxy": 2,
   "NO_PROXY": 2,
-  "no_proxy": 2
+  "no_proxy": 2,
+  "ARKCLI_PATH": 2,
+  "VOLCENGINE_ACCESS_KEY_ID": 1,
+  "VOLC_ACCESSKEY": 1,
+  "VOLCENGINE_AK": 1,
+  "VOLCENGINE_SECRET_ACCESS_KEY": 1,
+  "VOLC_SECRETKEY": 1,
+  "VOLCENGINE_SK": 1
  },
  "behaviors": {
   "exec": {
@@ -158,9 +158,9 @@
    "dev": 0,
    "evidence": [
     "client/electron/agent-executor.js:64",
-    "client/electron/handlers/ttsHandler.js:131",
     "client/electron/main.js:460",
     "client/electron/main.js:484",
+    "client/electron/handlers/ttsHandler.js:131",
     "client/electron/oauth/index.js:215"
    ]
   },
@@ -211,7 +211,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×5 src, e.g. client/electron/agent-executor.js:64, client/electron/handlers/ttsHandler.js:131"
+   "evidence": "×5 src, e.g. client/electron/agent-executor.js:64, client/electron/main.js:460"
   },
   {
    "id": "net_server",

@@ -3,17 +3,133 @@
  "stars": 146,
  "description": "开源版锤子便签，复刻锤科美学，一键Docker私有化部署，支持skill调用，支持dsh plugin，支持多租户，一键生成公众号格式，支持导出便签为图片",
  "pushed_at": "2026-08-18T07:39:45Z",
- "status": "skipped: tarball too large",
- "type": "unknown",
- "level": -1,
- "flags": [],
- "injects": [],
- "hooks": [],
- "tool_regs": 0,
- "domains": {},
- "env": {},
- "files_scanned": 0,
- "manifest": null,
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "notes",
+ "deps": [
+  "@dnd-kit/core",
+  "@dnd-kit/sortable",
+  "@dnd-kit/utilities",
+  "express",
+  "multer",
+  "playwright",
+  "qiniu",
+  "react",
+  "react-dom",
+  "react-markdown",
+  "remark-gfm",
+  "zustand",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
  "install_scripts": {},
- "behaviors": {}
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "notes.fangyuanxiaozhan.com": 4
+ },
+ "env": {
+  "VITE_USE_POLLING": 1,
+  "VITE_API_PROXY_TARGET": 2,
+  "VITE_PORT": 1,
+  "EXPORT_APP_URL": 3,
+  "OPENAI_API_KEY": 1,
+  "OPENAI_BASE_URL": 1,
+  "OPENAI_MODEL": 1,
+  "SESSION_SECRET": 1,
+  "SUPERADMIN": 3,
+  "SUPERADMINPASSWORD": 3,
+  "IMAGE_STORAGE_DIR": 1,
+  "DATA_STORAGE_DIR": 1,
+  "PORT": 1,
+  "ANONYMOUS_DAILY_UPLOAD_LIMIT": 1,
+  "NOTES_PUBLIC_BASE_URL": 1,
+  "WECHAT_FOOTER_HAMMER_URL": 1,
+  "QINIU_UPLOAD_URLS": 1,
+  "QINIU_UPLOAD_URL": 1,
+  "QINIU_ACCESS_KEY": 1,
+  "QINIU_SECRET_KEY": 1,
+  "QINIU_BUCKET": 1,
+  "QINIU_DOMAIN": 1,
+  "QINIU_PREFIX": 1,
+  "QINIU_UPLOAD_TIMEOUT_MS": 2,
+  "QINIU_CONFIG_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 20,
+   "evidence": [
+    "scripts/benchmark-input-latency.mjs:1",
+    "scripts/benchmark-input-latency.mjs:132",
+    "scripts/dev.mjs:1",
+    "scripts/dev.mjs:63",
+    "server/index.ts:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "server/index.ts:925"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 17,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 5,
+   "evidence": [
+    "server/auth.ts:471",
+    "server/index.ts:2515",
+    "server/index.ts:3145",
+    "server/index.ts:3166",
+    "dsh-plugin/lib/notes-client.js:120"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 94,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/benchmark-input-latency.mjs:1, scripts/benchmark-input-latency.mjs:132"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. server/index.ts:925"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENAI_API_KEY, QINIU_ACCESS_KEY, QINIU_SECRET_KEY, SESSION_SECRET, SUPERADMINPASSWORD"
+  }
+ ],
+ "level": 3
 }
