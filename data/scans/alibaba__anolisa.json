@@ -1,0 +1,171 @@
+{
+ "repo": "alibaba/anolisa",
+ "stars": 353,
+ "description": "ANOLISA (Agentic Nexus Operating Layer & Interface System Architecture) | Agentic OS with runtime, security, observability, and Tokenless response compression for lower token usage and cost.",
+ "pushed_at": "2026-08-18T06:40:12Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "memory-anolisa-openclaw-plugin",
+ "deps": [
+  "openclaw",
+  "openclaw",
+  "react",
+  "react-dom",
+  "react-router-dom",
+  "recharts",
+  "@testing-library/dom",
+  "read-package-up",
+  "simple-git",
+  "@google/genai",
+  "@iarna/toml",
+  "@modelcontextprotocol/sdk",
+  "@copilot-shell/core",
+  "@types/update-notifier",
+  "ansi-regex",
+  "comment-json",
+  "diff",
+  "dotenv",
+  "fzf",
+  "glob",
+  "highlight.js",
+  "ink",
+  "ink-gradient",
+  "ink-link",
+  "ink-spinner",
+  "lowlight",
+  "open",
+  "prompts",
+  "qrcode-terminal",
+  "react",
+  "read-package-up",
+  "shell-quote",
+  "simple-git",
+  "string-width",
+  "strip-ansi",
+  "strip-json-comments",
+  "undici",
+  "update-notifier",
+  "wrap-ansi",
+  "yargs",
+  "zod",
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/postinstall.js",
+  "prepare": "(cd ../.. && husky src/copilot-shell/.husky) && npm run build && npm run bundle"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {
+  "docs.openclaw.ai": 1,
+  "dashscope.aliyuncs.com": 3,
+  "api.openai.com": 1,
+  "api.deepseek.com": 2,
+  "open.bigmodel.cn": 2,
+  "api.moonshot.cn": 2,
+  "unpkg.com": 4,
+  "fonts.googleapis.com": 2,
+  "fonts.gstatic.com": 1,
+  "www.youtube.com": 1,
+  "cn.clawhub-mirror.com": 3,
+  "geminicli.com": 1,
+  "claudemarketplaces.com": 1,
+  "ram.console.aliyun.com": 1,
+  "bailian.console.aliyun.com": 8,
+  "dashscope-intl.aliyuncs.com": 1,
+  "dashscope-us.aliyuncs.com": 1,
+  "cn-hongkong.dashscope.aliyuncs.com": 1,
+  "coding.dashscope.aliyuncs.com": 2,
+  "coding-intl.dashscope.aliyuncs.com": 1,
+  "modelstudio.console.alibabacloud.com": 1,
+  "token-plan.cn-beijing.maas.aliyuncs.com": 1,
+  "platform.deepseek.com": 1,
+  "bigmodel.cn": 1,
+  "platform.moonshot.cn": 1,
+  "api.minimaxi.com": 1,
+  "platform.minimaxi.com": 1
+ },
+ "env": {
+  "CODE_SCANNER_MODE": 1,
+  "PII_CHECKER_MODE": 2,
+  "PII_CHECKER_HOOK_ENABLED": 1,
+  "PROMPT_SCANNER_SCAN_MODE": 1,
+  "XDG_DATA_HOME": 2,
+  "SKILL_LEDGER_MODE": 2,
+  "AGENTSIGHT_EMBED": 1,
+  "DEV": 2,
+  "CLI_VERSION": 1,
+  "INTEGRATION_TEST_USE_INSTALLED_GEMINI": 1,
+  "TB_TIMEOUT_MINUTES": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 38,
+   "dev": 59,
+   "evidence": [
+    "src/agent-memory/adapters/agent-memory/openclaw/src/config.ts:159",
+    "src/agent-memory/adapters/agent-memory/openclaw/src/mcp-client.ts:10",
+    "src/agent-memory/adapters/agent-memory/openclaw/src/mcp-client.ts:201",
+    "src/agent-memory/adapters/agent-memory/openclaw/src/mcp-client.ts:217",
+    "src/agent-sec-core/openclaw-plugin/src/utils.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "src/copilot-shell/integration-tests/test-mcp-server.ts:38"
+   ]
+  },
+  "fs_write": {
+   "src": 35,
+   "dev": 120,
+   "evidence": [
+    "src/anolisa/npm/scripts/package-npm.js:38",
+    "src/anolisa/npm/scripts/package-npm.js:40",
+    "src/anolisa/npm/scripts/package-npm.js:194",
+    "src/anolisa/npm/scripts/package-npm.js:211",
+    "src/anolisa/npm/scripts/package-npm.js:224"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "src/copilot-shell/packages/cli/src/i18n/index.ts:112",
+    "src/copilot-shell/packages/cli/src/i18n/index.ts:128"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 580,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/postinstall.js"
+  },
+  {
+   "id": "exec",
+   "evidence": "×38 src, e.g. src/agent-memory/adapters/agent-memory/openclaw/src/config.ts:159, src/agent-memory/adapters/agent-memory/openclaw/src/mcp-client.ts:10"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/copilot-shell/integration-tests/test-mcp-server.ts:38"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,112 @@
+{
+ "repo": "xiaobright/dsh-anchored-standard",
+ "stars": 3476,
+ "description": "Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99)",
+ "pushed_at": "2026-08-17T06:19:58Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-anchored-standard",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "llm",
+  "sessions",
+  "skills",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "agent/pre-step",
+  "agent/request",
+  "agent/turn-stopping",
+  "session/event",
+  "system-prompt/assemble",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 30,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DSH_HOME": 14,
+  "USERPROFILE": 16,
+  "DSH_HARNESS_ROOT": 3,
+  "DEEPSEEK_BASE_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 21,
+   "dev": 23,
+   "evidence": [
+    "combo-anchored/custom-bash.mjs:182",
+    "eternal-minimal/custom-bash.mjs:182",
+    "prefab/custom-bash.mjs:182",
+    "prefab/install.mjs:8",
+    "prefab/install.mjs:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 33,
+   "dev": 30,
+   "evidence": [
+    "prefab/install.mjs:17",
+    "prefab/install.mjs:18",
+    "prefab/install.mjs:87",
+    "prefab/install.mjs:97",
+    "prefab/install.mjs:119"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 94,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, system-prompt/assemble, tools/pre-execute"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×21 src, e.g. combo-anchored/custom-bash.mjs:182, eternal-minimal/custom-bash.mjs:182"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 8 services, 30 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

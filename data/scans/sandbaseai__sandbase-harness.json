@@ -1,0 +1,144 @@
+{
+ "repo": "sandbaseai/sandbase-harness",
+ "stars": 619,
+ "description": "Open-source CMA-compatible agent runtime for any model, with MCP tools, sandboxed sessions, audit, replay, and a local console. Includes a native DeepSeek Harness bundle over stdio MCP.",
+ "pushed_at": "2026-08-17T05:39:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./examples/deepseek-harness/cordis.yml"
+  }
+ },
+ "pkg_name": "managed-agents",
+ "deps": [
+  "@ai-sdk/anthropic",
+  "@ai-sdk/openai",
+  "@hono/node-server",
+  "@modelcontextprotocol/sdk",
+  "ai",
+  "commander",
+  "hono",
+  "nanoid",
+  "yaml",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {
+  "drivemcp.googleapis.com": 2,
+  "gmailmcp.googleapis.com": 2,
+  "calendarmcp.googleapis.com": 2,
+  "mcp.canva.com": 2,
+  "mcp.figma.com": 2,
+  "mcp.notion.com": 3,
+  "mcp.example.com": 2,
+  "api.anthropic.com": 1,
+  "api.minimax.io": 4,
+  "api.openai.com": 1,
+  "api.example.com": 2,
+  "s3.amazonaws.com": 2,
+  "mcp.sentry.dev": 1,
+  "mcp.linear.app": 1,
+  "mcp.slack.com": 1,
+  "api.githubcopilot.com": 1,
+  "platform.minimax.io": 1,
+  "api.minimaxi.com": 2,
+  "platform.minimaxi.com": 1,
+  "codeload.github.com": 1
+ },
+ "env": {
+  "MANAGED_AGENTS_API_KEY": 2,
+  "OPENAI_BASE_URL": 1,
+  "OPENAI_API_KEY": 1,
+  "MANAGED_AGENTS_ENVIRONMENT_KEY": 1,
+  "MANAGED_AGENTS_HOME": 1,
+  "MANAGED_AGENTS_SECRET_KEY": 1,
+  "MANAGED_AGENTS_CORS_ORIGINS": 1,
+  "MANAGED_AGENTS_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 33,
+   "dev": 17,
+   "evidence": [
+    "scripts/smoke-release.mjs:5",
+    "scripts/smoke-release.mjs:5",
+    "scripts/smoke-release.mjs:22",
+    "scripts/smoke-release.mjs:45",
+    "src/cli/worker-commands.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "src/api/routes/files.ts:129",
+    "src/api/routes/sessions.ts:138",
+    "src/api/routes/skill-packages.ts:57",
+    "src/core/security/secrets.ts:27",
+    "src/core/security/secrets.ts:29"
+   ]
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 11,
+   "evidence": [
+    "scripts/smoke-release.mjs:119",
+    "scripts/smoke-release.mjs:122",
+    "src/api/server.ts:107",
+    "src/core/runtime/server-assembly.ts:42",
+    "src/index.ts:133"
+   ]
+  },
+  "fs_write": {
+   "src": 54,
+   "dev": 152,
+   "evidence": [
+    "src/api/routes/files.ts:201",
+    "src/api/routes/skills.ts:2",
+    "src/api/routes/skills.ts:2",
+    "src/api/routes/skills.ts:59",
+    "src/api/routes/skills.ts:98"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 246,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./examples/deepseek-harness/cordis.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×33 src, e.g. scripts/smoke-release.mjs:5, scripts/smoke-release.mjs:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×6 src, e.g. src/api/routes/files.ts:129, src/api/routes/sessions.ts:138"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. scripts/smoke-release.mjs:119, scripts/smoke-release.mjs:122"
+  },
+  {
+   "id": "token_env",
+   "evidence": "MANAGED_AGENTS_API_KEY, MANAGED_AGENTS_ENVIRONMENT_KEY, MANAGED_AGENTS_SECRET_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

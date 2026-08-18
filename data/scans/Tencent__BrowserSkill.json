@@ -1,0 +1,86 @@
+{
+ "repo": "Tencent/BrowserSkill",
+ "stars": 1125,
+ "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
+ "pushed_at": "2026-08-18T06:10:21Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@browser-skill/extension",
+ "deps": [
+  "@browser-skill/i18n",
+  "@browser-skill/ui",
+  "@browser-skill/vom",
+  "@remixicon/react",
+  "react",
+  "react-dom",
+  "i18next",
+  "i18next-browser-languagedetector",
+  "react-i18next",
+  "react",
+  "class-variance-authority",
+  "clsx",
+  "tailwind-merge",
+  "tw-animate-css",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "developer.chrome.com": 2,
+  "chrome.google.com": 1
+ },
+ "env": {
+  "BSK_DAEMON_WS_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "apps/extension/src/tools/observation.ts:101"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "scripts/render-version-json.mjs:16",
+    "scripts/render-version-json.mjs:101"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 141,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. apps/extension/src/tools/observation.ts:101"
+  }
+ ],
+ "level": 2
+}

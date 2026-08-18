@@ -1,0 +1,122 @@
+{
+ "repo": "dsh-market/dsh-market",
+ "stars": 909,
+ "description": "The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场",
+ "pushed_at": "2026-08-18T06:55:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dshmarket",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "locale",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dav.jianguoyun.com": 2,
+  "app.koofr.net": 2,
+  "dshmarket.com": 1,
+  "awesome-dsh-plugin.com": 2,
+  "www.npmjs.com": 2,
+  "schema.org": 2,
+  "www.sitemaps.org": 1,
+  "dav.example.com": 2,
+  "get.pnpm.io": 4,
+  "gist.github.com": 2,
+  "api.github.com": 1
+ },
+ "env": {
+  "ComSpec": 2,
+  "DSH_HOME": 3,
+  "DSH_MARKET_INSTALL_TIMEOUT_MS": 1,
+  "PATHEXT": 1,
+  "DSH_MARKET_HOT_MOUNT_TIMEOUT_MS": 1,
+  "DSHM_REGISTRY_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 19,
+   "dev": 19,
+   "evidence": [
+    "scripts/smoke-spawn.mjs:4",
+    "scripts/smoke-spawn.mjs:8",
+    "scripts/smoke-spawn.mjs:21",
+    "scripts/smoke-spawn.mjs:26",
+    "src/dsh-cli.ts:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 33,
+   "dev": 258,
+   "evidence": [
+    "scripts/build-site.mjs:138",
+    "scripts/build-site.mjs:151",
+    "scripts/build-site.mjs:330",
+    "scripts/normalize-client-banner.mjs:65",
+    "src/backup.ts:11"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/hot.ts:70"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 88,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×19 src, e.g. scripts/smoke-spawn.mjs:4, scripts/smoke-spawn.mjs:8"
+  }
+ ],
+ "level": 3
+}

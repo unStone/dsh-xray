@@ -1,0 +1,83 @@
+{
+ "repo": "zhoushoujianwork/easyeda-agent",
+ "stars": 231,
+ "description": "",
+ "pushed_at": "2026-08-17T19:01:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "easyeda-agent-connector",
+ "deps": [
+  "@modelcontextprotocol/sdk"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "EASYEDA_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "mcp/src/core.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "extension/scripts/hot-reload-inject.js:36",
+    "extension/src/actions.ts:7576"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "extension/build/packaged.ts:92",
+    "extension/scripts/bump.mjs:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. mcp/src/core.mjs:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. extension/scripts/hot-reload-inject.js:36, extension/src/actions.ts:7576"
+  }
+ ],
+ "level": 3
+}

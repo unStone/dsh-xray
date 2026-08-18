@@ -1,0 +1,260 @@
+{
+ "repo": "vibeinging/deepseek-harness-desktop-app",
+ "stars": 393,
+ "description": "DeepSeek Harness Desktop App: a local AI desktop workspace for DSH Sessions, projects, files, web research, plugins, and Office artifacts.",
+ "pushed_at": "2026-08-15T08:56:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "electron-updater",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-web-react",
+  "react",
+  "react-dom",
+  "@codemirror/autocomplete",
+  "@codemirror/commands",
+  "@codemirror/lang-sql",
+  "@codemirror/language",
+  "@codemirror/lint",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-invariants",
+  "@dnd-kit/core",
+  "@dnd-kit/modifiers",
+  "@dnd-kit/sortable",
+  "@dnd-kit/utilities",
+  "@mantine/core",
+  "@mantine/dates",
+  "@mantine/dropzone",
+  "@mantine/form",
+  "@mantine/hooks",
+  "@mantine/modals",
+  "@mantine/notifications",
+  "@tabler/icons-react",
+  "@tanstack/react-virtual",
+  "@xyflow/react",
+  "axios",
+  "clsx",
+  "dagre",
+  "dayjs",
+  "dompurify",
+  "echarts",
+  "echarts-for-react",
+  "highlight.js",
+  "html2canvas",
+  "html2pdf.js",
+  "i18next",
+  "katex",
+  "marked",
+  "marked-highlight",
+  "marked-katex-extension",
+  "nprogress",
+  "react",
+  "react-dom",
+  "react-grid-layout",
+  "react-i18next",
+  "react-router-dom",
+  "sql-formatter",
+  "xlsx",
+  "zustand"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/run-with-project-node.mjs node scripts/bootstrap.mjs"
+ },
+ "injects": [
+  "agents",
+  "locale",
+  "sessions",
+  "slots",
+  "theme",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/request",
+  "system-prompt/assemble",
+  "theme/change",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "duckduckgo.com": 1,
+  "api.openai.com": 2,
+  "api.example.com": 2,
+  "open.feishu.cn": 2,
+  "search.example.com": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_DATA_ROOT": 3,
+  "DSH_BACKEND_START_TIMEOUT_MS": 1,
+  "DSH_API_REQUEST_TIMEOUT_MS": 1,
+  "DSH_STREAM_REQUEST_TIMEOUT_MS": 1,
+  "DSH_BACKEND_STOP_TIMEOUT_MS": 1,
+  "DSH_SMOKE_TEST": 1,
+  "DSH_SMOKE_EXPECT_SELECTOR": 1,
+  "DSH_SMOKE_REJECT_SELECTOR": 1,
+  "DSH_SMOKE_CLICK_SELECTORS": 1,
+  "DSH_UPDATE_API_BASE_URL": 1,
+  "APPDATA": 1,
+  "XDG_CONFIG_HOME": 1,
+  "DSH_USER_DATA_DIR": 20,
+  "DSH_NODE_BIN": 4,
+  "DSH_RUNTIME_DISTRIBUTION": 2,
+  "DSH_SOURCE_ROOT": 1,
+  "DSH_UPDATE_CHANNEL": 1,
+  "DSH_EVAL_MODE": 5,
+  "DSH_EVAL_SITE_EXPORT_PATH": 3,
+  "DSH_PACKAGE_NODE_REEXEC": 1,
+  "DSH_PACKAGE_NODE_BIN": 1,
+  "npm_execpath": 1,
+  "npm_config_cache": 1,
+  "npm_config_devdir": 1,
+  "DSH_SMOKE_TIMEOUT_MS": 2,
+  "DSH_EVAL_ISOLATED": 14,
+  "DSH_EVAL_HOME": 16,
+  "DSH_README_SCREENSHOT": 2,
+  "DSH_EVAL_VERBOSE": 3,
+  "DSH_RENDERER_PORT": 1,
+  "DSH_EVAL_DATA_ROOT": 1,
+  "DSH_EVAL_REUSE_DATA": 1,
+  "DSH_EVAL_DB_SQLITE_PATH": 4,
+  "DSH_EVAL_PACKAGED_APP": 2,
+  "DSH_DEV_URL": 1,
+  "DSH_EVAL_RETAIN": 1,
+  "EVAL_REPORT_DIR": 2,
+  "DSH_AGENT_RUNTIME_HOME": 1,
+  "DSH_SKILLS_ROOT": 1,
+  "CDP_PORT": 1,
+  "DEEPSEEK_SEARCH_BASE_URL": 2,
+  "DSH_RUNTIME_VERSION": 1,
+  "VITE_APP_DEV_PORT": 1,
+  "VITE_DEV_PORT": 1,
+  "DSH_SERVER_PORT": 1,
+  "SERVER_PORT": 1,
+  "VITE_PROXY_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 54,
+   "dev": 23,
+   "evidence": [
+    "electron/artifact-context-menu.js:3",
+    "electron/main.js:16",
+    "electron/main.js:767",
+    "electron/scripts/prepare-package.mjs:1",
+    "electron/scripts/prepare-package.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 14,
+   "dev": 5,
+   "evidence": [
+    "electron/main.js:681",
+    "electron/main.js:1419",
+    "electron/main.js:1559",
+    "eval/canvas-workspace-ui-smoke.mjs:35",
+    "eval/lib/runner.mjs:342"
+   ]
+  },
+  "net_server": {
+   "src": 24,
+   "dev": 6,
+   "evidence": [
+    "electron/scripts/browser-workspace-smoke.cjs:17",
+    "electron/scripts/browser-workspace-smoke.cjs:35",
+    "eval/browser-workspace-ui-smoke.mjs:14",
+    "eval/browser-workspace-ui-smoke.mjs:26",
+    "eval/chat-context-ui-smoke.mjs:39"
+   ]
+  },
+  "fs_write": {
+   "src": 131,
+   "dev": 181,
+   "evidence": [
+    "electron/app-update-controller.js:42",
+    "electron/app-update-controller.js:204",
+    "electron/app-update-controller.js:345",
+    "electron/browser-workspace.js:266",
+    "electron/browser-workspace.js:320"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "eval/run.mjs:136"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 593,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/run-with-project-node.mjs node scripts/bootstrap.mjs"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "webServer, system-prompt/assemble, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×54 src, e.g. electron/artifact-context-menu.js:3, electron/main.js:16"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×14 src, e.g. electron/main.js:681, electron/main.js:1419"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×24 src, e.g. electron/scripts/browser-workspace-smoke.cjs:17, electron/scripts/browser-workspace-smoke.cjs:35"
+  }
+ ],
+ "level": 3
+}

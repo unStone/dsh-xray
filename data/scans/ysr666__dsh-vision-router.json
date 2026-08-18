@@ -1,0 +1,117 @@
+{
+ "repo": "ysr666/dsh-vision-router",
+ "stars": 680,
+ "description": "Eyes for text-only DeepSeek Harness agents: built-in free vision chain (no key) + pixel-level vision tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots). One-command ",
+ "pushed_at": "2026-08-18T06:56:02Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-vision-router",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "potrace",
+  "puppeteer-core",
+  "undici",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-llm-deepseek",
+  "sharp"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "oai.endpoints.kepler.ai.cloud.ovh.net": 5,
+  "opencode.ai": 4,
+  "api.github.com": 1
+ },
+ "env": {
+  "OPENCODE_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 5,
+   "evidence": [
+    "index.js:28",
+    "lib/file-logger.js:4",
+    "lib/local-vision-stabilizer.js:1",
+    "lib/self-update.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 25,
+   "evidence": [
+    "index.js:5594",
+    "index.js:6330",
+    "index.js:6420",
+    "index.js:6422",
+    "lib/doctor.js:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. index.js:28, lib/file-logger.js:4"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENCODE_API_KEY"
+  }
+ ],
+ "level": 3
+}

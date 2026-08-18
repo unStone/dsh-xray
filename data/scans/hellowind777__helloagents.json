@@ -1,0 +1,101 @@
+{
+ "repo": "hellowind777/helloagents",
+ "stars": 688,
+ "description": "一个自主的高级智能伙伴，不仅分析问题，更持续工作直到完成实现和验证。",
+ "pushed_at": "2026-08-14T03:01:12Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "helloagents",
+ "deps": [],
+ "install_scripts": {
+  "postinstall": "node cli.mjs postinstall"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LANGUAGE": 1,
+  "LC_ALL": 1,
+  "HELLOAGENTS": 2,
+  "HELLOAGENTS_TARGET": 1,
+  "HELLOAGENTS_HOST": 1,
+  "HELLOAGENTS_MODE": 1,
+  "HELLOAGENTS_NPM_CMD": 1,
+  "USERPROFILE": 5,
+  "NO_COLOR": 1,
+  "HELLOAGENTS_CLAUDE_CMD": 1,
+  "HELLOAGENTS_GEMINI_CMD": 1,
+  "HELLOAGENTS_GROK_CMD": 1,
+  "ComSpec": 1,
+  "CURSOR_PROJECT_DIR": 1,
+  "CLAUDE_PROJECT_DIR": 1,
+  "HELLOAGENTS_HOOK_EVENT": 2,
+  "HELLOAGENTS_DISABLE_OS_NOTIFICATIONS": 1,
+  "HELLOAGENTS_NOTIFY_TEST_LOG": 1,
+  "HELLOAGENTS_NOTIFY_SESSION_ID": 1,
+  "WT_SESSION": 1,
+  "TERM_SESSION_ID": 1,
+  "WINDOWID": 1,
+  "HELLOAGENTS_TRACE_EVENTS": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 41,
+   "dev": 15,
+   "evidence": [
+    "cli.mjs:10",
+    "cli.mjs:10",
+    "cli.mjs:115",
+    "scripts/cli-process.mjs:1",
+    "scripts/cli-process.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 39,
+   "dev": 8,
+   "evidence": [
+    "scripts/cli-config.mjs:1",
+    "scripts/cli-config.mjs:28",
+    "scripts/cli-config.mjs:46",
+    "scripts/cli-lifecycle.mjs:1",
+    "scripts/cli-lifecycle.mjs:52"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 26,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 99,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node cli.mjs postinstall"
+  },
+  {
+   "id": "exec",
+   "evidence": "×41 src, e.g. cli.mjs:10, cli.mjs:10"
+  }
+ ],
+ "level": 2
+}

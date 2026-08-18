@@ -1,0 +1,102 @@
+{
+ "repo": "Ikalus1988/MisakaNet",
+ "stars": 404,
+ "description": "📚 A zero-dependency, git-backed micro-lesson library for AI Agents to asynchronously share and search verified debugging experience. Python stdlib only. | https://misakanet.org",
+ "pushed_at": "2026-08-18T05:47:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "misakanet",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "challenges.cloudflare.com": 2,
+  "api.github.com": 3,
+  "misakanet.org": 5,
+  "glama.ai": 1,
+  "claude.ai": 1,
+  "cursor.sh": 1,
+  "copilot.microsoft.com": 1,
+  "dash.cloudflare.com": 1,
+  "ikalus1988.github.io": 1
+ },
+ "env": {
+  "MISAKANET_REPO": 1,
+  "FATAL_HANDLER": 4,
+  "MISAKANET_ERROR_HANDLER": 2,
+  "VITE_ERROR_HANDLER": 2,
+  "E2B_ERROR_HANDLER": 2,
+  "OPENCLAW_ERROR_HANDLER": 2,
+  "FATAL_HANDLER_ARGS": 4,
+  "ComSpec": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 19,
+   "evidence": [
+    "integrations/continue/config.ts:1",
+    "integrations/continue/config.ts:1",
+    "integrations/continue/config.ts:44",
+    "packages/fatal-guard/bin/fatal-guard.js:13",
+    "packages/fatal-guard/bin/fatal-guard.js:53"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "workers/email-register/src/email-utils.mjs:7",
+    "workers/register-proxy-sw.js:195",
+    "workers/register-proxy-sw.js:212",
+    "workers/register-proxy-sw.js:216",
+    "workers/register-proxy-sw.js:537"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 13,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 32,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. integrations/continue/config.ts:1, integrations/continue/config.ts:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×7 src, e.g. workers/email-register/src/email-utils.mjs:7, workers/register-proxy-sw.js:195"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,168 @@
+{
+ "repo": "Anionex/dsh-vision-toolkit",
+ "stars": 659,
+ "description": "[dsh]为纯文本模型设计更强大的视觉工具箱：安装免费使用、粘贴图片直接识别、多张图片问答、截图到前端UI 还原等｜DeepSeek Harness-native integration for agent-vision-toolkit: image Q&A, long-screenshot OCR, UI restoration, grounding, pixel diff, Artifacts",
+ "pushed_at": "2026-08-18T06:53:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "visionToolkit": {
+   "upstreamRepository": "https://github.com/Anionex/agent-vision-toolkit",
+   "upstreamVersion": "v0.1.0+snapshot.bc9803d",
+   "upstreamCommit": "bc9803d7d6300c864d17460ecbb33540b26638e0",
+   "upstreamSkillCommit": "77c24ad5b5d7a123119862893129f939307f1d3f"
+  }
+ },
+ "pkg_name": "@anionex/dsh-vision-toolkit",
+ "deps": [
+  "saxes",
+  "tar",
+  "undici",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "conversation",
+  "credentials",
+  "inputTriggers",
+  "locale",
+  "remote",
+  "sessions",
+  "settings",
+  "skills",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "connection/reset",
+  "llm/adapters-updated",
+  "session/event",
+  "tools/result"
+ ],
+ "tool_regs": 28,
+ "domains": {
+  "vision.anionex.me": 4,
+  "agent-vision.anionex.me": 3,
+  "api.github.com": 1,
+  "ifdian.net": 1,
+  "api.groq.com": 1
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_VISION_TOOLKIT_ALLOW_DETACHED_RESTART": 2,
+  "VISION_SSL_VERIFY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 40,
+   "dev": 16,
+   "evidence": [
+    "lib/plugin-update.js:9",
+    "lib/plugin-update.js:39",
+    "lib/plugin-update.js:121",
+    "lib/plugin-update.js:142",
+    "lib/plugin-update.js:401"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "workers/moondream-openai-proxy/src/image.ts:18"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 33,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 65,
+   "dev": 69,
+   "evidence": [
+    "lib/artifact-access.js:122",
+    "lib/image-input-variants.js:86",
+    "lib/image-input-variants.js:96",
+    "lib/plugin-update.js:40",
+    "lib/plugin-update.js:40"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 114,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×40 src, e.g. lib/plugin-update.js:9, lib/plugin-update.js:39"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. workers/moondream-openai-proxy/src/image.ts:18"
+  }
+ ],
+ "level": 3
+}

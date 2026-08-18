@@ -1,0 +1,131 @@
+{
+ "repo": "ZJU-REAL/Polaris",
+ "stars": 166,
+ "description": "Toward Autonomous Scientific Discovery",
+ "pushed_at": "2026-08-17T01:01:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@polaris-ai/deepseek-harness-plugin",
+ "deps": [
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools",
+  "@codemirror/commands",
+  "@codemirror/language",
+  "@codemirror/legacy-modes",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@tanstack/react-query",
+  "codemirror",
+  "katex",
+  "lib0",
+  "react",
+  "react-dom",
+  "react-pdf",
+  "react-router-dom",
+  "y-codemirror.next",
+  "y-protocols",
+  "yjs"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/error",
+  "agent/pre-step",
+  "agent/turn-stopping",
+  "tools/change",
+  "tools/post-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api.github.com": 1,
+  "polaris.example.edu": 3,
+  "zju-real.github.io": 1,
+  "arxiv.org": 10,
+  "pypi.tuna.tsinghua.edu.cn": 1,
+  "hf-mirror.com": 2,
+  "oapi.dingtalk.com": 1,
+  "open.dingtalk.com": 1,
+  "open.feishu.cn": 2,
+  "api.example.com": 1
+ },
+ "env": {
+  "POLARIS_DEFAULT_SERVER_URL": 1,
+  "POLARIS_SMOKE_SHOT": 3,
+  "VITE_PROXY_TARGET": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "src/desktop/build/after-pack.cjs:13",
+    "src/desktop/build/after-pack.cjs:13",
+    "src/desktop/build/after-pack.cjs:31",
+    "src/desktop/build/after-pack.cjs:35",
+    "src/desktop/src/main/agent/supervisor.ts:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 0,
+   "evidence": [
+    "src/desktop/src/main/store.ts:8",
+    "src/desktop/src/main/store.ts:59",
+    "src/desktop/src/main/updates/index.ts:18",
+    "src/desktop/src/main/updates/index.ts:148",
+    "src/desktop/src/main/updates/renderer-store.ts:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 258,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. src/desktop/build/after-pack.cjs:13, src/desktop/build/after-pack.cjs:13"
+  }
+ ],
+ "level": 3
+}

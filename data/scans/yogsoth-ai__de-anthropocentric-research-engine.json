@@ -1,0 +1,79 @@
+{
+ "repo": "yogsoth-ai/de-anthropocentric-research-engine",
+ "stars": 373,
+ "description": "900+ pure-markdown skills for autonomous AI research, organized as 9 freely-composable packages over a 4-layer hierarchy (Campaign → Strategy → Tactic → SOP). Non-linear orchestration with backtrackin",
+ "pushed_at": "2026-08-15T07:14:32Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@yogsoth-ai/dare",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-skill-filesystem",
+  "@apify/actors-mcp-server",
+  "@brave/brave-search-mcp-server",
+  "@yogsoth-ai/semantic-scholar-mcp",
+  "@yogsoth-ai/wiki-vault",
+  "tavily-mcp"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.alphaxiv.org": 1,
+  "api.keenable.ai": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 9,
+   "evidence": [
+    "cli/scripts/build.js:6",
+    "dsh-plugin/scripts/build.js:11",
+    "dsh-plugin/scripts/build.js:24"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 2 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

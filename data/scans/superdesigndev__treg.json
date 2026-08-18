@@ -1,0 +1,88 @@
+{
+ "repo": "superdesigndev/treg",
+ "stars": 456,
+ "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
+ "pushed_at": "2026-08-18T06:55:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "treg-dsh",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "skills"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "treg.to": 8,
+  "docs.astral.sh": 1,
+  "postman-echo.com": 8,
+  "api.openai.com": 1,
+  "api.stripe.com": 2,
+  "api.resend.com": 1,
+  "api.mycli.com": 1,
+  "api.github.com": 1,
+  "api.x.com": 1,
+  "vuejs.org": 2
+ },
+ "env": {
+  "TREG_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "packages/npm/bin/treg.js:7",
+    "packages/npm/bin/treg.js:7",
+    "packages/npm/bin/treg.js:16",
+    "packages/npm/bin/treg.js:27",
+    "packages/npm/bin/treg.js:42"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. packages/npm/bin/treg.js:7, packages/npm/bin/treg.js:7"
+  }
+ ],
+ "level": 3
+}

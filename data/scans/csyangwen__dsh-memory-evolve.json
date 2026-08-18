@@ -1,0 +1,129 @@
+{
+ "repo": "csyangwen/dsh-memory-evolve",
+ "stars": 164,
+ "description": "为 DeepSeek Harness 带来「跨会话长期记忆 + 后台自我进化」能力的纯插件实现：五轨记忆 · git 分支感知 · 回合内自我审查 · 技能自我进化与技能管理器 · 四轨待办 · COI 调度 · 会话广播 · 会话搜索 · 提示词管理器 · 临时信息便签——零核心修改、零运行时依赖，随装随用、卸载即净。",
+ "pushed_at": "2026-08-17T07:07:52Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-memory-evolve",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "conversation",
+  "llm",
+  "locale",
+  "sessionPersistence",
+  "sessionTitle",
+  "sessions",
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/settled",
+  "agent/status",
+  "agent/turn-stopping",
+  "connection/reset",
+  "fs/observed",
+  "session/disposed",
+  "session/event",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 24,
+ "domains": {
+  "github.github.com": 1
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_SOURCE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 48,
+   "dev": 81,
+   "evidence": [
+    "lib/canvas.js:31",
+    "lib/coi/api.js:27",
+    "lib/coi/api.js:290",
+    "lib/coi/commands.js:7",
+    "lib/coi/commands.js:234"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "lib/coi/broadcast.js:130"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 20,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 163,
+   "dev": 483,
+   "evidence": [
+    "lib/advisor/index.js:26",
+    "lib/advisor/index.js:27",
+    "lib/advisor/index.js:112",
+    "lib/advisor/index.js:136",
+    "lib/advisor/index.js:169"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 159,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×48 src, e.g. lib/canvas.js:31, lib/coi/api.js:27"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/coi/broadcast.js:130"
+  }
+ ],
+ "level": 3
+}

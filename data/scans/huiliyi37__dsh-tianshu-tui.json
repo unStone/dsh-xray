@@ -1,0 +1,151 @@
+{
+ "repo": "huiliyi37/dsh-tianshu-tui",
+ "stars": 211,
+ "description": "官方 DeepSeek Harness 的交互式终端 UI 插件：自研 ANSI 极简渲染核心（由作者自己的开源项目天枢 Tui 演进）、流式 Markdown/工具卡、多会话 tab、16+ 主题、slash 命令与选择器、输入历史与本地偏好持久化、LSP 诊断、成本统计、启动自更新。纯展示层。",
+ "pushed_at": "2026-08-18T05:09:05Z",
+ "status": "ok",
+ "manifest": {
+  "runtime": "host",
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@huiliyi37/dsh-tianshu-tui",
+ "deps": [
+  "chalk",
+  "diff",
+  "get-east-asian-width",
+  "string-width",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/dsh-workflow",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "llm",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/error",
+  "agent/inbox/claimed",
+  "agent/inbox/discarded",
+  "agent/inbox/inserted",
+  "agent/status",
+  "approval/request",
+  "session/event",
+  "subagent/end",
+  "subagent/start",
+  "subagent/…",
+  "workflow/agent-end",
+  "workflow/agent-start",
+  "workflow/end",
+  "workflow/log",
+  "workflow/phase",
+  "workflow/start"
+ ],
+ "tool_regs": 3,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "ComSpec": 6,
+  "RIVET_AMBIGUOUS_WIDTH": 2,
+  "RIVET_TUI_HARDWARE_CURSOR": 2,
+  "COLORFGBG": 2,
+  "DEEPSEEK_API_KEY": 5,
+  "LocalAppData": 2,
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 48,
+   "dev": 51,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:2",
+    "lib/index.js:2",
+    "lib/index.js:192",
+    "lib/index.js:282"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:10408",
+    "lib/index.js:10927",
+    "src/adapter/send.ts:35",
+    "src/engine/term-image.ts:105"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 26,
+   "dev": 61,
+   "evidence": [
+    "lib/index.js:3",
+    "lib/index.js:3",
+    "lib/index.js:132",
+    "lib/index.js:1188",
+    "lib/index.js:1325"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 386,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×48 src, e.g. lib/index.js:2, lib/index.js:2"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/index.js:10408, lib/index.js:10927"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

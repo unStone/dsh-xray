@@ -1,0 +1,103 @@
+{
+ "repo": "vlln/whale-girl",
+ "stars": 228,
+ "description": "DSH Web GUI 桌面宠物插件（QQ 宠物形态）：右下角悬浮、可拖拽/投喂/玩耍的积累型伙伴。",
+ "pushed_at": "2026-08-17T09:23:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "whale-girl-desktop",
+ "deps": [
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "jobs",
+  "sessions",
+  "settings",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/request-error",
+  "agent/session-start",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_CHECKOUT": 2,
+  "CHROME_BIN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:7",
+    "scripts/build-client.mjs:7",
+    "scripts/build-client.mjs:54",
+    "scripts/gates/run.mjs:7",
+    "scripts/gates/run.mjs:7"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/gates/verify-config-sync.mjs:24"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 30,
+   "evidence": [
+    "lib/index.mjs:11",
+    "lib/index.mjs:58",
+    "scripts/build-client.mjs:8",
+    "scripts/build-client.mjs:83"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 70,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/build-client.mjs:7, scripts/build-client.mjs:7"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/gates/verify-config-sync.mjs:24"
+  }
+ ],
+ "level": 3
+}
