@@ -3,7 +3,7 @@ window.XRAY_I18N = {
 en: {
   _name: 'English',
   'report.banner': 'New — <b>The dsh Plugin Ecosystem Has No Permission Model</b>: a capability survey of the most-installed plugins.', 'report.read': 'Read the report →',
-  'nav.registry': 'Registry', 'nav.report': 'Report', 'nav.github': 'GitHub',
+  'nav.registry': 'Registry', 'nav.report': 'Report', 'nav.levels': 'Levels', 'nav.github': 'GitHub',
   'hero.title': 'X-ray for agent plugins',
   'hero.sub': 'Every DeepSeek Harness plugin gets a capability card: what it declares vs. what its code actually does — with file:line evidence.',
   'hero.cta1': 'Browse the registry', 'hero.cta2': 'Get your badge',
@@ -51,7 +51,7 @@ en: {
 zh: {
   _name: '简体中文',
   'report.banner': '新发布 —— <b>dsh 插件生态还没有权限模型</b>:对装机量最大的一批插件做的能力普查。', 'report.read': '阅读报告 →',
-  'nav.registry': '插件注册表', 'nav.report': '生态报告', 'nav.github': 'GitHub',
+  'nav.registry': '插件注册表', 'nav.report': '生态报告', 'nav.levels': '能力等级', 'nav.github': 'GitHub',
   'hero.title': '给 Agent 插件拍 X 光片',
   'hero.sub': '每个 DeepSeek Harness 插件一张能力卡片:它声明了什么,代码实际在做什么——每条结论都附 file:line 证据。',
   'hero.cta1': '浏览注册表', 'hero.cta2': '获取徽章',
@@ -98,7 +98,7 @@ zh: {
 ja: {
   _name: '日本語',
   'report.banner': '新着 —— <b>dsh プラグインエコシステムに権限モデルは存在しない</b>:最も使われているプラグインの能力調査。', 'report.read': 'レポートを読む →',
-  'nav.registry': 'レジストリ', 'nav.report': 'レポート', 'nav.github': 'GitHub',
+  'nav.registry': 'レジストリ', 'nav.report': 'レポート', 'nav.levels': 'レベル', 'nav.github': 'GitHub',
   'hero.title': 'エージェントプラグインのX線検査',
   'hero.sub': 'DeepSeek Harness の各プラグインに「能力カード」を発行:宣言された権限と、コードが実際に行うこと——すべて file:line の証拠つき。',
   'hero.cta1': 'レジストリを見る', 'hero.cta2': 'バッジを取得',

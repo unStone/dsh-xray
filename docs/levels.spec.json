@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "插件能力等级 C0–C3:它能碰到你 Agent 里的什么",
+    "output": "levels.html",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1400,
+      712
+    ],
+    "views": [
+      {
+        "id": "everyday",
+        "label": "日常能力",
+        "focus": [
+          "plugin",
+          "everyday"
+        ],
+        "note": "只改界面、加工具、连外部网站。装了也就这样——但只有一成插件止步于此。"
+      },
+      {
+        "id": "powerful",
+        "label": "强能力:改变 Agent 的行为",
+        "focus": [
+          "powerful",
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "note": "能改写模型看到的指令、坐在你和模型之间、甚至改写 dsh 程序本身。"
+      },
+      {
+        "id": "risky",
+        "label": "敏感行为:接触系统与秘密",
+        "focus": [
+          "risky",
+          "r1",
+          "r2",
+          "r3"
+        ],
+        "note": "能在你电脑上跑命令、读走密钥、安装时就自动执行代码。"
+      },
+      {
+        "id": "verdict",
+        "label": "等级怎么定",
+        "focus": [
+          "powerful",
+          "risky",
+          "verdict"
+        ],
+        "note": "碰一边是 C2,两边都碰是 C3。数的是能力面,不是动机。"
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "plugin",
+      "type": "external",
+      "label": "你装的一个插件",
+      "sublabel": "一行命令装上",
+      "pos": [
+        80,
+        339
+      ],
+      "size": [
+        170,
+        72
+      ]
+    },
+    {
+      "id": "everyday",
+      "type": "frontend",
+      "label": "日常能力",
+      "sublabel": "换界面主题、加几个工具、去外部网站取数据",
+      "tag": "C0–C1 · 仅一成插件止于此",
+      "pos": [
+        330,
+        334
+      ],
+      "size": [
+        210,
+        86
+      ]
+    },
+    {
+      "id": "powerful",
+      "type": "cloud",
+      "label": "强能力",
+      "sublabel": "改变 Agent 的行为方式",
+      "tag": "碰到任意一项",
+      "pos": [
+        600,
+        170
+      ],
+      "size": [
+        200,
+        76
+      ]
+    },
+    {
+      "id": "p1",
+      "type": "cloud",
+      "label": "改写给模型的指令",
+      "sublabel": "你看到的对话没变,模型收到的要求变了",
+      "pos": [
+        360,
+        30
+      ],
+      "size": [
+        200,
+        86
+      ]
+    },
+    {
+      "id": "p2",
+      "type": "cloud",
+      "label": "拦截你与模型的流量",
+      "sublabel": "所有问答都先经它的手",
+      "pos": [
+        600,
+        30
+      ],
+      "size": [
+        200,
+        86
+      ]
+    },
+    {
+      "id": "p3",
+      "type": "cloud",
+      "label": "改写 dsh 程序本身",
+      "sublabel": "manifest.bundle.patch",
+      "tag": "七成插件都在做",
+      "pos": [
+        840,
+        30
+      ],
+      "size": [
+        200,
+        86
+      ]
+    },
+    {
+      "id": "risky",
+      "type": "security",
+      "label": "敏感行为",
+      "sublabel": "接触你的系统与秘密",
+      "tag": "碰到任意一项",
+      "pos": [
+        600,
+        490
+      ],
+      "size": [
+        200,
+        76
+      ]
+    },
+    {
+      "id": "r1",
+      "type": "security",
+      "label": "在你电脑上跑命令",
+      "sublabel": "读写文件、启动进程",
+      "pos": [
+        360,
+        602
+      ],
+      "size": [
+        200,
+        76
+      ]
+    },
+    {
+      "id": "r2",
+      "type": "security",
+      "label": "读走密钥与令牌",
+      "sublabel": "云账号、GitHub、各家模型的钥匙",
+      "tag": "两成插件会读",
+      "pos": [
+        600,
+        602
+      ],
+      "size": [
+        200,
+        76
+      ]
+    },
+    {
+      "id": "r3",
+      "type": "security",
+      "label": "安装时就自动执行",
+      "sublabel": "你还没用它,代码已经跑过",
+      "pos": [
+        840,
+        602
+      ],
+      "size": [
+        200,
+        76
+      ]
+    },
+    {
+      "id": "verdict",
+      "type": "backend",
+      "label": "等级怎么算出来",
+      "sublabel": "只碰一边 = C2(38%)\n两边都碰 = C3(52%)",
+      "tag": "数能力面,不判动机",
+      "pos": [
+        1120,
+        329
+      ],
+      "size": [
+        220,
+        104
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "security-group",
+      "label": "改变行为的能力",
+      "wraps": [
+        "powerful",
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "接触系统的行为",
+      "wraps": [
+        "risky",
+        "r1",
+        "r2",
+        "r3"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "install",
+      "from": "plugin",
+      "to": "everyday",
+      "label": "装上即拥有",
+      "variant": "emphasis"
+    },
+    {
+      "id": "to-powerful",
+      "from": "everyday",
+      "to": "powerful",
+      "label": "再进一步"
+    },
+    {
+      "id": "to-risky",
+      "from": "everyday",
+      "to": "risky",
+      "label": "或者这一边"
+    },
+    {
+      "id": "p-1",
+      "from": "powerful",
+      "to": "p1",
+      "variant": "dashed"
+    },
+    {
+      "id": "p-2",
+      "from": "powerful",
+      "to": "p2",
+      "variant": "dashed"
+    },
+    {
+      "id": "p-3",
+      "from": "powerful",
+      "to": "p3",
+      "variant": "dashed"
+    },
+    {
+      "id": "r-1",
+      "from": "risky",
+      "to": "r1",
+      "variant": "dashed"
+    },
+    {
+      "id": "r-2",
+      "from": "risky",
+      "to": "r2",
+      "variant": "dashed"
+    },
+    {
+      "id": "r-3",
+      "from": "risky",
+      "to": "r3",
+      "variant": "dashed"
+    },
+    {
+      "id": "p-verdict",
+      "from": "powerful",
+      "to": "verdict",
+      "label": "占一边"
+    },
+    {
+      "id": "r-verdict",
+      "from": "risky",
+      "to": "verdict",
+      "label": "占一边"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "这张图怎么读",
+      "items": [
+        "C0 / C1:只改你看到的样子,或加个工具联网",
+        "C2:够到了上区或下区",
+        "C3:上下两区都够到了"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "高等级 ≠ 坏插件",
+      "items": [
+        "等级量的是「能力面有多大、透明不透明」",
+        "桌面外壳、设计工具真的需要子进程和本地服务——评级最高的几个恰是工程质量最好的项目",
+        "真正的问题是:它需要这些能力,而你装的时候不知道"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "480 个头部插件实测",
+      "items": [
+        "C3 52% · C2 38% · C1 4% · C0 6%",
+        "七成能改写 dsh 程序本身,两成会读取密钥类环境变量",
+        "每条结论都附代码行号,可复核、可申诉"
+      ]
+    }
+  ]
+}
