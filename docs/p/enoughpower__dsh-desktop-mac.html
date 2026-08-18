@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">DeepSeekHarnessMac精简版</p>
-  <p class="lede">★ 0 · <a href="https://github.com/enoughpower/dsh-desktop-mac">source on GitHub</a>
-     · <a href="../registry.html#enoughpower__dsh-desktop-mac">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/enoughpower/dsh-desktop-mac" rel="nofollow ugc">enoughpower/dsh-desktop-mac source on GitHub</a>
+     · <a href="../registry.html#enoughpower__dsh-desktop-mac">this plugin in the registry</a></p>
   <p>enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 src, e.g. launcher.mjs:14, launcher.mjs:71</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 src, e.g. plugins/dsh-plugin-image-input/lib/index.js:91, plugins/dsh-plugin-image-input/lib/index.js:236</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 src, e.g. plugins/dsh-plugin-image-input/lib/index.js:236, plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:1445</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, GEMINI_API_KEY, MM_VISION_API_KEY, OPENAI_API_KEY, QWEN_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>shell</span> <span>slots</span> <span>webServer</span></p>

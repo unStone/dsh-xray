@@ -151,8 +151,9 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
     <span class="lvl-pill">{lvl_badge}</span>
   </div>
   <p class="lede">{esc(p.get('description'))}</p>
-  <p class="lede">★ {star_bucket(p.get('stars', 0))} · <a href="https://github.com/{esc(repo)}">source on GitHub</a>
-     · <a href="../registry.html#{esc(slug)}">open in the registry</a></p>
+  <p class="lede">★ {star_bucket(p.get('stars', 0))} ·
+     <a href="https://github.com/{esc(repo)}" rel="nofollow ugc">{esc(repo)} source on GitHub</a>
+     · <a href="../registry.html#{esc(slug)}">this plugin in the registry</a></p>
   <p>{esc(summary)}</p>
   {flags_table}
   {chips(p.get('injects') or [], 'Services it injects')}

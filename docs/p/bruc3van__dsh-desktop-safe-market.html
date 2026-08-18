@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">唯一主打安全，提倡先审查再安装的 DSH 市场，深度扫描 5 分钟，放心使用每一天。</p>
-  <p class="lede">★ 5+ · <a href="https://github.com/bruc3van/dsh-desktop-safe-market">source on GitHub</a>
-     · <a href="../registry.html#bruc3van__dsh-desktop-safe-market">open in the registry</a></p>
+  <p class="lede">★ 5+ ·
+     <a href="https://github.com/bruc3van/dsh-desktop-safe-market" rel="nofollow ugc">bruc3van/dsh-desktop-safe-market source on GitHub</a>
+     · <a href="../registry.html#bruc3van__dsh-desktop-safe-market">this plugin in the registry</a></p>
   <p>bruc3van/dsh-desktop-safe-market is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 src, e.g. lib/index.js:236, lib/plugin.js:23111</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×15 src, e.g. lib/client.js:1287, lib/client.js:2645</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LOG_TOKENS</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>conversation</span> <span>invariants</span> <span>loader</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>skills</span> <span>slots</span> <span>storageDomain</span> <span>typert</span> <span>workspaces</span></p>

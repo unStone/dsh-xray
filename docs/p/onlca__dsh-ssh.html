@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness 插件:远程主机目录作为工作区,零目标主机安装</p>
-  <p class="lede">★ 0 · <a href="https://github.com/onlca/dsh-ssh">source on GitHub</a>
-     · <a href="../registry.html#onlca__dsh-ssh">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/onlca/dsh-ssh" rel="nofollow ugc">onlca/dsh-ssh source on GitHub</a>
+     · <a href="../registry.html#onlca__dsh-ssh">this plugin in the registry</a></p>
   <p>onlca/dsh-ssh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands, ships no manifest.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>sandbox, subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 src, e.g. packages/dsh-ssh/src/cli.ts:7, packages/dsh-ssh/src/cli.ts:7</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 6 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span></p>

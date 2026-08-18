@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">宝玉技能库（移植自 JimLiu/baoyu-skills）</p>
-  <p class="lede">★ 0 · <a href="https://github.com/GongYuanCaiJi/dsh-baoyu-skills">source on GitHub</a>
-     · <a href="../registry.html#GongYuanCaiJi__dsh-baoyu-skills">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/GongYuanCaiJi/dsh-baoyu-skills" rel="nofollow ugc">GongYuanCaiJi/dsh-baoyu-skills source on GitHub</a>
+     · <a href="../registry.html#GongYuanCaiJi__dsh-baoyu-skills">this plugin in the registry</a></p>
   <p>GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×179 src, e.g. scripts/build-shared-package.mjs:3, scripts/build-shared-package.mjs:3</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 src, e.g. packages/baoyu-md/src/html-builder.ts:9, packages/baoyu-md/src/themes.ts:8</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×17 src, e.g. packages/baoyu-chrome-cdp/dist/mermaid.cjs:703, packages/baoyu-chrome-cdp/dist/mermaid.js:634</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×12 src, e.g. packages/baoyu-chrome-cdp/dist/index.cjs:95, packages/baoyu-chrome-cdp/dist/index.cjs:98</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AGNES_API_KEY, ARK_API_KEY, AZURE_OPENAI_API_KEY, BIGMODEL_API_KEY, DASHSCOPE_API_KEY, GEMINI_API_KEY</td></tr></tbody></table>
   

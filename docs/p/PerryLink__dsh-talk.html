@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Voice-first session loop for DeepSeek Harness: a composer microphone button with browser/local speech-to-text (Web Speech, FunASR, whisper.cpp), a speak tool for text-to-speech replies (browser, edge-</p>
-  <p class="lede">★ 0 · <a href="https://github.com/PerryLink/dsh-talk">source on GitHub</a>
-     · <a href="../registry.html#PerryLink__dsh-talk">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/PerryLink/dsh-talk" rel="nofollow ugc">PerryLink/dsh-talk source on GitHub</a>
+     · <a href="../registry.html#PerryLink__dsh-talk">this plugin in the registry</a></p>
   <p>PerryLink/dsh-talk is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 src, e.g. scripts/prepare.mjs:6, scripts/prepare.mjs:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. src/service.ts:326, src/client/TalkMicButton.tsx:288</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>slots</span> <span>subprocess</span> <span>tools</span></p>

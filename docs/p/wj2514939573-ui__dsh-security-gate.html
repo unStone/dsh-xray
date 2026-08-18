@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">SecurityGate（插件安检门）— inspect DSH plugins before install: dual-dimension static scan + LLM AI review + runtime watch + community ratings &amp; bug bounty.</p>
-  <p class="lede">★ 1+ · <a href="https://github.com/wj2514939573-ui/dsh-security-gate">source on GitHub</a>
-     · <a href="../registry.html#wj2514939573-ui__dsh-security-gate">open in the registry</a></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/wj2514939573-ui/dsh-security-gate" rel="nofollow ugc">wj2514939573-ui/dsh-security-gate source on GitHub</a>
+     · <a href="../registry.html#wj2514939573-ui__dsh-security-gate">this plugin in the registry</a></p>
   <p>wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, reads credential-class env vars, ships no manifest.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. plugin/host.js:24, plugin/host.js:24</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 src, e.g. scripts/extract-source.mjs:25, scripts/extract-source.mjs:26</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 20 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>sandboxPolicy</span> <span>timer</span></p>

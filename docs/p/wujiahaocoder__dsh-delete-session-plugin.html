@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Adds a Delete-session action to the DeepSeek Harness sidebar three-dot menu (dsh 0.1.0-rc.6)</p>
-  <p class="lede">★ 0 · <a href="https://github.com/wujiahaocoder/dsh-delete-session-plugin">source on GitHub</a>
-     · <a href="../registry.html#wujiahaocoder__dsh-delete-session-plugin">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/wujiahaocoder/dsh-delete-session-plugin" rel="nofollow ugc">wujiahaocoder/dsh-delete-session-plugin source on GitHub</a>
+     · <a href="../registry.html#wujiahaocoder__dsh-delete-session-plugin">this plugin in the registry</a></p>
   <p>wujiahaocoder/dsh-delete-session-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, uses eval / new Function, decodes base64 payloads, ships no manifest.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>install: node install.js</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 src, e.g. patched/@deepseek-ai/dsh-client-connection/lib/client.js:696, patched/@deepseek-ai/dsh-client-runtime/lib/client.js:493</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 src, e.g. patched/@deepseek-ai/dsh-client-connection/lib/client.js:1861, patched/@deepseek-ai/dsh-client-connection/lib/client.js:1912</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 19 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>attachments</span> <span>connection</span> <span>directoryPicker</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>subagents</span> <span>tools</span> <span>typert</span> <span>userQuestions</span> <span>workspaceRegistry</span> <span>workspaces</span></p>

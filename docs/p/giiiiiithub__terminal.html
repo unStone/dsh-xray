@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness Plugin，Web UI 的终端面板：node-pty 真实 PTY + xterm.js 浏览器渲染，开箱即用的交互式 shell</p>
-  <p class="lede">★ 0 · <a href="https://github.com/giiiiiithub/terminal">source on GitHub</a>
-     · <a href="../registry.html#giiiiiithub__terminal">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/giiiiiithub/terminal" rel="nofollow ugc">giiiiiithub/terminal source on GitHub</a>
+     · <a href="../registry.html#giiiiiithub__terminal">this plugin in the registry</a></p>
   <p>giiiiiithub/terminal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 src, e.g. lib/index.mjs:5, lib/index.mjs:196</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. lib/client.js:14572</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 src, e.g. lib/client.js:43, lib/client.js:15742</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>slots</span></p>

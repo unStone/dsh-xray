@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness 的 MCP 服务器管理插件：可视化界面管理 + 按需热注入，OAuth 鉴权支持，环境变量配置。</p>
-  <p class="lede">★ 1+ · <a href="https://github.com/ArvinQi/dsh-mcp">source on GitHub</a>
-     · <a href="../registry.html#ArvinQi__dsh-mcp">open in the registry</a></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/ArvinQi/dsh-mcp" rel="nofollow ugc">ArvinQi/dsh-mcp source on GitHub</a>
+     · <a href="../registry.html#ArvinQi__dsh-mcp">this plugin in the registry</a></p>
   <p>ArvinQi/dsh-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, starts a network server.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 src, e.g. lib/oauth.js:15, lib/oauth.js:64</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 src, e.g. lib/client.js:1284, lib/client.js:2642</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. lib/oauth.js:207</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>locale</span> <span>remote</span> <span>slots</span> <span>storageDomain</span> <span>tools</span></p>

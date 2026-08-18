@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Know what a DeepSeek Harness plugin does before you install it</p>
-  <p class="lede">★ 0 · <a href="https://github.com/CharlotteN7/dsh-plugin-inspector">source on GitHub</a>
-     · <a href="../registry.html#CharlotteN7__dsh-plugin-inspector">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/CharlotteN7/dsh-plugin-inspector" rel="nofollow ugc">CharlotteN7/dsh-plugin-inspector source on GitHub</a>
+     · <a href="../registry.html#CharlotteN7__dsh-plugin-inspector">this plugin in the registry</a></p>
   <p>CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>preinstall: node -e &quot;require(&#x27;fs&#x27;).writeFileSync(process.env.DSH_INSPECTOR_CANARY, &#x27;preinstall&#x27;)&quot;; postinstall: node ./scripts/setup.js</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 src, e.g. src/knowledge.ts:284, src/checks/tier-b.ts:190</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×7 src, e.g. src/cordis-yaml.ts:9, src/cordis-yaml.ts:10</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>timer</span> <span>web</span></p>

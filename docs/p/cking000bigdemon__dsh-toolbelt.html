@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Eight DeepSeek Harness plugins: persona, language guard, per-request vision fallback, python/windows write guards, cross-agent memory, image generation, and skill shell injection.</p>
-  <p class="lede">★ 1+ · <a href="https://github.com/cking000bigdemon/dsh-toolbelt">source on GitHub</a>
-     · <a href="../registry.html#cking000bigdemon__dsh-toolbelt">open in the registry</a></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/cking000bigdemon/dsh-toolbelt" rel="nofollow ugc">cking000bigdemon/dsh-toolbelt source on GitHub</a>
+     · <a href="../registry.html#cking000bigdemon__dsh-toolbelt">this plugin in the registry</a></p>
   <p>cking000bigdemon/dsh-toolbelt is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 src, e.g. src/python-workdir-guard/index.ts:104, src/python-workdir-guard/index.ts:214</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. src/image-generation/index.ts:432</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>llm</span> <span>skills</span> <span>systemPrompt</span> <span>tools</span></p>

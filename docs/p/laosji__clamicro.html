@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">在手机上审批 Claude Code 、DeepSeek Harness 的操作。局域网直连，零依赖。</p>
-  <p class="lede">★ 1+ · <a href="https://github.com/laosji/clamicro">source on GitHub</a>
-     · <a href="../registry.html#laosji__clamicro">open in the registry</a></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/laosji/clamicro" rel="nofollow ugc">laosji/clamicro source on GitHub</a>
+     · <a href="../registry.html#laosji__clamicro">this plugin in the registry</a></p>
   <p>laosji/clamicro is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, gates tool execution, executes system commands, starts a network server.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node -e &quot;console.log(&#x27;\n  Clamicro 已下载。执行 npx clamicro install 完成安装。\n&#x27;)&quot;</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×52 src, e.g. cli.mjs:2, cli.mjs:2</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. server.mjs:785</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CLAMICRO_SETTLED_KEY_GRACE_MS</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>

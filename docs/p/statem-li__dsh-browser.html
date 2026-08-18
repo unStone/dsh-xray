@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">AI 浏览器操作：CDP 直连 Chrome，文本 snapshot+ref 主感知，截图走辅助视觉兜底</p>
-  <p class="lede">★ 0 · <a href="https://github.com/statem-li/dsh-browser">source on GitHub</a>
-     · <a href="../registry.html#statem-li__dsh-browser">open in the registry</a></p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/statem-li/dsh-browser" rel="nofollow ugc">statem-li/dsh-browser source on GitHub</a>
+     · <a href="../registry.html#statem-li__dsh-browser">this plugin in the registry</a></p>
   <p>statem-li/dsh-browser is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, decodes base64 payloads, starts a network server.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 src, e.g. lib/chrome.js:4, lib/chrome.js:63</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. lib/index.js:308, src/index.ts:323</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. lib/chrome.js:35, src/chrome.ts:39</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>sandboxPolicy</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>

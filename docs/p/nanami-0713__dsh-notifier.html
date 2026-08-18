@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DSH 插件：任务结束 / 需要用户决策时弹窗提醒（web toast + 桌面通知），类似 Codex / Claude Code 体验</p>
-  <p class="lede">★ 1+ · <a href="https://github.com/nanami-0713/dsh-notifier">source on GitHub</a>
-     · <a href="../registry.html#nanami-0713__dsh-notifier">open in the registry</a></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/nanami-0713/dsh-notifier" rel="nofollow ugc">nanami-0713/dsh-notifier source on GitHub</a>
+     · <a href="../registry.html#nanami-0713__dsh-notifier">this plugin in the registry</a></p>
   <p>nanami-0713/dsh-notifier is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 src, e.g. scripts/debug-toast.mjs:1, scripts/debug-toast.mjs:16</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×10 src, e.g. scripts/debug-toast.mjs:25, scripts/debug-toast.mjs:40</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. scripts/debug-toast.mjs:26, scripts/ui-test.mjs:113</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. scripts/test-bridge-push.mjs:7, scripts/test-bridge-push.mjs:21</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BRIDGE_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>

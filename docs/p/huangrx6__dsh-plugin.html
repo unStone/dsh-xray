@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness (DSH) 插件合集：Skill 管理（导入/详情/多格式文件预览）、MCP 服务器管理（补丁层读写/测试连接/工具明细）、布局设置</p>
-  <p class="lede">★ 1+ · <a href="https://github.com/huangrx6/dsh-plugin">source on GitHub</a>
-     · <a href="../registry.html#huangrx6__dsh-plugin">open in the registry</a></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/huangrx6/dsh-plugin" rel="nofollow ugc">huangrx6/dsh-plugin source on GitHub</a>
+     · <a href="../registry.html#huangrx6__dsh-plugin">this plugin in the registry</a></p>
   <p>huangrx6/dsh-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 src, e.g. dsh-remote-access/src/runner.ts:8, dsh-remote-access/src/runner.ts:34</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 src, e.g. dsh-mcp-manager/src/patch-file.ts:87, dsh-mcp-manager/src/patch-file.ts:93</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. dsh-skill-manager/src/import-source.ts:158, dsh-skill-manager/src/client/SkillFilePreview.tsx:247</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>loader</span> <span>locale</span> <span>pluginInventory</span> <span>remote</span> <span>sessionPersistence</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>skills</span> <span>slots</span> <span>theme</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>

@@ -44,8 +44,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">One macOS app for Claude Code, Codex, and every agent runtime you use — scheduled runs, global hotkey launcher, per-run git worktrees, one review board.</p>
-  <p class="lede">★ 100+ · <a href="https://github.com/drewnekota/cetus">source on GitHub</a>
-     · <a href="../registry.html#drewnekota__cetus">open in the registry</a></p>
+  <p class="lede">★ 100+ ·
+     <a href="https://github.com/drewnekota/cetus" rel="nofollow ugc">drewnekota/cetus source on GitHub</a>
+     · <a href="../registry.html#drewnekota__cetus">this plugin in the registry</a></p>
   <p>drewnekota/cetus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 src, e.g. evals/general-benchmark/run.mjs:6, evals/general-benchmark/run.mjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. src/components/devtest/test-hook.tsx:87</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. src/lib/dropped-files.ts:36, src/components/workspace/workspace-panel.tsx:1457</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. dsh-bridge/lib/index.js:169</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, DSH_COMPANION_BRIDGE_TOKEN, DSH_VISION_API_KEY, EXA_API_KEY, GEMINI_API_KEY, TAVILY_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 73 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
