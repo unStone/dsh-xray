@@ -14,7 +14,6 @@ import pathlib
 import subprocess
 import sys
 import tarfile
-import urllib.request
 
 import scan_core
 
@@ -27,26 +26,25 @@ MAX_FILE_SIZE = 1024 * 1024
 LEVEL_COLORS = {0: 'brightgreen', 1: 'green', 2: 'yellow', 3: 'orange'}
 
 
-def gh_token():
-    return subprocess.run(['gh', 'auth', 'token'], capture_output=True, text=True).stdout.strip()
-
-
-TOKEN = gh_token()
-
-
 def fetch_tarball(full_name):
-    req = urllib.request.Request(
-        f'https://api.github.com/repos/{full_name}/tarball',
-        headers={'Authorization': f'Bearer {TOKEN}', 'User-Agent': 'dsh-xray'})
+    """Download via `gh api` (handles auth, redirects, and system TLS certs)."""
+    proc = subprocess.Popen(['gh', 'api', f'repos/{full_name}/tarball'],
+                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     buf = io.BytesIO()
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    try:
         while True:
-            chunk = resp.read(1 << 20)
+            chunk = proc.stdout.read(1 << 20)
             if not chunk:
                 break
             buf.write(chunk)
             if buf.tell() > MAX_TARBALL:
                 raise ValueError('tarball too large')
+    finally:
+        proc.stdout.close()
+        proc.terminate()
+        proc.wait(timeout=10)
+    if buf.tell() == 0:
+        raise ValueError('download failed')
     buf.seek(0)
     return buf
 
