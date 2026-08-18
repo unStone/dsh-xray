@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh-xray registry</title>
+<meta name="description" content="Capability cards for DeepSeek Harness plugins.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="nav">
+  <a class="brand" href="./">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="https://github.com/unStone/dsh-xray" data-i18n="nav.github">GitHub</a>
+  </div>
+  <div class="chips" id="langSwitch"></div>
+</nav>
+
+<div class="pagehead">
+  <h1 data-i18n="reg.title"></h1>
+  <p class="stats" id="stats"></p>
+</div>
+
+<div class="toolbar">
+  <input id="q" type="search" data-i18n-ph="reg.search">
+  <div class="chips" id="lvlChips">
+    <span class="chip on" data-lv="all" data-i18n="reg.all"></span>
+    <span class="chip" data-lv="3">C3</span>
+    <span class="chip" data-lv="2">C2</span>
+    <span class="chip" data-lv="1">C1</span>
+    <span class="chip" data-lv="0">C0</span>
+  </div>
+  <span class="chip" id="pluginOnly" data-i18n="reg.pluginOnly"></span>
+</div>
+
+<div class="tbl" id="tbl"><div class="empty" data-i18n="reg.loading"></div></div>
+
+<footer>
+  <span data-i18n="levels.note"></span>
+  <span data-i18n="foot.oss"></span> <a href="https://github.com/unStone/dsh-xray/issues" data-i18n="foot.issue"></a>
+</footer>
+</div>
+
+<script src="i18n.js"></script>
+<script>
+const t = xray.t;
+const HOT = new Set(['runtime_patch', 'prompt_surface', 'api_intercept', 'exec', 'eval', 'token_env', 'install_script']);
+const POWERFUL = new Set(['subprocess', 'apiProxy', 'systemPrompt', 'sandbox', 'webServer', 'approval']);
+const SITE = 'https://unstone.github.io/dsh-xray';
+let DATA = null, lv = 'all', pluginOnly = false, q = '';
+
+const esc = s => (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const flagChip = f => `<span class="flag ${HOT.has(f.id) ? 'hot' : ''}">${t('reg.f.' + f.id)}</span>`;
+
+function render() {
+  const tbl = document.getElementById('tbl');
+  if (!DATA) return;
+  let rows = DATA.plugins;
+  if (pluginOnly) rows = rows.filter(p => p.type === 'plugin');
+  if (lv !== 'all') rows = rows.filter(p => String(p.level) === lv);
+  if (q) {
+    const k = q.toLowerCase();
+    rows = rows.filter(p => (p.repo + ' ' + (p.description || '') + ' ' + p.injects.join(' ')).toLowerCase().includes(k));
+  }
+  if (!rows.length) { tbl.innerHTML = `<div class="empty">${t('reg.empty')}</div>`; return; }
+  tbl.innerHTML = rows.map(p => {
+    const lvCls = p.level < 0 ? 'lvx' : 'lv' + p.level;
+    const lvTxt = p.level < 0 ? '—' : 'C' + p.level;
+    return `<div class="row" data-repo="${esc(p.repo)}">
+      <div class="row-head" onclick="this.parentNode.classList.toggle('open')">
+        <div><div class="name"><a href="https://github.com/${esc(p.repo)}" target="_blank" onclick="event.stopPropagation()">${esc(p.repo)}</a></div>
+        <div class="desc">${esc(p.description)}</div></div>
+        <div class="stars">★ ${p.stars >= 1000 ? (p.stars / 1000).toFixed(1) + 'k' : p.stars}</div>
+        <div class="lvl ${lvCls}">${lvTxt}</div>
+        <div class="flags">${(p.flags || []).map(flagChip).join('')}</div>
+      </div>
+      <div class="detail">${detail(p)}</div>
+    </div>`;
+  }).join('');
+}
+
+function detail(p) {
+  if (p.level < 0) return `<p class="evid">${esc(p.status)}</p>`;
+  const slug = p.repo.replace('/', '__');
+  const badgeUrl = `https://img.shields.io/endpoint?url=${encodeURIComponent(SITE + '/badge/' + slug + '.json')}`;
+  const badgeMd = `[![dsh-xray](${badgeUrl})](${SITE}/registry.html#${slug})`;
+  let h = '';
+  if ((p.flags || []).length) {
+    h += `<h4>${t('reg.flags')}</h4>` + p.flags.map(f =>
+      `<div>${flagChip(f)} <span class="evid">${esc(f.evidence)}</span></div>`).join('');
+  }
+  if (p.injects.length) h += `<h4>${t('reg.services')} (${p.injects.length})</h4><div class="kv">` +
+    p.injects.map(s => `<span class="${POWERFUL.has(s) ? 'pw' : ''}">${esc(s)}</span>`).join('') + '</div>';
+  if (p.hooks.length) h += `<h4>${t('reg.hooks')} (${p.hooks.length})</h4><div class="kv">` +
+    p.hooks.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
+  if (p.domains.length) h += `<h4>${t('reg.domains')}</h4><div class="kv">` + p.domains.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
+  if (p.env.length) h += `<h4>${t('reg.env')}</h4><div class="kv">` + p.env.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
+  h += `<h4>·</h4>${t('reg.tools', p.tool_regs, p.files_scanned)}`;
+  h += `<div class="badge-line"><img src="${badgeUrl}" alt="badge" loading="lazy">
+        <span class="mono">${esc(badgeMd)}</span>
+        <button onclick='navigator.clipboard.writeText(${JSON.stringify(badgeMd)});this.textContent=${JSON.stringify(t('reg.copied'))}'>${t('reg.copy')}</button></div>`;
+  return h;
+}
+
+xray.applyStatic();
+xray.mountSwitcher(document.getElementById('langSwitch'));
+document.title = 'dsh-xray · ' + t('reg.title');
+
+fetch('data.json').then(r => r.json()).then(d => {
+  DATA = d;
+  const ok = d.plugins.filter(p => p.level >= 0);
+  const c = l => ok.filter(p => p.level === l).length;
+  document.getElementById('stats').innerHTML = t('reg.stats', {
+    scanned: d.scanned, total: d.total, c3: c(3), c2: c(2),
+    date: d.generated_at.slice(0, 16).replace('T', ' ')
+  });
+  render();
+  const hash = location.hash.slice(1);
+  if (hash) {
+    const el = document.querySelector(`[data-repo="${hash.replace('__', '/')}"]`);
+    if (el) { el.classList.add('open'); el.scrollIntoView(); }
+  }
+});
+
+document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
+document.getElementById('lvlChips').addEventListener('click', e => {
+  if (!e.target.dataset.lv) return;
+  lv = e.target.dataset.lv;
+  document.querySelectorAll('#lvlChips .chip').forEach(c => c.classList.toggle('on', c === e.target));
+  render();
+});
+document.getElementById('pluginOnly').addEventListener('click', e => {
+  pluginOnly = !pluginOnly; e.target.classList.toggle('on', pluginOnly); render();
+});
+</script>
+</body>
+</html>

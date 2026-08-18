@@ -4,7 +4,7 @@
 
 给每个 dsh 插件拍一张 X 光片:声明了什么权限,代码实际在做什么。
 
-🔍 **Live registry: [unstone.github.io/dsh-xray](https://unstone.github.io/dsh-xray/)**
+🔍 **Website: [unstone.github.io/dsh-xray](https://unstone.github.io/dsh-xray/)** · **Registry: [/registry.html](https://unstone.github.io/dsh-xray/registry.html)** — English / 简体中文 / 日本語
 
 ## Why
 
@@ -26,7 +26,7 @@ Every flag carries **file:line evidence**. Levels **C0–C3** measure capability
 Plugin authors: show users your capability card.
 
 ```markdown
-[![dsh-xray](https://img.shields.io/endpoint?url=https%3A%2F%2Funstone.github.io%2Fdsh-xray%2Fbadge%2F<owner>__<repo>.json)](https://unstone.github.io/dsh-xray/#<owner>__<repo>)
+[![dsh-xray](https://img.shields.io/endpoint?url=https%3A%2F%2Funstone.github.io%2Fdsh-xray%2Fbadge%2F<owner>__<repo>.json)](https://unstone.github.io/dsh-xray/registry.html#<owner>__<repo>)
 ```
 
 ## Run it yourself
