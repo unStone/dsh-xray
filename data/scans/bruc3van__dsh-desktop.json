@@ -1,0 +1,116 @@
+{
+ "repo": "bruc3van/dsh-desktop",
+ "stars": 57,
+ "description": "让 Agent 安全常驻桌面的独立 dsh 客户端：官方 Web UI 原封不动，长任务常驻托盘，精选插件先审查、再安装。Independent dsh desktop client: the official Web UI untouched, long tasks alive in the tray, curated plugins reviewed before install.",
+ "pushed_at": "2026-08-18T06:57:32Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop-runtime",
+ "deps": [
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh",
+  "dsh-desktop-safe-market",
+  "pnpm"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "platform.deepseek.com": 2,
+  "api.github.com": 1
+ },
+ "env": {
+  "ProgramFiles": 1,
+  "LOCALAPPDATA": 1,
+  "DSH_DESKTOP_FIXTURE_MARKER": 2,
+  "ComSpec": 2,
+  "ELECTRON_RUN_AS_NODE": 2,
+  "DSH_DESKTOP_RUNTIME_ENTRY": 1,
+  "PORT": 1,
+  "DSH_DESKTOP_FIXTURE_SCREENSHOT": 2,
+  "DEEPSEEK_API_KEY": 1,
+  "DSH_RUNTIME_TARGET": 1,
+  "DSH_SMOKE_TIMEOUT_MS": 1,
+  "DSH_DESKTOP_ALLOW_UNSAFE": 3,
+  "DSH_DESKTOP_NODE": 2,
+  "DSH_DESKTOP_UPDATE_FEED": 2,
+  "DSH_DESKTOP_UPDATE_GITHUB_API": 1,
+  "DSH_DESKTOP_SKIP_UPDATE_CHECK": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 55,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-auto-fallback.mjs:11",
+    "scripts/check-auto-fallback.mjs:11",
+    "scripts/check-auto-fallback.mjs:66",
+    "scripts/check-pnpm-engine.mjs:15",
+    "scripts/check-pnpm-engine.mjs:86"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 22,
+   "dev": 2,
+   "evidence": [
+    "scripts/check-auto-fallback.mjs:28",
+    "scripts/check-auto-fallback.mjs:45",
+    "scripts/check-auto-fallback.mjs:237",
+    "scripts/check-auto-fallback.mjs:248",
+    "scripts/check-connection-switch.mjs:53"
+   ]
+  },
+  "fs_write": {
+   "src": 137,
+   "dev": 0,
+   "evidence": [
+    "scripts/audit.mjs:14",
+    "scripts/audit.mjs:33",
+    "scripts/check-auto-fallback.mjs:13",
+    "scripts/check-auto-fallback.mjs:13",
+    "scripts/check-auto-fallback.mjs:26"
+   ]
+  },
+  "dyn_import": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-bundled-plugin.mjs:46",
+    "scripts/check-dsh-cli.mjs:34",
+    "scripts/check-restart.mjs:39",
+    "scripts/check-runtime-lock.mjs:41",
+    "scripts/check-runtime-lock.mjs:129"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×55 src, e.g. scripts/check-auto-fallback.mjs:11, scripts/check-auto-fallback.mjs:11"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×22 src, e.g. scripts/check-auto-fallback.mjs:28, scripts/check-auto-fallback.mjs:45"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 2
+}

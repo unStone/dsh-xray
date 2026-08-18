@@ -1,0 +1,137 @@
+{
+ "repo": "ZSeven-W/dsh-openpencil",
+ "stars": 115,
+ "description": "The DeepSeek Harness plugin for OpenPencil — preview, inspect, and edit real .op documents inside a conversation.",
+ "pushed_at": "2026-08-16T17:24:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@zseven-w/dsh-openpencil",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "locale",
+  "sandboxPolicy",
+  "sessions",
+  "slots",
+  "theme",
+  "tools"
+ ],
+ "hooks": [
+  "locale/change",
+  "theme/change"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "DSH_SOURCE_ROOT": 1,
+  "OPENPENCIL_ROOT": 1,
+  "ESBUILD_BIN": 1,
+  "DSH_OPENPENCIL_VIEWER_SOURCE": 1,
+  "DSH_HOME": 2,
+  "DSH_OPENPENCIL_EDITOR_BINARY": 1,
+  "DSH_OPENPENCIL_SOURCE_ROOT": 2,
+  "OPENPENCIL_SOURCE_ROOT": 2,
+  "DSH_OPENPENCIL_BINARY": 1,
+  "DSH_OPENPENCIL_DESKTOP": 1,
+  "DSH_OPENPENCIL_JIAN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/run-tool.mjs:1",
+    "scripts/run-tool.mjs:1",
+    "scripts/run-tool.mjs:61",
+    "scripts/sync-viewer-assets.mjs:16",
+    "scripts/sync-viewer-assets.mjs:105"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 6,
+   "evidence": [
+    "scripts/test-host.mjs:134",
+    "scripts/test-host.mjs:141",
+    "scripts/test-viewer-assets.mjs:32",
+    "scripts/test-viewer-assets.mjs:35"
+   ]
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 10,
+   "evidence": [
+    "scripts/build-client.mjs:26",
+    "scripts/sync-viewer-assets.mjs:120",
+    "scripts/sync-viewer-assets.mjs:130",
+    "scripts/sync-viewer-assets.mjs:141",
+    "scripts/sync-viewer-assets.mjs:171"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/run-tool.mjs:1, scripts/run-tool.mjs:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. scripts/test-host.mjs:134, scripts/test-host.mjs:141"
+  }
+ ],
+ "level": 3
+}

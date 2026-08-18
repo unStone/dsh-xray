@@ -1,0 +1,124 @@
+{
+ "repo": "lencx/Minke",
+ "stars": 143,
+ "description": "🐳 DeepSeek Harness Desktop",
+ "pushed_at": "2026-08-18T00:33:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-general",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ]
+  }
+ },
+ "pkg_name": "minke",
+ "deps": [
+  "electron-squirrel-startup",
+  "electron-window-state",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "layout",
+  "llm",
+  "locale",
+  "sessions",
+  "slots",
+  "subprocess",
+  "theme",
+  "workspaces"
+ ],
+ "hooks": [
+  "llm/stream",
+  "locale/change",
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.google.com": 1
+ },
+ "env": {
+  "LOCALAPPDATA": 4,
+  "COMSPEC": 1,
+  "DSH_FORGE_WORKER": 2,
+  "ComSpec": 3,
+  "npm_execpath": 1,
+  "SystemRoot": 2,
+  "ELECTRON_RUN_AS_NODE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 27,
+   "dev": 14,
+   "evidence": [
+    "desktop/main/harness-runtime.ts:1",
+    "desktop/main/harness-runtime.ts:130",
+    "desktop/main/tabs/terminal.ts:31",
+    "desktop/main/tabs/terminal.ts:100",
+    "packages/harness-overlay/src/model-runtime/index.ts:186"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 42,
+   "evidence": [
+    "desktop/main/minke-config.ts:236",
+    "desktop/main/tabs/files.ts:128",
+    "scripts/forge/generate-icons.mjs:83",
+    "scripts/forge/generate-icons.mjs:125",
+    "scripts/harness/runtime-prune.mjs:206"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 187,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×27 src, e.g. desktop/main/harness-runtime.ts:1, desktop/main/harness-runtime.ts:130"
+  }
+ ],
+ "level": 3
+}

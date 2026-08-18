@@ -1,0 +1,106 @@
+{
+ "repo": "Sanqi-normal/dsh-webui-market-plugin",
+ "stars": 82,
+ "description": "dsh Web GUI 社区插件市场：浏览 awesome-dsh-plugin.com 插件目录，一键安装/卸载到 profile。Community plugin market for the DeepSeek Harness (dsh) web GUI: browse, install and uninstall plugins into a profile.",
+ "pushed_at": "2026-08-18T04:43:03Z",
+ "status": "ok",
+ "manifest": {
+  "profile": {
+   "bundles": [
+    "@deepseek-ai/dsh-base",
+    "@deepseek-ai/dsh-web-app"
+   ]
+  }
+ },
+ "pkg_name": "dsh-profile-web",
+ "deps": [
+  "@liustack/modlens",
+  "dsh-better-sidebar",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "awesome-dsh-plugin.com": 5,
+  "raw.gitmirror.com": 1,
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_MARKET_OP_TIMEOUT_MS": 2,
+  "DSH_MARKET_FETCH_TIMEOUT_MS": 1,
+  "DSH_MARKET_FETCH_RETRIES": 1,
+  "DSH_MARKET_FETCH_RETRY_MINTIMEOUT_MS": 1,
+  "DSH_MARKET_FETCH_RETRY_MAXTIMEOUT_MS": 1,
+  "DSH_HOME": 1,
+  "DSH_BIN": 2,
+  "npm_config_registry": 1,
+  "NPM_CONFIG_REGISTRY": 1,
+  "npm_config_minimum_release_age": 1,
+  "NPM_CONFIG_MINIMUM_RELEASE_AGE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    ".scratch/repro-npm.mjs:2",
+    ".scratch/repro-npm.mjs:2",
+    ".scratch/repro-npm.mjs:12",
+    "lib/host.js:23",
+    "lib/host.js:304"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 56,
+   "evidence": [
+    "lib/host.js:19",
+    "lib/host.js:19",
+    "lib/host.js:383",
+    "lib/host.js:449",
+    "lib/host.js:834"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. .scratch/repro-npm.mjs:2, .scratch/repro-npm.mjs:2"
+  }
+ ],
+ "level": 2
+}

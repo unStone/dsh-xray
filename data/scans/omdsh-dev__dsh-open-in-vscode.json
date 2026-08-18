@@ -1,0 +1,116 @@
+{
+ "repo": "omdsh-dev/dsh-open-in-vscode",
+ "stars": 49,
+ "description": "Open DeepSeek Harness workspace directories in VS Code directly from the web GUI.",
+ "pushed_at": "2026-08-16T05:24:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-open-in-vscode",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-workspace",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "locale",
+  "remote",
+  "slots",
+  "typert",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:61",
+    "build.mjs:61",
+    "build.mjs:62",
+    "lib/index.js:867",
+    "lib/index.js:918"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:304"
+   ]
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1283",
+    "lib/client.js:2641",
+    "lib/client.js:2698",
+    "lib/index.js:112",
+    "lib/index.js:113"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. build.mjs:61, build.mjs:61"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:304"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. lib/client.js:1283, lib/client.js:2641"
+  }
+ ],
+ "level": 3
+}

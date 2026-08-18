@@ -1,0 +1,226 @@
+{
+ "repo": "wink-run/tokenbank",
+ "stars": 77,
+ "description": "Token Bank — the local LLM gateway that sits between your AI agents and every provider.  Know where tokens go · Spend less with smart routing to Ollama, Groq, GitHub Models · Earn by sharing idle quot",
+ "pushed_at": "2026-08-17T18:15:33Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "llm-proxy-client",
+ "deps": [
+  "@fontsource/inter",
+  "@lobehub/icons-static-svg",
+  "adm-zip",
+  "axios",
+  "better-sqlite3",
+  "electron-store",
+  "electron-updater",
+  "fzstd",
+  "https-proxy-agent",
+  "js-yaml",
+  "proxy-from-env",
+  "react",
+  "react-dom",
+  "react-router-dom",
+  "react-simple-maps",
+  "recharts",
+  "ws"
+ ],
+ "install_scripts": {
+  "postinstall": "electron-rebuild -f -w better-sqlite3"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.ipify.org": 1,
+  "cloudflare.com": 1,
+  "ifconfig.me": 1,
+  "api.ip.sb": 1,
+  "api.openai.com": 5,
+  "generativelanguage.googleapis.com": 2,
+  "apihub.agnes-ai.com": 3,
+  "claude.ai": 8,
+  "platform.claude.com": 2,
+  "api.anthropic.com": 3,
+  "auth.openai.com": 5,
+  "chatgpt.com": 3,
+  "api.github.com": 5,
+  "api.githubcopilot.com": 1,
+  "openrouter.ai": 4,
+  "codeload.github.com": 5,
+  "api.agnes-ai.cn": 2,
+  "apihub.agnes-ai.cn": 1,
+  "cursor.com": 3,
+  "www.cursor.com": 1,
+  "api.deepseek.com": 2,
+  "cloudcode-pa.googleapis.com": 2,
+  "api.groq.com": 2,
+  "api.kimi.com": 1,
+  "api.minimaxi.com": 2,
+  "api.minimax.io": 1,
+  "www.minimaxi.com": 1,
+  "walletd.siliconflow.cn": 2,
+  "api.siliconflow.cn": 1,
+  "account.siliconflow.cn": 1,
+  "cloud.siliconflow.cn": 2,
+  "ark.cn-beijing.volces.com": 2,
+  "billing.volcengineapi.com": 1,
+  "www.volcengine.com": 1,
+  "open.bigmodel.cn": 3,
+  "api.z.ai": 1,
+  "bigmodel.cn": 1,
+  "tokenbank.wink.run": 2,
+  "unpkg.com": 3,
+  "vuejs.org": 2
+ },
+ "env": {
+  "TOKENBANK_CLI": 2,
+  "GATEWAY_PORT": 4,
+  "GATEWAY_BIND_HOST": 1,
+  "TB_DISPATCH_URL": 1,
+  "TB_DISPATCH_TOKEN": 1,
+  "TB_PARENT_TASK_ID": 1,
+  "TB_PARENT_SESSION_KEY": 1,
+  "TB_PARENT_SESSION_INSTANCE": 1,
+  "TB_WORKING_DIR": 1,
+  "TB_CLIENT_ID": 5,
+  "TB_MAIN_AGENT_ID": 4,
+  "TOKEN_SERVER_URL": 2,
+  "TOKENBANK_SERVER_URL": 2,
+  "CLAUDE_CONFIG_DIR": 3,
+  "CODEX_HOME": 4,
+  "TB_USER_DATA": 2,
+  "APPDATA": 13,
+  "ANTHROPIC_BASE_URL": 1,
+  "OPENAI_BASE_URL": 1,
+  "TOKENBANK_COMPRESS": 1,
+  "VITE_DEV_SERVER_URL": 1,
+  "LOCALAPPDATA": 7,
+  "OPENCLAW_CONFIG_PATH": 2,
+  "DSH_HOME": 3,
+  "ComSpec": 1,
+  "TB_GATEWAY_URL": 4,
+  "TB_GATEWAY_PORT": 2,
+  "NVM_SYMLINK": 2,
+  "NVM_HOME": 1,
+  "FNM_DIR": 2,
+  "NVM_DIR": 2,
+  "CODEX_CLI_PATH": 1,
+  "HTTPS_PROXY": 2,
+  "https_proxy": 2,
+  "HTTP_PROXY": 2,
+  "http_proxy": 2,
+  "ARKCLI_PATH": 2,
+  "VOLCENGINE_ACCESS_KEY_ID": 1,
+  "VOLC_ACCESSKEY": 1,
+  "VOLCENGINE_AK": 1,
+  "VOLCENGINE_SECRET_ACCESS_KEY": 1,
+  "VOLC_SECRETKEY": 1,
+  "VOLCENGINE_SK": 1,
+  "CHANGELOG_TO": 1,
+  "GITHUB_REF_NAME": 2,
+  "CHANGELOG_FROM": 1,
+  "APPLE_ID": 1,
+  "APPLE_APP_SPECIFIC_PASSWORD": 1,
+  "APPLE_TEAM_ID": 1,
+  "NOTARIZE_MAX_ATTEMPTS": 1,
+  "CLI_PRUNE_ELECTRON_ROOT": 2,
+  "CLI_PRUNE_ALLOW": 1,
+  "KUBERNETES_SERVICE_HOST": 1,
+  "CONTAINER": 1,
+  "DOCKER_CONTAINER": 1,
+  "COMPUTERNAME": 1,
+  "NO_PROXY": 2,
+  "no_proxy": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 75,
+   "dev": 6,
+   "evidence": [
+    "client/electron/agent-executor.js:6",
+    "client/electron/agent-executor.js:1260",
+    "client/electron/agent-linker.js:9",
+    "client/electron/agent-linker.js:9",
+    "client/electron/agent-linker.js:268"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "server/static/support.js:702",
+    "server/static/support.js:1044"
+   ]
+  },
+  "base64_decode": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "client/electron/agent-executor.js:64",
+    "client/electron/handlers/ttsHandler.js:131",
+    "client/electron/main.js:460",
+    "client/electron/main.js:484",
+    "client/electron/oauth/index.js:215"
+   ]
+  },
+  "net_server": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "client/cli/admin-api.js:910",
+    "client/electron/agent-dispatch-server.js:90",
+    "client/electron/agent-dispatch-server.js:163",
+    "client/electron/local-gateway.js:4179",
+    "client/electron/main.js:6016"
+   ]
+  },
+  "fs_write": {
+   "src": 167,
+   "dev": 103,
+   "evidence": [
+    "client/electron/agent-dispatch-server.js:41",
+    "client/electron/agent-dispatch-server.js:178",
+    "client/electron/agent-executor.js:77",
+    "client/electron/agent-worker.js:78",
+    "client/electron/api-retry-trace.js:17"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 355,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: electron-rebuild -f -w better-sqlite3"
+  },
+  {
+   "id": "exec",
+   "evidence": "×75 src, e.g. client/electron/agent-executor.js:6, client/electron/agent-executor.js:1260"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. server/static/support.js:702, server/static/support.js:1044"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×5 src, e.g. client/electron/agent-executor.js:64, client/electron/handlers/ttsHandler.js:131"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×9 src, e.g. client/cli/admin-api.js:910, client/electron/agent-dispatch-server.js:90"
+  },
+  {
+   "id": "token_env",
+   "evidence": "APPLE_APP_SPECIFIC_PASSWORD, TB_DISPATCH_TOKEN, TB_PARENT_SESSION_KEY, TOKENBANK_CLI, TOKENBANK_COMPRESS, TOKENBANK_SERVER_URL"
+  }
+ ],
+ "level": 2
+}

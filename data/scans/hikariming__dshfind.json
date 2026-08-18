@@ -1,0 +1,124 @@
+{
+ "repo": "hikariming/dshfind",
+ "stars": 146,
+ "description": "DSH (DeepSeek Harness) 原理学习、插件市场与最佳实践 · Learn DSH principles, plugin marketplace & best practices",
+ "pushed_at": "2026-08-18T03:02:29Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dshfind",
+ "deps": [
+  "@libsql/client",
+  "@mdx-js/loader",
+  "@mdx-js/react",
+  "@next/mdx",
+  "@tanstack/react-virtual",
+  "@types/mdx",
+  "@vercel/analytics",
+  "class-variance-authority",
+  "clsx",
+  "jose",
+  "lucide-react",
+  "next",
+  "next-intl",
+  "next-themes",
+  "radix-ui",
+  "react",
+  "react-dom",
+  "remark-gfm",
+  "shadcn",
+  "tailwind-merge",
+  "tw-animate-css"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "api.github.com": 3,
+  "schema.org": 2,
+  "hub.omdsh.dev": 1,
+  "dshdesktop.cn": 1,
+  "www.mzyai.com": 1,
+  "dshregistry.xyz": 1,
+  "lobehub.com": 1,
+  "www.deepseekdesktop.com": 1,
+  "avatars.githubusercontent.com": 100,
+  "dshfind.com": 1
+ },
+ "env": {
+  "TURSO_DATABASE_URL": 8,
+  "TURSO_AUTH_TOKEN": 8,
+  "GITHUB_TOKEN": 5,
+  "NEXT_PUBLIC_API_BASE_URL": 5,
+  "AUTH_SECRET": 2,
+  "AUTH_GATE": 1,
+  "BACKEND_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 4,
+   "evidence": [
+    "scripts/collect-score-evidence.mjs:14",
+    "scripts/collect-score-evidence.mjs:14",
+    "scripts/collect-score-evidence.mjs:23",
+    "scripts/gen-ranking-real.mjs:13",
+    "scripts/gen-ranking-real.mjs:13"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/gen-ranking-real.mjs:33"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 4,
+   "evidence": [
+    "scripts/collect-score-evidence.mjs:15",
+    "scripts/collect-score-evidence.mjs:249",
+    "scripts/gen-lessons-registry.mjs:4",
+    "scripts/gen-lessons-registry.mjs:65",
+    "scripts/gen-plugins-real.mjs:14"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/i18n/request.ts:17"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 170,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. scripts/collect-score-evidence.mjs:14, scripts/collect-score-evidence.mjs:14"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/gen-ranking-real.mjs:33"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AUTH_GATE, AUTH_SECRET, BACKEND_API_KEY, GITHUB_TOKEN, TURSO_AUTH_TOKEN"
+  }
+ ],
+ "level": 2
+}

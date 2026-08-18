@@ -1,0 +1,116 @@
+{
+ "repo": "kelai141/dsh-mobile-apk",
+ "stars": 70,
+ "description": "dsh 安卓壳 APK——WebView UI + 内嵌 Termux 运行时快照（解压即跑）、SAF 目录桥、保活服务、看门狗、运行时在线更新。",
+ "pushed_at": "2026-08-18T07:00:49Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "conversationEvents",
+  "conversationViews",
+  "layout",
+  "llm",
+  "loader",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "connection/reset",
+  "internal/plugin",
+  "slash/input-begin-command",
+  "slash/input-consume-token",
+  "slash/input-insert-reference",
+  "slash/input-insert-text"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dashscope.aliyuncs.com": 2,
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DASHSCOPE_API_KEY": 1,
+  "QWEN_API_KEY": 1,
+  "OPENAI_API_KEY": 1,
+  "DASHSCOPE_BASE_URL": 1,
+  "DASHSCOPE_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "app/src/main/assets/patched/vision-mcp-server.mjs:15",
+    "app/src/main/assets/patched/vision-mcp-server.mjs:205"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "app/src/main/assets/patched/client-ui-conversation-client.js:1731"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "app/src/main/assets/patched/client-ui-conversation-client.js:1549",
+    "app/src/main/assets/patched/client-ui-conversation-client.js:1550"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "app/src/main/assets/patched/attachment-local-index.js:195"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. app/src/main/assets/patched/vision-mcp-server.mjs:15, app/src/main/assets/patched/vision-mcp-server.mjs:205"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. app/src/main/assets/patched/client-ui-conversation-client.js:1731"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. app/src/main/assets/patched/client-ui-conversation-client.js:1549, app/src/main/assets/patched/client-ui-conversation-client.js:1550"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY, OPENAI_API_KEY, QWEN_API_KEY"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 14 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

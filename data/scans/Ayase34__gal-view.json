@@ -1,0 +1,102 @@
+{
+ "repo": "Ayase34/gal-view",
+ "stars": 88,
+ "description": "把dsh会话界面切换成galgame游戏界面的插件",
+ "pushed_at": "2026-08-16T00:02:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ]
+  }
+ },
+ "pkg_name": "gal-view",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CHECKOUT": 3,
+  "LOCALAPPDATA": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:10",
+    "scripts/build-client.mjs:10",
+    "scripts/build-client.mjs:65"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:798",
+    "scripts/smoke.mjs:1016"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:883",
+    "scripts/smoke.mjs:894"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:11",
+    "scripts/build-client.mjs:98"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:875"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/build-client.mjs:10, scripts/build-client.mjs:10"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. scripts/smoke.mjs:798, scripts/smoke.mjs:1016"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke.mjs:883, scripts/smoke.mjs:894"
+  }
+ ],
+ "level": 3
+}

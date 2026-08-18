@@ -1,0 +1,99 @@
+{
+ "repo": "Leslie-SSS/seeWxapkg",
+ "stars": 84,
+ "description": "极简实用的微信小程序反编译 Web 工具",
+ "pushed_at": "2026-08-18T05:06:20Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "seewxapkg-beautify",
+ "deps": [
+  "@babel/core",
+  "@babel/parser",
+  "css-tree",
+  "parse5",
+  "prettier",
+  "css-tree",
+  "cssbeautify",
+  "escodegen",
+  "esprima",
+  "uglify-es",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "MAX_CONTENT_SIZE": 1,
+  "DEOBFUSCATE_ENABLED": 1,
+  "BEAUTIFY_JOB_TIMEOUT_MS": 1,
+  "BEAUTIFY_QUEUE_SIZE": 1,
+  "BEAUTIFY_WORKERS": 1,
+  "BEAUTIFY_PORT": 1,
+  "BEAUTIFY_HOST": 1,
+  "WXAPKG_IO_CONCURRENCY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "backend/internal/beautify/server.js:109",
+    "backend/internal/beautify/server.js:112",
+    "backend/internal/beautify/server.js:226"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 8,
+   "evidence": [
+    "backend/internal/beautify/server.js:288",
+    "backend/internal/beautify/server.js:291",
+    "backend/internal/beautify/server.js:336"
+   ]
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 14,
+   "evidence": [
+    "backend/internal/beautify/wxappUnpacker/wuDiagnostics.js:35",
+    "backend/internal/beautify/wxappUnpacker/wuWxapkg.js:137",
+    "scripts/generate_both_fixture.mjs:6",
+    "scripts/generate_both_fixture.mjs:74",
+    "scripts/generate_classic3x_fixture.mjs:7"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 58,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. backend/internal/beautify/server.js:109, backend/internal/beautify/server.js:112"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. backend/internal/beautify/server.js:288, backend/internal/beautify/server.js:291"
+  }
+ ],
+ "level": 2
+}

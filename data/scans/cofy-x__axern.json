@@ -1,0 +1,100 @@
+{
+ "repo": "cofy-x/axern",
+ "stars": 56,
+ "description": "Open-source sandboxes for AI agents, untrusted code execution, and durable services.",
+ "pushed_at": "2026-08-16T00:50:27Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@cofy-x/axern-docs",
+ "deps": [
+  "@astrojs/sitemap",
+  "@astrojs/starlight",
+  "astro",
+  "astro-mermaid",
+  "mermaid",
+  "sharp",
+  "@grpc/grpc-js",
+  "@grpc/proto-loader",
+  "tar-stream"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "AXERN_ENDPOINT": 1,
+  "AXERN_SERVICE_URL": 1,
+  "AXERN_SSH_ENDPOINT": 1,
+  "AXERN_SSH_IDENTITY_FILE": 1,
+  "AXERN_TLS_CA_CERT": 1,
+  "AXERN_TLS_CERT": 1,
+  "AXERN_TLS_KEY": 1,
+  "AXERN_TLS_SERVER_NAME": 1,
+  "AXERN_PROXY_MODE": 1,
+  "AXERN_PROTO_ROOT": 3,
+  "AXERN_TS_SMOKE_LOAD_COMPOSE_ENV": 1,
+  "AXERN_TS_SMOKE_IMAGE": 1,
+  "AXERN_TS_SMOKE_TEMPLATE_ID": 1,
+  "AXERN_TS_SMOKE_NAMESPACE": 2,
+  "AXERN_TS_SMOKE_MEMORY_MB": 2,
+  "AXERN_TS_SMOKE_TUNNEL_PROXY_PORT": 1,
+  "AXERN_TS_TUNNEL_DEBUG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "sdk/typescript/src/smoke/tunnel.ts:20",
+    "sdk/typescript/src/smoke/tunnel.ts:25"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 14,
+   "evidence": [
+    "scripts/release/sdk-data-plane/typescript.mjs:1",
+    "scripts/release/sdk-data-plane/typescript.mjs:27",
+    "sdk/typescript/src/node/client.ts:122",
+    "sdk/typescript/src/node/client.ts:123",
+    "sdk/typescript/src/node/client.ts:127"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 68,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. sdk/typescript/src/smoke/tunnel.ts:20, sdk/typescript/src/smoke/tunnel.ts:25"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AXERN_TLS_KEY"
+  }
+ ],
+ "level": 2
+}

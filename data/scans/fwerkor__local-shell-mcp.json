@@ -1,0 +1,136 @@
+{
+ "repo": "fwerkor/local-shell-mcp",
+ "stars": 49,
+ "description": "Enables LLM to use a cli environment. ",
+ "pushed_at": "2026-08-18T04:43:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  },
+  "category": "extension",
+  "displayName": "Local Shell MCP",
+  "image": "https://raw.githubusercontent.com/fwerkor/local-shell-mcp/main/docs/assets/logo.svg"
+ },
+ "pkg_name": "local-shell-mcp",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "zod",
+  "@modelcontextprotocol/ext-apps",
+  "@opentui/core",
+  "@opentui/react",
+  "@xterm/addon-fit",
+  "@xterm/addon-image",
+  "@xterm/xterm",
+  "react",
+  "react-reconciler"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "conversation",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/disposed"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "LOCAL_SHELL_MCP_NPM_CACHE": 2,
+  "LOCALAPPDATA": 2,
+  "XDG_CACHE_HOME": 1,
+  "LOCAL_SHELL_MCP_BINARY": 2,
+  "LSM_UI_BINARY_OUTDIR": 3,
+  "OPENTUI_LIBC": 1,
+  "LOCAL_SHELL_MCP_UI_API_BASE": 1,
+  "LOCAL_SHELL_MCP_UI_LOCAL_TOKEN": 1,
+  "LOCAL_SHELL_MCP_UI_CELL_ASPECT": 2,
+  "LOCAL_SHELL_MCP_UI_MODE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 3,
+   "evidence": [
+    "npm/bin/local-shell-mcp.js:4",
+    "npm/bin/local-shell-mcp.js:107",
+    "vscode-extension/scripts/package-vsix.cjs:2",
+    "vscode-extension/scripts/package-vsix.cjs:2",
+    "vscode-extension/scripts/package-vsix.cjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "src/local_shell_mcp/ui_static/web.js:9",
+    "src/local_shell_mcp/ui_static/web.js:9",
+    "src/local_shell_mcp/ui_static/web.js:9",
+    "src/local_shell_mcp/ui_static/web.js:9",
+    "src/local_shell_mcp/ui_static/web.js:9"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "npm/bin/local-shell-mcp.js:94",
+    "npm/bin/local-shell-mcp.js:98"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 87,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. npm/bin/local-shell-mcp.js:4, npm/bin/local-shell-mcp.js:107"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. src/local_shell_mcp/ui_static/web.js:9, src/local_shell_mcp/ui_static/web.js:9"
+  },
+  {
+   "id": "token_env",
+   "evidence": "LOCAL_SHELL_MCP_UI_LOCAL_TOKEN"
+  }
+ ],
+ "level": 3
+}

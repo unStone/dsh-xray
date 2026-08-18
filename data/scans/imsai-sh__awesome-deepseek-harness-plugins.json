@@ -1,0 +1,131 @@
+{
+ "repo": "imsai-sh/awesome-deepseek-harness-plugins",
+ "stars": 70,
+ "description": "DeepSeek Harness plugin store, marketplace and hub — 3,100+ dsh plugins with search, rankings, install commands and a free public API. DeepSeek Harness 插件市场 / 插件商店：自动收集与格式校验，免费搜索 API。deepseek1024.com",
+ "pushed_at": "2026-08-18T01:47:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-1024store/web",
+ "deps": [
+  "hono",
+  "lucide-react",
+  "react",
+  "react-dom",
+  "react-markdown",
+  "react-router-dom",
+  "remark-gfm",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "deepseek1024.com": 26,
+  "www.deepseek.com": 3,
+  "www.imsai.cc": 4,
+  "avatars.githubusercontent.com": 1,
+  "api.deepseek1024.com": 5,
+  "api.github.com": 8,
+  "schema.org": 3,
+  "www.sitemaps.org": 1,
+  "docs.npmjs.com": 1
+ },
+ "env": {
+  "BASE_URL": 1,
+  "DSH_HOME": 2,
+  "CHROME_PATH": 1,
+  "GITHUB_TOKEN": 2,
+  "PLUGIN_REVIEW_ROOT": 1,
+  "GITHUB_OUTPUT": 1,
+  "PLUGIN_REVIEW_BASE_SHA": 1,
+  "PLUGIN_REVIEW_HEAD_SHA": 1,
+  "PLUGIN_REVIEW_REPOSITORY": 1,
+  "PLUGIN_REVIEW_PULL_NUMBER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 55,
+   "evidence": [
+    "packages/dsh1024/cli/plugin.js:2",
+    "packages/dsh1024/lib/shared/install-runner.js:6",
+    "packages/dsh1024/lib/shared/install-runner.js:8",
+    "packages/dsh1024/src/shared/install-runner.ts:6",
+    "packages/dsh1024/src/shared/install-runner.ts:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "apps/web/worker/lib/github-discovery.ts:280"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 27,
+   "evidence": [
+    "packages/dsh1024/lib/shared/files.js:39",
+    "packages/dsh1024/lib/shared/files.js:93",
+    "packages/dsh1024/src/shared/files.ts:56",
+    "packages/dsh1024/src/shared/files.ts:114",
+    "scripts/build-readme.mjs:622"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 169,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. packages/dsh1024/cli/plugin.js:2, packages/dsh1024/lib/shared/install-runner.js:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. apps/web/worker/lib/github-discovery.ts:280"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

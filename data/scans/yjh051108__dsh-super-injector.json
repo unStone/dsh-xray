@@ -1,0 +1,116 @@
+{
+ "repo": "yjh051108/dsh-super-injector",
+ "stars": 101,
+ "description": "",
+ "pushed_at": "2026-08-15T13:21:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-super-injector",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "loader",
+  "slots",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 29,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3,
+  "USERPROFILE": 1,
+  "DSH_WEB": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:33",
+    "src/index.ts:33",
+    "src/index.ts:2722",
+    "src/index.ts:2733",
+    "src/index.ts:2760"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:1454",
+    "src/index.ts:1506"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 36,
+   "dev": 0,
+   "evidence": [
+    "scripts/fix-patch.mjs:21",
+    "scripts/fix-patch.mjs:85",
+    "src/index.ts:30",
+    "src/index.ts:30",
+    "src/index.ts:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/index.ts:33, src/index.ts:33"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. src/index.ts:1454, src/index.ts:1506"
+  }
+ ],
+ "level": 3
+}

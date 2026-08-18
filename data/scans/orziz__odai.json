@@ -1,0 +1,185 @@
+{
+ "repo": "orziz/odai",
+ "stars": 85,
+ "description": "AI agent 通用任务治理框架：对齐目标与事实，规划和调度能力，守住授权与风险边界，治理任务执行到真实验收与交付。Governance framework for evidence-driven planning, orchestration, and verified delivery.",
+ "pushed_at": "2026-08-17T13:13:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "odai-cli",
+ "deps": [
+  "yaml",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {
+  "prepare": "npm run prepare:artifact"
+ },
+ "injects": [
+  "llm",
+  "sessions",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step",
+  "agent/request",
+  "agent/turn-stopping",
+  "llm/stream",
+  "session/event",
+  "system-prompt/assemble",
+  "tools/result"
+ ],
+ "tool_regs": 7,
+ "domains": {
+  "api.deepseek.com": 4,
+  "api.example.com": 1,
+  "api.openai.com": 2,
+  "api.anthropic.com": 2,
+  "generativelanguage.googleapis.com": 2,
+  "cdn.jsdelivr.net": 4
+ },
+ "env": {
+  "npm_execpath": 2,
+  "ODAI_LANG": 1,
+  "ANTHROPIC_API_KEY": 1,
+  "ODAI_ANTHROPIC_MODEL": 1,
+  "ODAI_ANTHROPIC_MAX_TOKENS": 1,
+  "GEMINI_API_KEY": 1,
+  "ODAI_GEMINI_MODEL": 1,
+  "ODAI_OLLAMA_MODEL": 1,
+  "OPENAI_API_KEY": 1,
+  "ODAI_OPENAI_MODEL": 1,
+  "DSH_BIN": 8,
+  "DSH_PACKAGE_ROOT": 4,
+  "KEEP_ODAI_SCOPE_PROBE": 1,
+  "INIT_CWD": 2,
+  "ODAI_COMPACTION_CACHE_RETENTION": 2,
+  "ODAI_SKILL_PATH": 2,
+  "ODAI_PYTHON": 2,
+  "CODEX_HOME": 7,
+  "API_SECRET": 4,
+  "ODAI_CODEX_COMMAND": 5,
+  "USERPROFILE": 8,
+  "LOCALAPPDATA": 3,
+  "ODAI_ANTIGRAVITY_MODEL": 1,
+  "ODAI_ANTIGRAVITY_EFFORT": 1,
+  "ODAI_ANTIGRAVITY_COMMAND": 1,
+  "ODAI_CANARY_ISOLATION": 1,
+  "ODAI_CANARY_SKILL_MODE": 1,
+  "ODAI_CANARY_HOME": 1,
+  "ODAI_CLAUDE_MODEL": 1,
+  "ODAI_CLAUDE_COMMAND": 1,
+  "ODAI_CANARY_SOURCE_HOME": 5,
+  "ODAI_CODEX_JUDGE_MODEL": 1,
+  "ODAI_CODEX_JUDGE_EFFORT": 1,
+  "ODAI_GROK_MODEL": 2,
+  "ODAI_GROK_COMMAND": 2,
+  "ODAI_GROK_MAX_TURNS": 1,
+  "ODAI_KIMI_MODEL": 1,
+  "ODAI_KIMI_COMMAND": 1,
+  "ODAI_OPENAI_COMPATIBLE_MODEL": 1,
+  "ODAI_OPENAI_COMPATIBLE_BASE_URL": 1,
+  "ODAI_OPENAI_COMPATIBLE_API_KEY": 1,
+  "KEEP_ODAI_COEXISTENCE_PROBE": 1,
+  "CLAUDE_CONFIG_DIR": 1,
+  "COPILOT_HOME": 1,
+  "ODAI_ROUTING_ACTIVE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 104,
+   "dev": 12,
+   "evidence": [
+    "cli/scripts/run-pack.mjs:3",
+    "cli/scripts/run-pack.mjs:22",
+    "cli/src/config/provider-config.mjs:1",
+    "cli/src/config/provider-config.mjs:1",
+    "cli/src/config/provider-config.mjs:532"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "dsh/runtime/src/skill-bundle.mjs:241",
+    "skills/odai/scripts/install-routing.mjs:140",
+    "skills/odai/scripts/install-routing.mjs:326"
+   ]
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 1,
+   "evidence": [
+    "dsh/agent/scripts/verify-agent-load.mjs:98",
+    "dsh/agent/scripts/verify-agent-load.mjs:100",
+    "scripts/dsh-canary-runner.mjs:682",
+    "scripts/dsh-canary-runner.mjs:684",
+    "scripts/verify-dsh-coexistence.mjs:63"
+   ]
+  },
+  "fs_write": {
+   "src": 224,
+   "dev": 248,
+   "evidence": [
+    "cli/src/core/auth-config.mjs:589",
+    "cli/src/core/auth-config.mjs:617",
+    "cli/src/core/canary-runner-helpers.mjs:156",
+    "cli/src/core/init-workspace.mjs:266",
+    "cli/src/core/phase0-demo.mjs:21"
+   ]
+  },
+  "dyn_import": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "dsh/agent/src/installer.mjs:242",
+    "dsh/plugin/bin/odai-dsh-plugin.mjs:31",
+    "dsh/plugin/scripts/live-compaction-cache-smoke.mjs:246",
+    "dsh/plugin/scripts/verify-session-compat.mjs:29",
+    "dsh/plugin/scripts/verify-session-compat.mjs:30"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 179,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×104 src, e.g. cli/scripts/run-pack.mjs:3, cli/scripts/run-pack.mjs:22"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. dsh/runtime/src/skill-bundle.mjs:241, skills/odai/scripts/install-routing.mjs:140"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. dsh/agent/scripts/verify-agent-load.mjs:98, dsh/agent/scripts/verify-agent-load.mjs:100"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ANTHROPIC_API_KEY, API_SECRET, GEMINI_API_KEY, ODAI_ANTHROPIC_MAX_TOKENS, ODAI_OPENAI_COMPATIBLE_API_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

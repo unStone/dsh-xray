@@ -1,0 +1,112 @@
+{
+ "repo": "cocofhu/anime-find",
+ "stars": 143,
+ "description": "DeepSeek Harness 搜番插件：对话内多源搜索番剧，卡片展示 Bangumi 评分与详情，支持复制磁力。",
+ "pushed_at": "2026-08-18T03:51:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "@cocofhu/anime-find",
+ "deps": [
+  "cheerio",
+  "hls.js",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.bgm.tv": 1,
+  "next.bgm.tv": 1,
+  "bgm.tv": 3,
+  "dm1.xfdm.pro": 2,
+  "mikanani.me": 5,
+  "anibt.net": 4,
+  "api.animes.garden": 4,
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/apply-update.ts:1",
+    "src/apply-update.ts:2",
+    "src/apply-update.ts:102",
+    "src/apply-update.ts:146"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/streaming.ts:188"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/config-store.ts:1",
+    "src/config-store.ts:81"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/apply-update.ts:1, src/apply-update.ts:2"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/streaming.ts:188"
+  }
+ ],
+ "level": 3
+}

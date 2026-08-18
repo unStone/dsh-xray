@@ -1,0 +1,148 @@
+{
+ "repo": "omdsh-dev/dsh-mnemon",
+ "stars": 86,
+ "description": "Three-tier memory control plane for DeepSeek Harness: persistent runtime context, searchable project documents, pluggable long-term memory, smart routing, supervised agent workflows, WebUI, and headle",
+ "pushed_at": "2026-08-17T19:23:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mnemon",
+ "deps": [
+  "fflate",
+  "markdown-to-jsx",
+  "schemastery",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "connection",
+  "locale",
+  "sessions",
+  "settings",
+  "slots",
+  "subagents",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "settings/updated"
+ ],
+ "tool_regs": 13,
+ "domains": {
+  "api.honcho.dev": 1,
+  "api.mem0.ai": 1,
+  "api.hindsight.vectorize.io": 1,
+  "api.retaindb.com": 1,
+  "api.supermemory.ai": 1,
+  "api.github.com": 1
+ },
+ "env": {
+  "OPENVIKING_ROOT_API_KEY": 2,
+  "BRV_PATH": 1,
+  "SUPERMEMORY_API_KEY": 1,
+  "PROVIDER_LAB_ONLY": 1,
+  "MEM0_LLM_MODEL": 1,
+  "npm_execpath": 1,
+  "MNEMON_DATA_DIR": 2,
+  "MNEMON_STORE": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-deterministic-build.mjs:4",
+    "scripts/verify-deterministic-build.mjs:4",
+    "scripts/verify-deterministic-build.mjs:13",
+    "scripts/verify-headless-profile.mjs:1",
+    "scripts/verify-headless-profile.mjs:15"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "src/client/MnemonPackSection.tsx:39",
+    "src/pack.ts:172"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-headless-profile.mjs:50",
+    "scripts/verify-headless-profile.mjs:81"
+   ]
+  },
+  "fs_write": {
+   "src": 47,
+   "dev": 74,
+   "evidence": [
+    "scripts/verify-headless-profile.mjs:100",
+    "src/documents.ts:9",
+    "src/documents.ts:11",
+    "src/documents.ts:308",
+    "src/documents.ts:468"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 108,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/verify-deterministic-build.mjs:4, scripts/verify-deterministic-build.mjs:4"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/client/MnemonPackSection.tsx:39, src/pack.ts:172"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/verify-headless-profile.mjs:50, scripts/verify-headless-profile.mjs:81"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENVIKING_ROOT_API_KEY, SUPERMEMORY_API_KEY"
+  }
+ ],
+ "level": 3
+}

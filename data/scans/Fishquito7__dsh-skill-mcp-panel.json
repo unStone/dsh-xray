@@ -1,0 +1,126 @@
+{
+ "repo": "Fishquito7/dsh-skill-mcp-panel",
+ "stars": 60,
+ "description": "DSH Web UI plugin: skill and MCP management（Web界面的skill/MCP管理工具）",
+ "pushed_at": "2026-08-18T05:43:14Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-api-gateway"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-skill-mcp-panel",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-typert-protocol",
+  "fflate",
+  "yaml",
+  "zod",
+  "@deepseek-ai/dsh-subprocess",
+  "@modelcontextprotocol/sdk",
+  "chokidar"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "loader",
+  "locale",
+  "remote",
+  "sessions",
+  "skills",
+  "slots",
+  "tools",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "DSH_HOME": 8,
+  "DSH_AGENTS_HOME": 14,
+  "APPDATA": 2,
+  "USERPROFILE": 2,
+  "GITHUB_TOKEN": 2,
+  "GH_TOKEN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "lib/cli-skill.js:32",
+    "lib/cli-skill.js:281",
+    "lib/global-shim.js:9",
+    "lib/global-shim.js:9",
+    "lib/global-shim.js:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:780",
+    "src/index.ts:802"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 37,
+   "dev": 0,
+   "evidence": [
+    "lib/cli-skill.js:181",
+    "lib/cli-skill.js:190",
+    "lib/cli-skill.js:232",
+    "lib/global-shim.js:8",
+    "lib/global-shim.js:28"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. lib/cli-skill.js:32, lib/cli-skill.js:281"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:780, src/index.ts:802"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

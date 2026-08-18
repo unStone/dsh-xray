@@ -1,0 +1,146 @@
+{
+ "repo": "ZSeven-W/dsh-crew",
+ "stars": 56,
+ "description": "DeepSeek Harness (DSH) plugin: dispatch work to DSH agents from Claude Code / Codex — native subagent progress, in-host worker sessions with per-tier presets, and a multimodal bridge that lends the te",
+ "pushed_at": "2026-08-17T10:01:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@zseven-w/dsh-crew",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "zod",
+  "react",
+  "react-dom",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-agent-spine-demo",
+  "@deepseek-ai/dsh-bash-local",
+  "@deepseek-ai/dsh-compaction-basic",
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-fs-observation-policy",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-deepseek",
+  "@deepseek-ai/dsh-sandbox-local",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-sdk-client",
+  "@deepseek-ai/dsh-sdk-jsonrpc-demo",
+  "@deepseek-ai/dsh-sdk-jsonrpc-server",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence-jsonl",
+  "@deepseek-ai/dsh-subprocess-local",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tool-fs",
+  "@deepseek-ai/dsh-tool-todo"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "attachments",
+  "llm",
+  "locale",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "locale/change"
+ ],
+ "tool_regs": 7,
+ "domains": {
+  "api.example.com": 2
+ },
+ "env": {
+  "DSH_CREW_HUB": 2,
+  "DEEPSEEK_API_KEY": 1,
+  "CLAUDECODE": 1,
+  "CLAUDE_CODE_ENTRYPOINT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:15",
+    "src/hub/index.mjs:94",
+    "src/hub/index.mjs:342",
+    "src/install/install.mjs:186",
+    "src/install/install.mjs:186"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/multimodal.mjs:182"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 23,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:21",
+    "src/install/install.mjs:5",
+    "src/install/install.mjs:5",
+    "src/install/install.mjs:83",
+    "src/install/install.mjs:102"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/hub/index.mjs:362",
+    "src/hub/index.mjs:436",
+    "src/hub/index.mjs:455"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. scripts/smoke.mjs:15, src/hub/index.mjs:94"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/multimodal.mjs:182"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

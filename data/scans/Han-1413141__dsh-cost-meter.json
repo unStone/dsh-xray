@@ -1,0 +1,109 @@
+{
+ "repo": "Han-1413141/dsh-cost-meter",
+ "stars": 87,
+ "description": "DeepSeek Harness Session Cost Statistics & OpenCode Go Quota Display, DS Official Balance & Custom Provider Balance Lookup, Codex-like Token Heatmap Plugin: Session/Daily Cost, Budget, History, Peak/o",
+ "pushed_at": "2026-08-18T06:55:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-cost-meter",
+ "deps": [
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote"
+ ],
+ "hooks": [
+  "connection/reset",
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.anthropic.com": 2,
+  "www.minimaxi.com": 3,
+  "api.moonshot.cn": 2,
+  "openrouter.ai": 2,
+  "api.siliconflow.cn": 2,
+  "api.z.ai": 1,
+  "open.bigmodel.cn": 1,
+  "www.minimax.io": 1,
+  "opencode.ai": 65,
+  "api.deepseek.com": 1,
+  "api-docs.deepseek.com": 1,
+  "ai.google.dev": 8,
+  "docs.x.ai": 1,
+  "www.alibabacloud.com": 1,
+  "www.upstage.ai": 2
+ },
+ "env": {
+  "USERPROFILE": 2,
+  "XDG_CONFIG_HOME": 2,
+  "DEEPSEEK_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/release.mjs:18",
+    "scripts/release.mjs:18",
+    "scripts/release.mjs:24"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 8,
+   "evidence": [
+    "lib/store.js:8",
+    "lib/store.js:827",
+    "scripts/release.mjs:19",
+    "scripts/release.mjs:90",
+    "scripts/release.mjs:111"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/release.mjs:18, scripts/release.mjs:18"
+  }
+ ],
+ "level": 3
+}

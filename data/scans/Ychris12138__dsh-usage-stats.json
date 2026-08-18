@@ -1,0 +1,126 @@
+{
+ "repo": "Ychris12138/dsh-usage-stats",
+ "stars": 65,
+ "description": "Provider balances, subscription quotas, and token-usage analytics for the DeepSeek Harness Web GUI (dsh web).",
+ "pushed_at": "2026-08-18T06:39:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-usage-stats",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "llm",
+  "locale",
+  "sessionPersistence",
+  "sessions",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.z.ai": 6,
+  "api.deepseek.com": 9,
+  "opencode.ai": 5,
+  "open.bigmodel.cn": 1,
+  "api.kimi.com": 2,
+  "www.minimax.io": 4,
+  "www.minimaxi.com": 2,
+  "api.minimax.io": 5,
+  "api.minimaxi.com": 1,
+  "relay.example.com": 4,
+  "api.passionapi.com": 2,
+  "openrouter.ai": 3,
+  "late-provider.example.com": 2,
+  "api.moonshot.cn": 2
+ },
+ "env": {
+  "DSH_HOME": 6,
+  "SMOKE_NODE_MODULES": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/test-install.mjs:5",
+    "scripts/test-install.mjs:5",
+    "scripts/test-install.mjs:14",
+    "scripts/test-install.mjs:23"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-client.mjs:39"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/test-accounts.mjs:542",
+    "scripts/test-accounts.mjs:547"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:237",
+    "scripts/install.mjs:137",
+    "scripts/test-install.mjs:41",
+    "scripts/test-install.mjs:49",
+    "scripts/test-install.mjs:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/test-install.mjs:5, scripts/test-install.mjs:5"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/smoke-client.mjs:39"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/test-accounts.mjs:542, scripts/test-accounts.mjs:547"
+  }
+ ],
+ "level": 3
+}
