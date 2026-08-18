@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh-xray · DeepSeek Harness 插件能力透视</title>
+<meta name="description" content="给每个 dsh 插件拍一张 X 光片:它声明了什么权限,代码实际在做什么。">
+<style>
+:root {
+  --bg: #f7f8fa; --panel: #ffffff; --text: #1a2029; --muted: #6b7280;
+  --border: #e5e7eb; --accent: #2563eb; --accent-soft: #eff6ff;
+  --c0: #16a34a; --c1: #65a30d; --c2: #d97706; --c3: #dc2626; --cx: #9ca3af;
+  --chip-bg: #f3f4f6; --hover: #f9fafb; --code-bg: #f3f4f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117; --panel: #161b22; --text: #e6edf3; --muted: #8b949e;
+    --border: #30363d; --accent: #58a6ff; --accent-soft: #0d2440;
+    --c0: #3fb950; --c1: #a3be3c; --c2: #d29922; --c3: #f85149; --cx: #6e7681;
+    --chip-bg: #21262d; --hover: #1c2129; --code-bg: #21262d;
+  }
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--text); font: 15px/1.6 -apple-system, "PingFang SC", "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 80px; }
+header h1 { font-size: 28px; letter-spacing: -0.5px; }
+header h1 span { color: var(--accent); }
+.tagline { color: var(--muted); margin: 6px 0 4px; }
+.stats { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+.stats b { color: var(--text); }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.toolbar input {
+  flex: 1; min-width: 220px; padding: 9px 14px; border: 1px solid var(--border);
+  border-radius: 8px; background: var(--panel); color: var(--text); font-size: 14px; outline: none;
+}
+.toolbar input:focus { border-color: var(--accent); }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--panel); color: var(--muted); font-size: 13px; cursor: pointer; user-select: none;
+}
+.chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.tbl { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.row { border-top: 1px solid var(--border); }
+.row:first-child { border-top: none; }
+.row-head { display: grid; grid-template-columns: minmax(0,1fr) 70px 52px 200px; gap: 12px; padding: 12px 16px; cursor: pointer; align-items: center; }
+.row-head:hover { background: var(--hover); }
+.name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.name a { color: var(--text); text-decoration: none; }
+.name a:hover { color: var(--accent); }
+.desc { color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stars { color: var(--muted); font-size: 13px; text-align: right; }
+.lvl { font-weight: 700; font-size: 13px; text-align: center; border-radius: 6px; padding: 2px 0; color: #fff; }
+.lv0 { background: var(--c0); } .lv1 { background: var(--c1); } .lv2 { background: var(--c2); } .lv3 { background: var(--c3); } .lvx { background: var(--cx); }
+.flags { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.flag { font-size: 11px; padding: 1px 8px; border-radius: 999px; background: var(--chip-bg); color: var(--muted); white-space: nowrap; }
+.flag.hot { color: var(--c3); border: 1px solid var(--c3); background: transparent; }
+.detail { display: none; padding: 4px 16px 16px; font-size: 13px; }
+.row.open .detail { display: block; }
+.detail h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin: 12px 0 4px; }
+.detail code, .badge-snip { background: var(--code-bg); border-radius: 6px; padding: 1px 6px; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+.kv { display: flex; gap: 6px; flex-wrap: wrap; }
+.kv span { background: var(--chip-bg); border-radius: 6px; padding: 2px 8px; font-size: 12px; }
+.kv span.pw { color: var(--c3); font-weight: 600; }
+.evid { color: var(--muted); }
+.badge-line { display: flex; gap: 8px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+.badge-line button { border: 1px solid var(--border); background: var(--panel); color: var(--accent); border-radius: 6px; padding: 3px 10px; cursor: pointer; font-size: 12px; }
+footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+footer h3 { color: var(--text); font-size: 15px; margin: 18px 0 6px; }
+footer a { color: var(--accent); }
+.empty { padding: 40px; text-align: center; color: var(--muted); }
+@media (max-width: 720px) { .row-head { grid-template-columns: minmax(0,1fr) 60px 46px; } .flags { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>dsh-<span>xray</span></h1>
+  <p class="tagline">给每个 DeepSeek Harness 插件拍一张 X 光片:它声明了什么,代码实际在做什么。</p>
+  <p class="stats" id="stats">加载中…</p>
+</header>
+
+<div class="toolbar">
+  <input id="q" type="search" placeholder="搜索插件名 / 描述 / 服务名…">
+  <div class="chips" id="lvlChips">
+    <span class="chip on" data-lv="all">全部</span>
+    <span class="chip" data-lv="3">C3</span>
+    <span class="chip" data-lv="2">C2</span>
+    <span class="chip" data-lv="1">C1</span>
+    <span class="chip" data-lv="0">C0</span>
+  </div>
+  <span class="chip" id="pluginOnly">只看插件</span>
+</div>
+
+<div class="tbl" id="tbl"><div class="empty">加载数据中…</div></div>
+
+<footer>
+  <h3>这是什么</h3>
+  <p>dsh-xray 对 <code>dsh-plugin</code> 生态做静态能力分析:注入了哪些服务、挂了哪些钩子、是否给 runtime 打补丁、外联哪些域名、读哪些凭证类环境变量、有没有安装期脚本。<b>能力等级(C0–C3)衡量的是能力面大小与透明度,不是恶意判定</b>——一个 C3 插件完全可能是正当的,它只是同时拥有强能力和需要你知情的行为。</p>
+  <h3>等级说明</h3>
+  <p><b>C0</b> 无显著能力面 · <b>C1</b> 常规(注册工具/服务/外联) · <b>C2</b> 强能力(改系统提示词 / 拦截 API / 子进程 / exec / 凭证读取 / 安装脚本,其一) · <b>C3</b> 强能力与敏感行为并存。每个标志都附代码位置证据,可复核、可申诉。</p>
+  <h3>给插件作者</h3>
+  <p>在 README 挂上你的能力徽章,让用户一眼看到透明度报告——展开任意插件行即可复制徽章代码。误报请<a href="https://github.com/unStone/dsh-xray/issues">提 issue</a>,我们会复核并修正规则。</p>
+  <p style="margin-top:18px">数据每日刷新 · <a href="https://github.com/unStone/dsh-xray">GitHub</a> · Apache-2.0</p>
+</footer>
+</div>
+
+<script>
+const FLAG_ZH = {
+  runtime_patch: '改runtime', prompt_surface: '改提示词', api_intercept: '拦API',
+  subprocess_service: '子进程', tool_gate: '工具闸门', exec: 'exec', eval: 'eval',
+  base64_decode: 'base64', net_server: '起服务', token_env: '读凭证',
+  install_script: '安装脚本', no_manifest: '无manifest',
+};
+const HOT = new Set(['runtime_patch', 'prompt_surface', 'api_intercept', 'exec', 'eval', 'token_env', 'install_script']);
+const POWERFUL = new Set(['subprocess', 'apiProxy', 'systemPrompt', 'sandbox', 'webServer', 'approval']);
+let DATA = null, lv = 'all', pluginOnly = false, q = '';
+
+const esc = s => (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function render() {
+  const tbl = document.getElementById('tbl');
+  if (!DATA) return;
+  let rows = DATA.plugins;
+  if (pluginOnly) rows = rows.filter(p => p.type === 'plugin');
+  if (lv !== 'all') rows = rows.filter(p => String(p.level) === lv);
+  if (q) {
+    const k = q.toLowerCase();
+    rows = rows.filter(p => (p.repo + ' ' + (p.description || '') + ' ' + p.injects.join(' ')).toLowerCase().includes(k));
+  }
+  if (!rows.length) { tbl.innerHTML = '<div class="empty">没有匹配的插件</div>'; return; }
+  tbl.innerHTML = rows.map(p => {
+    const lvCls = p.level < 0 ? 'lvx' : 'lv' + p.level;
+    const lvTxt = p.level < 0 ? '—' : 'C' + p.level;
+    const flags = (p.flags || []).map(f =>
+      `<span class="flag ${HOT.has(f.id) ? 'hot' : ''}">${FLAG_ZH[f.id] || f.id}</span>`).join('');
+    return `<div class="row" data-repo="${esc(p.repo)}">
+      <div class="row-head" onclick="this.parentNode.classList.toggle('open')">
+        <div><div class="name"><a href="https://github.com/${esc(p.repo)}" target="_blank" onclick="event.stopPropagation()">${esc(p.repo)}</a></div>
+        <div class="desc">${esc(p.description)}</div></div>
+        <div class="stars">★ ${p.stars >= 1000 ? (p.stars / 1000).toFixed(1) + 'k' : p.stars}</div>
+        <div class="lvl ${lvCls}">${lvTxt}</div>
+        <div class="flags">${flags}</div>
+      </div>
+      <div class="detail">${detail(p)}</div>
+    </div>`;
+  }).join('');
+}
+
+function detail(p) {
+  if (p.level < 0) return `<p class="evid">${esc(p.status)}</p>`;
+  const slug = p.repo.replace('/', '__');
+  const badgeUrl = `https://img.shields.io/endpoint?url=https%3A%2F%2Funstone.github.io%2Fdsh-xray%2Fbadge%2F${slug}.json`;
+  const badgeMd = `[![dsh-xray](${badgeUrl})](https://unstone.github.io/dsh-xray/#${slug})`;
+  let h = '';
+  if ((p.flags || []).length) {
+    h += '<h4>标志与证据</h4>' + p.flags.map(f =>
+      `<div><span class="flag ${HOT.has(f.id) ? 'hot' : ''}">${FLAG_ZH[f.id] || f.id}</span> <span class="evid">${esc(f.evidence)}</span></div>`).join('');
+  }
+  if (p.injects.length) h += `<h4>注入服务 (${p.injects.length})</h4><div class="kv">` +
+    p.injects.map(s => `<span class="${POWERFUL.has(s) ? 'pw' : ''}">${esc(s)}</span>`).join('') + '</div>';
+  if (p.hooks.length) h += `<h4>监听钩子 (${p.hooks.length})</h4><div class="kv">` +
+    p.hooks.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
+  if (p.domains.length) h += `<h4>外联域名</h4><div class="kv">` + p.domains.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
+  if (p.env.length) h += `<h4>环境变量</h4><div class="kv">` + p.env.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
+  h += `<h4>工具注册点</h4>${p.tool_regs} 处 · 扫描 ${p.files_scanned} 个代码文件`;
+  h += `<div class="badge-line"><img src="${badgeUrl}" alt="badge">
+        <span class="badge-snip">${esc(badgeMd)}</span>
+        <button onclick='navigator.clipboard.writeText(${JSON.stringify(badgeMd)});this.textContent="已复制"'>复制徽章</button></div>`;
+  return h;
+}
+
+fetch('data.json').then(r => r.json()).then(d => {
+  DATA = d;
+  const lvCount = {};
+  d.plugins.forEach(p => { if (p.level >= 0) lvCount[p.level] = (lvCount[p.level] || 0) + 1; });
+  document.getElementById('stats').innerHTML =
+    `已扫描 <b>${d.scanned}</b> 个仓库(生态 top ${d.total},按 star)· ` +
+    `其中 <b>${lvCount[3] || 0}</b> 个 C3、<b>${lvCount[2] || 0}</b> 个 C2 · 更新于 ${d.generated_at.slice(0, 16).replace('T', ' ')} UTC`;
+  render();
+  const hash = location.hash.slice(1);
+  if (hash) { const el = document.querySelector(`[data-repo="${hash.replace('__', '/')}"]`); if (el) { el.classList.add('open'); el.scrollIntoView(); } }
+});
+
+document.getElementById('q').addEventListener('input', e => { q = e.target.value; render(); });
+document.getElementById('lvlChips').addEventListener('click', e => {
+  if (!e.target.dataset.lv) return;
+  lv = e.target.dataset.lv;
+  document.querySelectorAll('#lvlChips .chip').forEach(c => c.classList.toggle('on', c === e.target));
+  render();
+});
+document.getElementById('pluginOnly').addEventListener('click', e => {
+  pluginOnly = !pluginOnly; e.target.classList.toggle('on', pluginOnly); render();
+});
+</script>
+</body>
+</html>
