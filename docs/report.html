@@ -33,6 +33,8 @@
   <div class="links">
     <a href="registry.html" data-i18n="nav.registry">Registry</a>
     <a href="levels.html" data-i18n="nav.levels">Levels</a>
+    <a href="?doc=plugins" data-i18n="nav.guide">How it works</a>
+    <a href="?doc=changelog" data-i18n="nav.changelog">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray" data-i18n="nav.github">GitHub</a>
   </div>
   <div class="chips" id="langSwitch"></div>
@@ -113,8 +115,16 @@ function md2html(src) {
   return out.join('\n').replace(/ BLOCK(\d+) /g, (_, n) => blocks[+n]);
 }
 
-// zh has its own translation; other locales fall back to the English report.
-const file = xray.lang === 'zh' ? 'report/2026-08.zh.md' : 'report/2026-08.md';
+// ?doc=<slug> picks the document; zh has its own translation for each, other
+// locales fall back to English. Keeps one renderer for report and guides.
+const DOCS = {
+  'report': 'report/2026-08',
+  'plugins': 'guide/how-dsh-plugins-work',
+  'changelog': 'guide/changelog',
+};
+const slug = new URLSearchParams(location.search).get('doc') || 'report';
+const base = DOCS[slug] || DOCS['report'];
+const file = xray.lang === 'zh' ? base + '.zh.md' : base + '.md';
 fetch(file)
   .then(r => r.ok ? r.text() : Promise.reject(r.status))
   .then(text => {
@@ -124,7 +134,7 @@ fetch(file)
   })
   .catch(() => {
     document.getElementById('md').innerHTML =
-      '<p>Report unavailable. Read it on <a href="https://github.com/unStone/dsh-xray/tree/master/docs/report">GitHub</a>.</p>';
+      '<p>Not available. Read it on <a href="https://github.com/unStone/dsh-xray/tree/master/docs">GitHub</a>.</p>';
   });
 </script>
 </body>
