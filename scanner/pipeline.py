@@ -20,52 +20,61 @@ import scan_core
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCANS = ROOT / 'data' / 'scans'
 DOCS = ROOT / 'docs'
-MAX_TARBALL = 40 * 1024 * 1024
 MAX_FILES = 600
 MAX_FILE_SIZE = 1024 * 1024
+MAX_BYTES_READ = 400 * 1024 * 1024  # decompressed budget, not repo size
 LEVEL_COLORS = {0: 'brightgreen', 1: 'green', 2: 'yellow', 3: 'orange'}
 
 
-def fetch_tarball(full_name):
-    """Download via `gh api` (handles auth, redirects, and system TLS certs)."""
+def wanted(path):
+    if 'node_modules/' in path or path.startswith('.git/'):
+        return False
+    base = path.rsplit('/', 1)[-1]
+    return path.endswith(scan_core.CODE_EXT) or base == 'package.json' or base.upper() == 'SKILL.MD'
+
+
+def fetch_files(full_name):
+    """Stream the tarball through `gh api` and pull out code files as they pass.
+
+    Streaming (mode 'r|gz') means repository size barely matters: we stop once
+    MAX_FILES code files are collected instead of buffering the whole archive,
+    so asset-heavy repos stay scannable.
+    """
     proc = subprocess.Popen(['gh', 'api', f'repos/{full_name}/tarball'],
                             stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    buf = io.BytesIO()
+    files, read = {}, 0
     try:
-        while True:
-            chunk = proc.stdout.read(1 << 20)
-            if not chunk:
-                break
-            buf.write(chunk)
-            if buf.tell() > MAX_TARBALL:
-                raise ValueError('tarball too large')
+        with tarfile.open(fileobj=proc.stdout, mode='r|gz') as tf:
+            for m in tf:
+                if read > MAX_BYTES_READ:
+                    break
+                read += m.size
+                if not m.isfile() or m.size > MAX_FILE_SIZE:
+                    continue
+                path = m.name.split('/', 1)[-1]  # strip the tarball root dir
+                if not wanted(path):
+                    continue
+                # package.json files are small and carry the manifest — never let
+                # the code-file cap truncate them, or which manifest we report
+                # would depend on tar ordering.
+                if path.rsplit('/', 1)[-1] != 'package.json' and len(files) >= MAX_FILES:
+                    continue
+                try:
+                    files[path] = tf.extractfile(m).read().decode('utf-8', errors='ignore')
+                except Exception:
+                    continue
+    except Exception as e:
+        if not files:
+            raise ValueError(f'download failed: {type(e).__name__}')
     finally:
-        proc.stdout.close()
+        try:
+            proc.stdout.close()
+        except Exception:
+            pass
         proc.terminate()
         proc.wait(timeout=10)
-    if buf.tell() == 0:
-        raise ValueError('download failed')
-    buf.seek(0)
-    return buf
-
-
-def extract_files(buf):
-    files, count = {}, 0
-    with tarfile.open(fileobj=buf, mode='r:gz') as tf:
-        for m in tf:
-            if not m.isfile() or m.size > MAX_FILE_SIZE or count >= MAX_FILES:
-                continue
-            path = m.name.split('/', 1)[-1]  # strip the tarball root dir
-            if 'node_modules/' in path or path.startswith('.git/'):
-                continue
-            base = path.rsplit('/', 1)[-1]
-            if not (path.endswith(scan_core.CODE_EXT) or base == 'package.json' or base.upper() == 'SKILL.MD'):
-                continue
-            try:
-                files[path] = tf.extractfile(m).read().decode('utf-8', errors='ignore')
-                count += 1
-            except Exception:
-                continue
+    if not files:
+        raise ValueError('no scannable files')
     return files
 
 
@@ -74,12 +83,7 @@ def scan_repo(repo):
     out = {'repo': repo['full_name'], 'stars': repo['stars'], 'description': repo['description'],
            'pushed_at': repo['pushed_at'], 'status': 'ok'}
     try:
-        if repo.get('size_kb', 0) > 200_000:
-            raise ValueError('repo too large')
-        files = extract_files(fetch_tarball(repo['full_name']))
-        if not files:
-            raise ValueError('no scannable files')
-        card = scan_core.scan_files(files)
+        card = scan_core.scan_files(fetch_files(repo['full_name']))
         out.update(card)
     except Exception as e:
         out['status'] = f'skipped: {e}'

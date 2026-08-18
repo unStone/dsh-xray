@@ -60,7 +60,9 @@ def scan_files(files):
         'has_apply': False, 'files_scanned': 0, 'has_skill_md': False,
     }
 
-    for path, text in files.items():
+    # Shallowest paths first: in a monorepo the plugin's own root package.json
+    # wins, so the reported manifest is deterministic rather than tar-order luck.
+    for path, text in sorted(files.items(), key=lambda kv: (kv[0].count('/'), kv[0])):
         base = path.rsplit('/', 1)[-1]
         if base == 'package.json':
             try:
