@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mengyun233/dsh-codex-pet — capability card (C3) · dsh-xray</title>
+<meta name="description" content="mengyun233/dsh-codex-pet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/mengyun233__dsh-codex-pet.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mengyun233/dsh-codex-pet — dsh plugin capability card">
+<meta property="og:description" content="mengyun233/dsh-codex-pet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/mengyun233__dsh-codex-pet.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-pet", "identifier": "mengyun233/dsh-codex-pet", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mengyun233/dsh-codex-pet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.", "codeRepository": "https://github.com/mengyun233/dsh-codex-pet", "url": "https://unstone.github.io/dsh-xray/p/mengyun233__dsh-codex-pet.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>mengyun233/dsh-codex-pet</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">将 Codex 桌宠皮肤自动迁移到 DeepSeek Harness，在 DSH Web 界面渲染功能一致的桌宠：动画、多会话对话框、设置面板，一键迁移即插即用。</p>
+  <p class="lede">★ 5 · <a href="https://github.com/mengyun233/dsh-codex-pet">source on GitHub</a>
+     · <a href="../registry.html#mengyun233__dsh-codex-pet">open in the registry</a></p>
+  <p>mengyun233/dsh-codex-pet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 src, e.g. desktop/main.js:6, lib/index.js:21</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessionTitle</span> <span>sessions</span> <span>slots</span> <span>timer</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/session-start</span> <span>agent/status</span> <span>approval/request</span> <span>internal/dispatch</span> <span>llm/stream</span> <span>tools/execute</span> <span>tools/pre-execute</span> <span>tools/result</span> <span>workflow/phase</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>CODEX_HOME</span> <span>DSH_WEB_URL</span> <span>DSH_PETS</span> <span>LOCALAPPDATA</span> <span>APPDATA</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

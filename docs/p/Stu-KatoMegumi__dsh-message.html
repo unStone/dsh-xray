@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stu-KatoMegumi/dsh-message — capability card (C3) · dsh-xray</title>
+<meta name="description" content="Stu-KatoMegumi/dsh-message is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, reads credential-class env vars.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Stu-KatoMegumi__dsh-message.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stu-KatoMegumi/dsh-message — dsh plugin capability card">
+<meta property="og:description" content="Stu-KatoMegumi/dsh-message is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, reads credential-class env vars.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Stu-KatoMegumi__dsh-message.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-message", "identifier": "Stu-KatoMegumi/dsh-message", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Stu-KatoMegumi/dsh-message is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/Stu-KatoMegumi/dsh-message", "url": "https://unstone.github.io/dsh-xray/p/Stu-KatoMegumi__dsh-message.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>Stu-KatoMegumi/dsh-message</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">dsh-message 是面向 DeepSeek Harness 的统一消息接入插件，仅包含微信、飞书、QQ、企业微信和钉钉。项目采用一套 Host/Client 插件、统一设置页和统一 HTTP Harness 会话链路，并在五个渠道上共享提示词、长期记忆和会话策略。并且可以定制鲸鱼娘的soul哦~</p>
+  <p class="lede">★ 2 · <a href="https://github.com/Stu-KatoMegumi/dsh-message">source on GitHub</a>
+     · <a href="../registry.html#Stu-KatoMegumi__dsh-message">open in the registry</a></p>
+  <p>Stu-KatoMegumi/dsh-message is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, reads credential-class env vars.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×23 src, e.g. install.mjs:11, install.mjs:11</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FEISHU_APP_SECRET, FEISHU_SECRET_SERVICE</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>apiProxy</span> <span>connection</span> <span>credentials</span> <span>locale</span> <span>slots</span> <span>webServer</span> <span>workspaces</span></p>
+  
+  <h2>Outbound domains</h2><p class="kv"><span>ilinkai.weixin.qq.com</span> <span>oapi.dingtalk.com</span> <span>api.dingtalk.com</span> <span>work.weixin.qq.com</span> <span>novac2c.cdn.weixin.qq.com</span> <span>open.larksuite.com</span> <span>open.feishu.cn</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_PROFILE</span> <span>DSH_ROOT</span> <span>DSH_CLI</span> <span>ComSpec</span> <span>LOCALAPPDATA</span> <span>WX_BOT_CWD</span> <span>WX_BOT_SESSION_DIR</span> <span>WX_BOT_PRESET</span> <span>WX_BOT_SLOW_ACK_MS</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

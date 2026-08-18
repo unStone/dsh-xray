@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>omdsh-dev/dsh-science — capability card (C3) · dsh-xray</title>
+<meta name="description" content="omdsh-dev/dsh-science is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-science.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="omdsh-dev/dsh-science — dsh plugin capability card">
+<meta property="og:description" content="omdsh-dev/dsh-science is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-science.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-science", "identifier": "omdsh-dev/dsh-science", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "omdsh-dev/dsh-science is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/omdsh-dev/dsh-science", "url": "https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-science.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>omdsh-dev/dsh-science</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">Reproducible Python and R work on DeepSeek Harness, built as plugins.</p>
+  <p class="lede">★ 4 · <a href="https://github.com/omdsh-dev/dsh-science">source on GitHub</a>
+     · <a href="../registry.html#omdsh-dev__dsh-science">open in the registry</a></p>
+  <p>omdsh-dev/dsh-science is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/ensure-spawn-helper.mjs</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×33 src, e.g. apps/cli/src/plugin.ts:13, apps/cli/src/plugin.ts:13</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. packages/client/runtime/src/client/sessions/session.ts:276</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentLoop</span> <span>agents</span> <span>attachments</span> <span>clientModules</span> <span>cmdlineArgs</span> <span>connection</span> <span>conversation</span> <span>conversationEvents</span> <span>conversationViews</span> <span>demoRealmSvc</span> <span>demoStartup</span> <span>goals</span> <span>inputTriggers</span> <span>invariants</span> <span>layout</span> <span>llm</span> <span>loader</span> <span>locale</span> <span>missing-code-mode-service</span> <span>modules</span> <span>neverProvided</span> <span>phaseOne</span> <span>remote</span> <span>sessionPersistence</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>terminals</span> <span>typert</span> <span>userQuestions</span> <span>webServer</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/inbox/inserted</span> <span>agent/pre-step</span> <span>agent/request</span> <span>agent/request-error</span> <span>agent/status</span> <span>approval/request</span> <span>command/executed</span> <span>connection/reset</span> <span>hmr/change</span> <span>hmr/config-update-failed</span> <span>internal/dispatch</span> <span>internal/plugin</span> <span>internal/service</span> <span>locale/change</span> <span>session-telemetry/record</span> <span>session/event</span> <span>session/flush</span> <span>slash/input-begin-command</span> <span>slash/input-consume-token</span> <span>slash/input-insert-reference</span> <span>slash/input-insert-text</span> <span>slots/changed</span> <span>subagent/end</span> <span>test/scope-probe</span> <span>tools/post-execute</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.deepseek.com</span> <span>docs.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CORDIS_SHARED</span> <span>DSH_TELEMETRY_DISABLED</span> <span>DSH_WEB_STRESS_HEADFUL</span> <span>NALR_REQUIRE_LANDLOCK</span> <span>GITHUB_REF</span> <span>RELEASE_PUBLISH</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EternalNight996/dsh-desktop — capability card (C2) · dsh-xray</title>
+<meta name="description" content="EternalNight996/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/EternalNight996__dsh-desktop.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EternalNight996/dsh-desktop — dsh plugin capability card">
+<meta property="og:description" content="EternalNight996/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/EternalNight996__dsh-desktop.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "EternalNight996/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "EternalNight996/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/EternalNight996/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/EternalNight996__dsh-desktop.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>EternalNight996/dsh-desktop</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">dsh-desktop · DeepSeek Harness 桌面工作台 🤖 AI 打工人的快乐老家 —— 双击即用，255+ 像素专家天团（独立插件）可一键加装</p>
+  <p class="lede">★ 1 · <a href="https://github.com/EternalNight996/dsh-desktop">source on GitHub</a>
+     · <a href="../registry.html#EternalNight996__dsh-desktop">open in the registry</a></p>
+  <p>EternalNight996/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×20 src, e.g. scripts/globalize-dsh.mjs:11, scripts/globalize-dsh.mjs:11</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITEE_ACCESS_TOKEN, GITEE_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  
+  
+  <h2>Outbound domains</h2><p class="kv"><span>gitee.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>APPDATA</span> <span>GITEE_TOKEN</span> <span>GITEE_ACCESS_TOKEN</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>
