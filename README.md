@@ -2,7 +2,7 @@
 
 **What a dsh plugin declares vs. what its code actually does — with file:line evidence.**
 
-给每个 dsh 插件拍一张 X 光片:声明了什么,代码实际在做什么。
+English · [简体中文](README.zh.md)
 
 [![scan](https://github.com/unStone/dsh-xray/actions/workflows/scan.yml/badge.svg)](https://github.com/unStone/dsh-xray/actions/workflows/scan.yml)
 [![plugins scanned](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Funstone.github.io%2Fdsh-xray%2Fdata.json&query=%24.scanned&label=plugins%20scanned&color=blue)](https://unstone.github.io/dsh-xray/registry.html)
@@ -13,9 +13,9 @@
 **[📈 Levels explained](https://unstone.github.io/dsh-xray/levels.html)** ·
 **[📖 How dsh plugins work](https://unstone.github.io/dsh-xray/report.html?doc=plugins)**
 
-English / 简体中文 / 日本語
+Site available in English / 简体中文 / 日本語
 
-> **91%** of scanned plugins carry a powerful capability surface · **77%** patch the dsh runtime itself · **4,000+** plugins scanned, refreshed daily
+> **89%** of scanned plugins carry a powerful capability surface · **76%** patch the dsh runtime itself · **6,800** plugins scanned, refreshed daily
 
 ## Why
 
@@ -78,17 +78,13 @@ Plugin authors: show users your capability card.
 ## Run it yourself
 
 ```bash
-python scanner/discover.py 3        # top repos via topic:dsh-plugin (needs gh auth)
-cd scanner && python pipeline.py 200 8   # tarball-download + scan, no git clone
+python scanner/discover.py all           # enumerate topic:dsh-plugin (needs gh auth)
+cd scanner && python pipeline.py all 24  # download + scan, no git clone
+python render_report.py                  # inject current figures into the report
+python render_pages.py                   # plugin pages, collections, sitemap, feed
 ```
 
-Outputs: `data/scans/*.json` (full cards), `docs/data.json` (site data), `docs/badge/*.json` (shields endpoints).
-
-A daily GitHub Action (`.github/workflows/scan.yml`) refreshes everything. Pushing that file needs the `workflow` OAuth scope:
-
-```bash
-gh auth refresh -s workflow && git -C . add .github/workflows/scan.yml && git commit -m "ci: daily scan" && git push
-```
+Outputs: `data/scans/*.json` (full cards), `docs/data.json` (site data), `docs/badge/*.json` (shields endpoints), `docs/p/*.html` (a page per plugin). A daily GitHub Action refreshes all of it.
 
 ## Methodology & fair play
 
@@ -101,7 +97,7 @@ gh auth refresh -s workflow && git -C . add .github/workflows/scan.yml && git co
 - [x] Full-ecosystem coverage — 7,060 repositories, rescanned daily
 - [ ] Daily diff feed: what changed in the capability surface of plugins you use
 - [ ] `cordis.patch.yml` runtime-patch audit view
-- [ ] Install-gate companion plugin: block/ask on C2+ installs from inside dsh
+- [x] Companion plugin: look plugins up from inside dsh
 - [ ] Multi-harness: Abu-Cowork & Claude Code plugin formats
 - [ ] Private registry / org policy engine (enterprise)
 
