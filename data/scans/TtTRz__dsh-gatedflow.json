@@ -1,0 +1,90 @@
+{
+ "repo": "TtTRz/dsh-gatedflow",
+ "stars": 2,
+ "description": "Gated, durable human-in-the-loop workflow engine for DeepSeek Harness.",
+ "pushed_at": "2026-08-14T04:51:29Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-gatedflow",
+ "deps": [
+  "@gatedflow/engine",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-timer",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-host-webserver"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "shell",
+  "slots",
+  "subagents",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "subagent/end",
+  "subagent/start"
+ ],
+ "tool_regs": 7,
+ "domains": {},
+ "env": {
+  "GATEDFLOW_STATE_DIR": 1,
+  "GATEDFLOW_SUBFLOWS_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

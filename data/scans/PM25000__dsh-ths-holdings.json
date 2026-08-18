@@ -1,0 +1,90 @@
+{
+ "repo": "PM25000/dsh-ths-holdings",
+ "stars": 1,
+ "description": "DSH 持仓盈亏悬浮卡片（同花顺投资账本）— 自动同步真实持仓数据，显示今日盈亏、上证指数和当日走势图，无需手动添加股票。",
+ "pushed_at": "2026-08-15T09:25:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-ths-holdings",
+ "deps": [
+  "clsx",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-invariants",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "credentials",
+  "invariants",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "tzzb.10jqka.com.cn": 4
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

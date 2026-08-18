@@ -1,0 +1,125 @@
+{
+ "repo": "omdsh-dev/session-teleport",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-14T11:17:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@mattheliu/session-teleport",
+ "deps": [
+  "pg",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionPersistence",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TELEPORT_URL": 6,
+  "DSH_TELEPORT_API_TOKEN": 6,
+  "DSH_TELEPORT_ADMIN_TOKEN": 4,
+  "DSH_TELEPORT_DEVICE_ID": 6,
+  "HOSTNAME": 6,
+  "DSH_TELEPORT_ADMIN_ACTOR": 4,
+  "DSH_HOME": 6,
+  "DSH_TELEPORT_CREDENTIAL_DIR": 6,
+  "DATABASE_URL": 2,
+  "TELEPORT_HOST": 2,
+  "TELEPORT_PORT": 2,
+  "TELEPORT_API_TOKEN": 2,
+  "TELEPORT_ADMIN_TOKEN": 2,
+  "TELEPORT_PUBLIC_URL": 2,
+  "DSH_TELEPORT_DSH_ARGS_JSON": 2,
+  "DSH_TELEPORT_DSH_COMMAND": 4,
+  "DSH_TELEPORT_IMPORT_RECEIPT_DIR": 2,
+  "DSH_TELEPORT_ENABLE": 8,
+  "DSH_TELEPORT_CAPTURE_SESSION_ID": 2,
+  "DSH_TELEPORT_CAPTURE_OUTPUT_PATH": 2,
+  "DSH_TELEPORT_CAPTURE_STATUS_PATH": 2,
+  "DSH_TELEPORT_CAPTURE_NONCE": 2,
+  "DSH_TELEPORT_HEALTH_TIMEOUT_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 4,
+   "evidence": [
+    "dist/plugin-lifecycle.js:1",
+    "dist/plugin-lifecycle.js:505",
+    "dist/source-capture.js:1",
+    "dist/source-capture.js:105",
+    "scripts/check-package-tarball.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/server.js:7",
+    "src/server.ts:34"
+   ]
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 19,
+   "evidence": [
+    "dist/credential-store.js:40",
+    "dist/importer.js:268",
+    "dist/plugin-lifecycle.js:464",
+    "dist/source-capture.js:51",
+    "dist/source-capture.js:94"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/plugin-lifecycle-real.mjs:64",
+    "scripts/plugin-profile-local.mjs:73"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 74,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. dist/plugin-lifecycle.js:1, dist/plugin-lifecycle.js:505"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. dist/server.js:7, src/server.ts:34"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_TELEPORT_ADMIN_TOKEN, DSH_TELEPORT_API_TOKEN, DSH_TELEPORT_CREDENTIAL_DIR, TELEPORT_ADMIN_TOKEN, TELEPORT_API_TOKEN"
+  }
+ ],
+ "level": 3
+}

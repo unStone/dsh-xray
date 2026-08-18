@@ -1,0 +1,118 @@
+{
+ "repo": "iiwish/dsh-testkit",
+ "stars": 1,
+ "description": "Lifecycle conformance testing for DeepSeek Harness plugins",
+ "pushed_at": "2026-08-18T01:53:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-testkit",
+ "deps": [
+  "commander",
+  "xmlbuilder2",
+  "yaml",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_TESTKIT_E2E": 1,
+  "GITHUB_OUTPUT": 4,
+  "INPUT_PLUGIN": 2,
+  "INPUT_DSH_VERSION": 2,
+  "INPUT_OUTPUT": 1,
+  "INPUT_ARTIFACT_NAME": 1,
+  "INPUT_CHECK_NAME": 1,
+  "GITHUB_RUN_ID": 1,
+  "GITHUB_RUN_ATTEMPT": 1,
+  "GITHUB_JOB": 1,
+  "GITHUB_ACTION": 1,
+  "GITHUB_WORKSPACE": 2,
+  "INPUT_CONFIG": 1,
+  "RESOLVED_OUTPUT": 1,
+  "INPUT_ARGS_JSON": 1,
+  "INPUT_ARGS": 1,
+  "DSH_TESTKIT_PROBE_CONFIG": 1,
+  "DSH_TESTKIT_PROBE_MODULE": 1,
+  "DSH_TESTKIT_WORK_ROOT": 1,
+  "DSH_TESTKIT_COREPACK_HOME": 1,
+  "DSH_TESTKIT_IMAGE": 1,
+  "DSH_TESTKIT_IMAGE_ID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 7,
+   "evidence": [
+    "scripts/run-community-validation.mjs:2",
+    "scripts/run-community-validation.mjs:72",
+    "src/action/run.ts:1",
+    "src/action/run.ts:59",
+    "src/observers/snapshot.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 30,
+   "dev": 28,
+   "evidence": [
+    "scripts/check-dsh-release-train.mjs:25",
+    "scripts/enable-dsh-canary.mjs:40",
+    "scripts/prepare-runner-lock.mjs:6",
+    "scripts/run-community-validation.mjs:101",
+    "scripts/run-community-validation.mjs:125"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 72,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/run-community-validation.mjs:2, scripts/run-community-validation.mjs:72"
+  }
+ ],
+ "level": 3
+}

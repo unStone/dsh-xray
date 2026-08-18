@@ -1,0 +1,80 @@
+{
+ "repo": "uknowmyface/locallens",
+ "stars": 2,
+ "description": "Local OCR for DeepSeek Harness — read text from screenshots on your Mac with Apple's Vision framework. No API key, no upload.",
+ "pushed_at": "2026-08-14T19:34:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@locallens/dsh-tool-screenshot-ocr",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/ocr-engine.js:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/ocr-engine.js:8",
+    "lib/ocr-engine.js:47",
+    "lib/ocr-engine.js:62",
+    "lib/ocr-engine.js:71",
+    "lib/ocr-engine.js:99"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/ocr-engine.js:6"
+  }
+ ],
+ "level": 3
+}

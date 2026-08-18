@@ -1,0 +1,102 @@
+{
+ "repo": "ZEM17/dsh-subagent-agy",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T13:07:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-subagent-antigravity",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "subagents",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {
+  "AGY_BIN": 5,
+  "USERPROFILE": 3,
+  "LOCALAPPDATA": 4,
+  "DSH_HOME": 3,
+  "AGY_PROXY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/selftest.mjs:12",
+    "scripts/selftest.mjs:33",
+    "src/index.ts:813",
+    "src/index.ts:862",
+    "src/index.ts:1094"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/selftest.mjs:13",
+    "scripts/selftest.mjs:13",
+    "scripts/selftest.mjs:140",
+    "scripts/selftest.mjs:193",
+    "src/index.ts:79"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/selftest.mjs:113"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/selftest.mjs:12, scripts/selftest.mjs:33"
+  }
+ ],
+ "level": 3
+}

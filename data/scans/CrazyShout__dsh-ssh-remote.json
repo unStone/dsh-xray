@@ -1,0 +1,116 @@
+{
+ "repo": "CrazyShout/dsh-ssh-remote",
+ "stars": 2,
+ "description": "SSH remote workspaces for DeepSeek Harness: browse/read/write remote files, run remote commands, with connection status dots.",
+ "pushed_at": "2026-08-14T15:47:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-workspace"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-ssh-remote",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "ssh2",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-terminal",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "remote",
+  "settings",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "SSH_AUTH_SOCK": 2,
+  "DSH_HOME": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 3,
+   "evidence": [
+    "lib/connection.js:2",
+    "lib/connection.js:91",
+    "lib/ssh-config.js:1",
+    "lib/terminal.js:155",
+    "src/connection.ts:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 7,
+   "evidence": [
+    "lib/fs.js:117",
+    "lib/fs.js:177",
+    "lib/fs.js:178",
+    "lib/registry.js:38",
+    "lib/registry.js:404"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. lib/connection.js:2, lib/connection.js:91"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SSH_AUTH_SOCK"
+  }
+ ],
+ "level": 3
+}

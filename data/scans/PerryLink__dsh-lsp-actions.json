@@ -1,0 +1,111 @@
+{
+ "repo": "PerryLink/dsh-lsp-actions",
+ "stars": 5,
+ "description": "LSP action surface for DeepSeek Harness: diagnostics, formatting, completion, code actions, symbols, signature help, inlay hints, and rename tools over language servers",
+ "pushed_at": "2026-08-18T00:27:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lsp-actions",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-fs-observation-policy",
+  "@deepseek-ai/dsh-subprocess-local",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "dsh-lsp-actions"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --noEmitOnError"
+ },
+ "injects": [
+  "fs",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "fs/observed",
+  "session/created",
+  "session/disposed"
+ ],
+ "tool_regs": 17,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 7,
+   "evidence": [
+    "src/client.ts:102",
+    "src/connection.ts:71",
+    "src/servers.ts:27",
+    "verify/smoke-editor-backend.mjs:18",
+    "verify/smoke-editor-backend.mjs:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 31,
+   "evidence": [
+    "verify/smoke-editor-backend.mjs:148",
+    "verify/smoke-editor-backend.mjs:157"
+   ]
+  },
+  "dyn_import": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "verify/smoke-editor-backend.mjs:36",
+    "verify/smoke-editor-backend.mjs:37",
+    "verify/smoke-editor-backend.mjs:38",
+    "verify/smoke-editor-backend.mjs:39",
+    "verify/smoke-editor-backend.mjs:40"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 51,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. src/client.ts:102, src/connection.ts:71"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,88 @@
+{
+ "repo": "godchen520/dsh-web-remote",
+ "stars": 4,
+ "description": "DSH 手机/外网远程访问插件：Cloudflare Quick Tunnel 公网隧道 + token 鉴权 + gzip 压缩 + 局域网 HTTPS 直连 + 手机图标面板 + QQ 机器人取链接",
+ "pushed_at": "2026-08-18T07:47:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-web-remote",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.qrserver.com": 1,
+  "api.pwmqr.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.mjs:1062"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "lib/index.mjs:313",
+    "lib/index.mjs:476",
+    "lib/index.mjs:1151"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "lib/index.mjs:525",
+    "lib/index.mjs:530",
+    "lib/index.mjs:544"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.mjs:1062"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. lib/index.mjs:313, lib/index.mjs:476"
+  }
+ ],
+ "level": 3
+}

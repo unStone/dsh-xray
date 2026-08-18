@@ -1,0 +1,78 @@
+{
+ "repo": "STARDUSTLC666/dsh-ppt",
+ "stars": 1,
+ "description": "DSH 技能插件：一句话生成完整演示文稿（HTML 放映 + PPTX 导出 + manifest），5 套视觉主题，中英双语，零运行时依赖。· One prompt to a full presentation for DeepSeek Harness.",
+ "pushed_at": "2026-08-16T12:37:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-ppt",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "schemas.openxmlformats.org": 31,
+  "purl.org": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 10,
+   "evidence": [
+    "skills/dsh-ppt/scripts/deck-core.mjs:17",
+    "skills/dsh-ppt/scripts/deck-core.mjs:545",
+    "skills/dsh-ppt/scripts/deck-core.mjs:546",
+    "skills/dsh-ppt/scripts/deck-core.mjs:547"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

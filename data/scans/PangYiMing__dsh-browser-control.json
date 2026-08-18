@@ -1,0 +1,86 @@
+{
+ "repo": "PangYiMing/dsh-browser-control",
+ "stars": 1,
+ "description": "DSH plugin for controlling browsers (CDP/Playwright) — DeepSeek Harness 操控浏览器插件",
+ "pushed_at": "2026-08-13T14:33:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-browser-control",
+ "deps": [
+  "ws",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "CDP_PORT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/drive.mjs:148"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/drive.mjs:15",
+    "scripts/drive.mjs:148"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. index.js:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/drive.mjs:148"
+  }
+ ],
+ "level": 3
+}

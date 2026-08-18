@@ -1,0 +1,74 @@
+{
+ "repo": "sgsjsgzy-commits/dsh-subagent-rules",
+ "stars": 1,
+ "description": "dsh-subagent-rules 子代理模型与思考强度规定：subagent_flash 锁定 flash 模型路由，思考强度默认 max 且可按会话自定义，分发规则自动注入所有对话。零依赖 DSH 宿主平面插件。",
+ "pushed_at": "2026-08-16T15:16:26Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-subagent-rules",
+ "deps": [
+  "cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "slots",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

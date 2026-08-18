@@ -1,0 +1,76 @@
+{
+ "repo": "zenghuizhu69-hub/dsh-skin-blue-whale",
+ "stars": 3,
+ "description": "dsh Web UI skin: DeepSeek blue-whale theme with official gradient and leaping whale art (dsh plugin)",
+ "pushed_at": "2026-08-14T18:23:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-skin-blue-whale",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "theme"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSW_SESSION_ID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "art/build-svg.cjs:59",
+    "art/build-svg.cjs:60",
+    "art/extract-path.cjs:13"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

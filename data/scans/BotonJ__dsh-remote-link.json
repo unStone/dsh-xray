@@ -1,0 +1,96 @@
+{
+ "repo": "BotonJ/dsh-remote-link",
+ "stars": 3,
+ "description": "Authenticated remote gateway for DeepSeek Harness: QR/HMAC pairing, cookie sessions, mDNS, fork_session tool. Zero-dep plugin.",
+ "pushed_at": "2026-08-18T04:32:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-remote-link",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {
+  "xxx.trycloudflare.com": 1,
+  "www.d-project.com": 2,
+  "www.opensource.org": 2,
+  "www.denso-wave.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/vision-decode.mjs:11",
+    "scripts/vision-decode.mjs:11",
+    "scripts/vision-decode.mjs:82"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/auth.js:29"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "src/gateway.js:297"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "scripts/vision-decode.mjs:8",
+    "scripts/vision-decode.mjs:64",
+    "scripts/vision-decode.mjs:81",
+    "src/pairing.js:17",
+    "src/pairing.js:50"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 42,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/vision-decode.mjs:11, scripts/vision-decode.mjs:11"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/auth.js:29"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/gateway.js:297"
+  }
+ ],
+ "level": 3
+}

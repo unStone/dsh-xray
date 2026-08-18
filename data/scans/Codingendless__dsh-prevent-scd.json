@@ -1,0 +1,83 @@
+{
+ "repo": "Codingendless/dsh-prevent-scd",
+ "stars": 1,
+ "description": "A playful rest-reminder pet plugin for DeepSeek Harness (DSH). Detects late-night or hours-long continuous human operation and blocks the web UI with a cute nurse-cat until you agree to rest. Configur",
+ "pushed_at": "2026-08-16T15:06:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-prevent-scd",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-host-webserver"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:17",
+    "lib/index.js:201"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

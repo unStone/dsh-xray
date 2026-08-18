@@ -1,0 +1,130 @@
+{
+ "repo": "Soren-ABT/dsh-knowledge",
+ "stars": 3,
+ "description": "Knowledge base & RAG plugin for DeepSeek Harness (DSH): chunking, local embeddings, hybrid search, management panel",
+ "pushed_at": "2026-08-17T08:55:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-knowledge",
+ "deps": [
+  "@firecrawl/anydoc",
+  "@huggingface/transformers",
+  "jszip",
+  "mammoth",
+  "pdf-parse",
+  "undici",
+  "word-extractor",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react",
+  "zod"
+ ],
+ "install_scripts": {
+  "prepare": "node build.mjs"
+ },
+ "injects": [
+  "knowledge",
+  "locale",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 28,
+ "domains": {
+  "hf-mirror.com": 5,
+  "api.jina.ai": 1
+ },
+ "env": {
+  "DSH_URL": 1,
+  "DSH_HOME": 2,
+  "KNOWLEDGE_API_KEY": 1,
+  "KNOWLEDGE_RERANK_API_KEY": 1,
+  "HF_ENDPOINT": 2,
+  "HTTPS_PROXY": 1,
+  "HTTP_PROXY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:18",
+    "build.mjs:18",
+    "build.mjs:130"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/knowledge/index.ts:1735",
+    "src/knowledge/index.ts:1736"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "build.mjs:36",
+    "build.mjs:46",
+    "src/knowledge/store.ts:69"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 39,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. build.mjs:18, build.mjs:18"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/knowledge/index.ts:1735, src/knowledge/index.ts:1736"
+  },
+  {
+   "id": "token_env",
+   "evidence": "KNOWLEDGE_API_KEY, KNOWLEDGE_RERANK_API_KEY"
+  }
+ ],
+ "level": 3
+}

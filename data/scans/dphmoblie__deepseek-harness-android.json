@@ -1,0 +1,104 @@
+{
+ "repo": "dphmoblie/deepseek-harness-android",
+ "stars": 3,
+ "description": "该程序是一个独立的 Capacitor Android 应用，用于管理本机 DeepSeek Harness Ubuntu 用户空间。它提供运行时安装与重置、Ubuntu 终端、可选的 Shizuku 设备 Shell 访问、设置，以及仅限回环地址的内嵌 Harness Web 界面。",
+ "pushed_at": "2026-08-18T05:53:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "deepseek-harness-mobile",
+ "deps": [
+  "@capacitor/android",
+  "@capacitor/core",
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "lucide-react",
+  "react",
+  "react-dom",
+  "lucide-react",
+  "react",
+  "react-dom",
+  "react-markdown",
+  "remark-gfm",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_MOBILE_AUTH_TOKEN": 2,
+  "NODE_OPTIONS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/components/TerminalPanel.tsx:28",
+    "src/platform/browser.ts:138"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare-runner.mjs:3",
+    "scripts/prepare-runner.mjs:208"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 72,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/components/TerminalPanel.tsx:28, src/platform/browser.ts:138"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_MOBILE_AUTH_TOKEN"
+  }
+ ],
+ "level": 3
+}

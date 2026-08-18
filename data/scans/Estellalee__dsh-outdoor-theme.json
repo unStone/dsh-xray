@@ -1,0 +1,90 @@
+{
+ "repo": "Estellalee/dsh-outdoor-theme",
+ "stars": 4,
+ "description": "DSH 户外皮肤 · 山野向导（Trail Guide）",
+ "pushed_at": "2026-08-14T15:45:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-outdoor-theme",
+ "deps": [
+  "react",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "layout",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/generate-sun-moon-css.mjs:10",
+    "scripts/generate-sun-moon-css.mjs:141"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

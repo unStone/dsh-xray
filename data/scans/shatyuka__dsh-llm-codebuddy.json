@@ -1,0 +1,107 @@
+{
+ "repo": "shatyuka/dsh-llm-codebuddy",
+ "stars": 3,
+ "description": "Tencent CodeBuddy plugin for DeepSeek Harness (dsh).",
+ "pushed_at": "2026-08-17T07:13:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "@shatyuka/dsh-llm-codebuddy",
+ "deps": [
+  "eventsource-parser",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "llm",
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "copilot.tencent.com": 1
+ },
+ "env": {
+  "DSH_CODEBUDDY_AUTH_FILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/login.ts:11",
+    "src/login.ts:77"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/client.ts:260"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/storage.ts:149"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/login.ts:11, src/login.ts:77"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/client.ts:260"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_CODEBUDDY_AUTH_FILE"
+  }
+ ],
+ "level": 3
+}

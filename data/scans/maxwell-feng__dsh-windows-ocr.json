@@ -1,0 +1,86 @@
+{
+ "repo": "maxwell-feng/dsh-windows-ocr",
+ "stars": 6,
+ "description": "",
+ "pushed_at": "2026-08-17T14:16:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@maxwell-feng/dsh-windows-ocr",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "attachments",
+  "llm"
+ ],
+ "hooks": [
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:32",
+    "lib/index.js:89",
+    "lib/index.js:239",
+    "src/index.ts:34",
+    "src/index.ts:168"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:33",
+    "lib/index.js:70",
+    "lib/index.js:224",
+    "src/index.ts:35",
+    "src/index.ts:147"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:32, lib/index.js:89"
+  }
+ ],
+ "level": 3
+}

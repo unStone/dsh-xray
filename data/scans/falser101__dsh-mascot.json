@@ -1,0 +1,97 @@
+{
+ "repo": "falser101/dsh-mascot",
+ "stars": 1,
+ "description": "Draggable animated floating companion plugin for DeepSeek Harness (dsh web)",
+ "pushed_at": "2026-08-17T05:11:38Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@falser101/mascot",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "invariants",
+  "llm",
+  "locale",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/analyze-art.mjs:6",
+    "scripts/analyze-art.mjs:6",
+    "scripts/analyze-art.mjs:13",
+    "scripts/build-art-assets.mjs:9",
+    "scripts/build-art-assets.mjs:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-art-assets.mjs:10",
+    "scripts/build-art-assets.mjs:66"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 64,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/analyze-art.mjs:6, scripts/analyze-art.mjs:6"
+  }
+ ],
+ "level": 3
+}

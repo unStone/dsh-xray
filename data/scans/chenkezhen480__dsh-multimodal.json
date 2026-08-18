@@ -1,0 +1,101 @@
+{
+ "repo": "chenkezhen480/dsh-multimodal",
+ "stars": 1,
+ "description": "添加deepseek harness生图识图能力插件",
+ "pushed_at": "2026-08-17T00:09:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-multimodal",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {
+  "llm-28tbvsb98v68m6p0.cn-beijing.maas.aliyuncs.com": 3,
+  "ark.cn-beijing.volces.com": 2,
+  "dashscope.aliyuncs.com": 2,
+  "api.openai.com": 6,
+  "api.siliconflow.cn": 1
+ },
+ "env": {
+  "MODEL": 1,
+  "ALIYUN_KEY": 4,
+  "VOLC_KEY": 2,
+  "T2I_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "src/imagegen.ts:129"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/static.ts:53"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 11,
+   "evidence": [
+    "scripts/verify-recognize.mjs:78",
+    "src/util.ts:84"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/imagegen.ts:129"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/static.ts:53"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ALIYUN_KEY, VOLC_KEY"
+  }
+ ],
+ "level": 3
+}

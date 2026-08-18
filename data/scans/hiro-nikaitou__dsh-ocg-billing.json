@@ -1,0 +1,98 @@
+{
+ "repo": "hiro-nikaitou/dsh-ocg-billing",
+ "stars": 1,
+ "description": "DeepSeek Harness (dsh) plugin: OpenCode Go billing layer with cached official pricing, proactive update checks, bill computation and a resident composer bill line",
+ "pushed_at": "2026-08-16T00:26:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@hiro-nikaitou/dsh-ocg-billing",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "timer",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "opencode.ai": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:209"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:209"
+  }
+ ],
+ "level": 3
+}

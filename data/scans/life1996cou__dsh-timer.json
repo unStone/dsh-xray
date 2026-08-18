@@ -1,0 +1,89 @@
+{
+ "repo": "life1996cou/dsh-timer",
+ "stars": 1,
+ "description": "能自由设置计划任务时间,含一键避开高峰模式,只用低峰价格跑.",
+ "pushed_at": "2026-08-15T07:33:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-timer",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "remote",
+  "slots",
+  "timer",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:140"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1305",
+    "lib/index.js:1356"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:140"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:1305, lib/index.js:1356"
+  }
+ ],
+ "level": 3
+}

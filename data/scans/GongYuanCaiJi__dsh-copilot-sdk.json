@@ -1,0 +1,109 @@
+{
+ "repo": "GongYuanCaiJi/dsh-copilot-sdk",
+ "stars": 1,
+ "description": "桥接 GitHub Copilot 订阅到 DeepSeek Harness（移植自 github/copilot-sdk）",
+ "pushed_at": "2026-08-15T18:33:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-copilot-sdk",
+ "deps": [
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "@github/copilot",
+  "koffi",
+  "vscode-jsonrpc",
+  "zod",
+  "@github/copilot-sdk",
+  "json-schema",
+  "json-schema-to-typescript",
+  "quicktype-core",
+  "tsx",
+  "wordwrap"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "llm"
+ ],
+ "hooks": [],
+ "tool_regs": 47,
+ "domains": {
+  "open-plugins.com": 1,
+  "proxy.example.com": 1,
+  "tenant.ghe.com": 1
+ },
+ "env": {
+  "VERSION": 1,
+  "SESSION_ID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 16,
+   "evidence": [
+    "esbuild-copilotsdk-nodejs.ts:3",
+    "esbuild-copilotsdk-nodejs.ts:3",
+    "esbuild-copilotsdk-nodejs.ts:55",
+    "scripts/get-version.js:12",
+    "scripts/get-version.js:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "src/copilotRequestHandler.ts:758"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 12,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 116,
+   "evidence": [
+    "esbuild-copilotsdk-nodejs.ts:51",
+    "esbuild-copilotsdk-nodejs.ts:52",
+    "scripts/set-version.js:2",
+    "scripts/set-version.js:11",
+    "scripts/update-protocol-version.ts:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 148,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. esbuild-copilotsdk-nodejs.ts:3, esbuild-copilotsdk-nodejs.ts:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/copilotRequestHandler.ts:758"
+  }
+ ],
+ "level": 3
+}

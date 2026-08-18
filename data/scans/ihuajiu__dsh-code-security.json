@@ -1,0 +1,72 @@
+{
+ "repo": "ihuajiu/dsh-code-security",
+ "stars": 2,
+ "description": "OpenAI Codex Security for DSH, zero-setup — 13 audit skills + 5 scan tools in a session preset, plus an auto-audit gate for new plugins, running on your local model with no API keys.",
+ "pushed_at": "2026-08-16T15:36:46Z",
+ "status": "ok",
+ "manifest": {
+  "compatible": true,
+  "components": {
+   "gate": "dsh-security-gate",
+   "tools": "dsh-security-tools"
+  },
+  "preset": "dsh-security"
+ },
+ "pkg_name": "dsh-code-security",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "dsh.so": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "gate/index.js:26",
+    "gate/index.js:26",
+    "gate/index.js:114",
+    "gate/index.js:349",
+    "gate/index.js:408"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

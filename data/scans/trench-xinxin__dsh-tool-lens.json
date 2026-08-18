@@ -1,0 +1,101 @@
+{
+ "repo": "trench-xinxin/dsh-tool-lens",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T07:00:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@trench-xinxin/dsh-tool-lens",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "typescript",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-lens.js:8",
+    "bin/dsh-lens.js:73",
+    "bin/dsh-tool-lens.js:8",
+    "bin/dsh-tool-lens.js:73",
+    "lib/index.mjs:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-lens.js:21",
+    "bin/dsh-tool-lens.js:21"
+   ]
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 1,
+   "evidence": [
+    "bin/dsh-lens.js:11",
+    "bin/dsh-lens.js:11",
+    "bin/dsh-lens.js:55",
+    "bin/dsh-lens.js:80",
+    "bin/dsh-tool-lens.js:11"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. bin/dsh-lens.js:8, bin/dsh-lens.js:73"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. bin/dsh-lens.js:21, bin/dsh-tool-lens.js:21"
+  }
+ ],
+ "level": 3
+}

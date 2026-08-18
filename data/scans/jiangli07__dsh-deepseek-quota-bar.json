@@ -1,0 +1,84 @@
+{
+ "repo": "jiangli07/dsh-deepseek-quota-bar",
+ "stars": 2,
+ "description": "DeepSeek API quota blood-bar widget for the DSH web GUI: remaining balance vs month-opening, today/month spend, session cost. Draggable & collapsible.",
+ "pushed_at": "2026-08-15T08:50:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-deepseek-quota-bar",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "platform.deepseek.com": 3,
+  "api-docs.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:40",
+    "lib/index.js:213"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

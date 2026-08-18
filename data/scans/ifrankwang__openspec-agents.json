@@ -1,0 +1,92 @@
+{
+ "repo": "ifrankwang/openspec-agents",
+ "stars": 1,
+ "description": "OpenSpec 流程的 Agent Team：面向实施阶段的多 Agent 工作流编排。",
+ "pushed_at": "2026-08-18T06:03:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@ifrankwang/openspec-agents",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "js-yaml",
+  "@opencode-ai/plugin"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 9,
+   "evidence": [
+    "scripts/sync.ts:15",
+    "scripts/sync.ts:15",
+    "scripts/sync.ts:146",
+    "scripts/sync.ts:154",
+    "src/core/git.ts:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/adapters/mcp-common/index.ts:57",
+    "src/adapters/opencode/dashboard.ts:20"
+   ]
+  },
+  "fs_write": {
+   "src": 33,
+   "dev": 329,
+   "evidence": [
+    "scripts/build-dsh-root.ts:8",
+    "scripts/build-dsh-root.ts:17",
+    "src/core/exemptions.ts:2",
+    "src/core/exemptions.ts:84",
+    "src/core/git.ts:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 103,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/sync.ts:15, scripts/sync.ts:15"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/adapters/mcp-common/index.ts:57, src/adapters/opencode/dashboard.ts:20"
+  }
+ ],
+ "level": 3
+}

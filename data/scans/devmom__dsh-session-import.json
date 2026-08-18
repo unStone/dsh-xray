@@ -1,0 +1,123 @@
+{
+ "repo": "devmom/dsh-session-import",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-14T18:28:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  },
+  "category": "integration",
+  "supportedVersion": ">=0.1.0",
+  "verifiedCommit": "1a412e1",
+  "description": "Import conversations from 15+ tools (Codex, Claude Code, ChatGPT, Kimi Code, ZCode, WorkBuddy, OpenClaw, Gemini, Cursor, Continue, Cline, OpenCode, Reasonix, Copilot Chat, Aider, generic JSON) into DeepSeek Harness with high-fidelity mapping, privacy redaction, knowledge extraction and bidirectional export."
+ },
+ "pkg_name": "dsh-session-import",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-tools",
+  "tsx"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 2,
+  "TEMP": 1,
+  "CI_CHAT_PROFILE": 1,
+  "DSH_HOME": 2,
+  "CHAT_IMPORT_DATA": 1,
+  "CHAT_IMPORT_PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-install.mjs:12",
+    "scripts/verify-install.mjs:12",
+    "scripts/verify-install.mjs:26",
+    "scripts/verify-install.mjs:34"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/server.ts:35"
+   ]
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 26,
+   "evidence": [
+    "scripts/bundle-client.mjs:21",
+    "scripts/bundle-client.mjs:64",
+    "scripts/verify-all-sources.mjs:6",
+    "scripts/verify-all-sources.mjs:6",
+    "scripts/verify-all-sources.mjs:49"
+   ]
+  },
+  "dyn_import": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/demo-codex.mjs:6",
+    "scripts/demo-discover.mjs:8",
+    "scripts/demo-scan.mjs:6",
+    "scripts/scan-zcode.mjs:4",
+    "scripts/verify-all-sources.mjs:8"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 62,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/verify-install.mjs:12, scripts/verify-install.mjs:12"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/server.ts:35"
+  }
+ ],
+ "level": 3
+}

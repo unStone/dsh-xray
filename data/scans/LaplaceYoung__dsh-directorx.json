@@ -3,17 +3,140 @@
  "stars": 9,
  "description": "DirectorX as a DeepSeek Harness plugin: AI video/image/audio skills, knowledge corpus, and configurable vision/image/video/audio model tools.",
  "pushed_at": "2026-08-18T05:18:08Z",
- "status": "skipped: no scannable files (ReadError)",
- "type": "unknown",
- "level": -1,
- "flags": [],
- "injects": [],
- "hooks": [],
- "tool_regs": 0,
- "domains": {},
- "env": {},
- "files_scanned": 0,
- "manifest": null,
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ]
+  }
+ },
+ "pkg_name": "dsh-directorx",
+ "deps": [
+  "@webav/av-cliper",
+  "@xyflow/react",
+  "cmdk",
+  "tui-image-editor",
+  "wavesurfer.js",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "schemastery"
+ ],
  "install_scripts": {},
- "behaviors": {}
+ "injects": [
+  "connection",
+  "layout",
+  "llm",
+  "sessions",
+  "settings",
+  "skills",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 385,
+ "domains": {
+  "api.openai.com": 3,
+  "api.modelverse.cn": 13,
+  "web.dev": 2,
+  "cdn.jsdelivr.net": 2,
+  "huggingface.co": 6,
+  "gist.github.com": 2,
+  "api-beijing.klingai.com": 1,
+  "api.klingai.com": 1,
+  "api.dev.runwayml.com": 1,
+  "api.example.com": 1,
+  "fonts.googleapis.com": 1
+ },
+ "env": {
+  "DSH_HOME": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 170,
+   "dev": 62,
+   "evidence": [
+    "lib/index.js:3159",
+    "lib/index.js:3159",
+    "lib/index.js:3376",
+    "lib/index.js:3385",
+    "lib/index.js:3514"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 6,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:967",
+    "lib/index.js:10482",
+    "lib/testing.js:1690",
+    "lib/testing.js:7980",
+    "src/support.ts:78"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 42,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 99,
+   "dev": 40,
+   "evidence": [
+    "lib/index.js:800",
+    "lib/index.js:959",
+    "lib/index.js:967",
+    "lib/index.js:2192",
+    "lib/index.js:2208"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:13262",
+    "lib/testing.js:6243",
+    "src/bible.ts:211",
+    "vendor/transformers.min.js:1",
+    "lib/vendor/transformers.min.js:1"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 200,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×170 src, e.g. lib/index.js:3159, lib/index.js:3159"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×6 src, e.g. lib/index.js:967, lib/index.js:10482"
+  }
+ ],
+ "level": 3
 }

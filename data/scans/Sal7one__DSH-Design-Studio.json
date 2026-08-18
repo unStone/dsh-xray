@@ -1,0 +1,114 @@
+{
+ "repo": "Sal7one/DSH-Design-Studio",
+ "stars": 1,
+ "description": "Inspired By Calude design, A Deepseek harness Design Plugin!, Select elements, Use Open Router Vision agents, upload images and much more!! You can make quick changes with deepseek or invoke the Visio",
+ "pushed_at": "2026-08-15T02:40:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "@sal7one/dsh-design-studio",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "credentials",
+  "fs",
+  "llm",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "fs/observed"
+ ],
+ "tool_regs": 3,
+ "domains": {
+  "openrouter.ai": 8
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "dynamic/host.js:85",
+    "lib/index.js:127",
+    "lib/index.js:387"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dynamic/host.js:939",
+    "lib/index.js:814"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:378",
+    "lib/index.js:385"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. dynamic/host.js:85, lib/index.js:127"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. dynamic/host.js:939, lib/index.js:814"
+  }
+ ],
+ "level": 3
+}

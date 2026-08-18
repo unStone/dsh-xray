@@ -1,0 +1,120 @@
+{
+ "repo": "xiajiajun516/dsh-config-manager",
+ "stars": 3,
+ "description": "Backup / export / import / migrate your DeepSeek Harness (DSH) configuration - dual-face Cordis plugin (host engine + Web UI). One-click restore on any machine.",
+ "pushed_at": "2026-08-18T07:41:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-config-manager",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-plugin-inventory",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "settings",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CONFIG_MANAGER_LOG_LEVEL": 1,
+  "DSH_CONFIG_MANAGER_INSTALL_TIMEOUT_MS": 1,
+  "ComSpec": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 1,
+   "evidence": [
+    "src/index.ts:38",
+    "src/core/plugin-cli.ts:18",
+    "src/core/plugin-cli.ts:19",
+    "src/core/plugin-cli.ts:272",
+    "src/core/plugin-cli.ts:274"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/profiles/profile-manager.ts:130"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 38,
+   "dev": 110,
+   "evidence": [
+    "src/index.ts:39",
+    "src/index.ts:244",
+    "src/index.ts:613",
+    "src/index.ts:637",
+    "src/index.ts:640"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 168,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. src/index.ts:38, src/core/plugin-cli.ts:18"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/profiles/profile-manager.ts:130"
+  }
+ ],
+ "level": 3
+}

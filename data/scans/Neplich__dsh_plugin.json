@@ -1,0 +1,165 @@
+{
+ "repo": "Neplich/dsh_plugin",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T07:51:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-root",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "playwright-core",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-host-webserver",
+  "mermaid",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "@silurus/ooxml",
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "pdfjs-dist",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subprocess"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "inputTriggers",
+  "layout",
+  "locale",
+  "sessions",
+  "slots",
+  "subprocess",
+  "theme",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "connection/reset",
+  "session/disposed",
+  "theme/change",
+  "tools/result"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_PRESET_DEV_FORCE": 1,
+  "WEBUSE_PORT": 1,
+  "WEBUSE_PROFILE": 1,
+  "WEBUSE_HEADLESS": 1,
+  "WEBUSE_CHANNEL": 1,
+  "WEBUSE_WIDTH": 1,
+  "WEBUSE_HEIGHT": 1,
+  "DSH_AGENTS_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "packages/feature/dsh-agent-webuse/src/index.ts:14",
+    "packages/feature/dsh-agent-webuse/src/index.ts:15",
+    "packages/feature/dsh-agent-webuse/src/index.ts:154",
+    "packages/feature/dsh-web-workpanel/src/terminal.ts:107",
+    "packages/feature/dsh-web-workpanel/src/terminal.ts:126"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/feature/dsh-agent-webuse/src/index.ts:412"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/feature/dsh-agent-imagevault/src/index.ts:121",
+    "packages/feature/dsh-agent-webuse/driver/server.mjs:183"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 16,
+   "evidence": [
+    "packages/feature/dsh-agent-imagevault/src/index.ts:113",
+    "packages/feature/dsh-agent-webuse/driver/server.mjs:169",
+    "packages/feature/dsh-config-instructions/src/server/instructions.ts:70",
+    "packages/feature/dsh-config-mcp/src/server/mcp.ts:78"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/feature/dsh-web-workpanel/src/client/OfficePreview.tsx:23",
+    "packages/feature/dsh-web-workpanel/src/client/PdfPreview.tsx:52",
+    "packages/feature/dsh-web-workpanel/src/client/PdfPreview.tsx:54"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 99,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. packages/feature/dsh-agent-webuse/src/index.ts:14, packages/feature/dsh-agent-webuse/src/index.ts:15"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/feature/dsh-agent-webuse/src/index.ts:412"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. packages/feature/dsh-agent-imagevault/src/index.ts:121, packages/feature/dsh-agent-webuse/driver/server.mjs:183"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,102 @@
+{
+ "repo": "qwased/dsh-web-search-duckduckgo",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-14T19:48:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-web-search-duckduckgo-repo",
+ "deps": [
+  "@deepseek-ai/dsh-web-search-duckduckgo",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "systemPrompt",
+  "tools",
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "html.duckduckgo.com": 1,
+  "api.duckduckgo.com": 1,
+  "duckduckgo.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/pack-bundle.mjs:17",
+    "scripts/pack-bundle.mjs:17",
+    "scripts/pack-bundle.mjs:89",
+    "scripts/pack-bundle.mjs:92"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/pack-bundle.mjs:19",
+    "scripts/pack-bundle.mjs:19",
+    "scripts/pack-bundle.mjs:63",
+    "scripts/pack-bundle.mjs:81",
+    "scripts/pack-bundle.mjs:97"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/pack-bundle.mjs:17, scripts/pack-bundle.mjs:17"
+  }
+ ],
+ "level": 3
+}

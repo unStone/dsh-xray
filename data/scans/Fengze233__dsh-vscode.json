@@ -1,0 +1,78 @@
+{
+ "repo": "Fengze233/dsh-vscode",
+ "stars": 3,
+ "description": "在 VS Code 侧边栏内嵌使用 DeepSeek Harness（DSH）网页界面的插件",
+ "pushed_at": "2026-08-17T12:41:19Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-vscode-panel",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 4,
+   "evidence": [
+    "src/service/process.ts:3",
+    "src/service/process.ts:128",
+    "src/service/process.ts:130",
+    "src/service/process.ts:213",
+    "src/service/process.ts:274"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 3,
+   "evidence": [
+    "scripts/bridge-build.mjs:7",
+    "scripts/bridge-build.mjs:39",
+    "scripts/build.mjs:6",
+    "scripts/build.mjs:53",
+    "src/bridge/installer.ts:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/service/process.ts:3, src/service/process.ts:128"
+  }
+ ],
+ "level": 2
+}

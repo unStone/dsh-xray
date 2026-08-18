@@ -1,0 +1,119 @@
+{
+ "repo": "LeemanCheung/dsh-skin-studio",
+ "stars": 1,
+ "description": "A local token-safe DSH theme generator, editor, auditor, and exporter",
+ "pushed_at": "2026-08-17T10:35:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ]
+  }
+ },
+ "pkg_name": "dsh-skin-studio",
+ "deps": [
+  "fflate",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "fflate",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "slots",
+  "storageDomain",
+  "theme"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-skin-studio/lib/client.js:412"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-skin-studio/lib/client.js:1581",
+    "packages/dsh-skin-studio/lib/client.js:1632"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "build/plugin-bundle.ts:1",
+    "build/plugin-bundle.ts:1",
+    "build/plugin-bundle.ts:34",
+    "build/plugin-bundle.ts:35",
+    "build/plugin-bundle.ts:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/dsh-skin-studio/lib/client.js:412"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/dsh-skin-studio/lib/client.js:1581, packages/dsh-skin-studio/lib/client.js:1632"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,81 @@
+{
+ "repo": "Townrain/dsh-fetch-models-unselect-all",
+ "stars": 1,
+ "description": "Deselect-all button for the DSH Settings > Models 'fetch available models' dialog (client-only plugin)",
+ "pushed_at": "2026-08-17T14:18:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": []
+  }
+ },
+ "pkg_name": "dsh-fetch-models-unselect-all",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CHECKOUT": 3,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:11",
+    "build.mjs:11",
+    "build.mjs:91"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:13",
+    "build.mjs:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. build.mjs:11, build.mjs:11"
+  }
+ ],
+ "level": 3
+}

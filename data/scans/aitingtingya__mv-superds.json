@@ -1,0 +1,91 @@
+{
+ "repo": "aitingtingya/mv-superds",
+ "stars": 1,
+ "description": "Per-model first-turn chain-of-thought anchor presets for DeepSeek Harness (DSH)",
+ "pushed_at": "2026-08-17T06:56:12Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "mv-superds",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "presets/mv-creative/custom-bash.mjs:178",
+    "presets/mv-ptc/custom-bash.mjs:178",
+    "presets/mv-standard/custom-bash.mjs:178"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/force-state.js:251",
+    "lib/install-presets.js:73",
+    "lib/install-presets.js:130"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. presets/mv-creative/custom-bash.mjs:178, presets/mv-ptc/custom-bash.mjs:178"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 3 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

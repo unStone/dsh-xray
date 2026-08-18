@@ -1,0 +1,88 @@
+{
+ "repo": "zouyuanqing/dsh-memory-openviking",
+ "stars": 1,
+ "description": "Native OpenViking memory integration for DeepSeek Harness: host-plane memory service with automatic session capture (session/event + session/flush hooks), session→peer isolation, memory tools (write/r",
+ "pushed_at": "2026-08-16T03:19:37Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-memory-openviking",
+ "deps": [
+  "@openviking/sdk",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "memory",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/session-start",
+  "memory-openviking/session-committed",
+  "session/created",
+  "session/disposed",
+  "session/event",
+  "session/flush"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/memory-eval/run-eval.mjs:232",
+    "scripts/memory-eval/run-eval.mjs:233",
+    "packages/dsh-memory-openviking/lib/service.js:27",
+    "packages/dsh-memory-openviking/lib/service.js:381"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 10 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

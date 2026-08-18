@@ -1,0 +1,102 @@
+{
+ "repo": "Happy2Git/dsh-compass",
+ "stars": 2,
+ "description": "DeepSeek Harness context-and-files panel plugin: directory browser, injected context, and read-only git graph as one installable bundle",
+ "pushed_at": "2026-08-17T04:33:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-compass",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "commands",
+  "invariants",
+  "locale",
+  "sessions",
+  "slots",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [
+  "command/executed"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/directory-routes.ts:17",
+    "src/git-local.ts:388"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/git-local.ts:646"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/directory-routes.ts:17, src/git-local.ts:388"
+  }
+ ],
+ "level": 3
+}

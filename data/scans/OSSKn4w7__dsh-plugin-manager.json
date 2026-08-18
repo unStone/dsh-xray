@@ -1,0 +1,89 @@
+{
+ "repo": "OSSKn4w7/dsh-plugin-manager",
+ "stars": 1,
+ "description": "Manage DeepSeek Harness (dsh) plugins from the web GUI, CLI, and /plugin chat command — install, enable/disable, uninstall without editing config files",
+ "pushed_at": "2026-08-15T03:39:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@osskn4w7/dsh-plugin-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/core.mjs:25",
+    "lib/core.mjs:245"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-plugin-manager.mjs:20",
+    "bin/dsh-plugin-manager.mjs:154",
+    "lib/core.mjs:26",
+    "lib/core.mjs:159",
+    "lib/core.mjs:185"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/core.mjs:25, lib/core.mjs:245"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,109 @@
+{
+ "repo": "grunmin/dsh-acp-enhanced",
+ "stars": 1,
+ "description": "Enhanced ACP (Agent Client Protocol) server for DeepSeek Harness (dsh) — drop-in bridge for the Zed editor: block-level streaming, usage/stat telemetry, model & reasoning-effort switching, permission ",
+ "pushed_at": "2026-08-16T06:34:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-acp-enhanced",
+ "deps": [
+  "@agentclientprotocol/sdk",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-include",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-instructions",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "approval",
+  "commands",
+  "llm",
+  "tools",
+  "web"
+ ],
+ "hooks": [
+  "approval/request",
+  "llm/adapters-updated",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "ACP_DEBUG": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "scripts/acp-client-tools.mjs:16",
+    "scripts/acp-client-tools.mjs:23",
+    "scripts/acp-client.mjs:10",
+    "scripts/acp-client.mjs:16",
+    "scripts/acp-mcp-test.mjs:14"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/acp-resume-test.mjs:15",
+    "scripts/acp-resume-test.mjs:15",
+    "scripts/acp-resume-test.mjs:73",
+    "scripts/acp-resume-test.mjs:133"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×18 src, e.g. scripts/acp-client-tools.mjs:16, scripts/acp-client-tools.mjs:23"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,80 @@
+{
+ "repo": "Eric-GoodBoy-Tech/dsh-agsh-context",
+ "stars": 1,
+ "description": "AgentShell 嵌入 DSH 的桥插件:唯一 shell 工具(持续终端)+ pre-step 落点 + llm/stream 短路接管(git 分发)",
+ "pushed_at": "2026-08-17T13:40:02Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-agsh-context",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "sessions",
+  "shell",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "llm/stream",
+  "session/event"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "AGSH_ROOT": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "dist/index.js:3",
+    "dist/index.js:3",
+    "dist/index.js:3",
+    "dist/index.js:51",
+    "dist/index.js:192"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 5 services, 2 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

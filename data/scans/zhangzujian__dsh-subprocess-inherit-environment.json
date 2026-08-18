@@ -1,0 +1,75 @@
+{
+ "repo": "zhangzujian/dsh-subprocess-inherit-environment",
+ "stars": 2,
+ "description": "DSH plugin that forwards the complete Harness environment through ctx.subprocess",
+ "pushed_at": "2026-08-15T04:39:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@zhangzujian/dsh-subprocess-inherit-environment",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "subprocess"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "index.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. index.mjs:4"
+  }
+ ],
+ "level": 3
+}

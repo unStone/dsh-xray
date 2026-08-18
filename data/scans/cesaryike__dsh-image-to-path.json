@@ -1,0 +1,89 @@
+{
+ "repo": "cesaryike/dsh-image-to-path",
+ "stars": 2,
+ "description": "DSH 插件:让纯文本模型对话也能拖图/贴图——图片自动保存到会话工作区,以文件路径交给模型(多模态模型不受影响)",
+ "pushed_at": "2026-08-13T23:54:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-image-to-path",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-agent-default-model"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "conversation",
+  "inputTriggers",
+  "llm",
+  "modelDirectories",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/web.js:271",
+    "lib/web.js:277",
+    "src/web.ts:289",
+    "src/web.ts:294"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

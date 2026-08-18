@@ -1,0 +1,88 @@
+{
+ "repo": "WASD258-jpg/dsh-port-manager",
+ "stars": 2,
+ "description": "DSH web port manager plugin: list local listening ports and hot-switch the DSH web port.",
+ "pushed_at": "2026-08-15T07:08:31Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "@wasd258/dsh-port-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "USERPROFILE": 1,
+  "DSH_WEB_PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:161"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:313",
+    "lib/index.js:339"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:15",
+    "lib/index.js:55"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:161"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:313, lib/index.js:339"
+  }
+ ],
+ "level": 2
+}

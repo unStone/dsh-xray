@@ -1,0 +1,76 @@
+{
+ "repo": "GLFzr/dsh-hermes-memory-bridge",
+ "stars": 2,
+ "description": "Bridge DeepSeek Harness (DSH) session compaction summaries into Hermes Agent persistent memory. 把 DSH 会话压缩总结自动桥接进 Hermes 永久记忆。",
+ "pushed_at": "2026-08-14T16:35:05Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 4,
+  "HERMES_HOME": 1,
+  "HERMES_MEMORY": 1,
+  "HERMES_EXE": 1,
+  "BRIDGE_STATE": 1,
+  "BRIDGE_LOCK": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "dsh-hermes-bridge.mjs:20",
+    "dsh-hermes-bridge.mjs:197",
+    "dsh-hermes-bridge.mjs:211"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "dsh-hermes-bridge.mjs:54",
+    "dsh-hermes-bridge.mjs:148",
+    "dsh-hermes-bridge.mjs:176",
+    "dsh-hermes-bridge.mjs:290",
+    "dsh-hermes-bridge.mjs:291"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. dsh-hermes-bridge.mjs:20, dsh-hermes-bridge.mjs:197"
+  }
+ ],
+ "level": 2
+}

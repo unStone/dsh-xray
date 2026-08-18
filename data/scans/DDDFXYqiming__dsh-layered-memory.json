@@ -1,0 +1,96 @@
+{
+ "repo": "DDDFXYqiming/dsh-layered-memory",
+ "stars": 2,
+ "description": "Cross-session long-term memory plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T12:27:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-layered-memory",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessionQuery",
+  "skills",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "session/event",
+  "tools/result"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:29",
+    "lib/index.js:29",
+    "lib/index.js:125"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 22,
+   "dev": 8,
+   "evidence": [
+    "lib/index.js:24",
+    "lib/index.js:24",
+    "lib/index.js:159",
+    "lib/index.js:229",
+    "lib/index.js:262"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:29, lib/index.js:29"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,87 @@
+{
+ "repo": "amphilagus/dsh-literature",
+ "stars": 1,
+ "description": "Out-of-tree DSH bundle for scientific literature search and tracking, with a 文献跟踪助理 agent preset.",
+ "pushed_at": "2026-08-18T04:23:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@amphilagus/dsh-literature",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 30,
+ "domains": {
+  "pub.orcid.org": 3,
+  "export.arxiv.org": 1,
+  "arxiv.org": 2,
+  "api.crossref.org": 2,
+  "doi.org": 5
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 13,
+   "evidence": [
+    "src/db/database.ts:8",
+    "src/db/database.ts:910"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

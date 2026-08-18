@@ -1,0 +1,99 @@
+{
+ "repo": "3274375092/dsh-voice",
+ "stars": 4,
+ "description": "Voice input plugin for DeepSeek Harness: mic → local/browser speech recognition → text submitted as a normal chat message. Input-only and preset-agnostic.",
+ "pushed_at": "2026-08-15T20:01:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@nn12138/dsh-voice",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "connection",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "hf-mirror.com": 1
+ },
+ "env": {
+  "PORT": 2,
+  "DSH_VOICE_MODEL_DIR": 1,
+  "DSH_VOICE_TEST_WAV": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/download-models.cjs:9",
+    "tools/download-models.cjs:9",
+    "tools/download-models.cjs:41"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/core/host-asr.ts:57"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 36,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. tools/download-models.cjs:9, tools/download-models.cjs:9"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/core/host-asr.ts:57"
+  }
+ ],
+ "level": 3
+}

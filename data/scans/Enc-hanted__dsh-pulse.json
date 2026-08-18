@@ -1,0 +1,88 @@
+{
+ "repo": "Enc-hanted/dsh-pulse",
+ "stars": 1,
+ "description": "Cross-session usage & cost observatory for the DeepSeek Harness web profile — trend/heatmap dashboards, per-model peak-hour pricing (CNY/USD), official DeepSeek balance with spend reconciliation.",
+ "pushed_at": "2026-08-18T05:56:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": false
+  }
+ },
+ "pkg_name": "dsh-pulse",
+ "deps": [
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/schemastery",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "locale",
+  "sessionProjectionCache",
+  "sessionProjections",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api-docs.deepseek.com": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/sync-mirror.mjs:17",
+    "scripts/sync-mirror.mjs:46"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

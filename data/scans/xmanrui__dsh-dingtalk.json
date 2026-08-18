@@ -1,0 +1,104 @@
+{
+ "repo": "xmanrui/dsh-dingtalk",
+ "stars": 1,
+ "description": "DingTalk QR channel plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T10:49:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@xmanrui/dsh-dingtalk",
+ "deps": [
+  "dingtalk-stream",
+  "qrcode"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "credentials",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "oapi.dingtalk.com": 4,
+  "api.dingtalk.com": 4
+ },
+ "env": {
+  "DINGTALK_REGISTRATION_BASE_URL": 2,
+  "DINGTALK_REGISTRATION_SOURCE": 2,
+  "DSH_HOME": 2,
+  "DSH_DINGTALK_CLIENT_ID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-dingtalk.mjs:3",
+    "bin/dsh-dingtalk.mjs:3",
+    "bin/dsh-dingtalk.mjs:30",
+    "lib/index.js:2356",
+    "lib/index.js:2513"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:220",
+    "src/config-store.mjs:261",
+    "src/state-store.mjs:204",
+    "plugin-src/client/build.mjs:37"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 39,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. bin/dsh-dingtalk.mjs:3, bin/dsh-dingtalk.mjs:3"
+  }
+ ],
+ "level": 3
+}

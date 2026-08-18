@@ -1,0 +1,111 @@
+{
+ "repo": "xDylanLong/dsh-snapmarketing",
+ "stars": 2,
+ "description": "dsh-snapmarketing is a thin DeepSeek Harness surface for discovering, installing, and managing allowlisted plugins.",
+ "pushed_at": "2026-08-17T08:13:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-snapmarketing",
+ "deps": [
+  "zod",
+  "@snapmarketing/plugin-manifest",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "GITHUB_TOKEN": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/dev.mjs:2",
+    "scripts/dev.mjs:80",
+    "scripts/dev.mjs:117",
+    "scripts/dev.mjs:130",
+    "scripts/dev.mjs:135"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "scripts/build-marketing-manifest.mjs:141",
+    "scripts/collect-topic-manifest.mjs:266"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 40,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/dev.mjs:2, scripts/dev.mjs:80"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

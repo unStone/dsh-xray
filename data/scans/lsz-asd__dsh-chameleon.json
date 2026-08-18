@@ -1,0 +1,110 @@
+{
+ "repo": "lsz-asd/dsh-chameleon",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-14T15:46:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-chameleon",
+ "deps": [
+  "@deepseek-ai/dsh-base",
+  "@deepseek-ai/dsh-web-app",
+  "@deepseek-ai/dsh-web-frontend",
+  "@dsh-external/dsh-chameleon-workbench-core",
+  "@dsh-external/dsh-chameleon-workbench-runtime",
+  "@dsh-external/dsh-chameleon-workbench-ui",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 20,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 1,
+  "DSH_CHAMELEON_WEB_PORT": 2,
+  "DSH_CHAMELEON_WEB_URL": 1,
+  "DSH_CHAMELEON_CDP_PORT": 1,
+  "DSH_CHAMELEON_HOME": 1,
+  "DSH_HOME": 5,
+  "DSH_BIN": 1,
+  "DSH_CHAMELEON_DSH_BIN": 2,
+  "APPDATA": 5,
+  "DSH_CHAMELEON_NODE": 3,
+  "NODE_EXE": 1,
+  "DSH_CHAMELEON_PROFILE": 2,
+  "DSH_CHAMELEON_DEBUG_LAYOUT": 2,
+  "DSH_CHAMELEON_PROBE": 1,
+  "DSH_CHAMELEON_ALLOW_MULTI": 1,
+  "DSH_CHAMELEON_REPO": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/run-desktop.js:4",
+    "scripts/run-desktop.js:24",
+    "apps/desktop/src/main.js:13",
+    "apps/desktop/src/main.js:13",
+    "apps/desktop/src/main.js:190"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "scripts/ensure-home.js:96",
+    "scripts/ensure-home.js:102",
+    "scripts/ensure-home.js:110",
+    "scripts/ensure-home.js:141",
+    "scripts/ensure-home.js:151"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/run-desktop.js:4, scripts/run-desktop.js:24"
+  }
+ ],
+ "level": 3
+}

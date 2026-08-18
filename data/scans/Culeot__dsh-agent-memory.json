@@ -1,0 +1,120 @@
+{
+ "repo": "Culeot/dsh-agent-memory",
+ "stars": 4,
+ "description": "Cross-session long-term memory plugin for DeepSeek Harness (DSH)",
+ "pushed_at": "2026-08-17T05:24:27Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-agent-memory",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "storageDomain",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/pre-step"
+ ],
+ "tool_regs": 28,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 5,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:40",
+    "scripts/smoke.mjs:8",
+    "scripts/smoke.mjs:8"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:266"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:88",
+    "lib/client.js:89"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/benchmark.mjs:96",
+    "scripts/benchmark.mjs:98",
+    "scripts/eval-retrieval.mjs:5",
+    "scripts/eval-retrieval.mjs:84",
+    "scripts/import-memories.mjs:5"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build.mjs:5, scripts/build.mjs:5"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/client.js:266"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/client.js:88, lib/client.js:89"
+  }
+ ],
+ "level": 3
+}

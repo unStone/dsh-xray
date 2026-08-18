@@ -1,0 +1,89 @@
+{
+ "repo": "myfire2014/dsh-admin-gateway",
+ "stars": 1,
+ "description": "dsh-admin-gateway DeepSeek Harness (dsh) 管理员验证网关插件。 只需一个绑定在 Cloudflare 的域名",
+ "pushed_at": "2026-08-18T04:44:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-admin-gateway",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "dsh.example.com": 4
+ },
+ "env": {
+  "DSH_ADMIN_PASSWORD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "smoke-test.mjs:4",
+    "smoke-test.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "header-test.mjs:8",
+    "index.js:519",
+    "smoke-test.mjs:11",
+    "ws-test.mjs:10"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. smoke-test.mjs:4, smoke-test.mjs:4"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. header-test.mjs:8, index.js:519"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_ADMIN_PASSWORD"
+  }
+ ],
+ "level": 3
+}

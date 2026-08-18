@@ -1,0 +1,103 @@
+{
+ "repo": "songoao25/dsh-chatgpt-subscription",
+ "stars": 2,
+ "description": "ChatGPT Subscription - a DeepSeek Harness plugin: bind your ChatGPT account via official OAuth and chat with ChatGPT models inside DSH, using your Plus/Pro subscription quota",
+ "pushed_at": "2026-08-16T06:54:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-chatgpt-subscription",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "settings",
+  "shell",
+  "slots",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.openai.com": 2,
+  "auth.openai.com": 6
+ },
+ "env": {
+  "DSH_CHATGPT_DATA_DIR": 2,
+  "DSH_CHATGPT_BIND_FILE": 2,
+  "DSH_CHATGPT_AUTH": 2,
+  "DSH_CHATGPT_OAUTH_TIMEOUT_MS": 4,
+  "DSH_CHATGPT_OAUTH_PORT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:313",
+    "src/host.js:312"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 12,
+   "evidence": [
+    "lib/index.js:5",
+    "lib/index.js:5",
+    "lib/index.js:47",
+    "lib/index.js:56",
+    "lib/index.js:133"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:313, src/host.js:312"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_CHATGPT_AUTH, DSH_CHATGPT_OAUTH_PORT, DSH_CHATGPT_OAUTH_TIMEOUT_MS"
+  }
+ ],
+ "level": 3
+}

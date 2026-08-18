@@ -1,0 +1,90 @@
+{
+ "repo": "6-debug-6/dsh-thinking-notifier",
+ "stars": 4,
+ "description": "A simple popup that can quickly show when Deepseek has finished thinking or is requesting permission during split-screen.",
+ "pushed_at": "2026-08-17T13:56:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-thinking-notifier",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_THINKING_NOTIFIER_PORT": 1,
+  "PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:13",
+    "lib/index.js:13",
+    "lib/index.js:310",
+    "lib/index.js:322",
+    "lib/index.js:330"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:255"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:34",
+    "lib/index.js:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/index.js:13, lib/index.js:13"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/index.js:255"
+  }
+ ],
+ "level": 3
+}

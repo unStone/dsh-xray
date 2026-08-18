@@ -1,0 +1,132 @@
+{
+ "repo": "Civitasv/dsh-plugin-diff-review",
+ "stars": 6,
+ "description": "Codex-style diff review inside DeepSeek Harness",
+ "pushed_at": "2026-08-16T11:17:38Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-plugin-diff-review",
+ "deps": [
+  "@codemirror/commands",
+  "@codemirror/lang-css",
+  "@codemirror/lang-html",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/language",
+  "@codemirror/state",
+  "@codemirror/theme-one-dark",
+  "@codemirror/view",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "diff",
+  "react-arborist"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "redux.js.org": 2,
+  "react-dnd.github.io": 4,
+  "reactjs.org": 1
+ },
+ "env": {
+  "LOG": 1,
+  "DSH_WEB_URL": 2,
+  "DSH_WORKSPACE": 2,
+  "DSH_CDP_PORT": 1,
+  "DSH_WORKSPACE_NAME": 1,
+  "CHROME_BIN": 1,
+  "DSH_SESSION_ID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "dist/index.js:4",
+    "scripts/e2e-test.mjs:6",
+    "scripts/git-semantics-test.mjs:6",
+    "scripts/screenshot-all.mjs:21",
+    "scripts/screenshot-all.mjs:100"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/screenshot-all.mjs:67"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 84,
+   "dev": 0,
+   "evidence": [
+    "dist/index.js:5",
+    "dist/index.js:5",
+    "dist/index.js:296",
+    "dist/index.js:434",
+    "dist/index.js:469"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/files-path-test.mjs:19",
+    "scripts/review-package-test.mjs:31",
+    "scripts/unified-line-numbers-test.mjs:19"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. dist/index.js:4, scripts/e2e-test.mjs:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/screenshot-all.mjs:67"
+  }
+ ],
+ "level": 2
+}

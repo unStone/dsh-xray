@@ -1,0 +1,100 @@
+{
+ "repo": "omdsh-dev/dsh-scout",
+ "stars": 2,
+ "description": "面向 DeepSeek Harness 的只读环境探测插件，为智能体提供运行环境、软件版本、系统资源、端口、服务、硬件及工作区信息。",
+ "pushed_at": "2026-08-14T06:57:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-tool-scout",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "invariants",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_REPO_ROOT": 4,
+  "DSH_HOME": 1,
+  "DSH_INSTALL_ANCHOR": 1,
+  "PATHEXT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 6,
+   "evidence": [
+    "scripts/prepare.mjs:5",
+    "scripts/prepare.mjs:5",
+    "scripts/prepare.mjs:26",
+    "src/probe.ts:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 3,
+   "evidence": [
+    "scripts/link-harness.mjs:11",
+    "scripts/link-harness.mjs:40",
+    "scripts/prepare.mjs:1",
+    "scripts/prepare.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/prepare.mjs:5, scripts/prepare.mjs:5"
+  }
+ ],
+ "level": 3
+}

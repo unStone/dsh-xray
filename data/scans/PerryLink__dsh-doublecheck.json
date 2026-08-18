@@ -1,0 +1,102 @@
+{
+ "repo": "PerryLink/dsh-doublecheck",
+ "stars": 4,
+ "description": "Double-check before you ship: grill the requirements, test the implementation, prove the delivery. An engineering-discipline bundle for DeepSeek Harness.",
+ "pushed_at": "2026-08-18T00:27:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-doublecheck",
+ "deps": [
+  "typescript",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --noEmitOnError"
+ },
+ "injects": [
+  "commands",
+  "invariants",
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "agent/turn-stopping",
+  "doublecheck/gate",
+  "doublecheck/reminder",
+  "doublecheck/report",
+  "doublecheck/review",
+  "doublecheck/spec",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {
+  "DSH_HARNESS_ROOT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/extract-fixture.mjs:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/decode-session.mjs:19",
+    "scripts/extract-fixture.mjs:19"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 76,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 2
+}

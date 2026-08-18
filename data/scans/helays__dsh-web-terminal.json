@@ -1,0 +1,108 @@
+{
+ "repo": "helays/dsh-web-terminal",
+ "stars": 2,
+ "description": "DSH 插件：在 DeepSeek Harness Web 界面（对话/轨迹）顶部新增「终端」Tab，内置 xterm.js + node-pty 交互式终端，让你在编码完成后即时在终端执行指令调试。",
+ "pushed_at": "2026-08-15T14:03:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "immediately": false
+  }
+ },
+ "pkg_name": "dsh-web-terminal",
+ "deps": [
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "node-pty",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-commands",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "command/executed"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "bellard.org": 2
+ },
+ "env": {
+  "COLORTERM": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:9",
+    "lib/index.js:9",
+    "lib/index.js:22",
+    "lib/index.js:228",
+    "src/index.ts:155"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:72",
+    "build.mjs:85"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. lib/index.js:9, lib/index.js:9"
+  }
+ ],
+ "level": 3
+}

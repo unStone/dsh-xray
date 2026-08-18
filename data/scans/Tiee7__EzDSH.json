@@ -1,0 +1,158 @@
+{
+ "repo": "Tiee7/EzDSH",
+ "stars": 1,
+ "description": "Easy Way to the DeepSeek‑Harness.",
+ "pushed_at": "2026-08-18T08:32:41Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "ezdsh",
+ "deps": [
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-bash-local",
+  "@deepseek-ai/dsh-code-runtime",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-output-retention",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session-telemetry",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-spill",
+  "@deepseek-ai/dsh-subagent-in-process-driver",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-workflow",
+  "@earendil-works/pi-ai",
+  "@larksuiteoapi/node-sdk",
+  "electron-updater",
+  "react",
+  "react-dom",
+  "yaml",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react"
+ ],
+ "install_scripts": {
+  "postinstall": "npm run check:runtime && npm run check:published-dsh"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.example.com": 2,
+  "hub.ezdsh.com": 3,
+  "api.deepseek.com": 1,
+  "api.openai.com": 1,
+  "api.anthropic.com": 1,
+  "generativelanguage.googleapis.com": 1,
+  "api.moonshot.ai": 1,
+  "api.kimi.com": 1,
+  "api.minimax.io": 1,
+  "api.z.ai": 1,
+  "api.mistral.ai": 1,
+  "openrouter.ai": 1,
+  "api.groq.com": 1,
+  "api.together.ai": 1,
+  "ark.cn-beijing.volces.com": 1,
+  "mcp.context7.com": 1
+ },
+ "env": {
+  "GITHUB_REPOSITORY": 1,
+  "GITHUB_REF_NAME": 1,
+  "ELECTRON_RENDERER_URL": 1,
+  "EZDSH_UPDATE_FEED_URL": 1,
+  "EZDSH_DSH_SOURCE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 1,
+   "evidence": [
+    "scripts/stage-dsh-runtime.mjs:2",
+    "scripts/stage-dsh-runtime.mjs:2",
+    "scripts/stage-dsh-runtime.mjs:17",
+    "scripts/stage-dsh-runtime.mjs:156",
+    "scripts/stage-dsh-runtime.mjs:163"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-runtime-bundle.mjs:71",
+    "scripts/verify-runtime-bundle.mjs:74",
+    "src/main/runtime/runtime-manager.ts:342",
+    "src/main/runtime/runtime-manager.ts:345"
+   ]
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 22,
+   "evidence": [
+    "scripts/rewrite-update-metadata.mjs:1",
+    "scripts/rewrite-update-metadata.mjs:24",
+    "scripts/set-version.mjs:40",
+    "scripts/set-version.mjs:41",
+    "scripts/set-version.mjs:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 98,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: npm run check:runtime && npm run check:published-dsh"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. scripts/stage-dsh-runtime.mjs:2, scripts/stage-dsh-runtime.mjs:2"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. scripts/verify-runtime-bundle.mjs:71, scripts/verify-runtime-bundle.mjs:74"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,96 @@
+{
+ "repo": "fatmo666/Caushell",
+ "stars": 4,
+ "description": "Compiler-style pre-execution safety analysis for Harness shell actions.",
+ "pushed_at": "2026-08-17T23:07:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "caushell-dsh-bash",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "appExit",
+  "caushellDshBash",
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "CAUSHELL_DSH_ADAPTER_PATH": 1,
+  "CAUSHELL_CONFIG_PATH": 1,
+  "CAUSHELL_DSH_STORE_ROOT": 1,
+  "XDG_STATE_HOME": 2,
+  "XDG_RUNTIME_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 4,
+   "evidence": [
+    "integrations/deepseek-harness/caushell-dsh-bash.mjs:1",
+    "integrations/deepseek-harness/caushell-dsh-bash.mjs:178",
+    "integrations/vscode/extension.js:3",
+    "integrations/vscode/extension.js:1353",
+    "integrations/vscode/extension.js:1411"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 2,
+   "evidence": [
+    "integrations/vscode/smoke-test.js:29",
+    "integrations/vscode/smoke-test.js:39",
+    "integrations/vscode/smoke-test.js:48",
+    "integrations/vscode/smoke-test.js:59",
+    "integrations/vscode/smoke-test.js:104"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. integrations/deepseek-harness/caushell-dsh-bash.mjs:1, integrations/deepseek-harness/caushell-dsh-bash.mjs:178"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,168 @@
+{
+ "repo": "qomob/dsh",
+ "stars": 2,
+ "description": "Home of dsh-plugin-hub: discover, evaluate, and install DeepSeek Harness (dsh) community plugins from inside dsh — plugin_search / plugin_info / plugin_install / plugin_remove tools, supply-chain trus",
+ "pushed_at": "2026-08-18T01:16:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh",
+ "deps": [
+  "react",
+  "react-dom",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {
+  "vite.dev": 1,
+  "dsh.qomob.ai": 4,
+  "deepseek.com": 2,
+  "dshdesktop.cn": 1,
+  "awesome-dsh-plugin.com": 1,
+  "ningbainb.github.io": 1,
+  "dsh-meme-hub.cdqyfdbymn.me": 1,
+  "gallery.dsh-market.com": 1,
+  "deepseekdocs.com": 1,
+  "open-design.ai": 1,
+  "www.npmjs.com": 51,
+  "dshtui.com": 1,
+  "mem.nowledge.co": 1,
+  "x.com": 1,
+  "picgo.app": 1,
+  "serdaroztetik.com": 1,
+  "deepseekdesktop.com": 1,
+  "dshmarket.com": 1,
+  "dsh-plug.in": 2,
+  "notes.fangyuanxiaozhan.com": 1,
+  "www.ipollo.ai": 1,
+  "liustack.dev": 2,
+  "echobird.ai": 1,
+  "whiteguo233.github.io": 1,
+  "op.zseven.tech": 1,
+  "dshfind.com": 1,
+  "whyihaveyou.github.io": 1,
+  "computer-use.zrui.tech": 1,
+  "deepseek-harness-mcp-lens.charmingkla.chatgpt.site": 1,
+  "skills.sh": 1,
+  "acnlabs.dev": 1,
+  "loongport.dev": 1,
+  "mcp.exa.ai": 1,
+  "nzl153.github.io": 1,
+  "voyager.nagi.fun": 1,
+  "aibunkhouse.com": 1,
+  "ai4scholar.net": 1,
+  "dshbase.com": 1,
+  "sandbaseai.github.io": 1,
+  "myabu.cn": 1,
+  "dsh.openatom.club": 1,
+  "www.deepseek.com": 2,
+  "asimovbox.com": 1,
+  "petdex.dev": 2,
+  "zagens.com": 1,
+  "cdn.jsdelivr.net": 1,
+  "api.github.com": 5,
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DSH_PLUGIN_HUB_TOKEN": 1,
+  "GH_TOKEN": 2,
+  "GITHUB_TOKEN": 2,
+  "AUDIT_WRITE_FORCE": 1,
+  "DSH_HOME": 1,
+  "LLM_API_KEY": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "LLM_API_BASE": 1,
+  "LLM_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "plugin/scripts/screenshot.mjs:11",
+    "plugin/scripts/screenshot.mjs:36",
+    "plugin/src/install.js:12",
+    "plugin/src/install.js:148"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "plugin/scripts/screenshot.mjs:109",
+    "plugin/src/live.js:189"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "plugin/scripts/audit-registry.mjs:10",
+    "plugin/scripts/audit-registry.mjs:64",
+    "plugin/scripts/build-preview.mjs:5",
+    "plugin/scripts/build-preview.mjs:40",
+    "plugin/scripts/extract-theme.mjs:4"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. plugin/scripts/screenshot.mjs:11, plugin/scripts/screenshot.mjs:36"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. plugin/scripts/screenshot.mjs:109, plugin/src/live.js:189"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, DSH_PLUGIN_HUB_TOKEN, GH_TOKEN, GITHUB_TOKEN, LLM_API_KEY"
+  }
+ ],
+ "level": 3
+}

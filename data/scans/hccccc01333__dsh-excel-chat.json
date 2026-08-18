@@ -1,0 +1,117 @@
+{
+ "repo": "hccccc01333/dsh-excel-chat",
+ "stars": 5,
+ "description": "dsh-excel-chat — talk to Excel in DeepSeek Harness: create, edit, repair, and verify spreadsheets by conversation (cells, formulas, styles, filters, tables, charts); every edit is auto-validated.",
+ "pushed_at": "2026-08-16T15:37:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "vera",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "exceljs",
+  "fflate",
+  "exceljs",
+  "fflate",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 88,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "SystemRoot": 4,
+  "DEEPSEEK_MODEL": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "DEEPSEEK_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "src/chart-visual.ts:1",
+    "src/chart-visual.ts:195",
+    "bundle/dist/chart-visual.js:1",
+    "bundle/dist/chart-visual.js:154"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 25,
+   "dev": 35,
+   "evidence": [
+    "src/chart-visual.ts:42",
+    "src/chart-visual.ts:157",
+    "src/chart-visual.ts:179",
+    "src/diff.ts:54",
+    "src/doctor.ts:82"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 183,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/chart-visual.ts:1, src/chart-visual.ts:195"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,139 @@
+{
+ "repo": "AgentConnect/dsh-awiki",
+ "stars": 3,
+ "description": "AWiki identity and messaging plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-18T08:28:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@awiki/dsh-plugin",
+ "deps": [
+  "@awiki/im-core-node",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "awiki",
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "remote",
+  "settings",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "approval/request",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 31,
+ "domains": {
+  "awiki.ai": 6
+ },
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:151"
+   ]
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1321",
+    "lib/client.js:1372",
+    "lib/client.js:6165",
+    "lib/index.js:941",
+    "src/index.ts:450"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:589",
+    "scripts/normalize-built.mjs:29",
+    "src/session.ts:38",
+    "lib/types/session.js:37"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 120,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/client.js:151"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. lib/client.js:1321, lib/client.js:1372"
+  }
+ ],
+ "level": 3
+}

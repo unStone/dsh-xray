@@ -1,0 +1,79 @@
+{
+ "repo": "kol-mm/dsh-config-migrate",
+ "stars": 1,
+ "description": "DeepSeek Harness config migration plugin: one-click export/import of DSH_HOME settings, credentials, profiles and external plugins. Cross-platform (Windows/macOS/Linux).",
+ "pushed_at": "2026-08-15T18:27:30Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": {
+   "host": "./host.js",
+   "client": "./client.js"
+  }
+ },
+ "pkg_name": "dsh-config-migrate",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "host.js:89"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 10,
+   "evidence": [
+    "host.js:125",
+    "host.js:126",
+    "host.js:127",
+    "host.js:128"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 7,
+   "evidence": [
+    "host.js:151",
+    "host.js:152",
+    "host.js:166"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. host.js:89"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. host.js:125, host.js:126"
+  }
+ ],
+ "level": 2
+}

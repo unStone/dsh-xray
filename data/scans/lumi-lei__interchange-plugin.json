@@ -1,0 +1,125 @@
+{
+ "repo": "lumi-lei/interchange-plugin",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T07:39:10Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "interchange-harness",
+ "deps": [
+  "@libsql/client",
+  "dotenv",
+  "express",
+  "lucide-react",
+  "mammoth",
+  "multer",
+  "openai",
+  "pdf-parse",
+  "react",
+  "react-dom",
+  "read-excel-file",
+  "tesseract.js",
+  "zod",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "api.deepseek.com": 3
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "PORT": 1,
+  "SQLITE_PATH": 2,
+  "TURSO_DATABASE_URL": 1,
+  "TURSO_AUTH_TOKEN": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "DEEPSEEK_MODEL": 1,
+  "TEXT_MODEL_PROVIDER": 1,
+  "VISION_MODEL_PROVIDER": 1,
+  "FILE_MODEL_PROVIDER": 1,
+  "LARGE_TEXT_LIMIT": 1,
+  "UPLOAD_LIMIT_MB": 1,
+  "MARKITDOWN_COMMAND": 1,
+  "MARKITDOWN_TIMEOUT_MS": 1,
+  "RATE_LIMIT_WINDOW_MS": 1,
+  "API_RATE_LIMIT_MAX": 1,
+  "AI_RATE_LIMIT_MAX": 1,
+  "ROLE_RECOGNITION_RATE_LIMIT_MAX": 1,
+  "DSG_PRESETS_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "server/markitdown.ts:1",
+    "plugin/host/index.js:10",
+    "plugin/host/index.js:126"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 5,
+   "evidence": [
+    "scripts/format_drafts.mjs:48",
+    "scripts/send_webhook.mjs:81",
+    "server/markitdown.ts:117",
+    "plugin/host/index.js:136",
+    "server/dsg/generate.ts:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 43,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. server/markitdown.ts:1, plugin/host/index.js:10"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, TURSO_AUTH_TOKEN"
+  }
+ ],
+ "level": 3
+}

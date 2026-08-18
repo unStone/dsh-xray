@@ -1,0 +1,94 @@
+{
+ "repo": "zjcdkj/dsh-plugins",
+ "stars": 1,
+ "description": "DeepSeek Harness (DSH) plugins. qwen-image gives a text-only coding model eyes: an image goes to a Qwen-VL route through ctx.llm and comes back as text, so DeepSeek keeps coding while Qwen looks. Pure",
+ "pushed_at": "2026-08-17T02:06:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugins",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "connection",
+  "conversationEvents",
+  "conversationViews",
+  "fs",
+  "llm",
+  "locale",
+  "sessions",
+  "slots",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/session-resources/assets/file-icons/generate.mjs:61"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/session-resources/assets/file-icons/generate.mjs:19",
+    "packages/session-resources/assets/file-icons/generate.mjs:253"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/session-resources/assets/file-icons/generate.mjs:61"
+  }
+ ],
+ "level": 3
+}

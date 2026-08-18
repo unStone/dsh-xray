@@ -1,0 +1,76 @@
+{
+ "repo": "ottotheagent/otto-dsh",
+ "stars": 2,
+ "description": "Book real flights, hotels & cars with Otto from DeepSeek Harness (dsh) — the otto-travel MCP connector as a dsh plugin.",
+ "pushed_at": "2026-08-15T05:38:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": "./cordis.otto.patch.yml"
+ },
+ "pkg_name": "@ottotheagent/otto-dsh",
+ "deps": [
+  "@modelcontextprotocol/sdk"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.apache.org": 6,
+  "api.ottotheagent.com": 2
+ },
+ "env": {
+  "OTTO_NO_BROWSER": 1,
+  "OTTO_MCP_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:30",
+    "src/index.ts:67"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/token-store.ts:52"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/index.ts:30, src/index.ts:67"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,100 @@
+{
+ "repo": "sala003/dsh-tool-describe-image",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-13T18:50:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-tool-describe-image",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "fs",
+  "locale",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "dashscope.aliyuncs.com": 5
+ },
+ "env": {
+  "DASHSCOPE_API_KEY": 2,
+  "DESCRIBE_IMAGE_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:95"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/index.ts:95"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY"
+  }
+ ],
+ "level": 3
+}

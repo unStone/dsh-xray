@@ -1,0 +1,86 @@
+{
+ "repo": "STARDUSTLC666/dsh-flakefinder",
+ "stars": 1,
+ "description": "DSH 测试稳定性插件：重复运行测试识别 flaky 用例，历史与隔离清单，零运行时依赖。",
+ "pushed_at": "2026-08-16T11:51:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-flakefinder",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_FLAKEFINDER_PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/runner.ts:52"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/store.ts:76",
+    "src/store.ts:103"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/runner.ts:52"
+  }
+ ],
+ "level": 3
+}

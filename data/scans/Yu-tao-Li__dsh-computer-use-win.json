@@ -1,0 +1,72 @@
+{
+ "repo": "Yu-tao-Li/dsh-computer-use-win",
+ "stars": 1,
+ "description": "Windows computer use for DeepSeek Harness (dsh): MCP stdio server + PowerShell UIA backend, 22 desktop tools",
+ "pushed_at": "2026-08-17T18:49:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-computer-use-win",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "WINDOWS_CU_POWERSHELL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 24,
+   "evidence": [
+    "mcp/server.mjs:2",
+    "mcp/server.mjs:474"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. mcp/server.mjs:2, mcp/server.mjs:474"
+  }
+ ],
+ "level": 3
+}

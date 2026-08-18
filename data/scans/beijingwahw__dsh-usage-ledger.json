@@ -1,0 +1,102 @@
+{
+ "repo": "beijingwahw/dsh-usage-ledger",
+ "stars": 2,
+ "description": "dsh-usage-ledger（Token 费用统计）— 自动记下每笔对话花了多少 Token、多少钱（按对话、按天、累计都能查），价格自动跟着官方最新价走、支持多家国产厂商，低谷时段自动按便宜价算，预算超了自动提醒还能拦下调用，带可视化仪表盘。",
+ "pushed_at": "2026-08-17T23:53:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-usage-ledger",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "settings",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "llm/stream",
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "api-docs.deepseek.com": 5,
+  "open.bigmodel.cn": 4,
+  "platform.kimi.com": 6,
+  "help.aliyun.com": 2,
+  "www.volcengine.com": 4,
+  "platform.minimaxi.com": 2,
+  "cloud.baidu.com": 2,
+  "bce.bdstatic.com": 2
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/ledger.js:5",
+    "lib/ledger.js:217",
+    "src/ledger.ts:5",
+    "src/ledger.ts:270"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,70 @@
+{
+ "repo": "lujoai/Lujo-MCP",
+ "stars": 1,
+ "description": "基于 MCP 协议的 AI 调试追踪平台，提供会话管理、链路追踪、错误分析与 Dashboard 可视化",
+ "pushed_at": "2026-08-18T02:02:05Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "ai-debug-sdk",
+ "deps": [],
+ "install_scripts": {
+  "postinstall": "node bin/check.js"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "npm/packages/lujo-mcp/bin/cli.js:11",
+    "npm/packages/lujo-mcp/bin/cli.js:68"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "npm/scripts/gen-platform-packages.js:51"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node bin/check.js"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. npm/packages/lujo-mcp/bin/cli.js:11, npm/packages/lujo-mcp/bin/cli.js:68"
+  }
+ ],
+ "level": 2
+}

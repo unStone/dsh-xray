@@ -1,0 +1,139 @@
+{
+ "repo": "wulun811/dsh-plugin-vet",
+ "stars": 2,
+ "description": "Trust pipeline for deepseek-harness plugins: deterministic static scan (11 rules) + LLM-driven audit protocol + two-part scorecard, with optional runtime guard (T1 sentinel / T2 fs & child_process hoo",
+ "pushed_at": "2026-08-17T17:00:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "@jieai/dsh-plugin-vet",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "js-yaml",
+  "typescript",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "dispose",
+  "internal/plugin",
+  "ready",
+  "tools/execute"
+ ],
+ "tool_regs": 6,
+ "domains": {
+  "api.osv.dev": 2,
+  "www.jsdelivr.com": 1,
+  "www.chartjs.org": 1,
+  "oauth2.googleapis.com": 1
+ },
+ "env": {
+  "DSH_PLUGIN_VET_CACHE_DIR": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "VET_E2E_PROFILE": 1,
+  "DSH_PLUGIN_VET_ARCHIVE_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 38,
+   "dev": 38,
+   "evidence": [
+    "scripts/e2e-local.mjs:10",
+    "scripts/e2e-local.mjs:10",
+    "scripts/e2e-local.mjs:27",
+    "scripts/e2e-local.mjs:65",
+    "scripts/e2e-local.mjs:71"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "scanner-bin/rules/dynamic-exec.ts:113"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scanner-bin/rules/string-heuristics.ts:29"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-status-route.mjs:14",
+    "scripts/verify-status-route.mjs:41"
+   ]
+  },
+  "fs_write": {
+   "src": 30,
+   "dev": 134,
+   "evidence": [
+    "scanner-bin/cache.ts:2",
+    "scanner-bin/cache.ts:69",
+    "scripts/build-client.mjs:4",
+    "scripts/build-client.mjs:40",
+    "scripts/verify-status-route.mjs:4"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 64,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×38 src, e.g. scripts/e2e-local.mjs:10, scripts/e2e-local.mjs:10"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scanner-bin/rules/dynamic-exec.ts:113"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scanner-bin/rules/string-heuristics.ts:29"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/verify-status-route.mjs:14, scripts/verify-status-route.mjs:41"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

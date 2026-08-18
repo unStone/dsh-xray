@@ -1,0 +1,107 @@
+{
+ "repo": "diqierjia/StrataGate-AgentMemory",
+ "stars": 1,
+ "description": "Local-first cross-session memory for DeepSeek Harness (DSH): automatic capture, Event/Element cards, evidence-gated recall, source tracing. 本地跨会话长期记忆。",
+ "pushed_at": "2026-08-18T07:06:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@diqier/stratagate",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "llm",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {
+  "npm_execpath": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "integrations/deepseek-harness/scripts/verify-package.mjs:5",
+    "integrations/deepseek-harness/scripts/verify-package.mjs:5",
+    "integrations/deepseek-harness/scripts/verify-package.mjs:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "integrations/deepseek-harness/scripts/verify-package.mjs:1",
+    "integrations/deepseek-harness/scripts/verify-package.mjs:72",
+    "integrations/deepseek-harness/scripts/verify-package.mjs:73"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "integrations/deepseek-harness/scripts/verify-package.mjs:66"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. integrations/deepseek-harness/scripts/verify-package.mjs:5, integrations/deepseek-harness/scripts/verify-package.mjs:5"
+  }
+ ],
+ "level": 3
+}

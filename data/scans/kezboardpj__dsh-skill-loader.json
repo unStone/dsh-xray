@@ -1,0 +1,103 @@
+{
+ "repo": "kezboardpj/dsh-skill-loader",
+ "stars": 3,
+ "description": "Per-conversation skill catalog picker for DeepSeek Harness (dsh) — choose which skills are loaded into each conversation. Unselected skills are unavailable in that conversation.",
+ "pushed_at": "2026-08-15T03:32:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection"
+   ]
+  }
+ },
+ "pkg_name": "dsh-skill-loader",
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-connection"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "connection",
+  "locale",
+  "remote",
+  "sessions",
+  "settings",
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_SESSION_JS": 3,
+  "APPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/repair-v01-logs.mjs:130"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/repair-v01-logs.mjs:50"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 2
+}

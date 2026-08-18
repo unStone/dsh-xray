@@ -1,0 +1,83 @@
+{
+ "repo": "sopaco/terrain",
+ "stars": 5,
+ "description": "AI-native engineering environment management that makes your codebase agent-ready.",
+ "pushed_at": "2026-08-17T23:37:17Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "terrain",
+ "deps": [
+  "@lucide/svelte",
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-dialog",
+  "@tauri-apps/plugin-shell",
+  "highlight.js",
+  "html2canvas",
+  "marked",
+  "mermaid"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/write-shims.mjs && node scripts/prepare-binaries.mjs --build-cli"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "integrate.api.nvidia.com": 2
+ },
+ "env": {
+  "TAURI_DEV_HOST": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "npm/scripts/prepare-binaries.mjs:9",
+    "npm/scripts/prepare-binaries.mjs:9",
+    "npm/scripts/prepare-binaries.mjs:38",
+    "npm/scripts/lib/write-shim.mjs:11",
+    "npm/scripts/lib/write-shim.mjs:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "npm/scripts/sync-version.mjs:28",
+    "npm/scripts/lib/write-shim.mjs:45"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 203,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. npm/scripts/prepare-binaries.mjs:9, npm/scripts/prepare-binaries.mjs:9"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,118 @@
+{
+ "repo": "TingRuDeng/dsh-feishu-bot",
+ "stars": 2,
+ "description": "Feishu (Lark) private-chat frontend for DeepSeek Harness: drive, monitor, and approve local agents from Feishu, sharing sessions with the Web GUI",
+ "pushed_at": "2026-08-17T06:45:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@tingrudeng/dsh-feishu-bot",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-user-approval",
+  "@larksuiteoapi/node-sdk",
+  "zod",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "credentials",
+  "feishu",
+  "invariants",
+  "sessionPersistence",
+  "sessionProjectionCache",
+  "sessionProjections",
+  "sessions",
+  "storageDomain",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "approval/request",
+  "domain/changed",
+  "feishu/message",
+  "internal/plugin",
+  "session/created",
+  "session/event",
+  "test/approve"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_RELEASE_HARNESS_ROOT": 1,
+  "DSH_RELEASE_ARTIFACT_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/release-preview.mjs:3",
+    "scripts/release-preview.mjs:3",
+    "scripts/release-preview.mjs:46"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 10,
+   "evidence": [
+    "scripts/release-preview.mjs:199",
+    "scripts/release-preview.mjs:228",
+    "scripts/release-preview.mjs:285",
+    "scripts/release-preview.mjs:286",
+    "scripts/release-preview.mjs:287"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/release-preview.mjs:3, scripts/release-preview.mjs:3"
+  }
+ ],
+ "level": 3
+}

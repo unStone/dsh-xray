@@ -1,0 +1,124 @@
+{
+ "repo": "toRolex/periscope",
+ "stars": 1,
+ "description": "Bridge vision to text-only coding agents — a Claude Code & Codex plugin for DeepSeek and friends",
+ "pushed_at": "2026-08-16T08:27:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "periscope",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "connection",
+  "llm",
+  "settings",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "agent-plugins.org": 8,
+  "your-vision-endpoint.example.com": 2
+ },
+ "env": {
+  "PERISCOPE_CACHE_DIR": 2,
+  "PERISCOPE_CONFIG": 8,
+  "PERISCOPE_API_KEY": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 25,
+   "evidence": [
+    "dist/testing/hook.js:4",
+    "dist/testing/hook.js:4",
+    "dist/testing/hook.js:11",
+    "src/testing/hook.ts:1",
+    "src/testing/hook.ts:13"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "dist/testing/fixtures.js:65",
+    "src/testing/fixtures.ts:27"
+   ]
+  },
+  "net_server": {
+   "src": 8,
+   "dev": 2,
+   "evidence": [
+    "dist/testing/mock-server.js:44",
+    "dist/testing/mock-server.js:84",
+    "src/testing/mock-server.ts:36",
+    "src/testing/mock-server.ts:76",
+    "dsh-plugin/dist/testing/mock-server.js:8"
+   ]
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 48,
+   "evidence": [
+    "dist/cache.js:80",
+    "src/cache.ts:46",
+    "dist/cli/init.js:234",
+    "dist/cli/plugin-schema.js:181",
+    "dist/config/config.js:101"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 162,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. dist/testing/hook.js:4, dist/testing/hook.js:4"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. dist/testing/fixtures.js:65, src/testing/fixtures.ts:27"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×8 src, e.g. dist/testing/mock-server.js:44, dist/testing/mock-server.js:84"
+  },
+  {
+   "id": "token_env",
+   "evidence": "PERISCOPE_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,124 @@
+{
+ "repo": "loker66fan/dsh-market-github",
+ "stars": 2,
+ "description": "DeepSeek Harness 插件商城：启动页入口 + GitHub topic:dsh-plugin 实时搜索、一键安装/重启 · In-harness plugin market with real-time GitHub search",
+ "pushed_at": "2026-08-16T11:16:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-market-github",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "www.gstatic.com": 2,
+  "raw.gitmirror.com": 2,
+  "cdn.jsdelivr.net": 2,
+  "ghproxy.net": 2,
+  "api.github.com": 8,
+  "codeload.github.com": 6
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "HTTP_PROXY": 6,
+  "https_proxy": 4,
+  "HTTPS_PROXY": 6,
+  "http_proxy": 4,
+  "ALL_PROXY": 2,
+  "all_proxy": 2,
+  "NO_PROXY": 4,
+  "no_proxy": 2,
+  "DSH_BIN": 4,
+  "GITHUB_TOKEN": 2,
+  "DSH_MARKET_GITHUB_TOKEN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 2,
+   "evidence": [
+    "lib/host.js:31",
+    "lib/host.js:324",
+    "lib/host.js:324",
+    "lib/host.js:347",
+    "lib/host.js:400"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "lib/host.js:321",
+    "src/host.ts:317"
+   ]
+  },
+  "fs_write": {
+   "src": 45,
+   "dev": 32,
+   "evidence": [
+    "lib/host.js:27",
+    "lib/host.js:27",
+    "lib/host.js:27",
+    "lib/host.js:429",
+    "lib/host.js:448"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. lib/host.js:31, lib/host.js:324"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/host.js:321, src/host.ts:317"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_MARKET_GITHUB_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

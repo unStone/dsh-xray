@@ -1,0 +1,96 @@
+{
+ "repo": "kittsai/dsh-sidechat",
+ "stars": 2,
+ "description": "deepseek harness web侧边聊天插件",
+ "pushed_at": "2026-08-17T12:26:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-sidechat",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "layout",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:165"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1183",
+    "lib/client.js:1234"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/client.js:165"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/client.js:1183, lib/client.js:1234"
+  }
+ ],
+ "level": 3
+}

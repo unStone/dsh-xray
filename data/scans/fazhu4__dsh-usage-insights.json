@@ -1,0 +1,114 @@
+{
+ "repo": "fazhu4/dsh-usage-insights",
+ "stars": 1,
+ "description": "dsh的本地用量面板，统计 Token、请求、Agent 活动、工具调用和性能",
+ "pushed_at": "2026-08-17T14:44:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-usage-insights",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-locale",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event",
+  "session/flush"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ComSpec": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:2",
+    "build.mjs:2",
+    "build.mjs:51",
+    "scripts/verify-package.mjs:1",
+    "scripts/verify-package.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:3",
+    "build.mjs:3",
+    "build.mjs:9",
+    "build.mjs:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-session.mjs:18"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. build.mjs:2, build.mjs:2"
+  }
+ ],
+ "level": 3
+}

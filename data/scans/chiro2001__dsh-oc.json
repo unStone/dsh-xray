@@ -1,0 +1,120 @@
+{
+ "repo": "chiro2001/dsh-oc",
+ "stars": 4,
+ "description": "DeepSeek Harness × OpenCode TUI 前端：把 dsh 的 Agent、会话、工具接入官方 opencode 终端。OpenCode TUI frontend for the DeepSeek Harness (dsh): agents, sessions and tools in the official opencode terminal.",
+ "pushed_at": "2026-08-18T00:23:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@chiro2001/dsh-oc",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-home-paths",
+  "@opencode-ai/plugin",
+  "@opentui/core",
+  "@opentui/solid",
+  "solid-js"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy",
+  "ocBridge"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_OC_E2E_FAKE_SKILLS": 2,
+  "HTTPS_PROXY": 1,
+  "HTTP_PROXY": 1,
+  "DSH_OC_BYPASS_VERSION_CHECK": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 82,
+   "dev": 53,
+   "evidence": [
+    "bin/dsh-oc.mjs:6",
+    "bin/dsh-oc.mjs:6",
+    "bin/dsh-oc.mjs:14",
+    "bin/dsh-oc.mjs:26",
+    "lib/http-Ca1gpz9F.js:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/http-Ca1gpz9F.js:5265",
+    "src/bridge/router.ts:658"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "lib/http-Ca1gpz9F.js:6419",
+    "lib/http-Ca1gpz9F.js:6439",
+    "src/bridge/http.ts:42",
+    "src/bridge/http.ts:64"
+   ]
+  },
+  "fs_write": {
+   "src": 42,
+   "dev": 69,
+   "evidence": [
+    "scripts/build-replay-corpus.mjs:9",
+    "scripts/build-replay-corpus.mjs:9",
+    "scripts/build-replay-corpus.mjs:15",
+    "scripts/build-replay-corpus.mjs:148",
+    "scripts/build-replay-corpus.mjs:279"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 88,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy"
+  },
+  {
+   "id": "exec",
+   "evidence": "×82 src, e.g. bin/dsh-oc.mjs:6, bin/dsh-oc.mjs:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/http-Ca1gpz9F.js:5265, src/bridge/router.ts:658"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. lib/http-Ca1gpz9F.js:6419, lib/http-Ca1gpz9F.js:6439"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_OC_BYPASS_VERSION_CHECK"
+  }
+ ],
+ "level": 3
+}

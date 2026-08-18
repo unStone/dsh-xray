@@ -1,0 +1,88 @@
+{
+ "repo": "Bernardxu123/dsh-mobile-gate",
+ "stars": 5,
+ "description": "LAN mobile gateway for DeepSeek Harness (DSH): first-visit approval, per-device tokens, rate limiting, mobile layout injection. 局域网手机安全访问 DSH 的即插即用网关：本机审批、设备令牌、限流、手机端适配。",
+ "pushed_at": "2026-08-14T16:20:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-mobile-gate",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "subprocess"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LAN_GATE_PORT": 1,
+  "LAN_GATE_HOST": 1,
+  "LAN_GATE_TARGET_PORT": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lan-gate.mjs:25"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/lan-gate-server.cjs:41"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/lan-gate-server.cjs:10"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lan-gate.mjs:25"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/lan-gate-server.cjs:41"
+  }
+ ],
+ "level": 3
+}

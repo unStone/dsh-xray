@@ -1,0 +1,103 @@
+{
+ "repo": "Juryorca/dsh-custom-theme-import",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T08:24:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-custom-theme-import",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "theme"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:6",
+    "lib/index.js:155",
+    "src/index.js:6",
+    "src/index.js:155"
+   ]
+  },
+  "eval": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:499",
+    "lib/client.js:501",
+    "src/client.js:493",
+    "src/client.js:495"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 27,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:5",
+    "build.mjs:44",
+    "build.mjs:45",
+    "lib/index.js:5",
+    "lib/index.js:5"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:6, lib/index.js:155"
+  },
+  {
+   "id": "eval",
+   "evidence": "×4 src, e.g. lib/client.js:499, lib/client.js:501"
+  }
+ ],
+ "level": 3
+}

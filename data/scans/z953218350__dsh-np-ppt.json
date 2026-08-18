@@ -1,0 +1,105 @@
+{
+ "repo": "z953218350/dsh-np-ppt",
+ "stars": 3,
+ "description": "原生 DSH (DeepSeek Harness) 插件：PPT 演示文稿专家，内置 PPTD DSL 引擎、55173 所见即所得可视化编辑器、Python-PPTX 高保真离线编译内核与一键导出 PPTX。 | Native DSH plugin: PPT presentation expert with PPTD DSL engine, 55173 WYSIWYG editor, Pytho",
+ "pushed_at": "2026-08-14T14:38:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-np-ppt",
+ "deps": [
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "statics.moonshot.cn": 1,
+  "www.kimi.com": 3
+ },
+ "env": {
+  "PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 0,
+   "evidence": [
+    "lib/service.js:5",
+    "lib/service.js:5",
+    "lib/service.js:5",
+    "lib/service.js:45",
+    "lib/service.js:57"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/service.js:153",
+    "src/service.ts:153"
+   ]
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "editor/app.js:545",
+    "editor/app.js:572",
+    "editor/app.js:674",
+    "lib/service.js:1",
+    "lib/service.js:96"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. lib/service.js:5, lib/service.js:5"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/service.js:153, src/service.ts:153"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,105 @@
+{
+ "repo": "gxx950224/ggame",
+ "stars": 1,
+ "description": "干活跟打魔兽一样累",
+ "pushed_at": "2026-08-17T06:17:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@ggame/plugins",
+ "deps": [
+  "@ggame/backpack",
+  "@ggame/quest",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionQuery",
+  "settings",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 18,
+ "domains": {
+  "api-docs.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/backpack/lib/index.js:12",
+    "packages/backpack/lib/index.js:680"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "packages/backpack/lib/index.js:369",
+    "packages/backpack/lib/index.js:383",
+    "packages/backpack/scripts/build-client.mjs:3",
+    "packages/backpack/scripts/build-client.mjs:40",
+    "packages/backpack/scripts/extract-client-src.mjs:3"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. packages/backpack/lib/index.js:12, packages/backpack/lib/index.js:680"
+  }
+ ],
+ "level": 3
+}

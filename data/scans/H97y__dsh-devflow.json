@@ -1,0 +1,112 @@
+{
+ "repo": "H97y/dsh-devflow",
+ "stars": 1,
+ "description": "Automated development pipeline plugin for DeepSeek Harness: requirement pool → LLM refine/design/plan/review → workspace-routed implementation → verify → merge → report",
+ "pushed_at": "2026-08-17T14:35:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-devflow-repo",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "devflow",
+  "fs",
+  "invariants",
+  "llm",
+  "remote",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/devflow/src/index.ts:437",
+    "packages/devflow/src/pump.ts:63",
+    "packages/devflow/src/pump.ts:173"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "packages/devflow/scripts/gen-typert.mjs:22",
+    "packages/devflow/scripts/gen-typert.mjs:22",
+    "packages/devflow/scripts/gen-typert.mjs:37",
+    "packages/devflow/scripts/gen-typert.mjs:52",
+    "packages/devflow/scripts/gen-typert.mjs:75"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/devflow/src/index.ts:437, packages/devflow/src/pump.ts:63"
+  }
+ ],
+ "level": 3
+}

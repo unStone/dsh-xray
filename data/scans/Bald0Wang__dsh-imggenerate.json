@@ -1,0 +1,78 @@
+{
+ "repo": "Bald0Wang/dsh-imggenerate",
+ "stars": 4,
+ "description": "DeepSeek Harness plugin: image_generate tool with qwen-image-3.0 (Aliyun MaaS) and doubao-seedream (Volcano Ark) providers",
+ "pushed_at": "2026-08-14T08:25:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-image-gen",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "llm-pux28gcqlwezimaw.cn-beijing.maas.aliyuncs.com": 1,
+  "ark.cn-beijing.volces.com": 1
+ },
+ "env": {
+  "DASHSCOPE_API_KEY": 1,
+  "ARK_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ARK_API_KEY, DASHSCOPE_API_KEY"
+  }
+ ],
+ "level": 3
+}

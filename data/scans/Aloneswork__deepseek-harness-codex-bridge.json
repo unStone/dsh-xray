@@ -1,0 +1,77 @@
+{
+ "repo": "Aloneswork/deepseek-harness-codex-bridge",
+ "stars": 3,
+ "description": "Codex 主导、DeepSeek Harness 辅助的本地双向 MCP 协作桥｜Local bidirectional Codex ↔ DSH MCP bridge",
+ "pushed_at": "2026-08-14T09:57:36Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-harness-mcp-bridge",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_BIN": 1,
+  "CODEX_BIN": 1,
+  "DSH_CODEX_MAILBOX_DIR": 1,
+  "SLOW_DSH_PID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "server.mjs:3",
+    "server.mjs:188",
+    "test.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "server.mjs:67",
+    "server.mjs:410",
+    "test.mjs:27",
+    "test.mjs:45",
+    "test.mjs:46"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. server.mjs:3, server.mjs:188"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,102 @@
+{
+ "repo": "rayafriandion/deepseek-harness-tui",
+ "stars": 3,
+ "description": "The plugin can use terminal UI like opencode/claude code and other CLI/TUI agents.",
+ "pushed_at": "2026-08-15T14:03:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deepseek-harness-tui",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "commander",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-loop",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-user-approval"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "cmdlineArgs",
+  "commands",
+  "sessionPersistence",
+  "tuiStartup"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/request",
+  "agent/status",
+  "approval/request",
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TUI_PROFILE": 1,
+  "DSH_HOME": 2,
+  "DSH_TUI_SKIP_CHECK": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-tui.js:12",
+    "bin/dsh-tui.js:159",
+    "bin/dsh-tui.js:161",
+    "bin/dsh-tui.js:164"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bin/dsh-tui.js:12, bin/dsh-tui.js:159"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,104 @@
+{
+ "repo": "lingxin-maz/dsh-profilespanel",
+ "stars": 2,
+ "description": "DeepSeek Harness (DSH) plugin status panel & profile ops console: pending-restart (SSE), one-click restart, multi-profile sync install (web+desktop), supply-chain preview, rollback/undo, updates/align",
+ "pushed_at": "2026-08-16T16:07:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-profile-panel",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 9,
+ "domains": {
+  "awesome-dsh-plugin.com": 2
+ },
+ "env": {
+  "DSH_PROFILE_PANEL_INSTALL_TIMEOUT_MS": 2,
+  "DSH_PROFILE_PANEL_MARKET_URL": 2,
+  "DSH_HOME": 2,
+  "DSH_PROFILE_PANEL_VIEW_TIMEOUT_MS": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/install.js:8",
+    "lib/install.js:82",
+    "lib/install.js:104",
+    "lib/registry.js:7",
+    "lib/registry.js:23"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 89,
+   "evidence": [
+    "lib/audit.js:8",
+    "lib/audit.js:8",
+    "lib/audit.js:47",
+    "lib/install.js:10",
+    "lib/install.js:420"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 90,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. lib/install.js:8, lib/install.js:82"
+  }
+ ],
+ "level": 3
+}

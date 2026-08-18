@@ -1,0 +1,83 @@
+{
+ "repo": "mafeis/dsh-net-proxy",
+ "stars": 4,
+ "description": "",
+ "pushed_at": "2026-08-14T13:05:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "react",
+    "react/jsx-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-net-proxy",
+ "deps": [
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.gstatic.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 5,
+   "evidence": [
+    "lib/config.js:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,107 @@
+{
+ "repo": "Creakono/dsh-cost-meter",
+ "stars": 2,
+ "description": "Automatically calculate the cost based on the configured price list. 自动按配置的价目表算价格花费。当前未启用峰谷价格，后续还请自行在配置页添加",
+ "pushed_at": "2026-08-15T13:58:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ]
+  }
+ },
+ "pkg_name": "dsh-cost-meter",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-env.mjs:4",
+    "scripts/dsh-env.mjs:79",
+    "scripts/dsh-env.mjs:80"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:239"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:57",
+    "index.mjs:58"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:46",
+    "scripts/build.mjs:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/dsh-env.mjs:4, scripts/dsh-env.mjs:79"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. index.mjs:239"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. index.mjs:57, index.mjs:58"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,90 @@
+{
+ "repo": "SASE223/dsh-dev-team-manager",
+ "stars": 1,
+ "description": "一个将Claudecode的dev-team插件兼容到dsh的套壳插件, token使用很快, 非使用dsh中重度开发的谨慎使用. A wrapper plugin that ports Claude Code's dev-team plugin to dsh. Heavy token usage — use with caution unless you're doing intensive d",
+ "pushed_at": "2026-08-14T12:19:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-dev-team-manager",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-skill",
+  "cordis",
+  "react",
+  "react-dom",
+  "react",
+  "typescript",
+  "next",
+  "react",
+  "react-dom",
+  "@nestjs/core",
+  "@nestjs/common",
+  "typescript"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/skill-install.js:135",
+    "scripts/build-client.mjs:22",
+    "scripts/build-client.mjs:27",
+    "src/skill-install.ts:162"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,99 @@
+{
+ "repo": "yibiner/dsh-plugin-list-plus",
+ "stars": 1,
+ "description": "Trust-tiered, collapsible plugin list for DeepSeek Harness Web Settings.",
+ "pushed_at": "2026-08-16T10:25:02Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-list-plus",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "loader",
+  "locale",
+  "remote",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 5,
+   "evidence": [
+    "src/index.ts:13",
+    "src/index.ts:13",
+    "src/index.ts:149"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/index.ts:13, src/index.ts:13"
+  }
+ ],
+ "level": 3
+}

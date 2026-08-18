@@ -1,0 +1,95 @@
+{
+ "repo": "moononnn/DeepSeek-Harness-biaoqingbao",
+ "stars": 2,
+ "description": "一个在DSH上使用的表情包插件，在和agent聊天时让ta自然的插入表情包",
+ "pushed_at": "2026-08-16T01:50:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-biaoqingbao",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "attachments",
+  "fs",
+  "llm",
+  "sandboxPolicy",
+  "shellEnv",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "agent/pre-step"
+ ],
+ "tool_regs": 10,
+ "domains": {
+  "api.openai.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:920"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:920"
+  }
+ ],
+ "level": 3
+}

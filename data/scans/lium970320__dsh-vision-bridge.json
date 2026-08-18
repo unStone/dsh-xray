@@ -1,0 +1,77 @@
+{
+ "repo": "lium970320/dsh-vision-bridge",
+ "stars": 2,
+ "description": "DSH 视觉桥接插件：让无视觉能力的主模型看图（会话收图 + 自动转文字 + view_image 工具）",
+ "pushed_at": "2026-08-14T17:18:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./plugin/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@liu__min/dsh-vision-bridge",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.openai.com": 2
+ },
+ "env": {
+  "__VIEW_TEST_KEY__": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "plugin/apply-vision-patch.js:22",
+    "plugin/apply-vision-patch.js:138",
+    "plugin/apply-vision-patch.js:156"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./plugin/cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "__VIEW_TEST_KEY__"
+  }
+ ],
+ "level": 3
+}

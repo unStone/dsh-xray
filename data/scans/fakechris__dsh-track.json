@@ -1,0 +1,102 @@
+{
+ "repo": "fakechris/dsh-track",
+ "stars": 6,
+ "description": "DSH Track Bridge 插件：嵌入式任务管理引擎——决策点协议、念头捕获墙、Linear 形 issue 存储（bundle），AI 与人之间的任务轨道",
+ "pushed_at": "2026-08-18T04:16:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@fakechris/dsh-track",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "locale",
+  "sessions",
+  "slots",
+  "storage",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 64,
+ "domains": {},
+ "env": {
+  "DSH_SOURCE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 7,
+   "evidence": [
+    "scripts/dsh-env.mjs:16",
+    "scripts/dsh-env.mjs:16",
+    "scripts/dsh-env.mjs:34",
+    "lib/graph/commits.js:5",
+    "lib/graph/commits.js:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 5,
+   "evidence": [
+    "scripts/prepack-cordis-rewrite.mjs:14",
+    "scripts/prepack-cordis-rewrite.mjs:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 158,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/dsh-env.mjs:16, scripts/dsh-env.mjs:16"
+  }
+ ],
+ "level": 3
+}

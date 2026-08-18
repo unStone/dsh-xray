@@ -1,0 +1,76 @@
+{
+ "repo": "Void0312Aurora/dsh-desktop-electron",
+ "stars": 4,
+ "description": "Cross-platform Electron desktop shell for the DSH Web GUI: tray-resident standalone window over your own dsh web, no bundled Node runtime",
+ "pushed_at": "2026-08-15T10:55:12Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop-electron",
+ "deps": [
+  "cross-spawn"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_SMOKE_BIN": 1,
+  "DSH_DESKTOP_TEST": 2,
+  "DSH_DESKTOP_TEST_QUIT_FILE": 1,
+  "DSH_PERMISSION_MODE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 1,
+   "evidence": [
+    "scripts/run-electron.mjs:3",
+    "scripts/run-electron.mjs:3",
+    "scripts/run-electron.mjs:11",
+    "scripts/smoke-windows-shim.mjs:3",
+    "scripts/smoke-windows-shim.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "scripts/generate-icons.mjs:27",
+    "scripts/smoke-windows-shim.mjs:69",
+    "scripts/smoke-windows-shim.mjs:116"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. scripts/run-electron.mjs:3, scripts/run-electron.mjs:3"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,95 @@
+{
+ "repo": "Js2Hou/dsh-mcp-manager",
+ "stars": 5,
+ "description": "用于 DeepSeek Harness 的 MCP 可视化管理插件：在「设置 → MCP」中查看已安装/启用的 MCP 服务器，支持增删、启用/停用，并实时查看连接状态。",
+ "pushed_at": "2026-08-17T07:19:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@js2hou/dsh-mcp-manager",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "js-yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "loader",
+  "locale",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:20",
+    "scripts/build.mjs:20",
+    "scripts/build.mjs:121"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:9",
+    "lib/index.js:50",
+    "scripts/build.mjs:21",
+    "scripts/build.mjs:106",
+    "scripts/build.mjs:108"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/build.mjs:20, scripts/build.mjs:20"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,104 @@
+{
+ "repo": "TreasureGooldove/dsh-easycode",
+ "stars": 3,
+ "description": "应用脚手架插件,快速使用DeepSeek Harness创建想要的应用",
+ "pushed_at": "2026-08-16T17:44:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-easycode",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "conversation",
+  "locale",
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "PORT": 2,
+  "npm_execpath": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:2",
+    "scripts/verify-package.mjs:1",
+    "scripts/verify-package.mjs:1",
+    "scripts/verify-package.mjs:19",
+    "scripts/verify-package.mjs:31"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:754",
+    "src/templates.ts:663"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:848",
+    "src/scaffolder.ts:29"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:2, scripts/verify-package.mjs:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:754, src/templates.ts:663"
+  }
+ ],
+ "level": 3
+}

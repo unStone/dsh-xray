@@ -1,0 +1,110 @@
+{
+ "repo": "pzc2004/dsh-frostfin",
+ "stars": 2,
+ "description": "月芒霜鳍鲸——让 Kimi Code 本人直接驱动 DeepSeek Harness 会话的 loop 插件。DSH 的壳，Kimi 的脑，ACP 直连，无中间层。 Moonglow Frostfin — Kimi Code itself as the agent loop of DeepSeek Harness. ACP-bridged, no middleman: DSH's shell, K",
+ "pushed_at": "2026-08-18T06:07:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-frostfin",
+ "deps": [
+  "@agentclientprotocol/sdk",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessions",
+  "slots",
+  "subprocess",
+  "svc"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "KIMI_CODE_HOME": 2,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 1,
+   "evidence": [
+    "scripts/probe-session-load.mjs:4",
+    "scripts/probe-session-load.mjs:33",
+    "src/acp-process.ts:163",
+    "src/factory.ts:198",
+    "src/index.ts:104"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 4,
+   "evidence": [
+    "src/config-sync.ts:18",
+    "src/config-sync.ts:141",
+    "src/config-sync.ts:211",
+    "src/kimi-route.ts:20",
+    "src/kimi-route.ts:111"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/host-scope.ts:42",
+    "src/host-scope.ts:48"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/probe-session-load.mjs:4, scripts/probe-session-load.mjs:33"
+  }
+ ],
+ "level": 3
+}

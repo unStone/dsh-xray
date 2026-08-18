@@ -1,0 +1,109 @@
+{
+ "repo": "Spirtxiaoqi7/mindspace-dsh-session-memory",
+ "stars": 3,
+ "description": "Editable, session-isolated personalization memory for DeepSeek Harness",
+ "pushed_at": "2026-08-17T06:17:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "mindspace-dsh-session-memory",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:149"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1318",
+    "lib/client.js:1369"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/normalize-build.mjs:6",
+    "scripts/repair-legacy-session-events.mjs:84",
+    "scripts/rescope-generated.mjs:10"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/client.js:149"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/client.js:1318, lib/client.js:1369"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,145 @@
+{
+ "repo": "bill9109/dsh-101",
+ "stars": 4,
+ "description": "DSH 文档阅读模式",
+ "pushed_at": "2026-08-14T11:55:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@bill9109/dsh-101",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "react",
+  "react-dom",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-paths"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "dsh101",
+  "invariants",
+  "locale",
+  "sessions",
+  "skills",
+  "slots",
+  "systemPrompt",
+  "theme",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event",
+  "theme/change"
+ ],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "DSH_CHECKOUT": 5,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:15",
+    "scripts/build.mjs:15",
+    "scripts/build.mjs:29",
+    "scripts/build.mjs:105",
+    "scripts/build.mjs:119"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:244"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:63",
+    "lib/index.js:64"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 28,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:2",
+    "lib/index.js:949",
+    "lib/index.js:1006",
+    "lib/index.js:1039"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tsdown.config.mjs:5"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. scripts/build.mjs:15, scripts/build.mjs:15"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:244"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:63, lib/index.js:64"
+  }
+ ],
+ "level": 3
+}

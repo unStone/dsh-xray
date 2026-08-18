@@ -1,0 +1,122 @@
+{
+ "repo": "maple-pwn/paperlab",
+ "stars": 3,
+ "description": "Overleaf-style paper revision workbench powered by a DeepSeek Harness plugin (dsh-plugin)",
+ "pushed_at": "2026-08-15T18:36:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-paperlab",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "pdfjs-dist",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "llm",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {
+  "PAPERLAB_PRESET_ROOTS": 2,
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:801",
+    "plugin/src/backend.ts:2"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:233"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:55",
+    "lib/index.js:56"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1172",
+    "plugin/src/server.ts:49"
+   ]
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 4,
+   "evidence": [
+    "lib/index.js:3",
+    "lib/index.js:864",
+    "lib/index.js:932",
+    "lib/index.js:1503",
+    "lib/index.js:1717"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:801, plugin/src/backend.ts:2"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:233"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:55, lib/index.js:56"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:1172, plugin/src/server.ts:49"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,79 @@
+{
+ "repo": "2768651338/dsh-effort-slider",
+ "stars": 3,
+ "description": "仿 Claude Code 推理等级滑块 DSH 插件",
+ "pushed_at": "2026-08-17T00:31:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-effort-slider",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "llm",
+  "sessions",
+  "settings"
+ ],
+ "hooks": [
+  "llm/adapters-updated",
+  "settings/updated"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

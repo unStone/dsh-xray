@@ -1,0 +1,92 @@
+{
+ "repo": "alanzhao0128/dsh-balance-monitor",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-18T06:38:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-balance-monitor",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "platform.deepseek.com": 3
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "DEEPSEEK_API_KEY": 2,
+  "DEEPSEEK_PLATFORM_TOKEN": 2,
+  "ARK_ACCESS_KEY_ID": 1,
+  "ARK_SECRET_ACCESS_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:195"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ARK_ACCESS_KEY_ID, ARK_SECRET_ACCESS_KEY, DEEPSEEK_API_KEY, DEEPSEEK_PLATFORM_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,99 @@
+{
+ "repo": "mang0cola/frida_dsh_plugin",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-15T02:24:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "frida-dsh-plugin",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "frida",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "frida",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {
+  "FRIDA_PYTHON": 1,
+  "FRIDA_TARGET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 3,
+   "evidence": [
+    "src/provider-frida-node.ts:140",
+    "src/provider-frida-node.ts:142",
+    "src/provider-frida-python.ts:1",
+    "src/provider-frida-python.ts:152",
+    "src/provider-frida-python.ts:321"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/provider-frida-python.ts:65",
+    "src/provider-frida-python.ts:223"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. src/provider-frida-node.ts:140, src/provider-frida-node.ts:142"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/provider-frida-python.ts:65, src/provider-frida-python.ts:223"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,90 @@
+{
+ "repo": "GHJIVHIDD/dsh-plugin-repoflow",
+ "stars": 1,
+ "description": "RepoFlow — DeepSeek Harness (DSH) 的 Git 可视化与 GitHub 部署插件。提供设置页、全局 GitHub 账号配置、仓库管理、分支图，以及供智能体使用的 git_* 系列工具。原生UI界面",
+ "pushed_at": "2026-08-15T13:52:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-community/dsh-plugin-repoflow",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:17",
+    "scripts/verify.mjs:14",
+    "scripts/verify.mjs:14",
+    "scripts/verify.mjs:28"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify.mjs:35",
+    "scripts/verify.mjs:59"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:17, scripts/verify.mjs:14"
+  }
+ ],
+ "level": 3
+}

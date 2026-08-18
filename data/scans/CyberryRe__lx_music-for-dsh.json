@@ -1,0 +1,123 @@
+{
+ "repo": "CyberryRe/lx_music-for-dsh",
+ "stars": 3,
+ "description": "This is a plugin that allows deepseek harness own the ability of lx music.",
+ "pushed_at": "2026-08-16T15:28:44Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "immediately": false
+  }
+ },
+ "pkg_name": "lx-music-for-dsh",
+ "deps": [
+  "zod"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/build.mjs"
+ },
+ "injects": [
+  "locale",
+  "remote",
+  "slots",
+  "storageDomain",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 14,
+ "domains": {
+  "ghproxy.net": 2,
+  "gh-proxy.com": 1,
+  "ghfast.top": 1,
+  "ghproxy.cc": 1,
+  "mirror.ghproxy.com": 1,
+  "www.soundhelix.com": 1,
+  "picsum.photos": 1,
+  "songsearch.kugou.com": 1,
+  "newlyric.kuwo.cn": 4,
+  "search.kuwo.cn": 1,
+  "player.kuwo.cn": 2,
+  "mobile.kuwo.cn": 1,
+  "y.gtimg.cn": 3,
+  "www.kuwo.cn": 2,
+  "pd.musicapp.migu.cn": 2,
+  "jadeite.migu.cn": 3,
+  "app.c.nf.migu.cn": 2,
+  "d.musicapp.migu.cn": 1,
+  "music.163.com": 4,
+  "stackoverflow.com": 1,
+  "u.y.qq.com": 1,
+  "interface.music.163.com": 1
+ },
+ "env": {
+  "APPDATA": 1,
+  "DSH_HOME": 1,
+  "LX_MUSIC_RUNNER_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/engine/runner.js:2",
+    "src/engine/sandbox.ts:19",
+    "src/engine/sandbox.ts:248"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/engine/runner.js:377"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 2,
+   "evidence": [
+    "scripts/build.mjs:6",
+    "scripts/build.mjs:68",
+    "scripts/build.mjs:96",
+    "scripts/build.mjs:114",
+    "scripts/compile-tests.mjs:5"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 69,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/engine/runner.js:2, src/engine/sandbox.ts:19"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/engine/runner.js:377"
+  }
+ ],
+ "level": 2
+}

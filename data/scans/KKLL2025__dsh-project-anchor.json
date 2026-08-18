@@ -1,0 +1,112 @@
+{
+ "repo": "KKLL2025/dsh-project-anchor",
+ "stars": 1,
+ "description": "User-approved Goal, Milestone, and Turn checkpoints for solo long-running DeepSeek Harness projects.",
+ "pushed_at": "2026-08-16T08:38:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-project-anchor",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-goal",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill-filesystem",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "goals",
+  "tools",
+  "userQuestions"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "llm/stream",
+  "tools/post-execute"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "DSH_PACKAGE_TARBALL": 4,
+  "DSH_PACKAGE_TARBALL_SHA256": 2,
+  "npm_execpath": 4,
+  "DSH_ENTRY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 1,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:6",
+    "scripts/consumer-smoke.mjs:28",
+    "scripts/consumer-smoke.mjs:376",
+    "scripts/create-release-candidate.mjs:7",
+    "scripts/create-release-candidate.mjs:25"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:168",
+    "scripts/consumer-smoke.mjs:170"
+   ]
+  },
+  "fs_write": {
+   "src": 23,
+   "dev": 0,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:154",
+    "scripts/consumer-smoke.mjs:155",
+    "scripts/consumer-smoke.mjs:161",
+    "scripts/consumer-smoke.mjs:162",
+    "scripts/consumer-smoke.mjs:398"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/consumer-smoke.mjs:6, scripts/consumer-smoke.mjs:28"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/consumer-smoke.mjs:168, scripts/consumer-smoke.mjs:170"
+  }
+ ],
+ "level": 3
+}

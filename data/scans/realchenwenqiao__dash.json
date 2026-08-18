@@ -1,0 +1,111 @@
+{
+ "repo": "realchenwenqiao/dash",
+ "stars": 2,
+ "description": "DASH — a pi-tui terminal front door for DeepSeek Harness, installed as a dsh bundle plugin",
+ "pushed_at": "2026-08-14T06:15:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@realchenwenqiao/dash",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-code-runtime-worker-thread",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-plan-mode",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools",
+  "@earendil-works/pi-tui",
+  "diff",
+  "saxes",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "commands",
+  "credentials",
+  "invariants",
+  "llm",
+  "planMode",
+  "sessionQuery",
+  "sessions",
+  "settings",
+  "skills"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "COLORTERM": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:12",
+    "src/index.ts:12",
+    "src/index.ts:82",
+    "src/index.ts:99",
+    "src/chat/helpers.ts:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:885"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/index.ts:12, src/index.ts:12"
+  }
+ ],
+ "level": 3
+}

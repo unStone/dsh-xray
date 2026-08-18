@@ -1,0 +1,133 @@
+{
+ "repo": "hackerFish/dsh-video-studio",
+ "stars": 2,
+ "description": "鲸影 DSH Video Studio：DeepSeek Harness 原生视频/漫剧生成插件——六段导演流水线、多供应商免费额度调度、四层提示词自优化，质量优先省钱第二",
+ "pushed_at": "2026-08-17T18:37:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "@hackerfish/dsh-video-studio",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 14,
+ "domains": {
+  "www.doubao.com": 7,
+  "doubao.com": 1,
+  "jimeng.jianying.com": 4,
+  "wanx.biz.aliyun.com": 2,
+  "tongyi.aliyun.com": 4,
+  "api-beijing.klingai.com": 4,
+  "dashscope.aliyuncs.com": 2,
+  "ark.cn-beijing.volces.com": 2,
+  "app.klingai.com": 2
+ },
+ "env": {
+  "DSH_HOME": 7,
+  "DSH_JIMENG_SESSIONID": 7,
+  "WHALE_PROMPT": 1,
+  "DSH_DASHSCOPE_KEY": 1,
+  "DSH_FFMPEG": 2,
+  "DSH_WANX_COOKIE": 4,
+  "DSH_WANX_XSRF": 2,
+  "DSH_WANX_UID": 2,
+  "WHALE_MOCK": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 0,
+   "evidence": [
+    "scripts/doubao-qrlogin.mjs:3",
+    "scripts/doubao-qrlogin.mjs:22",
+    "lib/host/index.mjs:437",
+    "lib/host/index.mjs:437",
+    "lib/host/index.mjs:497"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/self-test-client.mjs:33"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/doubao-qrlogin.mjs:120",
+    "scripts/doubao-qrlogin.mjs:146"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 18,
+   "evidence": [
+    "scripts/demo-comfyui.ts:16",
+    "scripts/demo-comfyui.ts:33"
+   ]
+  },
+  "fs_write": {
+   "src": 31,
+   "dev": 31,
+   "evidence": [
+    "scripts/doubao-qrlogin.mjs:4",
+    "scripts/doubao-qrlogin.mjs:4",
+    "scripts/doubao-qrlogin.mjs:20",
+    "scripts/doubao-qrlogin.mjs:120",
+    "scripts/doubao-qrlogin.mjs:146"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 86,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. scripts/doubao-qrlogin.mjs:3, scripts/doubao-qrlogin.mjs:22"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/self-test-client.mjs:33"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. scripts/doubao-qrlogin.mjs:120, scripts/doubao-qrlogin.mjs:146"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/demo-comfyui.ts:16, scripts/demo-comfyui.ts:33"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_DASHSCOPE_KEY, DSH_WANX_COOKIE"
+  }
+ ],
+ "level": 3
+}

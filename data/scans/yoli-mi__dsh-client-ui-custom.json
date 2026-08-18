@@ -1,0 +1,106 @@
+{
+ "repo": "yoli-mi/dsh-client-ui-custom",
+ "stars": 6,
+ "description": "Configurable DSH web-surface plugin: wallpaper & frosted-glass themes, accent colors, custom keyboard shortcuts, app-usage panel, history strip, message Markdown — zero shell edits.",
+ "pushed_at": "2026-08-17T05:54:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@ha-na-bi/dsh-client-ui-custom",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:4448",
+    "src/client/marketplace/manifest.ts:245",
+    "lib/types/client/marketplace/manifest.js:203"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 148,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/client.js:4448, src/client/marketplace/manifest.ts:245"
+  }
+ ],
+ "level": 3
+}

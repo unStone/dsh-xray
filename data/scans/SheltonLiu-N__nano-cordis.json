@@ -1,0 +1,105 @@
+{
+ "repo": "SheltonLiu-N/nano-cordis",
+ "stars": 5,
+ "description": "A nano re-implementation of Cordis and DeepSeek Harness, an AI agent runtime built out of plugins, small enough to read in an afternoon.",
+ "pushed_at": "2026-08-18T03:39:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "nano-cordis",
+ "deps": [
+  "js-yaml",
+  "schemastery",
+  "tsx"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentLoop",
+  "answer",
+  "counter",
+  "flag",
+  "greeter",
+  "llm",
+  "loader",
+  "prompt",
+  "registry",
+  "sessions",
+  "shell",
+  "svc",
+  "table",
+  "tools"
+ ],
+ "hooks": [
+  "agent/request",
+  "approval/request",
+  "session/event",
+  "test/emit",
+  "test/parallel",
+  "test/serial",
+  "test/waterfall",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 9,
+ "domains": {},
+ "env": {
+  "NANO_CONFIG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "src/harness/shell-local.ts:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 10,
+   "evidence": [
+    "src/harness/persistence.ts:5",
+    "src/harness/persistence.ts:35"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/cordis/loader.ts:110"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/harness/shell-local.ts:4"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 14 services, 9 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

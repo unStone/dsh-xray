@@ -1,0 +1,74 @@
+{
+ "repo": "Xieweikang123/dsh-vision-bridge",
+ "stars": 2,
+ "description": "Give a text-only dsh model eyes: pasted images recognized into text via an OpenAI-compatible vision endpoint.",
+ "pushed_at": "2026-08-14T02:56:44Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-vision-bridge",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "open.bigmodel.cn": 1
+ },
+ "env": {
+  "VISION_API_KEY": 1,
+  "DSH_VISION_API_KEY": 1,
+  "ZHIPUAI_API_KEY": 1,
+  "DASHSCOPE_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:57"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:57"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY, DSH_VISION_API_KEY, VISION_API_KEY, ZHIPUAI_API_KEY"
+  }
+ ],
+ "level": 2
+}

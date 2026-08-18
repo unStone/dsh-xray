@@ -1,0 +1,109 @@
+{
+ "repo": "p83765295-sys/gamelike-plugin-manage",
+ "stars": 1,
+ "description": "DSH 插件管理器：设置→插件管理。插件安装/卸载/禁用/更新，插件包导入导出，Agent 预设清理。",
+ "pushed_at": "2026-08-16T15:02:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "gamelike-plugin-manage",
+ "deps": [
+  "tar",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "slots",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CHECKOUT": 2,
+  "APPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:14",
+    "src/installer.ts:9",
+    "src/installer.ts:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 37,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:56",
+    "src/groups.ts:11",
+    "src/groups.ts:11",
+    "src/groups.ts:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/installer.ts:907"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. scripts/build.mjs:4, scripts/build.mjs:4"
+  }
+ ],
+ "level": 3
+}

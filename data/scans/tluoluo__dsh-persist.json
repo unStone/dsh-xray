@@ -1,0 +1,127 @@
+{
+ "repo": "tluoluo/dsh-persist",
+ "stars": 1,
+ "description": "Persistent memory for DeepSeek Harness: per-conversation notes, selective injection, project memory, semantic Vault search + automatic retrieval.",
+ "pushed_at": "2026-08-16T11:19:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-persist",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build:host && npm run bundle"
+ },
+ "injects": [
+  "agents",
+  "locale",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api.siliconflow.cn": 2,
+  "127.0.0.1.evil.com": 1
+ },
+ "env": {
+  "DSH_PROFILE_NODE_MODULES": 1,
+  "USERPROFILE": 1,
+  "SILICONFLOW_API_KEY": 1,
+  "DSH_MEMORY_INJECT": 1,
+  "DSH_MEMORY_JUDGE_MODEL": 1,
+  "DSH_MEMORY_JUDGE_TIMEOUT_MS": 1,
+  "DSH_MEMORY_AUTO_VAULT": 1,
+  "DSH_MEMORY_AUTO_VAULT_GATE": 2,
+  "DSH_MEMORY_AUTO_VAULT_NAMESPACES": 1,
+  "DSH_MEMORY_ALLOW_REMOTE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-page-js.mjs:5",
+    "scripts/check-page-js.mjs:5",
+    "scripts/check-page-js.mjs:22"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 29,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-page-js.mjs:2",
+    "scripts/check-page-js.mjs:20",
+    "src/index.ts:21",
+    "src/index.ts:532",
+    "src/memory-store.ts:11"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/check-page-js.mjs:5, scripts/check-page-js.mjs:5"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SILICONFLOW_API_KEY"
+  }
+ ],
+ "level": 3
+}

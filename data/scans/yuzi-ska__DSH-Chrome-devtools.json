@@ -1,0 +1,78 @@
+{
+ "repo": "yuzi-ska/DSH-Chrome-devtools",
+ "stars": 1,
+ "description": "Real Chrome browser control for DeepSeek Harness agents, powered by Chrome DevTools MCP",
+ "pushed_at": "2026-08-13T17:27:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-chrome-devtools",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "USERPROFILE": 1,
+  "DSH_BIN": 1,
+  "ComSpec": 1,
+  "ProgramFiles": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/install.mjs:19",
+    "scripts/install.mjs:19",
+    "scripts/install.mjs:97",
+    "scripts/install.mjs:102"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/install.mjs:19, scripts/install.mjs:19"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,102 @@
+{
+ "repo": "jesspig/deepseek-harness-desktop",
+ "stars": 1,
+ "description": "这是一个独立的 Cordis 应用:不改动上游仓库,以官方扩展方式(自定义 profile + bundle + Cordis 插件)把 dsh 跑成原生桌面应用。",
+ "pushed_at": "2026-08-17T09:28:34Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/dsh-web-app",
+  "@dsh-desktop/bundle"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ComSpec": 1,
+  "DSH_PNPM_BIN": 1,
+  "DSH_DESKTOP_DSH_PATH": 1,
+  "DSH_HOME": 1,
+  "NODE_COMPILE_CACHE": 1,
+  "DSH_DESKTOP_V8_CACHE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "apps/desktop/scripts/generate-profile.mjs:64",
+    "apps/desktop/scripts/generate-profile.mjs:64",
+    "apps/desktop/scripts/generate-profile.mjs:179",
+    "apps/desktop/src/main.ts:165",
+    "apps/desktop/src/dsh/process.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "apps/desktop/scripts/generate-profile.mjs:197",
+    "apps/desktop/scripts/generate-profile.mjs:241",
+    "apps/desktop/scripts/generate-profile.mjs:310",
+    "apps/desktop/scripts/generate-profile.mjs:383",
+    "apps/desktop/scripts/pack-dsh.mjs:189"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. apps/desktop/scripts/generate-profile.mjs:64, apps/desktop/scripts/generate-profile.mjs:64"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,121 @@
+{
+ "repo": "jcc1997/dsh-plugins",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T08:18:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugins",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "mermaid",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "fs",
+  "sessions",
+  "shell",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "picsum.photos": 1,
+  "api.github.com": 4,
+  "api.example.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "scripts/lsp-query.mjs:6",
+    "scripts/lsp-query.mjs:33",
+    "scripts/workflow-ci-check.mjs:4",
+    "scripts/workflow-ci-check.mjs:4",
+    "scripts/workflow-ci-check.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "plugins/git/scripts/verify-dist.mjs:43",
+    "plugins/kanban/scripts/verify-dist.mjs:49",
+    "plugins/markdown-review/scripts/verify-dist.mjs:38",
+    "plugins/pipeline/scripts/verify-dist.mjs:46"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 22,
+   "dev": 1,
+   "evidence": [
+    "scripts/sync-host-tokens.mjs:14",
+    "scripts/sync-host-tokens.mjs:59",
+    "plugins/git/build.mjs:6",
+    "plugins/git/build.mjs:6",
+    "plugins/git/build.mjs:41"
+   ]
+  },
+  "dyn_import": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "plugins/git/scripts/verify-dist.mjs:6",
+    "plugins/kanban/scripts/smoke-gate.mjs:5",
+    "plugins/kanban/scripts/verify-dist.mjs:9",
+    "plugins/markdown-review/scripts/verify-dist.mjs:9",
+    "plugins/pipeline/scripts/smoke-engine.mjs:5"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 92,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×20 src, e.g. scripts/lsp-query.mjs:6, scripts/lsp-query.mjs:33"
+  },
+  {
+   "id": "eval",
+   "evidence": "×4 src, e.g. plugins/git/scripts/verify-dist.mjs:43, plugins/kanban/scripts/verify-dist.mjs:49"
+  }
+ ],
+ "level": 3
+}

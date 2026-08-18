@@ -1,0 +1,89 @@
+{
+ "repo": "omdsh-dev/sandbox-mxc",
+ "stars": 2,
+ "description": "微软跨平台沙盒支持",
+ "pushed_at": "2026-08-09T12:07:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-sandbox-mxc",
+ "deps": [
+  "@dsh-external/mxc-sdk",
+  "schemastery",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-subprocess",
+  "cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.prepare.config.ts"
+ },
+ "injects": [
+  "invariants"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "TEMP": 1,
+  "TMP": 1,
+  "DSH_MXC_DEBUG_PROBE": 12
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 24,
+   "evidence": [
+    "src/index.ts:92"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 32,
+   "evidence": [
+    "src/index.ts:22",
+    "src/index.ts:22",
+    "src/index.ts:433",
+    "src/index.ts:759"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/index.ts:92"
+  }
+ ],
+ "level": 3
+}

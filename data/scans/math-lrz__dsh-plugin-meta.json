@@ -1,0 +1,74 @@
+{
+ "repo": "math-lrz/dsh-plugin-meta",
+ "stars": 1,
+ "description": "DSH meta-plugin suite: plugin-forge + plugin-auditor + skill-forge — the meta capability layer where everything is a plugin",
+ "pushed_at": "2026-08-15T17:33:50Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "plugin-auditor",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "skills",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 12,
+   "evidence": [
+    "plugin-auditor/lib/index.mjs:183",
+    "plugin-auditor/lib/index.mjs:183",
+    "plugin-auditor/lib/index.mjs:183",
+    "plugin-forge/lib/index.mjs:137",
+    "plugin-forge/lib/index.mjs:518"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 8 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

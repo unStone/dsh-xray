@@ -1,0 +1,110 @@
+{
+ "repo": "FlutterSoul/dsh-git-workbench",
+ "stars": 1,
+ "description": "Git and GitHub pull-request workbench for DeepSeek Harness, with agent tools and an integrated Web UI.",
+ "pushed_at": "2026-08-15T08:46:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ]
+  }
+ },
+ "pkg_name": "dsh-git-workbench",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "src/process.ts:1",
+    "src/process.ts:2",
+    "src/process.ts:85"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 5,
+   "evidence": [
+    "src/git.ts:326",
+    "src/client/WorkbenchPanel.tsx:131"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/process.ts:1, src/process.ts:2"
+  }
+ ],
+ "level": 3
+}

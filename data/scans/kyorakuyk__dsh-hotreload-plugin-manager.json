@@ -1,0 +1,89 @@
+{
+ "repo": "kyorakuyk/dsh-hotreload-plugin-manager",
+ "stars": 3,
+ "description": "DeepSeek Harness plugin: hot install / uninstall / update / enable-disable of profile plugin bundles from the running dsh web — no restart, Web UI included.",
+ "pushed_at": "2026-08-15T11:21:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@kyorakuyk/dsh-plugin-manager",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-include",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/pnpm.js:7",
+    "lib/pnpm.js:48",
+    "lib/pnpm.js:50",
+    "src/pnpm.ts:8",
+    "src/pnpm.ts:61"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 19,
+   "evidence": [
+    "lib/patch-layer.js:14",
+    "lib/patch-layer.js:54",
+    "src/patch-layer.ts:15",
+    "src/patch-layer.ts:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 43,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/pnpm.js:7, lib/pnpm.js:48"
+  }
+ ],
+ "level": 3
+}

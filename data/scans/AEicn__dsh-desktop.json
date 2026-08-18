@@ -1,0 +1,96 @@
+{
+ "repo": "AEicn/dsh-desktop",
+ "stars": 1,
+ "description": "将 DeepSeek Harness 封装为 Windows 便携桌面应用。 WebView2 原生窗口，内置 Node 与 dsh（构建时打包、运行时零下载）。",
+ "pushed_at": "2026-08-17T10:09:10Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-appearance",
+ "deps": [
+  "react",
+  "react",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "settings/document-updated",
+  "settings/updated"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "platform.deepseek.com": 2,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_DESKTOP_SHELL_URL": 2,
+  "DEEPSEEK_API_KEY": 2,
+  "DSH_HOME": 2,
+  "DEEPSEEK_API_BASE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "assets/plugins/dsh-terminal/lib/index.js:204"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. assets/plugins/dsh-terminal/lib/index.js:204"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,88 @@
+{
+ "repo": "zeroa234/dsh-neutrino",
+ "stars": 1,
+ "description": "让 AI 助手驱动 STUDIO NEUTRINO（免费日语 AI 歌声合成引擎）唱歌：给歌词和旋律，自动生成角色演唱的 WAV。需自备免费的 NEUTRINO 引擎和声库，插件内置官方下载引导。",
+ "pushed_at": "2026-08-17T11:25:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-neutrino",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 28,
+ "domains": {
+  "studio-neutrino.com": 4,
+  "drive.google.com": 2,
+  "www.musicxml.org": 2
+ },
+ "env": {
+  "NEUTRINO_DIR": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "lib/lib/engine.js:8",
+    "lib/lib/engine.js:8",
+    "lib/lib/engine.js:88",
+    "lib/lib/engine.js:175",
+    "lib/lib/engine.js:176"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 5,
+   "evidence": [
+    "lib/index.js:85",
+    "src/index.ts:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. lib/lib/engine.js:8, lib/lib/engine.js:8"
+  }
+ ],
+ "level": 3
+}

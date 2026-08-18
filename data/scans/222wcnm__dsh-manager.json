@@ -1,0 +1,111 @@
+{
+ "repo": "222wcnm/dsh-manager",
+ "stars": 1,
+ "description": "DSH Manager — 浏览器一键启动/停止/重启 DeepSeek Harness（dsh）web 服务",
+ "pushed_at": "2026-08-15T20:37:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lifecycle",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "appExit",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 1,
+  "XDG_CONFIG_HOME": 1,
+  "DSH_MANAGER_BASE_DIR": 1,
+  "DSH_MANAGER_TEST_MODE": 1,
+  "DSH_MANAGER_PID_CHECK": 1,
+  "DSH_MANAGER_FAKE_PROCESSES": 2,
+  "DSH_MANAGER_FAKE_LISTENERS": 2,
+  "DSH_BIN_STUB": 3,
+  "DSH_MANAGER_NPM_PREFIX": 2,
+  "APPDATA": 2,
+  "DSH_MANAGER_HOST": 1,
+  "DSH_MANAGER_PORT": 2,
+  "CHROME_PATH": 7,
+  "TEMP": 2,
+  "VERIFY_CDP_PORT": 1,
+  "VERIFY_DSH_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 22,
+   "dev": 12,
+   "evidence": [
+    "native-host/host.js:56",
+    "native-host/host.js:56",
+    "native-host/host.js:293",
+    "native-host/host.js:311",
+    "native-host/host.js:530"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 1,
+   "evidence": [
+    "native-host/compute-id.js:46",
+    "native-host/compute-id.js:53",
+    "tools/icons/_gen-icons.js:187",
+    "tools/verify-ui/verify-cdp.js:173",
+    "tools/verify-ui/verify-cdp.js:231"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 7,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 22,
+   "dev": 12,
+   "evidence": [
+    "native-host/compute-id.js:73",
+    "native-host/host.js:162",
+    "native-host/host.js:213",
+    "native-host/host.js:217",
+    "native-host/host.js:225"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×22 src, e.g. native-host/host.js:56, native-host/host.js:56"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. native-host/compute-id.js:46, native-host/compute-id.js:53"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,135 @@
+{
+ "repo": "Ethanout/computer-use-plus",
+ "stars": 1,
+ "description": "Low-token, low-latency Windows computer-use MCP with learned shortcuts, UIA/CDP/OCR routing, and DeepSeek Harness support",
+ "pushed_at": "2026-08-15T08:52:41Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "computer-use-plus",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.openai.com": 2
+ },
+ "env": {
+  "COMPUTER_USE_PLUS_DATA_DIR": 3,
+  "COMPUTER_USE_PLUS_ROOT": 1,
+  "COMPUTER_USE_PLUS_DSH_NODE": 1,
+  "COMPUTER_USE_PLUS_DSH_BIN": 1,
+  "COMPUTER_USE_PLUS_DSH_PROFILE": 1,
+  "DSH_TELEMETRY_MODE": 1,
+  "COMPUTER_USE_PLUS_EXECUTION_MODE": 1,
+  "CUP_MOCK": 1,
+  "COMPUTER_USE_PLUS_PROVIDER_WORKER": 1,
+  "COMPUTER_USE_PLUS_ACTION_CLASSIFIER_THRESHOLD": 1,
+  "COMPUTER_USE_PLUS_RISK_POLICY_FILE": 1,
+  "COMPUTER_USE_PLUS_RISK_MODE": 1,
+  "COMPUTER_USE_PLUS_VERIFY_ROOTS": 1,
+  "COMPUTER_USE_PLUS_AUTO_ORGANIZE": 1,
+  "COMPUTER_USE_PLUS_PROVIDER_RELOAD_MS": 1,
+  "COMPUTER_USE_PLUS_FAST_API_KEY": 1,
+  "COMPUTER_USE_PLUS_AI_API_KEY": 2,
+  "COMPUTER_USE_PLUS_AI_KEY_FILE": 1,
+  "COMPUTER_USE_PLUS_FAST_BASE_URL": 1,
+  "COMPUTER_USE_PLUS_AI_BASE_URL": 2,
+  "COMPUTER_USE_PLUS_FAST_MODEL": 1,
+  "COMPUTER_USE_PLUS_AI_MODEL": 2,
+  "COMPUTER_USE_PLUS_FAST_TIMEOUT_MS": 1,
+  "COMPUTER_USE_PLUS_AI_PROTOCOL": 1,
+  "COMPUTER_USE_PLUS_TOOL_PROFILE": 1,
+  "COMPUTER_USE_PLUS_AGENT_ALLOWED_WINDOWS": 2,
+  "COMPUTER_USE_PLUS_HTTP_PORT": 1,
+  "COMPUTER_USE_PLUS_HTTP_CONNECTIONS": 1,
+  "COMPUTER_USE_PLUS_HTTP_HOST": 1,
+  "COMPUTER_USE_PLUS_HTTP_TOKEN": 1,
+  "COMPUTER_USE_PLUS_WORKER_COMMAND": 1,
+  "COMPUTER_USE_PLUS_WORKER_ARGS": 2,
+  "COMPUTER_USE_PLUS_WORKER_PROTOCOL": 1,
+  "COMPUTER_USE_PLUS_WORKER_MAX_RESTARTS": 1,
+  "COMPUTER_USE_PLUS_WORKER_RESTART_WINDOW_MS": 1,
+  "COMPUTER_USE_PLUS_PROVIDER_CONFIG_FILE": 1,
+  "CUP_PROVIDER_WORKER_FAKE": 1,
+  "CUP_PYTHON": 1,
+  "SystemRoot": 1,
+  "COMPUTER_USE_PLUS_VISION_API_KEY": 1,
+  "COMPUTER_USE_PLUS_VISION_BASE_URL": 1,
+  "COMPUTER_USE_PLUS_VISION_MODEL": 1,
+  "COMPUTER_USE_PLUS_VISION_TIMEOUT_MS": 1,
+  "COMPUTER_USE_PLUS_BROWSER_EXECUTABLE": 1,
+  "COMPUTER_USE_PLUS_PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 21,
+   "dev": 9,
+   "evidence": [
+    "scripts/benchmark-windows-runtime.js:3",
+    "scripts/test-ci.js:5",
+    "scripts/test-ci.js:5",
+    "scripts/test-ci.js:18",
+    "scripts/verify-deepseek-harness.js:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/drivers/cdp.js:175"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/http-runtime.js:32"
+   ]
+  },
+  "fs_write": {
+   "src": 26,
+   "dev": 12,
+   "evidence": [
+    "scripts/benchmark-providers.js:16",
+    "scripts/benchmark.js:17",
+    "scripts/run-benchmark-matrix.js:23",
+    "scripts/run-benchmark-suite.js:20",
+    "scripts/run-stability.js:20"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 82,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×21 src, e.g. scripts/benchmark-windows-runtime.js:3, scripts/test-ci.js:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/drivers/cdp.js:175"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/http-runtime.js:32"
+  },
+  {
+   "id": "token_env",
+   "evidence": "COMPUTER_USE_PLUS_AI_API_KEY, COMPUTER_USE_PLUS_AI_KEY_FILE, COMPUTER_USE_PLUS_FAST_API_KEY, COMPUTER_USE_PLUS_HTTP_TOKEN, COMPUTER_USE_PLUS_VISION_API_KEY"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,98 @@
+{
+ "repo": "pig1et7/DeepSeek-Harness-Desktop",
+ "stars": 3,
+ "description": "",
+ "pushed_at": "2026-08-14T17:08:47Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-tools",
+  "fflate",
+  "pdfjs-dist",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "PORTABLE_EXECUTABLE_DIR": 1,
+  "PATHEXT": 1,
+  "npm_config_cache": 2,
+  "ComSpec": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "main.js:19",
+    "main.js:241",
+    "main.js:305"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "main.js:223",
+    "main.js:459",
+    "plugins/dsh-upload/lib/index.js:59",
+    "plugins/dsh-upload/lib/index.js:221"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. main.js:19, main.js:241"
+  }
+ ],
+ "level": 3
+}

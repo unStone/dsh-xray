@@ -1,0 +1,84 @@
+{
+ "repo": "ropon/dsh-plugin-clawrouters",
+ "stars": 1,
+ "description": "One-key ClawRouters plugin for DeepSeek Harness: chat, image, video, and web search",
+ "pushed_at": "2026-08-14T00:57:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-clawrouters",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {
+  "www.clawrouters.com": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:118",
+    "lib/index.js:130",
+    "src/tools.ts:79",
+    "src/tools.ts:90"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/index.js:118, lib/index.js:130"
+  }
+ ],
+ "level": 3
+}

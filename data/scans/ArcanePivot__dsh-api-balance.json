@@ -1,0 +1,101 @@
+{
+ "repo": "ArcanePivot/dsh-api-balance",
+ "stars": 6,
+ "description": "DeepSeek Harness Web UI widget for viewing DeepSeek API balance from the host side.",
+ "pushed_at": "2026-08-15T04:56:14Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "attachments",
+  "directoryPicker",
+  "layout",
+  "llm",
+  "locale",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "subagents",
+  "tools",
+  "userQuestions",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "approval/request",
+  "domain/changed",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api-docs.deepseek.com": 1,
+  "api.deepseek.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/test-usage-analytics.mjs:12"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "files/dsh-host-apiproxy/lib/index.js:907"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/manifest.mjs:4",
+    "scripts/manifest.mjs:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/test-usage-analytics.mjs:12"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. files/dsh-host-apiproxy/lib/index.js:907"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 15 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

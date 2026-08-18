@@ -1,0 +1,106 @@
+{
+ "repo": "Khellendros97/dsh-launch",
+ "stars": 1,
+ "description": "dsh服务管理插件，可以让服务自动跨会话部署，防止对话结束后服务中断。依赖于dsh-better-sidebar",
+ "pushed_at": "2026-08-16T03:12:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-launch",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-tools",
+  "dsh-better-sidebar",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "betterSidebar",
+  "loader",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {},
+ "env": {
+  "DSH_LAUNCH_RUNTIME_DIR": 1,
+  "DSH_LAUNCH_IDLE_GRACE_MS": 1,
+  "DSH_LAUNCH_MAX_LOG_BYTES": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 2,
+   "evidence": [
+    "broker/broker.mjs:35",
+    "broker/broker.mjs:663",
+    "broker/broker.mjs:1114",
+    "broker/launcher.cjs:15",
+    "broker/launcher.cjs:24"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "broker/broker.mjs:390"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 7,
+   "evidence": [
+    "broker/broker.mjs:271",
+    "broker/broker.mjs:297",
+    "broker/broker.mjs:710",
+    "broker/broker.mjs:961",
+    "broker/broker.mjs:1012"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. broker/broker.mjs:35, broker/broker.mjs:663"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. broker/broker.mjs:390"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,85 @@
+{
+ "repo": "aokamoaki/dsh-startup-guard",
+ "stars": 1,
+ "description": "Boot-time guard for DeepSeek Harness: repairs corrupt session logs, preflights plugin composition, smoke-tests host apply(), and quarantines crash-causing bundles so a broken plugin never bricks start",
+ "pushed_at": "2026-08-16T09:07:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-startup-guard",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "x"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/guard-core.mjs:69",
+    "lib/guard-core.mjs:759"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 38,
+   "evidence": [
+    "lib/guard-core.mjs:68",
+    "lib/guard-core.mjs:68",
+    "lib/guard-core.mjs:511",
+    "lib/guard-core.mjs:811",
+    "lib/guard-core.mjs:826"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/guard-core.mjs:150",
+    "lib/guard-core.mjs:668"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/guard-core.mjs:69, lib/guard-core.mjs:759"
+  }
+ ],
+ "level": 3
+}

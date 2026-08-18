@@ -1,0 +1,91 @@
+{
+ "repo": "wjwjw/dsh-workspace-files",
+ "stars": 2,
+ "description": "Workspace file explorer plugin for the DeepSeek Harness web GUI",
+ "pushed_at": "2026-08-15T15:41:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-workspace-files",
+ "deps": [
+  "@deepseek-ai/dsh-host-workspace-files",
+  "@deepseek-ai/dsh-client-ui-workspace-files",
+  "@deepseek-ai/dsh-host-workspace-files",
+  "react",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "fs",
+  "invariants",
+  "locale",
+  "remote",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/client/ui-workspace-files/lib/client.js:149"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/client/ui-workspace-files/lib/client.js:1315",
+    "packages/client/ui-workspace-files/lib/client.js:1366"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 11,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 69,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/client/ui-workspace-files/lib/client.js:149"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/client/ui-workspace-files/lib/client.js:1315, packages/client/ui-workspace-files/lib/client.js:1366"
+  }
+ ],
+ "level": 3
+}

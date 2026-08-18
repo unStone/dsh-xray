@@ -1,0 +1,76 @@
+{
+ "repo": "qingkong143/dsh-cli-workspaces",
+ "stars": 1,
+ "description": "DeepSeek Harness 插件：带工作区切换的命令行任务模式（-w 切换，ws 子命令管理）",
+ "pushed_at": "2026-08-16T09:25:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-cli-workspaces",
+ "deps": [
+  "@deepseek-ai/dsh-cmdline",
+  "commander",
+  "js-yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "cmdlineArgs"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_WORKSPACE": 1,
+  "DSH_WORKSPACE_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/cli-startup.mjs:14",
+    "lib/cli-startup.mjs:57",
+    "lib/cli-startup.mjs:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

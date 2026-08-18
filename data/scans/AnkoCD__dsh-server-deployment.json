@@ -1,0 +1,114 @@
+{
+ "repo": "AnkoCD/dsh-server-deployment",
+ "stars": 7,
+ "description": "DeepSeek Harness 多用户服务器部署：登录门户 / 每用户独立实例与 OS 级隔离 / 独立 API Key / 交付文件抽屉；文件访问经 sudo 助手降权执行（修复 issue #1 TOCTOU）。非本机工具。",
+ "pushed_at": "2026-08-17T21:32:57Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "HOST": 2,
+  "PORT": 2,
+  "USERS_FILE": 2,
+  "SECRET_FILE": 2,
+  "USERS_DIR": 2,
+  "COOKIE_SECURE": 2,
+  "DEEPSEEK_BASE_URL": 3,
+  "SESSION_TTL": 1,
+  "MAX_IP_ATTEMPTS": 1,
+  "MAX_USER_ATTEMPTS": 1,
+  "WINDOW_MS": 1,
+  "LOCK_MS": 1,
+  "UPLOAD_HELPER": 1,
+  "FILE_STAT_HELPER": 1,
+  "FILE_READ_HELPER": 1,
+  "FILE_LIST_HELPER": 1,
+  "UPLOAD_MAX_MB": 1,
+  "HISTORY_TRIM_MESSAGES": 1,
+  "HISTORY_TRIM_MIN_EVENTS": 1,
+  "GZIP_MIN_BYTES": 1,
+  "CWD_STATE_FILE": 1,
+  "DSH_BASE_DIR": 1,
+  "DSH_USERS_DIR": 1,
+  "DSH_USERS_FILE": 1,
+  "DSH_SETTINGS_SRC": 1,
+  "DSH_NODE_BIN": 1,
+  "DSH_DSH_BIN": 1,
+  "DSH_TRUSTED_HOST": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 28,
+   "dev": 0,
+   "evidence": [
+    "gateway/auth.js:3",
+    "gateway/auth.js:3",
+    "gateway/auth.js:26",
+    "gateway/server.js:9",
+    "gateway/server.js:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "gateway/_smoke.js:31",
+    "gateway/_smoke.js:47",
+    "gateway/server.js:803"
+   ]
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "gateway/_smoke.js:21",
+    "gateway/credentials.js:39",
+    "gateway/server.js:57",
+    "gateway/server.js:97",
+    "gateway/server.js:567"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×28 src, e.g. gateway/auth.js:3, gateway/auth.js:3"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. gateway/_smoke.js:31, gateway/_smoke.js:47"
+  },
+  {
+   "id": "token_env",
+   "evidence": "COOKIE_SECURE, SECRET_FILE"
+  }
+ ],
+ "level": 2
+}

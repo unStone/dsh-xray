@@ -1,0 +1,77 @@
+{
+ "repo": "coderdailyone/dsh-plugin-web-search-tavily",
+ "stars": 2,
+ "description": "Tavily search provider bundle for DeepSeek Harness (dsh) — community plugin registering a WebSearchProvider into ctx.web",
+ "pushed_at": "2026-08-15T15:30:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-web-search-tavily",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.tavily.com": 1
+ },
+ "env": {
+  "TAVILY_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TAVILY_API_KEY"
+  }
+ ],
+ "level": 3
+}

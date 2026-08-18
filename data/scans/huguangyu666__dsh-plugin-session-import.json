@@ -1,0 +1,93 @@
+{
+ "repo": "huguangyu666/dsh-plugin-session-import",
+ "stars": 5,
+ "description": "DeepSeek Harness plugin: import claude-code / codex / reasonix / zcode sessions",
+ "pushed_at": "2026-08-16T11:15:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-session-import",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-client-locale",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "commands",
+  "llm",
+  "locale",
+  "slots",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 10,
+  "DSH_IMPORT_CONTEXT_BUDGET": 2,
+  "DSH_IMPORT_AUTOTEST": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:5",
+    "build.mjs:8",
+    "test-codex.mjs:4",
+    "test-codex.mjs:4",
+    "test-codex.mjs:16"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

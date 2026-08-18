@@ -1,0 +1,96 @@
+{
+ "repo": "shelken/dsh-co-authored-by",
+ "stars": 2,
+ "description": "dsh plugin: auto-inject Co-Authored-By and Generated-By trailers on git commit",
+ "pushed_at": "2026-08-13T18:14:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@shelken/dsh-co-authored-by",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 16,
+   "evidence": [
+    "scripts/release.mjs:5",
+    "scripts/release.mjs:5",
+    "scripts/release.mjs:18",
+    "src/hook.ts:8",
+    "src/hook.ts:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 20,
+   "evidence": [
+    "src/hook.ts:14",
+    "src/hook.ts:15",
+    "src/hook.ts:81",
+    "src/hook.ts:83",
+    "src/hook.ts:97"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/release.mjs:5, scripts/release.mjs:5"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,98 @@
+{
+ "repo": "omdsh-dev/omdsh-runtime",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-15T08:30:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@ohmydsh/runtime",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "hub.omdsh.dev": 3,
+  "hub.0.org.cn": 3,
+  "spdx.org": 1,
+  "spdx.github.io": 1
+ },
+ "env": {
+  "OMDSH_LOGICAL_PROFILE": 1,
+  "OMDSH_GENERATION": 1,
+  "OMDSH_BOOT_TOKEN": 1,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "dist/launcher.mjs:1",
+    "dist/launcher.mjs:13",
+    "dist/manager.mjs:1",
+    "dist/manager.mjs:20"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "dist/profile-pack.mjs:358",
+    "dist/registry.mjs:291",
+    "dist/registry.mjs:370"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 16,
+   "evidence": [
+    "dist/atomic.mjs:12",
+    "dist/profile-pack.mjs:648",
+    "dist/state.mjs:49"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 45,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dist/launcher.mjs:1, dist/launcher.mjs:13"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. dist/profile-pack.mjs:358, dist/registry.mjs:291"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OMDSH_BOOT_TOKEN"
+  }
+ ],
+ "level": 3
+}

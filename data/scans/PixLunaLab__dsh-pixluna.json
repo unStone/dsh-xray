@@ -1,0 +1,100 @@
+{
+ "repo": "PixLunaLab/dsh-pixluna",
+ "stars": 3,
+ "description": "dsh-plugin-pixluna | 让 DSH 自己看涩图！",
+ "pushed_at": "2026-08-15T16:14:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-pixluna",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "undici",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 6,
+ "domains": {
+  "www.pixiv.net": 7,
+  "api.lolicon.app": 1,
+  "lolisuki.cn": 1,
+  "danbooru.donmai.us": 1,
+  "e621.net": 1,
+  "gelbooru.com": 1,
+  "safebooru.org": 3,
+  "konachan.com": 1,
+  "yande.re": 1,
+  "lolibooru.moe": 1,
+  "capi-v2.sankakucomplex.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

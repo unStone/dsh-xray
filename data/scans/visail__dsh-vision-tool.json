@@ -1,0 +1,86 @@
+{
+ "repo": "visail/dsh-vision-tool",
+ "stars": 1,
+ "description": "Paste an image into the chat box and text-only DSH models can \"see\" it — auto-rewrite of pasted images + analyze_image tool routed to a Kimi vision model.",
+ "pushed_at": "2026-08-14T09:07:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-vision-tool",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-apiproxy"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.kimi.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "vision-prompt.mjs:174"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "vision-prompt.mjs:17",
+    "vision-prompt.mjs:34",
+    "vision-tool.mjs:18",
+    "vision-tool.mjs:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. vision-prompt.mjs:174"
+  }
+ ],
+ "level": 3
+}

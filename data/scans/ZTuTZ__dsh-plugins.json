@@ -1,0 +1,111 @@
+{
+ "repo": "ZTuTZ/dsh-plugins",
+ "stars": 1,
+ "description": "My personal plugin collection for DeepSeek Harness (DSH) — everything is a plugin.",
+ "pushed_at": "2026-08-16T01:45:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugins",
+ "deps": [
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-settings",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.geeknow.top": 1
+ },
+ "env": {
+  "SPIDEY_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-spritesheet.mjs:13",
+    "scripts/build-spritesheet.mjs:229",
+    "scripts/build-spritesheet.mjs:230",
+    "scripts/build-spritesheet.mjs:231",
+    "scripts/build-spritesheet.mjs:236"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 42,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SPIDEY_KEY"
+  }
+ ],
+ "level": 3
+}

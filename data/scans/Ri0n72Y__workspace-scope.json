@@ -1,0 +1,100 @@
+{
+ "repo": "Ri0n72Y/workspace-scope",
+ "stars": 1,
+ "description": "Per-workspace Skill and MCP enablement for DeepSeek Harness",
+ "pushed_at": "2026-08-17T14:27:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  },
+  "dynamic": {
+   "host": "src/index.ts",
+   "client": "src/client/dynamic.tsx",
+   "idPrefix": "wscp",
+   "purpose": "按工作区（工程）启停 Skill 与 MCP（plugin-dev-loop 热测）",
+   "outDir": "dist/dynamic"
+  }
+ },
+ "pkg_name": "workspace-scope",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.config.ts"
+ },
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/release.mjs:5",
+    "scripts/release.mjs:5",
+    "scripts/release.mjs:20",
+    "scripts/release.mjs:50",
+    "scripts/release.mjs:51"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/gen-dynamic.mjs:7",
+    "scripts/gen-dynamic.mjs:28",
+    "scripts/release.mjs:6",
+    "scripts/release.mjs:41",
+    "scripts/release.mjs:43"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/release.mjs:5, scripts/release.mjs:5"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,84 @@
+{
+ "repo": "jmjmj009gt/vision-toolkit-for-dsh-v0.1-maybe-",
+ "stars": 1,
+ "description": "Zero-dependency vision OCR/Q&A toolkit (CLI + local web GUI) for OpenAI-compatible VLMs: Zhipu GLM, Qwen, OpenAI, OpenRouter, SiliconFlow",
+ "pushed_at": "2026-08-14T12:15:07Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "open.bigmodel.cn": 1,
+  "dashscope.aliyuncs.com": 1,
+  "api.openai.com": 1,
+  "openrouter.ai": 1,
+  "api.siliconflow.cn": 1
+ },
+ "env": {
+  "VISION_BASE_URL": 1,
+  "VISION_MODEL": 1,
+  "VISION_API_KEY": 1,
+  "ZHIPU_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "vision-server.js:172"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "vision-server.js:138"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "vision-core.js:84"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. vision-server.js:172"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. vision-server.js:138"
+  },
+  {
+   "id": "token_env",
+   "evidence": "VISION_API_KEY, ZHIPU_API_KEY"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,111 @@
+{
+ "repo": "Dylan37670/dsh-plugin-panel",
+ "stars": 2,
+ "description": "DSH plugin marketplace panel with full catalog search, Chinese translation, semantic search, favorites, and lifecycle management.",
+ "pushed_at": "2026-08-18T08:25:05Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-community/plugin-panel",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 8,
+  "www.npmjs.com": 2,
+  "api.siliconflow.cn": 5,
+  "translate.googleapis.com": 2
+ },
+ "env": {
+  "GITHUB_TOKEN": 3,
+  "GH_TOKEN": 3,
+  "DSH_HOME": 2,
+  "ComSpec": 2,
+  "DSH_BIN": 6,
+  "INSTALL_REGISTRY_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/lifecycle.js:25",
+    "lib/lifecycle.js:35",
+    "src/lifecycle.ts:18",
+    "src/lifecycle.ts:37"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 26,
+   "evidence": [
+    "lib/catalog.js:444",
+    "lib/embeddings.js:133",
+    "lib/lifecycle.js:511",
+    "lib/operations.js:73",
+    "lib/state.js:50"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/lifecycle.js:315",
+    "src/lifecycle.ts:319"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 52,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/lifecycle.js:25, lib/lifecycle.js:35"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

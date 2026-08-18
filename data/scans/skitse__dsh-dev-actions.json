@@ -1,0 +1,106 @@
+{
+ "repo": "skitse/dsh-dev-actions",
+ "stars": 1,
+ "description": "AI turns repeated dev commands, prompts, and habits into one-click DeepSeek Harness actions.",
+ "pushed_at": "2026-08-13T20:59:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "dsh-better-sidebar",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-dev-actions",
+ "deps": [
+  "zod",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "dsh-better-sidebar",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "betterSidebar",
+  "conversation",
+  "loader",
+  "sandboxPolicy",
+  "sessions",
+  "shell",
+  "skills",
+  "storageDomain",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

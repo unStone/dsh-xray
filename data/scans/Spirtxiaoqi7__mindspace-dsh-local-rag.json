@@ -1,0 +1,114 @@
+{
+ "repo": "Spirtxiaoqi7/mindspace-dsh-local-rag",
+ "stars": 3,
+ "description": "ARPM-derived local hybrid RAG plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T06:12:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "mindspace-dsh-local-rag",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@huggingface/transformers",
+  "mammoth",
+  "onnxruntime-node",
+  "pdfjs-dist",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "huggingface.co": 2,
+  "www.modelscope.cn": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/host/upload.ts:171"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 5,
+   "evidence": [
+    "scripts/create-acceptance-fixtures.mjs:14",
+    "scripts/create-acceptance-fixtures.mjs:16",
+    "scripts/normalize-build.mjs:7",
+    "src/host/document-history.ts:135",
+    "src/host/sources.ts:208"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-runtime-deps.mjs:10"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 61,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/host/upload.ts:171"
+  }
+ ],
+ "level": 3
+}

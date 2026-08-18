@@ -1,0 +1,95 @@
+{
+ "repo": "KarlOfLaw/dsh-side-chat",
+ "stars": 1,
+ "description": "DeepSeek Harness native parallel side chat with hidden child sessions and on-demand parent context",
+ "pushed_at": "2026-08-15T09:07:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-settings-general",
+    "@deepseek-ai/dsh-client-connection"
+   ]
+  }
+ },
+ "pkg_name": "dsh-side-chat",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node build.mjs"
+ },
+ "injects": [
+  "agentPresets",
+  "agents",
+  "connection",
+  "inputTriggers",
+  "sessionPersistence",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "timer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_SIDE_CHAT_PACKAGE_ID": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:8",
+    "build.mjs:29",
+    "build.mjs:30",
+    "dev/build-dev.mjs:9",
+    "dev/build-dev.mjs:109"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

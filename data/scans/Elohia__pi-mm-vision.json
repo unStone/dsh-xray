@@ -1,0 +1,74 @@
+{
+ "repo": "Elohia/pi-mm-vision",
+ "stars": 2,
+ "description": "Synesthesia Encoder (通感编码器) — give any text-only LLM (DeepSeek, etc.) the ability to see images via structured spatial text encoding. A Pi agent extension.",
+ "pushed_at": "2026-08-14T04:30:33Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "mm-vision",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {
+  "MM_VISION_CONFIG": 1,
+  "MM_DRAW_MODEL": 3,
+  "MM_DRAW_GRID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/core.ts:21",
+    "src/draw.ts:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "src/cli.ts:70",
+    "src/cli.ts:99",
+    "src/cli.ts:127",
+    "src/cli.ts:135",
+    "src/cli.ts:143"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/core.ts:21, src/draw.ts:18"
+  }
+ ],
+ "level": 2
+}

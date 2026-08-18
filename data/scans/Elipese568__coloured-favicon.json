@@ -1,0 +1,91 @@
+{
+ "repo": "Elipese568/coloured-favicon",
+ "stars": 1,
+ "description": "为 DeepSeek Harness (DSH) 网页提供彩色渐变流动小鲸鱼 favicon，并将页面内品牌元素一并彩虹化的 Cordis 客户端插件 A colour-gradient animated whale favicon and rainbow branding plugin for DeepSeek Harness (Cordis)",
+ "pushed_at": "2026-08-14T16:30:03Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "immediately": true
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "coloured-favicon",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:16",
+    "scripts/build.mjs:16",
+    "scripts/build.mjs:49"
+   ]
+  },
+  "eval": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:10",
+    "scripts/check.mjs:5",
+    "scripts/check.mjs:23",
+    "src/client.js:10",
+    "src/index.js:7"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:13",
+    "scripts/build.mjs:44",
+    "scripts/build.mjs:45"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/build.mjs:16, scripts/build.mjs:16"
+  },
+  {
+   "id": "eval",
+   "evidence": "×5 src, e.g. lib/client.js:10, scripts/check.mjs:5"
+  }
+ ],
+ "level": 3
+}

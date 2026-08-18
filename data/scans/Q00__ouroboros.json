@@ -1,23 +1,37 @@
 {
  "repo": "Q00/ouroboros",
- "stars": 5526,
+ "stars": 5525,
  "description": "Agent OS: the agent gets smarter on its own. We just hold the line: the grading command and expected result never make it into the success contract we hand it. Interview-gated, staged evaluation, budg",
- "pushed_at": "2026-08-18T08:08:36Z",
+ "pushed_at": "2026-08-18T08:24:19Z",
  "status": "ok",
- "manifest": null,
- "pkg_name": null,
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-ouroboros",
  "deps": [],
  "install_scripts": {},
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "OUROBOROS_GJC_BRIDGE_TIMEOUT_MS": 1,
+  "OUROBOROS_CLI": 2,
+  "USERPROFILE": 1,
+  "OPENCODE_CONFIG_DIR": 2,
+  "APPDATA": 1,
+  "XDG_CONFIG_HOME": 1,
+  "OUROBOROS_CHILD_TIMEOUT_MS": 1
+ },
  "behaviors": {
   "exec": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "src/ouroboros/gjc_bridge/index.ts:1"
+   ]
   },
   "eval": {
    "src": 0,
@@ -35,9 +49,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "src/ouroboros/opencode/plugin/ouroboros-bridge.ts:2",
+    "src/ouroboros/opencode/plugin/ouroboros-bridge.ts:53"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -46,9 +63,18 @@
   }
  },
  "has_apply": false,
- "files_scanned": 0,
+ "files_scanned": 7,
  "has_skill_md": true,
- "type": "skill",
- "flags": [],
- "level": 0
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/ouroboros/gjc_bridge/index.ts:1"
+  }
+ ],
+ "level": 3
 }

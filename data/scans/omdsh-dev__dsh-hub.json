@@ -1,0 +1,112 @@
+{
+ "repo": "omdsh-dev/dsh-hub",
+ "stars": 4,
+ "description": "",
+ "pushed_at": "2026-08-13T13:18:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@omdsh/dsh-hub",
+ "deps": [
+  "@omdsh/runtime"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "hub.omdsh.dev": 1,
+  "hub.0.org.cn": 1
+ },
+ "env": {
+  "OMDSH_LOGICAL_PROFILE": 1,
+  "OMDSH_GENERATION": 1,
+  "OMDSH_BOOT_TOKEN": 1,
+  "DSH_HOME": 3,
+  "NPM_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "dist/launcher.mjs:1",
+    "dist/launcher.mjs:12",
+    "dist/manager.mjs:1",
+    "dist/manager.mjs:17",
+    "scripts/check-release-artifact.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/registry.mjs:294",
+    "dist/registry.mjs:373"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 12,
+   "evidence": [
+    "dist/atomic.mjs:12",
+    "dist/state.mjs:49",
+    "scripts/vendor-workshop-snapshot.mjs:63",
+    "scripts/vendor-workshop-snapshot.mjs:68",
+    "test-support/helpers.mjs:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 63,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. dist/launcher.mjs:1, dist/launcher.mjs:12"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. dist/registry.mjs:294, dist/registry.mjs:373"
+  },
+  {
+   "id": "token_env",
+   "evidence": "NPM_TOKEN, OMDSH_BOOT_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,173 @@
+{
+ "repo": "Roarpeng/GraphFlow",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-15T14:34:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@roarpeng/graphflow",
+ "deps": [
+  "@huggingface/transformers",
+  "@modelcontextprotocol/sdk",
+  "gpt-tokenizer",
+  "pino",
+  "web-tree-sitter"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/safe-postinstall.cjs",
+  "prepare": "husky || true"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.apache.org": 1,
+  "api.deepseek.com": 7,
+  "unpkg.com": 1,
+  "open-vsx.org": 2,
+  "deb.nodesource.com": 1,
+  "api.openai.com": 4,
+  "api.anthropic.com": 1,
+  "dashscope.aliyuncs.com": 1,
+  "ark.cn-beijing.volces.com": 1
+ },
+ "env": {
+  "GITHUB_SHA": 4,
+  "DEEPSEEK_API_KEY": 4,
+  "DEEPSEEK_BASE_URL": 4,
+  "OVSX_REGISTRY_URL": 1,
+  "OVSX_VSIX": 2,
+  "OVSX_NAMESPACE": 1,
+  "APPDATA": 7,
+  "LOCALAPPDATA": 7,
+  "npm_config_global": 1,
+  "npm_config_prefix": 1,
+  "GRAPHFLOW_SKIP_POSTINSTALL": 2,
+  "GRAPHFLOW_ENABLE_POSTINSTALL": 1,
+  "GRAPHFLOW_MCP_STDIO": 3,
+  "GRAPHFLOW_LOG_JSON": 6,
+  "GRAPHFLOW_NODE": 2,
+  "ELECTRON_RUN_AS_NODE": 2,
+  "GRAPHFLOW_WORKSPACE_ROOT": 14,
+  "GRAPHFLOW_ANYDOC_NODE_MODULES": 6,
+  "GRAPHFLOW_LAUNCHER_DEBUG": 1,
+  "OPENAI_API_KEY": 3,
+  "GRAPHFLOW_SKIP_EMBEDDING_WARMUP": 1,
+  "VITEST": 2,
+  "VITEST_WORKER_ID": 1,
+  "GRAPHFLOW_CONFIG_HOME": 1,
+  "GRAPHFLOW_MCP_CUSTOM_TARGETS": 1,
+  "ProgramFiles": 1,
+  "DSH_HOME": 1,
+  "NODE_PATH": 2,
+  "GRAPHFLOW_NPM": 2,
+  "GRAPHFLOW_SKILL_EVOLVE_MIN_COOCCUR": 1,
+  "GRAPHFLOW_SKILL_EVOLVE_MIN_SUCCESS": 1,
+  "GRAPHFLOW_PROVIDER_MAX_RETRIES": 1,
+  "GRAPHFLOW_PROVIDER_CIRCUIT_FAILURES": 1,
+  "GRAPHFLOW_PROVIDER_CIRCUIT_OPEN_MS": 1,
+  "GRAPHFLOW_PROVIDER_TIMEOUT_MS": 1,
+  "LOG_LEVEL": 1,
+  "GRAPHFLOW_ANTHROPIC_STRICT": 1,
+  "ANTHROPIC_API_KEY": 1,
+  "ANTHROPIC_BASE_URL": 1,
+  "GRAPHFLOW_ANTHROPIC_TIMEOUT_MS": 1,
+  "GRAPHFLOW_BAILIAN_STRICT": 1,
+  "BAILIAN_API_KEY": 1,
+  "BAILIAN_BASE_URL": 1,
+  "GRAPHFLOW_BAILIAN_TIMEOUT_MS": 1,
+  "GRAPHFLOW_DEEPSEEK_STRICT": 1,
+  "GRAPHFLOW_DEEPSEEK_TIMEOUT_MS": 1,
+  "GRAPHFLOW_DOUBAO_STRICT": 1,
+  "DOUBAO_API_KEY": 1,
+  "DOUBAO_BASE_URL": 1,
+  "GRAPHFLOW_DOUBAO_TIMEOUT_MS": 1,
+  "GRAPHFLOW_OPENAI_STRICT": 1,
+  "OPENAI_BASE_URL": 1,
+  "GRAPHFLOW_OPENAI_TIMEOUT_MS": 1,
+  "GRAPHFLOW_EMBEDDING_CACHE_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 69,
+   "dev": 7,
+   "evidence": [
+    "benchmarks/bench-meta.ts:10",
+    "benchmarks/bench-meta.ts:10",
+    "benchmarks/bench-meta.ts:23",
+    "benchmarks/run-comprehensive-bench.ts:20",
+    "benchmarks/run-comprehensive-bench.ts:20"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/learning/hnsw-index.ts:134"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 137,
+   "dev": 372,
+   "evidence": [
+    "benchmarks/export-retrieval-dataset.ts:12",
+    "benchmarks/export-retrieval-dataset.ts:156",
+    "benchmarks/export-retrieval-dataset.ts:162",
+    "benchmarks/run-comprehensive-bench.ts:21",
+    "benchmarks/run-comprehensive-bench.ts:551"
+   ]
+  },
+  "dyn_import": {
+   "src": 8,
+   "dev": 2,
+   "evidence": [
+    "src/learning/embeddings.ts:182",
+    "src/learning/embeddings.ts:204",
+    "vscode-extension/scripts/test-bundled-runtime.mjs:28",
+    "vscode-extension/src/extension.ts:448",
+    "vscode-extension/src/extension.ts:498"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 352,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/safe-postinstall.cjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×69 src, e.g. benchmarks/bench-meta.ts:10, benchmarks/bench-meta.ts:10"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/learning/hnsw-index.ts:134"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ANTHROPIC_API_KEY, BAILIAN_API_KEY, DEEPSEEK_API_KEY, DOUBAO_API_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

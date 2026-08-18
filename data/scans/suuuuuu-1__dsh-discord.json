@@ -1,0 +1,112 @@
+{
+ "repo": "suuuuuu-1/dsh-discord",
+ "stars": 2,
+ "description": "Bidirectional Discord bridge and remote controller for DeepSeek Harness",
+ "pushed_at": "2026-08-17T15:38:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-discord",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "commander",
+  "discord.js",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "attachments",
+  "credentials",
+  "sessions",
+  "userQuestions"
+ ],
+ "hooks": [
+  "approval/request",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "discord.com": 2
+ },
+ "env": {
+  "DSH_DISCORD_SETUP_VALUE": 3,
+  "DSH_HOME": 2,
+  "DSH_DISCORD_SETUP": 1,
+  "DSH_DISCORD_DOCTOR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "src/cli/doctor.ts:1",
+    "src/cli/doctor.ts:1",
+    "src/cli/doctor.ts:5",
+    "src/cli/setup.ts:1",
+    "src/cli/setup.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 1,
+   "evidence": [
+    "src/cli/setup.ts:2",
+    "src/cli/setup.ts:79",
+    "src/cli/start.ts:1",
+    "src/cli/start.ts:1",
+    "src/cli/start.ts:97"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. src/cli/doctor.ts:1, src/cli/doctor.ts:1"
+  }
+ ],
+ "level": 3
+}

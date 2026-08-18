@@ -1,0 +1,93 @@
+{
+ "repo": "Scorp1o117/dsh-tool-vision",
+ "stars": 4,
+ "description": "Vision model for DeepSeek Harness | DeepSeek Harness 外置视觉模型插件",
+ "pushed_at": "2026-08-16T10:27:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-tool-vision",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "react",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "llm",
+  "locale",
+  "settingsScope",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api.openai.com": 3,
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {
+  "OPENAI_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "index.js:127",
+    "vendor/dsh-settings-expose.js:13",
+    "vendor/dsh-settings-expose.js:50"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

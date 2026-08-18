@@ -1,0 +1,95 @@
+{
+ "repo": "ZichengGurrr/dsh-window",
+ "stars": 5,
+ "description": "",
+ "pushed_at": "2026-08-18T04:30:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-window-kit",
+ "deps": [
+  "dsh-plugin-deepeye",
+  "@nn12138/dsh-voice",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {
+  "api.github.com": 4
+ },
+ "env": {
+  "LOCALAPPDATA": 4,
+  "TEMP": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 24,
+   "dev": 2,
+   "evidence": [
+    "kit/lib/installer.js:7",
+    "kit/lib/installer.js:62",
+    "kit/lib/installer.js:89",
+    "kit/lib/installer.js:105",
+    "kit/lib/launcher.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 30,
+   "dev": 4,
+   "evidence": [
+    "kit/lib/installer.js:46",
+    "kit/lib/installer.js:47",
+    "kit/lib/installer.js:66",
+    "kit/lib/installer.js:69",
+    "kit/lib/installer.js:80"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×24 src, e.g. kit/lib/installer.js:7, kit/lib/installer.js:62"
+  }
+ ],
+ "level": 3
+}

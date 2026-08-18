@@ -1,0 +1,113 @@
+{
+ "repo": "UynajGI/dsh-ssh",
+ "stars": 5,
+ "description": "SSH remote-execution plugin for DeepSeek Harness: ProxyJump chain, SFTP filesystem, subprocess and PTY over ssh2",
+ "pushed_at": "2026-08-16T14:53:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-workspace"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-ssh",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-directory-picker",
+  "@deepseek-ai/dsh-host-directory-picker-native",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/schemastery",
+  "ssh2"
+ ],
+ "install_scripts": {
+  "prepare": "husky"
+ },
+ "injects": [
+  "connection",
+  "invariants",
+  "slots",
+  "ssh",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/subprocess.ts:107"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/filesystem-final.ts:66",
+    "src/filesystem-routed.ts:71",
+    "src/filesystem.ts:66"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/filesystem-final.ts:460",
+    "src/filesystem-routed.ts:471",
+    "src/filesystem.ts:447",
+    "src/output.ts:5",
+    "src/output.ts:124"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/subprocess.ts:107"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. src/filesystem-final.ts:66, src/filesystem-routed.ts:71"
+  }
+ ],
+ "level": 3
+}

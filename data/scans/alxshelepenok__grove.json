@@ -1,0 +1,83 @@
+{
+ "repo": "alxshelepenok/grove",
+ "stars": 2,
+ "description": "A formal workflow protocol that keeps AI coding agents on track through machine-enforced invariants, verified evidence, and structured context. Designed to keep deep, long-running projects coherent ac",
+ "pushed_at": "2026-08-17T12:27:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-grove",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "d3js.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "packages/dsh/src/grove-cli.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/desktop/ui/js/vendor/d3.js:2"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. packages/dsh/src/grove-cli.ts:1"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/desktop/ui/js/vendor/d3.js:2"
+  }
+ ],
+ "level": 3
+}

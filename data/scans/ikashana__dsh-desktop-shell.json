@@ -1,0 +1,78 @@
+{
+ "repo": "ikashana/dsh-desktop-shell",
+ "stars": 1,
+ "description": "Desktop launcher shell for DeepSeek Harness (dsh): a tray-resident Electron wrapper that starts or reuses the local dsh web server and opens it in a native window",
+ "pushed_at": "2026-08-14T11:55:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop-shell",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "ready"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "main.js:12",
+    "main.js:12",
+    "main.js:33",
+    "main.js:89",
+    "main.js:116"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "main.js:59",
+    "make-icon.js:33"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. main.js:12, main.js:12"
+  }
+ ],
+ "level": 3
+}

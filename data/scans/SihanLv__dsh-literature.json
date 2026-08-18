@@ -1,0 +1,108 @@
+{
+ "repo": "SihanLv/dsh-literature",
+ "stars": 1,
+ "description": "Literature research for DeepSeek Harness — dblp + arXiv search, authoritative BibTeX, and full-text download.",
+ "pushed_at": "2026-08-17T11:49:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-literature-standalone",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "fast-xml-parser",
+  "@deepseek-ai/dsh-invariants",
+  "@shlv/dsh-literature-core",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@joplin/turndown-plugin-gfm",
+  "node-html-parser",
+  "pdfjs-dist",
+  "tar",
+  "turndown",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-invariants",
+  "@shlv/dsh-literature-core",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-jobs",
+  "@shlv/dsh-literature-core",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "@shlv/dsh-literature-core",
+  "@shlv/dsh-literature-dblp",
+  "@shlv/dsh-literature-arxiv",
+  "@shlv/dsh-literature-tool"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "invariants",
+  "literature",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {
+  "export.arxiv.org": 1,
+  "arxiv.org": 3,
+  "doi.org": 1,
+  "dblp.org": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

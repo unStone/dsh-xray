@@ -1,0 +1,115 @@
+{
+ "repo": "Yui-Little/dsh-mobile-shell",
+ "stars": 3,
+ "description": "Mobile shell UI plugin for DeepSeek Harness web: overlay drawer, full-width conversation, settings sheet, marketplace with hot-load installs.",
+ "pushed_at": "2026-08-17T09:52:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-mobile-shell",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-session-log-export",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "conversation",
+  "layout",
+  "locale",
+  "sessionLogDownload",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "awesome-dsh-plugin.com": 2,
+  "api.github.com": 2,
+  "codeload.github.com": 2,
+  "api.mymemory.translated.net": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:476",
+    "lib/index.js:481",
+    "src/index.ts:17",
+    "src/index.ts:584",
+    "src/index.ts:589"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:118",
+    "src/index.ts:195"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:1",
+    "lib/index.js:2",
+    "lib/index.js:130",
+    "lib/index.js:438",
+    "lib/index.js:794"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/index.js:476, lib/index.js:481"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:118, src/index.ts:195"
+  }
+ ],
+ "level": 3
+}

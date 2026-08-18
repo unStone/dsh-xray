@@ -1,0 +1,76 @@
+{
+ "repo": "Eidosiny/dsh-accessory-hub",
+ "stars": 1,
+ "description": "配件中心（Accessory Hub）：DSH Web GUI 悬浮卡片插件 —— 可拖动/可缩放，聚合插件、MCP、预设、技能卡片，支持自定义显示名与颜色、彩色关系连线、确认注入\"请使用xxx\"前缀。A floating-card plugin for the DeepSeek Harness Web GUI.",
+ "pushed_at": "2026-08-16T13:11:53Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-accessory-hub",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "conversation",
+  "loader",
+  "sessions",
+  "skills",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1",
+    "lib/index.js:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

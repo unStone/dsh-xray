@@ -1,0 +1,97 @@
+{
+ "repo": "qe2592008/dsh-ui-customizer",
+ "stars": 1,
+ "description": "DSH界面定制插件，暂时支持背景图片的自定义操作和主题定制操作，可以随便添加背景图片，并支持保存10个历史图片，主题可以保存无限个",
+ "pushed_at": "2026-08-17T12:46:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "slots",
+    "locale",
+    "theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-client-ui-customizer",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "settings",
+  "slots",
+  "theme",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "lib/vendor/schemastery.mjs:49"
+   ]
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:226",
+    "lib/vendor/cosmokit.mjs:118",
+    "lib/vendor/cosmokit.mjs:119"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:28",
+    "lib/index.js:28",
+    "lib/index.js:28",
+    "lib/index.js:45",
+    "lib/index.js:235"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/vendor/schemastery.mjs:49"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/index.js:226, lib/vendor/cosmokit.mjs:118"
+  }
+ ],
+ "level": 3
+}

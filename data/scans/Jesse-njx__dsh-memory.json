@@ -1,0 +1,102 @@
+{
+ "repo": "Jesse-njx/dsh-memory",
+ "stars": 2,
+ "description": "Cited memory over DSH's lossless session log — distilled, human-auditable facts with citations back to the exact source events; memory_read/memory_expand tools, recall index, and a dsh-memory CLI.",
+ "pushed_at": "2026-08-13T16:39:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-memory/bundle",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/disposed"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "EDITOR": 1,
+  "VISUAL": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/cli.ts:9",
+    "src/cli.ts:9",
+    "src/cli.ts:116"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 27,
+   "evidence": [
+    "src/store.ts:21",
+    "src/store.ts:21",
+    "src/store.ts:21",
+    "src/store.ts:309",
+    "src/store.ts:318"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/cli.ts:9, src/cli.ts:9"
+  }
+ ],
+ "level": 3
+}

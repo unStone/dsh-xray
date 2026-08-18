@@ -1,0 +1,96 @@
+{
+ "repo": "colorfuller/dsh-app",
+ "stars": 2,
+ "description": "双击即用的 DeepSeek Harness 桌面版",
+ "pushed_at": "2026-08-15T18:18:19Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "PKG_TARGETS": 1,
+  "DSH_SMOKE_CORE": 2,
+  "DSH_HOST": 1,
+  "DSH_PORT": 1,
+  "DSH_NO_OPEN": 1,
+  "DSH_NO_AUTO_UPDATE": 1,
+  "DSH_APP_DATA_DIR": 2,
+  "LOCALAPPDATA": 2,
+  "XDG_DATA_HOME": 1,
+  "DSH_RESOURCE_DIR": 3,
+  "DSH_UPDATE_CHECK_INTERVAL_MINUTES": 1,
+  "DSH_NPM_REGISTRY": 1,
+  "npm_config_registry": 1,
+  "DSH_RUNTIME_DIR": 3,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 26,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-core.mjs:5",
+    "scripts/build-core.mjs:5",
+    "scripts/build-core.mjs:51",
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-update.mjs:159",
+    "scripts/smoke-update.mjs:197"
+   ]
+  },
+  "fs_write": {
+   "src": 38,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-core.mjs:6",
+    "scripts/build-core.mjs:47",
+    "scripts/generate-icons.mjs:7",
+    "scripts/generate-icons.mjs:7",
+    "scripts/generate-icons.mjs:127"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×26 src, e.g. scripts/build-core.mjs:5, scripts/build-core.mjs:5"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke-update.mjs:159, scripts/smoke-update.mjs:197"
+  }
+ ],
+ "level": 2
+}

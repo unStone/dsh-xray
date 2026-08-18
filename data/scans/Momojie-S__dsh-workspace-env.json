@@ -1,0 +1,73 @@
+{
+ "repo": "Momojie-S/dsh-workspace-env",
+ "stars": 3,
+ "description": "DSH plugin: per-workspace .env injection for shell subprocesses",
+ "pushed_at": "2026-08-14T11:37:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@momojie-s/dsh-workspace-env",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "shell"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 25,
+   "dev": 0,
+   "evidence": [
+    "test-parse.mjs:5",
+    "test-parse.mjs:5",
+    "test-parse.mjs:20",
+    "test-parse.mjs:24",
+    "test-parse.mjs:28"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,98 @@
+{
+ "repo": "LingLambda/dsh-undo",
+ "stars": 4,
+ "description": "Context undo/redo plugin for DeepSeek Harness (dsh): roll the model context back to the last completed step and restore it again.",
+ "pushed_at": "2026-08-15T16:18:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-undo",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "yarn build"
+ },
+ "injects": [
+  "agents",
+  "commands",
+  "remote",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "tools/execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/workspace.ts:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 28,
+   "evidence": [
+    "src/workspace.ts:497"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/workspace.ts:4"
+  }
+ ],
+ "level": 3
+}

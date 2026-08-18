@@ -1,0 +1,101 @@
+{
+ "repo": "DreamRift/dsh-web-search-pool",
+ "stars": 2,
+ "description": "DeepSeek Harness 网页搜索插件：多个 Tavily/Exa key 按限流负载均衡，429 自动换 key，含设置页 UI 与 Tavily 额度总览。",
+ "pushed_at": "2026-08-16T07:49:19Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-web-search-pool",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "settingsScope",
+  "slots",
+  "web"
+ ],
+ "hooks": [
+  "settings/updated"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.tavily.com": 3,
+  "api.exa.ai": 2,
+  "mcp.exa.ai": 2
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_API_PROXY_INDEX": 1,
+  "APPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/patch-api-proxy-namespace.mjs:20",
+    "scripts/patch-api-proxy-namespace.mjs:20",
+    "scripts/patch-api-proxy-namespace.mjs:95"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/patch-api-proxy-namespace.mjs:18",
+    "scripts/patch-api-proxy-namespace.mjs:18",
+    "scripts/patch-api-proxy-namespace.mjs:93",
+    "scripts/patch-api-proxy-namespace.mjs:103",
+    "scripts/patch-api-proxy-namespace.mjs:137"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/run-tests.mjs:33"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/patch-api-proxy-namespace.mjs:20, scripts/patch-api-proxy-namespace.mjs:20"
+  }
+ ],
+ "level": 2
+}

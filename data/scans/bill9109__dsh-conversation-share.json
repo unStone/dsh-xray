@@ -1,0 +1,101 @@
+{
+ "repo": "bill9109/dsh-conversation-share",
+ "stars": 1,
+ "description": "分享任意段落的 DSH 对话",
+ "pushed_at": "2026-08-14T07:56:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@bill9109/dsh-conversation-share",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "stackoverflow.com": 2
+ },
+ "env": {
+  "DSH_CHECKOUT": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:13",
+    "scripts/build.mjs:69",
+    "scripts/verify-i18n.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/vendor/html-to-image/util.ts:137",
+    "lib/types/vendor/html-to-image/util.js:137"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:3",
+    "scripts/build.mjs:45",
+    "scripts/build.mjs:79",
+    "scripts/verify-i18n.mjs:7",
+    "scripts/verify-i18n.mjs:37"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tsdown.config.mjs:6"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 77,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/build.mjs:2, scripts/build.mjs:2"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/vendor/html-to-image/util.ts:137, lib/types/vendor/html-to-image/util.js:137"
+  }
+ ],
+ "level": 3
+}

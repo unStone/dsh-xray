@@ -1,0 +1,102 @@
+{
+ "repo": "csiroqa/dsh-plugin-forge",
+ "stars": 1,
+ "description": "DeepSeek Harness（DSH）插件生成工具：AI 自发发现能力缺口，子代理开发、迁移为独立 git 仓库并自动提交、热挂载与装入 profile。AI-native plugin generator for DeepSeek Harness: self-iterating subagent pipeline, independent repos, hot-mount.",
+ "pushed_at": "2026-08-15T22:33:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/plugin-forge",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "missing-service",
+  "subagents",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "COMSPEC": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/utils.ts:2",
+    "src/utils.ts:90",
+    "src/utils.ts:121"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 27,
+   "evidence": [
+    "scripts/smoke.mjs:60",
+    "scripts/smoke.mjs:76",
+    "scripts/smoke.mjs:103",
+    "scripts/smoke.mjs:104",
+    "scripts/smoke.mjs:105"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/hotmount.ts:61"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/utils.ts:2, src/utils.ts:90"
+  }
+ ],
+ "level": 3
+}

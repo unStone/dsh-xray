@@ -1,0 +1,91 @@
+{
+ "repo": "sjh9714/dsh-movein",
+ "stars": 6,
+ "description": "Migrate your whole Claude Code or Codex setup into DeepSeek Harness (DSH) with one command. Import skills, slash commands, MCP servers, hooks, subagents, permission rules. 一键迁移导入 Claude Code 配置，从 Clau",
+ "pushed_at": "2026-08-18T02:00:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-movein",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 5,
+  "FPS": 1,
+  "OUT": 1,
+  "MOVIE": 1,
+  "FRAMES": 1,
+  "DSH_AGENTS_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 10,
+   "evidence": [
+    "lib/apply.mjs:4",
+    "lib/apply.mjs:4",
+    "lib/apply.mjs:39"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 23,
+   "evidence": [
+    "lib/apply.mjs:168",
+    "lib/apply.mjs:341",
+    "lib/apply.mjs:366",
+    "lib/apply.mjs:429"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/apply.mjs:4, lib/apply.mjs:4"
+  }
+ ],
+ "level": 3
+}

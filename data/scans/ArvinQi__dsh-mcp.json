@@ -1,0 +1,103 @@
+{
+ "repo": "ArvinQi/dsh-mcp",
+ "stars": 3,
+ "description": "DeepSeek Harness 的 MCP 服务器管理插件：可视化界面管理 + 按需热注入，OAuth 鉴权支持，环境变量配置。",
+ "pushed_at": "2026-08-18T07:43:41Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mcp",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "remote",
+  "slots",
+  "storageDomain",
+  "tools"
+ ],
+ "hooks": [
+  "credentials/updated",
+  "system-prompt/assemble",
+  "tools/result"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_SOURCE": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/oauth.js:15",
+    "lib/oauth.js:64"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1284",
+    "lib/client.js:2642",
+    "lib/client.js:2699"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/oauth.js:181"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/oauth.js:15, lib/oauth.js:64"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/client.js:1284, lib/client.js:2642"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/oauth.js:181"
+  }
+ ],
+ "level": 3
+}

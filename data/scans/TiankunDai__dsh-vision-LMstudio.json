@@ -1,0 +1,96 @@
+{
+ "repo": "TiankunDai/dsh-vision-LMstudio",
+ "stars": 1,
+ "description": "让你能通过deepseek harness调用LM studio加载的本地视觉模型",
+ "pushed_at": "2026-08-13T15:32:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugins",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-lmstudio-vision/src/clipboard.ts:4",
+    "packages/dsh-lmstudio-vision/src/clipboard.ts:9",
+    "packages/dsh-lmstudio-vision/src/clipboard.ts:9",
+    "packages/dsh-lmstudio-vision/src/clipboard.ts:30"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-lmstudio-vision/src/clipboard.ts:10",
+    "packages/dsh-lmstudio-vision/src/clipboard.ts:60",
+    "packages/dsh-lmstudio-vision/src/config.ts:7",
+    "packages/dsh-lmstudio-vision/src/config.ts:91"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. packages/dsh-lmstudio-vision/src/clipboard.ts:4, packages/dsh-lmstudio-vision/src/clipboard.ts:9"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,106 @@
+{
+ "repo": "weicy98/dsh-cftunnel",
+ "stars": 1,
+ "description": "dsh cf tunnel ui with token/email verify",
+ "pushed_at": "2026-08-16T13:06:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-cftunnel",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "credentials",
+  "locale",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.cloudflare.com": 1,
+  "api.github.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "lib/cloudflared.js:1",
+    "lib/cloudflared.js:62",
+    "lib/index.js:1",
+    "lib/index.js:285"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 14,
+   "evidence": [
+    "lib/proxy.js:239"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 16,
+   "evidence": [
+    "lib/cloudflared.js:2",
+    "lib/cloudflared.js:2",
+    "lib/cloudflared.js:178",
+    "lib/cloudflared.js:194",
+    "lib/cloudflared.js:199"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/cloudflared.js:1, lib/cloudflared.js:62"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/proxy.js:239"
+  }
+ ],
+ "level": 3
+}

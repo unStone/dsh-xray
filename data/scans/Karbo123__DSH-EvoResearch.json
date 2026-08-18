@@ -1,0 +1,186 @@
+{
+ "repo": "Karbo123/DSH-EvoResearch",
+ "stars": 7,
+ "description": "自进化科研工作流",
+ "pushed_at": "2026-08-18T05:15:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-EvoResearch",
+ "deps": [
+  "@deepseek-ai/dsh-host-frontend-static",
+  "@deepseek-ai/schemastery",
+  "@toast-ui/editor",
+  "@xyflow/react",
+  "dompurify",
+  "elkjs",
+  "highlight.js",
+  "lucide-react",
+  "markdown-it",
+  "markdown-it-task-lists",
+  "mermaid",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/dsh-base",
+  "@evoresearch/dsh-app",
+  "@evoresearch/dsh-plugin"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "connection",
+  "conversationEvents",
+  "conversationViews",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "astral.sh": 1,
+  "api.telegram.org": 1
+ },
+ "env": {
+  "EVORESEARCH_APP_PORT": 1,
+  "CORDIS_SHARED": 1,
+  "DSH_HOME": 14,
+  "LOCALAPPDATA": 3,
+  "EVORESearch_PORT": 1,
+  "SystemDrive": 1,
+  "NEW_API_API_KEY": 14,
+  "EVORESEARCH_PORT_FILE": 3,
+  "EVORESEARCH_DATA_HOME": 1,
+  "ComSpec": 1,
+  "EVORESEARCH_DATA_ROOT": 2,
+  "PATHEXT": 1,
+  "EVORESEARCH_UV": 1,
+  "EVORESEARCH_TELEGRAM_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 219,
+   "dev": 3,
+   "evidence": [
+    "scripts/accept-live-chatgraph.mjs:3",
+    "scripts/accept-live-chatgraph.mjs:13",
+    "scripts/accept-mouse.mjs:2",
+    "scripts/accept-mouse.mjs:9",
+    "scripts/capture.mjs:5"
+   ]
+  },
+  "eval": {
+   "src": 359,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-a11y.mjs:57",
+    "scripts/verify-a11y.mjs:73",
+    "scripts/verify-a11y.mjs:81",
+    "scripts/verify-a11y.mjs:83",
+    "scripts/verify-a11y.mjs:84"
+   ]
+  },
+  "base64_decode": {
+   "src": 69,
+   "dev": 0,
+   "evidence": [
+    "scripts/accept-live-chatgraph.mjs:70",
+    "scripts/accept-mouse.mjs:53",
+    "scripts/cdp-clip.mjs:124",
+    "scripts/probe-mouse-edge.mjs:53",
+    "scripts/shot-accept.mjs:51"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 393,
+   "dev": 102,
+   "evidence": [
+    "scripts/accept-live-chatgraph.mjs:4",
+    "scripts/accept-live-chatgraph.mjs:70",
+    "scripts/accept-mouse.mjs:3",
+    "scripts/accept-mouse.mjs:53",
+    "scripts/build-app.mjs:16"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-autoskills-auto.mjs:11",
+    "scripts/verify-autoskills-v3.mjs:11",
+    "scripts/verify-autoskills-v3.mjs:52",
+    "scripts/verify-link-observations.mjs:10",
+    "scripts/verify-profile-inject.mjs:10"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 274,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×219 src, e.g. scripts/accept-live-chatgraph.mjs:3, scripts/accept-live-chatgraph.mjs:13"
+  },
+  {
+   "id": "eval",
+   "evidence": "×359 src, e.g. scripts/verify-a11y.mjs:57, scripts/verify-a11y.mjs:73"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×69 src, e.g. scripts/accept-live-chatgraph.mjs:70, scripts/accept-mouse.mjs:53"
+  },
+  {
+   "id": "token_env",
+   "evidence": "EVORESEARCH_TELEGRAM_TOKEN, NEW_API_API_KEY"
+  }
+ ],
+ "level": 3
+}

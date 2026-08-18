@@ -1,0 +1,101 @@
+{
+ "repo": "aka-danielZhang/dsh-mcp-settings",
+ "stars": 2,
+ "description": "DSH bundle for MCP server management, inventory status, and Web settings",
+ "pushed_at": "2026-08-18T05:27:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mcp-settings",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "connection",
+  "invariants",
+  "locale",
+  "mcpManager",
+  "remote",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [
+  "credentials/updated",
+  "mcp-client/status"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

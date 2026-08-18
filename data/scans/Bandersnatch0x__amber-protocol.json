@@ -1,0 +1,124 @@
+{
+ "repo": "Bandersnatch0x/amber-protocol",
+ "stars": 1,
+ "description": "Amber Protocol: repository-local governance for coding agents, including a DeepSeek Harness (dsh) patch overlay.",
+ "pushed_at": "2026-08-18T03:49:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "amber-protocol",
+ "deps": [
+  "ajv",
+  "ajv-formats",
+  "amber-protocol",
+  "@tanstack/react-query",
+  "@tanstack/react-virtual",
+  "@trpc/client",
+  "@trpc/react-query",
+  "@trpc/server",
+  "highlight.js",
+  "react",
+  "react-dom",
+  "react-markdown",
+  "rehype-highlight",
+  "remark-gfm",
+  "superjson",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.npmjs.org": 2
+ },
+ "env": {
+  "GITHUB_REF_NAME": 1,
+  "AMBER_E2E_REPO_ROOT": 1,
+  "AMBER_REPO_ROOT": 4,
+  "AMBER_E2E_REUSE_SERVER": 1,
+  "AMBER_E2E_API_PORT": 1,
+  "AMBER_E2E_CLIENT_PORT": 1,
+  "PORT": 2,
+  "API_PORT": 1,
+  "VITE_DEV_PORT": 1,
+  "NO_PROXY": 1,
+  "no_proxy": 1,
+  "AMBER_SUPPRESS_DEPRECATION": 1,
+  "GROK_SCRATCH": 1,
+  "AMBER_SKIP_HOOKS": 1,
+  "SSE_AUTH_SECRET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 63,
+   "dev": 293,
+   "evidence": [
+    "scripts/changelog.js:36",
+    "scripts/changelog.js:36",
+    "scripts/changelog.js:54",
+    "scripts/changelog.js:86",
+    "scripts/orient.js:10"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "scripts/lib/core/execution-validator.js:115"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 131,
+   "dev": 1050,
+   "evidence": [
+    "scripts/changelog.js:273",
+    "scripts/release.js:81",
+    "scripts/run-tests.js:78",
+    "scripts/sync-version.js:27",
+    "scripts/sync-version.js:75"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 583,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×63 src, e.g. scripts/changelog.js:36, scripts/changelog.js:36"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/lib/core/execution-validator.js:115"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SSE_AUTH_SECRET"
+  }
+ ],
+ "level": 3
+}

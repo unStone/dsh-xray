@@ -1,0 +1,78 @@
+{
+ "repo": "shinelon/eyes-for-deepseek",
+ "stars": 6,
+ "description": "",
+ "pushed_at": "2026-08-13T01:27:11Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "sensenova-vision-mcp",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "openai",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "token.sensenova.cn": 1,
+  "platform.sensenova.cn": 1
+ },
+ "env": {
+  "SENSENOVA_MODEL": 1,
+  "SENSENOVA_BASE_URL": 1,
+  "SENSENOVA_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "sensenova-vision-mcp/test-image.mjs:14"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "sensenova-vision-mcp/test-image.mjs:14"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. sensenova-vision-mcp/test-image.mjs:14"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SENSENOVA_API_KEY"
+  }
+ ],
+ "level": 2
+}

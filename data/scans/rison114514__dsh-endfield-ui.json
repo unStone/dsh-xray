@@ -1,0 +1,96 @@
+{
+ "repo": "rison114514/dsh-endfield-ui",
+ "stars": 6,
+ "description": "Endfield-inspired industrial UI shell for DeepSeek Harness (dsh) — non-official fan theme. Install: dsh plugin --profile web add @rison/dsh-endfield-ui",
+ "pushed_at": "2026-08-17T13:38:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "immediately": true,
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ]
+  }
+ },
+ "pkg_name": "dsh-endfield-workbench",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "theme",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_BIN": 4,
+  "DSH_REPO": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "desktop-app/main.cjs:3",
+    "desktop-app/main.cjs:3",
+    "desktop-app/main.cjs:238",
+    "desktop-app/main.cjs:252",
+    "scripts/smoke-install.mjs:19"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "desktop-app/main.cjs:2",
+    "desktop-app/main.cjs:35",
+    "scripts/smoke-install.mjs:20",
+    "scripts/smoke-install.mjs:134",
+    "scripts/verify-usage.mjs:23"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×18 src, e.g. desktop-app/main.cjs:3, desktop-app/main.cjs:3"
+  }
+ ],
+ "level": 3
+}

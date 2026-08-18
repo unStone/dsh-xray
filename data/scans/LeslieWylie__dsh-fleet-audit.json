@@ -1,0 +1,88 @@
+{
+ "repo": "LeslieWylie/dsh-fleet-audit",
+ "stars": 1,
+ "description": "DSH agent-fleet hygiene audit plugin: credential-file permissions, embedded git-remote credentials (masked), provider token literals. Read-only, zero-dependency, deterministic.",
+ "pushed_at": "2026-08-18T03:26:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-fleet-audit",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "internal/warning"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-install.mjs:18",
+    "scripts/check-install.mjs:18",
+    "scripts/check-install.mjs:18",
+    "scripts/check-install.mjs:32",
+    "scripts/check-install.mjs:59"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 15,
+   "evidence": [
+    "scripts/check-install.mjs:19",
+    "scripts/check-install.mjs:19",
+    "scripts/check-install.mjs:68",
+    "scripts/check-install.mjs:92",
+    "scripts/check-install.mjs:93"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "scripts/check-install.mjs:70"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/check-install.mjs:18, scripts/check-install.mjs:18"
+  }
+ ],
+ "level": 3
+}

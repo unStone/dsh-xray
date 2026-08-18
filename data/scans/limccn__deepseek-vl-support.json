@@ -1,0 +1,77 @@
+{
+ "repo": "limccn/deepseek-vl-support",
+ "stars": 1,
+ "description": "Give DeepSeek (text-only) models **vision** in Claude Code and Codex by routing image files to any OpenAI-compatible vision endpoint (OpenRouter, SiliconFlow, DashScope, Ollama, llama.cpp, vLLM, LM St",
+ "pushed_at": "2026-08-18T02:21:06Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-vl-support",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "openrouter.ai": 1,
+  "api.moonshot.cn": 1,
+  "api.minimaxi.com": 1,
+  "open.bigmodel.cn": 1,
+  "api.stepfun.com": 1,
+  "opencode.ai": 1,
+  "api.siliconflow.cn": 1,
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 8,
+   "evidence": [
+    "src/plugin.ts:21",
+    "src/plugin.ts:192"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 46,
+   "dev": 68,
+   "evidence": [
+    "src/cache.ts:105",
+    "src/codex.ts:10",
+    "src/codex.ts:79",
+    "src/codex.ts:100",
+    "src/codex.ts:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 29,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/plugin.ts:21, src/plugin.ts:192"
+  }
+ ],
+ "level": 2
+}

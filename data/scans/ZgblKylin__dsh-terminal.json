@@ -1,0 +1,90 @@
+{
+ "repo": "ZgblKylin/dsh-terminal",
+ "stars": 3,
+ "description": "Integrate terminal plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-14T21:00:03Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  },
+  "gui": {
+   "mountId": "terminal"
+  }
+ },
+ "pkg_name": "dsh-terminal",
+ "deps": [
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "@deepseek-ai/cordis",
+  "node-pty",
+  "react",
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TERMINAL_SHELL": 1,
+  "ProgramFiles": 1,
+  "PATHEXT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:20",
+    "build.mjs:20",
+    "build.mjs:50",
+    "src/host/manager.ts:152"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:21",
+    "build.mjs:21",
+    "build.mjs:88",
+    "build.mjs:89"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. build.mjs:20, build.mjs:20"
+  }
+ ],
+ "level": 2
+}

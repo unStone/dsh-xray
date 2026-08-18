@@ -1,0 +1,71 @@
+{
+ "repo": "hootandy321/dsh-Agentlink",
+ "stars": 6,
+ "description": "Caller-side bridge from Codex and other agent frameworks to DeepSeek Harness, with observable sessions, follow-up, cancellation, and human-gated approvals.",
+ "pushed_at": "2026-08-17T01:50:13Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-agentlink",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 13,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "src/doctor.ts:3",
+    "src/setup-claude-code.ts:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 44,
+   "evidence": [
+    "src/event-ledger.ts:1",
+    "src/event-ledger.ts:802",
+    "src/file-lock.ts:53",
+    "src/setup-engine.ts:125",
+    "src/setup-engine.ts:167"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 39,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/doctor.ts:3, src/setup-claude-code.ts:3"
+  }
+ ],
+ "level": 2
+}

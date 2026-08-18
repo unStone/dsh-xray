@@ -1,0 +1,76 @@
+{
+ "repo": "LJH-snow/dsh-tool-github",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-14T14:58:08Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@libai168/dsh-tool-github",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 27,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/client.ts:683",
+    "src/index.ts:386"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/client.ts:653",
+    "src/index.ts:1101"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/client.ts:683, src/index.ts:386"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 27 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

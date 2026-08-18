@@ -1,0 +1,114 @@
+{
+ "repo": "to-huacai/DSH-Desktop-Huacai",
+ "stars": 1,
+ "description": "deepseek harness一键启动+无需node+内置丰富插件+编辑器模式",
+ "pushed_at": "2026-08-16T15:53:32Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "immediately": false
+  }
+ },
+ "pkg_name": "@local/dsh-editor",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "registry.npmmirror.com": 3
+ },
+ "env": {
+  "DSH_HOME": 5,
+  "LOCALAPPDATA": 28,
+  "DSH_WEB_URL": 1,
+  "PROGRAMFILES": 10,
+  "DSH_DESKTOP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 37,
+   "dev": 0,
+   "evidence": [
+    "dsh-bundle/apply-update.mjs:30",
+    "dsh-bundle/apply-update.mjs:30",
+    "dsh-bundle/apply-update.mjs:100",
+    "dsh-bundle/install-skin-plugin.mjs:36",
+    "dsh-bundle/install-skin-plugin.mjs:36"
+   ]
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/test-editor-client.mjs:46",
+    "tools/test-editor-highlight.mjs:18",
+    "tools/test-editor-render.mjs:48"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tools/test-browser-terminal.mjs:193"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "tools/test-terminal-pty.mjs:46",
+    "tools/test-terminal-pty.mjs:48",
+    "tools/test-terminal-tabs.mjs:49",
+    "tools/test-terminal-tabs.mjs:51"
+   ]
+  },
+  "fs_write": {
+   "src": 54,
+   "dev": 0,
+   "evidence": [
+    "parse-payload.mjs:10",
+    "parse-payload.mjs:55",
+    "dsh-bundle/apply-update.mjs:25",
+    "dsh-bundle/apply-update.mjs:25",
+    "dsh-bundle/apply-update.mjs:85"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×37 src, e.g. dsh-bundle/apply-update.mjs:30, dsh-bundle/apply-update.mjs:30"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. tools/test-editor-client.mjs:46, tools/test-editor-highlight.mjs:18"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. tools/test-browser-terminal.mjs:193"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. tools/test-terminal-pty.mjs:46, tools/test-terminal-pty.mjs:48"
+  }
+ ],
+ "level": 2
+}

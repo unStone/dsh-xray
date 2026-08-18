@@ -1,0 +1,78 @@
+{
+ "repo": "ljsysfurryACE/AgentFrame-v3",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-14T11:29:37Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@agentframe/dsh-aura-scheduler",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "llm",
+  "sessions"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/turn-stopping",
+  "compaction/pressure"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-plugin/memory-director/src/index.ts:284"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

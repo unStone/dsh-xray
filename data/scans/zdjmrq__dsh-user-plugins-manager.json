@@ -1,0 +1,100 @@
+{
+ "repo": "zdjmrq/dsh-user-plugins-manager",
+ "stars": 4,
+ "description": "DSH 用户插件管理器:在 设置→插件 统一管理插件目录散件、运行树插件与 npm 插件包——挂载/卸载/启用/停用(cordis.patch.yml 补丁层 + HMR 热生效)",
+ "pushed_at": "2026-08-17T07:25:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-pluginmanager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:25",
+    "lib/index.js:744",
+    "lib/index.js:830"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:418"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:21",
+    "lib/index.js:21",
+    "lib/index.js:65",
+    "lib/index.js:170"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:103"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:25, lib/index.js:744"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:418"
+  }
+ ],
+ "level": 3
+}

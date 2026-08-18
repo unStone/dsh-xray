@@ -1,0 +1,86 @@
+{
+ "repo": "lvyuchuiyi/dsh-funpack",
+ "stars": 6,
+ "description": " DeepSeek Harness的一些有趣插件",
+ "pushed_at": "2026-08-14T10:32:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-funpack",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "remote",
+  "slots",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "cdn.jsdelivr.net": 6,
+  "cubism.live2d.com": 1,
+  "api.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. index.js:6"
+  }
+ ],
+ "level": 3
+}

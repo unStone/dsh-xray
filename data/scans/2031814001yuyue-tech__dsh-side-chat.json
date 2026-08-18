@@ -1,0 +1,90 @@
+{
+ "repo": "2031814001yuyue-tech/dsh-side-chat",
+ "stars": 4,
+ "description": "dsh-plugin",
+ "pushed_at": "2026-08-15T04:46:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-side-chat",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:53",
+    "lib/index.js:63",
+    "scripts/build-npm.mjs:95",
+    "scripts/build-npm.mjs:166",
+    "scripts/check.cjs:14"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-npm.mjs:15",
+    "scripts/build-npm.mjs:177",
+    "scripts/build-npm.mjs:178"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×5 src, e.g. lib/client.js:53, lib/index.js:63"
+  }
+ ],
+ "level": 3
+}

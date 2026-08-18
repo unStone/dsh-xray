@@ -1,0 +1,100 @@
+{
+ "repo": "kanneiren/dsh-windows-manager",
+ "stars": 2,
+ "description": "Lightweight DeepSeek Harness manager for Windows | 轻量级 DeepSeek Harness Windows 托盘管理器 | tray",
+ "pushed_at": "2026-08-17T07:06:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-windows-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 1,
+  "DSH_MANAGER_DATA_ROOT": 2,
+  "DSH_MANAGER_INSTALL_ROOT": 2,
+  "SystemRoot": 2,
+  "DSH_MANAGER_SHORTCUT_PATH": 4,
+  "DSH_MANAGER_START_MENU_SHORTCUT_PATH": 2,
+  "USERPROFILE": 1,
+  "DSH_MANAGER_NO_REGISTRY": 1,
+  "DSH_HOME": 3,
+  "DSH_WINDOWS_MANAGER_PIPE_NAME": 1,
+  "DSH_WINDOWS_MANAGER_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 7,
+   "evidence": [
+    "bin/dsh-windows-manager.js:4",
+    "bin/dsh-windows-manager.js:95",
+    "bin/dsh-windows-manager.js:167",
+    "bin/dsh-windows-manager.js:196",
+    "bin/dsh-windows-manager.js:459"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "plugins/deepseek-harness-web/cordis/windows-lifecycle.mjs:291"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 3,
+   "evidence": [
+    "bin/dsh-windows-manager.js:533",
+    "bin/dsh-windows-manager.js:615",
+    "bin/dsh-windows-manager.js:626",
+    "bin/dsh-windows-manager.js:804"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. bin/dsh-windows-manager.js:4, bin/dsh-windows-manager.js:95"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. plugins/deepseek-harness-web/cordis/windows-lifecycle.mjs:291"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_WINDOWS_MANAGER_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,89 @@
+{
+ "repo": "awa-123-cw/dsh-matrix-rain",
+ "stars": 1,
+ "description": "DeepSeek Harness WebUI 动效美化插件：聊天背景黑客帝国代码雨，雨字内容 = 当前会话 AI 思考链（流式实时），设置页调色盘 + 全套 DIY",
+ "pushed_at": "2026-08-15T16:11:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-matrix-rain",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "settings",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 4,
+  "uploads.github.com": 1
+ },
+ "env": {
+  "DSH_INSTALL_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/create-github-release.mjs:2",
+    "scripts/create-github-release.mjs:2",
+    "scripts/create-github-release.mjs:6",
+    "scripts/create-github-repo.mjs:2",
+    "scripts/create-github-repo.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "patches/apply-runtime-patches.mjs:15",
+    "patches/apply-runtime-patches.mjs:64"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/create-github-release.mjs:2, scripts/create-github-release.mjs:2"
+  }
+ ],
+ "level": 3
+}

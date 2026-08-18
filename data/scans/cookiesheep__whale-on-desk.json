@@ -1,0 +1,99 @@
+{
+ "repo": "cookiesheep/whale-on-desk",
+ "stars": 1,
+ "description": "A pixel-art whale companion for DeepSeek Harness — it swims while your agents work and taps the glass when an approval is waiting",
+ "pushed_at": "2026-08-18T07:22:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "whale-on-desk",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "skills",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "tools/measure-scales.mjs:12",
+    "tools/measure-scales.mjs:12",
+    "tools/measure-scales.mjs:42",
+    "tools/process-sprites.mjs:15",
+    "tools/process-sprites.mjs:15"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:354",
+    "tools/make-test-grid.mjs:9",
+    "tools/make-test-grid.mjs:111",
+    "tools/measure-scales.mjs:13",
+    "tools/measure-scales.mjs:71"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. tools/measure-scales.mjs:12, tools/measure-scales.mjs:12"
+  }
+ ],
+ "level": 3
+}

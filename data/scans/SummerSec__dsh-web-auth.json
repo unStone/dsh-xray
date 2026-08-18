@@ -1,0 +1,78 @@
+{
+ "repo": "SummerSec/dsh-web-auth",
+ "stars": 1,
+ "description": "Transport-level authentication gate for the DeepSeek Harness Web GUI",
+ "pushed_at": "2026-08-17T11:54:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@summersec/dsh-web-auth",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "WEB_AUTH_PASSWORD": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:182"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/index.js:182"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WEB_AUTH_PASSWORD"
+  }
+ ],
+ "level": 3
+}

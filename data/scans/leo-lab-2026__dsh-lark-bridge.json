@@ -1,0 +1,87 @@
+{
+ "repo": "leo-lab-2026/dsh-lark-bridge",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T12:46:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lark-bridge",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.build.json"
+ },
+ "injects": [
+  "timer"
+ ],
+ "hooks": [
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 3,
+   "evidence": [
+    "scripts/lark-watchdog.mjs:30",
+    "scripts/lark-watchdog.mjs:120",
+    "src/transport/event-consume.ts:10",
+    "src/transport/event-consume.ts:103",
+    "src/transport/spawn.ts:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 5,
+   "evidence": [
+    "scripts/lark-watchdog.mjs:31",
+    "scripts/lark-watchdog.mjs:99",
+    "src/index.ts:138"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/lark-watchdog.mjs:30, scripts/lark-watchdog.mjs:120"
+  }
+ ],
+ "level": 3
+}

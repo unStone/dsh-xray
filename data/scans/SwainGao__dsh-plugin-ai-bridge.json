@@ -1,0 +1,105 @@
+{
+ "repo": "SwainGao/dsh-plugin-ai-bridge",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T18:44:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-ai-bridge",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "commands",
+  "jobs",
+  "tools"
+ ],
+ "hooks": [
+  "agent/turn-stopping"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "api.openai.com": 4,
+  "api.anthropic.com": 2
+ },
+ "env": {
+  "BRIDGE_API_KEY": 1,
+  "ANTHROPIC_AUTH_TOKEN": 1,
+  "ANTHROPIC_API_KEY": 1,
+  "OPENAI_API_KEY": 1,
+  "BRIDGE_MODEL": 1,
+  "BRIDGE_FAST_MODEL": 1,
+  "ANTHROPIC_BASE_URL": 1,
+  "OPENAI_BASE_URL": 1,
+  "DSH_BRIDGE_THREADS_DIR": 1,
+  "DSH_HOME": 1,
+  "BRIDGE_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "src/git.ts:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 9,
+   "evidence": [
+    "src/threads.ts:65"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/git.ts:10"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, BRIDGE_API_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,223 @@
+{
+ "repo": "AlwaysSum/deepseek-harness-kit",
+ "stars": 1,
+ "description": "让所有人可以更方便的使用DeepSeek harness",
+ "pushed_at": "2026-08-17T11:06:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@tauri-apps/api",
+  "qrcode",
+  "@codemirror/commands",
+  "@codemirror/lang-cpp",
+  "@codemirror/lang-css",
+  "@codemirror/lang-go",
+  "@codemirror/lang-html",
+  "@codemirror/lang-java",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/lang-php",
+  "@codemirror/lang-python",
+  "@codemirror/lang-rust",
+  "@codemirror/lang-sql",
+  "@codemirror/lang-xml",
+  "@codemirror/lang-yaml",
+  "@codemirror/language",
+  "@codemirror/legacy-modes",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@lezer/highlight",
+  "@xterm/addon-fit",
+  "clsx",
+  "node-pty",
+  "rxjs",
+  "schemastery",
+  "ws",
+  "xterm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-schema-form",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "react",
+  "react-dom",
+  "koffi",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "qrcode",
+  "qrcode-terminal",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "commander",
+  "undici",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/dsh-session",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-ui-settings"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "agents",
+  "attachments",
+  "connection",
+  "invariants",
+  "layout",
+  "llm",
+  "locale",
+  "sessionLogDownload",
+  "sessions",
+  "settingsScope",
+  "skills",
+  "slots",
+  "theme",
+  "tools",
+  "webRuntime",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "llm/adapters-updated",
+  "session/event"
+ ],
+ "tool_regs": 19,
+ "domains": {
+  "vitejs.dev": 1,
+  "registry.npmmirror.com": 1,
+  "api.skillhub.cn": 1,
+  "bellard.org": 1,
+  "ghproxy.net": 1,
+  "gh.ddlc.top": 1,
+  "gh-proxy.com": 1,
+  "mirrors.tuna.tsinghua.edu.cn": 1
+ },
+ "env": {
+  "TAURI_ENV_PLATFORM": 1,
+  "TAURI_ENV_DEBUG": 2,
+  "DSH_HOME": 5,
+  "DSH_POCKET_CLIENT_ID": 1,
+  "MODLENS_DSH_CLI": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 29,
+   "dev": 3,
+   "evidence": [
+    "scripts/test-cdp.mjs:4",
+    "plugins/dsh-better-sidebar/lib/index.js:8",
+    "plugins/dsh-better-sidebar/lib/index.js:545",
+    "plugins/dsh-better-sidebar/lib/index.js:776",
+    "plugins/dsh-better-sidebar/lib/index.js:805"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-better-sidebar/lib/client-registry.js:2730",
+    "plugins/dsh-better-sidebar/lib/client.js:2730",
+    "plugins/dsh-better-sidebar/src/client/editor-load.ts:39"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 12,
+   "evidence": [
+    "plugins/dsh-pocket/lib/proxy.mjs:73"
+   ]
+  },
+  "fs_write": {
+   "src": 36,
+   "dev": 4,
+   "evidence": [
+    "plugins/plugin-file-explorer/install.mjs:13",
+    "plugins/plugin-file-explorer/install.mjs:13",
+    "plugins/plugin-file-explorer/install.mjs:53",
+    "plugins/plugin-file-explorer/install.mjs:57",
+    "plugins/plugin-file-explorer/install.mjs:65"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 221,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×29 src, e.g. scripts/test-cdp.mjs:4, plugins/dsh-better-sidebar/lib/index.js:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. plugins/dsh-better-sidebar/lib/client-registry.js:2730, plugins/dsh-better-sidebar/lib/client.js:2730"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. plugins/dsh-pocket/lib/proxy.mjs:73"
+  }
+ ],
+ "level": 3
+}

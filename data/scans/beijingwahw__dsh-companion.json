@@ -1,0 +1,110 @@
+{
+ "repo": "beijingwahw/dsh-companion",
+ "stars": 3,
+ "description": "DeepSeek Companion — DeepSeek Harness 官方伴侣插件：对话导出/交接摘要/成本优化/全局检索 + 执行轨迹分析、Prompt 工程工作台、多模型竞技场、任务编排、安全与审计（E–J 九大模块，Cordis 插件化）。",
+ "pushed_at": "2026-08-17T23:36:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-companion",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "companion",
+  "credentials",
+  "sessionQuery",
+  "settings",
+  "slots",
+  "storageDomain",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 4,
+  "api-docs.deepseek.com": 4,
+  "open.bigmodel.cn": 4,
+  "platform.kimi.com": 6,
+  "help.aliyun.com": 2,
+  "www.volcengine.com": 4,
+  "platform.minimaxi.com": 2,
+  "cloud.baidu.com": 2,
+  "bce.bdstatic.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/client/api.js:225",
+    "lib/core/crypto.js:49",
+    "lib/core/crypto.js:50",
+    "lib/core/crypto.js:59",
+    "lib/core/vault.js:69"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 143,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×10 src, e.g. lib/client/api.js:225, lib/core/crypto.js:49"
+  }
+ ],
+ "level": 3
+}

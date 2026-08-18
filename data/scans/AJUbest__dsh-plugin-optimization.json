@@ -1,0 +1,95 @@
+{
+ "repo": "AJUbest/dsh-plugin-optimization",
+ "stars": 1,
+ "description": "A DSH plugin that distinguishes official built-in DSH plugins and user custom plugins on the external interface.It can collect and manage all your previously created custom plugins 这是一个 DSH 插件管理插件，可在w",
+ "pushed_at": "2026-08-17T14:20:43Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-api-gateway"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-optimization",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "evil.example.com": 1,
+  "gitlab.com": 1
+ },
+ "env": {
+  "DSH_PLUGIN_OPT_PROFILE_DIR": 4,
+  "USERPROFILE": 1,
+  "LOCALAPPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:23",
+    "lib/index.js:824",
+    "lib/index.js:1218"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "test-deps.mjs:64",
+    "test-deps.mjs:70",
+    "test-deps.mjs:72",
+    "test-deps.mjs:74",
+    "test-deps.mjs:76"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:23, lib/index.js:824"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,112 @@
+{
+ "repo": "BillionSeniors/dsh-project-file-explorer",
+ "stars": 3,
+ "description": "DeepSeek Harness 项目文件浏览器插件：右侧停靠文件树 + 一键预览（代码/文本/图片/音视频/PDF），新增工作区自动停靠，窄屏响应式抽屉",
+ "pushed_at": "2026-08-15T14:25:56Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "slots",
+    "workspaces",
+    "layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@local/dsh-project-file-explorer",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "potrace",
+  "puppeteer-core",
+  "undici",
+  "@deepseek-ai/dsh-llm-deepseek",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "sharp"
+ ],
+ "install_scripts": {
+  "install": "node scripts/install.mjs"
+ },
+ "injects": [
+  "layout",
+  "llm",
+  "locale",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "oai.endpoints.kepler.ai.cloud.ovh.net": 5
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:4",
+    "scripts/install.mjs:25",
+    "scripts/install.mjs:25",
+    "scripts/install.mjs:86",
+    "scripts/patch-harness.mjs:24"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/install.mjs:22",
+    "scripts/install.mjs:74",
+    "scripts/patch-harness.mjs:21",
+    "scripts/patch-harness.mjs:62",
+    "vendor/dsh-vision-router/index.js:3200"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "install: node scripts/install.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. lib/index.js:4, scripts/install.mjs:25"
+  }
+ ],
+ "level": 2
+}

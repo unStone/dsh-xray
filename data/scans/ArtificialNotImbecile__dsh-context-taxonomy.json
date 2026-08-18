@@ -1,0 +1,112 @@
+{
+ "repo": "ArtificialNotImbecile/dsh-context-taxonomy",
+ "stars": 1,
+ "description": "Logical-call context taxonomy plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-14T04:07:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-gateway",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-context-taxonomy-workspace",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-gateway",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-retry",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "llm",
+  "locale",
+  "remote",
+  "sessionPersistence",
+  "sessions",
+  "slots",
+  "storageDomain"
+ ],
+ "hooks": [
+  "connection/reset",
+  "llm/stream",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 2,
+   "evidence": [
+    "packages/dsh-context-taxonomy/scripts/generate-typert.mjs:21",
+    "packages/dsh-context-taxonomy/scripts/generate-typert.mjs:35",
+    "packages/dsh-context-taxonomy/scripts/generate-typert.mjs:36",
+    "packages/dsh-context-taxonomy/scripts/generate-typert.mjs:37",
+    "packages/dsh-context-taxonomy/scripts/generate-typert.mjs:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

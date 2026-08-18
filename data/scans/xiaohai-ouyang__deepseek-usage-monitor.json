@@ -1,0 +1,76 @@
+{
+ "repo": "xiaohai-ouyang/deepseek-usage-monitor",
+ "stars": 1,
+ "description": "DSH 动态 Cordis 插件：DeepSeek API 余额与平台用量监控",
+ "pushed_at": "2026-08-15T02:44:02Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-usage-monitor",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "subprocess",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "platform.deepseek.com": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugin-host.js:104"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. plugin-host.js:104"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

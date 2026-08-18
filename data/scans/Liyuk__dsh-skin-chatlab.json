@@ -1,0 +1,102 @@
+{
+ "repo": "Liyuk/dsh-skin-chatlab",
+ "stars": 1,
+ "description": "Extensible chat-skin monorepo for the DeepSeek Harness Web GUI: a base registry + plug-in skin packages (Feishu-style chat bubbles), plug-and-play without touching chat logic.",
+ "pushed_at": "2026-08-17T17:56:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-skin-chatlab-monorepo",
+ "deps": [
+  "@liyuk/dsh-skin-chatlab-core",
+  "@liyuk/dsh-skin-feishu",
+  "@deepseek-ai/cordis",
+  "react",
+  "@deepseek-ai/cordis",
+  "@liyuk/dsh-skin-chatlab-core"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "chatlab",
+  "connection",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.dicebear.com": 4
+ },
+ "env": {
+  "DSH_WEB_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/publish.mjs:4",
+    "scripts/publish.mjs:4",
+    "scripts/publish.mjs:23"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/reload-host.mjs:13",
+    "scripts/reload-host.mjs:45",
+    "scripts/reload-host.mjs:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/publish.mjs:4, scripts/publish.mjs:4"
+  }
+ ],
+ "level": 3
+}

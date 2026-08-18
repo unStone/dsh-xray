@@ -1,0 +1,140 @@
+{
+ "repo": "acosmi/dsh-plugin",
+ "stars": 2,
+ "description": "Community plugin collection for DeepSeek Harness (DSH)",
+ "pushed_at": "2026-08-14T05:22:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-browser-automation",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-timer",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@dsh-browser-automation/dsh-browser",
+  "@deepseek-ai/schemastery",
+  "playwright-core",
+  "@deepseek-ai/cordis",
+  "@dsh-browser-automation/dsh-browser",
+  "@dsh-browser-automation/dsh-browser-playwright",
+  "@dsh-browser-automation/dsh-tool-browser",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@dsh-browser-automation/dsh-browser",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "browsers",
+  "commands",
+  "dreamReflectionStore",
+  "llm",
+  "sandbox",
+  "sandboxPolicy",
+  "sessionQuery",
+  "sessions",
+  "systemPrompt",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 14,
+ "domains": {},
+ "env": {
+  "DSH_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 28,
+   "evidence": [
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:13",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:13",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:28",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:189",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:273"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 43,
+   "evidence": [
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:14",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:14",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:95",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:101",
+    "plugins/dsh-browser-automation/scripts/acceptance.mjs:148"
+   ]
+  },
+  "dyn_import": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-browser-automation/scripts/exports-check.mjs:31",
+    "plugins/dsh-browser-automation/scripts/exports-check.mjs:37",
+    "plugins/dsh-browser-automation/scripts/exports-check.mjs:45",
+    "plugins/dsh-browser-automation/scripts/exports-check.mjs:51"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 95,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "sandbox, systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. plugins/dsh-browser-automation/scripts/acceptance.mjs:13, plugins/dsh-browser-automation/scripts/acceptance.mjs:13"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,118 @@
+{
+ "repo": "MariNanari/dsh-vulnsec-bridge",
+ "stars": 1,
+ "description": "dsh-vulnsec-bridge: VulnClaw + DeepSec bridge for DeepSeek Harness (dsh) — authorized pentest / Shield code audit tools + Web UI workbench (MIT)",
+ "pushed_at": "2026-08-17T19:05:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-vulnsec-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "subprocess",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "dispose",
+  "internal/plugin"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "your-authorized-domain.com": 2,
+  "api.openai.com": 2,
+  "api.anthropic.com": 2,
+  "api.deepseek.com": 2,
+  "open.bigmodel.cn": 2,
+  "api.moonshot.cn": 2,
+  "dashscope.aliyuncs.com": 2,
+  "api.siliconflow.cn": 2,
+  "data.jsdelivr.com": 1,
+  "cdn.jsdelivr.net": 2,
+  "www.python.org": 1
+ },
+ "env": {
+  "VULNSEC_VENV": 2,
+  "DSH_HOME": 2,
+  "VULNSEC_INSTALL_DEBUG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:49",
+    "scripts/install-cli.js:18",
+    "scripts/install-cli.js:18",
+    "scripts/install-cli.js:40",
+    "scripts/install-cli.js:69"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:869",
+    "lib/index.js:1051",
+    "lib/index.js:1079",
+    "scripts/install-cli.js:128",
+    "scripts/install-cli.js:147"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. lib/index.js:49, scripts/install-cli.js:18"
+  }
+ ],
+ "level": 3
+}

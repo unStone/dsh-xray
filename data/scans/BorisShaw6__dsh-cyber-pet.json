@@ -1,0 +1,129 @@
+{
+ "repo": "BorisShaw6/dsh-cyber-pet",
+ "stars": 2,
+ "description": "A “Cyber Whale” pet designed for DeepSeek Harness: a whale that hovers on the web page, can be fed, and changes color, providing real-time updates on token usage, limits, context usage, interaction co",
+ "pushed_at": "2026-08-15T12:13:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@borisshaw6/dsh-cyber-pet",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "react",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DEEPSEEK_API_KEY": 1,
+  "DEEPSEEK_BALANCE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "dsh-cyber-pet-bundle/scripts/build.mjs:24",
+    "dsh-cyber-pet-bundle/scripts/build.mjs:24",
+    "dsh-cyber-pet-bundle/scripts/build.mjs:147"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/patch-files.mjs:17",
+    "scripts/patch-files.mjs:29",
+    "dsh-cyber-pet-bundle/scripts/build.mjs:21",
+    "dsh-cyber-pet-bundle/scripts/build.mjs:21",
+    "dsh-cyber-pet-bundle/scripts/build.mjs:104"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. dsh-cyber-pet-bundle/scripts/build.mjs:24, dsh-cyber-pet-bundle/scripts/build.mjs:24"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

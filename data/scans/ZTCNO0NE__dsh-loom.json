@@ -1,0 +1,125 @@
+{
+ "repo": "ZTCNO0NE/dsh-loom",
+ "stars": 1,
+ "description": "Loom (织机) — external coach / second verifier for DeepSeek Harness: silently evolves your agent's tools, skills, config and model, with deterministic verification and cold-apply.",
+ "pushed_at": "2026-08-17T14:18:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-loom",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "invariants",
+  "llm",
+  "loader",
+  "sessions",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "llm/stream",
+  "session/event"
+ ],
+ "tool_regs": 48,
+ "domains": {
+  "api.github.com": 2,
+  "codeload.github.com": 2,
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DSH_META_VALIDATE_ROOT": 4,
+  "DSH_HOME": 8,
+  "DSH_CMD": 4,
+  "DSH_CWD": 2,
+  "DSH_META_BASE_URL": 2,
+  "DEEPSEEK_BASE_URL": 2,
+  "DSH_META_API_KEY": 2,
+  "DEEPSEEK_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 56,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-loom.mjs:8",
+    "bin/dsh-loom.mjs:57",
+    "scripts/contract-runner.mjs:9",
+    "scripts/contract-runner.mjs:9",
+    "scripts/contract-runner.mjs:80"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 102,
+   "dev": 20,
+   "evidence": [
+    "bin/dsh-loom.mjs:9",
+    "bin/dsh-loom.mjs:9",
+    "bin/dsh-loom.mjs:23",
+    "bin/dsh-loom.mjs:24",
+    "bin/dsh-loom.mjs:25"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 102,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×56 src, e.g. bin/dsh-loom.mjs:8, bin/dsh-loom.mjs:57"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, DSH_META_API_KEY"
+  }
+ ],
+ "level": 3
+}

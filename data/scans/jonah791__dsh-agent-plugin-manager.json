@@ -1,0 +1,100 @@
+{
+ "repo": "jonah791/dsh-agent-plugin-manager",
+ "stars": 1,
+ "description": "DSH self-built plugin",
+ "pushed_at": "2026-08-17T01:03:37Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-agent-plugin-manager",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-locale",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "remote",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "ready"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/profile.ts:8",
+    "src/profile.ts:217",
+    "src/profile.ts:232"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 24,
+   "evidence": [
+    "src/index.ts:12",
+    "src/index.ts:99",
+    "src/index.ts:246",
+    "src/index.ts:255",
+    "src/index.ts:263"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/profile.ts:8, src/profile.ts:217"
+  }
+ ],
+ "level": 2
+}

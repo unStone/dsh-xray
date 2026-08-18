@@ -1,0 +1,76 @@
+{
+ "repo": "Cavan-Ou/dsh-observation-journal",
+ "stars": 4,
+ "description": "Zero-touch runtime telemetry for DeepSeek Harness: every session writes its own report card (task/model/tools/failures/duration) into a human-readable journal. 纯观察者运行事实遥测。",
+ "pushed_at": "2026-08-14T19:07:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-observation-journal",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "dispose",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "OBS_FILE": 1,
+  "OBS_REPLAY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 22,
+   "evidence": [
+    "lib/index.js:34",
+    "lib/index.js:34",
+    "lib/index.js:34",
+    "lib/index.js:106",
+    "lib/index.js:111"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

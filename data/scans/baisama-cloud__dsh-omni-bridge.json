@@ -1,0 +1,99 @@
+{
+ "repo": "baisama-cloud/dsh-omni-bridge",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T15:02:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-omni-bridge",
+ "deps": [
+  "@larksuiteoapi/node-sdk"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sandboxPolicy",
+  "sessionPersistence",
+  "slots",
+  "subprocess",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 4,
+  "bots.qq.com": 2,
+  "api.sgroup.qq.com": 2,
+  "open.larksuite.com": 1,
+  "open.feishu.cn": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:55",
+    "lib/index.js:250",
+    "lib/index.js:299"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:16"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:55, lib/index.js:250"
+  }
+ ],
+ "level": 3
+}

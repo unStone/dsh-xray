@@ -1,0 +1,97 @@
+{
+ "repo": "Chhlafiu4312/promptwall",
+ "stars": 3,
+ "description": "Local prompt-injection and secret-exfiltration firewall for DeepSeek Harness.",
+ "pushed_at": "2026-08-17T00:16:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-promptwall",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "invariants",
+  "tools"
+ ],
+ "hooks": [
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_HARNESS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:40",
+    "scripts/extract-patch.mjs:116",
+    "scripts/extract-patch.mjs:117"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/extract-patch.mjs:107",
+    "scripts/extract-patch.mjs:115",
+    "scripts/update-snapshots.mjs:1",
+    "scripts/update-snapshots.mjs:12"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/extract-patch.mjs:30, scripts/extract-patch.mjs:30"
+  }
+ ],
+ "level": 3
+}

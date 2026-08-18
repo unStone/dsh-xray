@@ -1,0 +1,86 @@
+{
+ "repo": "lordqyxz/dsh-ark-quota",
+ "stars": 3,
+ "description": "火山方舟订阅套餐剩余额度 DSH 侧边栏小组件（宿主代理 GetCodingPlanUsage + 浏览器 widget + 免重启 cookie 刷新工具）",
+ "pushed_at": "2026-08-17T05:49:37Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-ark-quota",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ARK_AK": 1,
+  "ARK_SK": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/patch-settings-icon.mjs:20",
+    "tools/patch-settings-icon.mjs:20",
+    "tools/patch-settings-icon.mjs:87"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "tools/patch-settings-icon.mjs:16",
+    "tools/patch-settings-icon.mjs:16",
+    "tools/patch-settings-icon.mjs:63",
+    "tools/patch-settings-icon.mjs:64",
+    "tools/patch-settings-icon.mjs:84"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. tools/patch-settings-icon.mjs:20, tools/patch-settings-icon.mjs:20"
+  }
+ ],
+ "level": 2
+}

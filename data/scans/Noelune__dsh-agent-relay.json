@@ -1,0 +1,115 @@
+{
+ "repo": "Noelune/dsh-agent-relay",
+ "stars": 3,
+ "description": "Local multi-agent collaboration relay for DeepSeek Harness — HMAC-authenticated loopback message broker for dsh, Codex, Claude Code & Hermes.",
+ "pushed_at": "2026-08-16T00:58:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-agent-relay",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "systemPrompt",
+  "timer",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_RELAY_BROKER_URL": 1,
+  "CLAUDE_CMD": 1,
+  "CLAUDE_MODEL": 1,
+  "RELAY_WORKSPACE": 2,
+  "CODEX_CMD": 1,
+  "CODEX_SANDBOX": 1,
+  "CODEX_MODEL": 1,
+  "CODEX_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 32,
+   "evidence": [
+    "adapters/relay-agent.mjs:24",
+    "lib/index.js:31",
+    "lib/index.js:379",
+    "lib/memory-bridge.js:11",
+    "lib/workspace.js:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 11,
+   "evidence": [
+    "test-fixtures/plugin-harness-run.mjs:32",
+    "test-fixtures/relay-agent-run.mjs:26",
+    "broker/src/server.js:208"
+   ]
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 74,
+   "evidence": [
+    "lib/lease.js:15",
+    "lib/lease.js:80",
+    "lib/lease.js:84",
+    "lib/lease.js:106",
+    "lib/relay-plugin-core.js:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 56,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. adapters/relay-agent.mjs:24, lib/index.js:31"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. test-fixtures/plugin-harness-run.mjs:32, test-fixtures/relay-agent-run.mjs:26"
+  }
+ ],
+ "level": 3
+}

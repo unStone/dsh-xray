@@ -1,0 +1,135 @@
+{
+ "repo": "cogine-ai/dsh-claude-tui",
+ "stars": 7,
+ "description": "Claude-Code-Styled TUI for DeepSeek Harness",
+ "pushed_at": "2026-08-16T15:30:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-claude-tui",
+ "deps": [
+  "@aws-sdk/credential-provider-node",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-code-runtime-worker-thread",
+  "@deepseek-ai/dsh-tool-ask-user",
+  "@deepseek-ai/schemastery",
+  "@earendil-works/pi-tui",
+  "commander",
+  "semver",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "approval",
+  "claudeTuiStartup",
+  "cmdlineArgs",
+  "commands",
+  "credentials",
+  "llm",
+  "sessionQuery",
+  "sessions",
+  "settings",
+  "userQuestions"
+ ],
+ "hooks": [
+  "agent/status",
+  "approval/request",
+  "credentials/updated",
+  "llm/adapters-updated",
+  "session/event",
+  "settings/updated",
+  "subagent/end",
+  "subagent/start"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CLAUDE_CAPTURE_DEBUG": 2,
+  "DSH_HOME": 1,
+  "DSH_TOOLS_MODE": 1,
+  "DSH_CLAUDE_TUI_LAUNCH_NOTICE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 32,
+   "evidence": [
+    "scripts/capture-claude-reference.mjs:2",
+    "scripts/capture-claude-reference.mjs:2",
+    "scripts/capture-claude-reference.mjs:400",
+    "scripts/capture-claude-reference.mjs:495",
+    "src/cli.ts:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "scripts/mock-anthropic-reference.mjs:158",
+    "scripts/mock-anthropic-reference.mjs:228"
+   ]
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 58,
+   "evidence": [
+    "scripts/capture-claude-reference.mjs:232",
+    "scripts/capture-claude-reference.mjs:274",
+    "scripts/capture-claude-reference.mjs:514",
+    "src/managed-profile.ts:11",
+    "src/managed-profile.ts:13"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/capture-claude-reference.mjs:2, scripts/capture-claude-reference.mjs:2"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/mock-anthropic-reference.mjs:158, scripts/mock-anthropic-reference.mjs:228"
+  }
+ ],
+ "level": 3
+}

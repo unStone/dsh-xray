@@ -1,0 +1,131 @@
+{
+ "repo": "omdsh-dev/dsh-hub-workshop",
+ "stars": 4,
+ "description": "",
+ "pushed_at": "2026-08-18T07:11:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@omdsh/dsh-hub-workshop",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "avatars.githubusercontent.com": 2,
+  "spdx.org": 2,
+  "spdx.github.io": 2,
+  "hub.0.org.cn": 2,
+  "static.modelcontextprotocol.io": 4,
+  "hub.omdsh.dev": 3,
+  "api.github.com": 7,
+  "cloudflareinsights.com": 1,
+  "static.cloudflareinsights.com": 1
+ },
+ "env": {
+  "OMDSH_TOPIC_FETCH_TIMEOUT_MS": 1,
+  "OMDSH_TOPIC_AUDIT_CONCURRENCY": 1,
+  "GITHUB_OUTPUT": 18,
+  "GITHUB_TOKEN": 8,
+  "GITHUB_REPOSITORY": 3,
+  "AUTOMATION_BRANCH": 1,
+  "AUTOMATION_TITLE": 1,
+  "AUTOMATION_BODY": 1,
+  "AUTOMATION_BASE": 1,
+  "GITHUB_RUN_ID": 4,
+  "ISSUE_NUMBER": 1,
+  "INTAKE_KIND": 1,
+  "INTAKE_BRANCH": 1,
+  "INTAKE_RECORD_ID": 1,
+  "GITHUB_SERVER_URL": 1,
+  "LC_ALL": 2,
+  "GITHUB_EVENT_PATH": 2,
+  "OMDSH_REGISTRY_SIGNING_KEY_ID": 1,
+  "OMDSH_REGISTRY_SIGNING_KEY_B64": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 2,
+   "evidence": [
+    "scripts/checkout-intake-source.mjs:3",
+    "scripts/harness-adapters.mjs:1",
+    "scripts/harness-adapters.mjs:54",
+    "scripts/harness-adapters.mjs:396",
+    "scripts/prepare-real-project-plans.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/registry-signing-lib.mjs:24",
+    "scripts/sign-registry.mjs:18"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/harness-adapters.mjs:184",
+    "scripts/harness-adapters.mjs:186",
+    "scripts/harness-adapters.mjs:193",
+    "scripts/harness-adapters.mjs:195"
+   ]
+  },
+  "fs_write": {
+   "src": 65,
+   "dev": 21,
+   "evidence": [
+    "scripts/apply-topic-plugin-audit.mjs:279",
+    "scripts/apply-topic-plugin-audit.mjs:280",
+    "scripts/approve-distribution.mjs:54",
+    "scripts/approve-distribution.mjs:55",
+    "scripts/approve-release.mjs:81"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/loader-adapter-lib.mjs:69"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 102,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/checkout-intake-source.mjs:3, scripts/harness-adapters.mjs:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. scripts/registry-signing-lib.mjs:24, scripts/sign-registry.mjs:18"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. scripts/harness-adapters.mjs:184, scripts/harness-adapters.mjs:186"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN, OMDSH_REGISTRY_SIGNING_KEY_B64, OMDSH_REGISTRY_SIGNING_KEY_ID"
+  }
+ ],
+ "level": 3
+}

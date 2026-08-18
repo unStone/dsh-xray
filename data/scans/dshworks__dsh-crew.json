@@ -1,0 +1,99 @@
+{
+ "repo": "dshworks/dsh-crew",
+ "stars": 1,
+ "description": "Watch Claude Code and Codex work inside dsh: each gets a real terminal pane in your session's workspace that you can type into, plus five tools so the dsh agent seats them, hands them work, and reads ",
+ "pushed_at": "2026-08-17T08:24:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dshworks/dsh-crew",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@xterm/headless",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "bellard.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:160",
+    "lib/panes.js:192",
+    "lib/tools.js:318"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:22",
+    "scripts/build-client.mjs:89"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:160, lib/panes.js:192"
+  }
+ ],
+ "level": 3
+}

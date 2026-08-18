@@ -1,0 +1,88 @@
+{
+ "repo": "121103qwq/dsh-vision-sidecar",
+ "stars": 5,
+ "description": "Hosted free vision sidecar for DeepSeek Harness with durable session evidence",
+ "pushed_at": "2026-08-14T11:49:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-vision-sidecar",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "credentials",
+  "llm",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.llm7.io": 2
+ },
+ "env": {
+  "npm_execpath": 1,
+  "DSH_SMOKE_ENTRY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-install.mjs:1",
+    "scripts/smoke-install.mjs:1",
+    "scripts/smoke-install.mjs:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/smoke-install.mjs:1, scripts/smoke-install.mjs:1"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,101 @@
+{
+ "repo": "SingleOne/dsh-notify-center",
+ "stars": 1,
+ "description": "Native desktop and webhook notifications for DeepSeek Harness.",
+ "pushed_at": "2026-08-16T16:41:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-notify-center",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-user-approval",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dist/local.js:1",
+    "dist/local.js:166",
+    "src/local.ts:1",
+    "src/local.ts:191"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/settings-store.js:308",
+    "src/settings-store.ts:360"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 52,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dist/local.js:1, dist/local.js:166"
+  }
+ ],
+ "level": 3
+}

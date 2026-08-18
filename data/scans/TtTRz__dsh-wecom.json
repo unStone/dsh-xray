@@ -1,0 +1,103 @@
+{
+ "repo": "TtTRz/dsh-wecom",
+ "stars": 3,
+ "description": "WeCom AI Bot channel for DeepSeek Harness — every chat runs a persistent, preset-backed agent with real tools.",
+ "pushed_at": "2026-08-18T07:20:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": []
+  }
+ },
+ "pkg_name": "dsh-wecom",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@wecom/aibot-node-sdk",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-system-prompt",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "attachments",
+  "credentials",
+  "llm",
+  "sessionPersistence",
+  "slots",
+  "timer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_WECOM_CWD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 4,
+   "evidence": [
+    "scripts/wrap-client.mjs:1",
+    "scripts/wrap-client.mjs:35",
+    "src/media.ts:1",
+    "src/media.ts:53",
+    "src/pool.ts:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

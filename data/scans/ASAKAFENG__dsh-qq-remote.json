@@ -1,0 +1,96 @@
+{
+ "repo": "ASAKAFENG/dsh-qq-remote",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T13:41:59Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": true,
+  "kind": "server",
+  "client": {
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-qq-remote",
+ "deps": [
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "util.js:5",
+    "util.js:146",
+    "util.js:172",
+    "util.js:201",
+    "lib/util.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 1,
+   "evidence": [
+    "chat.js:38",
+    "chat.js:91",
+    "panel.js:311",
+    "panel.js:350",
+    "lib/chat.js:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. util.js:5, util.js:146"
+  }
+ ],
+ "level": 3
+}

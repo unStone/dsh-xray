@@ -1,0 +1,79 @@
+{
+ "repo": "shujiTech/dsh-plugin-wepre",
+ "stars": 1,
+ "description": "DeepSeek Harness plugin: publish single-screen content cards to WePre Next from a dsh agent session",
+ "pushed_at": "2026-08-13T15:16:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-wepre",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "wepre.cn": 2
+ },
+ "env": {
+  "WEPRE_PUBLISH_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 8,
+   "evidence": [
+    "index.js:126"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WEPRE_PUBLISH_TOKEN"
+  }
+ ],
+ "level": 3
+}

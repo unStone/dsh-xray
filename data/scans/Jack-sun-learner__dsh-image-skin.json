@@ -1,0 +1,85 @@
+{
+ "repo": "Jack-sun-learner/dsh-image-skin",
+ "stars": 1,
+ "description": "DSH 图片皮肤插件：导入 PNG/JPG/WebP 自动生成主题配色，可选 Q 版宠物（程序化/AI 生图）",
+ "pushed_at": "2026-08-17T15:07:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-image-skin",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "tools/execute"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.minimaxi.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/host.js:13",
+    "lib/host.js:203"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/host.js:14",
+    "lib/host.js:194",
+    "lib/host.js:209"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/host.js:13, lib/host.js:203"
+  }
+ ],
+ "level": 3
+}

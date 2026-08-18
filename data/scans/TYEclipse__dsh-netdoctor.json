@@ -1,0 +1,80 @@
+{
+ "repo": "TYEclipse/dsh-netdoctor",
+ "stars": 1,
+ "description": "Network diagnostics toolbox for DeepSeek Harness (dsh): DNS lookup, ICMP ping, TCP port check, TLS cert check, traceroute, public IP — six read-only probes, zero runtime dependencies",
+ "pushed_at": "2026-08-15T17:57:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-netdoctor",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created"
+ ],
+ "tool_regs": 14,
+ "domains": {
+  "ip-api.com": 2,
+  "api.ipify.org": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dist/util.js:10",
+    "dist/util.js:51",
+    "src/util.ts:11",
+    "src/util.ts:63"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dist/util.js:10, dist/util.js:51"
+  }
+ ],
+ "level": 3
+}

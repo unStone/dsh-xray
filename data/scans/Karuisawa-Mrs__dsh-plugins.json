@@ -1,0 +1,83 @@
+{
+ "repo": "Karuisawa-Mrs/dsh-plugins",
+ "stars": 1,
+ "description": "Community plugins for DeepSeek Harness (DSH)",
+ "pushed_at": "2026-08-13T21:01:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-plugs-dev/dsh-web-search-firecrawl",
+ "deps": [
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "push-tmp.mjs:18",
+    "push-tmp.mjs:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. push-tmp.mjs:18, push-tmp.mjs:18"
+  }
+ ],
+ "level": 3
+}

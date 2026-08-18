@@ -1,0 +1,116 @@
+{
+ "repo": "zhxqc/dsh-oh-my-theme",
+ "stars": 4,
+ "description": "DeepSeek Harness (dsh) web plugin with themes, global typography, @file mentions, project file tree, and Markdown preview.",
+ "pushed_at": "2026-08-17T01:58:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-oh-my-theme",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-connection"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "inputTriggers",
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "theme",
+  "typert",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "connection/reset",
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:26"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 16,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:26"
+  }
+ ],
+ "level": 3
+}

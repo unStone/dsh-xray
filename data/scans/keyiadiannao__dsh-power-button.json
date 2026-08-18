@@ -1,0 +1,108 @@
+{
+ "repo": "keyiadiannao/dsh-power-button",
+ "stars": 1,
+ "description": "Self-contained power control for DeepSeek Harness: sidebar power button with upward restart/shutdown menu, Windows-shutdown-style overlay, own restart & shutdown engine (no dependency on other plugins",
+ "pushed_at": "2026-08-16T06:05:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-power-button",
+ "deps": [
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "locale",
+  "sessions",
+  "settings",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "command/executed"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:268",
+    "lib/index.js:363",
+    "lib/index.js:373",
+    "lib/index.js:412"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:118",
+    "lib/index.js:132",
+    "lib/index.js:137",
+    "lib/index.js:175",
+    "lib/index.js:178"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. lib/index.js:2, lib/index.js:268"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,102 @@
+{
+ "repo": "ivorytower1026/dsh-im-bot",
+ "stars": 2,
+ "description": "dsh-plugin: Connect WeChat & Feishu to DeepSeek Harness (dsh) — scan-code bot login, project selection, and full agent tooling right in your IM chat. 手机扫码把微信/飞书接入 deepseek-harness，IM里直接选项目、对话智能体。",
+ "pushed_at": "2026-08-15T14:31:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-extra/im-channel",
+ "deps": [
+  "@larksuiteoapi/node-sdk",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "qrcode-generator",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "agent/inbox/claimed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 4
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "install.mjs:10",
+    "install.mjs:10",
+    "install.mjs:57"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 19,
+   "dev": 0,
+   "evidence": [
+    "install.mjs:11",
+    "install.mjs:49",
+    "install.mjs:53",
+    "ui-settings-im/scripts/gen-marks.mjs:3",
+    "ui-settings-im/scripts/gen-marks.mjs:54"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 49,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. install.mjs:10, install.mjs:10"
+  }
+ ],
+ "level": 3
+}

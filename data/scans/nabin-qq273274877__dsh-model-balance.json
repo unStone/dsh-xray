@@ -1,0 +1,113 @@
+{
+ "repo": "nabin-qq273274877/dsh-model-balance",
+ "stars": 3,
+ "description": "为 DeepSeek Harness Web GUI 提供多供应商真实账户余额显示",
+ "pushed_at": "2026-08-16T07:58:47Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": {
+   "schemaVersion": 1,
+   "displayName": {
+    "zh-CN": "模型余额",
+    "en": "Model Balance"
+   },
+   "summary": {
+    "zh-CN": "在模型选择器前显示多供应商真实账户余额与配额",
+    "en": "Show real multi-provider account balance and quota in front of the model selector"
+   },
+   "category": "balance"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-model-selection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-model-balance",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "modelDirectories",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2,
+  "api.stepfun.com": 2,
+  "api.kimi.com": 2,
+  "openrouter.ai": 2,
+  "api.minimax.chat": 2,
+  "api.x.ai": 2,
+  "bailian.console.aliyun.com": 8,
+  "platform.xiaomimimo.com": 4
+ },
+ "env": {
+  "DSH_MODEL_BALANCE_CONFIG": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:57",
+    "src/host/custom-providers.ts:180"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.ts:14",
+    "scripts/build.ts:76",
+    "scripts/build.ts:120",
+    "scripts/build.ts:121"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/index.js:57, src/host/custom-providers.ts:180"
+  }
+ ],
+ "level": 3
+}

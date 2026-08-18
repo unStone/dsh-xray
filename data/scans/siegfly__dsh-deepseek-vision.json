@@ -1,0 +1,123 @@
+{
+ "repo": "siegfly/dsh-deepseek-vision",
+ "stars": 6,
+ "description": "Vision-language gateway plugin for DeepSeek Harness - paste an image, DeepSeek sees text",
+ "pushed_at": "2026-08-17T17:44:31Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-deepseek-vision",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-deepseek",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "connection",
+  "llm",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "dashscope.aliyuncs.com": 2
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_CHECKOUT": 1,
+  "DSH_VL_GATEWAY_FORCE": 1,
+  "DSH_VL_GATEWAY_STRICT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 4,
+   "evidence": [
+    "scripts/install-profile.mjs:27",
+    "scripts/install-profile.mjs:27",
+    "scripts/install-profile.mjs:27",
+    "scripts/install-profile.mjs:51",
+    "scripts/install-profile.mjs:57"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 12,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 31,
+   "evidence": [
+    "scripts/harness-paths.mjs:22",
+    "scripts/harness-paths.mjs:181",
+    "scripts/harness-paths.mjs:230",
+    "scripts/install-profile.mjs:28",
+    "scripts/install-profile.mjs:97"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 50,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/install-profile.mjs:27, scripts/install-profile.mjs:27"
+  }
+ ],
+ "level": 3
+}

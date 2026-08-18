@@ -1,0 +1,102 @@
+{
+ "repo": "kexuejin/dsh-zhihu-dashboard",
+ "stars": 1,
+ "description": "Zhihu (知乎) dashboard for DeepSeek Harness: hot list with trends, follow feed, post tracking, and app-idea distillation — UI + native agent tools",
+ "pushed_at": "2026-08-18T02:38:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-zhihu-dashboard",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "slots",
+  "tools",
+  "webRuntime",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "www.zhihu.com": 3,
+  "developer.zhihu.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "ZHIHU_CLI_HOME": 2,
+  "XDG_DATA_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:9",
+    "lib/tools.js:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:10",
+    "lib/index.js:10",
+    "lib/index.js:50",
+    "lib/index.js:330"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:9, lib/tools.js:8"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,100 @@
+{
+ "repo": "morluto/smokinggun",
+ "stars": 3,
+ "description": "Help your agents find the smoking gun they're looking for. Optimization evidence for agents: find complexity hotspots.",
+ "pushed_at": "2026-08-17T06:23:18Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "smokinggun",
+ "deps": [
+  "@bufbuild/protobuf",
+  "@oclif/core",
+  "@scip-code/scip",
+  "csv-parse",
+  "execa",
+  "pprof-format",
+  "typescript",
+  "web-tree-sitter",
+  "zod"
+ ],
+ "install_scripts": {
+  "prepare": "simple-git-hooks"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "json.schemastore.org": 4
+ },
+ "env": {
+  "SMOKINGGUN_TRACE_PROCESSOR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 26,
+   "dev": 5,
+   "evidence": [
+    "scripts/cli-smoke.mjs:1",
+    "scripts/cli-smoke.mjs:689",
+    "scripts/package-e2e.mjs:1",
+    "scripts/package-e2e.mjs:202",
+    "scripts/verify-release.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/adapters/subprocess.ts:196"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/package-e2e.mjs:224",
+    "scripts/package-e2e.mjs:227"
+   ]
+  },
+  "fs_write": {
+   "src": 26,
+   "dev": 63,
+   "evidence": [
+    "scripts/cli-smoke.mjs:105",
+    "scripts/cli-smoke.mjs:216",
+    "scripts/cli-smoke.mjs:277",
+    "scripts/cli-smoke.mjs:278",
+    "scripts/cli-smoke.mjs:300"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 88,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×26 src, e.g. scripts/cli-smoke.mjs:1, scripts/cli-smoke.mjs:689"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/adapters/subprocess.ts:196"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/package-e2e.mjs:224, scripts/package-e2e.mjs:227"
+  }
+ ],
+ "level": 2
+}

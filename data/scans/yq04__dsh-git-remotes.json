@@ -1,0 +1,98 @@
+{
+ "repo": "yq04/dsh-git-remotes",
+ "stars": 2,
+ "description": "DSH web plugin: better-sidebar Git Remotes tab for fetch / ff-only pull / confirmed push",
+ "pushed_at": "2026-08-15T08:35:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-git-remotes",
+ "deps": [
+  "dsh-better-sidebar",
+  "cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "betterSidebar",
+  "loader",
+  "sessions",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HARNESS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 2,
+   "evidence": [
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:40",
+    "scripts/extract-patch.mjs:116",
+    "scripts/extract-patch.mjs:117"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "scripts/extract-patch.mjs:107",
+    "scripts/extract-patch.mjs:115",
+    "scripts/prepare.mjs:1",
+    "scripts/prepare.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/extract-patch.mjs:30, scripts/extract-patch.mjs:30"
+  }
+ ],
+ "level": 3
+}

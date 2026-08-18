@@ -1,0 +1,91 @@
+{
+ "repo": "labmimors/dsh-mcp-lens",
+ "stars": 5,
+ "description": "DeepSeek Harness MCP tool search for large catalogs: 1,000 MCP tools behind 2 MCP-facing schemas, exact-schema calls, allow/deny controls, and a local calculator.",
+ "pushed_at": "2026-08-16T02:15:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-mcp-lens",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@modelcontextprotocol/sdk",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 18,
+ "domains": {
+  "labmimors.github.io": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 2,
+   "evidence": [
+    "benchmark/search-cache.ts:1",
+    "benchmark/search-cache.ts:1",
+    "benchmark/search-cache.ts:376",
+    "scripts/run-bench.mjs:3",
+    "scripts/run-bench.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 20,
+   "evidence": [
+    "action/index.js:1",
+    "action/index.js:196",
+    "action/index.js:201",
+    "benchmark/run.ts:662",
+    "benchmark/search-cache.ts:399"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. benchmark/search-cache.ts:1, benchmark/search-cache.ts:1"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,130 @@
+{
+ "repo": "stoneface10/dsh-codex-connect-plus",
+ "stars": 1,
+ "description": "Use your ChatGPT subscription in DeepSeek Harness to access Codex models and generate or edit images with gpt-image-2—no OpenAI Platform API key required.",
+ "pushed_at": "2026-08-18T07:59:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-attachment",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-codex-connect-plus",
+ "deps": [
+  "@earendil-works/pi-ai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-pi-ai",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "chatgpt.com": 8,
+  "api.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/bin.js:4",
+    "lib/bin.js:25",
+    "scripts/check-pack.mjs:4",
+    "scripts/check-pack.mjs:4",
+    "scripts/check-pack.mjs:37"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/src-DS6MrM28.js:1287",
+    "src/images/protocol.ts:234"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "lib/src-DS6MrM28.js:1391",
+    "src/images/tools.ts:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 60,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. lib/bin.js:4, lib/bin.js:25"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/src-DS6MrM28.js:1287, src/images/protocol.ts:234"
+  }
+ ],
+ "level": 3
+}

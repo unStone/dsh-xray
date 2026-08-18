@@ -1,0 +1,90 @@
+{
+ "repo": "jiezeng2004-design/dsh-requirements-alignment",
+ "stars": 5,
+ "description": "Lightweight requirement alignment for DeepSeek Harness — align important decisions before execution without a full spec workflow.",
+ "pushed_at": "2026-08-16T15:36:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-requirements-alignment",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tool-ask-user",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-agent"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools",
+  "userQuestions"
+ ],
+ "hooks": [
+  "agent/session-start",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 10,
+   "evidence": [
+    "src/align-driver.ts:11",
+    "src/align-driver.ts:98",
+    "src/scripted-provider.ts:12",
+    "src/scripted-provider.ts:67"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,125 @@
+{
+ "repo": "coderPerseus/dsh-hub",
+ "stars": 3,
+ "description": "Discover The Best DSH plugins",
+ "pushed_at": "2026-08-18T07:57:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dshhub",
+ "deps": [
+  "@dshhub/catalog",
+  "@dshhub/contracts",
+  "@orpc/server",
+  "hono",
+  "zod",
+  "@dshhub/contracts",
+  "@orpc/client",
+  "@orpc/contract",
+  "next",
+  "react",
+  "react-dom",
+  "react-markdown",
+  "remark-gfm",
+  "zod",
+  "@dshhubs/client",
+  "@dshhub/catalog",
+  "@orpc/contract",
+  "zod",
+  "@dshhubs/client",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {
+  "api.github.com": 1,
+  "dshhub.org": 5,
+  "www.deepseek.com": 1,
+  "deepseek-harness.github.io": 1,
+  "schema.org": 1
+ },
+ "env": {
+  "CATALOG_FORCE_FULL": 1,
+  "CATALOG_API_URL": 1,
+  "CATALOG_INGEST_TOKEN": 1,
+  "GITHUB_REPOSITORY": 1,
+  "CATALOG_SOURCE_COMMIT": 1,
+  "GITHUB_SHA": 1,
+  "CATALOG_MODE": 2,
+  "CATALOG_DISCOVERY_SINCE": 1,
+  "CATALOG_REPOSITORY": 1,
+  "CATALOG_MIN_PLUGIN_COUNT": 1,
+  "GITHUB_TOKEN": 1,
+  "NEW_API_MODEL": 1,
+  "DSHHUB_API_URL": 4,
+  "API_URL": 2,
+  "NEXT_PUBLIC_SITE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "apps/api/src/catalog-store.ts:41",
+    "apps/web/src/lib/catalog-href.ts:32"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-catalog.ts:74",
+    "scripts/build-catalog.ts:80",
+    "scripts/translate-catalog.ts:2",
+    "scripts/translate-catalog.ts:88"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 78,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. apps/api/src/catalog-store.ts:41, apps/web/src/lib/catalog-href.ts:32"
+  },
+  {
+   "id": "token_env",
+   "evidence": "CATALOG_INGEST_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

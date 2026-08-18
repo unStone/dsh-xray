@@ -1,0 +1,90 @@
+{
+ "repo": "wuwuzhige-sudo/dsh-terminal-panel",
+ "stars": 3,
+ "description": "A manual Terminal tab for the DeepSeek Harness (dsh) web UI — run commands on the host machine, persistent cwd, sudo password prompt, command history.现在可以在web界面内直接执行命令行了",
+ "pushed_at": "2026-08-16T13:10:33Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-terminal-panel",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sandboxPolicy",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:9",
+    "lib/index.js:32",
+    "lib/index.js:32",
+    "lib/index.js:80",
+    "lib/index.js:91"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:514",
+    "lib/index.js:787"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:33",
+    "lib/index.js:33",
+    "lib/index.js:169",
+    "lib/index.js:269",
+    "lib/index.js:276"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:9, lib/index.js:32"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/client.js:514, lib/index.js:787"
+  }
+ ],
+ "level": 2
+}

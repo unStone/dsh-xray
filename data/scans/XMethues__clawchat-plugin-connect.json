@@ -1,0 +1,109 @@
+{
+ "repo": "XMethues/clawchat-plugin-connect",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-06T05:54:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@clawling/clawchat-plugin-connect",
+ "deps": [
+  "@agentclientprotocol/sdk",
+  "@astryxdesign/core",
+  "@astryxdesign/theme-neutral",
+  "@opencode-ai/sdk",
+  "@tanstack/react-query",
+  "@tanstack/react-router",
+  "@tanstack/react-virtual",
+  "cac",
+  "lucide-react",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "postinstall": "bun scripts/postinstall.ts"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "app.clawling.com": 2,
+  "media.clawling.chat": 1,
+  "www.apple.com": 1,
+  "api-liveware.clawling.io": 1,
+  "tunnel-liveware.clawling.io": 1
+ },
+ "env": {
+  "CLAWCHAT_CONNECT_CONFIG": 1,
+  "CLAWCHAT_CONNECT_STATE_DB": 1,
+  "CODEX_HOME": 1,
+  "CLAWCHAT_CONNECT_AGENT_ID": 2,
+  "CLAWCHAT_CONNECT_LIVEWARE_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 20,
+   "dev": 17,
+   "evidence": [
+    "scripts/build-binary.ts:19",
+    "scripts/build-release.ts:234",
+    "scripts/copy-liveware-host.ts:11",
+    "scripts/postinstall.ts:8",
+    "scripts/release-beta.ts:367"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "src/runtime/opencode-adapter.ts:76",
+    "src/runtime/opencode-server.ts:334",
+    "src/runtime/opencode-server.ts:337"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 45,
+   "evidence": [
+    "scripts/build-release.ts:173",
+    "src/config.ts:130",
+    "src/agent/skills.ts:39",
+    "src/agent/skills.ts:81",
+    "src/service/background-service.ts:378"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 210,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: bun scripts/postinstall.ts"
+  },
+  {
+   "id": "exec",
+   "evidence": "×20 src, e.g. scripts/build-binary.ts:19, scripts/build-release.ts:234"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. src/runtime/opencode-adapter.ts:76, src/runtime/opencode-server.ts:334"
+  }
+ ],
+ "level": 2
+}

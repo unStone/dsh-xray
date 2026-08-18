@@ -1,0 +1,120 @@
+{
+ "repo": "muvuula/DeepSeek-Harness-Core",
+ "stars": 2,
+ "description": "DeepSeek Harness Core (DHC) · AI 人格核心进化插件 / AI personality core evolution plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-15T20:19:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "immediately": true,
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dshcore",
+ "deps": [
+  "@liustack/modlens",
+  "@omdsh-dev/dsh-genui",
+  "@dsh-external/dsh-automation",
+  "dsh-at-file",
+  "dsh-better-sidebar"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "llm",
+  "sandboxPolicy",
+  "shell",
+  "slots",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream",
+  "session/event"
+ ],
+ "tool_regs": 21,
+ "domains": {
+  "www.skillhub.cn": 12,
+  "dashscope.aliyuncs.com": 2
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "DSHCORE_PET_LAUNCHER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "release-check.mjs:7",
+    "release-check.mjs:7",
+    "release-check.mjs:20",
+    "release-check.mjs:39",
+    "release-check.mjs:65"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 19,
+   "dev": 0,
+   "evidence": [
+    "build-client.mjs:16",
+    "build-client.mjs:29",
+    "dsh/index.mjs:1",
+    "dsh/index.mjs:1",
+    "dsh/index.mjs:257"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. release-check.mjs:7, release-check.mjs:7"
+  }
+ ],
+ "level": 3
+}

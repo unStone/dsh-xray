@@ -1,0 +1,89 @@
+{
+ "repo": "TIZ36/evo-memory",
+ "stars": 1,
+ "description": "agent memory plugin based on CLP",
+ "pushed_at": "2026-08-17T07:21:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "evo-memory",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "evoMemory",
+  "llm",
+  "slots",
+  "systemPrompt"
+ ],
+ "hooks": [
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 26,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

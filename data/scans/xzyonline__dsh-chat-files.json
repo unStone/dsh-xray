@@ -1,0 +1,112 @@
+{
+ "repo": "xzyonline/dsh-chat-files",
+ "stars": 2,
+ "description": "Session-bound file attachments for DeepSeek Harness: drag, paste, or select files into the chat; the agent reads them via bounded, session-authorized tools. GB18030/GBK decoding, secret redaction, zip",
+ "pushed_at": "2026-08-17T13:40:14Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-file-attachments",
+ "deps": [
+  "@keep-lts/xlsx",
+  "cfb",
+  "fflate",
+  "file-type",
+  "pdfjs-dist",
+  "react",
+  "word-extractor",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionQuery",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_SMOKE_FILE": 1,
+  "DSH_SMOKE_ORIGIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 1,
+   "evidence": [
+    "scripts/build-client.mjs:1",
+    "scripts/install.mjs:22",
+    "scripts/install.mjs:22",
+    "scripts/install.mjs:57",
+    "scripts/install.mjs:58"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 12,
+   "evidence": [
+    "scripts/build-client.mjs:33",
+    "scripts/install-local.mjs:1",
+    "scripts/install-local.mjs:36",
+    "scripts/install-local.mjs:47",
+    "scripts/install.mjs:116"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 63,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/build-client.mjs:1, scripts/install.mjs:22"
+  }
+ ],
+ "level": 3
+}

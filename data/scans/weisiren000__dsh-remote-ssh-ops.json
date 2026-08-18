@@ -1,0 +1,113 @@
+{
+ "repo": "weisiren000/dsh-remote-ssh-ops",
+ "stars": 1,
+ "description": "DeepSeek Harness SSH 远程运维插件，支持远程命令、文件管理、JumpServer 与 keyboard-interactive 认证",
+ "pushed_at": "2026-08-17T11:47:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-remote-ssh-ops",
+ "deps": [
+  "ssh2",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "src/executor.js:1",
+    "src/executor.js:24",
+    "src/executor.js:46"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.js:23",
+    "src/plugin/client.js:2"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 26,
+   "evidence": [
+    "scripts/build-client.js:24",
+    "src/controller/data-dir-lock.js:47",
+    "src/controller/job-log-store.js:1",
+    "src/controller/job-log-store.js:29",
+    "src/controller/job-log-store.js:129"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 68,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/executor.js:1, src/executor.js:24"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. scripts/build-client.js:23, src/plugin/client.js:2"
+  }
+ ],
+ "level": 3
+}

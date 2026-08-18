@@ -1,0 +1,111 @@
+{
+ "repo": "zp-home/dsh-dev-sandbox",
+ "stars": 2,
+ "description": "DSH plugin developer sandbox: spawn isolated DeepSeek Harness web mirror instances (own DSH_HOME/port/profile) that mount the plugin under development, with optional host API/model inheritance. GUI pa",
+ "pushed_at": "2026-08-18T04:47:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@zp-home/dsh-dev-sandbox",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:5",
+    "lib/index.js:5",
+    "lib/index.js:358",
+    "lib/index.js:376",
+    "lib/index.js:506"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:143",
+    "src/manager.ts:171"
+   ]
+  },
+  "fs_write": {
+   "src": 28,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:7",
+    "lib/index.js:7",
+    "lib/index.js:7",
+    "lib/index.js:425",
+    "lib/index.js:434"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. lib/index.js:5, lib/index.js:5"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:143, src/manager.ts:171"
+  }
+ ],
+ "level": 3
+}

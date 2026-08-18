@@ -1,0 +1,111 @@
+{
+ "repo": "nanami-0713/dsh-remote-public",
+ "stars": 1,
+ "description": "DSH-Remote 公开脱敏镜像：基于 DeepSeek Harness 的手机远程控制客户端",
+ "pushed_at": "2026-08-17T12:16:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-remote",
+ "deps": [
+  "qrcode",
+  "ws",
+  "@deepseek-ai/cordis",
+  "qrcode",
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "BRIDGE_CONFIG": 3,
+  "BRIDGE_TOKEN": 1,
+  "BRIDGE_PORT": 1,
+  "BRIDGE_HOST": 1,
+  "DSH_BASE_URL": 1,
+  "BRIDGE_DEVICES_FILE": 1,
+  "BRIDGE_WEB_ROOT": 1,
+  "BRIDGE_NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "index.js:1",
+    "index.js:149",
+    "bridge/test_notify.mjs:5",
+    "bridge/test_notify.mjs:41"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bridge/server.js:376"
+   ]
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "index.js:3",
+    "index.js:83",
+    "bridge/test_notify.mjs:6",
+    "bridge/test_notify.mjs:6",
+    "bridge/test_notify.mjs:22"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. index.js:1, index.js:149"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. bridge/server.js:376"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BRIDGE_TOKEN"
+  }
+ ],
+ "level": 3
+}

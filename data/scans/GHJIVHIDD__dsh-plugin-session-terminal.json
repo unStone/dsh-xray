@@ -1,0 +1,79 @@
+{
+ "repo": "GHJIVHIDD/dsh-plugin-session-terminal",
+ "stars": 1,
+ "description": "DeepSeek Harness 的会话终端观察插件：在会话视图环提供「终端」页签，只读实时展示当前会话 bash 命令、状态、输出与耗时，纯前端无执行/交互能力。",
+ "pushed_at": "2026-08-15T15:19:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh-plugin-session-terminal/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-plugin-session-terminal",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node ./scripts/prepare.mjs"
+ },
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:4",
+    "scripts/prepare.mjs:20",
+    "dsh-plugin-session-terminal/scripts/prepare.mjs:3",
+    "dsh-plugin-session-terminal/scripts/prepare.mjs:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh-plugin-session-terminal/cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

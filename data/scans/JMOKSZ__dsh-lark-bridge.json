@@ -1,0 +1,104 @@
+{
+ "repo": "JMOKSZ/dsh-lark-bridge",
+ "stars": 4,
+ "description": "Feishu (Lark) entry point for DeepSeek Harness: drive dsh agents from a Feishu bot with streaming cards, ask/approval buttons and attachments.",
+ "pushed_at": "2026-08-17T08:46:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@jmoksz/lark-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/schemastery",
+  "@larksuiteoapi/node-sdk"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "sessions"
+ ],
+ "hooks": [
+  "approval/request",
+  "dispose"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "LARK_APP_ID": 1,
+  "LARK_APP_SECRET": 1,
+  "LARK_WORKSPACE": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:511"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:456"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 4,
+   "evidence": [
+    "lib/index.js:24",
+    "lib/index.js:24",
+    "lib/index.js:521",
+    "lib/index.js:646",
+    "lib/index.js:1009"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:511"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/index.js:456"
+  },
+  {
+   "id": "token_env",
+   "evidence": "LARK_APP_SECRET"
+  }
+ ],
+ "level": 3
+}

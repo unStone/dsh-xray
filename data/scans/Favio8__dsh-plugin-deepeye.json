@@ -1,0 +1,107 @@
+{
+ "repo": "Favio8/dsh-plugin-deepeye",
+ "stars": 4,
+ "description": "DeepEye vision plugin for DeepSeek Harness (DSH): image description, OCR, VQA, UI layout, and clipboard analysis.",
+ "pushed_at": "2026-08-17T02:12:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-deepeye",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "sharp",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "attachments",
+  "llm",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 10,
+ "domains": {
+  "generativelanguage.googleapis.com": 1,
+  "api.openai.com": 1
+ },
+ "env": {
+  "OPENAI_API_KEY": 1,
+  "GEMINI_API_KEY": 1,
+  "DEEPEYE_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:11",
+    "src/index.ts:461",
+    "src/index.ts:470"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/image-utils.ts:235"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/index.ts:11, src/index.ts:461"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/image-utils.ts:235"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPEYE_API_KEY, GEMINI_API_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

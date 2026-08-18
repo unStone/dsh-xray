@@ -1,0 +1,100 @@
+{
+ "repo": "caomengxuan666/dsh-winuxsh",
+ "stars": 1,
+ "description": "Winuxsh runtime, sandbox, profile bundle, and Web UI plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-15T02:11:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@cmx666/dsh-winuxsh-bundle",
+ "deps": [
+  "@cmx666/dsh-winuxsh-local",
+  "@cmx666/dsh-winuxsh-sandbox",
+  "@deepseek-ai/dsh-tool-bash",
+  "@cmx666/dsh-client-ui-winuxsh",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-pwsh-local",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-pwsh-sandbox",
+  "@cmx666/dsh-winuxsh-local",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "locale",
+  "remote",
+  "sandbox",
+  "sandboxPolicy",
+  "slots",
+  "subprocess"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 10,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  }
+ ],
+ "level": 2
+}

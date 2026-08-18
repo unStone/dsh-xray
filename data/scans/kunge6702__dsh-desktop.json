@@ -1,0 +1,77 @@
+{
+ "repo": "kunge6702/dsh-desktop",
+ "stars": 1,
+ "description": "deepseek harness的桌面客户端",
+ "pushed_at": "2026-08-16T10:24:05Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "electron-updater",
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_DEBUG": 1,
+  "DSH_DESKTOP_RUNTIME_ARCHIVE": 1,
+  "npm_execpath": 1,
+  "GITHUB_REF_NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/dsh-host.js:2",
+    "lib/dsh-host.js:3",
+    "scripts/before-pack.cjs:5",
+    "scripts/before-pack.cjs:25"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 3,
+   "evidence": [
+    "main.js:60",
+    "scripts/after-pack.cjs:125",
+    "scripts/after-pack.cjs:211",
+    "scripts/before-pack.cjs:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/dsh-host.js:2, lib/dsh-host.js:3"
+  }
+ ],
+ "level": 2
+}

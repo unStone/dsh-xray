@@ -1,0 +1,117 @@
+{
+ "repo": "Saikel-Orado-Liu/dsh-coding-agent-preset",
+ "stars": 2,
+ "description": "Windows-adapted DSH coding agent preset with persistent PowerShell 7 (pwsh) and str_replace_editor, mirroring the official minimal preset.",
+ "pushed_at": "2026-08-16T20:37:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@gamegeek-saikel/dsh-coding-agent-preset",
+ "deps": [
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-terminal",
+  "@deepseek-ai/schemastery",
+  "node-pty",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-terminal",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/install-preset.mjs"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "sandboxPolicy",
+  "slots",
+  "terminals",
+  "tools"
+ ],
+ "hooks": [
+  "connection/reset",
+  "internal/dispatch"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "LOCALAPPDATA": 1,
+  "PATHEXT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/check.mjs:2",
+    "scripts/check.mjs:2",
+    "scripts/check.mjs:31",
+    "packages/dsh-terminal-pwsh/lib/index.js:34",
+    "packages/dsh-terminal-pwsh/lib/index.js:34"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 21,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/install-preset.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/check.mjs:2, scripts/check.mjs:2"
+  }
+ ],
+ "level": 3
+}

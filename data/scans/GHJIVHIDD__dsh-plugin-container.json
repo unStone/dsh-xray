@@ -1,0 +1,108 @@
+{
+ "repo": "GHJIVHIDD/dsh-plugin-container",
+ "stars": 1,
+ "description": "Docker 容器沙箱部署级插件(与 dsh-plugin-vm-sandbox 全能力对齐,无需 OrbStack):39 个 docker_* 模型工具、快照/回滚、文件传输、端口转发、后台任务、审计、共享/配额/回收、网络策略与华丽原生 UI。",
+ "pushed_at": "2026-08-17T10:47:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh-plugin-container/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-community/dsh-plugin-container",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node ./scripts/prepare.mjs"
+ },
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "domain/changed",
+  "session/disposed"
+ ],
+ "tool_regs": 80,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "scripts/package.mjs:10",
+    "scripts/package.mjs:10",
+    "scripts/package.mjs:30",
+    "scripts/package.mjs:42",
+    "scripts/smoke.mjs:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "dsh-plugin-container/lib/index.js:1536",
+    "dsh-plugin-container/lib/index.js:1543",
+    "dsh-plugin-container/lib/index.js:1544",
+    "dsh-plugin-container/src/index.js:1536",
+    "dsh-plugin-container/src/index.js:1543"
+   ]
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 0,
+   "evidence": [
+    "scripts/package.mjs:11",
+    "scripts/package.mjs:26",
+    "scripts/package.mjs:27",
+    "scripts/prepare.mjs:4",
+    "scripts/prepare.mjs:20"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:32",
+    "scripts/verify.mjs:52"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh-plugin-container/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. scripts/package.mjs:10, scripts/package.mjs:10"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. dsh-plugin-container/lib/index.js:1536, dsh-plugin-container/lib/index.js:1543"
+  }
+ ],
+ "level": 3
+}

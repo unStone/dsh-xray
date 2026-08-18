@@ -1,0 +1,116 @@
+{
+ "repo": "Moeblack/dsh-prompt-studio",
+ "stars": 3,
+ "description": "DSH 插件：编辑用户与内置 system-prompt 段落，实时预览（Prompt Studio） | DSH plugin: edit user and built-in system-prompt sections with live preview",
+ "pushed_at": "2026-08-13T14:00:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-prompt-studio",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "llm",
+  "remote",
+  "sessions",
+  "settings",
+  "slots",
+  "systemPrompt"
+ ],
+ "hooks": [
+  "connection/reset",
+  "llm/stream",
+  "session/created",
+  "system-prompt/assemble",
+  "system-prompt/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-env.mjs:4",
+    "scripts/dsh-env.mjs:78"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:243"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:61",
+    "index.mjs:62"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "index.mjs:1125",
+    "src/resource.ts:101"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/dsh-env.mjs:4, scripts/dsh-env.mjs:78"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. index.mjs:243"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. index.mjs:61, index.mjs:62"
+  }
+ ],
+ "level": 3
+}

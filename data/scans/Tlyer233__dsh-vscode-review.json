@@ -1,0 +1,103 @@
+{
+ "repo": "Tlyer233/dsh-vscode-review",
+ "stars": 1,
+ "description": "deepseek harness review插件, 可以让你在vscode中直观看到dsh的\"增删改\"操作, 支持逐行ac或rj",
+ "pushed_at": "2026-08-17T13:57:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-input-trigger"
+   ]
+  }
+ },
+ "pkg_name": "dsh-review-vscode",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "fs/observed",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 10,
+  "DSH_REVIEW_TRAE_BIN": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "vscode_dsh_plugin/extension.js:22",
+    "vscode_dsh_plugin/extension.js:160",
+    "packages/dsh-review-changes/lib/index.js:15",
+    "packages/dsh-review/lib/trae.js:12",
+    "packages/dsh-review/lib/trae.js:67"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 28,
+   "dev": 52,
+   "evidence": [
+    "vscode_dsh_plugin/extension.js:600",
+    "vscode_dsh_plugin/extension.js:620",
+    "vscode_dsh_plugin/lib/commit.js:7",
+    "vscode_dsh_plugin/lib/commit.js:52",
+    "vscode_dsh_plugin/lib/journal.js:160"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. vscode_dsh_plugin/extension.js:22, vscode_dsh_plugin/extension.js:160"
+  }
+ ],
+ "level": 3
+}

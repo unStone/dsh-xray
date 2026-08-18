@@ -1,0 +1,124 @@
+{
+ "repo": "ZhuXinAI/sidesight",
+ "stars": 1,
+ "description": "CLI-first vision sidecar for text-only coding agents. Analyze screenshots, diagrams, charts, UI diffs, and videos with OpenAI-compatible multimodal models.",
+ "pushed_at": "2026-08-14T05:37:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "sidesight",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@modelcontextprotocol/sdk",
+  "sharp",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "llm",
+  "shellEnv",
+  "skills",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "opencode.ai": 1
+ },
+ "env": {
+  "SIDESIGHT_LIVE_TEST": 1,
+  "SIDESIGHT_API_KEY": 4,
+  "SIDESIGHT_BASE_URL": 2,
+  "SIDESIGHT_MODEL": 2,
+  "SIDESIGHT_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 5,
+   "evidence": [
+    "dsh/vision.js:3",
+    "dsh/vision.js:95",
+    "scripts/build.mjs:5",
+    "scripts/livetest.mjs:5",
+    "scripts/pack.mjs:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "scripts/livetest.mjs:21",
+    "scripts/pack.mjs:42"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 10,
+   "evidence": [
+    "scripts/pack.mjs:43",
+    "scripts/pack.mjs:48"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 12,
+   "evidence": [
+    "dsh/vision.js:170",
+    "scripts/install-skill.mjs:14",
+    "scripts/install-skill.mjs:15",
+    "scripts/livetest.mjs:22",
+    "scripts/livetest.mjs:23"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 40,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. dsh/vision.js:3, dsh/vision.js:95"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. scripts/livetest.mjs:21, scripts/pack.mjs:42"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/pack.mjs:43, scripts/pack.mjs:48"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SIDESIGHT_API_KEY"
+  }
+ ],
+ "level": 3
+}

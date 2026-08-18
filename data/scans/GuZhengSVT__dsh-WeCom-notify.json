@@ -1,0 +1,101 @@
+{
+ "repo": "GuZhengSVT/dsh-WeCom-notify",
+ "stars": 2,
+ "description": "DeepSeek Harness (dsh) 插件：事件驱动的企业微信（WeCom）群机器人通知 — goal 完成/阻塞与每轮对话自动推送，另含 wechat_notify 工具；走官方 webhook，零封号风险。",
+ "pushed_at": "2026-08-15T08:13:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-wecom-notify",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/status",
+  "goal/changed",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "qyapi.weixin.qq.com": 4
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/install-dsh.mjs:11",
+    "scripts/install-dsh.mjs:11",
+    "scripts/install-dsh.mjs:22",
+    "src/notifier.ts:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 6,
+   "evidence": [
+    "lib/index.js:8",
+    "lib/index.js:42",
+    "scripts/install-dsh.mjs:12",
+    "scripts/install-dsh.mjs:32",
+    "src/config.ts:11"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/install-dsh.mjs:11, scripts/install-dsh.mjs:11"
+  }
+ ],
+ "level": 3
+}

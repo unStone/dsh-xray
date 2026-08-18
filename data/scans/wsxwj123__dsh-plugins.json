@@ -1,0 +1,141 @@
+{
+ "repo": "wsxwj123/dsh-plugins",
+ "stars": 7,
+ "description": "Independent plugins for DeepSeek Harness, organized as isolated packages in one monorepo.",
+ "pushed_at": "2026-08-17T23:40:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugins",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "sessionPersistence",
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "x"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.deepseek.com": 4,
+  "qt.gtimg.cn": 2,
+  "api.binance.com": 2,
+  "data-api.binance.vision": 2,
+  "api.frankfurter.dev": 2,
+  "api.frankfurter.app": 2
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "SM_TRASH_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 4,
+   "evidence": [
+    "packages/dsh-composer-tools/build.mjs:8",
+    "packages/dsh-composer-tools/build.mjs:8",
+    "packages/dsh-composer-tools/build.mjs:23",
+    "packages/dsh-composer-tools/build.mjs:28",
+    "packages/dsh-session-manager/build.mjs:8"
+   ]
+  },
+  "eval": {
+   "src": 8,
+   "dev": 8,
+   "evidence": [
+    "packages/skin-gallery/src/custom-skin.js:98",
+    "packages/skin-gallery/src/custom-skin.js:98",
+    "packages/skin-gallery/src/skin-engine.js:48",
+    "packages/skin-gallery/src/skin-engine.js:48",
+    "packages/skin-runtime/src/custom-skin.js:98"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 18,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 117,
+   "evidence": [
+    "packages/skin-gallery/build.mjs:68",
+    "packages/skin-runtime/build.mjs:68",
+    "packages/theme-gallery/build.mjs:23",
+    "packages/dsh-composer-tools/src/handler.ts:200",
+    "packages/dsh-composer-tools/src/handler.ts:211"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 16,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 200,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. packages/dsh-composer-tools/build.mjs:8, packages/dsh-composer-tools/build.mjs:8"
+  },
+  {
+   "id": "eval",
+   "evidence": "×8 src, e.g. packages/skin-gallery/src/custom-skin.js:98, packages/skin-gallery/src/custom-skin.js:98"
+  }
+ ],
+ "level": 3
+}

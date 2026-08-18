@@ -1,0 +1,82 @@
+{
+ "repo": "MartinDelophy/dsh-timeline-studio-plugin",
+ "stars": 2,
+ "description": "DeepSeek Harness plugin for Timeline Studio deterministic project inspection, editing, and rendering",
+ "pushed_at": "2026-08-15T08:12:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-timeline-studio-plugin",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 2,
+  "TIMELINE_STUDIO_SKILL_RUNTIME": 2,
+  "TIMELINE_STUDIO_PYTHON": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 21,
+   "dev": 1,
+   "evidence": [
+    "src/command-runner.js:1",
+    ".dsh/skills/edit-timeline-studio/scripts/run-host-python.mjs:3",
+    ".dsh/skills/edit-timeline-studio/scripts/run-host-python.mjs:3",
+    ".dsh/skills/edit-timeline-studio/scripts/run-host-python.mjs:26",
+    ".dsh/skills/edit-timeline-studio/scripts/run-host-python.mjs:49"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 16,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×21 src, e.g. src/command-runner.js:1, .dsh/skills/edit-timeline-studio/scripts/run-host-python.mjs:3"
+  }
+ ],
+ "level": 3
+}

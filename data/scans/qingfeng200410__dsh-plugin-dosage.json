@@ -1,0 +1,132 @@
+{
+ "repo": "qingfeng200410/dsh-plugin-dosage",
+ "stars": 1,
+ "description": "DeepSeek Harness 用量插件。把多供应商余额监测和 DeepSeek 峰谷计费合进侧栏同一个「用量/余额」浮层：账户额度、Token 统计、消耗概览、月历、调用记录和官方价格一次看完，换项目数据也不丢",
+ "pushed_at": "2026-08-17T09:22:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-dosage",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "credentials",
+  "fs",
+  "llm",
+  "locale",
+  "sandboxPolicy",
+  "sessionPersistence",
+  "sessions",
+  "settings",
+  "slots",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2,
+  "api.z.ai": 2,
+  "opencode.ai": 1,
+  "open.bigmodel.cn": 1,
+  "api.kimi.com": 1,
+  "www.minimax.io": 1,
+  "www.minimaxi.com": 1,
+  "api.minimax.io": 1,
+  "api.minimaxi.com": 1
+ },
+ "env": {
+  "DSH_HOME": 3,
+  "BALANCE_API_KEY": 1,
+  "PNG_PATH": 2,
+  "OUT_PATH": 2,
+  "MKDIR_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:502",
+    "lib/index.js:700"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:603"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:43",
+    "lib/index.js:244",
+    "lib/index.js:605",
+    "lib/index.js:619",
+    "lib/stats/server.js:241"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:502, lib/index.js:700"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:603"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BALANCE_API_KEY"
+  }
+ ],
+ "level": 3
+}

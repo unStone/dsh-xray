@@ -1,0 +1,166 @@
+{
+ "repo": "Stu-KatoMegumi/dsh-message",
+ "stars": 2,
+ "description": "dsh-message 是面向 DeepSeek Harness 的统一消息接入插件，仅包含微信、飞书、QQ、企业微信和钉钉。项目采用一套 Host/Client 插件、统一设置页和统一 HTTP Harness 会话链路，并在五个渠道上共享提示词、长期记忆和会话策略。并且可以定制鲸鱼娘的soul哦~",
+ "pushed_at": "2026-08-18T07:53:34Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@stu-xie/dsh-message",
+ "deps": [
+  "@tencent-connect/qqbot-connector",
+  "@tencent-connect/qqbot-nodejs",
+  "@wecom/aibot-node-sdk",
+  "dingtalk-stream",
+  "qrcode",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy",
+  "connection",
+  "credentials",
+  "locale",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 3,
+  "novac2c.cdn.weixin.qq.com": 1,
+  "oapi.dingtalk.com": 2,
+  "api.dingtalk.com": 2,
+  "open.larksuite.com": 1,
+  "open.feishu.cn": 1,
+  "work.weixin.qq.com": 2
+ },
+ "env": {
+  "DSH_PROFILE": 2,
+  "DSH_ROOT": 2,
+  "DSH_HOME": 11,
+  "DSH_CLI": 2,
+  "ComSpec": 2,
+  "DSH_MESSAGE_CLIENT_ID": 1,
+  "LOCALAPPDATA": 2,
+  "WX_BOT_BROWSER": 1,
+  "WX_BOT_CWD": 2,
+  "WX_BOT_SESSION_DIR": 2,
+  "WX_BOT_PRESET": 2,
+  "WX_BOT_SLOW_ACK_MS": 2,
+  "WX_BOT_TURN_TIMEOUT_MS": 2,
+  "WX_BOT_CHUNK_SIZE": 2,
+  "WX_BOT_SEND_INTERVAL_MS": 2,
+  "WX_BOT_POLL_TIMEOUT_MS": 2,
+  "WX_BOT_WATCHDOG_MS": 2,
+  "DSH_URL": 1,
+  "WX_BOT_WORKSPACE_TITLE": 1,
+  "WX_BOT_ENABLED": 1,
+  "WX_BOT_STREAMING": 1,
+  "WX_BOT_TYPING": 1,
+  "WX_BOT_MEDIA": 1,
+  "WX_BOT_RENEWAL": 1,
+  "WX_BOT_ACCESS_POLICY": 1,
+  "WX_BOT_ALLOWLIST": 1,
+  "WX_BOT_STREAM_FLUSH_CHARS": 1,
+  "WX_BOT_STREAM_FLUSH_MS": 1,
+  "WX_BOT_OUTBOX_DIR": 1,
+  "DSH_STARTUP_CHECK_TIMEOUT_MS": 1,
+  "DINGTALK_REGISTRATION_BASE_URL": 1,
+  "DINGTALK_REGISTRATION_SOURCE": 1,
+  "FEISHU_APP_SECRET": 2,
+  "FEISHU_SECRET_SERVICE": 1,
+  "FEISHU_APP_ID": 1,
+  "HARNESS_WORKSPACE": 1,
+  "HARNESS_BASE_URL": 1,
+  "HARNESS_AGENT_PRESET": 1,
+  "DSH_BIN": 1,
+  "BRIDGE_HEALTH_PORT": 1,
+  "BRIDGE_STATE_PATH": 1,
+  "HARNESS_REPLY_TIMEOUT_MS": 1,
+  "FEISHU_ALLOWED_OPEN_IDS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 23,
+   "dev": 0,
+   "evidence": [
+    "install.mjs:11",
+    "install.mjs:11",
+    "install.mjs:85",
+    "bin/dsh-message.mjs:9",
+    "bin/dsh-message.mjs:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 36,
+   "dev": 0,
+   "evidence": [
+    "install.mjs:51",
+    "install.mjs:56",
+    "install.mjs:119",
+    "bin/dsh-message.mjs:5",
+    "bin/dsh-message.mjs:148"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-package.mjs:74"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 136,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×23 src, e.g. install.mjs:11, install.mjs:11"
+  },
+  {
+   "id": "token_env",
+   "evidence": "FEISHU_APP_SECRET, FEISHU_SECRET_SERVICE"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,91 @@
+{
+ "repo": "zoahdev/dsh-subscribe",
+ "stars": 1,
+ "description": "Steam-style plugin marketplace for DeepSeek Harness: one-click subscribe on the web, one command to sync into your dsh profile.",
+ "pushed_at": "2026-08-17T14:18:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-subscribe",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "api.github.com": 2,
+  "awesome-dsh-plugin.com": 3
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 5,
+   "evidence": [
+    "scripts/dsh-subscribe.mjs:14",
+    "scripts/dsh-subscribe.mjs:14",
+    "scripts/dsh-subscribe.mjs:61",
+    "plugin/lib/market-server.js:17",
+    "plugin/lib/market-server.js:135"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 10,
+   "evidence": [
+    "scripts/backfill-versions.mjs:10",
+    "scripts/backfill-versions.mjs:67",
+    "scripts/build-registry.mjs:16",
+    "scripts/build-registry.mjs:184",
+    "scripts/build-registry.mjs:199"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugin/scripts/runtime-smoke.mjs:63"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/dsh-subscribe.mjs:14, scripts/dsh-subscribe.mjs:14"
+  }
+ ],
+ "level": 3
+}

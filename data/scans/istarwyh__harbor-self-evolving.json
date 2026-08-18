@@ -1,0 +1,88 @@
+{
+ "repo": "istarwyh/harbor-self-evolving",
+ "stars": 1,
+ "description": "DeepSeek Harness plugin and Harbor template for reproducible Agent evaluation, self-evolution, and controlled promotion.",
+ "pushed_at": "2026-08-17T15:04:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-harbor-evolution",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "HARBOR_BIN": 3,
+  "HARBOR_DSH_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-plugin/lib/process.js:1",
+    "packages/dsh-plugin/lib/process.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 12,
+   "evidence": [
+    "packages/dsh-plugin/lib/candidate.js:86",
+    "packages/dsh-plugin/lib/setup.js:166"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. packages/dsh-plugin/lib/process.js:1, packages/dsh-plugin/lib/process.js:5"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,101 @@
+{
+ "repo": "ethan0084/dsh-cockpit",
+ "stars": 1,
+ "description": "A desktop-style project and AI workbench plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-16T12:06:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-cockpit-source",
+ "deps": [
+  "mammoth",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-invariants",
+  "react",
+  "mammoth",
+  "xlsx",
+  "@deepseek-ai/cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "clientModules",
+  "dsh-cockpit-layout",
+  "sessions",
+  "slots",
+  "theme",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ComSpec": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/ui/lib/index.js:6",
+    "packages/ui/lib/index.js:176",
+    "packages/ui/lib/index.js:305"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 12,
+   "evidence": [
+    "scripts/build-bundle.mjs:30",
+    "scripts/build-bundle.mjs:60",
+    "scripts/build-bundle.mjs:72",
+    "packages/ui/lib/index.js:2",
+    "packages/ui/lib/index.js:194"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/ui/lib/index.js:6, packages/ui/lib/index.js:176"
+  }
+ ],
+ "level": 3
+}

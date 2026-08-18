@@ -1,0 +1,97 @@
+{
+ "repo": "DGPisces/dsh-openai-oauth",
+ "stars": 5,
+ "description": "DeepSeek Harness provider for GPT models using managed ChatGPT OAuth through Codex app-server",
+ "pushed_at": "2026-08-15T14:54:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-openai-oauth",
+ "deps": [
+  "@openai/codex",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_CODEX_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 6,
+   "evidence": [
+    "lib/app-server.js:1",
+    "lib/app-server.js:56",
+    "lib/global.js:2",
+    "lib/global.js:2",
+    "lib/global.js:37"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 9,
+   "evidence": [
+    "lib/global.js:3",
+    "lib/global.js:67",
+    "src/global.ts:3",
+    "src/global.ts:72"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. lib/app-server.js:1, lib/app-server.js:56"
+  }
+ ],
+ "level": 3
+}

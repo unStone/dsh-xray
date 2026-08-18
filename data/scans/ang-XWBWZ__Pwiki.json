@@ -1,0 +1,105 @@
+{
+ "repo": "ang-XWBWZ/Pwiki",
+ "stars": 2,
+ "description": "Local-first knowledge retrieval engine for AI agents — BM25, semantic search, reranking, MCP, Pi Agent and DeepSeek Harness integration.",
+ "pushed_at": "2026-08-13T16:00:44Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "pwiki",
+ "deps": [
+  "@llangtop/pwiki-core",
+  "commander",
+  "@huggingface/transformers",
+  "@node-rs/jieba",
+  "better-sqlite3",
+  "remark-parse",
+  "sharp",
+  "unified",
+  "unist-util-visit",
+  "@llangtop/pwiki-core",
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "api.openai.com": 1,
+  "hf-mirror.com": 1
+ },
+ "env": {
+  "USERPROFILE": 4,
+  "LLM_API_KEY": 2,
+  "DEEPSEEK_API_KEY": 3,
+  "OPENAI_API_KEY": 4,
+  "LLM_API_BASE": 1,
+  "LLM_MODEL": 1,
+  "LLM_JSON_MODE": 1,
+  "LLM_THINKING_PARAM": 1,
+  "WIKI_HOME": 2,
+  "WIKI_MODELS_DIR": 1,
+  "WIKI_MODEL_ID": 1,
+  "PWIKI_DEBUG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "cli/src/index.ts:4",
+    "cli/src/index.ts:4",
+    "cli/src/index.ts:17",
+    "core/src/lib/embedder.ts:5",
+    "core/src/lib/embedder.ts:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 33,
+   "evidence": [
+    "core/src/WikiEngine.ts:7",
+    "core/src/WikiEngine.ts:364",
+    "core/src/WikiEngine.ts:401",
+    "core/src/WikiEngine.ts:455",
+    "core/src/lib/file-manifest.ts:4"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 55,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. cli/src/index.ts:4, cli/src/index.ts:4"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, LLM_API_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,103 @@
+{
+ "repo": "lsjspl/dsh-plugin-grok2api-media-tool",
+ "stars": 1,
+ "description": "让 dsh 通过 grok2api 的 API 获得图片与视频生成能力（generate_image / generate_video）。",
+ "pushed_at": "2026-08-18T07:03:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-grok2api-media-tool",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "media.js:173"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 7,
+   "evidence": [
+    "index.js:33",
+    "index.js:299",
+    "media-proxy.js:19",
+    "media-proxy.js:63",
+    "media-proxy.js:229"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. media.js:173"
+  }
+ ],
+ "level": 3
+}

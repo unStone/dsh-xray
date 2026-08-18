@@ -1,0 +1,109 @@
+{
+ "repo": "lilyblessing/dsh-mcp-skill-panel",
+ "stars": 1,
+ "description": "MCP 与技能管理面板：设置页展示 MCP 服务器与 Skill 目录，随时启停释放上下文占用。",
+ "pushed_at": "2026-08-16T19:29:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-mcp-skill-panel",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-scope"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "agents",
+  "fs",
+  "loader",
+  "locale",
+  "skills",
+  "slots",
+  "systemPrompt",
+  "timer",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:13",
+    "scripts/setup-dsh-deps.mjs:7",
+    "scripts/setup-dsh-deps.mjs:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "lib/catalog.js:118",
+    "lib/index.js:118",
+    "lib/index.js:814",
+    "lib/index.js:936",
+    "lib/index.js:1102"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/selftest-mcp.mjs:13",
+    "scripts/selftest-mcp.mjs:14"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build.mjs:5, scripts/build.mjs:5"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,97 @@
+{
+ "repo": "Townrain/dsh-model-vendor-badge",
+ "stars": 1,
+ "description": "Vendor logo seat in the DSH web composer: shows which provider serves the current model, live from the official per-session ModelDirectory.",
+ "pushed_at": "2026-08-15T20:43:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-model-selection"
+   ]
+  }
+ },
+ "pkg_name": "dsh-model-vendor-badge",
+ "deps": [
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "modelDirectories",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CHECKOUT": 3,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:11",
+    "build.mjs:11",
+    "build.mjs:121"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:13",
+    "build.mjs:61",
+    "build.mjs:86"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. build.mjs:11, build.mjs:11"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,127 @@
+{
+ "repo": "Aaaaamadeus/dsh-gui",
+ "stars": 1,
+ "description": "Native desktop web-shell for DeepSeek Harness (dsh) — installable as a dsh profile bundle",
+ "pushed_at": "2026-08-16T14:43:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "dsh-gui.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-gui",
+ "deps": [
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "approval",
+  "connection",
+  "error",
+  "kernel",
+  "models",
+  "question",
+  "session.open",
+  "session.update",
+  "shell.ready",
+  "sidebar"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_HOME": 5,
+  "DSH_GUI_SHORTCUT_NAME": 1,
+  "DSH_GUI_SHORTCUT_DIR": 1,
+  "DSH_GUI_ICON": 1,
+  "DSH_GUI_NO_BOOTSTRAP": 1,
+  "GH_OWNER": 1,
+  "GH_REPO": 1,
+  "GITHUB_TOKEN": 1,
+  "DSH_GUI_PORT": 3,
+  "DSH_GUI_KERNEL_URL": 2,
+  "DSH_WEB_URL": 2,
+  "DSH_GUI_DSH_ARGS": 2,
+  "DSH_GUI_HEADLESS": 1,
+  "DSH_GUI_MODE": 1,
+  "DSH_GUI_UI_SMOKE": 1,
+  "XDG_DATA_HOME": 2,
+  "DSH_GUI_METHOD_ALIASES": 1,
+  "DSH_GUI_DSH_CLI": 1,
+  "ELECTRON_RUN_AS_NODE": 1,
+  "DSH_GUI_PLUGIN_DIRS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 0,
+   "evidence": [
+    "plugin/dsh-gui-desktop.mjs:19",
+    "plugin/dsh-gui-desktop.mjs:56",
+    "plugin/dsh-gui-desktop.mjs:112",
+    "src/shortcut.cjs:15",
+    "src/shortcut.cjs:15"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/kernel/host-manager.js:149",
+    "src/kernel/host-manager.js:164",
+    "src/kernel/host-manager.js:165"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/make-shortcut-assets.js:45",
+    "scripts/make-shortcut-assets.js:52",
+    "scripts/smoke.js:21",
+    "src/main.js:25",
+    "src/shortcut.cjs:46"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "dsh-gui.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. plugin/dsh-gui-desktop.mjs:19, plugin/dsh-gui-desktop.mjs:56"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. src/kernel/host-manager.js:149, src/kernel/host-manager.js:164"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

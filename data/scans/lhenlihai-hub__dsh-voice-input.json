@@ -1,0 +1,124 @@
+{
+ "repo": "lhenlihai-hub/dsh-voice-input",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-15T16:20:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./packages/dsh-voice-input/cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-model-selection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-voice-input",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "react-dom",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "appExit",
+  "llm",
+  "modelDirectories",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:38",
+    "scripts/verify-artifacts.mjs:38",
+    "packages/dsh-voice-input/lib/index.js:3",
+    "packages/dsh-voice-input/lib/index.js:3",
+    "packages/dsh-voice-input/lib/index.js:119"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-voice-input/lib/client.js:143"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-voice-input/lib/client.js:1161",
+    "packages/dsh-voice-input/lib/client.js:1212"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./packages/dsh-voice-input/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/verify-artifacts.mjs:38, scripts/verify-artifacts.mjs:38"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/dsh-voice-input/lib/client.js:143"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/dsh-voice-input/lib/client.js:1161, packages/dsh-voice-input/lib/client.js:1212"
+  }
+ ],
+ "level": 3
+}

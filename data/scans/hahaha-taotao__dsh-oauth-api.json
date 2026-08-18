@@ -1,0 +1,104 @@
+{
+ "repo": "hahaha-taotao/dsh-oauth-api",
+ "stars": 1,
+ "description": "DeepSeek Harness (dsh) out-of-tree OAuth plugin for Grok/xAI, Codex, and Claude Code. Community plugin, not official.",
+ "pushed_at": "2026-08-14T06:08:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-oauth",
+ "deps": [
+  "@dsh-plugin/oauth-host",
+  "@dsh-plugin/oauth-client",
+  "@dsh-plugin/oauth-host",
+  "@dsh-plugin/oauth-client",
+  "@dsh-plugin/oauth",
+  "@dsh-plugin/oauth",
+  "@dsh-plugin/oauth",
+  "@dsh-plugin/oauth-claude",
+  "@dsh-plugin/oauth-codex",
+  "@dsh-plugin/oauth-kimi",
+  "@dsh-plugin/oauth-xai",
+  "@dsh-plugin/oauth",
+  "@dsh-plugin/oauth",
+  "undici"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "llm",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "claude.ai": 1,
+  "console.anthropic.com": 2,
+  "api.anthropic.com": 1,
+  "auth.openai.com": 3,
+  "chatgpt.com": 1,
+  "api.openai.com": 1,
+  "api.x.ai": 1,
+  "auth.kimi.com": 3,
+  "api.kimi.com": 1,
+  "auth.x.ai": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "HTTPS_PROXY": 1,
+  "https_proxy": 1,
+  "HTTP_PROXY": 1,
+  "http_proxy": 1,
+  "ALL_PROXY": 1,
+  "all_proxy": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "packages/oauth/src/file-store.ts:22"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 55,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

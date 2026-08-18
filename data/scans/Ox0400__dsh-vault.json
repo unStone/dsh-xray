@@ -1,0 +1,129 @@
+{
+ "repo": "Ox0400/dsh-vault",
+ "stars": 3,
+ "description": "Encrypted credential vault for DeepSeek Harness — AES-256-GCM + TOTP, model tools + Settings UI",
+ "pushed_at": "2026-08-18T08:30:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-vault",
+ "deps": [
+  "playwright-core",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 226,
+ "domains": {
+  "api.pwnedpasswords.com": 1,
+  "support.1password.com": 1,
+  "bitwarden.com": 1,
+  "mail.example.com": 1,
+  "login.example.com": 1
+ },
+ "env": {
+  "LOCALAPPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "src/chrome.ts:25",
+    "src/chrome.ts:25",
+    "src/chrome.ts:51",
+    "src/chrome.ts:54",
+    "src/chrome.ts:85"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 7,
+   "dev": 2,
+   "evidence": [
+    "src/chrome.ts:101",
+    "src/chrome.ts:117",
+    "src/firefox.ts:147",
+    "src/firefox.ts:148",
+    "src/imports.ts:553"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 25,
+   "dev": 25,
+   "evidence": [
+    "src/chrome.ts:27",
+    "src/chrome.ts:243",
+    "src/index.ts:1676",
+    "src/index.ts:1834",
+    "src/index.ts:1990"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. src/chrome.ts:25, src/chrome.ts:25"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×7 src, e.g. src/chrome.ts:101, src/chrome.ts:117"
+  }
+ ],
+ "level": 3
+}

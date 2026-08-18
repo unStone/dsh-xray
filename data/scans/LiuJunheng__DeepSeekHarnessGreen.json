@@ -1,0 +1,98 @@
+{
+ "repo": "LiuJunheng/DeepSeekHarnessGreen",
+ "stars": 2,
+ "description": "DeepSeek Harness绿色整合版，一键启动，不污染C盘，一个文件夹里管理。DeepSeek Harness Green All-in-One Launcher - double-click to run, all-localized",
+ "pushed_at": "2026-08-17T16:55:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-archive-purge",
+ "deps": [
+  "@deepseek-ai/dsh-session"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-sidebar-lite/lib/client.js:9",
+    "plugins/dsh-sidebar-lite/lib/index.js:7",
+    "plugins/dsh-sidebar-lite/lib/index.js:31",
+    "plugins/dsh-sidebar-lite/lib/index.js:389",
+    "plugins/dsh-sidebar-lite/lib/index.js:413"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-file-browser/lib/client.js:517"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-session-rewind/tools/apply-agentloop-guard.mjs:4",
+    "plugins/dsh-session-rewind/tools/apply-agentloop-guard.mjs:53",
+    "plugins/dsh-session-rewind/tools/rewind-session.mjs:9",
+    "plugins/dsh-session-rewind/tools/rewind-session.mjs:115",
+    "plugins/dsh-sidebar-lite/lib/index.js:328"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. plugins/dsh-sidebar-lite/lib/client.js:9, plugins/dsh-sidebar-lite/lib/index.js:7"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. plugins/dsh-file-browser/lib/client.js:517"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,102 @@
+{
+ "repo": "lecutu/dsh-slide-reflex",
+ "stars": 1,
+ "description": "DeepSeek PPT — AI-native PowerPoint generation. Constraint solver closes the loop so LLMs don't need vision",
+ "pushed_at": "2026-08-17T09:01:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "marketplace": {
+   "profiles": [
+    "web",
+    "desktop"
+   ],
+   "requiresRestart": true,
+   "requiresBuildApproval": false,
+   "manualSteps": "Requires ppt-reflex engine repo with _dsh_ppt_runner.py"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-slide-reflex",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "zod",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_PPT_PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-slide-reflex/lib/index.js:477"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-slide-reflex/lib/index.js:5",
+    "plugins/dsh-slide-reflex/lib/index.js:5",
+    "plugins/dsh-slide-reflex/lib/index.js:78",
+    "plugins/dsh-slide-reflex/lib/index.js:81"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. plugins/dsh-slide-reflex/lib/index.js:477"
+  }
+ ],
+ "level": 3
+}

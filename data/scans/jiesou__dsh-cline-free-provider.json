@@ -1,0 +1,79 @@
+{
+ "repo": "jiesou/dsh-cline-free-provider",
+ "stars": 1,
+ "description": "Cline 免费模型接入 DeepSeek Harness",
+ "pushed_at": "2026-08-18T06:39:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@jiesou/dsh-cline-free-provider",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-pi-ai",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "@earendil-works/pi-ai"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "settings"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.cline.bot": 6,
+  "openrouter.ai": 2,
+  "cline.bot": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

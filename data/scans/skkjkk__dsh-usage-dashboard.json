@@ -1,0 +1,110 @@
+{
+ "repo": "skkjkk/dsh-usage-dashboard",
+ "stars": 1,
+ "description": "DSH (DeepSeek Harness) usage statistics dashboard plugin: token / cost / duration / session aggregation with trend, heatmap and calendar views.",
+ "pushed_at": "2026-08-17T19:39:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@skkjkk/dsh-usage-dashboard",
+ "deps": [
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionPersistence",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "timer",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "BENCH_SESSIONS": 1,
+  "BENCH_REPEAT": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/regenerate.cjs:333",
+    "scripts/regenerate.cjs:333",
+    "scripts/regenerate.cjs:343"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-pack.mjs:48"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/regenerate.cjs:56",
+    "scripts/regenerate.cjs:57",
+    "scripts/regenerate.cjs:70",
+    "scripts/regenerate.cjs:75",
+    "scripts/regenerate.cjs:208"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/regenerate.cjs:333, scripts/regenerate.cjs:333"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/verify-pack.mjs:48"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,109 @@
+{
+ "repo": "xiaowei2025cqu23phy/dsh-desktop",
+ "stars": 1,
+ "description": "DeepSeek Harness 桌面端:内嵌 Web UI、AI 屏保(替换系统屏保)、全模型切换、手机 PWA 远程控制、QQ 机器人通道",
+ "pushed_at": "2026-08-17T20:10:59Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@tencent-connect/qqbot-nodejs",
+  "qrcode"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "generativelanguage.googleapis.com": 2,
+  "api.deepseek.com": 2,
+  "api.openai.com": 2,
+  "q.qq.com": 1,
+  "api.telegram.org": 2,
+  "api.github.com": 1
+ },
+ "env": {
+  "USERNAME": 1,
+  "CDP_PORT": 4,
+  "GATEWAY_TOKEN": 3,
+  "APPDATA": 1,
+  "SystemRoot": 4,
+  "GEMINI_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-privacy.mjs:15",
+    "scripts/check-privacy.mjs:15",
+    "scripts/check-privacy.mjs:67",
+    "scripts/check-privacy.mjs:71",
+    "scripts/release.mjs:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/cdp-shot.mjs:55",
+    "scripts/gen-whale.mjs:35",
+    "scripts/shot-pet.mjs:55",
+    "src/main/appearance.ts:102",
+    "src/main/qq-onboard.ts:47"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/proxy-log.mjs:10",
+    "src/main/gateway.ts:132"
+   ]
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 0,
+   "evidence": [
+    "scripts/approval-flow-test.mjs:488",
+    "scripts/approval-flow-test.mjs:504",
+    "scripts/cdp-shot.mjs:7",
+    "scripts/cdp-shot.mjs:55",
+    "scripts/gen-whale-svg.mjs:3"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/check-privacy.mjs:15, scripts/check-privacy.mjs:15"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×6 src, e.g. scripts/cdp-shot.mjs:55, scripts/gen-whale.mjs:35"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/proxy-log.mjs:10, src/main/gateway.ts:132"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GATEWAY_TOKEN, GEMINI_KEY"
+  }
+ ],
+ "level": 2
+}

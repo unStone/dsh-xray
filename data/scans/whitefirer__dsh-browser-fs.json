@@ -1,0 +1,97 @@
+{
+ "repo": "whitefirer/dsh-browser-fs",
+ "stars": 2,
+ "description": "dsh（DeepSeek Harness）插件：让 agent 读写浏览器所在机器的本地文件——File System Access 授权 + WS 中继，含非安全上下文兼容模式",
+ "pushed_at": "2026-08-16T11:56:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-browser-fs",
+ "deps": [
+  "highlight.js",
+  "ws",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 9,
+ "domains": {
+  "en.cppreference.com": 2,
+  "tc39.es": 2,
+  "spec.commonmark.org": 1,
+  "docs.python.org": 6,
+  "yaml.org": 1,
+  "evil.example.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:35",
+    "scripts/smoke.mjs:44"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:14",
+    "scripts/smoke.mjs:179",
+    "scripts/smoke.mjs:180",
+    "scripts/smoke.mjs:189",
+    "scripts/smoke.mjs:190"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke.mjs:35, scripts/smoke.mjs:44"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,111 @@
+{
+ "repo": "linkingoscar/dsh-billing-glass",
+ "stars": 3,
+ "description": "Liquid-glass billing overlay for the DeepSeek Harness Web GUI: provider balances, session cost, daily spend and token buckets. DeepSeek-first and extensible.",
+ "pushed_at": "2026-08-15T11:27:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-billing-glass",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.ant-ling.com": 1,
+  "inference.baseten.co": 1,
+  "api.cerebras.ai": 1,
+  "gateway.ai.cloudflare.com": 1,
+  "api.cloudflare.com": 1,
+  "api.deepseek.com": 2,
+  "api.fireworks.ai": 1,
+  "api.individual.githubcopilot.com": 1,
+  "api.groq.com": 1,
+  "router.huggingface.co": 1,
+  "api.moonshot.ai": 1,
+  "api.moonshot.cn": 1,
+  "integrate.api.nvidia.com": 1,
+  "opencode.ai": 2,
+  "openrouter.ai": 1,
+  "token-plan.ap-southeast-1.maas.aliyuncs.com": 2,
+  "token-plan.cn-beijing.maas.aliyuncs.com": 1,
+  "api.together.ai": 1,
+  "api.x.ai": 1,
+  "api.xiaomimimo.com": 1,
+  "token-plan-ams.xiaomimimo.com": 1,
+  "token-plan-cn.xiaomimimo.com": 1,
+  "token-plan-sgp.xiaomimimo.com": 1,
+  "api.z.ai": 1,
+  "open.bigmodel.cn": 1,
+  "api-docs.deepseek.com": 3,
+  "platform.deepseek.com": 3
+ },
+ "env": {
+  "DSH_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 13,
+   "evidence": [
+    "lib/ledger.js:21",
+    "lib/ledger.js:22",
+    "lib/ledger.js:201",
+    "lib/ledger.js:217",
+    "scripts/build-client.js:12"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

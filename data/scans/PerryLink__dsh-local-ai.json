@@ -1,0 +1,103 @@
+{
+ "repo": "PerryLink/dsh-local-ai",
+ "stars": 1,
+ "description": "Local-model (Ollama) integration for DeepSeek Harness: discover, pull, remove, and inspect local models, route requests to them by task type or keyword with automatic fallback to the cloud, and get a ",
+ "pushed_at": "2026-08-18T00:17:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-local-ai",
+ "deps": [
+  "tsdown",
+  "typescript",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-timeout"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "commands",
+  "llm",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:21",
+    "scripts/release.mjs:28",
+    "scripts/release.mjs:28"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/release.mjs:29",
+    "scripts/release.mjs:71",
+    "scripts/release.mjs:84",
+    "scripts/release.mjs:95"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:25"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/prepare.mjs:6, scripts/prepare.mjs:6"
+  }
+ ],
+ "level": 3
+}

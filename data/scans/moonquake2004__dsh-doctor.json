@@ -1,0 +1,112 @@
+{
+ "repo": "moonquake2004/dsh-doctor",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T00:59:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@moonquake2004/dsh-doctor",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "inputTriggers",
+  "locale",
+  "sessions",
+  "settings",
+  "slots",
+  "tools",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_DOCTOR_PORT": 1,
+  "DSH_DOCTOR_HEAP_MB": 1,
+  "DSH_DOCTOR_UPDATE_CMD": 1,
+  "DSH_DOCTOR_LLM_CMD": 1,
+  "DSH_DOCTOR_AUTO_UPDATE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 19,
+   "dev": 10,
+   "evidence": [
+    "plugin/dsh-doctor.mjs:53",
+    "plugin/dsh-doctor.mjs:53",
+    "plugin/dsh-doctor.mjs:53",
+    "plugin/dsh-doctor.mjs:128",
+    "plugin/dsh-doctor.mjs:138"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "plugin/dsh-doctor.mjs:261"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 105,
+   "evidence": [
+    "plugin/dsh-doctor.mjs:54",
+    "plugin/dsh-doctor.mjs:971",
+    "plugin/dsh-doctor.mjs:1181",
+    "plugin/observer.mjs:17",
+    "plugin/observer.mjs:312"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×19 src, e.g. plugin/dsh-doctor.mjs:53, plugin/dsh-doctor.mjs:53"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. plugin/dsh-doctor.mjs:261"
+  }
+ ],
+ "level": 3
+}

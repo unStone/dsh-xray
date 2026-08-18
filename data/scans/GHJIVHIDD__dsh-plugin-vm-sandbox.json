@@ -1,0 +1,110 @@
+{
+ "repo": "GHJIVHIDD/dsh-plugin-vm-sandbox",
+ "stars": 2,
+ "description": "原生UI界面。面向 DeepSeek Harness Web 的虚拟机沙箱插件：它基于 OrbStack 为每个会话提供独立的 debian/alpine 沙箱虚拟机，在会话视图环中新增「虚拟机」页签，支持查看/启动/休眠/删除和详细配置展示，同时为模型提供 `vm_list`、`vm_create`、`vm_exec`、`vm_delete` 工具，并内置全局运行上限、闲置自动休眠、归档/删除自",
+ "pushed_at": "2026-08-18T02:20:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh-plugin-vm-sandbox/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-plugin-vm-sandbox",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node ./scripts/prepare.mjs"
+ },
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "domain/changed",
+  "session/disposed"
+ ],
+ "tool_regs": 74,
+ "domains": {
+  "deb.nodesource.com": 2,
+  "download.docker.com": 4
+ },
+ "env": {
+  "VMSB_SMOKE_SESSION": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify.mjs:4",
+    "scripts/verify.mjs:4",
+    "scripts/verify.mjs:100",
+    "scripts/verify.mjs:101",
+    "dsh-plugin-vm-sandbox/lib/index.js:24"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "dsh-plugin-vm-sandbox/lib/index.js:1180",
+    "dsh-plugin-vm-sandbox/lib/index.js:1190",
+    "dsh-plugin-vm-sandbox/lib/index.js:1191",
+    "dsh-plugin-vm-sandbox/src/index.js:1180",
+    "dsh-plugin-vm-sandbox/src/index.js:1190"
+   ]
+  },
+  "fs_write": {
+   "src": 34,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e.mjs:4",
+    "scripts/e2e.mjs:4",
+    "scripts/e2e.mjs:50",
+    "scripts/e2e.mjs:51",
+    "scripts/e2e.mjs:52"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh-plugin-vm-sandbox/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/verify.mjs:4, scripts/verify.mjs:4"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. dsh-plugin-vm-sandbox/lib/index.js:1180, dsh-plugin-vm-sandbox/lib/index.js:1190"
+  }
+ ],
+ "level": 3
+}

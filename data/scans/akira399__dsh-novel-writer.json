@@ -1,0 +1,98 @@
+{
+ "repo": "akira399/dsh-novel-writer",
+ "stars": 5,
+ "description": "大肥鱼的小说工坊 — DSH 网络小说创作插件：九阶段门禁式创作流程 + 世界书设定注入 + 本地书籍导入 + AI 一键润色 + 去AI味 + 黄金三章诊断 + 百万字一致性 + 市场调研与模板复制。",
+ "pushed_at": "2026-08-17T17:03:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-novel-writer",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "settings",
+  "settingsScope",
+  "slots",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 82,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 9,
+   "evidence": [
+    "src/core/atomic-file.ts:30",
+    "src/core/atomic-file.ts:41",
+    "src/core/atomic-file.ts:42",
+    "src/core/atomic-file.ts:60",
+    "src/tools/extras.ts:183"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 109,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

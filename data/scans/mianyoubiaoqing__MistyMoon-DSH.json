@@ -1,0 +1,203 @@
+{
+ "repo": "mianyoubiaoqing/MistyMoon-DSH",
+ "stars": 3,
+ "description": "Local-first long-term companion plugin suite for DeepSeek Harness",
+ "pushed_at": "2026-08-18T07:40:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@mistymoon/dsh",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/schemastery",
+  "yauzl",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@mistymoon/dsh-foundation",
+  "@mistymoon/dsh-memory",
+  "@mistymoon/dsh-work-agent-dsh",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "agentPresets",
+  "agents",
+  "connection",
+  "llm",
+  "locale",
+  "mistymoonMemory",
+  "mistymoonOwnerEligibility",
+  "mistymoonPersonaProjection",
+  "mistymoonRoleplay",
+  "mistymoonWorkDelegation",
+  "skills",
+  "slots",
+  "subagents",
+  "subprocess",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/error",
+  "agent/pre-step",
+  "agent/request",
+  "agent/request-error",
+  "agent/status",
+  "agent/turn-stopping",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 30,
+ "domains": {},
+ "env": {
+  "ComSpec": 1,
+  "npm_execpath": 1,
+  "MISTYMOON_QUAL_MODELS": 1,
+  "DEEPSEEK_API_KEY": 4,
+  "DSH_HOME": 1,
+  "USERPROFILE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/audit-publication.ts:1",
+    "scripts/audit-publication.ts:1",
+    "scripts/audit-publication.ts:6",
+    "scripts/audit-publication.ts:13",
+    "scripts/audit-publication.ts:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "packages/foundation/src/character-card-container.ts:53"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 27,
+   "evidence": [
+    "scripts/smoke-built.mjs:110",
+    "packages/foundation/src/persona-document.ts:209",
+    "packages/foundation/src/persona-workspace.ts:63",
+    "packages/memory/src/index.ts:7",
+    "packages/memory/src/index.ts:343"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-built.mjs:21"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 97,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/audit-publication.ts:1, scripts/audit-publication.ts:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/foundation/src/character-card-container.ts:53"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,132 @@
+{
+ "repo": "peterwangze/dsh-agent-router",
+ "stars": 3,
+ "description": "DeepSeek Harness 多模型路由插件：让专业的事情交给专业的 agent——自定义视觉/翻译/语音/子代理等专业 agent 并绑定独立模型，多模态账号一键登录、账号池健康路由与实时用量统计",
+ "pushed_at": "2026-08-17T13:00:53Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-agent-router",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-credentials"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "typert",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "www.googleapis.com": 7,
+  "generativelanguage.googleapis.com": 2,
+  "accounts.google.com": 1,
+  "oauth2.googleapis.com": 1,
+  "api.openai.com": 6,
+  "api.anthropic.com": 1,
+  "api.x.ai": 1,
+  "chatgpt.com": 2,
+  "claude.ai": 1,
+  "grok.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 7,
+   "evidence": [
+    "lib/service.js:29",
+    "lib/service.js:1129",
+    "lib/service.js:1187",
+    "lib/service.js:1371",
+    "lib/service.js:1373"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/service.js:392"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:84"
+   ]
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 20,
+   "evidence": [
+    "lib/service.js:30",
+    "lib/service.js:30",
+    "lib/service.js:700",
+    "lib/service.js:1063",
+    "lib/service.js:1169"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/service.js:29, lib/service.js:1129"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/service.js:392"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/index.js:84"
+  }
+ ],
+ "level": 3
+}

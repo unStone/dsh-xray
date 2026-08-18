@@ -1,0 +1,112 @@
+{
+ "repo": "kinoward/dsh-plugin-subhub",
+ "stars": 4,
+ "description": "Bring third-party subscription accounts into DeepSeek Harness - 为 DeepSeek Harness 接入第三方订阅账户(当前支持 OpenAI / ChatGPT 订阅,更多订阅服务规划中)",
+ "pushed_at": "2026-08-18T01:51:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-subhub",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "eventsource-parser",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "settings/updated"
+ ],
+ "tool_regs": 1,
+ "domains": {
+  "auth.openai.com": 2,
+  "api.openai.com": 2,
+  "chatgpt.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/demo-gif.mjs:35",
+    "scripts/demo-gif.mjs:35",
+    "scripts/demo-gif.mjs:69",
+    "scripts/demo-gif.mjs:70",
+    "scripts/demo-gif.mjs:131"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:87",
+    "src/index.js:1746"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "login.js:16",
+    "login.js:63",
+    "scripts/demo-gif.mjs:36",
+    "scripts/demo-gif.mjs:148",
+    "scripts/demo-gif.mjs:245"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/demo-gif.mjs:124"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/demo-gif.mjs:35, scripts/demo-gif.mjs:35"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/index.js:87, src/index.js:1746"
+  }
+ ],
+ "level": 3
+}

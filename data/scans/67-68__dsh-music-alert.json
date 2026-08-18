@@ -1,0 +1,99 @@
+{
+ "repo": "67-68/dsh-music-alert",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T09:08:39Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-music-alert",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:5",
+    "lib/index.js:5",
+    "lib/index.js:22",
+    "lib/index.js:115"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:2",
+    "lib/index.js:173",
+    "lib/index.js:245",
+    "lib/index.js:257"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:5, lib/index.js:5"
+  }
+ ],
+ "level": 2
+}

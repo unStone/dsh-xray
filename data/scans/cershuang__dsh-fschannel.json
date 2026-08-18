@@ -1,0 +1,107 @@
+{
+ "repo": "cershuang/dsh-fschannel",
+ "stars": 2,
+ "description": "DSH-Feishu channel plugin",
+ "pushed_at": "2026-08-15T19:13:09Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-fschannel",
+ "deps": [
+  "@larksuite/channel",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "apiProxy",
+  "credentials",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/inbox/claimed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 9,
+  "FSCHANNEL_ENV_FILE": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/run-tests.mjs:8",
+    "scripts/run-tests.mjs:8",
+    "scripts/run-tests.mjs:39"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 55,
+   "dev": 0,
+   "evidence": [
+    "lib/bindings.js:14",
+    "lib/bindings.js:312",
+    "lib/index.js:48",
+    "lib/index.js:48",
+    "lib/index.js:363"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/integration-test.mjs:23"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 33,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/run-tests.mjs:8, scripts/run-tests.mjs:8"
+  }
+ ],
+ "level": 3
+}

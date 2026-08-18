@@ -1,0 +1,90 @@
+{
+ "repo": "cuboteam/dsh-plugin-dit",
+ "stars": 1,
+ "description": "DIT.ai provider bundle for DeepSeek Harness",
+ "pushed_at": "2026-08-18T03:06:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-dit",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.dit.ai": 1
+ },
+ "env": {
+  "DIT_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-catalog.mjs:2",
+    "scripts/check-catalog.mjs:21",
+    "scripts/harness-smoke.mjs:2",
+    "scripts/harness-smoke.mjs:30"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/harness-smoke.mjs:52",
+    "scripts/harness-smoke.mjs:75"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/harness-smoke.mjs:94",
+    "scripts/harness-smoke.mjs:116"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/check-catalog.mjs:2, scripts/check-catalog.mjs:21"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/harness-smoke.mjs:52, scripts/harness-smoke.mjs:75"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DIT_API_KEY"
+  }
+ ],
+ "level": 3
+}

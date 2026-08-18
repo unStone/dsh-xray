@@ -1,0 +1,96 @@
+{
+ "repo": "Max-Null/dsh-skill-mcp-center",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T19:01:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@max-null/dsh-skill-mcp-center",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "loader",
+  "locale",
+  "skillMcp",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "mcp.example.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/service.js:126",
+    "src/service.ts:184"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

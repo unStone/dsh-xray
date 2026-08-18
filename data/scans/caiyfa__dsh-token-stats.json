@@ -1,0 +1,88 @@
+{
+ "repo": "caiyfa/dsh-token-stats",
+ "stars": 1,
+ "description": "deepseek-harness (dsh) 全局 Token 用量看板插件 —— 一行命令安装，后台常驻增量统计全部会话：按模型/按时间/按会话的用量趋势（分钟·小时·天 × 柱状/堆叠/累计）、红绿异常时点标记与按会话异常分组，子代理消耗自动归并主会话。Global token-usage dashboard for deepseek-harness (dsh) — one-line inst",
+ "pushed_at": "2026-08-15T11:52:11Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-token-stats",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_MODULES_DIR": 2,
+  "LOCALAPPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/install.js:32",
+    "bin/install.js:32",
+    "bin/install.js:97",
+    "bin/install.js:115"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/install.js:83",
+    "bin/install.js:137",
+    "bin/install.js:202",
+    "bin/install.js:221"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bin/install.js:238"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bin/install.js:32, bin/install.js:32"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,109 @@
+{
+ "repo": "6kongbai/dsh-plugin-market",
+ "stars": 2,
+ "description": "A dsh plugin marketplace CLI: browse, install, and uninstall community plugins from the dsh-plugin GitHub topic",
+ "pushed_at": "2026-08-14T12:04:00Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-market-monorepo",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "dsh-plugin-market-client",
+  "dsh-plugin-market-host"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "GITHUB_TOKEN": 8
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/market-host/src/install.ts:12",
+    "packages/market-host/src/install.ts:12",
+    "packages/market-host/src/install.ts:146",
+    "packages/market-host/src/install.ts:172"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/market-host/src/market/github.ts:131"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/market-host/src/install.ts:13",
+    "packages/market-host/src/install.ts:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. packages/market-host/src/install.ts:12, packages/market-host/src/install.ts:12"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/market-host/src/market/github.ts:131"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

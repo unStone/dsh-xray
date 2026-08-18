@@ -1,0 +1,80 @@
+{
+ "repo": "nonmean/dsh-plugin-explorer",
+ "stars": 2,
+ "description": "DSH client plugin: browse GitHub repos tagged dsh-plugin (name, README, stats) with sync and search",
+ "pushed_at": "2026-08-16T13:12:49Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-explorer",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "slots",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/installer.ts:18",
+    "src/installer.ts:66"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/installer.ts:20",
+    "src/installer.ts:127"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/installer.ts:18, src/installer.ts:66"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,111 @@
+{
+ "repo": "cyber-moshen/dsh-plugin-market",
+ "stars": 3,
+ "description": "DSH插件市场，自动更新，热重载插件，多种排序方案，快速管理和安装插件",
+ "pushed_at": "2026-08-15T15:26:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@cyber-moshen/dsh-plugin-market",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1,
+  "ghproxy.net": 2,
+  "gh-proxy.com": 2,
+  "ghfast.top": 2
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "GITHUB_TOKEN": 1,
+  "GH_TOKEN": 1,
+  "DSH_BIN": 2,
+  "CC_TEST_DEBUG": 2,
+  "TEMP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 0,
+   "evidence": [
+    "lib/host.js:29",
+    "lib/host.js:29",
+    "lib/host.js:194",
+    "lib/host.js:365",
+    "lib/host.js:754"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "lib/host.js:26",
+    "lib/host.js:178",
+    "lib/host.js:300",
+    "scripts/compose-check.mjs:36",
+    "scripts/compose-check.mjs:97"
+   ]
+  },
+  "dyn_import": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/compose-check.mjs:66",
+    "scripts/compose-check.mjs:67",
+    "scripts/compose-check.mjs:68",
+    "scripts/compose-check.mjs:69"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. lib/host.js:29, lib/host.js:29"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

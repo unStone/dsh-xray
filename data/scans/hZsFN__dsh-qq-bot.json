@@ -1,0 +1,89 @@
+{
+ "repo": "hZsFN/dsh-qq-bot",
+ "stars": 1,
+ "description": "QQ official bot private message (C2C) bridge for DeepSeek Harness (dsh): per-user persistent agent sessions, image attachments, auto-reconnect",
+ "pushed_at": "2026-08-14T14:23:25Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-qq-bot",
+ "deps": [
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-tools",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "tools"
+ ],
+ "hooks": [
+  "dispose",
+  "session/event"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api.bot.qq.com": 4
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "QQ_BOT_APP_ID": 1,
+  "QQ_BOT_APP_SECRET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "index.js:27",
+    "index.js:27",
+    "index.js:48",
+    "index.js:106",
+    "index.js:197"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "token_env",
+   "evidence": "QQ_BOT_APP_SECRET"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 2 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

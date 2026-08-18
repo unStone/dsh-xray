@@ -1,0 +1,82 @@
+{
+ "repo": "harismuna5268/DSH-Desktop",
+ "stars": 1,
+ "description": "Electron desktop shell for DeepSeek Harness, bundling node, pnpm, and the DSH runtime for one-click access to the dsh web UI.",
+ "pushed_at": "2026-08-17T06:51:28Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "TARGET_PLATFORM": 1,
+  "TARGET_ARCH": 1,
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "scripts/collect-runtime.mjs:9",
+    "scripts/collect-runtime.mjs:9",
+    "scripts/collect-runtime.mjs:54",
+    "scripts/collect-runtime.mjs:67",
+    "scripts/collect-runtime.mjs:73"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/dsh-host.ts:24",
+    "src/dsh-host.ts:27"
+   ]
+  },
+  "fs_write": {
+   "src": 25,
+   "dev": 0,
+   "evidence": [
+    "scripts/collect-runtime.mjs:10",
+    "scripts/collect-runtime.mjs:10",
+    "scripts/collect-runtime.mjs:51",
+    "scripts/collect-runtime.mjs:59",
+    "scripts/collect-runtime.mjs:60"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. scripts/collect-runtime.mjs:9, scripts/collect-runtime.mjs:9"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/dsh-host.ts:24, src/dsh-host.ts:27"
+  }
+ ],
+ "level": 2
+}

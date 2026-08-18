@@ -1,0 +1,139 @@
+{
+ "repo": "smanx/dsh-proxy",
+ "stars": 4,
+ "description": "HTTP + WebSocket 反向代理：把局域网端口转发到本地 DSH 服务",
+ "pushed_at": "2026-08-16T09:47:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "dsh-proxy/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection"
+   ]
+  }
+ },
+ "pkg_name": "@smanx/dsh-proxy",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "http-proxy"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "npmmirror.com": 1
+ },
+ "env": {
+  "DSH_PROXY_VERSION": 5,
+  "PROXY_PORT": 1,
+  "DSH_PORT": 1,
+  "PROXY_USERNAME": 1,
+  "PROXY_PASSWORD": 1,
+  "DSH_SMOKE_UPSTREAM_PORT": 1,
+  "DSH_SMOKE_USER": 1,
+  "DSH_SMOKE_PASS": 1,
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "dsh-proxy/build.mjs:18",
+    "dsh-proxy/build.mjs:18",
+    "dsh-proxy/build.mjs:56",
+    "node/build.js:7",
+    "node/build.js:7"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-proxy/lib/index.cjs:1628"
+   ]
+  },
+  "base64_decode": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "node/proxy-core.js:51",
+    "dsh-proxy/lib/index.cjs:1450",
+    "dsh-proxy/lib/index.cjs:1451",
+    "dsh-proxy/lib/index.cjs:2229",
+    "dsh-proxy/src/session.ts:37"
+   ]
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 14,
+   "evidence": [
+    "node/proxy-core.js:109",
+    "dsh-proxy/lib/index.cjs:1322",
+    "dsh-proxy/lib/index.cjs:1322",
+    "dsh-proxy/lib/index.cjs:2331",
+    "dsh-proxy/src/proxy.ts:151"
+   ]
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 6,
+   "evidence": [
+    "node/app.js:35",
+    "node/build.js:68",
+    "node/build.js:83",
+    "node/build.js:112",
+    "node/build.js:163"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "dsh-proxy/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. dsh-proxy/build.mjs:18, dsh-proxy/build.mjs:18"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. dsh-proxy/lib/index.cjs:1628"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×5 src, e.g. node/proxy-core.js:51, dsh-proxy/lib/index.cjs:1450"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. node/proxy-core.js:109, dsh-proxy/lib/index.cjs:1322"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_SMOKE_PASS, PROXY_PASSWORD"
+  }
+ ],
+ "level": 3
+}

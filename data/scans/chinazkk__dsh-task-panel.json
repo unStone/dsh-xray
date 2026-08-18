@@ -1,0 +1,101 @@
+{
+ "repo": "chinazkk/dsh-task-panel",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T00:44:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-task-panel",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-client-runtime",
+  "react",
+  "@deepseek-ai/dsh",
+  "cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "requirements",
+  "sessions",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "internal/service",
+  "requirement/queued",
+  "requirement/rework",
+  "tools/execute"
+ ],
+ "tool_regs": 56,
+ "domains": {},
+ "env": {
+  "DSH_REQUIREMENTS_DIR": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    ".reference/dsh-requirements-2.1.0/src/store.ts:7",
+    ".reference/dsh-requirements-2.1.0/src/store.ts:41",
+    ".reference/dsh-requirements-2.1.0/src/store.ts:84",
+    ".reference/dsh-requirements-2.1.0/src/store.ts:104"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

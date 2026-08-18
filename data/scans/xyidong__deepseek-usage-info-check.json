@@ -1,0 +1,81 @@
+{
+ "repo": "xyidong/deepseek-usage-info-check",
+ "stars": 2,
+ "description": "实现在Deepseek Harness中追踪应用内API token用量费用详情的插件。可集成至base，成为设置中的功能。        A plugin to track in-app API token usage and cost details within Deepseek Harness. Can be integrated into the base as a feature in",
+ "pushed_at": "2026-08-14T14:49:30Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "deepseek-usage-info",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "platform.deepseek.com": 2,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:255"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "index.js:13",
+    "index.js:104",
+    "index.js:141",
+    "index.js:389",
+    "guard/deepseek-usage-guard.mjs:125"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. index.js:255"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,118 @@
+{
+ "repo": "dingzhenyao/dsh-plugin-directory",
+ "stars": 2,
+ "description": "DSH Web GUI plugin: a browsable, searchable, stats-driven directory of GitHub DeepSeek Harness plugins (dsh-plugin topic), with CDN hot update, README-gated install, and live search.",
+ "pushed_at": "2026-08-18T06:49:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-directory",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "react-dom",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "GITHUB_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/vitest-sandbox.cjs:18",
+    "scripts/vitest-sandbox.cjs:29",
+    "scripts/vitest-sandbox.cjs:29",
+    "scripts/vitest-sandbox.cjs:46",
+    "scripts/vitest-sandbox.cjs:47"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/data/github.ts:122"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/data/installed.ts:39",
+    "src/data/sync.ts:102",
+    "src/data/sync.ts:243",
+    "src/data/sync.ts:245"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/vitest-sandbox.cjs:18, scripts/vitest-sandbox.cjs:29"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/data/github.ts:122"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

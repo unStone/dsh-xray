@@ -1,0 +1,93 @@
+{
+ "repo": "ZRui-C/dsh-minimal-first-turn",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T03:51:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-minimal-first-turn",
+ "deps": [
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-terminal",
+  "@deepseek-ai/dsh-terminal-bash",
+  "@deepseek-ai/dsh-tool-bash-persistent",
+  "@deepseek-ai/dsh-tool-str-replace-editor"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/pre-step",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_CWD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/host.mjs:1",
+    "src/host.mjs:47"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "webServer, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

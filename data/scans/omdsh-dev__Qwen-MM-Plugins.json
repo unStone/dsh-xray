@@ -1,0 +1,84 @@
+{
+ "repo": "omdsh-dev/Qwen-MM-Plugins",
+ "stars": 4,
+ "description": "Qwen-MM-Plugins支持",
+ "pushed_at": "2026-08-09T10:59:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-qwen-mm",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-paths",
+  "@deepseek-ai/dsh-skill-local",
+  "cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.prepare.config.ts"
+ },
+ "injects": [
+  "invariants",
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 9,
+   "evidence": [
+    "src/index.ts:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "src/index.ts:158"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/index.ts:17"
+  }
+ ],
+ "level": 3
+}

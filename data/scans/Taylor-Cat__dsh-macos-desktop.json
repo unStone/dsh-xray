@@ -1,0 +1,115 @@
+{
+ "repo": "Taylor-Cat/dsh-macos-desktop",
+ "stars": 4,
+ "description": "dsh-macos-desktop 把 DSH 的 Web 界面变成一个 macOS 桌面：左侧桌面（多窗口/文件/回收站/便签/Spotlight/天气/深色模式）+ 右侧原生对话（主题化），内置终端、文档(Word/PDF/PPT)、浏览器、知识库、番茄钟、截图、AI 生图与「用 AI 看图」，通过官方 shell.overlay 挂载、卸载即恢复",
+ "pushed_at": "2026-08-16T13:57:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-macos-desktop",
+ "deps": [
+  "docx",
+  "mammoth",
+  "pdf-lib",
+  "pdf-parse",
+  "pptxgenjs",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "fs",
+  "sessions",
+  "subprocess",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "geocoding-api.open-meteo.com": 1,
+  "api.open-meteo.com": 1,
+  "zh.wikipedia.org": 1,
+  "www.bing.com": 2,
+  "dashscope.aliyuncs.com": 2,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "APPDATA": 1,
+  "DSH_HOME": 2,
+  "USERPROFILE": 2,
+  "DASHSCOPE_API_KEY": 1,
+  "ProgramFiles": 1,
+  "SystemRoot": 1,
+  "DEEPSEEK_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:623",
+    "lib/index.js:929"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:342",
+    "lib/index.js:448",
+    "lib/index.js:587",
+    "lib/index.js:1110"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:623, lib/index.js:929"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY, DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

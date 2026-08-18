@@ -1,0 +1,84 @@
+{
+ "repo": "Funnyvalentine00/dsh-desktop-shell",
+ "stars": 1,
+ "description": "A simple desktop rather than a web.",
+ "pushed_at": "2026-08-16T15:41:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop-shell",
+ "deps": [
+  "electron",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "webServer",
+  "webStartup"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ELECTRON_OVERRIDE_DIST_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/electron-main.cjs:4",
+    "src/index.ts:2",
+    "src/index.ts:85"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/render-icon.cjs:142",
+    "scripts/render-icon.cjs:148",
+    "src/electron-main.cjs:19",
+    "src/electron-main.cjs:46"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/electron-main.cjs:4, src/index.ts:2"
+  }
+ ],
+ "level": 3
+}

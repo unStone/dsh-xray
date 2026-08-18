@@ -1,0 +1,174 @@
+{
+ "repo": "banlanzs/dsh-web-enhanced",
+ "stars": 3,
+ "description": "[building……] DeepSeek Harness's web enhancement plugin—brings task dashboards, Git graphs, workspace file panels, balance displays, and graph recognition into the DSH web interface.",
+ "pushed_at": "2026-08-18T07:31:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-schema-form",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-web-enhanced",
+ "deps": [
+  "fflate",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "connection",
+  "invariants",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "subprocess",
+  "typert",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "connection/reset",
+  "llm/adapters-updated",
+  "session/event",
+  "system-prompt/assemble",
+  "theme/change",
+  "tools/post-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dashscope.aliyuncs.com": 3,
+  "api.deepseek.com": 6,
+  "models.dev": 6,
+  "opencode.ai": 6
+ },
+ "env": {
+  "DSH_ROOT": 1,
+  "DSH_BIN": 1,
+  "WEB_ENHANCED_PACK_MAX_TARBALL": 1,
+  "WEB_ENHANCED_PACK_MAX_UNPACKED": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:2204",
+    "lib/index.js:3176",
+    "scripts/e2e.mjs:22",
+    "scripts/e2e.mjs:22",
+    "scripts/e2e.mjs:83"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:154"
+   ]
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 1,
+   "evidence": [
+    "lib/client.js:1323",
+    "lib/client.js:1374",
+    "lib/client.js:7541",
+    "lib/client.js:9621",
+    "src/client/media.ts:26"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e.mjs:78"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 60,
+   "evidence": [
+    "lib/index.js:1275",
+    "lib/index.js:2111",
+    "lib/index.js:2921",
+    "scripts/e2e.mjs:24",
+    "scripts/e2e.mjs:154"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e.mjs:183"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 304,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. lib/index.js:2204, lib/index.js:3176"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/client.js:154"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. lib/client.js:1323, lib/client.js:1374"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/e2e.mjs:78"
+  }
+ ],
+ "level": 3
+}

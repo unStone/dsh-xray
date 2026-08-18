@@ -1,0 +1,90 @@
+{
+ "repo": "Lbryany/dsh-codebuddy",
+ "stars": 1,
+ "description": "CodeBuddy OAuth, dynamic models, and reasoning controls for DeepSeek Harness",
+ "pushed_at": "2026-08-14T01:32:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@lbryany/dsh-codebuddy",
+ "deps": [
+  "@earendil-works/pi-ai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "credentials",
+  "llm"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.codebuddy.ai": 3,
+  "copilot.tencent.com": 2
+ },
+ "env": {
+  "PI_CODEBUDDY_PLATFORM": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.mjs:3",
+    "src/index.ts:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.mjs:5",
+    "lib/index.mjs:103",
+    "src/codebuddy.ts:2",
+    "src/codebuddy.ts:190"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.mjs:3, src/index.ts:5"
+  }
+ ],
+ "level": 3
+}

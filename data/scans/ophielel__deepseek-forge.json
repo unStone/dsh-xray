@@ -1,0 +1,99 @@
+{
+ "repo": "ophielel/deepseek-forge",
+ "stars": 1,
+ "description": "DeepSeek Harness 开发锻造工坊：审批守卫、开发 Skills、GitHub/浏览器能力与 Token Watch 消耗监督，装上就能干活。",
+ "pushed_at": "2026-08-16T01:35:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deepseek-forge-workspace",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "session/event",
+  "tools/change",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "ComSpec": 2,
+  "GITHUB_PERSONAL_ACCESS_TOKEN": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-portability.mjs:1",
+    "scripts/check-portability.mjs:1",
+    "scripts/check-portability.mjs:39",
+    "scripts/verify-packages.mjs:1",
+    "scripts/verify-packages.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-packages.mjs:2",
+    "scripts/verify-packages.mjs:2",
+    "scripts/verify-packages.mjs:17",
+    "scripts/verify-packages.mjs:24"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/check-portability.mjs:1, scripts/check-portability.mjs:1"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_PERSONAL_ACCESS_TOKEN"
+  }
+ ],
+ "level": 3
+}

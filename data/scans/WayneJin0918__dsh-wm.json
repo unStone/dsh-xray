@@ -1,0 +1,85 @@
+{
+ "repo": "WayneJin0918/dsh-wm",
+ "stars": 2,
+ "description": "Playable world-model toolkit for DeepSeek Harness: look at frames, name the 3D / pixel / latent route, measure a run, and RSI the research loop.",
+ "pushed_at": "2026-08-18T05:30:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-wm",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-skill"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 14,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/frames.js:1",
+    "lib/frames.js:1",
+    "lib/frames.js:83",
+    "lib/frames.js:90",
+    "lib/frames.js:117"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 2,
+   "evidence": [
+    "lib/inspect.js:1",
+    "lib/inspect.js:280",
+    "lib/view.js:1",
+    "lib/view.js:356",
+    "lib/view.js:357"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/frames.js:1, lib/frames.js:1"
+  }
+ ],
+ "level": 3
+}

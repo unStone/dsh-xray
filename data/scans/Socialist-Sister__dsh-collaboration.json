@@ -1,0 +1,135 @@
+{
+ "repo": "Socialist-Sister/dsh-collaboration",
+ "stars": 2,
+ "description": "Multi-agent collaboration suite for DeepSeek Harness: specialist roster with on-demand dispatch, roundtable, model comparison and a multimodal vision bridge — models via the official provider flow.",
+ "pushed_at": "2026-08-16T11:50:23Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-collaboration",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "zod",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "agents",
+  "collaborationTeam",
+  "llm",
+  "remote",
+  "settings",
+  "slots",
+  "subagents",
+  "tools",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 15,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_SETTINGS": 1,
+  "TEMP": 2,
+  "USERPROFILE": 1,
+  "DSH_E2E_URL": 1,
+  "DSH_E2E_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-team-host.mjs:112",
+    "scripts/e2e-team-host.mjs:113",
+    "scripts/e2e-team-host.mjs:127",
+    "scripts/e2e-team-host.mjs:131",
+    "scripts/e2e-team-host.mjs:158"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/tools/tool-image-inbox/src/index.ts:199"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "scripts/setup-verify-env.mjs:6",
+    "scripts/setup-verify-env.mjs:6",
+    "scripts/setup-verify-env.mjs:17",
+    "scripts/setup-verify-env.mjs:49",
+    "scripts/setup-verify-env.mjs:52"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. scripts/e2e-team-host.mjs:112, scripts/e2e-team-host.mjs:113"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/tools/tool-image-inbox/src/index.ts:199"
+  }
+ ],
+ "level": 2
+}

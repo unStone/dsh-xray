@@ -1,0 +1,118 @@
+{
+ "repo": "xingling80/dsh-zhipu-vision",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-15T15:08:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-zhipu-vision",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom",
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "open.bigmodel.cn": 3
+ },
+ "env": {
+  "DSH_ZHIPU_VISION_CONFIG": 4,
+  "DSH_ZHIPU_API_KEY": 10
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/routes.js:182"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "load-test.mjs:4",
+    "load-test.mjs:55",
+    "route-test.mjs:5",
+    "route-test.mjs:106",
+    "route-test.mjs:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "load-test.mjs:10",
+    "load-test.mjs:33",
+    "route-test.mjs:16",
+    "route-test.mjs:17",
+    "route-test.mjs:18"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/routes.js:182"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_ZHIPU_API_KEY"
+  }
+ ],
+ "level": 3
+}

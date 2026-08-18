@@ -1,0 +1,107 @@
+{
+ "repo": "gxx950224/SapBuddy-dsh",
+ "stars": 2,
+ "description": "SapBuddy-dsh",
+ "pushed_at": "2026-08-14T09:32:11Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "sapbuddy-dsh",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "react",
+  "sapbuddy-tools",
+  "@deepseek-ai/cordis",
+  "abap-adt-api",
+  "typebox",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/inbox/claimed",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "sap-dev.example.com": 1,
+  "www.sap.com": 1
+ },
+ "env": {
+  "DSH_BIN": 2,
+  "ABAP_MCP_CONFIG": 2,
+  "SAPBUDDY_HOME": 2,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/install.mjs:22",
+    "scripts/install.mjs:22",
+    "scripts/install.mjs:62",
+    "scripts/install.mjs:78",
+    "scripts/install.mjs:96"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 7,
+   "evidence": [
+    "scripts/install.mjs:150",
+    "scripts/install.mjs:165",
+    "scripts/recover.mjs:75",
+    "scripts/recover.mjs:86",
+    "packages/sapbuddy-settings-ui/scripts/build-client.mjs:9"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 55,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/install.mjs:22, scripts/install.mjs:22"
+  }
+ ],
+ "level": 2
+}

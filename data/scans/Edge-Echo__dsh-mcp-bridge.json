@@ -1,0 +1,74 @@
+{
+ "repo": "Edge-Echo/dsh-mcp-bridge",
+ "stars": 4,
+ "description": "Curated, verified MCP server bundle for DeepSeek Harness (dsh): one install brings demo, memory, filesystem, GitHub, Playwright and remote HTTP MCP servers, with a connectivity verifier and CI checks.",
+ "pushed_at": "2026-08-15T14:47:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-mcp-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-mcp-client"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "MCP_URL": 3,
+  "VERIFY_TIMEOUT_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/probe-server.mjs:46",
+    "scripts/probe-server.mjs:47",
+    "scripts/probe-server.mjs:55",
+    "scripts/verify-servers.mjs:59",
+    "scripts/verify-servers.mjs:60"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

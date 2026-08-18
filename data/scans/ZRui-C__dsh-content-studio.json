@@ -1,0 +1,111 @@
+{
+ "repo": "ZRui-C/dsh-content-studio",
+ "stars": 2,
+ "description": "DSH bundle plugin: screenshots, screen recording, Markdown→Xiaohongshu image cards, dev.to publishing, and human-in-the-loop review for DeepSeek Harness",
+ "pushed_at": "2026-08-15T13:40:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-content-studio",
+ "deps": [
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "timer",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 28,
+ "domains": {
+  "aistudio.google.com": 2,
+  "dev.to": 4,
+  "api.medium.com": 2,
+  "medium.com": 2,
+  "developers.forem.com": 1,
+  "ai.google.dev": 1,
+  "generativelanguage.googleapis.com": 1
+ },
+ "env": {
+  "CHROME_PATH": 1,
+  "DEVTO_API_KEY": 1,
+  "MEDIUM_TOKEN": 1,
+  "FFMPEG_PATH": 1,
+  "SCREENCAPTURE_PATH": 1,
+  "GEMINI_API_KEY": 1,
+  "GOOGLE_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/lib/util.js:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/lib/text2img.js:59"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "src/lib/cards.js:2",
+    "src/lib/cards.js:155",
+    "src/lib/cards.js:183",
+    "src/lib/keys.js:6",
+    "src/lib/keys.js:34"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/lib/util.js:2"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/lib/text2img.js:59"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEVTO_API_KEY, GEMINI_API_KEY, GOOGLE_API_KEY, MEDIUM_TOKEN"
+  }
+ ],
+ "level": 3
+}

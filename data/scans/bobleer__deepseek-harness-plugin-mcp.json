@@ -1,0 +1,107 @@
+{
+ "repo": "bobleer/deepseek-harness-plugin-mcp",
+ "stars": 3,
+ "description": "MCP server that lets any agent discover, install, and run DeepSeek Harness plugins (topic: dsh-plugin).",
+ "pushed_at": "2026-08-13T16:17:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deepseek-harness-plugin-mcp",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "yaml",
+  "zod"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "GITHUB_TOKEN": 2,
+  "GH_TOKEN": 2,
+  "DSH_PLUGIN_MCP_HOST": 1,
+  "DSH_PLUGIN_MCP_PORT": 1,
+  "DSH_ROOT": 1,
+  "DSH_PLUGIN_MCP_PROFILE": 1,
+  "DSH_PLUGIN_MCP_CACHE_DIR": 1,
+  "DSH_PLUGIN_MCP_CACHE_TTL_MS": 1,
+  "DSH_PLUGIN_MCP_CATALOG": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/profile/dsh-cli.ts:1",
+    "src/profile/dsh-cli.ts:1",
+    "src/profile/dsh-cli.ts:37",
+    "src/profile/dsh-cli.ts:61"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/mcp/http.ts:41"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/github/catalog.ts:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/profile/dsh-cli.ts:1, src/profile/dsh-cli.ts:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/mcp/http.ts:41"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

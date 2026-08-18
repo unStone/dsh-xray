@@ -1,0 +1,80 @@
+{
+ "repo": "KhalilYamber/dsh-envoy",
+ "stars": 6,
+ "description": "Hana 插件：把 coding 任务外包给本机 DeepSeek Harness，审批同步回 Hana 内决策，结果以原生卡片带回",
+ "pushed_at": "2026-08-18T08:27:27Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DEEPSEEK_API_KEY": 3,
+  "NVM_SYMLINK": 2,
+  "VOLTA_HOME": 2,
+  "FNM_DIR": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "lib/headless.js:16",
+    "lib/headless.js:16",
+    "lib/headless.js:145",
+    "lib/headless.js:208",
+    "lib/headless.js:318"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/headless.js:270",
+    "lib/headless.js:404",
+    "lib/headless.js:404",
+    "lib/labels.js:53",
+    "lib/session-routes.js:112"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 16,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. lib/headless.js:16, lib/headless.js:16"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 2
+}

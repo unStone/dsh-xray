@@ -1,0 +1,95 @@
+{
+ "repo": "omdsh-dev/sandbox-micro",
+ "stars": 3,
+ "description": "microsandbox支持",
+ "pushed_at": "2026-08-09T11:00:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-sandbox-microsandbox",
+ "deps": [
+  "microsandbox",
+  "schemastery",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-tools",
+  "cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.prepare.config.ts"
+ },
+ "injects": [
+  "invariants",
+  "microsandbox",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 17,
+   "evidence": [
+    "src/index.ts:20",
+    "src/index.ts:20",
+    "src/index.ts:77",
+    "src/index.ts:96",
+    "src/index.ts:215"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 10,
+   "evidence": [
+    "src/index.ts:356",
+    "src/index.ts:360",
+    "src/runtime-sdk.ts:256",
+    "src/runtime.ts:147",
+    "src/tool/index.ts:143"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/index.ts:20, src/index.ts:20"
+  }
+ ],
+ "level": 3
+}

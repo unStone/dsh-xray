@@ -1,0 +1,110 @@
+{
+ "repo": "qinyre/dsh-Desktop",
+ "stars": 2,
+ "description": "DeepSeek Harness（dsh）的零配置桌面客户端：自带完整运行时与插件市场，双击即用，无需 Node 与终端。",
+ "pushed_at": "2026-08-18T05:52:05Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-bash-local",
+  "@deepseek-ai/dsh-code-runtime",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-output-retention",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session-telemetry",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-spill",
+  "@deepseek-ai/dsh-subagent-in-process-driver",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-workflow",
+  "electron-updater",
+  "koffi",
+  "pnpm"
+ ],
+ "install_scripts": {
+  "postinstall": "patch-package"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "eus.codesigning.azure.net": 1
+ },
+ "env": {
+  "ELECTRON_RUN_AS_NODE": 1,
+  "USERPROFILE": 1,
+  "SystemRoot": 1,
+  "DESKTOP_DSH_REPO": 1,
+  "ELECTRON_RENDERER_URL": 2,
+  "DSH_DESKTOP_FEED_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "desktop/scripts/picker-readutf16-smoke.cjs:84",
+    "desktop/scripts/picker-readutf16-smoke.cjs:84",
+    "desktop/scripts/picker-readutf16-smoke.cjs:93",
+    "desktop/scripts/spawn-windowhide-child.mjs:13",
+    "desktop/scripts/spawn-windowhide-child.mjs:26"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 51,
+   "evidence": [
+    "desktop/scripts/make-icons.mjs:17",
+    "desktop/scripts/make-icons.mjs:18",
+    "desktop/scripts/verify-bundle.mjs:15",
+    "desktop/scripts/verify-bundle.mjs:89",
+    "desktop/src/main/plugins/market-seed.ts:2"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 65,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: patch-package"
+  },
+  {
+   "id": "exec",
+   "evidence": "×20 src, e.g. desktop/scripts/picker-readutf16-smoke.cjs:84, desktop/scripts/picker-readutf16-smoke.cjs:84"
+  }
+ ],
+ "level": 2
+}

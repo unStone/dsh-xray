@@ -1,0 +1,90 @@
+{
+ "repo": "Relistencode/dsh-recall",
+ "stars": 1,
+ "description": "Conversation history recall for DeepSeek Harness (DSH) — literal/fuzzy/semantic retrieval of every past conversation, fully local & offline. AI never forgets what you told it.",
+ "pushed_at": "2026-08-16T09:38:52Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-recall",
+ "deps": [
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "web.dev": 1,
+  "www.apache.org": 4
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "RECALL_INDEX_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/vendor/ort/ort.all.min.mjs:6"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/vendor/ort/ort.all.min.mjs:1802"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/vendor/ort/ort.all.min.mjs:6"
+  }
+ ],
+ "level": 3
+}

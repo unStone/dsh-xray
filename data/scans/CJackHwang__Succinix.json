@@ -1,0 +1,129 @@
+{
+ "repo": "CJackHwang/Succinix",
+ "stars": 5,
+ "description": "Succinix — browser-native Linux (real Node + Unix userland inside WebContainer)",
+ "pushed_at": "2026-08-15T10:28:44Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "succinix",
+ "deps": [
+  "@fontsource/jetbrains-mono",
+  "@lifo-sh/core",
+  "@webcontainer/api",
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "@succinix/engine",
+  "@webcontainer/api",
+  "@deepseek-ai/cordis",
+  "@standard-schema/spec",
+  "@deepseek-ai/cordis",
+  "@webcontainer/api"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare-assets.mjs"
+ },
+ "injects": [
+  "fs",
+  "sandbox",
+  "sessionPersistence",
+  "terminals"
+ ],
+ "hooks": [
+  "internal/update",
+  "succinix/state"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "cdn.jsdelivr.net": 1,
+  "r.jina.ai": 1
+ },
+ "env": {
+  "CHROME_PATH": 1,
+  "TEST_VAR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 67,
+   "dev": 33,
+   "evidence": [
+    "scripts/bench.mjs:10",
+    "scripts/bench.mjs:182",
+    "scripts/build-engine-package.mjs:11",
+    "scripts/build-engine-package.mjs:11",
+    "scripts/build-engine-package.mjs:46"
+   ]
+  },
+  "eval": {
+   "src": 30,
+   "dev": 0,
+   "evidence": [
+    "scripts/instance-demo.mjs:98",
+    "scripts/instance-demo.mjs:99",
+    "scripts/instance-demo.mjs:114",
+    "scripts/instance-demo.mjs:115",
+    "scripts/instance-demo.mjs:116"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/lang-verify.mjs:226"
+   ]
+  },
+  "net_server": {
+   "src": 12,
+   "dev": 4,
+   "evidence": [
+    "scripts/instance-routing.mjs:138",
+    "scripts/instance-routing.mjs:138",
+    "scripts/instance-routing.mjs:143",
+    "scripts/instance-routing.mjs:143",
+    "scripts/scenarios/smoke.mjs:14"
+   ]
+  },
+  "fs_write": {
+   "src": 78,
+   "dev": 72,
+   "evidence": [
+    "scripts/bench.mjs:123",
+    "scripts/build-engine-package.mjs:12",
+    "scripts/build-engine-package.mjs:12",
+    "scripts/build-engine-package.mjs:32",
+    "scripts/build-engine-package.mjs:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 230,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×67 src, e.g. scripts/bench.mjs:10, scripts/bench.mjs:182"
+  },
+  {
+   "id": "eval",
+   "evidence": "×30 src, e.g. scripts/instance-demo.mjs:98, scripts/instance-demo.mjs:99"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/lang-verify.mjs:226"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×12 src, e.g. scripts/instance-routing.mjs:138, scripts/instance-routing.mjs:138"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

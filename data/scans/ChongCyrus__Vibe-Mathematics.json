@@ -1,0 +1,86 @@
+{
+ "repo": "ChongCyrus/Vibe-Mathematics",
+ "stars": 2,
+ "description": "Vibe Mathematics —— 多代理数学问题求解与形式化验证框架",
+ "pushed_at": "2026-08-18T07:07:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-vibe-math",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "fs",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "subagent/end"
+ ],
+ "tool_regs": 44,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "vibe-math-v1/vibe-math.js:177",
+    "vibe-math-v2/vibe-math-v2.js:162"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "installer.js:20",
+    "installer.js:57",
+    "installer.js:99",
+    "installer.js:109",
+    "installer.js:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. vibe-math-v1/vibe-math.js:177, vibe-math-v2/vibe-math-v2.js:162"
+  }
+ ],
+ "level": 3
+}

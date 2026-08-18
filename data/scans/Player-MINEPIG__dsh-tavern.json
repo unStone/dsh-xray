@@ -1,0 +1,104 @@
+{
+ "repo": "Player-MINEPIG/dsh-tavern",
+ "stars": 7,
+ "description": "A plugin which makes dsh compatible with SillyTavern artifacts.",
+ "pushed_at": "2026-08-17T15:10:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-tavern",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/request",
+  "agent/request-error",
+  "agent/session-start",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "scripts/shared.mjs:1",
+    "scripts/shared.mjs:1",
+    "scripts/shared.mjs:217"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 48,
+   "dev": 111,
+   "evidence": [
+    "build.mjs:2",
+    "build.mjs:2",
+    "build.mjs:30",
+    "build.mjs:31",
+    "packages/character/src/store.js:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 100,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/shared.mjs:1, scripts/shared.mjs:1"
+  }
+ ],
+ "level": 3
+}

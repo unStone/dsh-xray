@@ -1,0 +1,110 @@
+{
+ "repo": "lusipad/RocketX",
+ "stars": 4,
+ "description": "以原版 Rocket.Chat 为内核、集成 Codex App Server、Deepseek Harness、Azure DevOps、体验对标飞书的团队协作客户端。",
+ "pushed_at": "2026-08-18T01:55:22Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "rocketchatx",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "@rcx/rc-client",
+  "@rcx/rcx-store",
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-autostart",
+  "@tauri-apps/plugin-dialog",
+  "@tauri-apps/plugin-fs",
+  "@tauri-apps/plugin-global-shortcut",
+  "@tauri-apps/plugin-http",
+  "@tauri-apps/plugin-log",
+  "@tauri-apps/plugin-notification",
+  "@tauri-apps/plugin-opener",
+  "@tauri-apps/plugin-process",
+  "@tauri-apps/plugin-updater",
+  "katex",
+  "lucide-react",
+  "pdfjs-dist",
+  "pinyin-pro",
+  "react",
+  "react-dom",
+  "zustand",
+  "@lusipad/rocketx",
+  "@rcx/rc-client",
+  "fastify"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "clientModules",
+  "sessions",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "platform.openai.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "apps/desktop/src-tauri/src/dsh_bridge.mjs:1",
+    "apps/desktop/src-tauri/src/dsh_bridge.mjs:499",
+    "apps/desktop/src-tauri/src/dsh_bridge.mjs:581"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "apps/web/src/agent/attachments.ts:74"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "apps/desktop/src-tauri/src/dsh_bridge.mjs:177",
+    "apps/desktop/src-tauri/src/dsh_bridge.mjs:179"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 595,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. apps/desktop/src-tauri/src/dsh_bridge.mjs:1, apps/desktop/src-tauri/src/dsh_bridge.mjs:499"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. apps/web/src/agent/attachments.ts:74"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

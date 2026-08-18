@@ -1,0 +1,111 @@
+{
+ "repo": "yangfch3/dsh-mcp-mgr",
+ "stars": 2,
+ "description": "MCP server manager for DeepSeek Harness — workspace mcp.json discovery, hot sync, and a web settings UI.",
+ "pushed_at": "2026-08-17T05:51:23Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mcp-mgr-ui",
+ "deps": [
+  "dsh-mcp-mgr",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/cordis",
+  "react",
+  "dsh-mcp-mgr-ui",
+  "chokidar",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-scope"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "mcp.deepwiki.com": 1
+ },
+ "env": {
+  "MCP_TEST_TOKEN": 2,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 33,
+   "evidence": [
+    "gen.mjs:4",
+    "gen.mjs:15",
+    "gen.mjs:16",
+    "gen.mjs:18",
+    "gen.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "verify.mjs:131",
+    "verify.mjs:145",
+    "verify.mjs:185",
+    "verify.mjs:222"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "token_env",
+   "evidence": "MCP_TEST_TOKEN"
+  }
+ ],
+ "level": 2
+}

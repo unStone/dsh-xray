@@ -1,0 +1,82 @@
+{
+ "repo": "javaxiaov/deepseek-herness-login",
+ "stars": 1,
+ "description": "dsh-login-plugin",
+ "pushed_at": "2026-08-15T15:40:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@dsh-login-gate/auth-gate",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh/account-store.js:116",
+    "dsh/account-store.js:124"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh/account-store.js:9",
+    "dsh/account-store.js:53"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. dsh/account-store.js:116, dsh/account-store.js:124"
+  }
+ ],
+ "level": 3
+}

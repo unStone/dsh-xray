@@ -1,0 +1,105 @@
+{
+ "repo": "Walvez/dsh-codex-sync",
+ "stars": 3,
+ "description": "One-stop bidirectional sync between OpenAI Codex and DeepSeek Harness (dsh): first-class skills, session import, workspace attach, MCP auto-mirror + Codex-side reverse MCP installer.",
+ "pushed_at": "2026-08-16T13:13:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-codex-sync",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-mcp-client"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "remote",
+  "slots",
+  "systemPrompt"
+ ],
+ "hooks": [
+  "agent/session-start"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "mcp.cloudflare.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 3,
+   "evidence": [
+    "bin/dsh-codex-sync.js:25",
+    "bin/dsh-codex-sync.js:25",
+    "bin/dsh-codex-sync.js:118",
+    "bin/dsh-codex-sync.js:124",
+    "bin/dsh-codex-sync.js:126"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 8,
+   "evidence": [
+    "bin/dsh-codex-sync.js:22",
+    "bin/dsh-codex-sync.js:22",
+    "bin/dsh-codex-sync.js:107",
+    "bin/dsh-codex-sync.js:157",
+    "bin/dsh-codex-sync.js:163"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. bin/dsh-codex-sync.js:25, bin/dsh-codex-sync.js:25"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,86 @@
+{
+ "repo": "beimianism/Hermeslike-Mixagent-MoA",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T05:32:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection"
+   ]
+  }
+ },
+ "pkg_name": "hermeslike-moa",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "llm"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "opencode.ai": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:34",
+    "scripts/smoke.mjs:92",
+    "scripts/smoke.mjs:141",
+    "scripts/smoke.mjs:148"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. scripts/smoke.mjs:34, scripts/smoke.mjs:92"
+  }
+ ],
+ "level": 3
+}

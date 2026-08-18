@@ -1,0 +1,106 @@
+{
+ "repo": "MOLAaaaaaaa/dsh-seismicx",
+ "stars": 2,
+ "description": "DeepSeek Harness plugin for the SeismicX earthquake-catalog skill",
+ "pushed_at": "2026-08-16T12:24:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-seismicx",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "csv-parse",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json --noCheck && tsdown"
+ },
+ "injects": [
+  "connection",
+  "jobs",
+  "sessions",
+  "slots",
+  "subprocess",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/cli.ts:4",
+    "src/cli.ts:155"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/workbench.ts:348"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/cli.ts:4, src/cli.ts:155"
+  }
+ ],
+ "level": 3
+}

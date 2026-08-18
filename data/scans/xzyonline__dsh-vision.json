@@ -1,0 +1,95 @@
+{
+ "repo": "xzyonline/dsh-vision",
+ "stars": 1,
+ "description": "Vision for text-only DeepSeek: view_image tool via any OpenAI-compatible VLM endpoint. macOS/Windows/Linux, one-click install.",
+ "pushed_at": "2026-08-16T03:47:51Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@dsh-external/dsh-vision",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "open.bigmodel.cn": 4
+ },
+ "env": {
+  "VISION_API_KEY": 2,
+  "DSH_VISION_API_KEY": 2,
+  "ZHIPUAI_API_KEY": 2,
+  "DASHSCOPE_API_KEY": 2,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:4",
+    "lib/index.js:4",
+    "lib/index.js:75",
+    "lib/index.js:94",
+    "scripts/install.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "scripts/install.mjs:102"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. lib/index.js:4, lib/index.js:4"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY, DSH_VISION_API_KEY, VISION_API_KEY, ZHIPUAI_API_KEY"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 2 services, 4 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

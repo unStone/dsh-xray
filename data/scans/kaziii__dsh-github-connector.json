@@ -1,0 +1,141 @@
+{
+ "repo": "kaziii/dsh-github-connector",
+ "stars": 5,
+ "description": "DeepSeek Harness (dsh) 的 GitHub 连接器：一键授权，对话内创建/AI 审查/合并 PR | GitHub connector for dsh: one-click connect, create/review/merge PRs from the conversation",
+ "pushed_at": "2026-08-17T09:46:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-github-connector",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "dsh-github",
+  "dsh-github-connect",
+  "dsh-github-rest",
+  "dsh-tool-github",
+  "dsh-ui-github",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-typert-protocol",
+  "dsh-github",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-settings",
+  "dsh-github",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "dsh-github",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-typert-protocol",
+  "dsh-github-connect",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "github",
+  "invariants",
+  "remote",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/turn-stopping",
+  "credentials/updated",
+  "github/device-flow",
+  "github/flow-state",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 22,
+ "domains": {
+  "ghes.example.com": 1,
+  "api.github.com": 4,
+  "ghe.example.com": 2
+ },
+ "env": {
+  "DSH_GITHUB_PROVIDER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "packages/github/github-connect/src/index.ts:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 3,
+   "evidence": [
+    "scripts/build-entry-shims.ts:34",
+    "scripts/build-entry-shims.ts:35",
+    "scripts/gen-tool-catalog.ts:140"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 50,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. packages/github/github-connect/src/index.ts:11"
+  }
+ ],
+ "level": 3
+}

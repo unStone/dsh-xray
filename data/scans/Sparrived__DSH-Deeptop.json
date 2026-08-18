@@ -1,0 +1,124 @@
+{
+ "repo": "Sparrived/DSH-Deeptop",
+ "stars": 5,
+ "description": "Deeptop, a lightweight native desktop client for DeepSeek Harness.",
+ "pushed_at": "2026-08-18T05:54:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deeptop",
+ "deps": [
+  "@tauri-apps/api",
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "react",
+  "react-dom",
+  "react-markdown",
+  "remark-breaks",
+  "remark-gfm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy",
+  "llm",
+  "messageAnnotations",
+  "pluginInventory",
+  "sessionPersistence",
+  "sessions",
+  "storageDomain",
+  "tools",
+  "typertGateway",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.github.com": 1,
+  "codeload.github.com": 1,
+  "api.example.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "GITHUB_TOKEN": 1,
+  "GH_TOKEN": 1,
+  "ComSpec": 2,
+  "GITHUB_REPOSITORY": 1,
+  "GITHUB_SERVER_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "deeptop-bridge/skill-installer.mjs:4",
+    "scripts/build-dev.mjs:5",
+    "scripts/build-dev.mjs:5",
+    "scripts/build-dev.mjs:49",
+    "scripts/generate-release-notes.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/App.tsx:2748"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 24,
+   "dev": 8,
+   "evidence": [
+    "deeptop-bridge/plugin-config.mjs:129",
+    "deeptop-bridge/plugin-config.mjs:172",
+    "deeptop-bridge/routes.mjs:242",
+    "deeptop-bridge/skill-installer.mjs:180",
+    "scripts/collect-release-assets.mjs:41"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 99,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. deeptop-bridge/skill-installer.mjs:4, scripts/build-dev.mjs:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/App.tsx:2748"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

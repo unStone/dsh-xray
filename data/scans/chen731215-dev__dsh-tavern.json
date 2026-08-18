@@ -1,0 +1,90 @@
+{
+ "repo": "chen731215-dev/dsh-tavern",
+ "stars": 2,
+ "description": "DSH 酒馆插件：DeepSeek Harness 原生管理面板（多角色卡/多世界书/可切换预设）。使用/安装：dsh plugin --profile web add dsh-tavern",
+ "pushed_at": "2026-08-17T20:10:29Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "runtime",
+  "slots",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "opencode.ai": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1173"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.manager.bundle.js:70"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:72",
+    "lib/index.js:149",
+    "lib/index.js:181",
+    "lib/index.js:218",
+    "lib/index.js:221"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:1173"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/client.manager.bundle.js:70"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 5 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

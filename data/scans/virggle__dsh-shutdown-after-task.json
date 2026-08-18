@@ -1,0 +1,97 @@
+{
+ "repo": "virggle/dsh-shutdown-after-task",
+ "stars": 1,
+ "description": "Shut down Windows after DeepSeek Harness tasks complete — button-armed, cancellable countdown. 任务完成后自动关机（按钮开启，倒计时可取消）。Zero-dependency DSH plugin.",
+ "pushed_at": "2026-08-16T09:50:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-shutdown-after-task",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "GH_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "index.js:215",
+    "scripts/submit-to-awesome.mjs:16",
+    "scripts/submit-to-awesome.mjs:16",
+    "scripts/submit-to-awesome.mjs:76",
+    "scripts/submit-to-awesome.mjs:93"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "index.js:50",
+    "scripts/submit-to-awesome.mjs:74",
+    "scripts/submit-to-awesome.mjs:88"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. index.js:215, scripts/submit-to-awesome.mjs:16"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN"
+  }
+ ],
+ "level": 3
+}

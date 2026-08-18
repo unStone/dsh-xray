@@ -1,0 +1,74 @@
+{
+ "repo": "LA7-F/dsh-MyCordis",
+ "stars": 2,
+ "description": "可以让你的dsh中的“Cordis插件”变得可管理，可一键生成安装包|Make the \"Cordis plugins\" in your dsh manageable and generate installation packages with one click.",
+ "pushed_at": "2026-08-17T14:46:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "mycrd-7",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "dynamicCordisRunner",
+  "fs",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "host.js:185",
+    "index.js:17"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. host.js:185, index.js:17"
+  }
+ ],
+ "level": 3
+}

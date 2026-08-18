@@ -1,0 +1,100 @@
+{
+ "repo": "Lee-Hilex/dsh-mineru",
+ "stars": 2,
+ "description": "基于 MinerU 的 DeepSeek Harness 多模态文档解析插件：PDF/Word/PPT/Excel/HTML/图片 → 结构化 Markdown（免 Token 的 Agent 轻量解析 / 精准解析双 API 模式）",
+ "pushed_at": "2026-08-16T06:14:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "slots",
+    "connection",
+    "sessions",
+    "conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mineru",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "connection",
+  "conversation",
+  "credentials",
+  "sessions",
+  "settings",
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {
+  "mineru.net": 3,
+  "cdn-mineru.openxlab.org.cn": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/artifacts.js:181",
+    "lib/artifacts.js:184",
+    "lib/http.js:11",
+    "lib/http.js:408",
+    "lib/mineru-client.js:15"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

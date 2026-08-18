@@ -1,0 +1,93 @@
+{
+ "repo": "me9rez/dsh-vlm-bridge",
+ "stars": 1,
+ "description": "DeepSeek Harness (dsh) bundle plugin: vision_analyze tool lets text-only LLM agents read images via SenseNova VLM, with Schemastery config and single-source credentials",
+ "pushed_at": "2026-08-14T10:12:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-vlm-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "attachments",
+  "credentials",
+  "fs",
+  "llm",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api-inference.modelscope.cn": 3
+ },
+ "env": {
+  "VLM_API_KEY_TEST": 2,
+  "TEMP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify.mjs:76"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify.mjs:5",
+    "scripts/verify.mjs:78"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/verify.mjs:76"
+  },
+  {
+   "id": "token_env",
+   "evidence": "VLM_API_KEY_TEST"
+  }
+ ],
+ "level": 3
+}

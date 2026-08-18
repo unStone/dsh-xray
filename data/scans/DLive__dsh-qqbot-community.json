@@ -1,0 +1,83 @@
+{
+ "repo": "DLive/dsh-qqbot-community",
+ "stars": 1,
+ "description": "为 DeepSeek Harness 提供 QQ 官方机器人的接入能力",
+ "pushed_at": "2026-08-17T16:30:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-qqbot-community",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "ws",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessionPersistence",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.sgroup.qq.com": 2,
+  "api.openai.com": 1,
+  "bots.qq.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "src/dsh-bookkeeping.ts:40",
+    "src/gateway.ts:111",
+    "src/inbound.ts:273",
+    "src/refindex.ts:7",
+    "src/refindex.ts:82"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

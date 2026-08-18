@@ -1,0 +1,103 @@
+{
+ "repo": "kusesad-1122/dsh-context-compactor",
+ "stars": 1,
+ "description": "DSH 上下文压缩/总结插件：80% 自动全局详细总结压缩（保留核心任务/决策/待解决问题/重要文件位置，删除调试细节与已解决错误），压缩后验保证 totalTokens 必须真实下降，context-overflow 自动恢复，/compact + /context-status，输入框上方一键按钮",
+ "pushed_at": "2026-08-16T11:12:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-context-compactor",
+ "deps": [
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-compaction-basic",
+  "@deepseek-ai/dsh-compaction-tool-result-pruner",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-token-meter"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "slots"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request-error",
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-client.cjs:8"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:26",
+    "lib/index.js:599",
+    "lib/index.js:818",
+    "lib/index.live.js:26",
+    "lib/index.live.js:599"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/check-client.cjs:8"
+  }
+ ],
+ "level": 3
+}

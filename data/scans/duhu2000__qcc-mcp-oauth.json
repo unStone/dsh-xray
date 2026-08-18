@@ -1,0 +1,95 @@
+{
+ "repo": "duhu2000/qcc-mcp-oauth",
+ "stars": 1,
+ "description": "DeepSeek Harness 插件：一键 OAuth 授权连接企查查（Qichacha）MCP 服务 / One-click OAuth connect to Qichacha MCP services for DeepSeek Harness",
+ "pushed_at": "2026-08-17T09:23:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "qcc-dsh-mcp-oauth",
+ "deps": [
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/schemastery",
+  "cordis",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "storageDomain",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "agent.qcc.com": 9
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/util.js:4",
+    "lib/util.js:34"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/oauth.js:286"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "lib/callback-server.js:48"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/real-smoke.mjs:135"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/util.js:4, lib/util.js:34"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/oauth.js:286"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/callback-server.js:48"
+  }
+ ],
+ "level": 3
+}

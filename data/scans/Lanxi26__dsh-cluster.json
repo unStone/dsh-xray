@@ -1,0 +1,138 @@
+{
+ "repo": "Lanxi26/dsh-cluster",
+ "stars": 2,
+ "description": "画布式多智能体协作插件 | Canvas-based multi-agent cooperation plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-14T15:49:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@lanxi266/dsh-cluster-plugin",
+ "deps": [
+  "@lanxi266/dsh-cluster-agent-fs",
+  "@lanxi266/dsh-tool-cluster",
+  "@lanxi266/dsh-client-ui-cluster",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "@lanxi266/dsh-cluster-agent-fs",
+  "react",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@lanxi266/dsh-cluster-agent-fs"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "clusterAgentFs",
+  "invariants",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-cluster-agent-fs/lib/index.js:3",
+    "packages/dsh-cluster-agent-fs/lib/index.js:327",
+    "packages/dsh-cluster-agent-fs/lib/types/index.js:44",
+    "packages/dsh-cluster-agent-fs/lib/types/index.js:251"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-client-ui-cluster/lib/client.js:148"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-client-ui-cluster/lib/client.js:1313",
+    "packages/dsh-client-ui-cluster/lib/client.js:1364"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-cluster-agent-fs/lib/index.js:198",
+    "packages/dsh-cluster-agent-fs/lib/index.js:209",
+    "packages/dsh-cluster-agent-fs/lib/index.js:227",
+    "packages/dsh-cluster-agent-fs/lib/types/index.js:131",
+    "packages/dsh-cluster-agent-fs/lib/types/index.js:142"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. packages/dsh-cluster-agent-fs/lib/index.js:3, packages/dsh-cluster-agent-fs/lib/index.js:327"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/dsh-client-ui-cluster/lib/client.js:148"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/dsh-client-ui-cluster/lib/client.js:1313, packages/dsh-client-ui-cluster/lib/client.js:1364"
+  }
+ ],
+ "level": 3
+}

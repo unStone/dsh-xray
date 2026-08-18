@@ -1,0 +1,103 @@
+{
+ "repo": "vocsong/deepseek-harness-portal",
+ "stars": 1,
+ "description": "A multi-tenant platform that provisions and routes isolated DeepSeek Harness (dsh) instances — one container per user.",
+ "pushed_at": "2026-08-16T16:32:55Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-portal",
+ "deps": [
+  "@fastify/cookie",
+  "@fastify/static",
+  "bcryptjs",
+  "better-sqlite3",
+  "fastify",
+  "http-proxy",
+  "nodemailer"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DOMAIN": 1,
+  "INSTANCE_MEMORY": 1,
+  "PORTAL_ORIGIN": 1,
+  "HOST": 1,
+  "INSTANCE_DOMAIN": 1,
+  "INSTANCE_SLUG_SUFFIX": 1,
+  "COOKIE_DOMAIN": 1,
+  "DATA_DIR": 1,
+  "DSH_IMAGE": 1,
+  "ADMIN_EMAIL": 1,
+  "ADMIN_NAME": 1,
+  "ADMIN_PASSWORD": 1,
+  "INSTANCE_CPUS": 1,
+  "INSTANCE_MEMORY_SWAP": 1,
+  "INSTANCE_NETWORK": 1,
+  "INSTANCE_LOG_SIZE": 1,
+  "INSTANCE_TMPFS_SIZE": 1,
+  "SMTP_HOST": 1,
+  "SMTP_SECURE": 1,
+  "SMTP_USER": 2,
+  "SMTP_PASS": 1,
+  "SMTP_FROM": 1,
+  "OTP_DEV_MODE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "portal/src/orchestrator.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "portal/src/orchestrator.js:199"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. portal/src/orchestrator.js:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. portal/src/orchestrator.js:199"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ADMIN_PASSWORD, COOKIE_DOMAIN, SMTP_PASS"
+  }
+ ],
+ "level": 2
+}

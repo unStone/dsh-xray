@@ -1,0 +1,89 @@
+{
+ "repo": "ihuajiu/dsh-plugins-finder",
+ "stars": 3,
+ "description": "Natural-language plugin search for DeepSeek Harness — ask what you need, get matching dsh.so plugins with install commands.",
+ "pushed_at": "2026-08-17T16:57:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugins-finder",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "www.dsh.so": 5,
+  "dsh.so": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-install.mjs:8",
+    "scripts/verify-install.mjs:8",
+    "scripts/verify-install.mjs:32"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-install.mjs:9",
+    "scripts/verify-install.mjs:9",
+    "scripts/verify-install.mjs:45",
+    "scripts/verify-install.mjs:47",
+    "scripts/verify-install.mjs:94"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-install.mjs:58",
+    "scripts/verify-install.mjs:82"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/verify-install.mjs:8, scripts/verify-install.mjs:8"
+  }
+ ],
+ "level": 3
+}

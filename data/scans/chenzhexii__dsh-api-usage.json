@@ -1,0 +1,87 @@
+{
+ "repo": "chenzhexii/dsh-api-usage",
+ "stars": 1,
+ "description": "在 DSH Web 界面侧边栏底部提供常驻小部件，实时展示 DeepSeek API 的当前余额、今日消费、Token 用量与请求次数，并附 24 小时消费柱状图，点击即可直达 DeepSeek 充值页。",
+ "pushed_at": "2026-08-14T17:59:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-ds-api-usage",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "slots",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "platform.deepseek.com": 1,
+  "api-docs.deepseek.com": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:281"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:150"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/index.js:281"
+  }
+ ],
+ "level": 3
+}

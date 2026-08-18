@@ -1,0 +1,110 @@
+{
+ "repo": "AlowEnsoul/dsh-rag-kb",
+ "stars": 1,
+ "description": "DeepSeek Harness 本地 RAG 知识库插件：本地文档切片、向量化、语义检索，全程本地运行（Ollama + 纯前端/主机端）。A local-first RAG knowledge base plugin for DeepSeek Harness.",
+ "pushed_at": "2026-08-17T21:09:53Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-client-ui-kb",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-invariants",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "invariants",
+  "sandboxPolicy",
+  "slots",
+  "subprocess",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {
+  "schemas.openxmlformats.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/kb/rag-kb/src/index.ts:154",
+    "packages/kb/rag-kb/src/index.ts:229",
+    "packages/kb/rag-kb/src/index.ts:318"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/kb/rag-kb/src/index.ts:200",
+    "packages/kb/rag-kb/src/index.ts:212",
+    "packages/kb/rag-kb/src/index.ts:223",
+    "packages/kb/rag-kb/src/index.ts:444"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/kb/rag-kb/src/index.ts:13",
+    "packages/kb/rag-kb/src/index.ts:13",
+    "packages/kb/rag-kb/src/index.ts:336",
+    "packages/kb/rag-kb/src/index.ts:354"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/kb/rag-kb/src/index.ts:154, packages/kb/rag-kb/src/index.ts:229"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. packages/kb/rag-kb/src/index.ts:200, packages/kb/rag-kb/src/index.ts:212"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,121 @@
+{
+ "repo": "Andiii208/dsh-remote",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T08:30:53Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-remote",
+ "deps": [
+  "@dsh-remote/protocol",
+  "qrcode-terminal",
+  "relay",
+  "@dsh-remote/protocol",
+  "@dsh-remote/capture",
+  "ws",
+  "@dsh-remote/protocol",
+  "ws",
+  "@dsh-remote/protocol",
+  "@expo-google-fonts/jetbrains-mono",
+  "@expo-google-fonts/space-grotesk",
+  "@shopify/flash-list",
+  "expo",
+  "expo-background-task",
+  "expo-build-properties",
+  "expo-camera",
+  "expo-clipboard",
+  "expo-constants",
+  "expo-font",
+  "expo-haptics",
+  "expo-linking",
+  "expo-network",
+  "expo-notifications",
+  "expo-router",
+  "expo-secure-store",
+  "expo-splash-screen",
+  "expo-status-bar",
+  "expo-system-ui",
+  "expo-task-manager",
+  "react",
+  "react-dom",
+  "react-native",
+  "react-native-gesture-handler",
+  "react-native-reanimated",
+  "react-native-safe-area-context",
+  "react-native-screens",
+  "react-native-svg",
+  "react-native-web",
+  "react-native-worklets"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "exp.host": 2,
+  "api.github.com": 1
+ },
+ "env": {
+  "RELAY_CREDENTIAL_SECRET": 1,
+  "EXPO_ACCESS_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/protocol/src/relay-crypto.ts:183"
+   ]
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    ".shots/serve-r1.cjs:8",
+    "mock-harness/src/index.ts:50",
+    "relay/src/server.ts:532"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 5,
+   "evidence": [
+    "tools/capture/src/record.ts:148"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 180,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/protocol/src/relay-crypto.ts:183"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. .shots/serve-r1.cjs:8, mock-harness/src/index.ts:50"
+  },
+  {
+   "id": "token_env",
+   "evidence": "EXPO_ACCESS_TOKEN, RELAY_CREDENTIAL_SECRET"
+  }
+ ],
+ "level": 2
+}

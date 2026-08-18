@@ -1,0 +1,83 @@
+{
+ "repo": "hanwuji1/dsh-web-launcher",
+ "stars": 1,
+ "description": "🐋 One-click desktop launcher for the DeepSeek Harness Web UI — a whale-icon app that boots dsh web and opens your browser. Zero friction, zero typing.",
+ "pushed_at": "2026-08-15T14:46:36Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 6,
+  "ONE_DRIVE": 2,
+  "LOCALAPPDATA": 1,
+  "ComSpec": 1,
+  "SHARP_PATH": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/launcher.js:6",
+    "lib/launcher.js:6",
+    "lib/launcher.js:95",
+    "lib/launcher.js:123",
+    "lib/launcher.js:125"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/launcher.js:7",
+    "lib/launcher.js:67",
+    "tools/make-banner.mjs:3",
+    "tools/make-banner.mjs:30",
+    "tools/make-icon.mjs:4"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/launcher.js:6, lib/launcher.js:6"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 2 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

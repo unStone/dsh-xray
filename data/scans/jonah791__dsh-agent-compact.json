@@ -1,0 +1,75 @@
+{
+ "repo": "jonah791/dsh-agent-compact",
+ "stars": 2,
+ "description": "Agent-driven compaction for DeepSeek Harness: the agent summarizes its own conversation (KV-cache friendly, no giant replay). Verified in production at ~460k-token sessions.",
+ "pushed_at": "2026-08-17T01:03:11Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-agent-compact",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-token-meter"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "sessions",
+  "tokenMeter"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request-error",
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

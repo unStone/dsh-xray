@@ -1,0 +1,86 @@
+{
+ "repo": "maxwell-feng/dsh-tesseract-ocr",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-17T14:16:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@maxwell-feng/dsh-tesseract-ocr",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "attachments",
+  "llm"
+ ],
+ "hooks": [
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:33",
+    "lib/index.js:105",
+    "lib/index.js:257",
+    "src/index.ts:35",
+    "src/index.ts:185"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:34",
+    "lib/index.js:69",
+    "lib/index.js:242",
+    "src/index.ts:36",
+    "src/index.ts:147"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:33, lib/index.js:105"
+  }
+ ],
+ "level": 3
+}

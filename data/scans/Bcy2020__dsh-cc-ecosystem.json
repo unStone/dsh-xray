@@ -1,0 +1,126 @@
+{
+ "repo": "Bcy2020/dsh-cc-ecosystem",
+ "stars": 3,
+ "description": "让 DeepSeek Harness 用上 Claude Code 全家桶:技能、命令、规则、权限、子代理、hooks—— .claude/ 资产原样加载,正在逐步做到全兼容。",
+ "pushed_at": "2026-08-17T15:06:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-cc-ecosystem",
+ "deps": [
+  "dsh-cc-loader",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "dsh-cc-loader",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-hook-protocol",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "yaml",
+  "@modelcontextprotocol/sdk",
+  "dsh-cc-loader",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/schemastery",
+  "dsh-cc-loader",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "yaml",
+  "dsh-cc-loader",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "shell",
+  "skills",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "session/event",
+  "subagent/end",
+  "subagent/start",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "scripts/check.mjs:4",
+    "scripts/check.mjs:4",
+    "scripts/check.mjs:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 92,
+   "evidence": [
+    "scripts/generate-hook-fixtures.mjs:10",
+    "scripts/generate-hook-fixtures.mjs:10",
+    "scripts/generate-hook-fixtures.mjs:102",
+    "scripts/generate-hook-fixtures.mjs:103",
+    "scripts/generate-hook-fixtures.mjs:120"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 43,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/check.mjs:4, scripts/check.mjs:4"
+  }
+ ],
+ "level": 3
+}

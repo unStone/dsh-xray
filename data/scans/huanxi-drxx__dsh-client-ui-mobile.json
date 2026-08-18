@@ -1,0 +1,104 @@
+{
+ "repo": "huanxi-drxx/dsh-client-ui-mobile",
+ "stars": 3,
+ "description": "DSH Web UI 手机端适配插件：抽屉式布局、聊天背景+毛玻璃、AI 聊天气泡、消息头像、中英双语（桌面端与原版一致）",
+ "pushed_at": "2026-08-16T16:13:26Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@local/dsh-client-ui-mobile",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "slots/changed"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.exa.ai": 1,
+  "api.deepseek.com": 2,
+  "api.search.brave.com": 1,
+  "api.bing.microsoft.com": 1,
+  "api.tavily.com": 1,
+  "api.firecrawl.dev": 1,
+  "api.ydc-index.io": 2,
+  "google.serper.dev": 2,
+  "serpapi.com": 2,
+  "kagi.com": 2,
+  "api.bochaai.com": 2,
+  "openrouter.ai": 1,
+  "api.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "test-smoke.cjs:71"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1090"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:8",
+    "lib/index.js:23",
+    "lib/index.js:44",
+    "lib/index.js:1092"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. test-smoke.cjs:71"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:1090"
+  }
+ ],
+ "level": 2
+}

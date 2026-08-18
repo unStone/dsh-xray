@@ -1,0 +1,126 @@
+{
+ "repo": "kermanx/dshw",
+ "stars": 4,
+ "description": "PR workflow plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T06:28:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ]
+  }
+ },
+ "pkg_name": "dshw",
+ "deps": [
+  "@dreamcatcher-tech/commit-graph",
+  "react",
+  "react-dom",
+  "vue"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "locale",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.apple.com": 3
+ },
+ "env": {
+  "CODEX_HOME": 2,
+  "DSHW_DATA_ROOT": 1,
+  "DSHW_HARNESS_ROOT": 1,
+  "DSHW_MANAGED_ROOT": 1,
+  "DSHW_HARNESS_RUNTIME_COMMIT": 1,
+  "DSHW_HARNESS_RUNTIME_ROOT": 2,
+  "DSHW_CLONES_ROOT": 1,
+  "DSHW_CODE_WORKSPACE_FILE": 1,
+  "DSHW_HARNESS_REMOTE_URL": 1,
+  "DSHW_SERVICE_LABEL": 1,
+  "DSHW_SERVICE_PLIST": 1,
+  "DSHW_PORT": 1,
+  "DSHW_DEV_MODE": 1,
+  "DSHW_INSTALLATION_ID": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 3,
+   "evidence": [
+    "scripts/migrate-clone-names.mjs:19",
+    "scripts/migrate-clone-names.mjs:19",
+    "scripts/migrate-clone-names.mjs:37",
+    "src/codex-app-server.ts:1",
+    "src/codex-app-server.ts:22"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/codex-session-worker.ts:237",
+    "src/dsh-session-plugin.ts:241",
+    "src/service.ts:221"
+   ]
+  },
+  "fs_write": {
+   "src": 24,
+   "dev": 43,
+   "evidence": [
+    "scripts/build-plugin.mjs:80",
+    "scripts/migrate-clone-names.mjs:99",
+    "scripts/migrate-repos.mjs:42",
+    "src/codex-session-worker.ts:1",
+    "src/codex-session-worker.ts:90"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/dsh-session-plugin.ts:305"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 59,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/migrate-clone-names.mjs:19, scripts/migrate-clone-names.mjs:19"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. src/codex-session-worker.ts:237, src/dsh-session-plugin.ts:241"
+  }
+ ],
+ "level": 3
+}

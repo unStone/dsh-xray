@@ -1,0 +1,95 @@
+{
+ "repo": "Oliver0804/dsh-discord-bot",
+ "stars": 1,
+ "description": "Map dsh (DeepSeek Harness) workspaces onto a Discord category — query session trajectories and live subagents, and drive an agent, from anywhere with no inbound port.",
+ "pushed_at": "2026-08-16T11:38:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-discord-bot",
+ "deps": [
+  "discord.js"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionQuery"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/status",
+  "approval/request",
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_DISCORD_BOT_TOKEN": 1,
+  "DISCORD_BOT_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/setup.js:11",
+    "bin/setup.js:11",
+    "bin/setup.js:107",
+    "bin/setup.js:255"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "bin/setup.js:12",
+    "bin/setup.js:140",
+    "bin/setup.js:194",
+    "bin/setup.js:235"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bin/setup.js:11, bin/setup.js:11"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DISCORD_BOT_TOKEN, DSH_DISCORD_BOT_TOKEN"
+  }
+ ],
+ "level": 3
+}

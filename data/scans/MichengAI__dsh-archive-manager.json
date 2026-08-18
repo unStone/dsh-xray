@@ -1,0 +1,99 @@
+{
+ "repo": "MichengAI/dsh-archive-manager",
+ "stars": 3,
+ "description": "DSH Archive Manager 基于 DeepSeek Harness 的归档会话管理插件",
+ "pushed_at": "2026-08-17T17:13:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-typert-registry",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@michengai/dsh-archive-manager",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-workspace",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-projection-cache",
+  "@deepseek-ai/dsh-spill-local",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry",
+  "@deepseek-ai/dsh-workspace"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "sessionPersistence",
+  "sessionProjectionCache",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "typert",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

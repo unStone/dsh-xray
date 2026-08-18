@@ -1,0 +1,119 @@
+{
+ "repo": "zzhzz/dsh-ask-peer",
+ "stars": 3,
+ "description": "A decentralized \"ask others\" plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T13:59:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-ask-peer",
+ "deps": [
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/dsh-user-approval"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "agents",
+  "conversationEvents",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "approval/request",
+  "session/event"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {
+  "MOCK_PORT": 1,
+  "MOCK_ROLE": 1,
+  "MOCK_ANSWER": 1,
+  "MOCK_ASK_PEERS": 1,
+  "MOCK_ASK_QUESTION": 1,
+  "MOCK_ATTEMPT_WRITE": 1,
+  "MOCK_ASK_LOOP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/mock-llm.mjs:128",
+    "src/server.ts:98"
+   ]
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "src/identity.ts:8",
+    "src/identity.ts:38",
+    "src/identity.ts:40",
+    "src/settings.ts:2",
+    "src/settings.ts:164"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/mock-llm.mjs:128, src/server.ts:98"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,88 @@
+{
+ "repo": "allentnetus/dsh-job-hunting",
+ "stars": 1,
+ "description": "DeepSeek Harness job hunting plugin and runtime skill for local job intelligence workflows.",
+ "pushed_at": "2026-08-18T02:33:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-job-hunting",
+ "deps": [
+  "mammoth",
+  "pdfjs-dist",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 13,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dist/src/browser/browser-skill-runner.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "dist/src/desktop/windows-shortcut.js:93",
+    "dist/src/desktop/windows-shortcut.js:102",
+    "dist/src/reports/daily-report.js:322",
+    "dist/src/reports/daily-report.js:323",
+    "dist/src/reports/daily-report.js:324"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 77,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. dist/src/browser/browser-skill-runner.js:1"
+  }
+ ],
+ "level": 3
+}

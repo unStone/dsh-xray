@@ -1,0 +1,88 @@
+{
+ "repo": "miaobuao/dsh-document-parser",
+ "stars": 1,
+ "description": "A DeepSeek Harness document parsing tool powered by LiteParse",
+ "pushed_at": "2026-08-14T04:09:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-document-parser",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-tools",
+  "@llamaindex/liteparse"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/postinstall.mjs",
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "fs",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/postinstall.mjs:1",
+    "scripts/postinstall.mjs:1",
+    "scripts/postinstall.mjs:14",
+    "scripts/prepare.mjs:3",
+    "scripts/prepare.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/postinstall.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/postinstall.mjs:1, scripts/postinstall.mjs:1"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,92 @@
+{
+ "repo": "omdsh-dev/dsh-container",
+ "stars": 1,
+ "description": "DeepSeek Harness (DSH) Docker 容器化封装方案，支持安全沙箱、局域网中继与数据持久化。 / Hardened Docker container for DeepSeek Harness (DSH) with LAN access relay and persistence.",
+ "pushed_at": "2026-08-17T11:50:32Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-container-auth-relay",
+ "deps": [
+  "cookie",
+  "http-proxy-3",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CONTAINER_INTERNAL_PORT": 2,
+  "DSH_CONTAINER_RELAY_PORT": 2,
+  "DSH_CONTAINER_TRUSTED_HOSTS": 2,
+  "DSH_PERMISSION_MODE": 1,
+  "DSH_TELEMETRY_DISABLED": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "docker/auth-relay/server.mjs:104"
+   ]
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "docker/patch-dsh.mjs:91",
+    "docker/patch-dsh.mjs:95",
+    "docker/patch-dsh.mjs:112",
+    "docker/patch-dsh.mjs:129",
+    "docker/patch-dsh.mjs:149"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. docker/auth-relay/server.mjs:104"
+  }
+ ],
+ "level": 2
+}

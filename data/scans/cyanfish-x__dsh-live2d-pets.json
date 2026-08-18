@@ -1,0 +1,117 @@
+{
+ "repo": "cyanfish-x/dsh-live2d-pets",
+ "stars": 7,
+ "description": "Live2D 桌宠插件 for DeepSeek Harness：Agent 状态镜像 + 互动陪伴，内置宽松许可预设模型 / Live2D pet plugin: agent state mirror + interactive companion with curated permissive-license presets",
+ "pushed_at": "2026-08-16T15:23:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-live2d-pets",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-settings",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "agent/turn-stopping",
+  "approval/request"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.live2d.com": 1,
+  "www.opensource.org": 1,
+  "www.pixijs.com": 2
+ },
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "assets/vendor/pixi.min.js:8",
+    "assets/vendor/pixi.min.js:8",
+    "assets/vendor/pixi.min.js:8"
+   ]
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "assets/vendor/live2dcubismcore.min.js:9",
+    "assets/vendor/live2dcubismcore.min.js:9",
+    "assets/vendor/live2dcubismcore.min.js:9"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 33,
+   "evidence": [
+    "src/custom-models.ts:8",
+    "src/custom-models.ts:91",
+    "src/custom-models.ts:138",
+    "src/persist.ts:7",
+    "src/persist.ts:62"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. assets/vendor/pixi.min.js:8, assets/vendor/pixi.min.js:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. assets/vendor/live2dcubismcore.min.js:9, assets/vendor/live2dcubismcore.min.js:9"
+  }
+ ],
+ "level": 3
+}

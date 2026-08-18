@@ -1,0 +1,155 @@
+{
+ "repo": "cerebrixos-org/tuning-engines-cli",
+ "stars": 5,
+ "description": "CLI & MCP server for Tuning Engines — fine-tune LLMs on code repositories",
+ "pushed_at": "2026-08-18T02:06:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./packages/tuningengines-dsh-plugin/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "tuningengines-cli",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "commander",
+  "yaml"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "session/event",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "app.tuningengines.com": 18,
+  "api.tuningengines.com": 14,
+  "opencode.ai": 2
+ },
+ "env": {
+  "TE_API_URL": 13,
+  "TE_API_KEY": 9,
+  "CLAUDE_PROJECT_DIR": 10,
+  "TE_INFERENCE_KEY": 5,
+  "TE_INFERENCE_URL": 4,
+  "TE_NATIVE_SESSION_ID": 4,
+  "TE_NATIVE_THREAD_ID": 4,
+  "TE_RUN_ID": 2,
+  "TE_REQUEST_ID": 2,
+  "TE_MODEL": 4,
+  "ANTHROPIC_MODEL": 2,
+  "CLAUDE_MODEL": 2,
+  "OPENAI_MODEL": 2,
+  "OPENAI_API_MODEL": 2,
+  "CODEX_MODEL": 2,
+  "LLM_MODEL": 2,
+  "MODEL": 2,
+  "TE_SMALL_FAST_MODEL": 2,
+  "ANTHROPIC_SMALL_FAST_MODEL": 2,
+  "CLAUDE_SMALL_FAST_MODEL": 2,
+  "TRACEPARENT": 2,
+  "TRACESTATE": 2,
+  "TE_INITIATIVE_ID": 2,
+  "ANTHROPIC_AUTH_TOKEN": 2,
+  "ANTHROPIC_API_KEY": 2,
+  "TE_INFERENCE_BASE": 1,
+  "TE_ADMIN_API_KEY": 1,
+  "TE_USER_API_KEY": 1,
+  "TE_SMOKE_MUTATE": 1,
+  "TE_SMOKE_LIVE_CALLS": 1,
+  "TE_SMOKE_CREATE_MODEL_DEPLOYMENT": 1,
+  "TE_SMOKE_ALLOW_PROVIDER_AUTH_FAILURE": 1,
+  "TE_SMOKE_REPORT": 1,
+  "TE_SMOKE_ALLOWED_MODEL": 4,
+  "TE_SMOKE_DENIED_MODEL": 1,
+  "TE_SMOKE_GUARDRAIL_MODEL": 1,
+  "TE_SMOKE_MCP_SERVER_URL": 2,
+  "TE_SMOKE_MCP_TRANSPORT": 1,
+  "TE_SMOKE_AGENT_URL": 3,
+  "TE_SMOKE_MCP_TOOL_NAME": 2,
+  "TE_SMOKE_LITELLM_MODEL": 1,
+  "TE_SMOKE_MODEL_PROVIDER": 1,
+  "TE_SMOKE_MODEL_PRIORITY": 1,
+  "TE_SMOKE_MODEL_WEIGHT": 1,
+  "TE_SMOKE_TIMEOUT_MS": 1,
+  "TE_SMOKE_USER_EMAIL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 43,
+   "dev": 0,
+   "evidence": [
+    "test_guard_claude_install.mjs:2",
+    "test_guard_claude_install.mjs:2",
+    "test_guard_claude_install.mjs:12",
+    "test_guard_claude_install.mjs:34",
+    "test_guard_runtime_adapters.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "test_client_parity.mjs:8",
+    "test_client_parity.mjs:21",
+    "test_guard_claude_install.mjs:83",
+    "test_guard_claude_install.mjs:121",
+    "test_guard_runtime_adapters.mjs:29"
+   ]
+  },
+  "fs_write": {
+   "src": 36,
+   "dev": 0,
+   "evidence": [
+    "test_guard_claude_install.mjs:141",
+    "test_guard_claude_install.mjs:184",
+    "dist/config.js:97",
+    "dist/config.js:119",
+    "dist/goal_context.js:72"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 146,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./packages/tuningengines-dsh-plugin/cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×43 src, e.g. test_guard_claude_install.mjs:2, test_guard_claude_install.mjs:2"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. test_client_parity.mjs:8, test_client_parity.mjs:21"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, TE_ADMIN_API_KEY, TE_API_KEY, TE_INFERENCE_KEY, TE_SMOKE_ALLOW_PROVIDER_AUTH_FAILURE"
+  }
+ ],
+ "level": 3
+}

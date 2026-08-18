@@ -1,0 +1,84 @@
+{
+ "repo": "birdman1992/dsh-birdman-plugins",
+ "stars": 2,
+ "description": "Community plugins for DeepSeek Harness (DSH): model metadata autofill and workspace artifacts view.",
+ "pushed_at": "2026-08-15T07:29:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-birdman-plugins",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-session"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "fs",
+  "llm",
+  "sessions",
+  "settings",
+  "slots",
+  "timer"
+ ],
+ "hooks": [
+  "settings/updated"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "developers.openai.com": 1,
+  "kimi-ai.chat": 1,
+  "promptgenius.net": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

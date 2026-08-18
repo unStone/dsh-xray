@@ -1,0 +1,87 @@
+{
+ "repo": "platonai/dsh-browser4",
+ "stars": 4,
+ "description": "Browser4 — an AI-native browser engine for autonomous agents, intelligent extraction, and large-scale web automation.",
+ "pushed_at": "2026-08-17T18:37:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-browser4",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node scripts/install-browser4.mjs",
+  "postinstall": "node scripts/install-browser4.mjs"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "browser4.oss-cn-beijing.aliyuncs.com": 1
+ },
+ "env": {
+  "DSH_BROWSER4_SKIP_CLI_INSTALL": 1,
+  "ComSpec": 2,
+  "DSH_HOME": 1,
+  "DSH_AGENTS_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/install-browser4.mjs:19",
+    "scripts/install-browser4.mjs:19",
+    "scripts/install-browser4.mjs:50",
+    "scripts/install-browser4.mjs:51",
+    "scripts/install-browser4.mjs:63"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 1,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/install-browser4.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/install-browser4.mjs:19, scripts/install-browser4.mjs:19"
+  }
+ ],
+ "level": 3
+}

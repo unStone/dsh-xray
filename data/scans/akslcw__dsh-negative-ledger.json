@@ -1,0 +1,103 @@
+{
+ "repo": "akslcw/dsh-negative-ledger",
+ "stars": 3,
+ "description": "",
+ "pushed_at": "2026-08-15T06:17:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@akslcw/dsh-negative-ledger",
+ "deps": [
+  "better-sqlite3"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "fs/observed",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "registry.npmmirror.com": 1
+ },
+ "env": {
+  "DSH_CHECKOUT": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "DSH_BIN": 1,
+  "NEGLEDGER_STDIO": 1,
+  "npm_execpath": 1,
+  "DSH_HOME": 2,
+  "DSH_AGENTS_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 3,
+   "evidence": [
+    "benchmark/run.ts:15",
+    "benchmark/run.ts:15",
+    "benchmark/run.ts:186",
+    "benchmark/run.ts:280",
+    "smoke/packed-consumer.mjs:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 25,
+   "dev": 95,
+   "evidence": [
+    "benchmark/run.ts:12",
+    "benchmark/run.ts:12",
+    "benchmark/run.ts:12",
+    "benchmark/run.ts:155",
+    "benchmark/run.ts:163"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. benchmark/run.ts:15, benchmark/run.ts:15"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

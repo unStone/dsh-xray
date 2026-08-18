@@ -1,0 +1,77 @@
+{
+ "repo": "byJming/dsh-session-cleaner",
+ "stars": 3,
+ "description": "可视化删除 DeepSeek Harness (dsh) 会话的工具。",
+ "pushed_at": "2026-08-14T09:00:34Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "server.js:10",
+    "server.js:136",
+    "server.js:138",
+    "server.js:140",
+    "store.js:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "server.js:155"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 5,
+   "evidence": [
+    "store.js:434",
+    "store.js:440",
+    "store.js:444"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. server.js:10, server.js:136"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. server.js:155"
+  }
+ ],
+ "level": 2
+}

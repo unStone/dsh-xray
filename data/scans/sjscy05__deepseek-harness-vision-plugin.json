@@ -1,0 +1,85 @@
+{
+ "repo": "sjscy05/deepseek-harness-vision-plugin",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-13T15:40:40Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "vision-plugin",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.openai.com": 2,
+  "open.bigmodel.cn": 2,
+  "dashscope.aliyuncs.com": 2,
+  "ark.cn-beijing.volces.com": 2,
+  "api.anthropic.com": 2,
+  "generativelanguage.googleapis.com": 2
+ },
+ "env": {
+  "PROVIDER": 1,
+  "API_KEY": 1,
+  "MODEL": 1,
+  "BASE_URL": 1,
+  "IMAGE": 1,
+  "QUESTION": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/image.ts:85"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/image.ts:85"
+  },
+  {
+   "id": "token_env",
+   "evidence": "API_KEY"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 2 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

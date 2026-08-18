@@ -1,0 +1,96 @@
+{
+ "repo": "HaoyueQin/deepseek-harness-desktop",
+ "stars": 6,
+ "description": "A desktop shell for DeepSeek Harness — the pluggable AI agent harness from DeepSeek. Wrap the official dsh web UI into a native-feeling, always-on desktop app. / 为 DeepSeek Harness（DeepSeek 开源的可插拔 AI ",
+ "pushed_at": "2026-08-17T14:02:09Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [
+  "electron-updater"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_VERSION": 1,
+  "npm_config_registry": 1,
+  "HTTPS_PROXY": 2,
+  "HTTP_PROXY": 2,
+  "DSH_ICON_SVG": 1,
+  "XDG_CONFIG_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "scripts/install-runtime.mjs:12",
+    "scripts/install-runtime.mjs:12",
+    "scripts/install-runtime.mjs:28",
+    "scripts/install-runtime.mjs:53",
+    "scripts/install-runtime.mjs:73"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-titlebar.mjs:55"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 0,
+   "evidence": [
+    "scripts/install-runtime.mjs:11",
+    "scripts/install-runtime.mjs:11",
+    "scripts/install-runtime.mjs:11",
+    "scripts/install-runtime.mjs:67",
+    "scripts/install-runtime.mjs:72"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. scripts/install-runtime.mjs:12, scripts/install-runtime.mjs:12"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/verify-titlebar.mjs:55"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,85 @@
+{
+ "repo": "wangshunnn/oh-my-dsh",
+ "stars": 5,
+ "description": "🐋 All you need is oh-my-dsh ｜ DeepSeek Harness 社区插件索引与精选（自动更新）",
+ "pushed_at": "2026-08-18T03:24:53Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "oh-my-dsh",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "WORKSPACE_GITHUB_REQUEST_LIMIT": 1,
+  "GITHUB_TOKEN": 1,
+  "GH_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/lib/registry.ts:1",
+    "scripts/lib/registry.ts:1",
+    "scripts/lib/registry.ts:444"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/lib/registry.ts:541"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-site.mjs:17",
+    "scripts/update-registry.ts:555",
+    "scripts/update-registry.ts:556",
+    "scripts/update-registry.ts:557",
+    "scripts/update-registry.ts:558"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/lib/registry.ts:1, scripts/lib/registry.ts:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/lib/registry.ts:541"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

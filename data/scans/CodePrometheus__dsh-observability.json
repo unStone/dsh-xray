@@ -1,0 +1,83 @@
+{
+ "repo": "CodePrometheus/dsh-observability",
+ "stars": 2,
+ "description": "Observability for DeepSeek Harness (dsh), use the OpenTelemetry Protocol",
+ "pushed_at": "2026-08-15T09:12:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-observability",
+ "deps": [
+  "@opentelemetry/api",
+  "@opentelemetry/exporter-trace-otlp-http",
+  "@opentelemetry/otlp-exporter-base",
+  "@opentelemetry/resources",
+  "@opentelemetry/sdk-trace-base",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-command-feedback",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-telemetry"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "llm",
+  "sessions"
+ ],
+ "hooks": [
+  "session-telemetry/record",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

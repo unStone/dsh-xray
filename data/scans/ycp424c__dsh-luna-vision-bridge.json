@@ -1,0 +1,95 @@
+{
+ "repo": "ycp424c/dsh-luna-vision-bridge",
+ "stars": 1,
+ "description": "DSH adapter that transcribes native image attachments with Codex Luna before delegating to DeepSeek",
+ "pushed_at": "2026-08-17T02:26:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@ycp424c/dsh-luna-vision-bridge",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "connection",
+  "llm",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_SOURCE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/vision.ts:1",
+    "src/vision.ts:91"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/vision.ts:221",
+    "src/vision.ts:267"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/vision.ts:1, src/vision.ts:91"
+  }
+ ],
+ "level": 3
+}

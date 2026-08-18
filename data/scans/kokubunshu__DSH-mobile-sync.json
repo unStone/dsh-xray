@@ -1,0 +1,130 @@
+{
+ "repo": "kokubunshu/DSH-mobile-sync",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T11:42:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mobile-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "qrcode",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "react-dom",
+  "ws",
+  "firebase-admin"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "PORT": 1,
+  "CODE_TTL_MS": 1,
+  "MAX_ROOMS": 1,
+  "LOG_LEVEL": 1,
+  "FCM_CREDENTIALS": 1,
+  "FCM_PROJECT_ID": 2,
+  "DSH_HOME": 1,
+  "CODE": 10,
+  "WS_URL": 12,
+  "API": 2,
+  "DEVICE_ID": 7,
+  "PATHS": 1,
+  "DSH_PORT": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 12,
+   "dev": 5,
+   "evidence": [
+    "01-harness-plugin/dsh-mobile-bridge/lib/index.js:655",
+    "01-harness-plugin/dsh-mobile-bridge/scripts/dbg-config-update.mjs:29",
+    "01-harness-plugin/dsh-mobile-bridge/scripts/probe-mobile-js.mjs:10",
+    "01-harness-plugin/dsh-mobile-bridge/scripts/probe-routing.mjs:10",
+    "01-harness-plugin/dsh-mobile-bridge/scripts/simulate-app-full.mjs:65"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "02-relay-server/relay/server.js:187",
+    "01-harness-plugin/dsh-mobile-bridge/lib/index.js:819"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "01-harness-plugin/dsh-mobile-bridge/lib/index.js:21",
+    "01-harness-plugin/dsh-mobile-bridge/lib/index.js:155",
+    "01-harness-plugin/dsh-mobile-bridge/scripts/build-client.mjs:37"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×12 src, e.g. 01-harness-plugin/dsh-mobile-bridge/lib/index.js:655, 01-harness-plugin/dsh-mobile-bridge/scripts/dbg-config-update.mjs:29"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. 02-relay-server/relay/server.js:187, 01-harness-plugin/dsh-mobile-bridge/lib/index.js:819"
+  },
+  {
+   "id": "token_env",
+   "evidence": "FCM_CREDENTIALS"
+  }
+ ],
+ "level": 3
+}

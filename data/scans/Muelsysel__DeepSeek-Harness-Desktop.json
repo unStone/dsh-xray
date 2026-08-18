@@ -1,0 +1,96 @@
+{
+ "repo": "Muelsysel/DeepSeek-Harness-Desktop",
+ "stars": 3,
+ "description": "dsh-desktop: DeepSeek Harness 桌面插件 - click-to-launch Codex-like native window over the live dsh web UI. Everything is a plugin - this one is the window.",
+ "pushed_at": "2026-08-15T05:28:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./patch/desktop.bundle.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/schemastery",
+  "electron",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-base",
+  "@deepseek-ai/dsh-web-app",
+  "dsh-desktop"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_DEBUG": 3,
+  "DSH_HOME": 1,
+  "USERPROFILE": 1,
+  "DSH_DESKTOP_DEBUG_PORT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 21,
+   "dev": 4,
+   "evidence": [
+    "scripts/install-profile.mjs:25",
+    "scripts/install-profile.mjs:25",
+    "scripts/install-profile.mjs:56",
+    "scripts/install-profile.mjs:64",
+    "scripts/make-setup.mjs:20"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 8,
+   "evidence": [
+    "desktop/main.cjs:74",
+    "desktop/main.cjs:119",
+    "desktop/main.cjs:173",
+    "scripts/install-profile.mjs:26",
+    "scripts/install-profile.mjs:114"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./patch/desktop.bundle.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×21 src, e.g. scripts/install-profile.mjs:25, scripts/install-profile.mjs:25"
+  }
+ ],
+ "level": 3
+}

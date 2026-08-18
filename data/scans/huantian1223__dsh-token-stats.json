@@ -1,0 +1,95 @@
+{
+ "repo": "huantian1223/dsh-token-stats",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-15T16:40:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-token-stats",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DEEPSEEK_API_KEY": 1,
+  "CHROME_PATH": 1,
+  "TOKEN_STATS_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 4,
+   "evidence": [
+    "dsh/store.js:6",
+    "dsh/store.js:46",
+    "dsh/store.js:99",
+    "dsh/store.js:107",
+    "dsh/store.js:125"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, TOKEN_STATS_URL"
+  }
+ ],
+ "level": 3
+}

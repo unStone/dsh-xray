@@ -1,0 +1,129 @@
+{
+ "repo": "A3Boy/dsh-web-tools",
+ "stars": 5,
+ "description": "Multi-provider Web Search & Fetch for DeepSeek Harness — Tavily, Exa, Firecrawl, Brave, You.com, Jina & SearXNG with fallback and native settings UI.",
+ "pushed_at": "2026-08-18T01:53:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-web-tools",
+ "deps": [
+  "undici",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "credentials",
+  "locale",
+  "settings",
+  "slots",
+  "web",
+  "webRuntime",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step",
+  "agent/turn-stopping",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.search.brave.com": 4,
+  "docs.exa.ai": 2,
+  "api.exa.ai": 6,
+  "api.firecrawl.dev": 7,
+  "docs.firecrawl.dev": 2,
+  "s.jina.ai": 4,
+  "r.jina.ai": 4,
+  "api.parallel.ai": 8,
+  "api.tavily.com": 9,
+  "api.you.com": 8
+ },
+ "env": {
+  "NO_PROXY": 2,
+  "no_proxy": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 3,
+   "evidence": [
+    "lib/host/fetch-proxy.js:26",
+    "lib/host/fetch-proxy.js:26",
+    "lib/host/fetch-proxy.js:86",
+    "lib/host/fetch-proxy.js:91",
+    "src/host/fetch-proxy.ts:26"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 111,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. lib/host/fetch-proxy.js:26, lib/host/fetch-proxy.js:26"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,90 @@
+{
+ "repo": "JunWan666/dsh-plugins",
+ "stars": 1,
+ "description": "给deepseek-harness开发的一些插件.",
+ "pushed_at": "2026-08-14T17:03:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-auth",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "PLAYWRIGHT_EXECUTABLE": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-auth/lib/index.js:645",
+    "dsh-auth/scripts/smoke.mjs:304"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "dsh-auth/lib/index.js:2",
+    "dsh-auth/lib/index.js:2",
+    "dsh-auth/lib/index.js:550",
+    "dsh-auth/lib/index.js:607",
+    "dsh-auth/lib/index.js:997"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. dsh-auth/lib/index.js:645, dsh-auth/scripts/smoke.mjs:304"
+  }
+ ],
+ "level": 3
+}

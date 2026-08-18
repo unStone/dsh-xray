@@ -1,0 +1,122 @@
+{
+ "repo": "XJungit/omdp",
+ "stars": 2,
+ "description": "only my DSH plugins — monorepo of DeepSeek Harness plugin bundles",
+ "pushed_at": "2026-08-18T03:23:41Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ]
+  },
+  "bundle": {
+   "patch": "./dsh-connector/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@omdp/dsh-connector",
+ "deps": [
+  "yaml",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-timeout"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "credentials",
+  "llm",
+  "shellEnv",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 7,
+ "domains": {
+  "api.agnes-ai.cn": 2,
+  "git-scm.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "X": 2,
+  "DSH_ROOT": 1,
+  "GIT_BASH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "dsh-connector/index.js:25",
+    "dsh-connector/index.js:25",
+    "dsh-connector/index.js:448",
+    "dsh-connector/index.js:451",
+    "dsh-gitbash-win/lib/index.js:260"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-connector/index.js:412",
+    "dsh-connector/index.js:598",
+    "dsh-vision-bridge/index.js:17",
+    "dsh-vision-bridge/index.js:554"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh-connector/cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. dsh-connector/index.js:25, dsh-connector/index.js:25"
+  }
+ ],
+ "level": 3
+}

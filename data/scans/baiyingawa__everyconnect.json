@@ -1,0 +1,93 @@
+{
+ "repo": "baiyingawa/everyconnect",
+ "stars": 1,
+ "description": "DSH插件，用于将dsh连接至微信、qq等软件，通过微claw插件、qq机器人等方式实现",
+ "pushed_at": "2026-08-18T01:26:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "immediately": false
+  }
+ },
+ "pkg_name": "everyconnect",
+ "deps": [
+  "qrcode"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 2,
+  "novac2c.cdn.weixin.qq.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/wechat/client.ts:138"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/wrap-client.mjs:16",
+    "src/session/media-store.ts:25",
+    "src/session/store.ts:86",
+    "src/session/store.ts:124"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/wechat/client.ts:138"
+  }
+ ],
+ "level": 3
+}

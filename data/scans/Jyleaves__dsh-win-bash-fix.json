@@ -1,0 +1,88 @@
+{
+ "repo": "Jyleaves/dsh-win-bash-fix",
+ "stars": 1,
+ "description": "Windows Git Bash fix for DeepSeek Harness (dsh): MSYS sandbox conflict + terminal inspector, with the minimal-win collective-thinking preset (we/let's chain)",
+ "pushed_at": "2026-08-15T15:08:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@jyleaves/dsh-win-bash-fix",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sandbox",
+  "subprocess"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 2,
+  "GIT_ROOT": 1,
+  "MSYSTEM": 1,
+  "CHERE_INVOKING": 1,
+  "MSYS2_PATH_TYPE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "install.mjs:23",
+    "install.mjs:64"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "sandbox, subprocess, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  }
+ ],
+ "level": 2
+}

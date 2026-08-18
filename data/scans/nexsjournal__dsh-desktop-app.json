@@ -1,0 +1,181 @@
+{
+ "repo": "nexsjournal/dsh-desktop-app",
+ "stars": 1,
+ "description": "Includes image recognition and generation functions.",
+ "pushed_at": "2026-08-17T16:13:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "yuanharness-desktop",
+ "deps": [
+  "yaml",
+  "@codemirror/commands",
+  "@codemirror/lang-cpp",
+  "@codemirror/lang-css",
+  "@codemirror/lang-go",
+  "@codemirror/lang-html",
+  "@codemirror/lang-java",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/lang-php",
+  "@codemirror/lang-python",
+  "@codemirror/lang-rust",
+  "@codemirror/lang-sql",
+  "@codemirror/lang-xml",
+  "@codemirror/lang-yaml",
+  "@codemirror/language",
+  "@codemirror/legacy-modes",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@lezer/highlight",
+  "clsx",
+  "node-pty",
+  "rxjs",
+  "schemastery",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-schema-form",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "react",
+  "react-dom",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "tools",
+  "webRuntime",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 17,
+ "domains": {
+  "registry.npmmirror.com": 1,
+  "api.replicate.com": 2,
+  "queue.fal.run": 2,
+  "api.example.com": 1,
+  "dashscope.aliyuncs.com": 1,
+  "api.openai.com": 1
+ },
+ "env": {
+  "DSH_DESKTOP_NODE_EXECUTABLE": 2,
+  "DSH_HOME": 9
+ },
+ "behaviors": {
+  "exec": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "scripts/fetch-host.mjs:16",
+    "scripts/fetch-host.mjs:16",
+    "scripts/fetch-host.mjs:57",
+    "scripts/fetch-pnpm.mjs:16",
+    "scripts/fetch-pnpm.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "vendor/plugins/dsh-imagegen-plugin/lib/index.js:784",
+    "vendor/plugins/dsh-better-sidebar/src/client/editor-load.ts:39"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 32,
+   "dev": 0,
+   "evidence": [
+    "scripts/after-pack.cjs:35",
+    "scripts/fetch-host.mjs:13",
+    "scripts/fetch-host.mjs:53",
+    "scripts/fetch-pnpm.mjs:13",
+    "scripts/fetch-pnpm.mjs:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 89,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×20 src, e.g. scripts/fetch-host.mjs:16, scripts/fetch-host.mjs:16"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. vendor/plugins/dsh-imagegen-plugin/lib/index.js:784, vendor/plugins/dsh-better-sidebar/src/client/editor-load.ts:39"
+  }
+ ],
+ "level": 3
+}

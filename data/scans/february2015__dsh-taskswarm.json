@@ -1,0 +1,113 @@
+{
+ "repo": "february2015/dsh-taskswarm",
+ "stars": 1,
+ "description": "TaskSwarm (蜂群) — DeepSeek Harness 上的多智能体任务编排插件：waves/lanes 并行执行、git worktree 隔离、任务包与跨模型评审、崩溃可恢复 | Multi-agent task orchestration for DeepSeek Harness: waves/lanes parallel execution, git worktree isol",
+ "pushed_at": "2026-08-16T17:08:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-taskswarm",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-tool-bash",
+  "@deepseek-ai/dsh-tool-fs",
+  "@deepseek-ai/dsh-tool-fs-search",
+  "@deepseek-ai/dsh-tool-str-replace-editor",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "commands",
+  "sessions"
+ ],
+ "hooks": [
+  "agent/created"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 24,
+   "dev": 14,
+   "evidence": [
+    "dashboard/adapters.mjs:54",
+    "dashboard/adapters.mjs:54",
+    "dashboard/adapters.mjs:229",
+    "dashboard/server.mjs:44",
+    "src/demo.ts:32"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 7,
+   "evidence": [
+    "dashboard/server.mjs:28",
+    "dashboard/server.mjs:363",
+    "dashboard/server.mjs:364",
+    "dashboard/server.mjs:419",
+    "dashboard/server.mjs:433"
+   ]
+  },
+  "fs_write": {
+   "src": 41,
+   "dev": 93,
+   "evidence": [
+    "dashboard/history.mjs:47",
+    "dashboard/history.mjs:321",
+    "src/demo.ts:11",
+    "src/demo.ts:11",
+    "src/demo.ts:34"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×24 src, e.g. dashboard/adapters.mjs:54, dashboard/adapters.mjs:54"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. dashboard/server.mjs:28, dashboard/server.mjs:363"
+  }
+ ],
+ "level": 3
+}

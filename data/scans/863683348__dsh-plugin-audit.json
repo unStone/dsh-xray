@@ -1,0 +1,122 @@
+{
+ "repo": "863683348/dsh-plugin-audit",
+ "stars": 1,
+ "description": "Plugin health audit for DeepSeek Harness: sync the GitHub dsh-plugin topic into a local catalog, probe npm, static-scan for security, score every plugin, and rank them in a web leaderboard.",
+ "pushed_at": "2026-08-17T05:33:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-audit",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {
+  "api.github.com": 2,
+  "api.npmjs.org": 1,
+  "www.npmjs.com": 2
+ },
+ "env": {
+  "DSH_GITHUB_TOKEN": 2,
+  "DSH_HOME": 4,
+  "NPM_TOKEN": 4,
+  "USERPROFILE": 2,
+  "GITHUB_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/security.js:125",
+    "lib/security.js:125",
+    "lib/security.js:125",
+    "lib/security.js:125"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "lib/security.js:120"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 10,
+   "evidence": [
+    "lib/storage.js:14",
+    "lib/storage.js:55",
+    "scripts/seed.mjs:13",
+    "scripts/seed.mjs:102",
+    "scripts/seed.mjs:106"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/security.js:125, lib/security.js:125"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/security.js:120"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_GITHUB_TOKEN, GITHUB_TOKEN, NPM_TOKEN"
+  }
+ ],
+ "level": 3
+}

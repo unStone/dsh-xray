@@ -1,0 +1,112 @@
+{
+ "repo": "zebbkira/dsh-pluginmgmt",
+ "stars": 1,
+ "description": "Deepseek harness插件全生命周期管理",
+ "pushed_at": "2026-08-16T01:52:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-pluginmgmt",
+ "deps": [
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 11
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:5",
+    "lib/index.js:406",
+    "src/engine/manager.ts:4",
+    "src/engine/pnpm.ts:2",
+    "src/engine/pnpm.ts:14"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 30,
+   "dev": 6,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:109",
+    "lib/index.js:114",
+    "lib/index.js:121",
+    "lib/index.js:131"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 33,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:5, lib/index.js:406"
+  }
+ ],
+ "level": 3
+}

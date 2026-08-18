@@ -1,0 +1,77 @@
+{
+ "repo": "usertianziyang/DSH-Plugin-Hub",
+ "stars": 1,
+ "description": "DSH Plugin Hub — 基于 GitHub REST Search API 构建的 dsh-plugin 主题仓库索引站。数据每 6 小时自动同步、完整性校验后发布为静态快照；前端基于 React + TypeScript (Vite)，支持中英双语、全文搜索、分类筛选与分页，浏览器零 API 调用、零追踪，即开即用。",
+ "pushed_at": "2026-08-18T08:19:01Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-plugin-hub",
+ "deps": [
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "VITE_BASE": 1,
+  "GITHUB_TOKEN": 1,
+  "GITHUB_ACTIONS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/sync-github.ts:737",
+    "scripts/sync-github.ts:752"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "scripts/sync-github.ts:709"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/sync-github.ts:737, scripts/sync-github.ts:752"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

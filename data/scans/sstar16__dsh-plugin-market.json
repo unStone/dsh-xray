@@ -1,0 +1,107 @@
+{
+ "repo": "sstar16/dsh-plugin-market",
+ "stars": 1,
+ "description": "DSH Web插件市场（plugins market)",
+ "pushed_at": "2026-08-15T19:58:59Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": {
+   "schemaVersion": 1,
+   "displayName": {
+    "zh-CN": "插件市场",
+    "en": "Plugin Marketplace"
+   },
+   "summary": {
+    "zh-CN": "分类/搜索/排序/溯源的社区插件目录，一键安装进当前 web 部署。",
+    "en": "Categorized, searchable, sortable community-plugin catalog with provenance and one-click install into the web profile."
+   },
+   "category": "plugin-marketplace"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-market",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2,
+  "www.npmjs.com": 4
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:15",
+    "src/index.ts:180",
+    "src/installer.ts:17",
+    "src/installer.ts:72"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/catalog.ts:412",
+    "src/catalog.ts:674",
+    "src/installer.ts:286",
+    "src/installer.ts:305",
+    "src/installer.ts:324"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/index.ts:15, src/index.ts:180"
+  }
+ ],
+ "level": 3
+}

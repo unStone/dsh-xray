@@ -1,0 +1,97 @@
+{
+ "repo": "2472786266-spec/deepseek-hsrness-devkit",
+ "stars": 2,
+ "description": "DSH DevKit: multimodal gallery + multi-agent supervision console (DeepSeek Harness dynamic Cordis plugin)",
+ "pushed_at": "2026-08-17T12:34:59Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/error",
+  "agent/status",
+  "goal/changed",
+  "llm/stream",
+  "subagent/end",
+  "subagent/start",
+  "workflow/end",
+  "workflow/log",
+  "workflow/phase",
+  "workflow/start"
+ ],
+ "tool_regs": 8,
+ "domains": {
+  "open.bigmodel.cn": 1,
+  "api.moonshot.cn": 1,
+  "api.siliconflow.cn": 1
+ },
+ "env": {
+  "DSH_SESSION_ID": 2,
+  "DEMO_IMG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "src/host.js:109",
+    "tools/render-logo.mjs:17",
+    "tools/render-logo.mjs:32",
+    "tools/screenshot.mjs:67",
+    "tools/test-v3.mjs:58"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "tools/render-logo.mjs:33",
+    "tools/screenshot.mjs:7",
+    "tools/screenshot.mjs:67",
+    "tools/split-css.mjs:1",
+    "tools/split-css.mjs:27"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. src/host.js:109, tools/render-logo.mjs:17"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 8 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

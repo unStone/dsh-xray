@@ -1,0 +1,104 @@
+{
+ "repo": "PeterBon/dsh-hooks",
+ "stars": 2,
+ "description": "Config-driven lifecycle hooks plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T15:12:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-hooks",
+ "deps": [
+  "@larksuiteoapi/node-sdk",
+  "qrcode",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/error",
+  "agent/status",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 5,
+   "evidence": [
+    "bin/dsh-hooks.mjs:27",
+    "bin/dsh-hooks.mjs:48",
+    "lib/notify.js:7",
+    "lib/notify.js:176",
+    "lib/runner.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 21,
+   "evidence": [
+    "bin/dsh-hooks.mjs:26",
+    "bin/dsh-hooks.mjs:106",
+    "bin/dsh-hooks.mjs:216",
+    "bin/dsh-hooks.mjs:221",
+    "lib/history.js:6"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 52,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. bin/dsh-hooks.mjs:27, bin/dsh-hooks.mjs:48"
+  }
+ ],
+ "level": 3
+}

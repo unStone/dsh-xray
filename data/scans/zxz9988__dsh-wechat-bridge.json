@@ -1,0 +1,105 @@
+{
+ "repo": "zxz9988/dsh-wechat-bridge",
+ "stars": 1,
+ "description": "DSH 微信桥接插件 | DeepSeek Harness WeChat bridge plugin：把手机微信（腾讯官方 iLink/ClawBot 协议）接入 DSH AI 助手——流式回复、扫码登录、会话持久化、定时任务、网页抓取(MCP)。Connect WeChat to DeepSeek Harness AI via Tencent's official iLink/ClawBot p",
+ "pushed_at": "2026-08-15T07:45:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@zxz9988/dsh-wechat-bridge",
+ "deps": [
+  "qrcode",
+  "wechat-ilink-client",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/ensure-host-junction.mjs"
+ },
+ "injects": [
+  "agents",
+  "sessions",
+  "timer",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "ilinkai.weixin.qq.com": 3
+ },
+ "env": {
+  "LOCALAPPDATA": 2,
+  "DSH_TEST_HOST": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:17",
+    "lib/index.js:191",
+    "lib/index.js:193",
+    "scripts/ensure-host-junction.mjs:6",
+    "scripts/ensure-host-junction.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 12,
+   "evidence": [
+    "lib/index.js:14",
+    "lib/index.js:14",
+    "lib/index.js:99",
+    "lib/index.js:113",
+    "lib/index.js:151"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/ensure-host-junction.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:17, lib/index.js:191"
+  }
+ ],
+ "level": 3
+}

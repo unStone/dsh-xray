@@ -1,0 +1,130 @@
+{
+ "repo": "q2224273481-afk/cc-dsh-desktop",
+ "stars": 1,
+ "description": "DSH 桌面壳",
+ "pushed_at": "2026-08-18T03:32:30Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "theme"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-bash-local",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-code-runtime",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-output-retention",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session-telemetry",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-spill",
+  "@deepseek-ai/dsh-subagent-in-process-driver",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-workflow",
+  "@koromix/koffi-win32-x64"
+ ],
+ "install_scripts": {
+  "postinstall": "patch-package"
+ },
+ "injects": [
+  "theme"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_SMOKE_HOME": 1,
+  "DSH_TELEMETRY_DISABLED": 1,
+  "NODE_PATH": 3,
+  "DSH_DESKTOP_NODE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/main/fallback.ts:8",
+    "src/main/fallback.ts:41",
+    "src/main/main.ts:28",
+    "src/main/main.ts:463",
+    "src/main/main.ts:642"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/main/plugin-manager.ts:312",
+    "src/main/plugin-manager.ts:316",
+    "src/main/updater.ts:232",
+    "src/main/updater.ts:236"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "scripts/make-icon.mjs:10",
+    "scripts/make-icon.mjs:25",
+    "scripts/pm-ops-test.mjs:2",
+    "scripts/pm-ops-test.mjs:2",
+    "scripts/pm-ops-test.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/main/main.ts:633"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: patch-package"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/main/fallback.ts:8, src/main/fallback.ts:41"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. src/main/plugin-manager.ts:312, src/main/plugin-manager.ts:316"
+  }
+ ],
+ "level": 2
+}

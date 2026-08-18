@@ -1,0 +1,77 @@
+{
+ "repo": "kimirong/deepseek-harness-desktop",
+ "stars": 1,
+ "description": "DeepSeek Harness 桌面客户端：连接或启动本机 dsh web 服务，在原生窗口中打开 Web GUI",
+ "pushed_at": "2026-08-14T10:00:44Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-web-desktop-shell",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_SHELL_PORT": 1,
+  "DSH_SHELL_TIMEOUT": 1,
+  "DSH_SHELL_AUTO_START": 1,
+  "DSH_SHELL_SCREENSHOT": 1,
+  "DSH_SHELL_SHOT_READY": 1,
+  "DSH_BIN": 2,
+  "DSH_REPO_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/config.js:39",
+    "src/config.js:61",
+    "src/config.js:61",
+    "src/config.js:63",
+    "src/server.js:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/afterPack.js:21",
+    "scripts/afterPack.js:48",
+    "src/main.js:166"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/config.js:39, src/config.js:61"
+  }
+ ],
+ "level": 2
+}

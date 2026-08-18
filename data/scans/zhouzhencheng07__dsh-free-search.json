@@ -1,0 +1,80 @@
+{
+ "repo": "zhouzhencheng07/dsh-free-search",
+ "stars": 2,
+ "description": "Free keyless Tavily web search tool for DeepSeek Harness (dsh)",
+ "pushed_at": "2026-08-15T23:43:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-free-search",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "export.arxiv.org": 1,
+  "api.github.com": 1,
+  "hn.algolia.com": 1,
+  "news.ycombinator.com": 1,
+  "www.sogou.com": 4,
+  "api.stackexchange.com": 1,
+  "docs.tavily.com": 1,
+  "api.tavily.com": 1
+ },
+ "env": {
+  "TAVILY_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TAVILY_API_KEY"
+  }
+ ],
+ "level": 3
+}

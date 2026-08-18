@@ -1,0 +1,96 @@
+{
+ "repo": "AlfredChaos/dsh-usage-panel",
+ "stars": 1,
+ "description": "DeepSeek Harness 消耗统计插件：设置页 Token 用量 KPI、半年活跃热力图、按模型堆叠柱状图与模型环形图（dsh-plugin）",
+ "pushed_at": "2026-08-18T05:19:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "immediately": false
+  }
+ },
+ "pkg_name": "dsh-usage-panel",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "timer"
+ ],
+ "hooks": [
+  "locale/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:9",
+    "scripts/build.mjs:9",
+    "scripts/build.mjs:45",
+    "scripts/check-pack.mjs:6",
+    "scripts/check-pack.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/wrap-client.mjs:6",
+    "scripts/wrap-client.mjs:27"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 48,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/build.mjs:9, scripts/build.mjs:9"
+  }
+ ],
+ "level": 3
+}

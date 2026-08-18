@@ -1,0 +1,84 @@
+{
+ "repo": "BeAChanger/dsh-openclaw-acp",
+ "stars": 1,
+ "description": "DeepSeek Harness bundle for OpenClaw and WeChat over ACP",
+ "pushed_at": "2026-08-14T01:17:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-openclaw-acp",
+ "deps": [
+  "@deepseek-ai/dsh-acp",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DEEPSEEK_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-acp.mjs:2",
+    "scripts/smoke-acp.mjs:2",
+    "scripts/smoke-acp.mjs:48",
+    "scripts/smoke-acp.mjs:62",
+    "scripts/smoke-acp.mjs:73"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/smoke-acp.mjs:2, scripts/smoke-acp.mjs:2"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

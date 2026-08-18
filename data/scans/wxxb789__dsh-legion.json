@@ -1,0 +1,134 @@
+{
+ "repo": "wxxb789/dsh-legion",
+ "stars": 2,
+ "description": "Multi-agent teams, model routing, and declarative orchestration for DeepSeek Harness",
+ "pushed_at": "2026-08-18T01:43:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-legion",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "llm/adapters-updated",
+  "subagent/provider-added",
+  "subagent/provider-removed",
+  "tools/change"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "www.kimi.com": 1,
+  "docs.x.ai": 1,
+  "docs.github.com": 1,
+  "hermes-agent.nousresearch.com": 1
+ },
+ "env": {
+  "DSH_LEGION_PACKED_CONSUMER": 1,
+  "DSH_LEGION_TEMP_ROOT": 2,
+  "DSH_VERSION": 1,
+  "ComSpec": 3,
+  "DSH_LEGION_TARBALL": 2,
+  "DSH_LEGION_OFFLINE": 1,
+  "DSH_COMPATIBILITY_RECEIPT": 1,
+  "GITHUB_REF_NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 34,
+   "evidence": [
+    "scripts/verify-packed-delegation.mjs:7",
+    "scripts/verify-packed-delegation.mjs:7",
+    "scripts/verify-packed-delegation.mjs:26",
+    "scripts/verify-packed-delegation.mjs:38",
+    "scripts/verify-packed-delegation.mjs:90"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/evaluate-quality-campaign.mjs:237",
+    "scripts/evaluate-quality-campaign.mjs:362",
+    "scripts/evaluate-quality-campaign.mjs:473"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 96,
+   "evidence": [
+    "scripts/hash-artifacts.mjs:16",
+    "scripts/packed-delegation-consumer.mjs:1",
+    "scripts/packed-delegation-consumer.mjs:1",
+    "scripts/packed-delegation-consumer.mjs:156",
+    "scripts/packed-delegation-consumer.mjs:279"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 123,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. scripts/verify-packed-delegation.mjs:7, scripts/verify-packed-delegation.mjs:7"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. scripts/evaluate-quality-campaign.mjs:237, scripts/evaluate-quality-campaign.mjs:362"
+  }
+ ],
+ "level": 3
+}

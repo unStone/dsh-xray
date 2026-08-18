@@ -1,0 +1,183 @@
+{
+ "repo": "zoomc/dshpilot",
+ "stars": 1,
+ "description": "Bilingual Tauri desktop workstation and self-hosted remote control plane for DeepSeek Harness",
+ "pushed_at": "2026-08-17T05:01:32Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-cordis-client-runner",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dshpilot",
+ "deps": [
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-updater",
+  "react",
+  "react-dom",
+  "@dshpilot/control-contracts",
+  "@dshpilot/remote-client",
+  "@vitejs/plugin-react",
+  "qrcode",
+  "react",
+  "react-dom",
+  "@dshpilot/control-contracts",
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-updater",
+  "react",
+  "@dshpilot/control-contracts",
+  "@dshpilot/desktop-host",
+  "@dshpilot/remote-daemon",
+  "@dshpilot/control-contracts",
+  "@dshpilot/control-contracts",
+  "@dshpilot/desktop-host",
+  "ws",
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "developers.cloudflare.com": 2
+ },
+ "env": {
+  "DSHPILOT_UPSTREAM_CANDIDATE_SHA": 2,
+  "DSHPILOT_RUNTIME_ROOT": 6,
+  "DSHPILOT_APP_DATA": 4,
+  "LC_ALL": 1,
+  "DSHPILOT_NODE_VERSION": 1,
+  "DSHPILOT_NODE_BINARY": 1,
+  "DSHPILOT_RUNTIME_PRIVATE_KEY": 1,
+  "DSHPILOT_RUNTIME_KEY_ID": 1,
+  "DSHPILOT_RUNTIME_PUBLIC_KEY_FILE": 2,
+  "APPDATA": 1,
+  "XDG_DATA_HOME": 1,
+  "DSHPILOT_ALLOW_UNSIGNED_RUNTIME": 1,
+  "DSH_HOME": 2,
+  "DSHPILOT_USAGE_JSON": 2,
+  "DSHPILOT_REMOTE_CONTROL": 1,
+  "DSHPILOT_REMOTE_HOST": 1,
+  "DSHPILOT_REMOTE_PORT": 1,
+  "DSHPILOT_RUNTIME_VERSION": 2,
+  "DSHPILOT_UPSTREAM_SHA": 1,
+  "DSH_WEB_URL": 1,
+  "DSHPILOT_REMOTE_WORKSPACES": 1,
+  "DSH_WORKSPACE": 1,
+  "DSHPILOT_REMOTE_TLS_KEY": 1,
+  "DSHPILOT_REMOTE_TLS_CERT": 1,
+  "DSHPILOT_REMOTE_CORS": 1,
+  "DSHPILOT_REMOTE_ALLOWED_HOSTS": 1,
+  "DSHPILOT_REMOTE_RELAY_URL": 1,
+  "DSHPILOT_REMOTE_RELAY_TOKEN": 1,
+  "DSHPILOT_REMOTE_RELAY_CHANNEL": 1,
+  "DSHPILOT_REMOTE_RELAY_KEY": 1,
+  "DSHPILOT_REMOTE_LAN_ENDPOINT": 1,
+  "DSHPILOT_REMOTE_RELAY_ADVERTISED_URL": 1,
+  "DSHPILOT_REMOTE_ALLOW_LOCAL_PAIRING": 1,
+  "DSHPILOT_REMOTE_ALLOW_LOCAL_ADMIN": 1,
+  "DSHPILOT_REMOTE_RELAY_LOCAL_URL": 1,
+  "DSHPILOT_REMOTE_PRINT_PAIRING": 1,
+  "DSHPILOT_BOOT_ID": 1,
+  "DSH_VERSION": 1,
+  "DSHPILOT_PATCH_PATH": 1,
+  "DSHPILOT_HARNESS_HOST": 1,
+  "DSHPILOT_HARNESS_PORT": 1,
+  "DSHPILOT_DSH_BIN": 1,
+  "DSHPILOT_RELAY_TLS_KEY": 1,
+  "DSHPILOT_RELAY_TLS_CERT": 1,
+  "DSHPILOT_RELAY_HOST": 1,
+  "DSHPILOT_RELAY_PORT": 1,
+  "DSHPILOT_RELAY_TOKEN": 1,
+  "DSHPILOT_RELAY_ALLOWED_HOSTS": 1,
+  "DSHPILOT_RELAY_ALLOWED_ORIGINS": 1,
+  "SystemRoot": 2,
+  "ComSpec": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 27,
+   "dev": 3,
+   "evidence": [
+    "scripts/guardian/index.ts:1",
+    "scripts/guardian/index.ts:1",
+    "scripts/guardian/index.ts:30",
+    "scripts/remote/setup.ts:12",
+    "scripts/remote/setup.ts:70"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 12,
+   "dev": 2,
+   "evidence": [
+    "packages/desktop-host/src/index.ts:160",
+    "packages/desktop-host/src/index.ts:171",
+    "packages/desktop-host/src/index.ts:183",
+    "packages/remote-client/src/index.ts:85",
+    "packages/remote-daemon/src/index.ts:170"
+   ]
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/remote/setup.ts:86",
+    "packages/dsh-plugin-desktop/src/index.ts:185",
+    "packages/dsh-plugin-desktop/src/index.ts:188",
+    "packages/remote-daemon/src/index.ts:369",
+    "packages/remote-relay/src/index.ts:84"
+   ]
+  },
+  "fs_write": {
+   "src": 28,
+   "dev": 6,
+   "evidence": [
+    "scripts/guardian/index.ts:75",
+    "scripts/guardian/index.ts:82",
+    "scripts/remote/index.ts:28",
+    "scripts/remote/setup.ts:232",
+    "scripts/runtime/index.ts:63"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 46,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×27 src, e.g. scripts/guardian/index.ts:1, scripts/guardian/index.ts:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×12 src, e.g. packages/desktop-host/src/index.ts:160, packages/desktop-host/src/index.ts:171"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. scripts/remote/setup.ts:86, packages/dsh-plugin-desktop/src/index.ts:185"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSHPILOT_RELAY_TLS_KEY, DSHPILOT_RELAY_TOKEN, DSHPILOT_REMOTE_RELAY_KEY, DSHPILOT_REMOTE_RELAY_TOKEN, DSHPILOT_REMOTE_TLS_KEY, DSHPILOT_RUNTIME_KEY_ID"
+  }
+ ],
+ "level": 2
+}

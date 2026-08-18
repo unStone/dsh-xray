@@ -1,0 +1,111 @@
+{
+ "repo": "MichengAI/dsh-codex-ui",
+ "stars": 1,
+ "description": "用Codex的方式打开deepseek-harness",
+ "pushed_at": "2026-08-16T09:44:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@michengai/dsh-codex-ui",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-general",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@michengai/dsh-agency-agents",
+  "@michengai/dsh-skills-manager",
+  "react",
+  "@michengai/dsh-agency-agents",
+  "@michengai/dsh-archive-manager",
+  "@michengai/dsh-codex-ui",
+  "@michengai/dsh-skills-manager"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "layout",
+  "locale",
+  "sessions",
+  "slots",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PROFILE_DIR": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/dependency-manager.ts:1",
+    "src/dependency-manager.ts:151"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/dependency-manager.ts:93"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/dependency-manager.ts:1, src/dependency-manager.ts:151"
+  }
+ ],
+ "level": 3
+}

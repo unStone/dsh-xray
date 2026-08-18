@@ -1,0 +1,107 @@
+{
+ "repo": "Hyna-hla/dsh-remote",
+ "stars": 5,
+ "description": "DSH Remote 手机遥控端：把电脑上的 DeepSeek Harness 装进口袋。手机连上就能给 AI 派活、看实时回复、批审批；支持局域网/内网穿透、扫码连接、审批通知、会话管理、多主题换装，还能解锁加密保险库。第三方社区作品，开源免费。",
+ "pushed_at": "2026-08-18T02:36:32Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ],
+   "immediately": true
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-remote-access",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "x.com": 1
+ },
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-remote-access/lib/index.js:10",
+    "dsh-remote-access/src/index.ts:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-remote-access/smoke-test.mjs:253"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-remote-access/smoke-test.mjs:46",
+    "dsh-remote-access/smoke-test.mjs:60"
+   ]
+  },
+  "fs_write": {
+   "src": 31,
+   "dev": 0,
+   "evidence": [
+    "dsh-remote-access/smoke-test.mjs:10",
+    "dsh-remote-access/smoke-test.mjs:10",
+    "dsh-remote-access/smoke-test.mjs:229",
+    "dsh-remote-access/smoke-test.mjs:230",
+    "dsh-remote-access/smoke-test.mjs:231"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. dsh-remote-access/lib/index.js:10, dsh-remote-access/src/index.ts:11"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. dsh-remote-access/smoke-test.mjs:253"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. dsh-remote-access/smoke-test.mjs:46, dsh-remote-access/smoke-test.mjs:60"
+  }
+ ],
+ "level": 3
+}

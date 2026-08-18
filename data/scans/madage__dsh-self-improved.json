@@ -1,0 +1,104 @@
+{
+ "repo": "madage/dsh-self-improved",
+ "stars": 5,
+ "description": "DeepSeek Harness long-term memory & self-evolving plugin: L0 capture -> L1 memory extraction -> L2 scene grouping -> L3 user persona, auto recall injection + skill synthesis, fully local.",
+ "pushed_at": "2026-08-15T20:59:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-self-improved",
+ "deps": [
+  "@node-rs/jieba",
+  "sqlite-vec",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-schedule",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "connection",
+  "llm",
+  "locale",
+  "sessionQuery",
+  "sessions",
+  "settings",
+  "settingsScope",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/flush"
+ ],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {
+  "TEST_DIR": 5
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 23,
+   "dev": 0,
+   "evidence": [
+    "scripts/test-commands.mjs:5",
+    "scripts/test-commands.mjs:11",
+    "scripts/test-evolve.mjs:5",
+    "scripts/test-evolve.mjs:12",
+    "scripts/test-evolve.mjs:14"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

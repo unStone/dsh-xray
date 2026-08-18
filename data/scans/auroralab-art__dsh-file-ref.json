@@ -1,0 +1,88 @@
+{
+ "repo": "auroralab-art/dsh-file-ref",
+ "stars": 1,
+ "description": "DeepSeek Harness plugin: paste or drop a file to insert an @workspace path or absolute path.",
+ "pushed_at": "2026-08-16T11:55:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-file-ref",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "conversation",
+  "sessions",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CHECKOUT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:82"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/inbox.ts:47"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/index.ts:82"
+  }
+ ],
+ "level": 3
+}

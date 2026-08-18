@@ -1,0 +1,110 @@
+{
+ "repo": "MC5lan/dsh-multimodal",
+ "stars": 5,
+ "description": "给 DeepSeek 安装一双眼睛和一支画笔:会话里直接贴截图/图片,GLM 视觉模型先精确转写图片内容(报错信息、代码、界面逐字保留),然后 DeepSeek 继续处理你的问题——同一轮完成,全程无感;需要配图时,DeepSeek 自动调用文生图后端出图并显示在会话中。",
+ "pushed_at": "2026-08-16T08:47:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-connection"
+   ]
+  }
+ },
+ "pkg_name": "dsh-multimodal",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/schemastery",
+  "eventsource-parser",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "llm",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 8,
+ "domains": {
+  "open.bigmodel.cn": 3,
+  "dashscope.aliyuncs.com": 4,
+  "maas-api.cn-huabei-1.xf-yun.com": 2,
+  "api-inference.modelscope.cn": 2,
+  "api.siliconflow.cn": 4,
+  "qianfan.baidubce.com": 2,
+  "api.example.com": 3,
+  "api.deepseek.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/image-gen.js:632",
+    "src/image-gen.ts:792"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/image-gen.js:11",
+    "src/image-gen.ts:61"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/image-gen.js:632, src/image-gen.ts:792"
+  }
+ ],
+ "level": 3
+}

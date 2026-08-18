@@ -1,0 +1,102 @@
+{
+ "repo": "yhlooo/dsh-bridges",
+ "stars": 3,
+ "description": "将 DeepSeek Harness 桥接到已配置其它 Harness Agent 的项目。支持 CodeBuddy / Codex / OpenCode / Claude Code / ...",
+ "pushed_at": "2026-08-17T07:14:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-bridges",
+ "deps": [
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-user-approval",
+  "chokidar",
+  "smol-toml",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 29,
+   "dev": 0,
+   "evidence": [
+    "scripts/pack-smoke.mjs:7",
+    "scripts/pack-smoke.mjs:7",
+    "scripts/pack-smoke.mjs:19",
+    "scripts/pack-smoke.mjs:30",
+    "scripts/upstream-probe.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 21,
+   "evidence": [
+    "scripts/pack-smoke.mjs:8",
+    "scripts/pack-smoke.mjs:52"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 181,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×29 src, e.g. scripts/pack-smoke.mjs:7, scripts/pack-smoke.mjs:7"
+  }
+ ],
+ "level": 3
+}

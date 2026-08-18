@@ -1,0 +1,92 @@
+{
+ "repo": "Culeot/dsh-batch-pipeline",
+ "stars": 1,
+ "description": "Batch task pipeline for DeepSeek Harness: cross-session ledger with progress pointer, budget guard, product assertions, resume after restart",
+ "pushed_at": "2026-08-14T17:50:47Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-batch-pipeline",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "storageDomain",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:18",
+    "scripts/smoke.mjs:10",
+    "scripts/smoke.mjs:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:11",
+    "scripts/smoke.mjs:54",
+    "scripts/smoke.mjs:103"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build.mjs:4, scripts/build.mjs:4"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 12 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,106 @@
+{
+ "repo": "ajhcs/Codex-Co-Engineer",
+ "stars": 1,
+ "description": "Codex-Co-Engineer is a public, Codex-first control plane for the standalone DeepSeek Harness. Codex is the chief engineer and operator; DeepSeek Harness is the bounded peer worker. Prime",
+ "pushed_at": "2026-08-17T15:22:40Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "cursor-cloud-control",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.cursor.com": 1,
+  "cursor.com": 1
+ },
+ "env": {
+  "MCP_INSPECTOR_COMMAND": 1,
+  "CURSOR_API_AUTH_SCHEME": 2,
+  "CURSOR_API_ORIGIN": 2,
+  "CURSOR_CLOUD_CONTROL_STATE_DIR": 1,
+  "XDG_STATE_HOME": 4,
+  "CODEX_CO_ENGINEER_RUNTIME_WORKSPACE": 1,
+  "PLUMBOB_HARNESS_WORKSPACE": 1,
+  "CODEX_CO_ENGINEER_STATE_DIR": 3,
+  "PLUMBOB_HARNESS_STATE_DIR": 3,
+  "CODEX_CO_ENGINEER_DSH_COMMAND": 1,
+  "CODEX_CO_ENGINEER_GROK_COMMAND": 1,
+  "CODEX_CO_ENGINEER_ALLOWED_ROOTS": 1,
+  "PLUMBOB_HARNESS_ALLOWED_ROOTS": 1,
+  "XAI_API_KEY": 2,
+  "MODEL_API_KEY": 7,
+  "DSH_HOME": 1,
+  "CODEX_CO_ENGINEER_DAEMON_IDLE_SECONDS": 1,
+  "PLUMBOB_HARNESS_DAEMON_IDLE_SECONDS": 1,
+  "XDG_CONFIG_HOME": 1,
+  "CODEX_CO_ENGINEER_MODEL_API_KEY_FILE": 1,
+  "PLUMBOB_HARNESS_MODEL_API_KEY_FILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 25,
+   "dev": 46,
+   "evidence": [
+    "scripts/inspector-preflight.mjs:4",
+    "scripts/inspector-preflight.mjs:4",
+    "scripts/inspector-preflight.mjs:16",
+    "scripts/inspector-preflight.mjs:18",
+    "scripts/inspector-preflight.mjs:19"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugins/plumbob-harness-control/mcp/daemon.mjs:63"
+   ]
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 29,
+   "evidence": [
+    "scripts/inspector-preflight.mjs:17",
+    "plugins/cursor-cloud-control/mcp/artifacts.mjs:56",
+    "plugins/cursor-cloud-control/mcp/ledger.mjs:62",
+    "plugins/plumbob-harness-control/mcp/control.mjs:138",
+    "plugins/plumbob-harness-control/mcp/control.mjs:810"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 30,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×25 src, e.g. scripts/inspector-preflight.mjs:4, scripts/inspector-preflight.mjs:4"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. plugins/plumbob-harness-control/mcp/daemon.mjs:63"
+  },
+  {
+   "id": "token_env",
+   "evidence": "CODEX_CO_ENGINEER_MODEL_API_KEY_FILE, CURSOR_API_AUTH_SCHEME, MODEL_API_KEY, PLUMBOB_HARNESS_MODEL_API_KEY_FILE, XAI_API_KEY"
+  }
+ ],
+ "level": 2
+}

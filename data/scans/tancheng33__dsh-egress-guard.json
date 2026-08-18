@@ -1,0 +1,90 @@
+{
+ "repo": "tancheng33/dsh-egress-guard",
+ "stars": 1,
+ "description": "Runtime security gate for DeepSeek Harness: egress host allowlist, secret redaction in tool results, and an append-only audit log",
+ "pushed_at": "2026-08-15T15:40:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-egress-guard",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.js"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.js:11",
+    "scripts/prepare.js:11",
+    "scripts/prepare.js:32"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "src/audit.ts:12",
+    "src/audit.ts:80"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/prepare.js:11, scripts/prepare.js:11"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,138 @@
+{
+ "repo": "Aa728848/dsh-chatgpt-subscription",
+ "stars": 3,
+ "description": "",
+ "pushed_at": "2026-08-18T07:04:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-model-selection",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@eddyskywalker/dsh-chatgpt-subscription",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "conversation",
+  "llm",
+  "loader",
+  "locale",
+  "modelDirectories",
+  "settings",
+  "slots",
+  "tools",
+  "web",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "auth.openai.com": 2,
+  "chatgpt.com": 4,
+  "api.openai.com": 3
+ },
+ "env": {
+  "DSH_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:13",
+    "lib/index.js:2559",
+    "src/host/token-store-windows.ts:3",
+    "src/host/token-store-windows.ts:79"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:406",
+    "src/host/codex-images.ts:201"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:581",
+    "src/host/callback-server.ts:29"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:2470",
+    "src/host/token-store-linux.ts:80"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 78,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:13, lib/index.js:2559"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:406, src/host/codex-images.ts:201"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:581, src/host/callback-server.ts:29"
+  }
+ ],
+ "level": 3
+}

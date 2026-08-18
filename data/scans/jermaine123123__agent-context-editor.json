@@ -1,0 +1,103 @@
+{
+ "repo": "jermaine123123/agent-context-editor",
+ "stars": 1,
+ "description": "Searchable, reversible context management views for long Coding Agent conversations, preserving original Sessions across Pi and DeepSeek Harness.",
+ "pushed_at": "2026-08-18T01:27:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "agent-context-editor",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "@earendil-works/pi-agent-core",
+  "@earendil-works/pi-ai",
+  "@earendil-works/pi-coding-agent",
+  "@earendil-works/pi-tui"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "sessionPersistence",
+  "sessions",
+  "storageDomain"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-pack.mjs:4",
+    "scripts/make-release-assets.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 9,
+   "evidence": [
+    "scripts/build-pi.mjs:39",
+    "scripts/make-release-assets.mjs:40",
+    "scripts/make-release-assets.mjs:52",
+    "adapters/deepseek-harness/scripts/build-client.mjs:55",
+    "adapters/deepseek-harness/scripts/build-core.mjs:41"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 70,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/check-pack.mjs:4, scripts/make-release-assets.mjs:4"
+  }
+ ],
+ "level": 3
+}

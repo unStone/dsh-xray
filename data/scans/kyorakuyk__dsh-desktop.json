@@ -1,0 +1,81 @@
+{
+ "repo": "kyorakuyk/dsh-desktop",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-13T19:56:25Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_PORT": 1,
+  "DSH_DESKTOP_TRUSTED_HOSTS": 2,
+  "DSH_DESKTOP_SKIP_NODE": 4,
+  "DSH_DESKTOP_NODE_ARCH": 1,
+  "DSH_DESKTOP_SMOKE_TIMEOUT_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/bundle-host.mjs:56",
+    "scripts/bundle-host.mjs:56",
+    "scripts/bundle-host.mjs:57",
+    "scripts/fetch-node.mjs:13",
+    "scripts/fetch-node.mjs:13"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/bundle-host.mjs:70",
+    "scripts/bundle-host.mjs:71",
+    "scripts/fetch-node.mjs:10",
+    "scripts/fetch-node.mjs:10",
+    "scripts/fetch-node.mjs:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "host/main.mjs:35"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/bundle-host.mjs:56, scripts/bundle-host.mjs:56"
+  }
+ ],
+ "level": 2
+}

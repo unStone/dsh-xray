@@ -1,0 +1,84 @@
+{
+ "repo": "SamXiaBing/dsh-adb",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-18T07:40:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-adb",
+ "deps": [
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 9,
+ "domains": {},
+ "env": {
+  "ANDROID_HOME": 1,
+  "ANDROID_SDK_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/adb.ts:61",
+    "src/adb.ts:137",
+    "src/tools/logcat.ts:117"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 5,
+   "evidence": [
+    "src/baseline.ts:1",
+    "src/baseline.ts:75"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/adb.ts:61, src/adb.ts:137"
+  }
+ ],
+ "level": 3
+}

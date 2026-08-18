@@ -1,0 +1,89 @@
+{
+ "repo": "sudipnext/dsh-chatgpt-codex",
+ "stars": 1,
+ "description": "ChatGPT OAuth and Codex models for DeepSeek Harness — browser callback, device code, no API key, no pi-ai",
+ "pushed_at": "2026-08-16T17:16:34Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-chatgpt-codex",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "commander",
+  "open",
+  "openai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "auth.openai.com": 9,
+  "chatgpt.com": 4,
+  "api.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "lib/auth/browser.js:46",
+    "src/auth/browser.ts:54"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "lib/auth/store.js:55",
+    "lib/auth/store.js:88",
+    "src/auth/store.ts:75",
+    "src/auth/store.ts:108"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/auth/browser.js:46, src/auth/browser.ts:54"
+  }
+ ],
+ "level": 3
+}

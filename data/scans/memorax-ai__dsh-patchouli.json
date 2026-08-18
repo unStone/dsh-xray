@@ -1,0 +1,172 @@
+{
+ "repo": "memorax-ai/dsh-patchouli",
+ "stars": 1,
+ "description": "Agent knowledge hub and deepseek-harness plugin",
+ "pushed_at": "2026-08-17T05:39:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "harmony": {
+   "patches": [
+    "./patches/openviking.patch.cjs",
+    "./patches/hindsight.patch.cjs",
+    "./patches/memos.patch.cjs",
+    "./patches/mneme-inject.patch.cjs",
+    "./patches/mneme-service.patch.cjs",
+    "./patches/mneme-passive.patch.cjs",
+    "./patches/mnemon-inject.patch.cjs",
+    "./patches/mnemon-service.patch.cjs",
+    "./patches/mnemon-passive.patch.cjs",
+    "./patches/memory-gate.patch.cjs",
+    "./patches/lingshu.patch.cjs",
+    "./patches/graph-memory.patch.cjs",
+    "./patches/engramory.patch.cjs",
+    "./patches/memory-evolve.patch.cjs"
+   ]
+  }
+ },
+ "pkg_name": "dsh-patchouli",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@memorax-agent/dsh-patchouli-agent-loop",
+  "@memorax-agent/dsh-patchouli-artifact-ingestor",
+  "@memorax-agent/dsh-patchouli-session-indexer",
+  "@memorax-agent/dsh-patchouli-workspace-indexer",
+  "@memorax-agent/patchouli-protocol",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-storage-domain",
+  "dsh-harmony",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-tools",
+  "dsh-patchouli",
+  "@deepseek-ai/schemastery",
+  "@memorax-agent/patchouli-protocol",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-fs",
+  "dsh-patchouli",
+  "@memorax-agent/patchouli-protocol",
+  "@deepseek-ai/cordis",
+  "dsh-patchouli",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session-query",
+  "dsh-patchouli",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-workspace",
+  "dsh-patchouli"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "agents",
+  "attachments",
+  "fs",
+  "harmony",
+  "patchouli",
+  "patchouliGoojfc",
+  "patchouliStorage",
+  "sessionPersistence",
+  "sessionQuery",
+  "sessions",
+  "storageDomain",
+  "tools",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/error",
+  "agent/pre-step",
+  "agent/request-error",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "session/event",
+  "session/flush",
+  "tools/post-execute",
+  "tools/result"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "PATCHOULI_DEPLOY_ROOT": 1,
+  "PATCHOULI_ENDPOINT": 1,
+  "PATCHOULI_CONFIG": 1,
+  "PATCHOULI_PROVIDERS": 2,
+  "PATCHOULI_ARTIFACTS": 1,
+  "GITHUB_REF_NAME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "integration/crud-plugin.ts:8",
+    "integration/crud-plugin.ts:128",
+    "scripts/deploy-daemon.ts:1",
+    "scripts/deploy-daemon.ts:1",
+    "scripts/deploy-daemon.ts:43"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/service.ts:224"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 9,
+   "evidence": [
+    "scripts/deploy-daemon.ts:2",
+    "scripts/deploy-daemon.ts:31",
+    "src/goojfc/adapters/engramory.ts:7",
+    "src/goojfc/adapters/engramory.ts:148"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 64,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. integration/crud-plugin.ts:8, integration/crud-plugin.ts:128"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/service.ts:224"
+  }
+ ],
+ "level": 3
+}

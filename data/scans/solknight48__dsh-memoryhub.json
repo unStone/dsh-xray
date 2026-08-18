@@ -1,0 +1,112 @@
+{
+ "repo": "solknight48/dsh-memoryhub",
+ "stars": 3,
+ "description": "MemoryHub (mh) plugin for DeepSeek Harness (dsh): auto-loads checkpoint memory on session start, adds mh_* tools and the mh skill, and a Memory tab in the web UI",
+ "pushed_at": "2026-08-15T13:35:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-memoryhub",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown && tsdown -c tsdown.client.config.ts"
+ },
+ "injects": [
+  "agents",
+  "locale",
+  "sessions",
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/session-start",
+  "internal/service"
+ ],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 7,
+   "evidence": [
+    "src/mh-ui.ts:12",
+    "src/mh-ui.ts:13",
+    "src/mh-ui.ts:81",
+    "src/mh.ts:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "src/bridge.ts:17",
+    "src/bridge.ts:151",
+    "src/index.ts:21",
+    "src/index.ts:253"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/mh-ui.ts:12, src/mh-ui.ts:13"
+  }
+ ],
+ "level": 3
+}

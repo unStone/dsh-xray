@@ -1,0 +1,89 @@
+{
+ "repo": "21hbguo/dsh-agent-board",
+ "stars": 1,
+ "description": "DSH (DeepSeek Harness) Agent 实时看板：主 agent 与子代理树形层级监控 + 停滞自动告警 + SSE 实时推送，点击直达会话",
+ "pushed_at": "2026-08-18T03:52:10Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-agent-board",
+ "deps": [
+  "cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "locale",
+  "sessions",
+  "slots",
+  "subagents",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "session/disposed",
+  "session/event",
+  "subagent/end"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:33",
+    "src/index.ts:272"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

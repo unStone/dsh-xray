@@ -1,0 +1,94 @@
+{
+ "repo": "Flora233333/dsh-minimal-vision",
+ "stars": 3,
+ "description": "DSH 极简模式视觉辅助：保持灰测体验所需的首轮干净上下文，同时通过隐藏上下文和按需 Bash 工作流提供视觉分析 | Vision assistance for DSH minimal mode: preserve the clean first-turn context behind the gray-test DeepSeek experience while adding on-deman",
+ "pushed_at": "2026-08-17T17:17:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-tool-vision",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "js-yaml",
+  "sharp",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "conversation",
+  "credentials",
+  "sessions",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PROFILE": 1,
+  "DSH_VISION_DEBUG": 1,
+  "DSH_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 22,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 17,
+   "evidence": [
+    "src/file-upload-api.js:80",
+    "src/runtime-paths.js:1",
+    "src/runtime-paths.js:37",
+    "src/upload-api.js:64"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

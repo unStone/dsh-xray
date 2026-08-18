@@ -1,0 +1,117 @@
+{
+ "repo": "Scorp1o117/dsh-tdai-memory",
+ "stars": 5,
+ "description": "Agent memory for DeepSeek Harness | DeepSeek Harness 记忆插件",
+ "pushed_at": "2026-08-16T10:28:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-tdai-memory",
+ "deps": [
+  "@ai-sdk/openai",
+  "@deepseek-ai/schemastery",
+  "@node-rs/jieba",
+  "@tencentdb-agent-memory/tcvdb-text",
+  "ai",
+  "json5",
+  "sqlite-vec",
+  "undici",
+  "react",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "systemPrompt",
+  "tdaiMemory",
+  "tools"
+ ],
+ "hooks": [
+  "session/created",
+  "session/event",
+  "session/flush",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 6,
+ "domains": {
+  "api.openai.com": 1,
+  "docs.zeroentropy.dev": 1,
+  "cloud.tencent.com": 1
+ },
+ "env": {
+  "DSH_TDAI_DEBUG": 1,
+  "TDAI_LLM_BASE_URL": 1,
+  "TDAI_LLM_API_KEY": 1,
+  "TDAI_LLM_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 0,
+   "evidence": [
+    "vendor/dsh-settings-expose.js:13",
+    "vendor/dsh-settings-expose.js:50",
+    "vendor/tdai/utils/checkpoint.js:153",
+    "vendor/tdai/utils/ensure-hook-policy.js:206",
+    "vendor/tdai/utils/manifest.js:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "vendor/tdai/utils/clean-context-runner.js:122"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 66,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TDAI_LLM_API_KEY"
+  }
+ ],
+ "level": 3
+}

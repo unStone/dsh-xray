@@ -1,0 +1,105 @@
+{
+ "repo": "nyantused-cpun/folio",
+ "stars": 3,
+ "description": "兰亭 (Folio) · 咨询材料生成引擎：15 个 DSH 原生工具 + 会话协议自动执行 + L0 守卫 + 可换方法论包，零 key 起步。Consulting material engine for DeepSeek Harness: HTML/PPT/DOCX/quote with mechanical quality gates, bilingual demo outputs in t",
+ "pushed_at": "2026-08-16T03:22:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "verifiedAgainst": {
+   "dshVersion": "0.1.0-rc.6",
+   "evidenceLevel": "L1 源码级（agent/* 词汇、session/event、followup、createUserMessage 逐行核实）；L4 运行级待 dsh web 重启后执行",
+   "testedAt": "2026-08-15"
+  }
+ },
+ "pkg_name": "@nyantused/folio-dsh-events",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "subprocess",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/session-start",
+  "fs/edit-intent",
+  "fs/write-intent",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "FOLIO_HOME": 6,
+  "DSH_PROJECT_DIR": 6,
+  "PRESALES_PROJECT_DIR": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "plugins/folio-events/index.js:63",
+    "plugins/folio-tools/index.js:10",
+    "plugins/folio-tools/index.js:65"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. plugins/folio-events/index.js:63, plugins/folio-tools/index.js:10"
+  }
+ ],
+ "level": 3
+}

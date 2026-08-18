@@ -1,0 +1,132 @@
+{
+ "repo": "DTSFO/dsh-model-modes",
+ "stars": 2,
+ "description": "Capability-aware reasoning controls and Fast model routing for DeepSeek Harness",
+ "pushed_at": "2026-08-16T15:02:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-model-selection",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-model-modes",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-client-locale",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "invariants",
+  "llm",
+  "locale",
+  "modelDirectories",
+  "remote",
+  "sessions",
+  "slots",
+  "typert"
+ ],
+ "hooks": [
+  "agent/created",
+  "connection/reset",
+  "llm/adapters-updated",
+  "settings/document-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:3",
+    "build.mjs:3",
+    "build.mjs:58"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:279"
+   ]
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1284",
+    "lib/client.js:2642",
+    "lib/client.js:2699",
+    "lib/index.js:101",
+    "lib/index.js:102"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:2",
+    "build.mjs:2",
+    "build.mjs:5",
+    "build.mjs:55"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 43,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. build.mjs:3, build.mjs:3"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:279"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. lib/client.js:1284, lib/client.js:2642"
+  }
+ ],
+ "level": 3
+}

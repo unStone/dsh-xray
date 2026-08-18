@@ -1,0 +1,80 @@
+{
+ "repo": "WJNCT55555/dsh-web-preview-float",
+ "stars": 2,
+ "description": "为DSH提供预览-代码两个悬浮窗",
+ "pushed_at": "2026-08-15T15:29:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-web-preview-float",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "invariants",
+  "sandboxPolicy",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "lib/client.js:255",
+    "lib/client.js:822",
+    "src/client/CodeView.tsx:192",
+    "src/client/fsClient.ts:45"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,83 @@
+{
+ "repo": "zeckauh/DSH_Desktop",
+ "stars": 1,
+ "description": "DeepSeek桌面版，支持Windows 10/11（x64）、macOS、Linux（x64）不同操作系统一键安装",
+ "pushed_at": "2026-08-15T16:21:07Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "electron-updater"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "LOCALAPPDATA": 1,
+  "XDG_DATA_HOME": 1,
+  "DSH_DESKTOP_NODE": 3,
+  "npm_config_cache": 3,
+  "ComSpec": 1,
+  "ProgramFiles": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "electron/server-manager.js:16",
+    "electron/server-manager.js:16",
+    "electron/server-manager.js:107",
+    "electron/server-manager.js:121",
+    "electron/server-manager.js:123"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "electron/server-manager.js:48",
+    "electron/window-state.js:44",
+    "scripts/generate-icons.js:209",
+    "scripts/generate-icons.js:211",
+    "scripts/generate-icons.js:228"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. electron/server-manager.js:16, electron/server-manager.js:16"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,172 @@
+{
+ "repo": "fz-lyle/dsh-deveco-cli",
+ "stars": 1,
+ "description": "DevEco CLI 将 DevEco Studio 工具链统一封装为一个 CLI，内置 ohpm、hvigor、hdc、emulator、hilog，同时集成 HarmonyOS 技能安装、项目脚手架、本地 HarmonyOS 文档检索和 MCP 服务。",
+ "pushed_at": "2026-08-17T02:19:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@ah-plugins/dsh-deveco-cli",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@modelcontextprotocol/sdk",
+  "@sqlite.org/sqlite-wasm",
+  "adm-zip",
+  "axios",
+  "colorette",
+  "commander",
+  "execa",
+  "fs-extra",
+  "global-agent",
+  "jieba-wasm",
+  "json5",
+  "mdast-util-to-string",
+  "node-forge",
+  "ora",
+  "p-limit",
+  "proper-lockfile",
+  "regedit",
+  "remark-gfm",
+  "remark-parse",
+  "semver",
+  "smol-toml",
+  "socket.io-client",
+  "unified",
+  "yauzl",
+  "zod"
+ ],
+ "install_scripts": {
+  "prepare": "husky",
+  "postinstall": "node scripts/postinstall.mjs"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "devecostudio.huawei.com": 1,
+  "cn.devecostudio.huawei.com": 1,
+  "connect-api.cloud.huawei.com": 2,
+  "terms-drcn.platform.dbankcloud.cn": 1,
+  "legal.cloud.huawei.com": 10,
+  "developer.huawei.com": 2,
+  "matrix.openharmony.cn": 1,
+  "consumer.huawei.com": 8,
+  "cloud.huawei.com": 1,
+  "legal.cloud.huawei.com.cn": 3,
+  "privacy.consumer.huawei.com": 2,
+  "device.harmonyos.com": 1
+ },
+ "env": {
+  "npm_config_tag": 2,
+  "GLOBAL_AGENT_ENVIRONMENT_VARIABLE_NAMESPACE": 1,
+  "npm_package_version": 4,
+  "DEVECO_CLI_SKIP_VERSION_CHECK": 1,
+  "DEVECO_CLI_DEBUG": 6,
+  "NODE_MAX_OLD_SPACE_SIZE": 2,
+  "PROJECT_PATH": 1,
+  "DEBUG": 2,
+  "DEVECO_CLI_CPP_ENABLED": 2,
+  "APPDATA": 2,
+  "DEVECO_CLI_POSTINSTALL": 1,
+  "JAVA_HOME": 1,
+  "Path": 1,
+  "DEVECO_CLI_DISABLE_TELEMETRY": 1,
+  "npm_package_name": 1,
+  "DEVECO_CLI_DISABLE_UPDATE": 1,
+  "DEVECO_CLI_DATA_DIR": 4,
+  "LOCALAPPDATA": 2,
+  "XDG_CACHE_HOME": 1,
+  "HVIGOR_USER_HOME": 3,
+  "DEVECO_CLI_AUTH_SOURCE": 1,
+  "DEVECO_CODE_AUTH_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 89,
+   "dev": 0,
+   "evidence": [
+    "scripts/postinstall.mjs:6",
+    "scripts/postinstall.mjs:18",
+    "src/dsh-plugin.ts:5",
+    "src/dsh-plugin.ts:133",
+    "src/apply/hqf-build.ts:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "src/signature/generate-profile.ts:387",
+    "src/trace/file-crypto.ts:30",
+    "src/trace/file-crypto.ts:118",
+    "src/trace/file-crypto.ts:120",
+    "src/trace/file-crypto.ts:122"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/auth/login/local-auth-server.ts:39",
+    "src/auth/login/local-auth-server.ts:46"
+   ]
+  },
+  "fs_write": {
+   "src": 56,
+   "dev": 5,
+   "evidence": [
+    "src/apply/build-config.ts:33",
+    "src/apply/changed-file-list-writer.ts:252",
+    "src/apply/changed-file-list-writer.ts:265",
+    "src/apply/changed-file-list-writer.ts:490",
+    "src/apply/changed-file-list-writer.ts:530"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 269,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/postinstall.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×89 src, e.g. scripts/postinstall.mjs:6, scripts/postinstall.mjs:18"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×10 src, e.g. src/signature/generate-profile.ts:387, src/trace/file-crypto.ts:30"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/auth/login/local-auth-server.ts:39, src/auth/login/local-auth-server.ts:46"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEVECO_CLI_AUTH_SOURCE, DEVECO_CODE_AUTH_DIR"
+  }
+ ],
+ "level": 3
+}

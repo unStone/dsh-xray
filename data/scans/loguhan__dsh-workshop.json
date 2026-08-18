@@ -1,0 +1,113 @@
+{
+ "repo": "loguhan/dsh-workshop",
+ "stars": 4,
+ "description": "Steam Workshop style plugin store for DeepSeek Harness Web UI: browse 850+ community plugins, one-click install with GitHub mirror acceleration, progress UI, security checks, Chinese descriptions",
+ "pushed_at": "2026-08-14T11:01:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-workshop",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 20,
+ "domains": {
+  "ghfast.top": 4,
+  "gh-proxy.com": 4,
+  "ghproxy.net": 2,
+  "ghproxy.cc": 2,
+  "gh.llkk.cc": 2,
+  "github.moeyy.xyz": 2,
+  "cdn.jsdelivr.net": 8,
+  "registry.npmmirror.com": 2,
+  "data.jsdelivr.com": 2
+ },
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "src/core.ts:5",
+    "src/core.ts:309",
+    "src/core.ts:644",
+    "lib/host/core-BcUmZo6v.mjs:1",
+    "lib/host/core-BcUmZo6v.mjs:1709"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "src/core.ts:170",
+    "src/core.ts:183",
+    "src/core.ts:331",
+    "src/core.ts:476",
+    "src/core.ts:717"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. src/core.ts:5, src/core.ts:309"
+  }
+ ],
+ "level": 3
+}

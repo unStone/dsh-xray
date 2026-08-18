@@ -1,0 +1,187 @@
+{
+ "repo": "1052326311/dsh-plan-lattice",
+ "stars": 1,
+ "description": "Execution-time drift firewall for long-running DeepSeek Harness agents. Real-Harness tests: unsafe stale mutations 12/12 native -> 0/12; valid controls 7/7 both; post-SIGKILL unsafe continuation 2/2 -",
+ "pushed_at": "2026-08-18T04:42:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plan-lattice",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "headlessStartup",
+  "sessions",
+  "tools",
+  "userQuestions"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/inbox/inserted",
+  "agent/request",
+  "agent/session-start",
+  "session/disposed",
+  "session/event",
+  "tools/change",
+  "tools/execute",
+  "tools/result"
+ ],
+ "tool_regs": 72,
+ "domains": {
+  "api.deepseek.com": 2,
+  "api.github.com": 7,
+  "data.gharchive.org": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "PLAN_LATTICE_PILOT_HOST_RUNTIME": 2,
+  "PLAN_LATTICE_PILOT_PLUGIN_PACKAGE": 1,
+  "PLAN_LATTICE_PILOT_OUTPUT": 2,
+  "DEEPSEEK_API_KEY": 6,
+  "DEEPSEEK_BASE_URL": 6,
+  "PLAN_LATTICE_CREDENTIAL_PROXY": 4,
+  "PLAN_LATTICE_PILOT_RUNTIME": 1,
+  "PLAN_LATTICE_PILOT_CANDIDATE_COMMIT": 1,
+  "PLAN_LATTICE_PILOT_HOST_RUNTIME_SHA256": 1,
+  "PLAN_LATTICE_ICAE_DOCKER_HOST": 3,
+  "ICAE_EVAL_ROOT": 4,
+  "PLAN_LATTICE_PILOT_PYTHON": 1,
+  "PLAN_LATTICE_PILOT_ARTIFACTS_ROOT": 1,
+  "PLAN_LATTICE_PILOT_ARMS": 1,
+  "PLAN_LATTICE_ORACLE_MODEL_PROXY_TOKEN": 5,
+  "PLAN_LATTICE_ICAE_PILOT_RUNTIME": 1,
+  "DEEPSEEK_HARNESS_ROOT": 3,
+  "HARBOR_ROOT": 3,
+  "EVOCODE_BENCH_ROOT": 3,
+  "PLAN_LATTICE_EVAL_ALLOW_PAID": 2,
+  "PLAN_LATTICE_UPSTREAM_ENDPOINT_DIGEST": 2,
+  "PLAN_LATTICE_CREDENTIAL_PROXY_PID": 2,
+  "PLAN_LATTICE_MODEL_PROXY_CONTROL_TOKEN": 2,
+  "PLAN_LATTICE_MODEL_PROXY_AUDIT": 2,
+  "PLAN_LATTICE_CREDENTIAL_PROXY_ROOT": 2,
+  "PLAN_LATTICE_RESULT_SIGNING_PUBLIC_KEY_BASE64": 2,
+  "PLAN_LATTICE_RESULT_SIGNING_LEDGER_ID": 2,
+  "PLAN_LATTICE_EXECUTION_ENVELOPE_DIGEST": 2,
+  "PLAN_LATTICE_EVAL_DRIVER": 2,
+  "PLAN_LATTICE_RC4_STUDY_ANCHOR": 1,
+  "PLAN_LATTICE_RC4_STUDY_ATTESTATION_BUNDLE": 1,
+  "PLAN_LATTICE_RC4_EXECUTION_ANCHOR": 1,
+  "PLAN_LATTICE_RC4_EXECUTION_ATTESTATION_BUNDLE": 1,
+  "PLAN_LATTICE_RC4_RUNTIME_ACQUISITION_ROOT": 2,
+  "PLAN_LATTICE_V14_DATA_DIR": 2,
+  "PLAN_LATTICE_V13_DATA_DIR": 4,
+  "PLAN_LATTICE_V13_SOURCE_ROOT": 1,
+  "PLAN_LATTICE_V14_RUNTIME_ARTIFACT_ROOT": 1,
+  "PLAN_LATTICE_V13_ARCHIVE_CACHE": 1,
+  "ROUTER_RUNTIME_COMMIT": 1,
+  "DSH_PLAN_LATTICE_EVAL_SESSION_ID": 3,
+  "DSH_PLAN_LATTICE_SESSION_ROOT": 2,
+  "DSH_PLAN_LATTICE_ICAE_CONTAINER_ID": 2,
+  "PYTHONPATH": 1,
+  "DSH_PLAN_LATTICE_ORACLE_AUDIT_PATH": 1,
+  "DSH_PLAN_LATTICE_ORACLE_POLICY": 2,
+  "DSH_PLAN_LATTICE_ORACLE_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 187,
+   "dev": 71,
+   "evidence": [
+    "demo/crash-continuity-benchmark.mjs:4",
+    "demo/crash-continuity-benchmark.mjs:46",
+    "demo/crash-continuity-benchmark.mjs:80",
+    "eval/grade.mjs:2",
+    "eval/grade.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 12,
+   "dev": 2,
+   "evidence": [
+    "eval/v0.4/run.mjs:120",
+    "prospective/model-rc4-study/attempt-persistence.mjs:414",
+    "prospective/model-rc4-study/attempt-persistence.mjs:415",
+    "prospective/model-rc4-study/controller.mjs:145",
+    "prospective/model-rc4-study/design.mjs:80"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 9,
+   "evidence": [
+    "eval/v0.4/driver/model-proxy.mjs:114",
+    "eval/v0.4/driver/model-proxy.mjs:315"
+   ]
+  },
+  "fs_write": {
+   "src": 193,
+   "dev": 195,
+   "evidence": [
+    "demo/crash-continuity-benchmark.mjs:180",
+    "demo/crash-continuity-benchmark.mjs:181",
+    "demo/crash-continuity-worker.mjs:59",
+    "demo/crash-continuity-worker.mjs:73",
+    "demo/crash-continuity-worker.mjs:109"
+   ]
+  },
+  "dyn_import": {
+   "src": 17,
+   "dev": 81,
+   "evidence": [
+    "scripts/train-router-model.mjs:18",
+    "eval/pilots/rc6-simple-bypass-pilot.mjs:22",
+    "eval/pilots/rc6-simple-bypass-pilot.mjs:23",
+    "eval/pilots/rc6-simple-bypass-pilot.mjs:24",
+    "eval/pilots/rc6-simple-bypass-pilot.mjs:25"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 275,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×187 src, e.g. demo/crash-continuity-benchmark.mjs:4, demo/crash-continuity-benchmark.mjs:46"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×12 src, e.g. eval/v0.4/run.mjs:120, prospective/model-rc4-study/attempt-persistence.mjs:414"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. eval/v0.4/driver/model-proxy.mjs:114, eval/v0.4/driver/model-proxy.mjs:315"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, PLAN_LATTICE_CREDENTIAL_PROXY, PLAN_LATTICE_CREDENTIAL_PROXY_PID, PLAN_LATTICE_CREDENTIAL_PROXY_ROOT, PLAN_LATTICE_MODEL_PROXY_CONTROL_TOKEN, PLAN_LATTICE_ORACLE_MODEL_PROXY_TOKEN"
+  }
+ ],
+ "level": 3
+}

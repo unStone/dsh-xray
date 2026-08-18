@@ -1,0 +1,115 @@
+{
+ "repo": "w2112515/dsh-remote-host",
+ "stars": 1,
+ "description": "Installable DeepSeek Harness plugin: pair an Android phone to a DSH Host over LAN",
+ "pushed_at": "2026-08-17T16:55:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "@w2112515/dsh-remote-host",
+ "deps": [
+  "@grpc/grpc-js",
+  "@grpc/proto-loader",
+  "@homebridge/ciao",
+  "qrcode",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy",
+  "connection",
+  "locale",
+  "remoteControl",
+  "slots",
+  "storageDomain"
+ ],
+ "hooks": [
+  "approval/request"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.mjs:831",
+    "lib/index.mjs:835",
+    "src/host/blob-transfer.ts:319",
+    "src/host/blob-transfer.ts:320"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 40,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy"
+  }
+ ],
+ "level": 2
+}

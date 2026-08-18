@@ -1,0 +1,107 @@
+{
+ "repo": "KhanZou/Deepseek-Harness-as-Desktop",
+ "stars": 4,
+ "description": "Turn DeepSeek Harness into a Codex-style desktop app: native WebView2 shell, system tray, auto-start, Windows toasts, and a Desktop settings tab with a one-of-N skin center.",
+ "pushed_at": "2026-08-18T05:05:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-desktop-framework",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-workspace",
+  "@deepseek-ai/dsh-invariants",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_API": 1,
+  "DSH_DESKTOP_WEB": 1,
+  "DSH_DESKTOP_URL": 1,
+  "DSH_DESKTOP_WIDTH": 1,
+  "DSH_DESKTOP_HEIGHT": 1,
+  "DSH_DESKTOP_AUTO": 1,
+  "DSH_DESKTOP_BROWSER": 1,
+  "DSH_SKIN_ROOTS": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-desktop-window/lib/index.js:25",
+    "dsh-desktop-window/lib/index.js:133",
+    "dsh-desktop-window/lib/index.js:147",
+    "dsh-desktop-window/lib/index.js:158"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-desktop-framework/cli.js:101",
+    "dsh-desktop-framework/cli.js:103",
+    "dsh-desktop-framework/cli.js:105",
+    "dsh-desktop-window/lib/index.js:240"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dsh-desktop-window/lib/index.js:25, dsh-desktop-window/lib/index.js:133"
+  }
+ ],
+ "level": 3
+}

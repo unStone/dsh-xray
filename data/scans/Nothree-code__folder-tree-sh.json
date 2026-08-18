@@ -1,0 +1,94 @@
+{
+ "repo": "Nothree-code/folder-tree-sh",
+ "stars": 2,
+ "description": "Workspace file-tree panel for the DSH web UI: explore, preview (DOCX / Markdown / PDF / code / CSV), and manage files with a real context menu.",
+ "pushed_at": "2026-08-17T23:32:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": []
+  }
+ },
+ "pkg_name": "folder-tree-sh",
+ "deps": [
+  "iconv-lite",
+  "mammoth",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/smoke.mjs:1",
+    "tools/smoke.mjs:1",
+    "tools/smoke.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:536"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "tools/smoke.mjs:1",
+    "tools/smoke.mjs:1",
+    "tools/smoke.mjs:1",
+    "tools/smoke.mjs:1",
+    "tools/smoke.mjs:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. tools/smoke.mjs:1, tools/smoke.mjs:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/client.js:536"
+  }
+ ],
+ "level": 3
+}

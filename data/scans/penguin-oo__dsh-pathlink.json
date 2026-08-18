@@ -1,0 +1,106 @@
+{
+ "repo": "penguin-oo/dsh-pathlink",
+ "stars": 1,
+ "description": "Ctrl+click file paths and links in DeepSeek Harness chat: paths open their folder in the OS file manager, links open in a new browser tab.",
+ "pushed_at": "2026-08-15T06:47:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-pathlink",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "sessionPersistence",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "x.com": 2
+ },
+ "env": {
+  "DSH_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:20",
+    "lib/index.js:44",
+    "scripts/e2e-screenshot.mjs:3",
+    "scripts/e2e-screenshot.mjs:14",
+    "scripts/e2e-synthetic.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1295",
+    "lib/client.js:2653",
+    "lib/client.js:2710"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:6",
+    "scripts/build-client.mjs:41",
+    "scripts/build-demo.mjs:4",
+    "scripts/build-demo.mjs:21"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:20, lib/index.js:44"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/client.js:1295, lib/client.js:2653"
+  }
+ ],
+ "level": 3
+}

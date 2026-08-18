@@ -1,0 +1,109 @@
+{
+ "repo": "Fayelin12/dsh-office",
+ "stars": 1,
+ "description": "Agent-office dashboard for DeepSeek Harness (DSH): workspaces, sessions, token usage & subagents in a 6-column sprite office — plus Agent Mail, Feishu/Lark messages, meetings, transcripts & office log",
+ "pushed_at": "2026-08-18T07:32:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-office",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "connection",
+  "sessionPersistence",
+  "sessionProjectionCache",
+  "sessionProjections",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "tokenMeter",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "session/created",
+  "session/disposed"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "agent.qq.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "APPDATA": 6,
+  "npm_config_prefix": 6,
+  "LOCALAPPDATA": 6,
+  "LARK_CLI_RUN_JS": 2,
+  "LARK_PROFILE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:6",
+    "lib/index.js:6",
+    "lib/index.js:242",
+    "scripts/calendar.js:27",
+    "scripts/calendar.js:58"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:389",
+    "lib/index.js:485",
+    "lib/index.js:1254",
+    "lib/index.js:1273",
+    "lib/index.js:1374"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. lib/index.js:6, lib/index.js:6"
+  }
+ ],
+ "level": 3
+}

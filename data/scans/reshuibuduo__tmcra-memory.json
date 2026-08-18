@@ -1,0 +1,92 @@
+{
+ "repo": "reshuibuduo/tmcra-memory",
+ "stars": 6,
+ "description": "TMCRA Core — local-first, scope-isolated long-term memory runtime for AI agents.",
+ "pushed_at": "2026-08-18T03:45:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "tmcra-deepseek-harness-local-memory",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "TMCRA_LOCAL_INTEGRATION_CONFIG": 1,
+  "TMCRA_LOCAL_INTEGRATION_STATE_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "integrations/local-agent-hooks/lib/local_memory.mjs:2",
+    "integrations/local-agent-hooks/lib/local_memory.mjs:2",
+    "integrations/local-agent-hooks/lib/local_memory.mjs:34",
+    "integrations/local-agent-hooks/lib/local_memory.mjs:50",
+    "integrations/local-agent-hooks/lib/local_memory.mjs:74"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 6,
+   "evidence": [
+    "integrations/local-agent-hooks/hooks/run_hook.mjs:1",
+    "integrations/local-agent-hooks/hooks/run_hook.mjs:22",
+    "integrations/local-agent-hooks/lib/local_memory.mjs:277"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. integrations/local-agent-hooks/lib/local_memory.mjs:2, integrations/local-agent-hooks/lib/local_memory.mjs:2"
+  }
+ ],
+ "level": 3
+}

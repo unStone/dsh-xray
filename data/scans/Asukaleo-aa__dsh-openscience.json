@@ -1,0 +1,72 @@
+{
+ "repo": "Asukaleo-aa/dsh-openscience",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-15T06:05:28Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@antientropier/dsh-artifact-provenance",
+ "deps": [
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 9,
+   "evidence": [
+    "plugin/artifact-provenance/src/types.ts:13",
+    "plugin/artifact-provenance/src/types.ts:120"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 2 services, 2 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

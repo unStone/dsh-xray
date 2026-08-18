@@ -1,0 +1,96 @@
+{
+ "repo": "marlonLau/dsh-wallpaper-engine",
+ "stars": 1,
+ "description": "One-click DSH background switcher backed by local Wallpaper Engine images/videos",
+ "pushed_at": "2026-08-16T17:07:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "theme",
+    "workspaces"
+   ]
+  }
+ },
+ "pkg_name": "@marlonlau/dsh-wallpaper-engine",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "theme",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_WE_RESTART_DELAY": 1,
+  "DSH_WE_PORT": 1,
+  "DSH_WE_HOST": 1,
+  "DSH_BIN": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:29",
+    "scripts/restart-dsh-web.cjs:17",
+    "scripts/restart-dsh-web.cjs:17",
+    "scripts/restart-dsh-web.cjs:41",
+    "scripts/restart-dsh-web.cjs:116"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:69",
+    "scripts/restart-dsh-web.cjs:37"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:29, scripts/restart-dsh-web.cjs:17"
+  }
+ ],
+ "level": 3
+}

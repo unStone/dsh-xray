@@ -1,0 +1,130 @@
+{
+ "repo": "Gumiho12345/dsh-plugin-net-access",
+ "stars": 5,
+ "description": "为 DeepSeek Harness(dsh) 新增 Net Access 模式，用于解决 Windows 沙箱内 curl.exe 无法访问 HTTPS 的问题，文件写保护不变。 / Adds a Net Access mode to DeepSeek Harness(dsh): curl.exe can access HTTPS inside the Windows sandbox again",
+ "pushed_at": "2026-08-18T08:27:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./plugin/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-net-access",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "approval",
+  "connection",
+  "conversation",
+  "conversationEvents",
+  "conversationViews",
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "shell",
+  "shellEnv",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "session/created",
+  "slash/input-begin-command",
+  "slash/input-consume-token",
+  "slash/input-insert-reference",
+  "slash/input-insert-text"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "www.deepseek.com": 4,
+  "docs.deepseek.com": 1
+ },
+ "env": {
+  "USERPROFILE": 1,
+  "DSH_NETACCESS_TOOLBIN": 1,
+  "CURL_CA_BUNDLE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "patches/dsh-sandbox-local/lib/index.js:1",
+    "patches/dsh-sandbox-local/lib/index.js:1",
+    "patches/dsh-sandbox-local/lib/index.js:100",
+    "patches/dsh-sandbox-local/lib/index.js:126",
+    "patches/dsh-sandbox-local/lib/index.js:148"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "patches/dsh-client-connection/lib/client.js:696",
+    "patches/dsh-client-ui-conversation/lib/client.js:1731"
+   ]
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "patches/dsh-client-connection/lib/client.js:1861",
+    "patches/dsh-client-connection/lib/client.js:1912",
+    "patches/dsh-client-ui-conversation/lib/client.js:1549",
+    "patches/dsh-client-ui-conversation/lib/client.js:1550"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "patches/dsh-sandbox-local/lib/index.js:2",
+    "patches/dsh-sandbox-local/lib/index.js:467",
+    "patches/dsh-sandbox-windows-acl/lib/runner.js:2",
+    "patches/dsh-sandbox-windows-acl/lib/runner.js:188"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./plugin/cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "approval, systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. patches/dsh-sandbox-local/lib/index.js:1, patches/dsh-sandbox-local/lib/index.js:1"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. patches/dsh-client-connection/lib/client.js:696, patches/dsh-client-ui-conversation/lib/client.js:1731"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. patches/dsh-client-connection/lib/client.js:1861, patches/dsh-client-connection/lib/client.js:1912"
+  }
+ ],
+ "level": 3
+}

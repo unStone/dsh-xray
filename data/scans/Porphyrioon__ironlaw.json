@@ -1,0 +1,109 @@
+{
+ "repo": "Porphyrioon/ironlaw",
+ "stars": 1,
+ "description": "IronLaw: evidence-backed completion and repair layer for coding agents",
+ "pushed_at": "2026-08-17T18:46:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "ironlaw",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessions",
+  "tools"
+ ],
+ "hooks": [
+  "agent/turn-stopping",
+  "session/event",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 4,
+  "IRONLAW_EVIDENCE_ROOT": 1,
+  "IRONLAW_MODE": 2,
+  "OPENCODE_CONFIG_DIR": 1,
+  "ProgramFiles": 2,
+  "IRONLAW_REQUIRE_SIDECAR": 3,
+  "IRONLAW_NODE_PATH": 3,
+  "APPDATA": 1,
+  "IRONLAW_SIDECAR_PATH": 1,
+  "IRONLAW_MEMORY_ROOT": 1,
+  "IRONLAW_MEMORY_REMOTE": 1,
+  "IRONLAW_MEMORY_SOURCE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 4,
+   "evidence": [
+    "packages/cli/src/cli.js:6",
+    "packages/cli/src/cli.js:6",
+    "packages/cli/src/cli.js:36",
+    "packages/cli/src/cli.js:37",
+    "packages/cli/src/plugin.js:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "packages/cli/sidecar.js:17",
+    "packages/cli/sidecar.js:20",
+    "packages/adapter-dsh/src/evidence.ts:1",
+    "packages/adapter-dsh/src/evidence.ts:50",
+    "packages/cli/src/cli.js:65"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/cli/src/cli.js:145"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. packages/cli/src/cli.js:6, packages/cli/src/cli.js:6"
+  }
+ ],
+ "level": 3
+}

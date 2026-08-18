@@ -1,0 +1,72 @@
+{
+ "repo": "devLythen/dsh-docker",
+ "stars": 3,
+ "description": "Docker image for DeepSeek Harness, with self-hosted deployment supported",
+ "pushed_at": "2026-08-17T02:11:32Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-docker",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "AUTH_PORT": 1,
+  "AUTH_TTL_HOURS": 1,
+  "AUTH_PASSWORD_SHA256": 1,
+  "AUTH_PASSWORD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "auth/server.mjs:302"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. auth/server.mjs:302"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AUTH_PASSWORD, AUTH_PASSWORD_SHA256, AUTH_PORT, AUTH_TTL_HOURS"
+  }
+ ],
+ "level": 2
+}

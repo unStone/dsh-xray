@@ -1,0 +1,115 @@
+{
+ "repo": "Aik358/dsh-anchored-monitor",
+ "stars": 1,
+ "description": "Real-time chain-of-thought anchoring monitor & intervention plugin for DeepSeek Harness: three-band (spec/mixed/react) fingerprint detection, L1 hint / L2 reset / L3 restart interventions, liquid-glas",
+ "pushed_at": "2026-08-18T08:30:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@a9i5k4/dsh-anchored-monitor",
+ "deps": [
+  "ajv",
+  "yaml",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "llm/stream",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.npmjs.com": 1
+ },
+ "env": {
+  "ANCHORED_MONITOR_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:19",
+    "lib/index.js:166"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/monitor/server.ts:129"
+   ]
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:162",
+    "lib/index.js:513",
+    "lib/index.js:563",
+    "lib/index.js:564",
+    "lib/index.js:629"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 42,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:19, lib/index.js:166"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/monitor/server.ts:129"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,78 @@
+{
+ "repo": "Whning0513/deepseek-protocol-doctor",
+ "stars": 2,
+ "description": "Checks DeepSeek tool loops, reasoning_content, strict schemas, and captured SSE. Also works as a DSH plugin.",
+ "pushed_at": "2026-08-16T15:10:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-deepseek-protocol-doctor",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSV4_DOCTOR_PYTHON": 1,
+  "PYTHONPATH": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "dsh/runner.js:1",
+    "dsh/runner.js:72"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. dsh/runner.js:1, dsh/runner.js:72"
+  }
+ ],
+ "level": 3
+}

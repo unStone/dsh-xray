@@ -1,0 +1,122 @@
+{
+ "repo": "xun404/dsh-pihuo-plugins",
+ "stars": 1,
+ "description": "PiHuo: DeepSeek Harness plugins that run local ACP processes as chat workers",
+ "pushed_at": "2026-08-17T03:23:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-pihuo-plugins",
+ "deps": [
+  "@agentclientprotocol/sdk",
+  "@pihuo/dsh-worker-protocol",
+  "@pihuo/dsh-acp-protocol",
+  "@pihuo/dsh-worker-protocol",
+  "@pihuo/dsh-worker-runtime",
+  "@pihuo/dsh-pihuo-acp-worker",
+  "@pihuo/dsh-pihuo-acp-ui",
+  "@pihuo/dsh-pihuo-presets",
+  "react",
+  "@pihuo/dsh-worker-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "subagents",
+  "subprocess"
+ ],
+ "hooks": [
+  "session/disposed"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "cdn.agentclientprotocol.com": 3
+ },
+ "env": {
+  "CDP_HOST": 1,
+  "CDP_PORT": 1,
+  "DSH_WEB_ORIGIN": 1,
+  "CDP_WAIT_MS": 1,
+  "DSH_HOME": 1,
+  "MOCK_TEXT": 1,
+  "MOCK_STOP": 1,
+  "MOCK_HANG": 1,
+  "MOCK_PERMISSION": 1,
+  "MOCK_MODELS": 1,
+  "MOCK_REASONING": 1,
+  "MOCK_THINK": 1,
+  "MOCK_TOOL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "packages/acp-worker/src/index.ts:280",
+    "packages/acp-worker/src/install.ts:5",
+    "packages/acp-worker/src/install.ts:186",
+    "packages/acp-worker/src/probe-acp.ts:200"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/cdp-check.mjs:233"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 29,
+   "evidence": [
+    "scripts/cdp-check.mjs:22",
+    "scripts/cdp-check.mjs:233",
+    "scripts/set-release-version.mjs:13",
+    "scripts/set-release-version.mjs:56",
+    "scripts/write-dev-patch.mjs:22"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 75,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. packages/acp-worker/src/index.ts:280, packages/acp-worker/src/install.ts:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/cdp-check.mjs:233"
+  }
+ ],
+ "level": 3
+}

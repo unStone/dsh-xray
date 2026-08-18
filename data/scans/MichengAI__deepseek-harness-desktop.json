@@ -1,0 +1,80 @@
+{
+ "repo": "MichengAI/deepseek-harness-desktop",
+ "stars": 2,
+ "description": "Desktop for DeepSeek Harness 跨平台桌面版，无需提前安装任何环境",
+ "pushed_at": "2026-08-15T06:52:31Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_RUNTIME_ROOT": 2,
+  "npm_execpath": 1,
+  "DSH_NODE_EXECUTABLE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare-runtime.ts:1",
+    "scripts/prepare-runtime.ts:1",
+    "scripts/prepare-runtime.ts:44",
+    "src/dsh-process.ts:1",
+    "src/dsh-process.ts:26"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/dsh-process.ts:37",
+    "src/dsh-process.ts:82"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "scripts/prepare-runtime.ts:64",
+    "src/main.ts:76",
+    "src/main.ts:83"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/prepare-runtime.ts:1, scripts/prepare-runtime.ts:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/dsh-process.ts:37, src/dsh-process.ts:82"
+  }
+ ],
+ "level": 2
+}

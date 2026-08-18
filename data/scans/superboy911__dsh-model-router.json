@@ -1,0 +1,133 @@
+{
+ "repo": "superboy911/dsh-model-router",
+ "stars": 2,
+ "description": "DSH model-routing plugin for keyword routing and isolated image generation / DSH 关键词路由与隔离生图插件",
+ "pushed_at": "2026-08-14T14:36:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-model-router",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-host-apiproxy"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "connection",
+  "credentials",
+  "llm",
+  "locale",
+  "remote",
+  "sessions",
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "connection/reset",
+  "llm/adapters-updated",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "scripts/check-secrets.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/tools.js:274",
+    "src/tools.ts:324"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 30,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "lib/artifacts.js:59",
+    "scripts/build-client.mjs:19",
+    "scripts/build-client.mjs:27",
+    "src/artifacts.ts:76"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 61,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. scripts/check-secrets.mjs:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/tools.js:274, src/tools.ts:324"
+  }
+ ],
+ "level": 3
+}

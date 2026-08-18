@@ -1,0 +1,85 @@
+{
+ "repo": "kevenxz/dsh-desktop",
+ "stars": 3,
+ "description": "Windows desktop client for DeepSeek Harness — native window, tray, shared DSH profiles and sessions.",
+ "pushed_at": "2026-08-13T15:48:33Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_SMOKE": 1,
+  "DSH_DESKTOP_NODE": 1,
+  "DSH_DESKTOP_WORKSPACE": 2,
+  "DSH_DESKTOP_PORT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/main.js:19",
+    "src/main.js:19",
+    "src/main.js:64",
+    "src/main.js:118",
+    "src/main.js:263"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/main.js:87",
+    "src/main.js:89"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/generate-icon.mjs:10",
+    "scripts/generate-icon.mjs:135",
+    "scripts/generate-icon.mjs:136",
+    "scripts/generate-icon.mjs:137",
+    "src/main.js:43"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/main.js:19, src/main.js:19"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/main.js:87, src/main.js:89"
+  }
+ ],
+ "level": 2
+}

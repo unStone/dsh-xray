@@ -1,0 +1,99 @@
+{
+ "repo": "chenkezhen480/dsh-semantic-memory",
+ "stars": 1,
+ "description": "为deepseek-harness添加向量化跨会话记忆插件",
+ "pushed_at": "2026-08-17T00:09:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-semantic-memory",
+ "deps": [
+  "@huggingface/transformers",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 22,
+ "domains": {
+  "huggingface.co": 4,
+  "api.siliconflow.cn": 5,
+  "hf-mirror.com": 4
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 2,
+  "MEMORY_LOCAL_MODEL": 1,
+  "MEMORY_REMOTE_HOST": 1,
+  "MEMORY_API_BASE": 1,
+  "MEMORY_API_KEY": 1,
+  "MEMORY_API_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/store.js:193",
+    "scripts/repro-settings.mjs:23",
+    "src/store.ts:254"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/repro-settings.mjs:17"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 45,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "token_env",
+   "evidence": "MEMORY_API_KEY"
+  }
+ ],
+ "level": 3
+}

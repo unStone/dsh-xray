@@ -1,0 +1,101 @@
+{
+ "repo": "huangmouren2023/deepseek-harness-toolkit",
+ "stars": 2,
+ "description": "Windows emergency toolkit for DeepSeek Harness",
+ "pushed_at": "2026-08-16T20:18:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-liang-watch",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "invariants",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/request-error",
+  "agent/status",
+  "session/disposed",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 15,
+ "domains": {
+  "liang-intensity-api.sebastiiiiiiii.workers.dev": 1,
+  "lichtspektrum.github.io": 1
+ },
+ "env": {
+  "HTTPS_PROXY": 2,
+  "HTTP_PROXY": 2,
+  "DSH_ANON_ID": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/dsh-liang-watch/lib/index.js:21",
+    "tools/dsh-liang-watch/lib/index.js:21",
+    "tools/dsh-liang-watch/lib/index.js:68"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. tools/dsh-liang-watch/lib/index.js:21, tools/dsh-liang-watch/lib/index.js:21"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,122 @@
+{
+ "repo": "AtropinolTT/dsh-guide-dog",
+ "stars": 4,
+ "description": "Guide Dog for DSH — MiniMax multimodal plugin: image/video/music/speech generation & vision tools, voice mode, voice input. Real-time call mode implemented: streaming voice conversation, unified float",
+ "pushed_at": "2026-08-17T16:14:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./bundle/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-guide-dog",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "sandboxPolicy",
+  "shell",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/error",
+  "agent/status",
+  "session/event",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 39,
+ "domains": {
+  "hf-mirror.com": 3,
+  "m.thepaper.cn": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "plugin-host.js:381",
+    "plugin-host.js:406",
+    "plugin-host.js:499",
+    "plugin-host.js:528",
+    "plugin-host.js:845"
+   ]
+  },
+  "eval": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "repro/repro-progress.js:20",
+    "repro/repro-progress.js:21",
+    "repro/repro-progress.js:22",
+    "repro/repro-progress.js:23",
+    "repro/repro-progress.js:24"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./bundle/cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer, tools/pre-execute"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. plugin-host.js:381, plugin-host.js:406"
+  },
+  {
+   "id": "eval",
+   "evidence": "×14 src, e.g. repro/repro-progress.js:20, repro/repro-progress.js:21"
+  }
+ ],
+ "level": 3
+}

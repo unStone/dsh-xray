@@ -1,0 +1,122 @@
+{
+ "repo": "bx33661/dsh-omv",
+ "stars": 1,
+ "description": "Native DeepSeek Harness workbench for evidence-first vulnerability research, reproduction, and reporting.",
+ "pushed_at": "2026-08-17T18:14:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-omv",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "oh-my-vul",
+  "simple-icons",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "commands",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "tools/result"
+ ],
+ "tool_regs": 30,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/poc-executor.ts:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 9,
+   "evidence": [
+    "src/campaigns.ts:131",
+    "src/campaigns.ts:186",
+    "src/dedup.ts:143",
+    "src/poc-executor.ts:55",
+    "src/poc-service.ts:143"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 58,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/poc-executor.ts:2"
+  }
+ ],
+ "level": 3
+}

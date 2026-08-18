@@ -1,0 +1,85 @@
+{
+ "repo": "kingcharleslzy-ai/dsh-honcho-memory",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T11:28:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-honcho-memory",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "session/event"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "HONCHO_BASE_URL": 1,
+  "HONCHO_API_KEY": 1,
+  "HONCHO_WORKSPACE": 1,
+  "HONCHO_USER_PEER": 1,
+  "HONCHO_AI_PEER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "token_env",
+   "evidence": "HONCHO_API_KEY"
+  }
+ ],
+ "level": 3
+}

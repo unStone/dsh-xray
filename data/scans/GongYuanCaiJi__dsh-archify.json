@@ -1,0 +1,105 @@
+{
+ "repo": "GongYuanCaiJi/dsh-archify",
+ "stars": 1,
+ "description": "DeepSeek Harness 插件：用 JSON 规格生成可验证的架构图、流程图、时序图、数据流图与生命周期图（移植自 tt-a1i/archify）",
+ "pushed_at": "2026-08-15T18:42:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-archify",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node scripts/stage-skill.mjs"
+ },
+ "injects": [
+  "skills"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "RUNNER_TEMP": 2,
+  "ARCHIFY_REPO_ROOT": 1,
+  "ARCHIFY_QUALITY_PROFILE": 6,
+  "ARCHIFY_DIAGNOSTIC_FORMAT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 35,
+   "dev": 244,
+   "evidence": [
+    "scripts/package-smoke.mjs:3",
+    "scripts/package-smoke.mjs:3",
+    "scripts/package-smoke.mjs:25",
+    "scripts/package-smoke.mjs:41",
+    "scripts/resolve-cli.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 5,
+   "evidence": [
+    "archify/bin/visual-check.mjs:324"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "archify/bin/preview.mjs:251",
+    "archify/bin/preview.mjs:320"
+   ]
+  },
+  "fs_write": {
+   "src": 35,
+   "dev": 236,
+   "evidence": [
+    "scripts/distribution-acceptance.mjs:132",
+    "scripts/distribution-acceptance.mjs:274",
+    "scripts/pack.mjs:60",
+    "scripts/pack.mjs:61",
+    "scripts/pack.mjs:78"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "archify/bin/archify.mjs:421",
+    "archify/bin/archify.mjs:1295",
+    "archify/bin/archify.mjs:1380"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 121,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×35 src, e.g. scripts/package-smoke.mjs:3, scripts/package-smoke.mjs:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. archify/bin/visual-check.mjs:324"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. archify/bin/preview.mjs:251, archify/bin/preview.mjs:320"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,79 @@
+{
+ "repo": "sulfide2085/dsh-llm-wechat",
+ "stars": 6,
+ "description": "DeepSeek Harness 微信网关适配插件：复用 DeepSeekAdapter + 流式 think 标签转译",
+ "pushed_at": "2026-08-16T12:58:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-llm-wechat",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-deepseek",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm"
+ ],
+ "hooks": [
+  "settings/update"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "chatapi.weixin.qq.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,76 @@
+{
+ "repo": "4060415/Deepseek-harness-routing-layer-",
+ "stars": 2,
+ "description": "DeepSeek Harness 智能模型自动路由插件，根据任务需求自动选择最合适的模型",
+ "pushed_at": "2026-08-14T12:28:17Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "8kinfe-llm-router",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "llm"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/request",
+  "agent/request-error",
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 2 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

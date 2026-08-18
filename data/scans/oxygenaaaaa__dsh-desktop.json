@@ -1,0 +1,81 @@
+{
+ "repo": "oxygenaaaaa/dsh-desktop",
+ "stars": 1,
+ "description": "DeepSeek Harness as a Windows desktop app — one-click install, ready to use",
+ "pushed_at": "2026-08-14T06:17:43Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_SHOT": 1,
+  "DSH_DESKTOP_PROBE": 1,
+  "DSH_DESKTOP_E2E": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/main.js:17",
+    "src/main.js:96"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/main.js:244",
+    "src/main.js:344",
+    "tools/icon-capture.js:50"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "src/main.js:18",
+    "src/main.js:80",
+    "src/main.js:244",
+    "src/main.js:332",
+    "src/main.js:350"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/main.js:17, src/main.js:96"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. src/main.js:244, src/main.js:344"
+  }
+ ],
+ "level": 2
+}

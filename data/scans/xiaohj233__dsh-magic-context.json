@@ -1,0 +1,143 @@
+{
+ "repo": "xiaohj233/dsh-magic-context",
+ "stars": 1,
+ "description": "Magic Context — community port to DeepSeek Harness (DSH). Shared SQLite memory across harnesses, harness='dsh' row isolation.",
+ "pushed_at": "2026-08-16T15:36:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "immediately": true,
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-magic-context-adapter",
+ "deps": [
+  "dsh-magic-context-adapter",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-include",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-compaction-basic",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-session",
+  "react",
+  "dsh-magic-context"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "appExit",
+  "connection",
+  "loader",
+  "magicContextHost",
+  "sessions",
+  "slots",
+  "typert"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start"
+ ],
+ "tool_regs": 15,
+ "domains": {
+  "emscripten.org": 2
+ },
+ "env": {
+  "USERPROFILE": 5,
+  "XDG_CONFIG_HOME": 3,
+  "XDG_DATA_HOME": 4,
+  "MAGIC_CONTEXT_LOG_PATH": 2,
+  "MAGIC_CONTEXT_TEST_DATA_DIR": 2,
+  "MAGIC_CONTEXT_LATEST_SUPPORTED_VERSION": 3,
+  "DSH_HOME": 4,
+  "MAGIC_CONTEXT_FORCE_HISTORIAN": 1,
+  "MAGIC_CONTEXT_DEBUG_HISTORIAN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 24,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-plugin/dist/index.js:509",
+    "packages/dsh-plugin/dist/index.js:509",
+    "packages/dsh-plugin/dist/index.js:526",
+    "packages/dsh-plugin/dist/index.js:528",
+    "packages/dsh-plugin/dist/entries/agent-21g2xwj5.js:59"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-plugin/src/agent/index.ts:82"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 38,
+   "dev": 62,
+   "evidence": [
+    "packages/dsh-plugin/dist/index.js:9",
+    "packages/dsh-plugin/dist/index.js:11",
+    "packages/dsh-plugin/dist/index.js:12",
+    "packages/dsh-plugin/dist/index.js:172",
+    "packages/dsh-plugin/dist/index.js:182"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-plugin/dist/index.js:682",
+    "packages/dsh-plugin/dist/entries/agent-21g2xwj5.js:688",
+    "packages/dsh-plugin/dist/entries/agent-hb5apgm1.js:688"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 125,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×24 src, e.g. packages/dsh-plugin/dist/index.js:509, packages/dsh-plugin/dist/index.js:509"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/dsh-plugin/src/agent/index.ts:82"
+  }
+ ],
+ "level": 3
+}

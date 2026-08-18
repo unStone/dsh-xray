@@ -1,0 +1,97 @@
+{
+ "repo": "yangyue1974/dsh-plugin-audiolib",
+ "stars": 3,
+ "description": "Ambient soundtrack for DeepSeek Harness, driven by agent state. Streams 100k+ cleared tracks from AudioLib.ai — a track always finishes, so a state change never cuts one off.",
+ "pushed_at": "2026-08-14T16:55:16Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-audiolib",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json && tsdown"
+ },
+ "injects": [
+  "connection",
+  "settingsScope",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 3,
+ "domains": {
+  "audiolib.ai": 2,
+  "api.audiolib.ai": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/player.ts:9",
+    "src/player.ts:9",
+    "src/player.ts:66",
+    "src/player.ts:155"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/player.ts:10",
+    "src/player.ts:113"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/player.ts:9, src/player.ts:9"
+  }
+ ],
+ "level": 3
+}

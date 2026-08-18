@@ -1,0 +1,103 @@
+{
+ "repo": "YinjiangCN/dsh-plugin-ftp-server",
+ "stars": 1,
+ "description": "Configurable FTP file server for DeepSeek Harness with a browser settings panel (zero-dependency FTP core).",
+ "pushed_at": "2026-08-15T19:40:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-ftp-server",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-connection",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "slots",
+  "subprocess",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:134"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/ftp-server.js:166",
+    "lib/ftp-server.js:176",
+    "lib/ftp-server.js:542"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/ftp-server.js:252"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:134"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. lib/ftp-server.js:166, lib/ftp-server.js:176"
+  }
+ ],
+ "level": 3
+}

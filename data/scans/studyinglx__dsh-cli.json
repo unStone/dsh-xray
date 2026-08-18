@@ -1,0 +1,90 @@
+{
+ "repo": "studyinglx/dsh-cli",
+ "stars": 1,
+ "description": "Interactive terminal (REPL) profile bundle for DeepSeek Harness — a Claude Code-style CLI surface over dsh-base",
+ "pushed_at": "2026-08-17T08:27:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-cli-interactive",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "commander"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "cmdlineArgs",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "FORCE_COLOR": 2,
+  "NO_COLOR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-cli.js:4",
+    "bin/dsh-cli.js:4",
+    "bin/dsh-cli.js:7",
+    "scripts/build.mjs:3",
+    "scripts/build.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/runner.js:593"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. bin/dsh-cli.js:4, bin/dsh-cli.js:4"
+  }
+ ],
+ "level": 3
+}

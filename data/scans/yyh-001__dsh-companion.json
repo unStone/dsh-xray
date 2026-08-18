@@ -1,0 +1,80 @@
+{
+ "repo": "yyh-001/dsh-companion",
+ "stars": 3,
+ "description": "DeepSeek 陪伴模式插件 —— 人设、记忆、聊得下去：SOUL 人格 + Hermes 长期记忆，可选 QQ 通道",
+ "pushed_at": "2026-08-13T16:00:31Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-companion",
+ "deps": [
+  "@tencent-connect/qqbot-nodejs",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "systemPrompt",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "dispose",
+  "session/event"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "index.js:39",
+    "index.js:70",
+    "index.js:80",
+    "index.js:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 6 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

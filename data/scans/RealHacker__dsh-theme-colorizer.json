@@ -1,0 +1,96 @@
+{
+ "repo": "RealHacker/dsh-theme-colorizer",
+ "stars": 2,
+ "description": "A Deepseek Harness plugin that gives its UI color themes",
+ "pushed_at": "2026-08-17T10:04:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web",
+   "immediately": false
+  }
+ },
+ "pkg_name": "dsh-theme-colorizer",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots",
+  "theme"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:629"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:447",
+    "lib/client.js:448"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/client.js:629"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/client.js:447, lib/client.js:448"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,89 @@
+{
+ "repo": "pandashere/dsh-self-control-guard",
+ "stars": 5,
+ "description": "Self-control guard plugin for DeepSeek Harness host exit and restart workflows.",
+ "pushed_at": "2026-08-13T15:10:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "self-control-guard",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "invariants",
+  "sessions",
+  "tools"
+ ],
+ "hooks": [
+  "internal/dispatch",
+  "telemetry/record",
+  "tools/post-execute"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/test.mjs:15",
+    "scripts/test.mjs:15",
+    "scripts/test.mjs:20",
+    "scripts/test.mjs:40"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 10,
+   "evidence": [
+    "src/recovery.ts:15",
+    "src/recovery.ts:64"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/test.mjs:15, scripts/test.mjs:15"
+  }
+ ],
+ "level": 3
+}

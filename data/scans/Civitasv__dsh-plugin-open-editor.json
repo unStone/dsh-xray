@@ -1,0 +1,91 @@
+{
+ "repo": "Civitasv/dsh-plugin-open-editor",
+ "stars": 2,
+ "description": "Editor Plugin for Deepseek Harness",
+ "pushed_at": "2026-08-16T04:11:55Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-plugin-open-editor",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "dist/index.js:3",
+    "dist/index.js:120",
+    "dist/index.js:127",
+    "scripts/launch-smoke.mjs:9",
+    "scripts/launch-smoke.mjs:21"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:13",
+    "scripts/build.mjs:13",
+    "scripts/build.mjs:62",
+    "scripts/build.mjs:63",
+    "scripts/launch-smoke.mjs:10"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. dist/index.js:3, dist/index.js:120"
+  }
+ ],
+ "level": 2
+}

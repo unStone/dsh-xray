@@ -1,0 +1,116 @@
+{
+ "repo": "silencieuxzero/Better_Deepseek_Harness",
+ "stars": 4,
+ "description": "Better Deepseek Harness, with some functional extensions to webui and Deepseek Harness·更好的deepseek harness，对webui和deepseek harness进行了一些功能扩展",
+ "pushed_at": "2026-08-16T06:47:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "better-deepseek-harness",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "internal/service",
+  "llm/stream",
+  "theme/change",
+  "tools/execute"
+ ],
+ "tool_regs": 16,
+ "domains": {
+  "api.example.com": 2,
+  "api.github.com": 1,
+  "api.tavily.com": 1
+ },
+ "env": {
+  "DSH_AGENTS_HOME": 1,
+  "DSH_DESKTOP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 4,
+   "evidence": [
+    "src/index.js:47",
+    "src/index.js:47",
+    "src/index.js:157",
+    "src/index.js:174",
+    "src/index.js:1088"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 24,
+   "dev": 64,
+   "evidence": [
+    "src/index.js:40",
+    "src/index.js:42",
+    "src/index.js:578",
+    "src/index.js:741",
+    "src/index.js:960"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. src/index.js:47, src/index.js:47"
+  }
+ ],
+ "level": 3
+}

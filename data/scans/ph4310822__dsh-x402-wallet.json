@@ -1,0 +1,124 @@
+{
+ "repo": "ph4310822/dsh-x402-wallet",
+ "stars": 1,
+ "description": "x402 Payment wallet plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-18T04:54:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-x402-wallet",
+ "deps": [
+  "@danielng23/dsh-x402",
+  "@danielng23/dsh-client-ui-x402",
+  "schemastery",
+  "@x402/core",
+  "@x402/evm",
+  "viem",
+  "zod",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/cordis",
+  "react-qr-code",
+  "@danielng23/dsh-x402",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "approval",
+  "credentials",
+  "invariants",
+  "locale",
+  "remote",
+  "slots",
+  "storageDomain",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "connection/reset",
+  "x402/payment"
+ ],
+ "tool_regs": 24,
+ "domains": {
+  "mainnet.base.org": 4,
+  "x402mcp.app": 4,
+  "fb.me": 1,
+  "basescan.org": 3,
+  "sepolia.basescan.org": 3,
+  "etherscan.io": 3,
+  "sepolia.etherscan.io": 3,
+  "optimistic.etherscan.io": 3,
+  "arbiscan.io": 3,
+  "www.coinbase.com": 3,
+  "faucet.quicknode.com": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 76,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "approval, systemPrompt"
+  }
+ ],
+ "level": 2
+}

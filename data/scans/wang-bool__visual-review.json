@@ -1,0 +1,95 @@
+{
+ "repo": "wang-bool/visual-review",
+ "stars": 2,
+ "description": "dsh 插件，可以支持图像上传，图像识别。将ds的使用体验变为多模态",
+ "pushed_at": "2026-08-18T03:03:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "visual-review",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "VISUAL_REVIEW_SERVER": 3,
+  "VISUAL_REVIEW_PYTHON": 3,
+  "VISUAL_REVIEW_ATTACH_ROOT": 3,
+  "VISUAL_REVIEW_WORKSPACE": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:159"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:312",
+    "lib/index.js:424"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:159"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:312, lib/index.js:424"
+  }
+ ],
+ "level": 3
+}

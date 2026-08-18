@@ -1,0 +1,123 @@
+{
+ "repo": "levi52/dsh-appearance",
+ "stars": 1,
+ "description": "DeepSeek Harness Web UI 的外观设置插件，一键个性化你的 Web UI",
+ "pushed_at": "2026-08-15T10:26:13Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web",
+   "immediately": true
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-appearance",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "node build.mjs",
+  "postinstall": "node scripts/fix-whitelist.mjs"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3,
+  "DSH_WHITELIST_FILE": 1,
+  "npm_lifecycle_event": 1,
+  "APPDATA": 2,
+  "DSH": 2,
+  "DSH_CLI": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/install.mjs:23",
+    "scripts/install.mjs:23",
+    "scripts/install.mjs:57",
+    "scripts/install.mjs:72",
+    "scripts/install.mjs:78"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:113",
+    "src/index.ts:165"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:19",
+    "build.mjs:59",
+    "build.mjs:63",
+    "lib/index.js:18",
+    "lib/index.js:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/fix-whitelist.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. scripts/install.mjs:23, scripts/install.mjs:23"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:113, src/index.ts:165"
+  }
+ ],
+ "level": 3
+}

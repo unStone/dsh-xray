@@ -1,0 +1,119 @@
+{
+ "repo": "cking000bigdemon/dsh-toolbelt",
+ "stars": 1,
+ "description": "Eight DeepSeek Harness plugins: persona, language guard, per-request vision fallback, python/windows write guards, cross-agent memory, image generation, and skill shell injection.",
+ "pushed_at": "2026-08-13T23:22:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-toolbelt",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "fs",
+  "llm",
+  "skills",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/inbox/claimed",
+  "agent/request",
+  "agent/status",
+  "agent/turn-stopping",
+  "fs/edit-intent",
+  "fs/write-intent",
+  "llm/stream",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 6,
+ "domains": {
+  "api.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/python-workdir-guard/index.ts:104",
+    "src/python-workdir-guard/index.ts:214",
+    "src/skill-shell-injection/index.ts:37"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/image-generation/index.ts:432"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 15,
+   "evidence": [
+    "src/image-generation/index.ts:599"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/python-workdir-guard/index.ts:104, src/python-workdir-guard/index.ts:214"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/image-generation/index.ts:432"
+  }
+ ],
+ "level": 3
+}

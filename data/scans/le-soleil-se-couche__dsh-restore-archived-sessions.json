@@ -1,0 +1,113 @@
+{
+ "repo": "le-soleil-se-couche/dsh-restore-archived-sessions",
+ "stars": 1,
+ "description": "查看并恢复 Harness 中已被归档的会话",
+ "pushed_at": "2026-08-16T09:01:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-restore-archived-sessions",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "attachments",
+  "connection",
+  "directoryPicker",
+  "invariants",
+  "llm",
+  "locale",
+  "remote",
+  "sessionPersistence",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "subagents",
+  "tools",
+  "typert",
+  "userQuestions",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "approval/request",
+  "domain/changed",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.deepseek.com": 4,
+  "docs.deepseek.com": 1,
+  "bit.ly": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/dsh-client-connection/lib/client.js:696",
+    "dist/dsh-client-runtime/lib/client.js:493"
+   ]
+  },
+  "base64_decode": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "dist/dsh-client-connection/lib/client.js:1861",
+    "dist/dsh-client-connection/lib/client.js:1912",
+    "dist/dsh-client-runtime/lib/client.js:1657",
+    "dist/dsh-client-runtime/lib/client.js:1708",
+    "dist/dsh-client-runtime/lib/client.js:7275"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 103,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. dist/dsh-client-connection/lib/client.js:696, dist/dsh-client-runtime/lib/client.js:493"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×7 src, e.g. dist/dsh-client-connection/lib/client.js:1861, dist/dsh-client-connection/lib/client.js:1912"
+  }
+ ],
+ "level": 3
+}

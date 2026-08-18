@@ -1,0 +1,130 @@
+{
+ "repo": "skylar-fei/dsh-wechat-maid",
+ "stars": 3,
+ "description": "一个适用于DSH的插件，提供微信远程控制、主动对话、未来任务、桌宠等功能，可通过桌宠面板实时检查未来任务的状态，并提供“自动编码”模式，使模型在对话完后发微信提醒你，以便你认真的刷手机。",
+ "pushed_at": "2026-08-15T05:31:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-wechat-maid",
+ "deps": [
+  "clsx",
+  "schemastery",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-invariants",
+  "react",
+  "react-dom",
+  "weixin-agent-sdk",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.prepare.config.ts"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "connection",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "OPENCLAW_STATE_DIR": 1,
+  "CLAWDBOT_STATE_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 10,
+   "evidence": [
+    "packages/dsh-pet-maid/src/persist.ts:8",
+    "packages/dsh-pet-maid/src/persist.ts:205",
+    "packages/dsh-weixin/src/task-store.ts:7",
+    "packages/dsh-weixin/src/task-store.ts:33"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 51,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,92 @@
+{
+ "repo": "bill9109/dsh-webbridge",
+ "stars": 3,
+ "description": "DSH 结合 Kimi WebBridge",
+ "pushed_at": "2026-08-14T08:04:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@bill9109/dsh-webbridge",
+ "deps": [
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 36,
+ "domains": {
+  "cdn.kimi.com": 6
+ },
+ "env": {
+  "DSH_CHECKOUT": 3,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:15",
+    "scripts/build.mjs:15",
+    "scripts/build.mjs:26",
+    "scripts/build.mjs:102",
+    "scripts/verify-i18n.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:16",
+    "scripts/build.mjs:65",
+    "scripts/build.mjs:115",
+    "scripts/verify-i18n.mjs:7",
+    "scripts/verify-i18n.mjs:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/build.mjs:15, scripts/build.mjs:15"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,94 @@
+{
+ "repo": "zoahdev/dsh-plugin-doctor",
+ "stars": 4,
+ "description": "Health checks for DeepSeek Harness plugins: manifest, patch, entry, build, pack, fresh-profile install verification — CLI + agent-callable plugin_check tool (RFC #1629 dsh plugin check).",
+ "pushed_at": "2026-08-17T14:18:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-doctor",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "ProgramFiles": 1,
+  "LOCALAPPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 40,
+   "dev": 18,
+   "evidence": [
+    "lib/index.js:10",
+    "lib/index.js:10",
+    "lib/index.js:334",
+    "lib/index.js:334",
+    "lib/index.js:337"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 23,
+   "dev": 78,
+   "evidence": [
+    "lib/index.js:11",
+    "lib/index.js:338",
+    "lib/index.js:338",
+    "lib/index.js:338",
+    "lib/index.js:338"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/plugin-smoke.mjs:81"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×40 src, e.g. lib/index.js:10, lib/index.js:10"
+  }
+ ],
+ "level": 3
+}

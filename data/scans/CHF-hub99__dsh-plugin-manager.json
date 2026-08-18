@@ -1,0 +1,106 @@
+{
+ "repo": "CHF-hub99/dsh-plugin-manager",
+ "stars": 1,
+ "description": "DeepSeek Harness plugin: plugin/MCP/skill management with Web GUI and agent tools",
+ "pushed_at": "2026-08-15T06:00:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-manager",
+ "deps": [
+  "@anthropic-ai/mcpb",
+  "adm-zip",
+  "busboy",
+  "js-yaml",
+  "tar",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "skills",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 11,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/service.js:8",
+    "lib/service.js:8",
+    "lib/service.js:509",
+    "scripts/build-client.mjs:7",
+    "scripts/build-client.mjs:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 54,
+   "dev": 0,
+   "evidence": [
+    "lib/service.js:6",
+    "lib/service.js:143",
+    "lib/upload.js:1",
+    "lib/upload.js:221",
+    "scripts/build-client.mjs:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/service.js:8, lib/service.js:8"
+  }
+ ],
+ "level": 3
+}

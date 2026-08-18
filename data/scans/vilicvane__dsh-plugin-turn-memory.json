@@ -1,0 +1,101 @@
+{
+ "repo": "vilicvane/dsh-plugin-turn-memory",
+ "stars": 2,
+ "description": "Turn-granular context memory for DeepSeek Harness.",
+ "pushed_at": "2026-08-18T00:57:33Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-plugin-turn-memory",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "compaction",
+  "llm",
+  "sessionQuery",
+  "sessions",
+  "skills",
+  "subagents",
+  "systemPrompt",
+  "tokenMeter",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/request-error",
+  "agent/status",
+  "session/event",
+  "subagent/start",
+  "tools/result"
+ ],
+ "tool_regs": 25,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 3,
+   "evidence": [
+    "index.ts:404",
+    "obsolete/index.ts:50",
+    "obsolete/index.ts:50",
+    "obsolete/index.ts:50",
+    "obsolete/index.ts:66"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 11 services, 25 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

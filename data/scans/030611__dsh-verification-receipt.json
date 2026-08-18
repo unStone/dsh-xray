@@ -1,0 +1,92 @@
+{
+ "repo": "030611/dsh-verification-receipt",
+ "stars": 5,
+ "description": "Privacy-minimal heuristic per-turn verification summaries for DeepSeek Harness",
+ "pushed_at": "2026-08-14T15:20:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-verification-receipt",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "sessions"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "npm_execpath": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/release-smoke.mjs:1",
+    "scripts/release-smoke.mjs:1",
+    "scripts/release-smoke.mjs:25",
+    "scripts/release-smoke.mjs:62"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/release-smoke.mjs:46",
+    "scripts/release-smoke.mjs:47",
+    "scripts/release-smoke.mjs:55",
+    "src/index.ts:7",
+    "src/index.ts:71"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/release-smoke.mjs:1, scripts/release-smoke.mjs:1"
+  }
+ ],
+ "level": 3
+}

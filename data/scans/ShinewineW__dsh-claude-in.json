@@ -1,0 +1,88 @@
+{
+ "repo": "ShinewineW/dsh-claude-in",
+ "stars": 1,
+ "description": "Read-only Claude Code compatibility bridge for DeepSeek Harness: Skills, Rules, command Hooks, and Agents from .claude as SSOT.",
+ "pushed_at": "2026-08-16T05:32:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-claude-in",
+ "deps": [
+  "@deepseek-ai/dsh-hook-protocol",
+  "@deepseek-ai/schemastery",
+  "yaml"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "shell",
+  "skills"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "subagent/end",
+  "subagent/start",
+  "tools/post-execute",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 29,
+   "evidence": [
+    "scripts/build.mjs:1",
+    "scripts/build.mjs:9"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 2
+}

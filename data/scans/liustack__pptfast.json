@@ -1,0 +1,123 @@
+{
+ "repo": "liustack/pptfast",
+ "stars": 6,
+ "description": "Stable, editable PPTX generation for AI agents — semantic IR in, native DrawingML out. DSH plugin + Claude Code plugin + CLI. | 给 AI agent 的稳定可编辑 PPTX 生成：语义 IR 进，原生 DrawingML 出。DSH 插件 / Claude Code 插件",
+ "pushed_at": "2026-08-17T15:13:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@liustack/pptfast",
+ "deps": [
+  "commander",
+  "dagre",
+  "jszip",
+  "linkedom",
+  "pptxgenjs",
+  "react",
+  "react-dom",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "libreoffice.org": 1,
+  "schemas.openxmlformats.org": 3,
+  "schemas.microsoft.com": 1,
+  "kubernetes.io": 1
+ },
+ "env": {
+  "PPTFAST_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 3,
+   "evidence": [
+    "dsh/preview-tool.js:81",
+    "dsh/preview-tool.js:902",
+    "src/cli/serve.ts:65",
+    "src/cli/serve.ts:442",
+    "src/cli/serve.ts:451"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 6,
+   "evidence": [
+    "src/cli/deck-dir.ts:531",
+    "src/ir/asset-sniff.ts:119",
+    "src/platform/node.ts:47",
+    "src/pptx/svg2pptx/image.ts:70"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/cli/serve.ts:324"
+   ]
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 285,
+   "evidence": [
+    "dsh/preview-tool.js:674",
+    "dsh/preview-tool.js:811",
+    "dsh/preview-tool.js:1011",
+    "dsh/preview-tool.js:1023",
+    "dsh/preview-tool.js:1117"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/platform/node.ts:16"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 502,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. dsh/preview-tool.js:81, dsh/preview-tool.js:902"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. src/cli/deck-dir.ts:531, src/ir/asset-sniff.ts:119"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/cli/serve.ts:324"
+  }
+ ],
+ "level": 3
+}

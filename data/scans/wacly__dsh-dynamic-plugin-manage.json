@@ -1,0 +1,88 @@
+{
+ "repo": "wacly/dsh-dynamic-plugin-manage",
+ "stars": 2,
+ "description": "deepseek harness 动态插件管理",
+ "pushed_at": "2026-08-15T14:54:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-cordis-client-runner"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-dynamic-plugin-manage",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "dynamicCordisRunner",
+  "locale",
+  "sessions",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:234",
+    "src/index.ts:237",
+    "src/index.ts:239",
+    "src/index.ts:707"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

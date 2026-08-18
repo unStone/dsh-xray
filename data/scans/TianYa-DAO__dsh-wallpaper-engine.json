@@ -1,0 +1,125 @@
+{
+ "repo": "TianYa-DAO/dsh-wallpaper-engine",
+ "stars": 2,
+ "description": "deepseek-和人生是、",
+ "pushed_at": "2026-08-17T12:58:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-wallpaper-engine-repo",
+ "deps": [
+  "clsx",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config scripts/tsdown.lib.ts && tsdown --config scripts/tsdown.client.config.ts"
+ },
+ "injects": [
+  "invariants",
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "steamcommunity.com": 2,
+  "deepseek-harness.github.io": 2
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "ProgramFiles": 6,
+  "ProgramW6432": 4,
+  "DSH_DESKTOP_URL": 2,
+  "APPDATA": 4,
+  "DSH_DESKTOP_NODE": 2,
+  "DSH_DESKTOP_WEB_ENTRY": 2,
+  "DSH_REPOSITORY": 2,
+  "DSH_DESKTOP_FORCE_INSTALLER": 2,
+  "DSH_DESKTOP_WEB_READY_TIMEOUT_MS": 2,
+  "DSH_DESKTOP_SMOKE": 6,
+  "DSH_DESKTOP_SMOKE_FILE": 8,
+  "DSH_DESKTOP_M5_SMOKE": 2,
+  "DSH_ELECTRON_DIST": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 1,
+   "evidence": [
+    "desktop/dist/main.js:1",
+    "desktop/dist/main.js:2395",
+    "desktop/scripts/package-win.mjs:4",
+    "desktop/scripts/package-win.mjs:4",
+    "desktop/scripts/package-win.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 19,
+   "dev": 1,
+   "evidence": [
+    "desktop/dist/main.js:2",
+    "desktop/dist/main.js:655",
+    "desktop/dist/main.js:663",
+    "desktop/dist/main.js:2556",
+    "desktop/dist/main.js:2564"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 52,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. desktop/dist/main.js:1, desktop/dist/main.js:2395"
+  }
+ ],
+ "level": 3
+}

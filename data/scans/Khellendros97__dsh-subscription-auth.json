@@ -1,0 +1,112 @@
+{
+ "repo": "Khellendros97/dsh-subscription-auth",
+ "stars": 4,
+ "description": "dsh对接openai、grok、anthropic、kimi订阅渠道",
+ "pushed_at": "2026-08-15T04:02:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-subscription-auth",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "chatgpt.com": 6,
+  "auth.openai.com": 4,
+  "api.openai.com": 2,
+  "claude.ai": 2,
+  "api.anthropic.com": 6,
+  "auth.x.ai": 6,
+  "api.x.ai": 4,
+  "auth.kimi.com": 6,
+  "api.kimi.com": 4
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/oauth.js:3",
+    "lib/oauth.js:60",
+    "lib/oauth.js:66",
+    "src/oauth.ts:24",
+    "src/oauth.ts:103"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/oauth.js:123",
+    "src/oauth.ts:184"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:8",
+    "lib/index.js:26",
+    "src/index.ts:34",
+    "src/index.ts:61"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/oauth.js:3, lib/oauth.js:60"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/oauth.js:123, src/oauth.ts:184"
+  }
+ ],
+ "level": 3
+}

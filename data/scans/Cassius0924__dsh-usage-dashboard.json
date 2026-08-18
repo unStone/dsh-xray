@@ -1,0 +1,98 @@
+{
+ "repo": "Cassius0924/dsh-usage-dashboard",
+ "stars": 6,
+ "description": "DeepSeek 额度与用量仪表盘 — DSH (DeepSeek Harness) 动态 Cordis 插件",
+ "pushed_at": "2026-08-16T15:36:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "immediately": true,
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@cassius0924/dsh-usage-dashboard",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "node build.mjs"
+ },
+ "injects": [
+  "credentials",
+  "locale",
+  "sessionPersistence",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "platform.deepseek.com": 3,
+  "status.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 3,
+   "evidence": [
+    "build.mjs:12",
+    "build.mjs:12",
+    "build.mjs:60"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "build.mjs:13",
+    "build.mjs:21"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 39,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. build.mjs:12, build.mjs:12"
+  }
+ ],
+ "level": 3
+}

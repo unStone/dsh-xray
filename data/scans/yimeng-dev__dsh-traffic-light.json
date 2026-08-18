@@ -1,0 +1,102 @@
+{
+ "repo": "yimeng-dev/dsh-traffic-light",
+ "stars": 3,
+ "description": "Multi-session agent status monitor for DeepSeek Harness.",
+ "pushed_at": "2026-08-16T09:44:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-traffic-light",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "electron",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-loop",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-user-approval"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessionPersistence",
+  "sessions",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent-loop/config-start-failed",
+  "agent/created",
+  "agent/disposed",
+  "agent/error",
+  "agent/status",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/desktop-process.ts:6",
+    "src/desktop-process.ts:114",
+    "src/desktop-process.ts:144",
+    "src/desktop-process.ts:156"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 16,
+   "evidence": [
+    "desktop/main.ts:237",
+    "src/session-settings.ts:149",
+    "src/state-file.ts:44",
+    "src/workspace-settings.ts:120"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/desktop-process.ts:6, src/desktop-process.ts:114"
+  }
+ ],
+ "level": 3
+}

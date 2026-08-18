@@ -1,0 +1,94 @@
+{
+ "repo": "Moeblack/dsh-skins",
+ "stars": 3,
+ "description": "DSH 换肤插件镜像 + 夕港（harbor）皮肤 | Mirror of dsh-external/dsh-skins + harbor (夕港) dusk-harbor skin",
+ "pushed_at": "2026-08-13T15:22:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-web-skins",
+ "deps": [
+  "clsx",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/preview.mjs:13",
+    "scripts/preview.mjs:13",
+    "scripts/preview.mjs:29",
+    "scripts/publish.mjs:17",
+    "scripts/publish.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/gen-skin-styles.mjs:85",
+    "scripts/publish.mjs:63",
+    "scripts/publish.mjs:122",
+    "scripts/verify-i18n.mjs:28",
+    "scripts/verify-i18n.mjs:292"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/preview.mjs:13, scripts/preview.mjs:13"
+  }
+ ],
+ "level": 3
+}

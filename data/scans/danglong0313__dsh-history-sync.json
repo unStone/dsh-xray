@@ -1,0 +1,109 @@
+{
+ "repo": "danglong0313/dsh-history-sync",
+ "stars": 1,
+ "description": "将codex和claude项目历史同步到dsh",
+ "pushed_at": "2026-08-16T06:48:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@danglong0313/dsh-history-sync",
+ "deps": [
+  "@anthropic-ai/claude-agent-sdk",
+  "@anthropic-ai/sdk",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/schemastery",
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "sessionPersistence",
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/providers/codex.ts:1",
+    "src/providers/codex.ts:108"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:28",
+    "src/state.ts:81",
+    "src/ui-config.ts:97"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-installed-preview.mjs:10"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/providers/codex.ts:1, src/providers/codex.ts:108"
+  }
+ ],
+ "level": 3
+}

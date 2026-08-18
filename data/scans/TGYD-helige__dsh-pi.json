@@ -1,0 +1,101 @@
+{
+ "repo": "TGYD-helige/dsh-pi",
+ "stars": 3,
+ "description": "Run trusted Pi extensions inside DeepSeek Harness through a compatibility host.",
+ "pushed_at": "2026-08-14T15:23:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-pi-host",
+ "deps": [
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "@earendil-works/pi-coding-agent",
+  "typebox",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "agents",
+  "attachments",
+  "commands",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/session-start",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 24,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/dsh-adapter.ts:100"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 10,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/runtime.ts:115"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 43,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/dsh-adapter.ts:100"
+  }
+ ],
+ "level": 3
+}

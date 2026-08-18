@@ -1,0 +1,112 @@
+{
+ "repo": "kkkkkklze/dsh-plugin-manager",
+ "stars": 2,
+ "description": "In-web plugin manager for DeepSeek Harness: categorized list, tags, one-click preset switching, plugin marketplace, import/export, DeepSeek balance. | 在网页里管理 dsh 插件:分类/标签/预设一键切换/插件市场/导入导出/余额。",
+ "pushed_at": "2026-08-18T04:54:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml",
+   "tags": [
+    "管理",
+    "工具"
+   ]
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-manager",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-include",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "js-yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "remote",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "platform.deepseek.com": 1,
+  "chat.deepseek.com": 1,
+  "api.github.com": 2,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "manager.js:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "client-bundle.js:474",
+    "client-bundle.js:474"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "manager.js:53",
+    "manager.js:93",
+    "manager.js:98",
+    "manager.js:114",
+    "manager.js:116"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. manager.js:7"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. client-bundle.js:474, client-bundle.js:474"
+  }
+ ],
+ "level": 3
+}

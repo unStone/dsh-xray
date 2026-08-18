@@ -1,0 +1,103 @@
+{
+ "repo": "maddogfinance/dsh-trading",
+ "stars": 5,
+ "description": "Trading research workbench for DeepSeek Harness (dsh): typed market-data seam, deterministic indicators, interactive chart cards ｜ 交易研究工作台插件：数据接缝 · 确定性指标 · 交互式K线卡",
+ "pushed_at": "2026-08-18T03:26:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./bundle/trading/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-trading",
+ "deps": [
+  "@dsh-trading/client-chart",
+  "@dsh-trading/market-data",
+  "@dsh-trading/provider-csv",
+  "@dsh-trading/risk-guard",
+  "@dsh-trading/tool-market",
+  "klinecharts",
+  "@deepseek-ai/cordis",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@dsh-trading/market-data",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@dsh-trading/market-data"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "marketData",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/client-chart/scripts/build.mjs:9",
+    "packages/client-chart/scripts/build.mjs:9",
+    "packages/client-chart/scripts/build.mjs:36"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 11,
+   "evidence": [
+    "packages/tool-market/src/index.ts:356"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./bundle/trading/cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/client-chart/scripts/build.mjs:9, packages/client-chart/scripts/build.mjs:9"
+  }
+ ],
+ "level": 3
+}

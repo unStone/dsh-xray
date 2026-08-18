@@ -1,0 +1,96 @@
+{
+ "repo": "AngelosZou/dsh-python-env",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-17T07:16:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-python-env",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "jobs",
+  "sandboxPolicy",
+  "skills",
+  "subprocess",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "pypi.tuna.tsinghua.edu.cn": 3,
+  "mirrors.aliyun.com": 1,
+  "mirrors.ustc.edu.cn": 1,
+  "www.python.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "lib/pip.js:247",
+    "lib/python.js:52",
+    "lib/runner.js:37"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 8,
+   "evidence": [
+    "lib/envdir.js:32"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/pip.js:247, lib/python.js:52"
+  }
+ ],
+ "level": 3
+}

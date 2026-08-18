@@ -1,0 +1,89 @@
+{
+ "repo": "ylouis8/kph",
+ "stars": 2,
+ "description": "基于dsh的量化研究agent，驱动真实回测与交易。",
+ "pushed_at": "2026-08-14T07:11:31Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "knowledge-pipeline-frontend",
+ "deps": [
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "axios",
+  "katex",
+  "lightweight-charts",
+  "lucide-react",
+  "react",
+  "react-dom",
+  "react-force-graph-2d",
+  "react-router-dom",
+  "zustand"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 1,
+ "domains": {
+  "www.tradingview.com": 1
+ },
+ "env": {
+  "VITE_API_PROXY_TARGET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "harness/dsh/plugin/kp/kp-tools.js:15"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 121,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. harness/dsh/plugin/kp/kp-tools.js:15"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 1 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

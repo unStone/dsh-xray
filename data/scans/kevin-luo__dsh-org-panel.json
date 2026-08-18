@@ -1,0 +1,98 @@
+{
+ "repo": "kevin-luo/dsh-org-panel",
+ "stars": 1,
+ "description": "deepseek harness 纯牛马 —— 多智能体数字员工指挥台插件",
+ "pushed_at": "2026-08-18T07:44:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-input-trigger"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-org-panel",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "awesome-dsh-plugin.com": 1,
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_ORG_PANEL_MEMORY_FILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-size.mjs:2",
+    "scripts/check-size.mjs:2",
+    "scripts/check-size.mjs:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "scripts/build-runtime-assets.mjs:82",
+    "src/evolution-store.ts:153"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/check-size.mjs:2, scripts/check-size.mjs:2"
+  }
+ ],
+ "level": 3
+}

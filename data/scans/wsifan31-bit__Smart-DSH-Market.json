@@ -1,0 +1,127 @@
+{
+ "repo": "wsifan31-bit/Smart-DSH-Market",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-16T17:11:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "smart-dsh-market",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "remote",
+  "skills"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "api.github.com": 7
+ },
+ "env": {
+  "GITHUB_TOKEN": 4,
+  "DSH_MARKETPLACE_RESTART_PARENT": 2,
+  "DSH_HOME": 8,
+  "USERPROFILE": 2,
+  "DSH_PLUGIN_INSTALL_DIR": 2,
+  "DSH_PLUGIN_REGISTRY_URL": 2,
+  "DSH_CHECKOUT": 3,
+  "DSH_RESTART_TEST_MARKER": 1,
+  "TYPERT_LOADER": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 35,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:341",
+    "lib/index.js:449",
+    "lib/index.js:514",
+    "lib/index.js:520",
+    "lib/index.js:554"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1285",
+    "lib/client.js:2643",
+    "lib/client.js:2700",
+    "lib/index.js:527",
+    "lib/remote.js:769"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 125,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:51",
+    "lib/index.js:51",
+    "lib/index.js:51",
+    "lib/index.js:630",
+    "lib/index.js:681"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/typert-test.ts:30",
+    "scripts/verify.mjs:56"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 64,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×35 src, e.g. lib/index.js:341, lib/index.js:449"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×11 src, e.g. lib/client.js:1285, lib/client.js:2643"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

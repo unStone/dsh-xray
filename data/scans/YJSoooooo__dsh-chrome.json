@@ -1,0 +1,123 @@
+{
+ "repo": "YJSoooooo/dsh-chrome",
+ "stars": 1,
+ "description": "Chrome profile bridge for DeepSeek Harness: control an existing signed-in Chrome profile through chrome_repl.",
+ "pushed_at": "2026-08-14T05:30:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-chrome",
+ "deps": [
+  "acorn",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "conversationEvents",
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "session/event",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "www.baidu.com": 1,
+  "chromewebstore.google.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "browser-extension/service_worker.js:1370",
+    "browser-extension/service_worker.js:1671",
+    "browser-extension/service_worker.js:1801"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "browser-extension/service_worker.js:2574"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/kernel/bridge.js:159",
+    "src/kernel/bridge.ts:213"
+   ]
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 2,
+   "evidence": [
+    "dist/kernel/chrome-api.js:152",
+    "dist/kernel/chrome-api.js:155",
+    "dist/kernel/chrome-api.js:160",
+    "src/kernel/chrome-api.ts:196",
+    "src/kernel/chrome-api.ts:199"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 62,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. browser-extension/service_worker.js:1370, browser-extension/service_worker.js:1671"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. browser-extension/service_worker.js:2574"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. dist/kernel/bridge.js:159, src/kernel/bridge.ts:213"
+  }
+ ],
+ "level": 3
+}

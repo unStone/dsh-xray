@@ -1,0 +1,131 @@
+{
+ "repo": "StarChen-Cycler/octie-dsh-plugin",
+ "stars": 3,
+ "description": "State-oriented task graph kernel for the agentic era - a DeepSeek Harness bundle: 13 octie_* tools, octie Cordis service & events, realtime DAG task panel, bundled agent preset. State is derived, not ",
+ "pushed_at": "2026-08-17T14:20:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./octie/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "octie-cli",
+ "deps": [
+  "chalk",
+  "cli-table3",
+  "commander",
+  "express",
+  "uuid",
+  "zod",
+  "chalk",
+  "cli-table3",
+  "commander",
+  "express",
+  "uuid",
+  "zod",
+  "@reactflow/background",
+  "@reactflow/controls",
+  "@reactflow/core",
+  "@tailwindcss/vite",
+  "@types/dagre",
+  "@xyflow/react",
+  "dagre",
+  "html-to-image",
+  "react",
+  "react-dom",
+  "tailwindcss",
+  "zustand"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "octie",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "vite.dev": 1,
+  "octie.dev": 4
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DEBUG": 2,
+  "VERBOSE": 2,
+  "OCTIE_SERVER_URL": 2,
+  "OCTIE_CACHE_INVALIDATE_TIMEOUT_MS": 2,
+  "OCTIE_TEST_FORCE_TASK_SAVE_FAILURE": 2,
+  "OCTIE_TEST_FORCE_HANDOFF_RM_SYNC_FAILURE": 4,
+  "OCTIE_TEST_FORCE_EXPORT_MKDIR_FAILURE": 2,
+  "APPDATA": 2,
+  "LOCALAPPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 310,
+   "evidence": [
+    "octie/vitest.config.ts:7",
+    "octie/bin/octie.cjs:4",
+    "octie/bin/octie.cjs:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "octie/dist/web/server.js:535",
+    "octie/src/web/server.ts:658",
+    "octie/dist/cli/commands/serve.js:50",
+    "octie/src/cli/commands/serve.ts:57"
+   ]
+  },
+  "fs_write": {
+   "src": 49,
+   "dev": 187,
+   "evidence": [
+    "octie/plugin/index.mjs:15",
+    "octie/plugin/index.mjs:502",
+    "octie/scripts/copy-guide-assets.mjs:1",
+    "octie/scripts/copy-guide-assets.mjs:15",
+    "octie/scripts/migrate-status.js:94"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 242,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./octie/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. octie/vitest.config.ts:7, octie/bin/octie.cjs:4"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. octie/dist/web/server.js:535, octie/src/web/server.ts:658"
+  }
+ ],
+ "level": 3
+}

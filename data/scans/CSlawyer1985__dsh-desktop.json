@@ -1,0 +1,77 @@
+{
+ "repo": "CSlawyer1985/dsh-desktop",
+ "stars": 4,
+ "description": "DeepSeek Harness 桌面客户端：双击即用，跨平台（macOS / Windows / Linux）",
+ "pushed_at": "2026-08-15T12:58:25Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "chenshi.ai": 1
+ },
+ "env": {
+  "DSH_DESKTOP_PORT": 1,
+  "DSH_HOME": 1,
+  "DSH_CLI": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "main.js:14",
+    "main.js:84",
+    "lib/dsh-runtime.js:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "main.js:47",
+    "scripts/emit-about-logo.js:46",
+    "scripts/make-icon-render.js:80",
+    "scripts/render-icon.js:62",
+    "scripts/render-icon.js:125"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. main.js:14, main.js:84"
+  }
+ ],
+ "level": 2
+}

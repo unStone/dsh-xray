@@ -1,0 +1,106 @@
+{
+ "repo": "try-works/dsh-paper-design",
+ "stars": 1,
+ "description": "Paper Design plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T12:06:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@try-works/dsh-paper-design",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/auth.ts:241",
+    "src/auth.ts:242"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:134"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/auth.ts:641",
+    "src/auth.ts:683"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/capture-tools.mjs:32",
+    "src/auth.ts:274"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/auth.ts:241, src/auth.ts:242"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/index.ts:134"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/auth.ts:641, src/auth.ts:683"
+  }
+ ],
+ "level": 3
+}

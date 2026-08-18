@@ -1,0 +1,120 @@
+{
+ "repo": "ingleav626-art/dsh-native-launcher",
+ "stars": 3,
+ "description": "以\"零额外安装\"为设计原则：仅凭一个官方插件与 Windows 原生机制，让 DeepSeek Harness Web UI 获得桌面 App 式的一键启动体验。",
+ "pushed_at": "2026-08-18T07:00:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-native-launcher",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "sessionProjections",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/status",
+  "connection/reset",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_LAUNCHER": 3,
+  "USERPROFILE": 3,
+  "LOCALAPPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:12",
+    "lib/index.js:12",
+    "lib/index.js:38",
+    "lib/index.js:61",
+    "lib/index.js:681"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/notification-host.js:258"
+   ]
+  },
+  "base64_decode": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/notification-host.js:66",
+    "lib/notification-host.js:67",
+    "lib/notification-host.js:2074",
+    "lib/notification-host.js:3432",
+    "lib/notification-host.js:3489"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:13",
+    "lib/index.js:13",
+    "lib/index.js:13",
+    "lib/index.js:30",
+    "lib/index.js:335"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. lib/index.js:12, lib/index.js:12"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/notification-host.js:258"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×5 src, e.g. lib/notification-host.js:66, lib/notification-host.js:67"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,122 @@
+{
+ "repo": "NanmiCoder/dsh-plugin-market",
+ "stars": 5,
+ "description": "Verified plugin marketplace for DeepSeek Harness — discover, inspect, install, and remove DSH plugins from the Web UI.",
+ "pushed_at": "2026-08-17T09:45:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@nanmicoder/dsh-plugin-market",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "internal/service"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.kimi.com": 1,
+  "npmjs.com": 1,
+  "api.example.com": 1,
+  "api.anthropic.com": 1,
+  "api.deepseek.com": 1,
+  "api.github.com": 1
+ },
+ "env": {
+  "ANTHROPIC_AUTH_TOKEN": 2,
+  "ANTHROPIC_BASE_URL": 2,
+  "ANTHROPIC_API_KEY": 3,
+  "DEEPSEEK_API_KEY": 1,
+  "GITHUB_TOKEN": 1,
+  "LLM_MODEL": 1,
+  "LLM_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify.mjs:129",
+    "scripts/verify.mjs:129",
+    "scripts/verify.mjs:141",
+    "src/installer.ts:18",
+    "src/installer.ts:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify.mjs:92",
+    "scripts/verify.mjs:95",
+    "scripts/verify.mjs:562",
+    "scripts/verify.mjs:568",
+    "scripts/verify.mjs:590"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 33,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/verify.mjs:129, scripts/verify.mjs:129"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, DEEPSEEK_API_KEY, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

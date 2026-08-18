@@ -1,0 +1,94 @@
+{
+ "repo": "0928OYX/dsh-free-skins",
+ "stars": 1,
+ "description": "DeepSeek Harness (DSH) 界面皮肤插件：7 款原创免费皮肤 + 皮肤画廊 + 一键应用免重启 + 皮肤不透明度 + 自定义对话区背景（CC BY-NC-SA 4.0，0928OYX）",
+ "pushed_at": "2026-08-17T12:14:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-free-skins",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-gallery.mjs:48",
+    "scripts/smoke-gallery.mjs:109",
+    "scripts/smoke-skin.mjs:34"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "scripts/deploy.mjs:21",
+    "scripts/deploy.mjs:21",
+    "scripts/deploy.mjs:44",
+    "scripts/deploy.mjs:117",
+    "scripts/generate-previews.mjs:5"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/generate-skins.mjs:544",
+    "scripts/generate-theme-previews.mjs:18",
+    "scripts/qa-preview.mjs:22"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. scripts/smoke-gallery.mjs:48, scripts/smoke-gallery.mjs:109"
+  }
+ ],
+ "level": 3
+}

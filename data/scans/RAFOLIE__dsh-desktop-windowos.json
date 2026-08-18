@@ -1,0 +1,104 @@
+{
+ "repo": "RAFOLIE/dsh-desktop-windowos",
+ "stars": 3,
+ "description": "DeepSeek Harness desktop shell — Tauri v2, tray + native webchat + task-done toasts, single portable exe",
+ "pushed_at": "2026-08-18T05:56:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./plugin/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop-plugin",
+ "deps": [
+  "@tauri-apps/api",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/result"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "vite.dev": 1,
+  "registry.npmmirror.com": 1,
+  "ghproxy.com": 3,
+  "gh-proxy.com": 2,
+  "ghfast.top": 2,
+  "api.github.com": 4
+ },
+ "env": {
+  "TAURI_DEV_HOST": 1,
+  "LOCALAPPDATA": 2,
+  "TEMP": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 1,
+   "evidence": [
+    "plugin/lib/installer.js:5",
+    "plugin/lib/installer.js:136",
+    "plugin/lib/installer.js:178",
+    "plugin/lib/installer.js:232",
+    "plugin/lib/installer.js:240"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 1,
+   "evidence": [
+    "plugin/lib/installer.js:140",
+    "plugin/lib/installer.js:144",
+    "plugin/lib/installer.js:149",
+    "plugin/lib/installer.js:160",
+    "plugin/lib/installer.js:174"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./plugin/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. plugin/lib/installer.js:5, plugin/lib/installer.js:136"
+  }
+ ],
+ "level": 3
+}

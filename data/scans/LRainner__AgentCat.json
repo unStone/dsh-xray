@@ -1,0 +1,83 @@
+{
+ "repo": "LRainner/AgentCat",
+ "stars": 3,
+ "description": "A lightweight desktop companion that brings AI agent activity to life through animated pets and real-time status updates / 一款轻量的桌面伴侣，用动画宠物实时呈现 AI Agent 的工作状态",
+ "pushed_at": "2026-08-15T13:17:36Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "agent-cat",
+ "deps": [
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-process",
+  "@tauri-apps/plugin-updater",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "GITHUB_REPOSITORY": 1,
+  "GITHUB_TOKEN": 1,
+  "GITHUB_RELEASE_ID": 1,
+  "APPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/generate-updater-manifest.mjs:57"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

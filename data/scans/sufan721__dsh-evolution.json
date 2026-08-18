@@ -1,0 +1,87 @@
+{
+ "repo": "sufan721/dsh-evolution",
+ "stars": 1,
+ "description": "让 DeepSeek Harness（dsh）Agent 自进化的 Cordis 插件——持久记忆、上下文总结落地、会话复盘、夜间梦境蒸馏与可回滚的源码自更新，越用越懂你、越用越少犯错。",
+ "pushed_at": "2026-08-15T15:34:51Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@deepseek-ai/dsh-evolution",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "llm",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/memory.ts:120",
+    "src/memory.ts:131",
+    "src/memory.ts:208",
+    "src/memory.ts:223",
+    "src/memory.ts:229"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 5 services, 10 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

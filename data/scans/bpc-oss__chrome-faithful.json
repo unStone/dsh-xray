@@ -1,0 +1,147 @@
+{
+ "repo": "bpc-oss/chrome-faithful",
+ "stars": 1,
+ "description": "Faithful control of your real, logged-in Chrome profiles: MCP server + MV3 extension + authenticated localhost bridge. No copied profiles, no debug profile, no remote-debugging port, no Edge.",
+ "pushed_at": "2026-08-14T18:44:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "chrome-faithful",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "puppeteer-core",
+  "ws",
+  "chrome-faithful"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.apache.org": 2,
+  "bugs.chromium.org": 1,
+  "www.example.com": 6,
+  "chromedevtools.github.io": 4,
+  "pptr.dev": 135,
+  "google.com": 3,
+  "bbc.com": 3,
+  "drafts.csswg.org": 2,
+  "crbug.com": 5,
+  "www.google.com": 8,
+  "www.iana.org": 1,
+  "developer.chrome.com": 2,
+  "www.webmproject.org": 2,
+  "ffmpeg.org": 1,
+  "api.github.com": 1,
+  "w3c.github.io": 2,
+  "en.wikipedia.org": 5,
+  "webbluetoothcg.github.io": 1,
+  "crrev.com": 1,
+  "www.rfc-editor.org": 1,
+  "source.chromium.org": 2,
+  "docs.google.com": 2,
+  "demo.turnstile.workers.dev": 1
+ },
+ "env": {
+  "npm_execpath": 1,
+  "AGENTOS_PARITY_FIXTURE": 1,
+  "AGENTOS_PARITY_REPORT": 1,
+  "AGENTOS_ACCEPTANCE_PROFILES": 3,
+  "AGENTOS_CHROME_CONFIG": 4,
+  "AGENTOS_CHROME_ACCEPTANCE_PROFILES": 1,
+  "AGENTOS_VERIFICATION_BACKEND": 1,
+  "CHROME_FAITHFUL_OCR_BACKEND": 1,
+  "CHROME_FAITHFUL_PYTHON": 1,
+  "CHROME_FAITHFUL_VLM_BACKEND": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 4,
+   "evidence": [
+    "scripts/build-mcpb.mjs:2",
+    "scripts/build-mcpb.mjs:2",
+    "scripts/build-mcpb.mjs:32",
+    "scripts/run-unit-tests.mjs:2",
+    "scripts/run-unit-tests.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 25,
+   "dev": 0,
+   "evidence": [
+    "extension/generated/puppeteer-runtime.js:5155",
+    "extension/generated/puppeteer-runtime.js:7433",
+    "extension/generated/puppeteer-runtime.js:7436",
+    "extension/generated/puppeteer-runtime.js:7462",
+    "extension/generated/puppeteer-runtime.js:7504"
+   ]
+  },
+  "base64_decode": {
+   "src": 9,
+   "dev": 1,
+   "evidence": [
+    "src/agent-browser.mjs:978",
+    "src/agent-browser.mjs:1126",
+    "src/config.mjs:73",
+    "src/file-injection.mjs:27",
+    "src/network-response.mjs:51"
+   ]
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 7,
+   "evidence": [
+    "scripts/resilient-bridge-failover-acceptance.mjs:19",
+    "scripts/resilient-bridge-failover-acceptance.mjs:22",
+    "src/bridge-server.mjs:206"
+   ]
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 12,
+   "evidence": [
+    "scripts/build-extension-runtime.mjs:66",
+    "scripts/differential-acceptance.mjs:207",
+    "scripts/live-acceptance.mjs:175",
+    "scripts/resilient-bridge-failover-acceptance.mjs:31",
+    "src/agent-browser.mjs:987"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 94,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. scripts/build-mcpb.mjs:2, scripts/build-mcpb.mjs:2"
+  },
+  {
+   "id": "eval",
+   "evidence": "×25 src, e.g. extension/generated/puppeteer-runtime.js:5155, extension/generated/puppeteer-runtime.js:7433"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×9 src, e.g. src/agent-browser.mjs:978, src/agent-browser.mjs:1126"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. scripts/resilient-bridge-failover-acceptance.mjs:19, scripts/resilient-bridge-failover-acceptance.mjs:22"
+  }
+ ],
+ "level": 3
+}

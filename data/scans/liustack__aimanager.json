@@ -1,0 +1,81 @@
+{
+ "repo": "liustack/aimanager",
+ "stars": 1,
+ "description": "One click and DeepSeek Harness is running — the free launcher & installer for AI harnesses. 一键安装启动 DeepSeek Harness。",
+ "pushed_at": "2026-08-17T19:11:55Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "aimanager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "persistent.oaistatic.com": 1,
+  "storage.googleapis.com": 1
+ },
+ "env": {
+  "ELECTRON_RUN_AS_NODE": 1,
+  "APPDATA": 2,
+  "ProgramData": 2,
+  "LOCALAPPDATA": 1,
+  "ELECTRON_RENDERER_URL": 2,
+  "AIM_SMOKE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/run.mjs:6",
+    "scripts/run.mjs:27",
+    "src/engine/apps.ts:10",
+    "src/engine/apps.ts:201",
+    "src/engine/dsh.ts:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/engine/apps.ts:11",
+    "src/engine/apps.ts:171",
+    "src/engine/dsh.ts:41",
+    "src/engine/runtime.ts:10",
+    "src/engine/runtime.ts:133"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/run.mjs:6, scripts/run.mjs:27"
+  }
+ ],
+ "level": 2
+}

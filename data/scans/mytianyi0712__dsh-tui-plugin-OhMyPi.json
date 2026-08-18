@@ -1,0 +1,148 @@
+{
+ "repo": "mytianyi0712/dsh-tui-plugin-OhMyPi",
+ "stars": 4,
+ "description": "一个dsh的终端样式插件，灵感来自Oh My Pi",
+ "pushed_at": "2026-08-18T04:42:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-omp-tui",
+ "deps": [
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "commander",
+  "qrcode-terminal",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-agent-loop",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-goal",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-session-reference",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.prepare.config.ts"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "cmdlineArgs",
+  "commands",
+  "llm",
+  "permissionPresets",
+  "sessionPersistence",
+  "sessionQuery",
+  "sessionReferenceResolver",
+  "sessionTitle",
+  "sessions",
+  "settings",
+  "skills",
+  "tokenMeter",
+  "tools",
+  "tuiPrompt",
+  "tuiStartup",
+  "userQuestions"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/request",
+  "agent/status",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "ilinkai.weixin.qq.com": 1
+ },
+ "env": {
+  "DSH_REAL": 1,
+  "DSH_HOME": 1,
+  "OMDSH_NO_BOOTSTRAP": 1,
+  "DSH_DEBUG": 1,
+  "COLORTERM": 1,
+  "WT_SESSION": 1,
+  "DSH_WECHAT_ILINK_STATE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/omdsh.js:11",
+    "scripts/omdsh.js:11",
+    "scripts/omdsh.js:71",
+    "scripts/omdsh.js:73",
+    "scripts/omdsh.js:79"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/wechat/core/receiver-lock.ts:65",
+    "src/wechat/core/receiver-lock.ts:80",
+    "src/wechat/core/state.ts:59",
+    "src/wechat/core/state.ts:138",
+    "src/wechat/core/state.ts:174"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 59,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/omdsh.js:11, scripts/omdsh.js:11"
+  }
+ ],
+ "level": 3
+}

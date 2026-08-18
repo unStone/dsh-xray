@@ -1,0 +1,89 @@
+{
+ "repo": "sb1733831438-maker/DSH-closerAI",
+ "stars": 4,
+ "description": "CloserAI - a local-first, model-agnostic, permission-transparent desktop AI workbench built on DeepSeek Harness.",
+ "pushed_at": "2026-08-14T07:00:39Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "closerai",
+ "deps": [
+  "@closerai/mock-provider",
+  "@closerai/supervisor",
+  "@deepseek-ai/dsh",
+  "js-yaml"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 3
+ },
+ "env": {
+  "PORT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/supervisor/src/supervisor.ts:2",
+    "packages/supervisor/src/supervisor.ts:178"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "apps/desktop/src/main/secrets.ts:48"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "packages/mock-provider/src/server.ts:64"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 10,
+   "evidence": [
+    "apps/desktop/src/main/dsh-settings.ts:1",
+    "apps/desktop/src/main/dsh-settings.ts:27",
+    "apps/desktop/src/main/mode-store.ts:1",
+    "apps/desktop/src/main/mode-store.ts:36",
+    "apps/desktop/src/main/provider-store.ts:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. packages/supervisor/src/supervisor.ts:2, packages/supervisor/src/supervisor.ts:178"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. apps/desktop/src/main/secrets.ts:48"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. packages/mock-provider/src/server.ts:64"
+  }
+ ],
+ "level": 2
+}

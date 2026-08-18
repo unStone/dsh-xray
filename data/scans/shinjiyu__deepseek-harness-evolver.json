@@ -1,0 +1,84 @@
+{
+ "repo": "shinjiyu/deepseek-harness-evolver",
+ "stars": 2,
+ "description": "Complement to DSH Creator mode: stage, score, and solidify in-memory plugin trials to disk.",
+ "pushed_at": "2026-08-15T05:23:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "plugin-evolve",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json"
+ },
+ "injects": [
+  "loader",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "PLUGIN_EVOLVE_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/validate.ts:9",
+    "src/validate.ts:93"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "src/events.ts:1",
+    "src/events.ts:22",
+    "src/fsutil.ts:11",
+    "src/fsutil.ts:40"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/runtime-mount.ts:15"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/validate.ts:9, src/validate.ts:93"
+  }
+ ],
+ "level": 3
+}

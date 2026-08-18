@@ -1,0 +1,99 @@
+{
+ "repo": "tuterx/dsh-desktop",
+ "stars": 2,
+ "description": "DeepSeek Harness desktop app - auto-built from upstream + BETA dsh-host-electron plugin",
+ "pushed_at": "2026-08-17T12:26:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_WEB_PORT": 1,
+  "DSH_PORT": 2,
+  "DSH_PRELOAD": 1,
+  "DSH_DEV": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "build/afterPack.js:20",
+    "build/afterPack.js:20",
+    "build/afterPack.js:70",
+    "electron/main.cjs:21",
+    "electron/main.cjs:135"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "electron/main.cjs:99",
+    "electron/main.cjs:100",
+    "electron/main.cjs:108"
+   ]
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "electron/appearance.js:20",
+    "electron/appearance.js:44",
+    "electron/main.cjs:24",
+    "electron/main.cjs:86",
+    "electron/main.cjs:560"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. build/afterPack.js:20, build/afterPack.js:20"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. electron/main.cjs:99, electron/main.cjs:100"
+  }
+ ],
+ "level": 3
+}

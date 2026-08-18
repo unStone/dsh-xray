@@ -1,0 +1,103 @@
+{
+ "repo": "hetu-altas/hetu-hammurabi",
+ "stars": 1,
+ "description": "hetu 系列「宪章编程」harness 模块。通过 dsh和opencode 的 Commands / Agents / Skills / Plugins 将研发流程固化为可自动执行的节点流水线：输入任务书路径或一句话需求，自动完成 任务书生成(按需) → 分析 → 编码 → 单元测试（硬门禁）→ 代码评审 → 研发日志 → 资产沉淀 → 钉钉通知。",
+ "pushed_at": "2026-08-16T03:21:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "hetu-hammurabi-harness",
+ "deps": [
+  "@deepseek-ai/dsh-base",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agent",
+  "commands",
+  "logger",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "HETU_DASHBOARD_HOST": 3,
+  "HETU_DASHBOARD_PORT": 4,
+  "PYTHONPATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 24,
+   "dev": 0,
+   "evidence": [
+    ".opencode/plugin/charter-gate.ts:33",
+    ".opencode/plugin/charter-gate.ts:33",
+    ".opencode/plugin/charter-gate.ts:141",
+    ".opencode/plugin/charter-gate.ts:151",
+    ".opencode/plugin/charter-gate.ts:189"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "plugins/constitution-coding/src/dashboard-launcher.js:45",
+    "plugins/constitution-coding/src/dashboard-launcher.js:47"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×24 src, e.g. .opencode/plugin/charter-gate.ts:33, .opencode/plugin/charter-gate.ts:33"
+  }
+ ],
+ "level": 3
+}
