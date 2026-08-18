@@ -1,0 +1,28 @@
+name: scan
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: discover + scan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scanner/discover.py 3
+          cd scanner && python pipeline.py 200 8
+      - name: commit results
+        run: |
+          git config user.name 'dsh-xray-bot'
+          git config user.email 'bot@dsh-xray'
+          git add data docs
+          git diff --cached --quiet || git commit -m "scan: refresh $(date -u +%F)"
+          git push
