@@ -60,7 +60,7 @@ be entirely legitimate — a desktop shell genuinely needs subprocesses.
 [dsh-xray-plugin](https://github.com/unStone/dsh-xray-plugin) puts the lookup where the question comes up — in the agent, while you are deciding whether to install something.
 
 ```sh
-dsh plugin add unStone/dsh-xray-plugin
+dsh plugin add https://github.com/unStone/dsh-xray-plugin/releases/download/v0.1.0/dsh-xray-plugin-0.1.0.tgz
 ```
 
 > Is `tt-a1i/archify` safe to install?
