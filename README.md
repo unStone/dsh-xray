@@ -86,7 +86,8 @@ gh auth refresh -s workflow && git -C . add .github/workflows/scan.yml && git co
 
 ## Roadmap
 
-- [ ] Full-ecosystem coverage (6.9k repos) + daily diff feed ("what changed in plugins you use")
+- [x] Full-ecosystem coverage — 7,060 repositories, rescanned daily
+- [ ] Daily diff feed: what changed in the capability surface of plugins you use
 - [ ] `cordis.patch.yml` runtime-patch audit view
 - [ ] Install-gate companion plugin: block/ask on C2+ installs from inside dsh
 - [ ] Multi-harness: Abu-Cowork & Claude Code plugin formats
