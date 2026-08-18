@@ -30,5 +30,19 @@ jobs:
           git config user.name 'dsh-xray-bot'
           git config user.email 'bot@dsh-xray'
           git add data docs
-          git diff --cached --quiet || git commit -m "scan: refresh $(date -u +%F)"
-          git push
+          if git diff --cached --quiet; then
+            echo "nothing changed"; exit 0
+          fi
+          git commit -m "scan: refresh $(date -u +%F)"
+          # A push landing during the scan would otherwise reject ours and throw
+          # away the whole run, so rebase and retry before giving up.
+          for attempt in 1 2 3; do
+            git fetch origin master
+            if git rebase origin/master && git push; then
+              echo "pushed on attempt $attempt"; exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "push failed after 3 attempts - conflicting changes need a human"
+          exit 1
