@@ -1,0 +1,78 @@
+{
+ "repo": "weinibuliu/deepseek-harness-vsc-extension",
+ "stars": 19,
+ "description": "DeepSeek Harness as VSCode Extension",
+ "pushed_at": "2026-08-17T17:49:03Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-vsc",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/dsh/discovery.ts:13",
+    "src/dsh/discovery.ts:35",
+    "src/dsh/runtime-broker-client.ts:3",
+    "src/dsh/runtime-broker-client.ts:118",
+    "src/dsh/server.ts:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/dsh/runtime-broker-main.ts:46"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 10,
+   "evidence": [
+    "src/dsh/runtime-broker-client.ts:148",
+    "src/dsh/runtime-broker-main.ts:241"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 89,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/dsh/discovery.ts:13, src/dsh/discovery.ts:35"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/dsh/runtime-broker-main.ts:46"
+  }
+ ],
+ "level": 2
+}

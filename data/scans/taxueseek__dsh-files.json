@@ -1,0 +1,95 @@
+{
+ "repo": "taxueseek/dsh-files",
+ "stars": 12,
+ "description": "DeepSeek Harness dual-face plugin: session-isolated file upload with colorful composer cards + read_document tool (text/PDF/DOCX/XLSX) with content sniffing and LRU caching",
+ "pushed_at": "2026-08-16T14:55:45Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-files",
+ "deps": [
+  "mammoth",
+  "pdfjs-dist",
+  "read-excel-file",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "inputTriggers",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "lib/upload.js:171",
+    "src/upload.ts:207"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

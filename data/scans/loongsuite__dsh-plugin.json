@@ -1,0 +1,81 @@
+{
+ "repo": "loongsuite/dsh-plugin",
+ "stars": 12,
+ "description": "OpenTelemetry tracing for DeepSeek Harness (dsh): turns each agent turn into a GenAI span tree — steps, LLM calls with TTFT, tool executions, token usage — exported over standard OTLP to Jaeger, Grafa",
+ "pushed_at": "2026-08-17T08:31:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@loongsuite/dsh-plugin",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@loongsuite/otel-util-genai",
+  "@opentelemetry/api",
+  "@opentelemetry/exporter-metrics-otlp-proto",
+  "@opentelemetry/exporter-trace-otlp-proto",
+  "@opentelemetry/resources",
+  "@opentelemetry/sdk-metrics",
+  "@opentelemetry/sdk-trace-base",
+  "@opentelemetry/semantic-conventions"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "OTEL_EXPORTER_OTLP_ENDPOINT": 1,
+  "OTEL_EXPORTER_OTLP_HEADERS": 1,
+  "OTEL_RESOURCE_ATTRIBUTES": 1,
+  "OTEL_SERVICE_NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

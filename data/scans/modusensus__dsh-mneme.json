@@ -1,0 +1,110 @@
+{
+ "repo": "modusensus/dsh-mneme",
+ "stars": 24,
+ "description": "Structured memory engine for DeepSeek Harness. Offline semantic search, entity-attribute-timeline, autoDream self-consolidation, and human-editable Markdown storage.",
+ "pushed_at": "2026-08-18T02:35:53Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "slots",
+    "locale",
+    "layout",
+    "connection"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@modusensus/dsh-mneme",
+ "deps": [
+  "@huggingface/transformers",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "commands",
+  "llm",
+  "locale",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 16,
+ "domains": {
+  "hf-mirror.com": 2,
+  "api.openai.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 106,
+   "evidence": [
+    "dsh-mneme/lib/mirror.js:1",
+    "dsh-mneme/lib/mirror.js:1",
+    "dsh-mneme/lib/mirror.js:146",
+    "dsh-mneme/lib/mirror.js:150",
+    "dsh-mneme/src/mirror.js:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 80,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

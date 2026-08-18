@@ -1,0 +1,96 @@
+{
+ "repo": "dclichang2022/dsh-green-meter",
+ "stars": 17,
+ "description": "Energy & carbon metering for DeepSeek Harness: per-turn/per-request energy, cache carbon savings, electricity cost.",
+ "pushed_at": "2026-08-17T07:39:50Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-green-meter-monorepo",
+ "deps": [
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-green-meter",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "react",
+  "@deepseek-ai/dsh-client-ui-layout"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "invariants",
+  "locale",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/event"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "DSH_GREEN_PROFILE": 3,
+  "DSH_GREEN_CARBON_FACTOR": 3,
+  "DSH_GREEN_PRICE_CNY": 3,
+  "DSH_GREEN_DIR": 3,
+  "DSH_HOME": 3,
+  "DSH_GREEN_BUDGET_J": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "packages/green-meter/lib/index.js:5",
+    "packages/green-meter/lib/index.js:332",
+    "packages/green-meter/lib/types/ledger.js:14",
+    "packages/green-meter/lib/types/ledger.js:91",
+    "packages/green-meter/src/ledger.ts:15"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 65,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

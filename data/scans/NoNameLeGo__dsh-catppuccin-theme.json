@@ -1,0 +1,91 @@
+{
+ "repo": "NoNameLeGo/dsh-catppuccin-theme",
+ "stars": 10,
+ "description": "DeepSeek Harness Web GUI 的 Catppuccin 主题插件：Latte / Frappé / Macchiato / Mocha 四种主题一键切换，内置可开关的玻璃质感（Glassmorphism）",
+ "pushed_at": "2026-08-18T04:56:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@nonamelego/dsh-catppuccin",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "locale",
+  "slots",
+  "theme",
+  "webServer"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 2,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "scripts/generate-palettes.mjs:25",
+    "scripts/generate-palettes.mjs:241"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

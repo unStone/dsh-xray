@@ -1,0 +1,90 @@
+{
+ "repo": "zhu168/dsh-save-money",
+ "stars": 29,
+ "description": "Save-money plugin for DSH (DeepSeek Harness) — define your own \"pause / resume\" time windows; at pause time running long tasks are paused (not stopped) automatically, and they resume when the window e",
+ "pushed_at": "2026-08-18T05:59:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-save-money",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node ../scripts/build.js && node ../scripts/make-plugin.js"
+ },
+ "injects": [
+  "timer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "plugin/index.js:660",
+    "src/balance-host.ts:134"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.js:19",
+    "scripts/build.js:92",
+    "scripts/build.js:93",
+    "scripts/build.js:94",
+    "scripts/build.js:95"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. plugin/index.js:660, src/balance-host.ts:134"
+  }
+ ],
+ "level": 3
+}

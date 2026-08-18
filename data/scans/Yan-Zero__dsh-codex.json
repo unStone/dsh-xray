@@ -1,0 +1,127 @@
+{
+ "repo": "Yan-Zero/dsh-codex",
+ "stars": 23,
+ "description": "Use your ChatGPT subscription in DeepSeek Harness through OpenAI's Codex sign-in flow",
+ "pushed_at": "2026-08-18T03:09:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-codex",
+ "deps": [
+  "@earendil-works/pi-ai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-pi-ai",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "llm",
+  "locale",
+  "openAICodex",
+  "sessions",
+  "slots",
+  "web"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "tools/change"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "api.openai.com": 3,
+  "chatgpt.com": 3
+ },
+ "env": {
+  "DISPLAY": 1,
+  "WAYLAND_DISPLAY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/bin.ts:4",
+    "src/bin.ts:28",
+    "src/tui.ts:3",
+    "src/tui.ts:127"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/imagegen.ts:194"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "src/binary-fs.ts:102"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/bin.ts:4, src/bin.ts:28"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/imagegen.ts:194"
+  }
+ ],
+ "level": 3
+}

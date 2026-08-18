@@ -1,0 +1,125 @@
+{
+ "repo": "yyxcnasd/amadeus-for-dsh",
+ "stars": 12,
+ "description": "Amadeus (AI assistant from Steins;Gate 0) for DeepSeek Harness",
+ "pushed_at": "2026-08-16T02:49:25Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": []
+  }
+ },
+ "pkg_name": "amadeus-for-dsh",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "slots",
+  "subprocess",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "connection/reset",
+  "session/event",
+  "subagent/end",
+  "workflow/end"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 9,
+  "api.openai.com": 5,
+  "api.tts.quest": 2,
+  "cdn.jsdelivr.net": 3,
+  "cubism.live2d.com": 1,
+  "live2d.com": 2,
+  "www.live2d.com": 1,
+  "www.opensource.org": 2,
+  "www.pixijs.com": 2,
+  "mths.be": 1,
+  "pixijs.com": 1
+ },
+ "env": {
+  "AMADEUS_ROOT": 9,
+  "ComSpec": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "package/host.mjs:375",
+    "package/host.mjs:559",
+    "package/host.mjs:576",
+    "package/host.mjs:616",
+    "plugin/src/host.js:348"
+   ]
+  },
+  "eval": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "plugin/web/vendor/pixi-v6.min.js:8",
+    "plugin/web/vendor/pixi-v6.min.js:8",
+    "plugin/web/vendor/pixi-v6.min.js:8",
+    "plugin/web/vendor/pixi.min.js:302",
+    "plugin/web/vendor/pixi.min.js:307"
+   ]
+  },
+  "base64_decode": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "plugin/web/panel.js:267",
+    "plugin/web/panel.js:271",
+    "plugin/web/vendor/live2dcubismcore.min.js:9",
+    "plugin/web/vendor/live2dcubismcore.min.js:9",
+    "plugin/web/vendor/live2dcubismcore.min.js:9"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/build_static.mjs:3",
+    "tools/build_static.mjs:128",
+    "tools/build_static.mjs:129"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. package/host.mjs:375, package/host.mjs:559"
+  },
+  {
+   "id": "eval",
+   "evidence": "×6 src, e.g. plugin/web/vendor/pixi-v6.min.js:8, plugin/web/vendor/pixi-v6.min.js:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×5 src, e.g. plugin/web/panel.js:267, plugin/web/panel.js:271"
+  }
+ ],
+ "level": 3
+}

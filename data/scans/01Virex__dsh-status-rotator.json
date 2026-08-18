@@ -1,0 +1,83 @@
+{
+ "repo": "01Virex/dsh-status-rotator",
+ "stars": 21,
+ "description": "A DeepSeek Harness (dsh) web plugin that replaces the \"Deep diving…\" turn-status label with phase-aware, typewriter-animated, rainbow-gradient phrases — all configurable from a JSON file.",
+ "pushed_at": "2026-08-15T01:16:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-status-rotator",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "QQ_GROUP_ID": 1,
+  "ONEBOT_HTTP_URL": 1,
+  "ONEBOT_ACCESS_TOKEN": 1,
+  "ONEBOT_ACTION": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/fetch-qq-group.cjs:240",
+    "scripts/package-release.cjs:11"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ONEBOT_ACCESS_TOKEN"
+  }
+ ],
+ "level": 3
+}

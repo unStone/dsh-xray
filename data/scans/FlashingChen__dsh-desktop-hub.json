@@ -1,0 +1,98 @@
+{
+ "repo": "FlashingChen/dsh-desktop-hub",
+ "stars": 12,
+ "description": "DSH Desktop Hub — DeepSeek Harness 桌面管理控制台（Electron + TypeScript）。多 Tab 管理 Harness / Plugin / MCP / Skills，双击即用。",
+ "pushed_at": "2026-08-17T09:32:54Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop-hub",
+ "deps": [
+  "adm-zip",
+  "yaml",
+  "@deepseek-ai/dsh",
+  "pnpm"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "mcp.example.com": 2,
+  "codeload.github.com": 1
+ },
+ "env": {
+  "RUNTIME_TARGET": 1,
+  "TRIM_RUNTIME": 1,
+  "DSH_HOME": 2,
+  "DSH_BUNDLED_SKILL_DIR": 3,
+  "GITHUB_TOKEN": 2,
+  "DSH_BIN": 1,
+  "VAR": 3,
+  "X": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 23,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-preload.mjs:2",
+    "scripts/build-preload.mjs:2",
+    "scripts/build-preload.mjs:10",
+    "scripts/build-preload.mjs:12",
+    "scripts/bundle-runtime.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 42,
+   "dev": 46,
+   "evidence": [
+    "scripts/build-preload.mjs:3",
+    "scripts/build-preload.mjs:9",
+    "scripts/bundle-runtime.mjs:7",
+    "scripts/bundle-runtime.mjs:7",
+    "scripts/bundle-runtime.mjs:7"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 4,
+   "evidence": [
+    "scripts/capture-demo.mjs:20",
+    "scripts/capture-demo.mjs:21",
+    "scripts/capture-demo.mjs:22",
+    "scripts/capture-demo.mjs:23",
+    "scripts/capture-demo.mjs:24"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×23 src, e.g. scripts/build-preload.mjs:2, scripts/build-preload.mjs:2"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

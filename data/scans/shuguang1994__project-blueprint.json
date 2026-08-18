@@ -1,0 +1,77 @@
+{
+ "repo": "shuguang1994/project-blueprint",
+ "stars": 13,
+ "description": "Make any project AI-agent-ready in one command. Adaptive tech stack detection (7 languages × 14 frameworks × 61 components), auto-generates AGENTS.md, docs skeleton, CI/CD, and testing infrastructure.",
+ "pushed_at": "2026-08-14T03:49:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "project-blueprint",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-skill-filesystem",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-skill-filesystem"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-plugin/scripts/sync-skill.mjs:11",
+    "dsh-plugin/scripts/sync-skill.mjs:11",
+    "dsh-plugin/scripts/sync-skill.mjs:24",
+    "dsh-plugin/scripts/sync-skill.mjs:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,161 @@
+{
+ "repo": "liguobao/deepseek-harness-remote",
+ "stars": 17,
+ "description": "基于 DeepSeek Harness 插件机制的多端远程访问方案，让桌面端与 Android 端安全连接并操作远程 Harness。（A multi-device remote access solution built on the DeepSeek Harness plugin system, enabling desktop and Android clients to securely ",
+ "pushed_at": "2026-08-18T00:22:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-remote/android",
+ "deps": [
+  "@dsh-remote/client-core",
+  "@dsh-remote/crypto",
+  "@dsh-remote/protocol",
+  "@dsh-remote/webrtc",
+  "@react-native-community/netinfo",
+  "expo",
+  "expo-application",
+  "expo-build-properties",
+  "expo-crypto",
+  "expo-device",
+  "expo-haptics",
+  "expo-secure-store",
+  "expo-status-bar",
+  "expo-system-ui",
+  "lucide-react-native",
+  "react",
+  "react-native",
+  "react-native-safe-area-context",
+  "react-native-svg",
+  "react-native-webrtc",
+  "zustand",
+  "@dsh-remote/crypto",
+  "@dsh-remote/client-core",
+  "@dsh-remote/protocol",
+  "@dsh-remote/webrtc",
+  "ws",
+  "@deepseek-ai/schemastery",
+  "werift",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-settings",
+  "react",
+  "@dsh-remote/protocol",
+  "@dsh-remote/webrtc",
+  "@lukeburns/clatterjs",
+  "@noble/ciphers",
+  "@noble/curves",
+  "@noble/hashes",
+  "@deepseek-ai/schemastery",
+  "qrcode",
+  "werift",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-settings",
+  "react",
+  "zod",
+  "@dsh-remote/protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "remote.example.com": 2,
+  "dsh.r2049.cn": 9,
+  "hyperelliptic.org": 4,
+  "www.rfc-editor.org": 3
+ },
+ "env": {
+  "EXPO_PUBLIC_DSH_REMOTE_SERVER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "packages/crypto/src/index.ts:58",
+    "packages/crypto/src/index.ts:60",
+    "packages/plugin/dist/index.js:1005",
+    "packages/plugin/dist/index.js:4428",
+    "packages/plugin/dist/index.js:4429"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "packages/plugin/dist/index.js:13822",
+    "packages/plugin/src/identity-store.ts:205",
+    "packages/plugin/src/server-credentials.ts:55"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 97,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×9 src, e.g. packages/crypto/src/index.ts:58, packages/crypto/src/index.ts:60"
+  }
+ ],
+ "level": 3
+}

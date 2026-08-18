@@ -1,0 +1,84 @@
+{
+ "repo": "omdsh-dev/dsh-security-audit",
+ "stars": 12,
+ "description": "DSH 本机安全审计插件：配置/插件来源/会话/网络暴露面，只读脱敏风险报告",
+ "pushed_at": "2026-08-18T04:08:40Z",
+ "status": "ok",
+ "manifest": {
+  "profile": {
+   "bundles": [
+    "@deepseek-ai/dsh-tool-missing"
+   ]
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-tool-eval-fixture",
+ "deps": [
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/install.js"
+ },
+ "injects": [
+  "invariants",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 1,
+   "evidence": [
+    "lib/plugins/source-capabilities.js:13",
+    "lib/plugins/source-capabilities.js:110",
+    "lib/rules.js:24",
+    "src/plugins/source-capabilities.ts:22",
+    "src/plugins/source-capabilities.ts:127"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 81,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/install.js"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/plugins/source-capabilities.js:13, lib/plugins/source-capabilities.js:110"
+  }
+ ],
+ "level": 2
+}

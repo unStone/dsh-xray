@@ -1,0 +1,115 @@
+{
+ "repo": "knqiufan/powercontext-dsh",
+ "stars": 11,
+ "description": "DeepSeek Harness plugin that connects to a PowerContext Server over HTTP for recall, memory, handoff, experience, and skills.",
+ "pushed_at": "2026-08-16T01:54:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "powercontext-dsh",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "agents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "POWERCONTEXT_DSH_FORCE_BUILD": 1,
+  "POWERCONTEXT_ROOT": 1,
+  "POWERCONTEXT_OPENAPI": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:6",
+    "lib/index.js:1136",
+    "scripts/e2e-server.mjs:2",
+    "scripts/e2e-server.mjs:59",
+    "scripts/pack-release.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-server.mjs:23",
+    "scripts/e2e-server.mjs:24"
+   ]
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 5,
+   "evidence": [
+    "scripts/gen-operations.mjs:1",
+    "scripts/gen-operations.mjs:31",
+    "scripts/pack-release.mjs:1",
+    "scripts/pack-release.mjs:15",
+    "scripts/pack-release.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:876",
+    "src/peers.ts:26"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. lib/index.js:6, lib/index.js:1136"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/e2e-server.mjs:23, scripts/e2e-server.mjs:24"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,70 @@
+{
+ "repo": "morluto/flameox",
+ "stars": 34,
+ "description": "Runtime evidence that helps agents trace, profile, and burn down hotspots in application and native code, GPU kernels, and inference stacks.",
+ "pushed_at": "2026-08-17T09:15:39Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "flameox",
+ "deps": [
+  "jsonc-parser"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "docs.astral.sh": 1
+ },
+ "env": {
+  "FLAMEOX_NPM_UPGRADE_HANDOFF": 1,
+  "FLAMEOX_NPX_EXECUTABLE": 1,
+  "FLAMEOX_UV_EXECUTABLE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 8,
+   "evidence": [
+    "npm/bin/flameox.cjs:6",
+    "npm/bin/flameox.cjs:59"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. npm/bin/flameox.cjs:6, npm/bin/flameox.cjs:59"
+  }
+ ],
+ "level": 2
+}

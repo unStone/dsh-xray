@@ -1,0 +1,121 @@
+{
+ "repo": "chaos-03x/dsh-agy",
+ "stars": 15,
+ "description": "Google Antigravity (agy) OAuth auth + model access plugin for DeepSeek Harness: multi-account pool, 429 rotation, device fingerprinting, CLI and web login.",
+ "pushed_at": "2026-08-18T06:46:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-agy",
+ "deps": [
+  "commander",
+  "proper-lockfile",
+  "undici",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "llm",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.googleapis.com": 8,
+  "accounts.google.com": 1,
+  "oauth2.googleapis.com": 1,
+  "daily-cloudcode-pa.googleapis.com": 1,
+  "cloudcode-pa.googleapis.com": 1,
+  "daily-cloudcode-pa.sandbox.googleapis.com": 1,
+  "autopush-cloudcode-pa.sandbox.googleapis.com": 1,
+  "antigravity-auto-updater-974169037036.us-central1.run.app": 1,
+  "api.github.com": 1
+ },
+ "env": {
+  "AGY_REFRESH_TOKEN": 2,
+  "DSH_HOME": 5,
+  "AGY_E2E_EMAIL": 1,
+  "SSH_CONNECTION": 1,
+  "SSH_CLIENT": 1,
+  "SSH_TTY": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/cli/callback-server.ts:101",
+    "src/cli/callback-server.ts:107"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/oauth/pkce.ts:28"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/cli/callback-server.ts:44"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 13,
+   "evidence": [
+    "scripts/e2e.ts:11",
+    "scripts/e2e.ts:90",
+    "scripts/record-fixture.ts:11",
+    "scripts/record-fixture.ts:132",
+    "src/cli/index.ts:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 46,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/cli/callback-server.ts:101, src/cli/callback-server.ts:107"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/oauth/pkce.ts:28"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/cli/callback-server.ts:44"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AGY_REFRESH_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,105 @@
+{
+ "repo": "Aik358/dsh-auto-memory",
+ "stars": 15,
+ "description": "A caring memory companion for DSH — three-layer auto memory, proactive calendar reminders, warm AI greetings, per-turn auto-consolidation, and inheritance of memories from other AI tools.",
+ "pushed_at": "2026-08-16T17:29:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@a9i5k4/dsh-auto-memory",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "locale/change"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:22"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:20",
+    "lib/index.js:150",
+    "lib/index.js:240",
+    "lib/index.js:383",
+    "lib/index.js:419"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:22"
+  }
+ ],
+ "level": 3
+}

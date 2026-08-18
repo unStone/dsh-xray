@@ -1,0 +1,133 @@
+{
+ "repo": "Mr-remon219/dsh-search-boost",
+ "stars": 10,
+ "description": "The plunge for dsh to boost model's search ability.",
+ "pushed_at": "2026-08-18T04:23:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-search-boost",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 18,
+ "domains": {
+  "x.com": 9,
+  "html.duckduckgo.com": 1,
+  "www.bing.com": 2,
+  "search.yahoo.com": 2,
+  "api.tavily.com": 2,
+  "api.search.brave.com": 2,
+  "api.exa.ai": 2,
+  "mcp.exa.ai": 2,
+  "r.jina.ai": 2,
+  "auth.x.ai": 2,
+  "api.x.com": 1,
+  "publish.x.com": 1,
+  "cli-chat-proxy.grok.com": 2,
+  "api.x.ai": 2,
+  "lite.duckduckgo.com": 1,
+  "en.wikipedia.org": 1,
+  "news.google.com": 1,
+  "search.brave.com": 1,
+  "www.mojeek.com": 1,
+  "searx.be": 1,
+  "opnxng.com": 1,
+  "search.inetol.net": 1,
+  "search.bus-hit.me": 1
+ },
+ "env": {
+  "TAVILY_API_KEY": 2,
+  "EXA_API_KEY": 2,
+  "BRAVE_API_KEY": 2,
+  "DSH_SEARCH_ALLOW_TUN_FAKEIP": 1,
+  "XAI_API_KEY": 4,
+  "DSH_SB_ALLOW_DIRTY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "index.js:14",
+    "lib/engines.js:16",
+    "scripts/verify-audit.mjs:3",
+    "scripts/verify-audit.mjs:3",
+    "scripts/verify-audit.mjs:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/engines.js:235",
+    "lib/xauth.js:143",
+    "lib/xfallback.js:252",
+    "plugin-host.js:190"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/layer.js:49",
+    "lib/xauth.js:38",
+    "lib/xauth.js:93",
+    "lib/xfallback.js:158",
+    "scripts/blackbox-e2e.mjs:12"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. index.js:14, lib/engines.js:16"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/engines.js:235, lib/xauth.js:143"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BRAVE_API_KEY, EXA_API_KEY, TAVILY_API_KEY, XAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

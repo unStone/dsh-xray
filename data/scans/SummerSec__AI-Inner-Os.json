@@ -1,0 +1,72 @@
+{
+ "repo": "SummerSec/AI-Inner-Os",
+ "stars": 16,
+ "description": "AI Inner OS 是一个面向 AI CLI 工具的插件，支持 Claude Code、Codex CLI、Cursor、OpenCode CLI。  它通过协议注入，让 AI 在正常完成任务的同时，额外输出一层可见的自由独白：  ▎InnerOS：这仓库现在还像毛坯房，先把承重墙立起来再说。 不预设人格，不限制语气。AI 可以吐槽、得意、焦虑、冷笑、跳跃联想——或者什么都不说。独白是否出现，",
+ "pushed_at": "2026-05-10T09:30:41Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "ai-inner-os",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "INNER_OS_FREQUENCY": 1,
+  "CLAUDE_PLUGIN_DATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 3,
+   "evidence": [
+    "opencode/plugins/inner-os.js:100",
+    "opencode/plugins/inner-os.js:100",
+    "opencode/plugins/inner-os.js:106"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 6,
+   "evidence": [
+    "hooks/lib/persona.js:65",
+    "hooks/lib/state.js:55",
+    "openclaw/index.js:1",
+    "openclaw/index.js:86",
+    "scripts/install.js:89"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 33,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. opencode/plugins/inner-os.js:100, opencode/plugins/inner-os.js:100"
+  }
+ ],
+ "level": 2
+}

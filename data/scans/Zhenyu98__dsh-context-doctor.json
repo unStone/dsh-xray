@@ -1,0 +1,114 @@
+{
+ "repo": "Zhenyu98/dsh-context-doctor",
+ "stars": 13,
+ "description": "DSH 上下文注入审计插件：统计 AGENTS.md 指令链/技能目录/工具 schema 的 token 成本，检测重复与冲突；Web UI 圆环面板 + context_audit 工具。Context Doctor for DeepSeek Harness: audit instruction-chain / skill catalog / tool schemas token cost.",
+ "pushed_at": "2026-08-17T09:37:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-context-doctor",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "locale",
+  "sessions",
+  "skills",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/setup-dsh-deps.mjs:21",
+    "scripts/setup-dsh-deps.mjs:21",
+    "scripts/setup-dsh-deps.mjs:69"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:241"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:60",
+    "lib/index.js:61"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 16,
+   "evidence": [
+    "scripts/setup-dsh-deps.mjs:18",
+    "scripts/setup-dsh-deps.mjs:18",
+    "scripts/setup-dsh-deps.mjs:96",
+    "scripts/setup-dsh-deps.mjs:140"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 40,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/setup-dsh-deps.mjs:21, scripts/setup-dsh-deps.mjs:21"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:241"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:60, lib/index.js:61"
+  }
+ ],
+ "level": 3
+}

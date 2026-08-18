@@ -1,0 +1,100 @@
+{
+ "repo": "Lxiayu/DshCockpit",
+ "stars": 10,
+ "description": "Desktop cockpit for DeepSeek Harness (dsh): token usage & cost tracking, budget alerts, runtime auto-update with rollback, Quick Ask hotkey, scheduled tasks, session search. Win+macOS. DeepSeek Harnes",
+ "pushed_at": "2026-08-17T09:44:38Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-cockpit",
+ "deps": [
+  "@npmcli/arborist",
+  "electron-updater",
+  "fzstd",
+  "node-forge",
+  "pacote",
+  "semver",
+  "@fontsource/chakra-petch",
+  "@fontsource/ibm-plex-mono"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 4
+ },
+ "env": {
+  "DSH_REPO_OWNER": 2,
+  "DSH_REPO_NAME": 2,
+  "DSH_DESKTOP_DSH_HOME": 2,
+  "DSH_DESKTOP_WORKSPACE": 2,
+  "DSH_DESKTOP_USER_DATA": 2,
+  "DSH_DESKTOP_NO_TRAY": 1,
+  "DSH_DESKTOP_DSH_BIN": 4,
+  "DSH_DESKTOP_OPEN_SETTINGS": 1,
+  "DSH_DESKTOP_PORT": 2,
+  "DSH_DESKTOP_NODE_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 25,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.js:9",
+    "scripts/build.js:9",
+    "scripts/build.js:13",
+    "scripts/prepare-runtime.js:13",
+    "scripts/prepare-runtime.js:13"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "src/remote-control.js:276",
+    "src/remote-control.js:279"
+   ]
+  },
+  "fs_write": {
+   "src": 34,
+   "dev": 43,
+   "evidence": [
+    "scripts/bench.js:35",
+    "scripts/bench.js:81",
+    "scripts/prepare-runtime.js:50",
+    "scripts/prepare-runtime.js:51",
+    "src/backup.js:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 43,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×25 src, e.g. scripts/build.js:9, scripts/build.js:9"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/remote-control.js:276, src/remote-control.js:279"
+  }
+ ],
+ "level": 2
+}

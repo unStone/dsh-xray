@@ -1,0 +1,90 @@
+{
+ "repo": "HuanLinOTO/dsh-plugin-ya-workspace-sidebar",
+ "stars": 11,
+ "description": "DSH Web 工作区侧栏替代，顶部全局最近会话 + Workspace→Session 二级菜单 + 面包屑 | DSH Web workspace sidebar replacement: top global recent sessions + Workspace→Session two-level menu + breadcrumbs",
+ "pushed_at": "2026-08-16T14:44:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@huanlin/dsh-plugin-ya-workspace-sidebar",
+ "deps": [
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "locale",
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,135 @@
+{
+ "repo": "loadingvx/deepseek-harness-workbench-plugin",
+ "stars": 14,
+ "description": "Deepseek-harness-workbench-plugin ",
+ "pushed_at": "2026-08-18T07:06:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-workbench-plugin",
+ "deps": [
+  "@codemirror/commands",
+  "@codemirror/lang-css",
+  "@codemirror/lang-html",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/lang-python",
+  "@codemirror/lang-xml",
+  "@codemirror/lang-yaml",
+  "@codemirror/language",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@lezer/highlight",
+  "@replit/codemirror-vim",
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "lightningcss",
+  "marked",
+  "mermaid",
+  "node-pty",
+  "papaparse",
+  "read-excel-file",
+  "tsdown",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "llm",
+  "locale",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 20,
+ "domains": {
+  "api.deepseek.com": 2,
+  "platform.deepseek.com": 1,
+  "www.npmjs.com": 1
+ },
+ "env": {
+  "SYSTEMROOT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 4,
+   "evidence": [
+    "lib/index.js:4",
+    "lib/index.js:336",
+    "lib/index.js:3659",
+    "lib/index.js:3895",
+    "lib/index.js:3922"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 101,
+   "evidence": [
+    "lib/index.js:950",
+    "src/client/api.ts:165",
+    "src/client/workbench/EditorPane.tsx:159",
+    "src/client/workbench/FileTree.tsx:586",
+    "src/client/workbench/Workbench.tsx:572"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 142,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. lib/index.js:4, lib/index.js:336"
+  }
+ ],
+ "level": 3
+}

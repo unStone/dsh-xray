@@ -1,0 +1,137 @@
+{
+ "repo": "LingyeSoul/dsh-tavern",
+ "stars": 11,
+ "description": "",
+ "pushed_at": "2026-08-17T09:11:40Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-tavern",
+ "deps": [
+  "fflate",
+  "@dsh-tavern/format",
+  "@dsh-tavern/format",
+  "@dsh-tavern/lore",
+  "@dsh-tavern/format"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "commands",
+  "llm",
+  "locale",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "cdn.jsdelivr.net": 1,
+  "testingcf.jsdelivr.net": 1,
+  "cdn.tailwindcss.com": 1,
+  "cdnjs.cloudflare.com": 1,
+  "unpkg.com": 1,
+  "esm.sh": 1,
+  "fonts.googleapis.com": 1,
+  "fonts.gstatic.com": 1
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_TAVERN_COMMIT": 3,
+  "NODE_PATH": 1,
+  "DSH_TAVERN_GATE_ENTRY": 1,
+  "GITHUB_SHA": 1,
+  "CI_COMMIT_SHA": 1,
+  "BUILD_SOURCEVERSION": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "packages/plugin/index.mjs:5",
+    "packages/plugin/index.mjs:5",
+    "packages/plugin/index.mjs:7122",
+    "packages/plugin/scripts/gates/run.mjs:17",
+    "packages/plugin/scripts/gates/run.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "packages/plugin/agent.mjs:177",
+    "packages/plugin/index.mjs:3164",
+    "packages/plugin/index.mjs:5714",
+    "packages/plugin/index.mjs:5715",
+    "packages/plugin/index.mjs:5767"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 32,
+   "dev": 7,
+   "evidence": [
+    "packages/plugin/agent.mjs:2131",
+    "packages/plugin/agent.mjs:2356",
+    "packages/plugin/agent.mjs:2454",
+    "packages/plugin/agent.mjs:2502",
+    "packages/plugin/agent.mjs:2527"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/plugin/scripts/gates/run.mjs:726"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 70,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. packages/plugin/index.mjs:5, packages/plugin/index.mjs:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×9 src, e.g. packages/plugin/agent.mjs:177, packages/plugin/index.mjs:3164"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,115 @@
+{
+ "repo": "feiyang-dev/dsh-usage-plugin",
+ "stars": 26,
+ "description": "DeepSeek Harness 用量与消耗插件（dsh-usage-plugin）—— 每次调用的 token 用量/缓存命中统计、峰谷计费、余额查询、CSV/JSON/PNG 导出，可经桌面端一键安装或命令行 dsh plugin add 安装。",
+ "pushed_at": "2026-08-16T11:40:01Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@feiyang666/dsh-usage-plugin",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "credentials",
+  "fs",
+  "sandboxPolicy",
+  "slots",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "BALANCE_API_KEY": 1,
+  "PNG_PATH": 2,
+  "OUT_PATH": 2,
+  "MKDIR_PATH": 1,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:491",
+    "lib/index.js:693"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:592"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:594",
+    "lib/index.js:608",
+    "scripts/wire.js:18",
+    "scripts/wire.js:87"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:491, lib/index.js:693"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:592"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BALANCE_API_KEY"
+  }
+ ],
+ "level": 3
+}

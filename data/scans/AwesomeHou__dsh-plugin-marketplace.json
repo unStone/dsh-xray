@@ -1,0 +1,100 @@
+{
+ "repo": "AwesomeHou/dsh-plugin-marketplace",
+ "stars": 27,
+ "description": "Plugin marketplace for DeepSeek Harness — live-syncs the GitHub dsh-plugin topic (1800+ repos) into a searchable, paginated settings tab with one-click install and agent tools (market_search / market_",
+ "pushed_at": "2026-08-17T02:58:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-marketplace",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "timer",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "api.github.com": 2,
+  "translate.googleapis.com": 1,
+  "api.mymemory.translated.net": 1
+ },
+ "env": {
+  "DSH_HOME": 4,
+  "DSH_MARKET_STALL_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:31",
+    "lib/index.js:33",
+    "lib/index.js:35",
+    "lib/index.js:46",
+    "lib/index.js:54"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:409"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 31,
+   "evidence": [
+    "lib/index.js:56",
+    "lib/index.js:89",
+    "lib/index.js:983"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. lib/index.js:31, lib/index.js:33"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/index.js:409"
+  }
+ ],
+ "level": 3
+}

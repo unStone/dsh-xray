@@ -1,0 +1,94 @@
+{
+ "repo": "skymecode/deepseek-harness-for-vscode",
+ "stars": 14,
+ "description": "deepseek-harness for vscode .This is a community project, and we welcome your valuable feedback!",
+ "pushed_at": "2026-08-18T03:10:00Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-harness-for-vscode",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "dompurify",
+  "markdown-it",
+  "node",
+  "pnpm",
+  "ws"
+ ],
+ "install_scripts": {
+  "postinstall": "npm run patch:dsh-pi-ai"
+ },
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 3,
+  "awesome-dsh-plugin.com": 2,
+  "api.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/package-vsix.mjs:1",
+    "scripts/package-vsix.mjs:1",
+    "scripts/package-vsix.mjs:28",
+    "src/plugins/plugin-manager.ts:1",
+    "src/plugins/plugin-manager.ts:125"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 2,
+   "evidence": [
+    "scripts/patch-dsh-llm-pi-ai.mjs:34",
+    "src/plugins/plugin-manager.ts:173",
+    "src/plugins/routing-suite/installer.ts:151",
+    "src/plugins/routing-suite/installer.ts:165",
+    "src/plugins/routing-suite/installer.ts:206"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 92,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: npm run patch:dsh-pi-ai"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. scripts/package-vsix.mjs:1, scripts/package-vsix.mjs:1"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

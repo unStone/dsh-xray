@@ -1,0 +1,80 @@
+{
+ "repo": "alib8b8/aflare",
+ "stars": 11,
+ "description": "本地优先的自动化 Agent · 数据不出本地 · 连接你自己的 LLM / 数据库 / 知识库 · ReAct 推理 · 300+ 技能模板 · 确定性工作流执行（DAG/WAL/Saga/幂等） · MCP 协议 · 离线/内网可用",
+ "pushed_at": "2026-08-17T07:57:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "openclaw-aflare",
+ "deps": [
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "AFLARE_BIN": 1,
+  "AFLARE_TIMEOUT_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "contrib/openclaw/src/tools/run_workflow.ts:8",
+    "contrib/openclaw/src/tools/run_workflow.ts:66",
+    "integrations/dsh-plugin/src/index.ts:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. contrib/openclaw/src/tools/run_workflow.ts:8, contrib/openclaw/src/tools/run_workflow.ts:66"
+  }
+ ],
+ "level": 3
+}

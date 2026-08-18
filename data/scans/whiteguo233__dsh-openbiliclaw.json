@@ -1,0 +1,85 @@
+{
+ "repo": "whiteguo233/dsh-openbiliclaw",
+ "stars": 42,
+ "description": "OpenBiliClaw 是本地运行的跨平台个性化内容推荐 Agent，持续理解你的兴趣并主动找内容。本仓库是它的 DeepSeek Harness 插件：DSH 界面常驻第四栏（推荐/内容库/对话/画像/设置），注册 22 个 Agent Bridge 工具，让 Agent 也能读推荐、答探测、闭环学习。",
+ "pushed_at": "2026-08-17T13:46:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@openbiliclaw/dsh-plugin",
+ "deps": [
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "slots",
+  "theme",
+  "tools"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 69,
+ "domains": {
+  "www.bilibili.com": 6
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 69,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

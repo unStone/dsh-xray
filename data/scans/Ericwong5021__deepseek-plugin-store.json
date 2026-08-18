@@ -1,0 +1,126 @@
+{
+ "repo": "Ericwong5021/deepseek-plugin-store",
+ "stars": 20,
+ "description": "DeepSeek Harness 独立社区插件商店：发现、安装并提交经过验证的插件、工具与扩展。 | Independent community plugin directory.",
+ "pushed_at": "2026-08-18T07:11:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "deepseek-plugin-store",
+ "deps": [
+  "lightningcss",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "connection",
+  "sessions",
+  "slots",
+  "subprocess"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "deepseekplugin.store": 5,
+  "api.deepseek.com": 1,
+  "api.github.com": 10,
+  "schema.org": 2,
+  "www.sitemaps.org": 1,
+  "awesome-dsh-plugin.com": 5,
+  "awesome.re": 2,
+  "linux.do": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DEEPSEEK_API_KEY": 1,
+  "GITHUB_TOKEN": 5,
+  "AI_BASE_URL": 1,
+  "AI_MODEL": 1,
+  "AI_QUALITY_LIMIT": 1,
+  "DISCOVERY_VERIFY_LIMIT": 1,
+  "SITE_ROOT": 1,
+  "GITHUB_EVENT_PATH": 1,
+  "GITHUB_OUTPUT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:36",
+    "lib/types/index.js:40",
+    "scripts/monitor-upstream.mjs:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 19,
+   "dev": 0,
+   "evidence": [
+    "scripts/analyze-quality.mjs:232",
+    "scripts/build-site.mjs:73",
+    "scripts/build-site.mjs:153",
+    "scripts/build-site.mjs:174",
+    "scripts/build-site.mjs:213"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:36, lib/types/index.js:40"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

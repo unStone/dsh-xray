@@ -1,0 +1,150 @@
+{
+ "repo": "AnacondaKC/dsh-stock-market",
+ "stars": 15,
+ "description": "有效解决了写代码的时候账户不能同时亏钱的BUG",
+ "pushed_at": "2026-08-13T06:26:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-stock-market",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "connection",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 10,
+ "domains": {
+  "qt.gtimg.cn": 2,
+  "web.ifzq.gtimg.cn": 4,
+  "hq.sinajs.cn": 2,
+  "push2.eastmoney.com": 5,
+  "push2his.eastmoney.com": 3,
+  "datacenter-web.eastmoney.com": 1,
+  "np-listapi.eastmoney.com": 1,
+  "search-codetable.eastmoney.com": 1,
+  "so.eastmoney.com": 2,
+  "search-api-web.eastmoney.com": 2,
+  "guba.eastmoney.com": 2,
+  "proxy.finance.qq.com": 2,
+  "quotes.sina.cn": 1,
+  "money.finance.sina.com.cn": 4,
+  "vip.stock.finance.sina.com.cn": 6,
+  "feed.mix.sina.com.cn": 1,
+  "d.10jqka.com.cn": 2,
+  "data.eastmoney.com": 2,
+  "push2delay.eastmoney.com": 1,
+  "finance.sina.com.cn": 1,
+  "stockpage.10jqka.com.cn": 1,
+  "datacenter.eastmoney.com": 1,
+  "np-anotice-pc.eastmoney.com": 1,
+  "reportapi.eastmoney.com": 1,
+  "np-areport-pc.eastmoney.com": 1,
+  "np-creport-pc.eastmoney.com": 1,
+  "newsapi.eastmoney.com": 1
+ },
+ "env": {
+  "DSH_WORKSPACE_ROOT": 2,
+  "DSH_STOCK_MARKET_LIVE_SMOKE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:3",
+    "scripts/build.mjs:3",
+    "scripts/build.mjs:51",
+    "scripts/verify-package.mjs:4",
+    "scripts/verify-package.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:1",
+    "scripts/build.mjs:11",
+    "scripts/build.mjs:26",
+    "scripts/build.mjs:43",
+    "scripts/clean-artifacts.mjs:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 62,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build.mjs:3, scripts/build.mjs:3"
+  }
+ ],
+ "level": 3
+}

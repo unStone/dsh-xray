@@ -1,0 +1,122 @@
+{
+ "repo": "chokwinlee/deepseek-harness-desktop",
+ "stars": 13,
+ "description": "Compact DeepSeek Harness desktop host. macOS downloads under 90 MB with Tauri; Windows uses Electron.",
+ "pushed_at": "2026-08-18T06:27:37Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "tauri-cli-host",
+ "deps": [
+  "@tauri-apps/cli",
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-bash-local",
+  "@deepseek-ai/dsh-client-ui-settings-models",
+  "@deepseek-ai/dsh-code-runtime",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-output-retention",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session-telemetry",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-spill",
+  "@deepseek-ai/dsh-subagent-in-process-driver",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-workflow",
+  "dsh-desktop-settings-plugin",
+  "pnpm",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1,
+  "openrouter.ai": 1
+ },
+ "env": {
+  "GITHUB_STEP_SUMMARY": 2,
+  "DRY_RUN": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-packaged-runtime.mjs:1",
+    "scripts/verify-packaged-runtime.mjs:129",
+    "src/harness-supervisor.ts:1",
+    "src/harness-supervisor.ts:69"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 2,
+   "evidence": [
+    "scripts/check-release-size.mjs:1",
+    "scripts/check-release-size.mjs:70",
+    "scripts/prune-runtime.mjs:1",
+    "scripts/prune-runtime.mjs:64",
+    "scripts/prune-runtime.mjs:91"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-packaged-runtime.mjs:192",
+    "src-tauri/scripts/acknowledge-onboarding.mjs:22"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/verify-packaged-runtime.mjs:1, scripts/verify-packaged-runtime.mjs:129"
+  }
+ ],
+ "level": 2
+}

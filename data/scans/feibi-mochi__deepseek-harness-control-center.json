@@ -1,0 +1,96 @@
+{
+ "repo": "feibi-mochi/deepseek-harness-control-center",
+ "stars": 30,
+ "description": "DeepSeek Harness account monitoring, usage accounting, completion alerts, official recharge, flexible layout, and agent-assisted session controls. / 账户监控、提醒、充值与会话控制中心",
+ "pushed_at": "2026-08-18T03:15:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "deepseek-harness-wallet",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "platform.deepseek.com": 3,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "npm_execpath": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "integrations/dsh-session-delete/preflight.mjs:3",
+    "integrations/dsh-session-delete/preflight.mjs:3",
+    "integrations/dsh-session-delete/preflight.mjs:28",
+    "scripts/verify-pack.mjs:3",
+    "scripts/verify-pack.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "index.js:12",
+    "index.js:184"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. integrations/dsh-session-delete/preflight.mjs:3, integrations/dsh-session-delete/preflight.mjs:3"
+  }
+ ],
+ "level": 3
+}

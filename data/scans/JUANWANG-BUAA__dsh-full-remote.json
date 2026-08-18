@@ -1,0 +1,120 @@
+{
+ "repo": "JUANWANG-BUAA/dsh-full-remote",
+ "stars": 15,
+ "description": "DeepSeek Harness plugin for remote access: a token-gated reverse proxy keeps settings, credentials, and file access working over public tunnels and on other devices instead of returning 403. Per-devic",
+ "pushed_at": "2026-08-18T04:15:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-full-remote",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "uqr",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "betterSidebar",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "HARNESS_DIR": 1,
+  "PORT": 1,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 3,
+   "evidence": [
+    "scripts/bootstrap.mjs:15",
+    "scripts/bootstrap.mjs:15",
+    "scripts/bootstrap.mjs:29",
+    "scripts/capture-screenshots.ts:7",
+    "scripts/capture-screenshots.ts:231"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/capture-screenshots.ts:155",
+    "scripts/capture-screenshots.ts:163"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 33,
+   "evidence": [
+    "scripts/capture-screenshots.ts:215",
+    "src/proxy.ts:727"
+   ]
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 11,
+   "evidence": [
+    "scripts/capture-screenshots.ts:155",
+    "scripts/capture-screenshots.ts:163",
+    "scripts/capture-screenshots.ts:291",
+    "scripts/capture-screenshots.ts:292",
+    "scripts/capture-screenshots.ts:300"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/capture-screenshots.ts:209"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 46,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/bootstrap.mjs:15, scripts/bootstrap.mjs:15"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. scripts/capture-screenshots.ts:155, scripts/capture-screenshots.ts:163"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/capture-screenshots.ts:215, src/proxy.ts:727"
+  }
+ ],
+ "level": 3
+}

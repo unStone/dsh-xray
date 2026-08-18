@@ -1,0 +1,128 @@
+{
+ "repo": "omdsh-dev/dsh-custom-tool",
+ "stars": 24,
+ "description": "Create and manage sandboxed JavaScript tools for DeepSeek Harness with a Monaco editor and model-driven tool lifecycle.",
+ "pushed_at": "2026-08-16T05:24:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-custom-tool",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-locale",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "locale",
+  "settings",
+  "settingsScope",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "theme/change"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 6,
+  "VSCODE_CWD": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:12",
+    "scripts/build.mjs:12",
+    "scripts/build.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:587",
+    "src/client/validate.ts:35"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:395",
+    "lib/index.js:396"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 8,
+   "evidence": [
+    "lib/executor-worker.js:58",
+    "lib/executor-worker.js:61",
+    "lib/index.js:147",
+    "lib/index.js:182",
+    "lib/index.js:1561"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 93,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/build.mjs:12, scripts/build.mjs:12"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/index.js:587, src/client/validate.ts:35"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:395, lib/index.js:396"
+  }
+ ],
+ "level": 3
+}

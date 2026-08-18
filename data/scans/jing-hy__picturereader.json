@@ -1,0 +1,92 @@
+{
+ "repo": "jing-hy/picturereader",
+ "stars": 14,
+ "description": "DSH plugin: pixel-to-text image reading for text-only models. image_scan/image_ocr/image_sample tools + image-reading skill (34-image trained methodology). Pure local, optional PaddleOCR.",
+ "pushed_at": "2026-08-16T23:51:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "picturereader",
+ "deps": [
+  "jpeg-js",
+  "omggif",
+  "pngjs"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "registry.npmmirror.com": 1,
+  "pypi.tuna.tsinghua.edu.cn": 1
+ },
+ "env": {
+  "DSH_PADDLE_PYTHON": 1,
+  "DSH_PADDLE_CACHE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 3,
+   "evidence": [
+    "scripts/setup-ocr.mjs:16",
+    "scripts/setup-ocr.mjs:16",
+    "scripts/setup-ocr.mjs:29",
+    "scripts/setup-ocr.mjs:41",
+    "scripts/setup-ocr.mjs:63"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 5,
+   "evidence": [
+    "scripts/preview.mjs:8",
+    "scripts/preview.mjs:29",
+    "src/core.js:1118"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/tool.js:39"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/setup-ocr.mjs:16, scripts/setup-ocr.mjs:16"
+  }
+ ],
+ "level": 3
+}

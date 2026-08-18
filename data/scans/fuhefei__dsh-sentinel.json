@@ -1,0 +1,96 @@
+{
+ "repo": "fuhefei/dsh-sentinel",
+ "stars": 11,
+ "description": "Condition-driven wakeup for DeepSeek Harness: durable file/command/http/process/webhook watches that wake the agent, with dock, sidebar branch, and a global dashboard.",
+ "pushed_at": "2026-08-17T03:05:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-sentinel",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "betterSidebar",
+  "locale",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/status"
+ ],
+ "tool_regs": 7,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:8",
+    "src/sensors.ts:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 10,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:566",
+    "lib/index.js:577",
+    "lib/index.js:808",
+    "src/index.ts:358"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:8, src/sensors.ts:10"
+  }
+ ],
+ "level": 3
+}

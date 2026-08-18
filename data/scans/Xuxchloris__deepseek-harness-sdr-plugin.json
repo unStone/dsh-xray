@@ -1,0 +1,74 @@
+{
+ "repo": "Xuxchloris/deepseek-harness-sdr-plugin",
+ "stars": 24,
+ "description": "DeepSeek Harness 的 SDR 数字员工插件：九阶段外贸获客 SOP、结构性人工审批、客户去重、持久化知识检索与审计日志，默认 dry-run 安全演示。",
+ "pushed_at": "2026-08-18T02:39:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@xuxchloris/dsh-sdr",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 15,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 1,
+  "DSH_SDR_DATA_FILE": 1,
+  "DSH_SDR_DEPLOYMENT_CONFIG_JSON": 1,
+  "DSH_SDR_AGENT_CONFIG": 1,
+  "DSH_SDR_AGENT_LIVE_CONFIG": 1,
+  "DSH_SDR_AGENT_KNOWLEDGE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-sdr/lib/domain.js:216",
+    "packages/dsh-sdr/lib/index.js:44"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

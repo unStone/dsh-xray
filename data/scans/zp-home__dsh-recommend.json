@@ -1,0 +1,118 @@
+{
+ "repo": "zp-home/dsh-recommend",
+ "stars": 18,
+ "description": "DSH 插件生态透明排行与推荐：每日自动抓取 dsh-plugin 话题 + 公开评分模型 + 排行/推荐插件与静态站",
+ "pushed_at": "2026-08-18T07:05:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-recommend",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 20,
+ "domains": {
+  "api.github.com": 6,
+  "api.npmjs.org": 2,
+  "utteranc.es": 1
+ },
+ "env": {
+  "GITHUB_TOKEN": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/host/web.mjs:3",
+    "lib/host/web.mjs:536",
+    "scripts/sync.mjs:17",
+    "src/host/web.ts:18",
+    "src/host/web.ts:473"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/scan.mjs:80"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 27,
+   "dev": 0,
+   "evidence": [
+    "lib/host/index.mjs:112",
+    "lib/host/index.mjs:119",
+    "lib/host/index.mjs:128",
+    "lib/host/web.mjs:118",
+    "lib/host/web.mjs:222"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/host/web.mjs:3, lib/host/web.mjs:536"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/scan.mjs:80"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

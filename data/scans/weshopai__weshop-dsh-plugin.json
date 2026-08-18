@@ -1,0 +1,137 @@
+{
+ "repo": "weshopai/weshop-dsh-plugin",
+ "stars": 12,
+ "description": "Native WeShop Cordis plugin for DeepSeek Harness. Allow you to use infinite canvas with infinite creative skills.",
+ "pushed_at": "2026-08-17T04:02:08Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "weshop-dsh-plugin",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@phosphor-icons/react",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "skills",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "reactjs.org": 1,
+  "www.weshop.ai": 1,
+  "openapi.weshop.ai": 2
+ },
+ "env": {
+  "DSH_HOME": 5,
+  "WESHOP_STATE_FILE": 4,
+  "WESHOP_ACTIONS_FILE": 4,
+  "WESHOP_REQUESTS_FILE": 4,
+  "WESHOP_COMPLETIONS_FILE": 2,
+  "WESHOP_PROGRESS_FILE": 4,
+  "WESHOP_BASE_URL": 2,
+  "WESHOP_POLL_INTERVAL_MS": 2,
+  "WESHOP_POLL_MAX_MS": 2,
+  "WESHOP_API_KEY": 10,
+  "WESHOP_ASSET_DIR": 2,
+  "WESHOP_DEMO_DIR": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/setup.js:6",
+    "bin/setup.js:6",
+    "bin/setup.js:38",
+    "bin/setup.js:62"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:241"
+   ]
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:60",
+    "lib/index.js:61",
+    "lib/index.js:1690",
+    "src/index.js:267"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "bin/setup.js:3",
+    "bin/setup.js:58",
+    "lib/index.js:949",
+    "lib/index.js:1274",
+    "lib/index.js:1305"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bin/setup.js:6, bin/setup.js:6"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:241"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/index.js:60, lib/index.js:61"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WESHOP_API_KEY"
+  }
+ ],
+ "level": 3
+}

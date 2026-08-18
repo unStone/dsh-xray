@@ -1,0 +1,109 @@
+{
+ "repo": "openguardrails/openguardrails",
+ "stars": 28,
+ "description": "The vendor-neutral protocol for AI agent safety & security — and the neutral benchmark that ranks the vendors.",
+ "pushed_at": "2026-08-18T03:47:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@openguardrails/instrumentation-claude-code",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "approval/request",
+  "llm/stream",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 1,
+ "domains": {
+  "openguardrails.com": 11
+ },
+ "env": {
+  "OGR_RUNTIME_URL": 4,
+  "OGR_API_KEY": 4,
+  "OGR_TIMEOUT_MS": 3,
+  "OGR_FAIL_MODE": 2,
+  "OGR_AGENT_ID": 3,
+  "OGR_AGENT_TYPE": 3,
+  "OGR_AGENT_WORKSPACE": 4,
+  "OGR_AGENT_USER": 4,
+  "OGR_SERVER": 2,
+  "OGR_ENROLL_TOKEN": 2,
+  "OGR_STATE_DIR": 1,
+  "OGR_MAX_CONSECUTIVE_DENIALS": 1,
+  "OGR_MAX_TOTAL_DENIALS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 10,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 11,
+   "evidence": [
+    "integrations/agent/codex/hooks/ogr-codex-automode-hook.mjs:49",
+    "integrations/agent/codex/hooks/ogr-codex-automode-hook.mjs:99"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OGR_API_KEY, OGR_ENROLL_TOKEN"
+  }
+ ],
+ "level": 3
+}

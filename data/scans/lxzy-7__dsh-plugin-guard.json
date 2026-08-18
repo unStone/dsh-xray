@@ -1,0 +1,90 @@
+{
+ "repo": "lxzy-7/dsh-plugin-guard",
+ "stars": 18,
+ "description": "Install safety net for DeepSeek Harness: pre-install snapshots, one-click/automatic rollback, guarded boot, and incident reports that auto-trigger agent analysis. 中文: DeepSeek Harness 插件安装安全网（安装前自动快照、",
+ "pushed_at": "2026-08-17T09:42:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-plugin-guard",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 5,
+  "DSH_GUARD_PNPM": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/engine.js:9",
+    "src/engine.js:9",
+    "src/engine.js:104",
+    "src/engine.js:105",
+    "src/engine.js:124"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-test.js:3",
+    "scripts/smoke-test.js:3",
+    "scripts/smoke-test.js:26",
+    "scripts/smoke-test.js:27",
+    "scripts/smoke-test.js:28"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/engine.js:9, src/engine.js:9"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,81 @@
+{
+ "repo": "huey1in/reef",
+ "stars": 13,
+ "description": "DSH 插件全家桶:浏览器自动化 + MCP Server + GitHub/GitLab 自动评审 + 原生嵌入面板 | One install, five modules for DeepSeek Harness: browser automation, MCP server, GitHub & GitLab automation, native in-app panel",
+ "pushed_at": "2026-08-16T09:52:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-reef",
+ "deps": [
+  "playwright-core"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "api.github.com": 1,
+  "gitlab.com": 1
+ },
+ "env": {
+  "DSH_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 10,
+   "evidence": [
+    "src/browser/session.ts:2",
+    "src/browser/session.ts:352",
+    "src/browser/tools.ts:2",
+    "src/browser/tools.ts:131",
+    "src/lib/credentials.ts:9"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 50,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

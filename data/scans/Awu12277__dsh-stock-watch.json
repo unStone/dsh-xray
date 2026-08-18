@@ -1,0 +1,99 @@
+{
+ "repo": "Awu12277/dsh-stock-watch",
+ "stars": 46,
+ "description": "A股自选股实时行情盯盘插件 - DeepSeek Harness Web 右上角可折叠弹窗",
+ "pushed_at": "2026-08-17T08:22:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": []
+  }
+ },
+ "pkg_name": "dsh-stock-watch",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "unpkg.com": 2,
+  "cdn.jsdelivr.net": 2,
+  "web.ifzq.gtimg.cn": 2
+ },
+ "env": {
+  "DSH_STOCK_WATCH_NO_SKILLS": 1,
+  "DSH_STOCK_WATCH_SKILLS_DIR": 4,
+  "PROBE_PLAYWRIGHT_REQ": 1,
+  "PROBE_URL": 1,
+  "PROBE_CHROME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/probe-fan-docked.mjs:44",
+    "scripts/probe-fan-repro.mjs:19",
+    "scripts/probe-fan.mjs:78",
+    "scripts/probe-fan.mjs:137",
+    "scripts/probe-zoom.mjs:121"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "index.js:15",
+    "index.js:55",
+    "scripts/test-skills-inject.mjs:7",
+    "scripts/test-skills-inject.mjs:7",
+    "scripts/test-skills-inject.mjs:50"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:12",
+    "scripts/test-skills-inject.mjs:12"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×5 src, e.g. scripts/probe-fan-docked.mjs:44, scripts/probe-fan-repro.mjs:19"
+  }
+ ],
+ "level": 3
+}

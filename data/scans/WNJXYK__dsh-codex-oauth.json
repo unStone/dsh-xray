@@ -1,0 +1,120 @@
+{
+ "repo": "WNJXYK/dsh-codex-oauth",
+ "stars": 10,
+ "description": "Use your OpenAI subscription with DeepSeek Harness to access GPT models, image generation, and web search.",
+ "pushed_at": "2026-08-15T17:23:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@wnjxyk/dsh-codex-oauth",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-attachment"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "conversation",
+  "credentials",
+  "llm",
+  "locale",
+  "openaiCodexAuth",
+  "settings",
+  "slots",
+  "tools",
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "chatgpt.com": 2,
+  "auth.openai.com": 1,
+  "api.openai.com": 3
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/image-tool.js:149"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:724",
+    "lib/index.js:817",
+    "scripts/smoke.mjs:23",
+    "scripts/smoke.mjs:77"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:188",
+    "scripts/smoke.mjs:220",
+    "scripts/smoke.mjs:248",
+    "scripts/smoke.mjs:273",
+    "scripts/smoke.mjs:349"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/image-tool.js:149"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. lib/index.js:724, lib/index.js:817"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,103 @@
+{
+ "repo": "Ghost011118/dsh-balance-meter",
+ "stars": 16,
+ "description": "DeepSeek account balance and session cost readout for the DeepSeek Harness Web GUI",
+ "pushed_at": "2026-08-14T04:27:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-balance-meter",
+ "deps": [
+  "clsx",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 6,
+  "api-docs.deepseek.com": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 36,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

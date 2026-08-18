@@ -1,0 +1,117 @@
+{
+ "repo": "AX1202/ax-feishu-bridge",
+ "stars": 31,
+ "description": "飞书/Lark 机器人桥接，同时支持 Pi 和 DeepSeek Harness（DSH）双平台，随时随地远程与你的编程助手对话",
+ "pushed_at": "2026-08-17T13:38:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "ax-feishu-bridge",
+ "deps": [
+  "@larksuiteoapi/node-sdk",
+  "qrcode-terminal",
+  "@earendil-works/pi-coding-agent",
+  "typebox",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "commands",
+  "llm",
+  "sessionQuery",
+  "sessions"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 3,
+ "domains": {
+  "open.larksuite.com": 1,
+  "open.feishu.cn": 1
+ },
+ "env": {
+  "FEISHU_EXT_DEV": 1,
+  "PI_FEISHU_DAEMON": 2,
+  "PI_BIN": 1,
+  "APPDATA": 2,
+  "USERPROFILE": 1,
+  "PI_CLI_ENTRY": 1,
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 3,
+   "evidence": [
+    "src/adapters/pi/index.ts:2",
+    "src/adapters/pi/index.ts:2",
+    "src/adapters/pi/index.ts:262",
+    "src/adapters/pi/index.ts:271",
+    "src/adapters/pi/index.ts:281"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/feishu/card-action-webhook.ts:69"
+   ]
+  },
+  "fs_write": {
+   "src": 23,
+   "dev": 30,
+   "evidence": [
+    "src/adapters/pi/index.ts:1",
+    "src/adapters/pi/index.ts:596",
+    "src/adapters/pi/index.ts:613",
+    "src/feishu/config.ts:1",
+    "src/feishu/config.ts:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 53,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/adapters/pi/index.ts:2, src/adapters/pi/index.ts:2"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/feishu/card-action-webhook.ts:69"
+  }
+ ],
+ "level": 3
+}

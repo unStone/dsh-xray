@@ -1,0 +1,118 @@
+{
+ "repo": "UNLINEARITY/dsh-code",
+ "stars": 27,
+ "description": " Claude-Code-style TUI bundle for DeepSeek Harness. 充分结合 DSH 的核心机制和高级特性与Codex CLI 、Claude Code 等主流交互机制，打造的 DSH-Code. （注：支持DSH 特殊模式，插件系统，模型管理，子代理会话，Deepseek 官方 API 特殊动画）",
+ "pushed_at": "2026-08-18T03:03:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-code",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "chalk",
+  "commander",
+  "ink",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-code-runtime-worker-thread",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-goal",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-retry",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-plan-mode",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-session-reference",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "cmdlineArgs",
+  "invariants",
+  "sessions"
+ ],
+ "hooks": [
+  "agent/request",
+  "approval/request",
+  "commands/change",
+  "session/event",
+  "skills/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "npm_config_prefix": 1,
+  "APPDATA": 2,
+  "PREFIX": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bin/deepseek.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 10,
+   "evidence": [
+    "scripts/gen-whale-glyph.ts:13",
+    "scripts/gen-whale-glyph.ts:249"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 76,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. bin/deepseek.mjs:3"
+  }
+ ],
+ "level": 3
+}

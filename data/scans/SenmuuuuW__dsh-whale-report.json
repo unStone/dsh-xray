@@ -1,0 +1,96 @@
+{
+ "repo": "SenmuuuuW/dsh-whale-report",
+ "stars": 22,
+ "description": "深迹 DeepTrace — Your Agent, in numbers. DSH 插件：从会话事件日志生成日报/周报/月报/年报/自定义区间，确定性洞察与协作复盘，只读、不改写历史。",
+ "pushed_at": "2026-08-18T06:52:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-whale-report",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionQuery",
+  "storageDomain",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "api.deepseek.com": 2,
+  "api-docs.deepseek.com": 2
+ },
+ "env": {
+  "DEEPSEEK_API_KEY": 2,
+  "WHALE_PROVIDER_ALIASES": 2,
+  "DSH_SOURCE": 2,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "scripts/link-dsh.mjs:13",
+    "scripts/link-dsh.mjs:91",
+    "scripts/link-dsh.mjs:100"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 66,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

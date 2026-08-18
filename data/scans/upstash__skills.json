@@ -1,0 +1,102 @@
+{
+ "repo": "upstash/skills",
+ "stars": 19,
+ "description": "Collection of skills for Upstash",
+ "pushed_at": "2026-08-17T12:10:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./.dsh-plugin/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "upstash-skills",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "credentials",
+  "skills"
+ ],
+ "hooks": [
+  "credentials/updated"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "qstash.upstash.io": 4,
+  "console.upstash.com": 2
+ },
+ "env": {
+  "QSTASH_REGION": 2,
+  "QSTASH_URL": 6,
+  "QSTASH_TOKEN": 4,
+  "US_EAST_1_QSTASH_CURRENT_SIGNING_KEY": 2,
+  "US_EAST_1_QSTASH_NEXT_SIGNING_KEY": 2,
+  "EU_CENTRAL_1_QSTASH_CURRENT_SIGNING_KEY": 2,
+  "EU_CENTRAL_1_QSTASH_NEXT_SIGNING_KEY": 2,
+  "QSTASH_CURRENT_SIGNING_KEY": 4,
+  "QSTASH_NEXT_SIGNING_KEY": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:10",
+    "scripts/check.mjs:1",
+    "scripts/check.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:1",
+    "scripts/build.mjs:1",
+    "scripts/build.mjs:19",
+    "scripts/build.mjs:57",
+    "scripts/build.mjs:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./.dsh-plugin/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build.mjs:2, scripts/build.mjs:2"
+  },
+  {
+   "id": "token_env",
+   "evidence": "EU_CENTRAL_1_QSTASH_CURRENT_SIGNING_KEY, EU_CENTRAL_1_QSTASH_NEXT_SIGNING_KEY, QSTASH_CURRENT_SIGNING_KEY, QSTASH_NEXT_SIGNING_KEY, QSTASH_TOKEN, US_EAST_1_QSTASH_CURRENT_SIGNING_KEY"
+  }
+ ],
+ "level": 3
+}

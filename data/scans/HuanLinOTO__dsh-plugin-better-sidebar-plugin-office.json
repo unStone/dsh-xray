@@ -1,0 +1,81 @@
+{
+ "repo": "HuanLinOTO/dsh-plugin-better-sidebar-plugin-office",
+ "stars": 20,
+ "description": "为 better-sidebar 提供 Office 三件套预览（.docx/.xlsx/.pptx），独立 bundle 瘦身主体 | Provides Office-suite preview (.docx/.xlsx/.pptx) for better-sidebar as a separate bundle to slim the core",
+ "pushed_at": "2026-08-15T05:06:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@huanlin/dsh-plugin-better-sidebar-plugin-office",
+ "deps": [
+  "@aiden0z/pptx-renderer",
+  "@univerjs/preset-sheets-core",
+  "@univerjs/presets",
+  "docx-preview",
+  "xlsx",
+  "@deepseek-ai/dsh-client-runtime",
+  "cordis",
+  "dsh-better-sidebar",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "betterSidebar"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

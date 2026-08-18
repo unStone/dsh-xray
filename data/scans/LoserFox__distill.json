@@ -1,0 +1,87 @@
+{
+ "repo": "LoserFox/distill",
+ "stars": 19,
+ "description": "自动对话蒸馏：后台 subagent 反省 + 技能 create/update",
+ "pushed_at": "2026-08-17T10:32:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@loserfox/distill",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "subagents"
+ ],
+ "hooks": [
+  "agent/turn-stopping",
+  "distill/review-request",
+  "session/disposed"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_AGENTS_HOME": 2,
+  "DSH_CHECKOUT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 7,
+   "evidence": [
+    "lib/index.js:349",
+    "probe.mjs:21",
+    "probe.mjs:65",
+    "src/index.ts:396"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

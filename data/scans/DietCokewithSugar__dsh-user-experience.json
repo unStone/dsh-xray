@@ -1,0 +1,120 @@
+{
+ "repo": "DietCokewithSugar/dsh-user-experience",
+ "stars": 19,
+ "description": "Persona-driven UX walkthrough plugin for DeepSeek Harness (DSH) - scans React + TypeScript source code for UX issues, pinpoints them, and suggests fixes.",
+ "pushed_at": "2026-08-17T09:12:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "dsh-user-experience",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@vue/compiler-dom",
+  "@vue/compiler-sfc",
+  "typescript",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "conversationEvents",
+  "remote",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/turn-stopping",
+  "tools/result"
+ ],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-singleton-install.mjs:1",
+    "scripts/check-singleton-install.mjs:1",
+    "scripts/check-singleton-install.mjs:41",
+    "scripts/check-singleton-install.mjs:58"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 49,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-singleton-install.mjs:3",
+    "scripts/check-singleton-install.mjs:3",
+    "scripts/check-singleton-install.mjs:51",
+    "scripts/check-singleton-install.mjs:84",
+    "scripts/e2e.ts:9"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/check-singleton-install.mjs:1, scripts/check-singleton-install.mjs:1"
+  }
+ ],
+ "level": 3
+}

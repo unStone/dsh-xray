@@ -1,0 +1,117 @@
+{
+ "repo": "kingOfSoySauce/dsh-skin-market",
+ "stars": 19,
+ "description": "",
+ "pushed_at": "2026-08-18T07:31:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-skin-market",
+ "deps": [
+  "@phosphor-icons/react",
+  "@primer/octicons-react",
+  "ajv",
+  "yaml",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "kingofsoysauce.github.io": 4,
+  "codeload.github.com": 2,
+  "api.github.com": 4,
+  "awesome-dsh-plugin.com": 1,
+  "opengraph.githubassets.com": 3
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "PLAYWRIGHT_CHANNEL": 1,
+  "GITHUB_TOKEN": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 1,
+   "evidence": [
+    "lib/commands.js:1",
+    "lib/commands.js:22",
+    "lib/restart.js:1",
+    "lib/restart.js:3",
+    "lib/restart.js:14"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/capture-skin-screenshots.mjs:319"
+   ]
+  },
+  "fs_write": {
+   "src": 27,
+   "dev": 0,
+   "evidence": [
+    "lib/profile.js:1",
+    "lib/profile.js:1",
+    "lib/profile.js:29",
+    "lib/profile.js:314",
+    "lib/profile.js:316"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 82,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. lib/commands.js:1, lib/commands.js:22"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/capture-skin-screenshots.mjs:319"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

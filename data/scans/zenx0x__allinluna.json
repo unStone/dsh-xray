@@ -1,0 +1,84 @@
+{
+ "repo": "zenx0x/allinluna",
+ "stars": 32,
+ "description": "Resource-aware multi-agent orchestration for Codex and DeepSeek Harness (All in Flash DSH plugin)",
+ "pushed_at": "2026-08-14T01:42:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@zenx0x/allinflash",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "subagents",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "ComSpec": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "plugins/deepseek-harness/cli.js:3",
+    "plugins/deepseek-harness/cli.js:3",
+    "plugins/deepseek-harness/cli.js:79",
+    "plugins/deepseek-harness/index.js:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "plugins/deepseek-harness/cli.js:4",
+    "plugins/deepseek-harness/cli.js:189"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. plugins/deepseek-harness/cli.js:3, plugins/deepseek-harness/cli.js:3"
+  }
+ ],
+ "level": 3
+}

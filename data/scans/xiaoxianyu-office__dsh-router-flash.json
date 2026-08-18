@@ -1,0 +1,80 @@
+{
+ "repo": "xiaoxianyu-office/dsh-router-flash",
+ "stars": 10,
+ "description": "DSH bundle 插件：V4 Flash 神模式（opencode-go）agent preset 分发包，dsh plugin add 安装后自动同步 router-flash preset。DSH agent preset bundle for DeepSeek V4 Flash godmode.",
+ "pushed_at": "2026-08-15T10:16:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-router-flash",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "sandboxPolicy",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,77 @@
+{
+ "repo": "Jungod1121/dsh-anchored-standard",
+ "stars": 14,
+ "description": "Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap (bash+read), then full Standard tools after the first tool call or reply",
+ "pushed_at": "2026-08-16T06:02:33Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-anchored-standard",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "agent/pre-step",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:71"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

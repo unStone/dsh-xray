@@ -1,0 +1,103 @@
+{
+ "repo": "linenxi-ctrl/dsh-vision",
+ "stars": 12,
+ "description": "为 DeepSeek Harness 增加外挂识图模型：圆形鲸鱼按钮、发送图片识图自动回传、模型自主截图+识图工具、多协议自动适配、小白一键安装（未装 Node.js 自动下载）",
+ "pushed_at": "2026-08-15T15:01:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@linenxi-ctrl/dsh-vision",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "sessions",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.openai.com": 2
+ },
+ "env": {
+  "DSH_HOME": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/tool.js:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "install.mjs:25",
+    "install.mjs:25",
+    "install.mjs:69",
+    "install.mjs:80",
+    "install.mjs:102"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/tool.js:17"
+  }
+ ],
+ "level": 3
+}

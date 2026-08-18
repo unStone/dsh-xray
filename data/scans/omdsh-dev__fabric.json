@@ -1,0 +1,143 @@
+{
+ "repo": "omdsh-dev/fabric",
+ "stars": 14,
+ "description": "一种类似MC Fabric的hook处理器",
+ "pushed_at": "2026-08-17T02:23:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "cordis-fabric-bundle",
+ "deps": [
+  "cordis-fabric",
+  "cordis-fabric-api",
+  "cordis-fabric-dsh",
+  "cordis-fabric",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "cordis-fabric",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-client-ui-commands",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@apm-js-collab/code-transformer",
+  "module-details-from-path",
+  "node-addon-require-builtin",
+  "typescript",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -b && tsdown --config-loader unrun --config tsdown.config.ts"
+ },
+ "injects": [
+  "commandUi",
+  "commands",
+  "fabric",
+  "fabricAgent",
+  "fabricClient",
+  "fabricCommands",
+  "fabricPrompt",
+  "fabricTools",
+  "invariants",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/status",
+  "slots/changed",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_FABRIC_CONFIG": 2,
+  "DSH_FABRIC_PROFILE": 1,
+  "DSH_FABRIC_FORCE_ASYNC_HOOKS": 1,
+  "DSH_FABRIC_FORCE_SYNC_HOOKS": 1,
+  "DSH_HARNESS": 2,
+  "DSH_HOME": 1,
+  "DSH_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 18,
+   "evidence": [
+    "packages/cordis-fabric/src/testkit.ts:19",
+    "packages/cordis-fabric/src/testkit.ts:19",
+    "packages/cordis-fabric/src/testkit.ts:71",
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:30"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 26,
+   "evidence": [
+    "packages/cordis-fabric/src/node-loader.ts:22",
+    "packages/cordis-fabric/src/node-loader.ts:22",
+    "packages/cordis-fabric/src/node-loader.ts:327",
+    "packages/cordis-fabric/src/node-loader.ts:462",
+    "scripts/extract-patch.mjs:33"
+   ]
+  },
+  "dyn_import": {
+   "src": 4,
+   "dev": 31,
+   "evidence": [
+    "packages/cordis-fabric/preload.mjs:33",
+    "packages/cordis-fabric/src/catalog.ts:217",
+    "packages/cordis-fabric/src/node-loader.ts:718",
+    "packages/cordis-fabric/src/testkit-runner.ts:54"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 65,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. packages/cordis-fabric/src/testkit.ts:19, packages/cordis-fabric/src/testkit.ts:19"
+  }
+ ],
+ "level": 3
+}

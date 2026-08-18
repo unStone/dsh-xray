@@ -1,0 +1,101 @@
+{
+ "repo": "THU-MAIC/dsh-openmaic",
+ "stars": 14,
+ "description": "OpenMAIC for DeepSeek Harness: classrooms, slides, interactive widgets, and Socratic teaching",
+ "pushed_at": "2026-08-13T13:27:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@openmaic/dsh-openmaic",
+ "deps": [
+  "@openmaic/dsl",
+  "@openmaic/generation",
+  "@openmaic/renderer",
+  "echarts",
+  "shiki",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 16,
+ "domains": {
+  "open.maic.chat": 2,
+  "cdnjs.cloudflare.com": 1,
+  "cdn.jsdelivr.net": 1,
+  "esm.sh": 1,
+  "fonts.bunny.net": 1,
+  "fonts.googleapis.com": 1,
+  "fonts.gstatic.com": 1,
+  "unpkg.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

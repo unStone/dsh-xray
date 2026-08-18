@@ -1,0 +1,83 @@
+{
+ "repo": "CraZY222123/dsh-ocr-plugin",
+ "stars": 13,
+ "description": "",
+ "pushed_at": "2026-08-14T23:11:45Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@deepseek-ai/dsh-ocr",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_OCR_PYTHONPATH": 2,
+  "DSH_OCR_LD_LIBRARY_PATH": 2,
+  "DSH_OCR_PYTHON": 1,
+  "DSH_OCR_SCRIPT": 1,
+  "DSH_OCR2_BIN": 1,
+  "DSH_OCR2_MODEL": 1,
+  "DSH_OCR2_MMPROJ": 1,
+  "DSH_OCR2_CACHE": 1,
+  "DSH_OCR2_MAX_TOKENS": 1,
+  "DSH_OCR2_THREADS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:63",
+    "lib/index.js:118",
+    "lib/index.js:141"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:18"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_OCR2_MAX_TOKENS"
+  }
+ ],
+ "level": 2
+}

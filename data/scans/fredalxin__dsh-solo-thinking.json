@@ -1,0 +1,123 @@
+{
+ "repo": "fredalxin/dsh-solo-thinking",
+ "stars": 15,
+ "description": "Solo-style isolated brainstorm branches and Handoffs for DeepSeek Harness",
+ "pushed_at": "2026-08-15T10:51:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-solo-thinking",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/schemastery",
+  "dsh-better-sidebar",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "layout",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/event"
+ ],
+ "tool_regs": 28,
+ "domains": {},
+ "env": {
+  "SOLO_E2E_PROVIDER_PORT": 1,
+  "SOLO_E2E_PROVIDER_KEY": 1,
+  "SOLO_E2E_DSH_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-provider.mjs:70"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/e2e-provider.mjs:70"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SOLO_E2E_PROVIDER_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,85 @@
+{
+ "repo": "CheshireJCat/blender",
+ "stars": 16,
+ "description": "DeepSeek Harness plugin for complete Blender 3D modeling, reconstruction, rendering, validation, and export workflows",
+ "pushed_at": "2026-08-14T11:52:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-blender",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 14,
+ "domains": {},
+ "env": {
+  "DSH_BLENDER_ANALYSIS_PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "index.js:1",
+    "index.js:423",
+    "scripts/setup-analysis.js:3",
+    "scripts/setup-analysis.js:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "index.js:489",
+    "scripts/clean-package.js:1",
+    "scripts/clean-package.js:11",
+    "scripts/clean-package.js:15"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. index.js:1, index.js:423"
+  }
+ ],
+ "level": 3
+}

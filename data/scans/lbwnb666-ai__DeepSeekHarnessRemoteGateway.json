@@ -1,0 +1,91 @@
+{
+ "repo": "lbwnb666-ai/DeepSeekHarnessRemoteGateway",
+ "stars": 17,
+ "description": "一个轻量级 DeepSeek Harness 远程网关，让你通过 Web 或移动设备远程访问和控制本地 AI Agent",
+ "pushed_at": "2026-08-14T11:33:05Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-remote-gateway",
+ "deps": [
+  "qrcode"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "REMOTE_GATEWAY_PASSWORD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "scripts/release-assets.js:3",
+    "scripts/release-assets.js:3",
+    "scripts/release-assets.js:71",
+    "scripts/release-assets.js:87",
+    "scripts/start.js:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/auth.js:14"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:250"
+   ]
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/release-assets.js:1",
+    "scripts/release-assets.js:101",
+    "scripts/release-bundle.js:1",
+    "scripts/release-bundle.js:1",
+    "scripts/release-bundle.js:118"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. scripts/release-assets.js:3, scripts/release-assets.js:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/auth.js:14"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/index.js:250"
+  },
+  {
+   "id": "token_env",
+   "evidence": "REMOTE_GATEWAY_PASSWORD"
+  }
+ ],
+ "level": 2
+}

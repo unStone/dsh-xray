@@ -1,0 +1,104 @@
+{
+ "repo": "nevertoday/dsh-theme-plugin",
+ "stars": 18,
+ "description": "Chinese traditional colors as a DeepSeek Harness theme pack. ",
+ "pushed_at": "2026-08-15T11:41:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-theme-plugin",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-theme"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown || node scripts/build-esbuild.mjs"
+ },
+ "injects": [
+  "locale",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ZH_COLORS_REPO": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 9,
+   "evidence": [
+    "scripts/check-readme.mjs:14",
+    "scripts/check-readme.mjs:14",
+    "scripts/check-readme.mjs:49"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 5,
+   "evidence": [
+    "scripts/build-syntax-preview.mjs:16",
+    "scripts/build-syntax-preview.mjs:369",
+    "scripts/generate-themes.mjs:31",
+    "scripts/generate-themes.mjs:1368",
+    "scripts/generate-themes.mjs:1371"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-syntax-preview.mjs:18",
+    "scripts/check-contrast.mjs:36",
+    "scripts/check-readme.mjs:18"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/check-readme.mjs:14, scripts/check-readme.mjs:14"
+  }
+ ],
+ "level": 3
+}

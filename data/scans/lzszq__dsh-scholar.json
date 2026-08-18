@@ -1,0 +1,184 @@
+{
+ "repo": "lzszq/dsh-scholar",
+ "stars": 23,
+ "description": "dsh-scholar",
+ "pushed_at": "2026-08-17T15:31:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "golden-path-v2-fixture",
+ "deps": [
+  "@dsh-scholar/research-client",
+  "@dsh-scholar/research-kernel",
+  "@dsh-scholar/research-schemas",
+  "@dsh-scholar/scholar-connectors",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-skill-filesystem",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "react",
+  "@dsh-scholar/research-kernel",
+  "@dsh-scholar/research-schemas",
+  "@dsh-scholar/scholar-connectors",
+  "@xterm/addon-fit",
+  "@xterm/xterm",
+  "@dsh-scholar/research-schemas",
+  "@dsh-scholar/research-schemas",
+  "zod",
+  "@dsh-scholar/analysis-worker",
+  "zod",
+  "@dsh-scholar/research-schemas",
+  "@dsh-scholar/research-schemas",
+  "@dsh-scholar/research-client",
+  "@dsh-scholar/research-schemas"
+ ],
+ "install_scripts": {
+  "prepare": "dsh-plugin-prepare"
+ },
+ "injects": [
+  "commands",
+  "connection",
+  "locale",
+  "settings",
+  "slots",
+  "subagents",
+  "tools",
+  "userQuestions"
+ ],
+ "hooks": [
+  "connection/reset",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 40,
+ "domains": {
+  "mineru.net": 7,
+  "dsh-scholar.dev": 1,
+  "api.openalex.org": 1,
+  "api.crossref.org": 2,
+  "export.arxiv.org": 1
+ },
+ "env": {
+  "DSH_RUN_ID": 2,
+  "DSH_HOME": 4,
+  "DSH_SCHOLAR_BACKUP_ON_START": 1,
+  "DSH_SCHOLAR_KERNEL_TOKEN": 3,
+  "DSH_SCHOLAR_SERVICE_TOKEN": 2,
+  "DSH_SCHOLAR_DSH_PLUGIN_TOKEN": 1,
+  "DSH_SCHOLAR_KERNEL_ENDPOINT_FILE": 1,
+  "DSH_IMAGES_LOCK": 2,
+  "DSH_SCHOLAR_STANDALONE_DATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 23,
+   "dev": 25,
+   "evidence": [
+    "packages/dsh-research-ui/src/standalone/sidecar.ts:17",
+    "packages/dsh-research-ui/src/standalone/sidecar.ts:446",
+    "packages/research-kernel/src/kernel.ts:6987",
+    "packages/research-kernel/src/pty-local.ts:45",
+    "packages/research-kernel/src/pty-local.ts:45"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 6,
+   "dev": 7,
+   "evidence": [
+    "packages/research-client/src/index.ts:504",
+    "packages/research-kernel/src/server.ts:2179",
+    "packages/research-schemas/src/execution-target.ts:259",
+    "workers/runner-gateway/src/remote-agent.ts:937",
+    "workers/runner-gateway/src/remote-fleet-server.ts:654"
+   ]
+  },
+  "net_server": {
+   "src": 7,
+   "dev": 13,
+   "evidence": [
+    "packages/dsh-research-ui/src/standalone/server.ts:1126",
+    "packages/research-kernel/src/server.ts:3551",
+    "src/plugin/chat-agent-service.ts:93",
+    "src/plugin/chat-agent-service.ts:131",
+    "workers/runner-gateway/src/fleet-cli.ts:131"
+   ]
+  },
+  "fs_write": {
+   "src": 91,
+   "dev": 165,
+   "evidence": [
+    "evals/golden-path-v2/fixture-repo/baseline.js:87",
+    "evals/golden-path-v2/fixture-repo/train.js:96",
+    "packages/dsh-research-ui/src/standalone/server.ts:25",
+    "packages/dsh-research-ui/src/standalone/server.ts:260",
+    "packages/dsh-research-ui/src/standalone/server.ts:353"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 279,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×23 src, e.g. packages/dsh-research-ui/src/standalone/sidecar.ts:17, packages/dsh-research-ui/src/standalone/sidecar.ts:446"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×6 src, e.g. packages/research-client/src/index.ts:504, packages/research-kernel/src/server.ts:2179"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×7 src, e.g. packages/dsh-research-ui/src/standalone/server.ts:1126, packages/research-kernel/src/server.ts:3551"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_SCHOLAR_DSH_PLUGIN_TOKEN, DSH_SCHOLAR_KERNEL_TOKEN, DSH_SCHOLAR_SERVICE_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,131 @@
+{
+ "repo": "PlutoKeating/dsh-lark-bot",
+ "stars": 21,
+ "description": "dsh-lark-bot：把 DeepSeek Harness (dsh) 桥接进飞书/Lark 的 bot，扫码即用：流式卡片、项目工作区、并行任务、多角色 Agent、跨会话通知、对话内模型/密钥管理与安全网守护（dsh 崩溃后飞书仍可自救）。A scan-to-connect bridge bot connecting DeepSeek Harness (dsh) into Feishu/L",
+ "pushed_at": "2026-08-17T21:57:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lark-bot",
+ "deps": [
+  "@agentclientprotocol/sdk",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-sdk-client",
+  "@deepseek-ai/dsh-tools",
+  "@larksuite/channel",
+  "commander",
+  "cross-spawn",
+  "qrcode-terminal",
+  "yaml",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "invariants",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {
+  "api.github.com": 3,
+  "npm.pkg.github.com": 1,
+  "open.larksuite.com": 2,
+  "open.feishu.cn": 2,
+  "www.kingapi.xyz": 1,
+  "applink.feishu.cn": 1,
+  "api.deepseek.com": 1,
+  "www.apple.com": 1
+ },
+ "env": {
+  "GITHUB_PACKAGE_SCOPE": 1,
+  "GITHUB_ACTIONS": 1,
+  "DSH_LARK_NOTIFY_URL": 4,
+  "DSH_LARK_NOTIFY_TOKEN": 7,
+  "DSH_LARK_ASK_URL": 4,
+  "DSH_HOME": 2,
+  "DSH_LARK_UPGRADE_CHECK": 2,
+  "DSH_LARK_SETUP_PACKAGE": 1,
+  "DSH_LARK_HOME": 2,
+  "APPDATA": 2,
+  "DSH_LARK_GUARDIAN_SAFE_ADAPTER": 1,
+  "DSH_LARK_GUARDIAN_SAFE_TIMEOUT_MS": 1,
+  "DSH_LARK_GUARDIAN_CARD_DENSITY": 1,
+  "DSH_LARK_DISABLED": 1,
+  "DSH_LARK_GUARDIAN_BRIDGE_PROFILE": 1,
+  "DSH_LARK_UPGRADE_REGISTRY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 28,
+   "dev": 4,
+   "evidence": [
+    "scripts/probe-dsh-compat.mjs:10",
+    "scripts/probe-dsh-compat.mjs:19",
+    "scripts/probe-dsh-compat.mjs:102",
+    "scripts/probe-dsh-compat.mjs:163",
+    "scripts/publish-dual-packages.mjs:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/notify/server.ts:59"
+   ]
+  },
+  "fs_write": {
+   "src": 28,
+   "dev": 63,
+   "evidence": [
+    "scripts/generate-release-checksums.mjs:19",
+    "scripts/generate-release-checksums.mjs:34",
+    "scripts/monitor-impostor-repo.mjs:217",
+    "scripts/probe-dsh-compat.mjs:59",
+    "scripts/probe-dsh-compat.mjs:80"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 177,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×28 src, e.g. scripts/probe-dsh-compat.mjs:10, scripts/probe-dsh-compat.mjs:19"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/notify/server.ts:59"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_LARK_NOTIFY_TOKEN"
+  }
+ ],
+ "level": 3
+}

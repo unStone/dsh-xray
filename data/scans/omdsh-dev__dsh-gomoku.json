@@ -1,0 +1,90 @@
+{
+ "repo": "omdsh-dev/dsh-gomoku",
+ "stars": 13,
+ "description": "在DSH中与AI下五子棋，也可以让AI对局，看哪个AI棋力更强",
+ "pushed_at": "2026-08-15T05:42:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@yejiming/dsh-gomoku",
+ "deps": [
+  "schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "llm",
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

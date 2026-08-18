@@ -1,0 +1,89 @@
+{
+ "repo": "dhicoc/dsh-chinese-traditional-wisdom-skill",
+ "stars": 10,
+ "description": "中华传统智慧（玄枢）AI Agent 技能包的 DeepSeek Harness（dsh）Cordis 插件：八字/紫微/六爻/梅花/奇门/风水/五运六气/体质全融合，本地确定性引擎 + 可视化 Dashboard，一行 dsh plugin add 安装。",
+ "pushed_at": "2026-08-16T15:06:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dhicoc/dsh-chinese-traditional-wisdom-skill",
+ "deps": [
+  "@radix-ui/react-slot",
+  "@vitejs/plugin-react",
+  "3meta",
+  "autoprefixer",
+  "class-variance-authority",
+  "clsx",
+  "iztro",
+  "lunar-typescript",
+  "postcss",
+  "react",
+  "react-dom",
+  "tailwind-merge",
+  "tailwindcss",
+  "typescript",
+  "vite"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "playwright.dev": 1,
+  "zgjm.org": 1
+ },
+ "env": {
+  "TEST_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "skills/apps/visual/scripts/generate-verify-page.mjs:15",
+    "skills/apps/visual/scripts/generate-verify-page.mjs:370"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 279,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

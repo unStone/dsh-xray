@@ -1,0 +1,184 @@
+{
+ "repo": "zuorn/Tydora",
+ "stars": 32,
+ "description": "Let Your Ideas Flow — Tydora is a modern desktop Markdown editor combining WYSIWYG editing, bidirectional links, mind maps, and an infinite canvas — empowering deep thinking and effortless expression.",
+ "pushed_at": "2026-08-17T16:43:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "tydora",
+ "deps": [
+  "@abstractwebunit/markdown-publish",
+  "@codemirror/autocomplete",
+  "@codemirror/commands",
+  "@codemirror/lang-cpp",
+  "@codemirror/lang-css",
+  "@codemirror/lang-html",
+  "@codemirror/lang-java",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/lang-python",
+  "@codemirror/lang-rust",
+  "@codemirror/lang-xml",
+  "@codemirror/lang-yaml",
+  "@codemirror/language",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@lezer/highlight",
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-clipboard-manager",
+  "@tauri-apps/plugin-dialog",
+  "@tauri-apps/plugin-fs",
+  "@tauri-apps/plugin-process",
+  "@tauri-apps/plugin-updater",
+  "@tauri-apps/plugin-window-state",
+  "@tiptap/core",
+  "@tiptap/extension-blockquote",
+  "@tiptap/extension-bold",
+  "@tiptap/extension-bullet-list",
+  "@tiptap/extension-code",
+  "@tiptap/extension-code-block-lowlight",
+  "@tiptap/extension-hard-break",
+  "@tiptap/extension-heading",
+  "@tiptap/extension-highlight",
+  "@tiptap/extension-image",
+  "@tiptap/extension-italic",
+  "@tiptap/extension-link",
+  "@tiptap/extension-list-item",
+  "@tiptap/extension-mathematics",
+  "@tiptap/extension-ordered-list",
+  "@tiptap/extension-paragraph",
+  "@tiptap/extension-placeholder",
+  "@tiptap/extension-strike",
+  "@tiptap/extension-table",
+  "@tiptap/extension-table-cell",
+  "@tiptap/extension-table-header",
+  "@tiptap/extension-table-row",
+  "@tiptap/extension-task-item",
+  "@tiptap/extension-task-list",
+  "@tiptap/extension-typography",
+  "@tiptap/pm",
+  "@tiptap/react",
+  "@tiptap/starter-kit",
+  "@types/d3",
+  "@xyflow/react",
+  "d3",
+  "d3-force",
+  "docx",
+  "highlight.js",
+  "html-to-image",
+  "html2canvas",
+  "i18next",
+  "immer",
+  "jspdf",
+  "katex",
+  "lowlight",
+  "markdown-it",
+  "markmap-lib",
+  "markmap-view",
+  "mermaid",
+  "prosemirror-markdown",
+  "react",
+  "react-dom",
+  "react-i18next",
+  "tiptap-markdown",
+  "zustand"
+ ],
+ "install_scripts": {
+  "postinstall": "patch-package"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "cdn.jsdelivr.net": 4,
+  "www.google.com": 1,
+  "gateway.umami.is": 2,
+  "asset.localhost": 1,
+  "vitejs.dev": 1
+ },
+ "env": {
+  "BASE_HREF": 3,
+  "EDGEONE_API_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-docs.mjs:8",
+    "scripts/build-docs.mjs:8",
+    "scripts/build-docs.mjs:38",
+    "scripts/deploy-edgeone.mjs:17",
+    "scripts/deploy-edgeone.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/export/docx.ts:97",
+    "src/export/index.ts:57",
+    "src/export/xiaohongshu/save.ts:13"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 27,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-docs.mjs:9",
+    "scripts/build-docs.mjs:9",
+    "scripts/build-docs.mjs:32",
+    "scripts/build-docs.mjs:46",
+    "scripts/copy-landing.mjs:6"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 131,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: patch-package"
+  },
+  {
+   "id": "exec",
+   "evidence": "×14 src, e.g. scripts/build-docs.mjs:8, scripts/build-docs.mjs:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. src/export/docx.ts:97, src/export/index.ts:57"
+  },
+  {
+   "id": "token_env",
+   "evidence": "EDGEONE_API_TOKEN"
+  }
+ ],
+ "level": 3
+}

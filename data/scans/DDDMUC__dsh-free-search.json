@@ -1,0 +1,110 @@
+{
+ "repo": "DDDMUC/dsh-free-search",
+ "stars": 15,
+ "description": "Free web search provider for DeepSeek Harness - DuckDuckGo backend, no API key needed",
+ "pushed_at": "2026-08-18T07:32:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-free-search",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "duckduckgo.com": 2,
+  "www.bing.com": 2,
+  "anysearch.com": 1,
+  "dashboard.exa.ai": 1,
+  "www.perplexity.ai": 1,
+  "platform.deepseek.com": 1,
+  "html.duckduckgo.com": 1,
+  "lite.duckduckgo.com": 1,
+  "opnxng.com": 1,
+  "priv.au": 1,
+  "searx.be": 1,
+  "searx.tiekoetter.com": 1,
+  "search.inetol.net": 1,
+  "paulgo.io": 1,
+  "api.anysearch.com": 1,
+  "mcp.exa.ai": 1,
+  "api.github.com": 1,
+  "www.v2ex.com": 2,
+  "api.bilibili.com": 1,
+  "www.bilibili.com": 1,
+  "old.reddit.com": 1,
+  "api.exa.ai": 1,
+  "api.perplexity.ai": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tools/server.mjs:33"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "tools/server.mjs:2",
+    "tools/server.mjs:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. tools/server.mjs:33"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,94 @@
+{
+ "repo": "Xenia0922/dsh-opencode-go-usage",
+ "stars": 10,
+ "description": "DeepSeek Harness 插件:OpenCode Go 用量与花费悬浮仪表盘(配额、逐请求成本、模型/来源分布)",
+ "pushed_at": "2026-08-17T17:31:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-opencode-go-usage",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "opencode.ai": 18
+ },
+ "env": {
+  "OCGO_DISABLE_UPDATE": 2,
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-cdp.mjs:8",
+    "scripts/verify-cdp.mjs:8",
+    "scripts/verify-cdp.mjs:61"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-cdp.mjs:15"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 9,
+   "evidence": [
+    "lib/index.js:2",
+    "scripts/build-lib.mjs:12",
+    "scripts/build-lib.mjs:39",
+    "scripts/build-lib.mjs:48",
+    "scripts/build-lib.mjs:70"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 24,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/verify-cdp.mjs:8, scripts/verify-cdp.mjs:8"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/verify-cdp.mjs:15"
+  }
+ ],
+ "level": 3
+}

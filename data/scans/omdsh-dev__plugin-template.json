@@ -1,0 +1,87 @@
+{
+ "repo": "omdsh-dev/plugin-template",
+ "stars": 11,
+ "description": "基于原turtle ui官方仓库创建的plugin模板仓库",
+ "pushed_at": "2026-08-17T03:02:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@your-scope/dsh-plugin-template",
+ "deps": [
+  "cordis",
+  "schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "invariants"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HARNESS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:30",
+    "scripts/extract-patch.mjs:40",
+    "scripts/extract-patch.mjs:116",
+    "scripts/extract-patch.mjs:117"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/extract-patch.mjs:107",
+    "scripts/extract-patch.mjs:115",
+    "scripts/prepare.mjs:1",
+    "scripts/prepare.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/extract-patch.mjs:30, scripts/extract-patch.mjs:30"
+  }
+ ],
+ "level": 3
+}

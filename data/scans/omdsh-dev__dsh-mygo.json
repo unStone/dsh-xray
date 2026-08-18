@@ -1,0 +1,179 @@
+{
+ "repo": "omdsh-dev/dsh-mygo",
+ "stars": 11,
+ "description": "",
+ "pushed_at": "2026-08-17T09:18:20Z",
+ "status": "ok",
+ "manifest": {
+  "mygo": {
+   "compatibility": {
+    "depends": {
+     "service:mygo-core": ">=0.1.0"
+    }
+   },
+   "provides": [
+    "service:mygo-session-reader"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-external/mygo-rdb",
+ "deps": [
+  "@deepseek-ai/dsh-mygo",
+  "pg",
+  "cordis",
+  "schemastery",
+  "@deepseek-ai/dsh-mygo",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-mygo-api",
+  "@deepseek-ai/dsh-paths",
+  "schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
+  "schemastery",
+  "cordis",
+  "@deepseek-ai/cordis",
+  "schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "schemastery",
+  "cordis",
+  "@deepseek-ai/dsh-mygo",
+  "@deepseek-ai/dsh-mygo-api",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "node build.mjs"
+ },
+ "injects": [
+  "absent",
+  "anything",
+  "httpServer",
+  "invariants",
+  "missing",
+  "pluginManager",
+  "present",
+  "sessionPersistence",
+  "sessions",
+  "settings",
+  "slots",
+  "storage",
+  "storageDomain",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/settled",
+  "agent/status",
+  "connection/reset",
+  "internal/plugin",
+  "llm/stream",
+  "pi-ext/from-plugin",
+  "pi-ext/secret",
+  "session/created",
+  "session/disposed",
+  "session/event",
+  "system-prompt/change",
+  "test/emit",
+  "test/parallel",
+  "test/serial",
+  "test/waterfall",
+  "tools/change",
+  "tools/execute"
+ ],
+ "tool_regs": 65,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 5,
+  "DSH_RDB_POSTGRES": 1,
+  "DSH_BIN": 1,
+  "DSH_INSTALL_DIR": 1,
+  "DSH_CHECKOUT": 3,
+  "DSH_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 27,
+   "dev": 8,
+   "evidence": [
+    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5",
+    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5",
+    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:26",
+    "packages/cordis/mygo-cli/scripts/prepare.mjs:5",
+    "packages/cordis/mygo-cli/scripts/prepare.mjs:5"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/cordis/mygo/src/service.ts:769"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/cordis/mygo/src/package/lockfile.ts:112"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 10,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 55,
+   "dev": 121,
+   "evidence": [
+    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:1",
+    "packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:19",
+    "packages/cordis/mygo-cli/scripts/prepare.mjs:1",
+    "packages/cordis/mygo-cli/scripts/prepare.mjs:19",
+    "packages/cordis/mygo-cli/src/init.ts:145"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 5,
+   "evidence": [
+    "packages/cordis/mygo/src/package/entry-loader.ts:17",
+    "packages/cordis/mygo/src/package/mixin-engine.ts:134",
+    "packages/cordis/mygo/src/package/symbol-verify.ts:100",
+    "vendor/dsh-mygo-panel/src/index.ts:331",
+    "vendor/dsh-mygo-panel/tsdown.config.mjs:13"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 203,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×27 src, e.g. packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5, packages/cordis/mygo-cli/assets/plugin-template/scripts/prepare.mjs:5"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/cordis/mygo/src/service.ts:769"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/cordis/mygo/src/package/lockfile.ts:112"
+  }
+ ],
+ "level": 3
+}

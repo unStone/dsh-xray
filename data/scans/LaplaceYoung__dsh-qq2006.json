@@ -1,0 +1,79 @@
+{
+ "repo": "LaplaceYoung/dsh-qq2006",
+ "stars": 15,
+ "description": "DSH (DeepSeek Harness) 的 QQ2006 皮肤插件：注册 qq2006 主题、镜像 body[data-ds-skin]、全局皮肤表与完整素材",
+ "pushed_at": "2026-08-15T07:28:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-qq2006",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-invariants"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

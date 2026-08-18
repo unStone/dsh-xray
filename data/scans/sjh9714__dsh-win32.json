@@ -1,0 +1,111 @@
+{
+ "repo": "sjh9714/dsh-win32",
+ "stars": 11,
+ "description": "在 Windows 上把 DSH 用起来。一行装好极简模式的持久 shell，沙箱内也能用 | Get DSH working on Windows: persistent shell for Minimal mode, sandbox included",
+ "pushed_at": "2026-08-18T06:43:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-win32",
+ "deps": [
+  "playwright",
+  "iconv-lite",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-fs-sandbox",
+  "@deepseek-ai/dsh-subprocess-local"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "git-scm.com": 1,
+  "frippery.org": 2
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "ProgramFiles": 9,
+  "FPS": 1,
+  "OUT": 2,
+  "MOVIE": 1,
+  "FRAMES": 1,
+  "PAGE": 1,
+  "W": 1,
+  "H": 1,
+  "SMOKE_BASH": 10,
+  "SMOKE_CHAIN": 1,
+  "PROBE_NODE_OVERRIDE": 2,
+  "PROBE_NODE_PATH": 1,
+  "SANDBOX_MODE": 1,
+  "SMOKE_SHELL_ARGS": 2,
+  "CLI_ARGS": 1,
+  "DSH_WINDOWS_BASH": 1,
+  "LOCALAPPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 38,
+   "dev": 8,
+   "evidence": [
+    "bin/cli.mjs:8",
+    "bin/cli.mjs:8",
+    "bin/cli.mjs:33",
+    "bin/cli.mjs:64",
+    "bin/cli.mjs:276"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 22,
+   "evidence": [
+    "bin/cli.mjs:9",
+    "bin/cli.mjs:9",
+    "bin/cli.mjs:330",
+    "bin/cli.mjs:354",
+    "scripts/pwsh-sandbox-probe.mjs:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/pwsh-sandbox-probe.mjs:147",
+    "scripts/win32-sim.mjs:23"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×38 src, e.g. bin/cli.mjs:8, bin/cli.mjs:8"
+  }
+ ],
+ "level": 3
+}

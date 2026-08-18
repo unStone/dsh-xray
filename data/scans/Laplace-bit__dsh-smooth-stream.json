@@ -1,0 +1,102 @@
+{
+ "repo": "Laplace-bit/dsh-smooth-stream",
+ "stars": 23,
+ "description": "DeepSeek Harness (dsh) plugin: silky streaming reveal, no flicker. dsh 丝滑流式渲染插件。",
+ "pushed_at": "2026-08-18T00:48:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ]
+  }
+ },
+ "pkg_name": "dsh-smooth-stream",
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "slots"
+ ],
+ "hooks": [
+  "slots/changed"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/profile-installation.ts:3",
+    "src/profile-installation.ts:109"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/profile-installation.ts:3, src/profile-installation.ts:109"
+  }
+ ],
+ "level": 3
+}
