@@ -60,6 +60,7 @@ en: {
   'f6.q': 'Only dsh?',
   'f6.a': 'For now. The capability model is not dsh-specific, and support for other plugin formats such as Abu-Cowork and Claude Code is on the roadmap.',
   // ecosystem links
+  'plug.title': 'Use it inside dsh', 'plug.b': 'The companion plugin answers the same question in the agent, while you are deciding whether to install something.', 'plug.cta': 'Get the plugin',
   'coll.title': 'Browse by capability',
   'coll.b': 'Every plugin that can do a particular thing, in one list.',
   'eco.title': 'The rest of the ecosystem',
@@ -138,6 +139,7 @@ zh: {
   'f5.a': '可以。Apache-2.0 的 Python 代码,不依赖任何服务。克隆仓库后对你自己的清单跑发现和扫描流水线即可。',
   'f6.q': '只支持 dsh 吗?',
   'f6.a': '目前是。但这套能力模型并非 dsh 专属,支持 Abu-Cowork、Claude Code 等其他插件格式已在路线图上。',
+  'plug.title': '在 dsh 内部直接用', 'plug.b': '配套插件把同一个问题的答案送到你面前——就在你决定要不要装它的那一刻。', 'plug.cta': '获取插件',
   'coll.title': '按能力浏览',
   'coll.b': '能做某一件事的插件,全部列在一页里。',
   'eco.title': '生态里的其他项目',
@@ -216,6 +218,7 @@ ja: {
   'f5.a': 'できます。Apache-2.0 の Python でサービス依存はありません。リポジトリをクローンし、自分のリストに対して実行してください。',
   'f6.q': 'dsh 専用ですか?',
   'f6.a': '今のところは。能力モデル自体は dsh 固有ではなく、Abu-Cowork や Claude Code など他形式への対応はロードマップにあります。',
+  'plug.title': 'dsh の中で使う', 'plug.b': 'コンパニオンプラグインが、インストールを判断するその場で同じ問いに答えます。', 'plug.cta': 'プラグインを入手',
   'coll.title': '能力から探す',
   'coll.b': '特定のことができるプラグインを一覧で。',
   'eco.title': 'エコシステムの他のプロジェクト',

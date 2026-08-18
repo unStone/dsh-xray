@@ -55,6 +55,18 @@ Levels measure **capability surface and transparency, not maliciousness**. A C3 
 be entirely legitimate — a desktop shell genuinely needs subprocesses.
 [See the levels explained visually](https://unstone.github.io/dsh-xray/levels.html).
 
+## Use it inside dsh
+
+[dsh-xray-plugin](https://github.com/unStone/dsh-xray-plugin) puts the lookup where the question comes up — in the agent, while you are deciding whether to install something.
+
+```sh
+dsh plugin add unStone/dsh-xray-plugin
+```
+
+> Is `tt-a1i/archify` safe to install?
+
+> Audit the plugins I have installed.
+
 ## Badge
 
 Plugin authors: show users your capability card.
