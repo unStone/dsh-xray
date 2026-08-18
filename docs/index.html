@@ -64,6 +64,16 @@
   <div class="banner"><span data-i18n="report.banner"></span> <a id="reportCta" href="report.html" data-i18n="report.read"></a></div>
 </div>
 
+<section id="primer">
+  <h2 data-i18n="primer.title"></h2>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="p1.t"></h3><p data-i18n="p1.b"></p></div>
+    <div class="card"><h3 data-i18n="p2.t"></h3><p data-i18n="p2.b"></p></div>
+    <div class="card"><h3 data-i18n="p3.t"></h3><p data-i18n="p3.b"></p></div>
+  </div>
+  <p style="margin-top:14px"><a href="report.html?doc=plugins" data-i18n="primer.more"></a></p>
+</section>
+
 <section>
   <h2 data-i18n="why.title"></h2>
   <p class="lead" data-i18n="why.p"></p>
@@ -92,6 +102,44 @@
   <p class="note" data-i18n="levels.note"></p>
 </section>
 
+<section id="check">
+  <h2 data-i18n="check.title"></h2>
+  <div class="cards">
+    <div class="card"><div class="n">1</div><h3 data-i18n="c1.t"></h3><p data-i18n="c1.b"></p></div>
+    <div class="card"><div class="n">2</div><h3 data-i18n="c2.t"></h3><p data-i18n="c2.b"></p></div>
+    <div class="card"><div class="n">3</div><h3 data-i18n="c3.t"></h3><p data-i18n="c3.b"></p></div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 data-i18n="faq.title"></h2>
+  <div class="faq">
+    <details><summary data-i18n="f1.q"></summary><p data-i18n="f1.a"></p></details>
+    <details><summary data-i18n="f2.q"></summary><p data-i18n="f2.a"></p></details>
+    <details><summary data-i18n="f3.q"></summary><p data-i18n="f3.a"></p></details>
+    <details><summary data-i18n="f4.q"></summary><p data-i18n="f4.a"></p></details>
+    <details><summary data-i18n="f5.q"></summary><p data-i18n="f5.a"></p></details>
+    <details><summary data-i18n="f6.q"></summary><p data-i18n="f6.a"></p></details>
+  </div>
+</section>
+
+<section id="ecosystem">
+  <h2 data-i18n="eco.title"></h2>
+  <p class="lead" data-i18n="eco.b"></p>
+  <div class="cards">
+    <a class="card link-card" href="https://github.com/deepseek-ai/deepseek-harness">
+      <h3>DeepSeek Harness <span class="star">156k★</span></h3><p data-i18n="eco.dsh"></p></a>
+    <a class="card link-card" href="https://github.com/cordiverse/cordis">
+      <h3>Cordis <span class="star">5.9k★</span></h3><p data-i18n="eco.cordis"></p></a>
+    <a class="card link-card" href="https://github.com/awesome-dsh-plugin/awesome-dsh-plugin">
+      <h3>awesome-dsh-plugin <span class="star">8.2k★</span></h3><p data-i18n="eco.awesome"></p></a>
+    <a class="card link-card" href="https://github.com/Noob-stupid/dsh-plugin-hub">
+      <h3>dsh-plugin-hub <span class="star">50★</span></h3><p data-i18n="eco.hub"></p></a>
+    <a class="card link-card" href="https://github.com/PM-Shawn/Abu-Cowork">
+      <h3>Abu-Cowork <span class="star">333★</span></h3><p data-i18n="eco.abu"></p></a>
+  </div>
+</section>
+
 <section id="badge">
   <h2 data-i18n="badge.title"></h2>
   <p class="lead" data-i18n="badge.b"></p>
@@ -114,6 +162,20 @@
 <script>
 xray.applyStatic();
 xray.mountSwitcher(document.getElementById('langSwitch'));
+
+// FAQPage markup, generated from the active locale so it matches what readers see.
+(function () {
+  const qa = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'].map(k => ({
+    '@type': 'Question',
+    name: xray.t(k + '.q'),
+    acceptedAnswer: { '@type': 'Answer', text: xray.t(k + '.a') },
+  }));
+  const el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.textContent = JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: qa });
+  document.head.appendChild(el);
+})();
+
 fetch('data.json').then(r => r.json()).then(d => {
   const ok = d.plugins.filter(p => p.level >= 0);
   const c = l => ok.filter(p => p.level === l).length;
