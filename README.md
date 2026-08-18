@@ -36,7 +36,13 @@ python scanner/discover.py 3        # top repos via topic:dsh-plugin (needs gh a
 cd scanner && python pipeline.py 200 8   # tarball-download + scan, no git clone
 ```
 
-Outputs: `data/scans/*.json` (full cards), `docs/data.json` (site data), `docs/badge/*.json` (shields endpoints). A daily GitHub Action refreshes everything.
+Outputs: `data/scans/*.json` (full cards), `docs/data.json` (site data), `docs/badge/*.json` (shields endpoints).
+
+A daily GitHub Action (`.github/workflows/scan.yml`) refreshes everything. Pushing that file needs the `workflow` OAuth scope:
+
+```bash
+gh auth refresh -s workflow && git -C . add .github/workflows/scan.yml && git commit -m "ci: daily scan" && git push
+```
 
 ## Methodology & fair play
 
