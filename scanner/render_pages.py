@@ -46,6 +46,23 @@ def esc(s):
     return html.escape(str(s or ''), quote=True)
 
 
+def star_bucket(n):
+    """Display stars coarsely.
+
+    Exact counts drift daily, which would rewrite every one of ~4000 pages on
+    every scan and bloat the repository for no reader benefit. Buckets stay
+    stable for weeks.
+    """
+    if n >= 10000:
+        return f'{n // 1000}k+'
+    if n >= 1000:
+        return f'{n / 1000:.1f}k'
+    for edge in (500, 100, 50, 10, 5, 1):
+        if n >= edge:
+            return f'{edge}+'
+    return '0'
+
+
 def page(p):
     repo = p['repo']
     slug = repo.replace('/', '__')
@@ -134,7 +151,7 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
     <span class="lvl-pill">{lvl_badge}</span>
   </div>
   <p class="lede">{esc(p.get('description'))}</p>
-  <p class="lede">★ {p.get('stars', 0)} · <a href="https://github.com/{esc(repo)}">source on GitHub</a>
+  <p class="lede">★ {star_bucket(p.get('stars', 0))} · <a href="https://github.com/{esc(repo)}">source on GitHub</a>
      · <a href="../registry.html#{esc(slug)}">open in the registry</a></p>
   <p>{esc(summary)}</p>
   {flags_table}

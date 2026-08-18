@@ -44,7 +44,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">A curated distribution of DeepSeek Harness. Overlay, not a fork.</p>
-  <p class="lede">★ 3 · <a href="https://github.com/amplifthq/oh-my-dsh">source on GitHub</a>
+  <p class="lede">★ 1+ · <a href="https://github.com/amplifthq/oh-my-dsh">source on GitHub</a>
      · <a href="../registry.html#amplifthq__oh-my-dsh">open in the registry</a></p>
   <p>amplifthq/oh-my-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, gates tool execution.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./bundles/omd.cordis.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>approval, subprocess, systemPrompt, tools/pre-execute</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 src, e.g. scripts/build-portable-distribution.mjs:21, scripts/build-portable-distribution.mjs:21</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. packages/kernel/src/index.ts:116</td></tr></tbody></table>

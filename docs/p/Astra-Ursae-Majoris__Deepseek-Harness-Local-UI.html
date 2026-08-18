@@ -44,7 +44,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness 本地桌面版（MIT）：🐍 Python 方案（小体积，可自编译，无 SmartScreen 拦截）+ 🖥 Electron 方案（85MB 现成 EXE，手势/托盘/快捷键屏蔽）。含对话大纲导航、回退/重新生成等增强。</p>
-  <p class="lede">★ 2 · <a href="https://github.com/Astra-Ursae-Majoris/Deepseek-Harness-Local-UI">source on GitHub</a>
+  <p class="lede">★ 1+ · <a href="https://github.com/Astra-Ursae-Majoris/Deepseek-Harness-Local-UI">source on GitHub</a>
      · <a href="../registry.html#Astra-Ursae-Majoris__Deepseek-Harness-Local-UI">open in the registry</a></p>
   <p>Astra-Ursae-Majoris/Deepseek-Harness-Local-UI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/ensure-spawn-helper.mjs</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×33 src, e.g. harness/apps/cli/src/plugin.ts:13, harness/apps/cli/src/plugin.ts:13</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. harness/packages/client/runtime/src/client/sessions/session.ts:276</td></tr></tbody></table>

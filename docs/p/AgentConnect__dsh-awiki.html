@@ -44,7 +44,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">AWiki identity and messaging plugin for DeepSeek Harness</p>
-  <p class="lede">★ 3 · <a href="https://github.com/AgentConnect/dsh-awiki">source on GitHub</a>
+  <p class="lede">★ 1+ · <a href="https://github.com/AgentConnect/dsh-awiki">source on GitHub</a>
      · <a href="../registry.html#AgentConnect__dsh-awiki">open in the registry</a></p>
   <p>AgentConnect/dsh-awiki is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, uses eval / new Function, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. lib/client.js:151</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×8 src, e.g. lib/client.js:1321, lib/client.js:1372</td></tr></tbody></table>

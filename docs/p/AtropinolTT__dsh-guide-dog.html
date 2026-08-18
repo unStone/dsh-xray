@@ -44,7 +44,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Guide Dog for DSH — MiniMax multimodal plugin: image/video/music/speech generation &amp; vision tools, voice mode, voice input. Real-time call mode implemented: streaming voice conversation, unified float</p>
-  <p class="lede">★ 4 · <a href="https://github.com/AtropinolTT/dsh-guide-dog">source on GitHub</a>
+  <p class="lede">★ 1+ · <a href="https://github.com/AtropinolTT/dsh-guide-dog">source on GitHub</a>
      · <a href="../registry.html#AtropinolTT__dsh-guide-dog">open in the registry</a></p>
   <p>AtropinolTT/dsh-guide-dog is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, gates tool execution.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./bundle/cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, webServer, tools/pre-execute</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 src, e.g. plugin-host.js:381, plugin-host.js:406</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×14 src, e.g. repro/repro-progress.js:20, repro/repro-progress.js:21</td></tr></tbody></table>
