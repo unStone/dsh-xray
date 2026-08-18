@@ -1,0 +1,100 @@
+{
+ "repo": "kirkchinese/DSH-Session-Move",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T12:22:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-session-move",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-message-feedback",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-workspace"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "messageFeedback",
+  "sessionMove",
+  "sessionPersistence",
+  "sessions",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "workspace/session-moved"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/apply-core-patches.mjs:7",
+    "scripts/apply-core-patches.mjs:7",
+    "scripts/apply-core-patches.mjs:21",
+    "scripts/make-release.mjs:21",
+    "scripts/make-release.mjs:21"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 2,
+   "evidence": [
+    "scripts/apply-core-patches.mjs:3",
+    "scripts/apply-core-patches.mjs:61",
+    "scripts/assembled-integration.mjs:32",
+    "scripts/make-release.mjs:30",
+    "scripts/make-release.mjs:32"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/assembled-integration.mjs:46"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/apply-core-patches.mjs:7, scripts/apply-core-patches.mjs:7"
+  }
+ ],
+ "level": 3
+}

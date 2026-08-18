@@ -1,0 +1,133 @@
+{
+ "repo": "lubaiUwU/DSH-WeChatClawBot",
+ "stars": 0,
+ "description": "DSH plugin: WeChat floating-ball bridge (QR login, message relay to agent)",
+ "pushed_at": "2026-08-17T10:52:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-wechat-clawbot",
+ "deps": [
+  "dsh-wechat-bot",
+  "dsh-client-wechat-ui",
+  "dsh-wechat-bridge",
+  "wechat-gateway",
+  "dsh-wechat-bridge",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "qrcode"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs",
+  "postinstall": "node scripts/link-peer-shims.mjs"
+ },
+ "injects": [
+  "agents"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/inbox/claimed",
+  "agent/request",
+  "approval/request",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 1,
+  "novac2c.cdn.weixin.qq.com": 1
+ },
+ "env": {
+  "DSH_NODE": 2,
+  "DSH_HOME": 1,
+  "APPDATA": 2,
+  "LOCALAPPDATA": 2,
+  "PORT": 1,
+  "STATE_DIR": 1,
+  "LOG_LEVEL": 1,
+  "UNAPPROVED_REPLY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "dsh-wechat-bot/index.js:21",
+    "dsh-wechat-bot/index.js:300",
+    "scripts/link-peer-shims.mjs:13",
+    "scripts/link-peer-shims.mjs:13",
+    "scripts/link-peer-shims.mjs:40"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "dsh-wechat-bot/index.js:395",
+    "dsh-wechat-bridge/index.js:477",
+    "wechat-gateway/gateway.mjs:573"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "dsh-wechat-bot/index.js:166",
+    "dsh-wechat-bot/index.js:168",
+    "dsh-wechat-bot/index.js:188",
+    "dsh-wechat-bridge/index.js:123",
+    "scripts/link-peer-shims.mjs:9"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/link-peer-shims.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. dsh-wechat-bot/index.js:21, dsh-wechat-bot/index.js:300"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. dsh-wechat-bot/index.js:395, dsh-wechat-bridge/index.js:477"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,95 @@
+{
+ "repo": "knGear/dsh-mobile",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T07:59:53Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "sessions"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "mobile-AndroidNotify",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "sessions",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/error",
+  "agent/status",
+  "dsh-notify/banner",
+  "session/event",
+  "tools/result"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "PREFIX": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "plugins/mobile-AndroidNotify/index.js:3",
+    "plugins/mobile-AndroidNotify/index.js:3",
+    "plugins/mobile-AndroidNotify/index.js:44",
+    "plugins/mobile-AndroidNotify/index.js:46",
+    "plugins/mobile-AndroidNotify/index.js:49"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-addone-mobile.mjs:11",
+    "scripts/dsh-addone-mobile.mjs:11",
+    "scripts/dsh-addone-mobile.mjs:28",
+    "scripts/dsh-addone-mobile.mjs:47",
+    "scripts/dsh-addone-mobile.mjs:52"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. plugins/mobile-AndroidNotify/index.js:3, plugins/mobile-AndroidNotify/index.js:3"
+  }
+ ],
+ "level": 2
+}

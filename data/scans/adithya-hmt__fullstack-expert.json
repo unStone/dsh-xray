@@ -1,0 +1,111 @@
+{
+ "repo": "adithya-hmt/fullstack-expert",
+ "stars": 0,
+ "description": "Cordis-native, evidence-driven full-stack engineering discipline for DeepSeek Harness agents",
+ "pushed_at": "2026-08-16T15:45:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/fullstack-expert",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "express",
+  "@supabase/supabase-js"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "session/event",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_CLI": 1,
+  "PNPM_CLI": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:1",
+    "scripts/consumer-smoke.mjs:1",
+    "scripts/consumer-smoke.mjs:105",
+    "scripts/consumer-smoke.mjs:109",
+    "scripts/consumer-smoke.mjs:110"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:2",
+    "scripts/consumer-smoke.mjs:2",
+    "scripts/consumer-smoke.mjs:113",
+    "scripts/consumer-smoke.mjs:116",
+    "scripts/profile-smoke.mjs:2"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. scripts/consumer-smoke.mjs:1, scripts/consumer-smoke.mjs:1"
+  }
+ ],
+ "level": 3
+}

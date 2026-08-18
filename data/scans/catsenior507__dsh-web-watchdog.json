@@ -1,0 +1,100 @@
+{
+ "repo": "catsenior507/dsh-web-watchdog",
+ "stars": 0,
+ "description": "Watchdog for the dsh web GUI: crash logging + exponential-backoff auto-restart supervisor + status panel",
+ "pushed_at": "2026-08-16T13:13:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-client-plugin-web-watchdog",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_WD_MARKER": 3,
+  "DSH_WD_EXIT_MS": 1,
+  "DSH_WD_EXIT_CODE": 1,
+  "DSH_WD_CRASH_ONCE": 1,
+  "DSH_WATCHDOG_DATA": 6,
+  "USERPROFILE": 2,
+  "DSH_WATCHDOG_PORT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "test-deployment.mjs:5",
+    "test-deployment.mjs:37",
+    "test-isolated.mjs:4",
+    "test-isolated.mjs:45",
+    "test-isolated.mjs:53"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:193",
+    "src/index.ts:237"
+   ]
+  },
+  "fs_write": {
+   "src": 25,
+   "dev": 0,
+   "evidence": [
+    "dummy-host.mjs:5",
+    "dummy-host.mjs:5",
+    "dummy-host.mjs:12",
+    "dummy-host.mjs:19",
+    "test-deployment.mjs:6"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. test-deployment.mjs:5, test-deployment.mjs:37"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:193, src/index.ts:237"
+  }
+ ],
+ "level": 3
+}

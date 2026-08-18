@@ -1,0 +1,81 @@
+{
+ "repo": "Isanti2016/dsh-quicksight",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T08:40:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-quicksight",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "QUICKSIGHT_TOOL_NAME": 1,
+  "QUICKSIGHT_OCR_PYTHON": 1,
+  "QUICKSIGHT_MODLENS_CLI": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh/index.js:19",
+    "dsh/index.js:207"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh/index.js:20",
+    "dsh/index.js:20",
+    "dsh/index.js:164",
+    "dsh/index.js:197"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. dsh/index.js:19, dsh/index.js:207"
+  }
+ ],
+ "level": 3
+}

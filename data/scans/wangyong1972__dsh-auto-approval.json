@@ -1,0 +1,68 @@
+{
+ "repo": "wangyong1972/dsh-auto-approval",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-17T08:04:39Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-auto-approval",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-user-approval"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "approval/request",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "src/audit.ts:1",
+    "src/audit.ts:1",
+    "src/audit.ts:68",
+    "src/audit.ts:87",
+    "src/patterns.ts:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 0
+}

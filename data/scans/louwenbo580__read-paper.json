@@ -1,0 +1,99 @@
+{
+ "repo": "louwenbo580/read-paper",
+ "stars": 0,
+ "description": "Paper review panel for the DeepSeek Harness: PDF to selectable text with figures, equations, and an ask-the-paper dialog",
+ "pushed_at": "2026-08-17T13:22:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ]
+  }
+ },
+ "pkg_name": "paper-review",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "arxiv.org": 3
+ },
+ "env": {
+  "PAPERS": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "eval/eval.mjs:6",
+    "eval/eval.mjs:6",
+    "eval/eval.mjs:13",
+    "eval/eval.mjs:53",
+    "lib/index.js:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 32,
+   "dev": 0,
+   "evidence": [
+    "eval/eval.mjs:4",
+    "eval/eval.mjs:71",
+    "eval/eval.mjs:72",
+    "eval/eval.mjs:80",
+    "lib/index.js:7"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. eval/eval.mjs:6, eval/eval.mjs:6"
+  }
+ ],
+ "level": 3
+}

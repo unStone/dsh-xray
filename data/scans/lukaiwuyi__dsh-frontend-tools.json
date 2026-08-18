@@ -1,0 +1,96 @@
+{
+ "repo": "lukaiwuyi/dsh-frontend-tools",
+ "stars": 0,
+ "description": "DSH plugin + client SDK: bridge your web, Electron, or Tauri app to DeepSeek Harness agents in real time — register frontend tools with a DSH KEY, one bridge for many apps.",
+ "pushed_at": "2026-08-16T06:51:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-frontend-tools",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery",
+  "dsh-frontend-tools-client",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "tools"
+ ],
+ "hooks": [
+  "approval/request",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "DSH_FRONTEND_TOOLS_URL": 1,
+  "DSH_FRONTEND_TOOLS_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 12,
+   "evidence": [
+    "scripts/verify-translation-pairing.ts:33",
+    "scripts/verify-translation-pairing.ts:153",
+    "scripts/verify-translation-pairing.ts:175",
+    "bridge/src/key-store.ts:18",
+    "bridge/src/key-store.ts:218"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_FRONTEND_TOOLS_KEY"
+  }
+ ],
+ "level": 3
+}

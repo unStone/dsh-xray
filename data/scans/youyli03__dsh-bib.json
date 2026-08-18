@@ -1,0 +1,103 @@
+{
+ "repo": "youyli03/dsh-bib",
+ "stars": 0,
+ "description": "Embed a controllable real-browser viewport inside DeepSeek Harness — shared by humans and AI agents via an Edge extension + local relay bridge.",
+ "pushed_at": "2026-08-17T11:45:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-bib",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "slots",
+  "subprocess",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 35,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "plugin/host.template.js:68",
+    "plugin-pkg/lib/index.js:85"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "bridge/bridge.js:184",
+    "bridge/bridge.js:186",
+    "bridge/bridge.js:199",
+    "plugin-pkg/lib/index.js:9",
+    "plugin-pkg/lib/index.js:9"
+   ]
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-host.mjs:7",
+    "scripts/build-host.mjs:27",
+    "scripts/deploy.mjs:16",
+    "scripts/deploy.mjs:58",
+    "scripts/make-plugin-pkg.mjs:6"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. plugin/host.template.js:68, plugin-pkg/lib/index.js:85"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. bridge/bridge.js:184, bridge/bridge.js:186"
+  }
+ ],
+ "level": 3
+}

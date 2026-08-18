@@ -1,0 +1,104 @@
+{
+ "repo": "Jiyr0119/dsh-service-console",
+ "stars": 0,
+ "description": "Local development service console for DeepSeek Harness: discovers listening ports, shows service ownership, and safely inspects/stops/restarts services. DSH 本地开发服务控制台。",
+ "pushed_at": "2026-08-17T12:22:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  },
+  "plugin": {
+   "id": "dsh-service-console",
+   "kind": "dynamic-cordis-plugin",
+   "host": "dynamic/host.js",
+   "client": "dynamic/client.js",
+   "hostHandler": "scan",
+   "clientSlots": [
+    "conversation.session.header.utilities",
+    "shell.overlay",
+    "settings.section"
+   ]
+  }
+ },
+ "pkg_name": "@jiyr0119/dsh-service-console",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 9,
+   "evidence": [
+    "dynamic/host.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/host/config.js:1",
+    "lib/host/config.js:37",
+    "src/host/config.ts:2",
+    "src/host/config.ts:41"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. dynamic/host.js:5"
+  }
+ ],
+ "level": 3
+}

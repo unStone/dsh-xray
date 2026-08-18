@@ -1,0 +1,114 @@
+{
+ "repo": "moononnn/DeepSeek-Harness-Hanako-Memory",
+ "stars": 0,
+ "description": "把openhanako的记忆系统搬进DSH的插件！",
+ "pushed_at": "2026-08-18T01:37:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-assistant-manager",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "js-yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "llm",
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/turn-stopping"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "lib/http.js:416",
+    "src/http.ts:456"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 42,
+   "dev": 133,
+   "evidence": [
+    "lib/presets.js:11",
+    "lib/presets.js:11",
+    "lib/presets.js:141",
+    "lib/presets.js:148",
+    "lib/presets.js:220"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 124,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/http.js:416, src/http.ts:456"
+  }
+ ],
+ "level": 3
+}

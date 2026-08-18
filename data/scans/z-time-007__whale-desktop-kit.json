@@ -1,0 +1,121 @@
+{
+ "repo": "z-time-007/whale-desktop-kit",
+ "stars": 0,
+ "description": "DeepSeek Harness 桌面增强套件（鲸跃）：壁纸、黑鲸鱼桌宠、工作区/对话框透明度、顶部快捷栏 + 个人助理（本地秘书/文档生成）、Office 文档安全读取、余额与 token 用量数据源、安全自动批准，外加原生 Electron 桌面应用。根目录即规范插件，dsh plugin add 一键安装全部 6 个增强。",
+ "pushed_at": "2026-08-17T09:32:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-whale-desktop-kit",
+ "deps": [
+  "docx",
+  "fflate",
+  "sharp",
+  "sharp",
+  "docx",
+  "fflate",
+  "sharp"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "sessionProjections",
+  "sessions",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 10,
+ "domains": {
+  "schemas.openxmlformats.org": 104,
+  "purl.org": 12,
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DSH_DESKTOP_PORT": 1,
+  "DSH_HOME": 12,
+  "USERPROFILE": 1,
+  "DSH_OFFICE_WORKSPACE": 3,
+  "SystemRoot": 2,
+  "DSH_ASSISTANT_ENABLED": 1,
+  "DSH_ASSISTANT_WORKSPACE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "desktop/main.js:26",
+    "desktop/main.js:105",
+    "desktop/main.js:154",
+    "plugins/dsh-desktop-app/src/desktop.js:29",
+    "plugins/personal-assistant/src/computer-status.js:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 17,
+   "dev": 11,
+   "evidence": [
+    "desktop/main.js:223",
+    "desktop/main.js:266",
+    "desktop/main.js:561",
+    "plugins/desktop-experience/src/config.js:125",
+    "plugins/dsh-desktop-app/build/Generate-DshAppIcons.mjs:66"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 58,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. desktop/main.js:26, desktop/main.js:105"
+  }
+ ],
+ "level": 3
+}

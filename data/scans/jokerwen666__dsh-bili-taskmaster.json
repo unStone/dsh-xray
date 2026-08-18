@@ -1,0 +1,102 @@
+{
+ "repo": "jokerwen666/dsh-bili-taskmaster",
+ "stars": 0,
+ "description": "等你的小鲸鱼跑任务时随机播放b站视频，愉快做监工",
+ "pushed_at": "2026-08-16T05:29:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-bili-taskmaster",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "shell",
+  "slots",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/session-start",
+  "agent/status"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.qrserver.com": 2,
+  "api.bilibili.com": 7,
+  "passport.bilibili.com": 2,
+  "www.bilibili.com": 7
+ },
+ "env": {
+  "ESBUILD_BIN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    ".dsh-plugin/index.mjs:228",
+    ".dsh-plugin/index.mjs:469",
+    ".dsh-plugin/index.mjs:751",
+    ".dsh-plugin/index.mjs:789",
+    "scripts/build-client.mjs:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:6",
+    "scripts/build-client.mjs:84"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. .dsh-plugin/index.mjs:228, .dsh-plugin/index.mjs:469"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,82 @@
+{
+ "repo": "nihaozyj7/dsh-desktop",
+ "stars": 0,
+ "description": "Go + Wails desktop shell for DeepSeek Harness: native window, engine supervision, self-update, and preview source builds",
+ "pushed_at": "2026-08-14T21:21:19Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop-frontend",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "wails.localhost": 1
+ },
+ "env": {
+  "DSH_NODE_EXE": 3,
+  "DSH_RELEASE_REPO": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "engine/build-engine.mjs:26",
+    "engine/build-engine.mjs:88",
+    "engine/build-engine.mjs:93",
+    "engine/build-engine.mjs:389",
+    "engine/build-engine.mjs:389"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/serve-update.mjs:28"
+   ]
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "engine/build-engine.mjs:448",
+    "scripts/gen-signing-key.mjs:9",
+    "scripts/gen-signing-key.mjs:18",
+    "scripts/make-icon.mjs:8",
+    "scripts/make-icon.mjs:99"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. engine/build-engine.mjs:26, engine/build-engine.mjs:88"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/serve-update.mjs:28"
+  }
+ ],
+ "level": 2
+}

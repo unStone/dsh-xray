@@ -1,0 +1,137 @@
+{
+ "repo": "NexusAgentX/dsh-mcp-adapter",
+ "stars": 0,
+ "description": "MCP adapter for DeepSeek Harness — one proxy tool instead of dumping every MCP schema into context.",
+ "pushed_at": "2026-08-14T05:42:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-commands",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-mcp-adapter",
+ "deps": [
+  "@modelcontextprotocol/client",
+  "@modelcontextprotocol/core",
+  "@napi-rs/keyring",
+  "ajv",
+  "ajv-formats",
+  "cross-spawn",
+  "open",
+  "smol-toml",
+  "strip-json-comments",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commandUi",
+  "locale",
+  "remote",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 5,
+ "domains": {
+  "agent-plugins.org": 2,
+  "mcp.deepwiki.com": 1,
+  "mcp.context7.com": 1,
+  "mcp.notion.com": 1,
+  "api.githubcopilot.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_MCP_DEBUG": 2,
+  "MCP_OAUTH_DIR": 1,
+  "MCP_OAUTH_CALLBACK_PORT": 2,
+  "NPM_CONFIG_CACHE": 2,
+  "MCP_OUTPUT_GUARD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "src/mcp-auth.ts:13",
+    "src/mcp-auth.ts:13",
+    "src/mcp-auth.ts:360",
+    "src/utils.ts:1",
+    "src/utils.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/mcp-callback-server.ts:356"
+   ]
+  },
+  "fs_write": {
+   "src": 22,
+   "dev": 4,
+   "evidence": [
+    "scripts/build-client.mjs:1",
+    "scripts/build-client.mjs:49",
+    "src/config.ts:1",
+    "src/config.ts:209",
+    "src/config.ts:284"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 53,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. src/mcp-auth.ts:13, src/mcp-auth.ts:13"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/mcp-callback-server.ts:356"
+  },
+  {
+   "id": "token_env",
+   "evidence": "MCP_OAUTH_CALLBACK_PORT, MCP_OAUTH_DIR"
+  }
+ ],
+ "level": 3
+}

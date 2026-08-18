@@ -1,0 +1,96 @@
+{
+ "repo": "hajimilvdou/dsh-store-server",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T03:35:06Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-store-server",
+ "deps": [
+  "@fastify/compress",
+  "fastify",
+  "ioredis",
+  "pg"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2,
+  "blog.1qwq1.top": 3,
+  "unpkg.com": 2,
+  "api.osv.dev": 1
+ },
+ "env": {
+  "GITHUB_TOKENS": 1,
+  "SYNC_MAX_REPOS": 2,
+  "GITHUB_OAUTH_CLIENT_ID": 1,
+  "GITHUB_OAUTH_CLIENT_SECRET": 1,
+  "JWT_SECRET": 1,
+  "ADMIN_TOKEN": 5,
+  "PORT": 1,
+  "HOST": 1,
+  "OAUTH_CALLBACK_URL": 1,
+  "CLUSTER_ID": 1,
+  "npm_package_version": 1,
+  "MIGRATIONS_DIR": 1,
+  "DATABASE_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/update.ts:1",
+    "src/update.ts:133",
+    "src/security/scan.ts:50",
+    "src/security/scan.ts:50",
+    "src/security/scan.ts:50"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:3",
+    "src/index.ts:99"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/update.ts:1, src/update.ts:133"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ADMIN_TOKEN, GITHUB_OAUTH_CLIENT_ID, GITHUB_OAUTH_CLIENT_SECRET, GITHUB_TOKENS, JWT_SECRET, OAUTH_CALLBACK_URL"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,98 @@
+{
+ "repo": "kanneiren/dsh-network-settings",
+ "stars": 0,
+ "description": "DSH Network Settings: Windows / WSL network path diagnostics and safe repair for DeepSeek Harness.",
+ "pushed_at": "2026-08-18T01:41:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-network-settings",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "connection",
+  "llm",
+  "locale",
+  "settings",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2,
+  "api.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/host/runtime/command.ts:2",
+    "src/host/runtime/command.ts:42"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 3,
+   "evidence": [
+    "src/host/configure/wslconfig.ts:56",
+    "src/host/repair/hosts.ts:52",
+    "src/host/repair/hosts.ts:65",
+    "src/host/runtime/store.ts:23",
+    "src/host/snapshot/store.ts:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 88,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/host/runtime/command.ts:2, src/host/runtime/command.ts:42"
+  }
+ ],
+ "level": 3
+}

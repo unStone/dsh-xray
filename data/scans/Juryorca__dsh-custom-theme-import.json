@@ -2,7 +2,7 @@
  "repo": "Juryorca/dsh-custom-theme-import",
  "stars": 1,
  "description": "",
- "pushed_at": "2026-08-18T08:24:30Z",
+ "pushed_at": "2026-08-18T09:11:06Z",
  "status": "ok",
  "manifest": {
   "bundle": {
@@ -27,32 +27,32 @@
   "connection",
   "locale",
   "slots",
-  "theme"
+  "theme",
+  "webServer"
  ],
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "DSH_SKIN_PROFILE": 2,
+  "DSH_PROFILE": 2,
+  "DSH_HOME": 2
+ },
  "behaviors": {
   "exec": {
    "src": 4,
    "dev": 0,
    "evidence": [
     "lib/index.js:6",
-    "lib/index.js:155",
+    "lib/index.js:105",
     "src/index.js:6",
-    "src/index.js:155"
+    "src/index.js:105"
    ]
   },
   "eval": {
-   "src": 4,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "lib/client.js:499",
-    "lib/client.js:501",
-    "src/client.js:493",
-    "src/client.js:495"
-   ]
+   "evidence": []
   },
   "base64_decode": {
    "src": 0,
@@ -65,7 +65,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 27,
+   "src": 23,
    "dev": 0,
    "evidence": [
     "build.mjs:5",
@@ -92,11 +92,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×4 src, e.g. lib/index.js:6, lib/index.js:155"
-  },
-  {
-   "id": "eval",
-   "evidence": "×4 src, e.g. lib/client.js:499, lib/client.js:501"
+   "evidence": "×4 src, e.g. lib/index.js:6, lib/index.js:105"
   }
  ],
  "level": 3

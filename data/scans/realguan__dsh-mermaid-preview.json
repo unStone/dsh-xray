@@ -1,0 +1,95 @@
+{
+ "repo": "realguan/dsh-mermaid-preview",
+ "stars": 0,
+ "description": "Render Mermaid fenced code blocks as diagrams in DeepSeek Harness (dsh) web — a dynamic Cordis client plugin, no shell changes needed.",
+ "pushed_at": "2026-08-14T05:13:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-mermaid-preview",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "cdn.jsdelivr.net": 4
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client-bundle.mjs:32",
+    "scripts/build-client-bundle.mjs:32",
+    "scripts/build-client-bundle.mjs:87",
+    "scripts/build-dynamic.mjs:23",
+    "scripts/build-dynamic.mjs:23"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/serve-demo.mjs:30"
+   ]
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client-bundle.mjs:31",
+    "scripts/build-client-bundle.mjs:83",
+    "scripts/build-dynamic.mjs:20",
+    "scripts/build-dynamic.mjs:20",
+    "scripts/build-dynamic.mjs:38"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build-client-bundle.mjs:32, scripts/build-client-bundle.mjs:32"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/serve-demo.mjs:30"
+  }
+ ],
+ "level": 3
+}

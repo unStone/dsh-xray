@@ -1,0 +1,98 @@
+{
+ "repo": "TTTPOB/dsh-workspace-envrc",
+ "stars": 0,
+ "description": "Native direnv environments for DSH workspace Bash and persistent terminals",
+ "pushed_at": "2026-08-15T13:53:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-workspace-envrc",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-timeout",
+  "dsh-workspace-overlay",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-terminal"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sandbox",
+  "shell",
+  "subprocess",
+  "terminals",
+  "tools",
+  "workspaceCordis",
+  "workspaceEnvrc",
+  "workspaceMcp"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 36,
+   "evidence": [
+    "src/core.ts:21",
+    "src/core.ts:487",
+    "src/core.ts:564",
+    "src/core.ts:579",
+    "src/terminal-adapter.ts:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 9,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/core.ts:21, src/core.ts:487"
+  }
+ ],
+ "level": 3
+}

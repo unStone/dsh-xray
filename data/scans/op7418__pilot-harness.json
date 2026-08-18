@@ -1,8 +1,8 @@
 {
  "repo": "op7418/pilot-harness",
- "stars": 55,
+ "stars": 69,
  "description": "Pilot Harness — a CodePilot-inspired desktop client and plugin suite for DeepSeek Harness on macOS, Windows, and Linux.",
- "pushed_at": "2026-08-18T01:45:17Z",
+ "pushed_at": "2026-08-18T09:12:32Z",
  "status": "ok",
  "manifest": {
   "client": {
@@ -2253,6 +2253,9 @@
  "env": {
   "CORDIS_SHARED": 1,
   "DSH_TELEMETRY_DISABLED": 1,
+  "PILOT_HARNESS_REQUIRE_DEVELOPER_ID": 2,
+  "PILOT_HARNESS_ALLOW_ADHOC_SIGNING": 2,
+  "PILOT_HARNESS_APPLE_TEAM_ID": 2,
   "CODEPILOT_REFERENCE_ROOT": 1,
   "PILOT_HARNESS_DSH_HOME": 1,
   "PILOT_HARNESS_DSH_ENTRY": 1,
@@ -2264,14 +2267,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 36,
+   "src": 42,
    "dev": 56,
    "evidence": [
     "apps/cli/src/plugin.ts:13",
     "apps/cli/src/plugin.ts:13",
     "apps/cli/src/plugin.ts:127",
     "apps/cli/src/plugin.ts:129",
-    "apps/desktop/src/main.ts:1"
+    "apps/desktop/scripts/after-sign.cjs:5"
    ]
   },
   "eval": {
@@ -2322,7 +2325,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×36 src, e.g. apps/cli/src/plugin.ts:13, apps/cli/src/plugin.ts:13"
+   "evidence": "×42 src, e.g. apps/cli/src/plugin.ts:13, apps/cli/src/plugin.ts:13"
   },
   {
    "id": "base64_decode",

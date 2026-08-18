@@ -1,0 +1,132 @@
+{
+ "repo": "hajimilvdou/dsh-storecloud",
+ "stars": 0,
+ "description": "集插件及agent商城，云端同步与订阅插件组为一体的dsh插件项目",
+ "pushed_at": "2026-08-18T07:17:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-storecloud",
+ "deps": [
+  "@dsh-store/shared",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "shell",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "blog.1qwq1.top": 9,
+  "reactjs.org": 1,
+  "xxx.com": 2
+ },
+ "env": {
+  "PREVIEW_PORT": 1,
+  "DSH_STORE_SERVER_URL": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:277",
+    "lib/index.js:285",
+    "scripts/build.mjs:9",
+    "scripts/build.mjs:9",
+    "scripts/build.mjs:32"
+   ]
+  },
+  "eval": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:104",
+    "lib/index.js:152",
+    "lib/index.js:229",
+    "lib/index.js:332",
+    "lib/index.js:353"
+   ]
+  },
+  "base64_decode": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:104",
+    "lib/index.js:130",
+    "lib/index.js:152",
+    "lib/index.js:172",
+    "lib/index.js:229"
+   ]
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "http-bridge-test.mjs:32",
+    "http-bridge-test.mjs:56",
+    "http-bridge-test.mjs:62",
+    "http-bridge-test.mjs:83",
+    "preview-server.mjs:18"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:308",
+    "lib/index.js:321",
+    "lib/index.js:349",
+    "scripts/build.mjs:10",
+    "scripts/build.mjs:27"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 40,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:277, lib/index.js:285"
+  },
+  {
+   "id": "eval",
+   "evidence": "×7 src, e.g. lib/index.js:104, lib/index.js:152"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×12 src, e.g. lib/index.js:104, lib/index.js:130"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. http-bridge-test.mjs:32, http-bridge-test.mjs:56"
+  }
+ ],
+ "level": 3
+}

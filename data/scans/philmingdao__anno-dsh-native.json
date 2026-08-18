@@ -1,0 +1,84 @@
+{
+ "repo": "philmingdao/anno-dsh-native",
+ "stars": 0,
+ "description": "Native DeepSeek Harness plugin for local-first HTML review, editing, and annotation",
+ "pushed_at": "2026-08-16T16:43:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "compatibility": ">=0.1.0-rc.6 <0.2.0"
+ },
+ "pkg_name": "@philmingdao/anno-dsh-native",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "ANNO_DATA_DIR": 2,
+  "ANNO_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/anno-core.js:631",
+    "lib/anno-core.js:644"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 4,
+   "evidence": [
+    "lib/anno-core.js:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/anno-core.js:631, lib/anno-core.js:644"
+  }
+ ],
+ "level": 3
+}

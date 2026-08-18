@@ -1,0 +1,99 @@
+{
+ "repo": "clarknu/dsh-gateway",
+ "stars": 0,
+ "description": "Self-contained HTTPS remote-access gateway for the DeepSeek Harness web surface — the Caddy layer as a dsh plugin.",
+ "pushed_at": "2026-08-18T09:17:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-gateway",
+ "deps": [
+  "selfsigned",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/postpublish-smoke.mjs:4",
+    "scripts/postpublish-smoke.mjs:4",
+    "scripts/postpublish-smoke.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "scripts/sni-repro.mjs:20",
+    "scripts/sni-repro.mjs:21",
+    "scripts/sni-repro.mjs:52",
+    "scripts/sni-repro.mjs:53"
+   ]
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 3,
+   "evidence": [
+    "dsh/index.js:11",
+    "dsh/index.js:62",
+    "lib/certs.js:10",
+    "lib/certs.js:57",
+    "lib/certs.js:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/postpublish-smoke.mjs:4, scripts/postpublish-smoke.mjs:4"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. scripts/sni-repro.mjs:20, scripts/sni-repro.mjs:21"
+  }
+ ],
+ "level": 3
+}

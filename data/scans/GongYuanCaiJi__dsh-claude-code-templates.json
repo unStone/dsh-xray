@@ -1,0 +1,109 @@
+{
+ "repo": "GongYuanCaiJi/dsh-claude-code-templates",
+ "stars": 0,
+ "description": "Claude Code 技能模板库（claude-code-templates 移植，897 个 SKILL.md）",
+ "pushed_at": "2026-08-15T18:24:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-claude-code-templates",
+ "deps": [
+  "@deepseek-ai/dsh-skill",
+  "coderio",
+  "playwright",
+  "lighthouse",
+  "chrome-launcher",
+  "better-sqlite3",
+  "cors",
+  "express",
+  "sqlite3",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/verify-fidelity.mjs"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "XDG_CONFIG_HOME": 1,
+  "WORKORAI_DISABLE_OS_KEYSTORE": 1,
+  "WORKORAI_TEST_FAKE_KEYSTORE_ERROR": 1,
+  "WORKORAI_TEST_FAKE_DELETE_FAILURE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "skills/development/writing-skills/render-graphs.js:18",
+    "skills/development/writing-skills/render-graphs.js:18",
+    "skills/development/writing-skills/render-graphs.js:72",
+    "skills/development/writing-skills/render-graphs.js:112",
+    "skills/career/workorai/scripts/credential-store.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "skills/design-to-code/scripts/coderio-skill.mjs:125",
+    "skills/creative-design/develop-web-game/scripts/web_game_playwright_client.js:181"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 1,
+   "evidence": [
+    "skills/design-to-code/scripts/coderio-skill.mjs:120",
+    "skills/design-to-code/scripts/coderio-skill.mjs:125",
+    "skills/design-to-code/scripts/coderio-skill.mjs:153",
+    "skills/design-to-code/scripts/coderio-skill.mjs:164",
+    "skills/design-to-code/scripts/coderio-skill.mjs:206"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×18 src, e.g. skills/development/writing-skills/render-graphs.js:18, skills/development/writing-skills/render-graphs.js:18"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. skills/design-to-code/scripts/coderio-skill.mjs:125, skills/creative-design/develop-web-game/scripts/web_game_playwright_client.js:181"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WORKORAI_DISABLE_OS_KEYSTORE, WORKORAI_TEST_FAKE_KEYSTORE_ERROR"
+  }
+ ],
+ "level": 3
+}

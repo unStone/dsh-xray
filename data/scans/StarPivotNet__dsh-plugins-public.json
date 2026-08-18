@@ -1,0 +1,160 @@
+{
+ "repo": "StarPivotNet/dsh-plugins-public",
+ "stars": 0,
+ "description": "Installable DeepSeek Harness plugin marketplace (Settings → Plugins)",
+ "pushed_at": "2026-08-18T06:23:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugins-public",
+ "deps": [
+  "@codemirror/commands",
+  "@codemirror/lang-cpp",
+  "@codemirror/lang-css",
+  "@codemirror/lang-go",
+  "@codemirror/lang-html",
+  "@codemirror/lang-java",
+  "@codemirror/lang-javascript",
+  "@codemirror/lang-json",
+  "@codemirror/lang-markdown",
+  "@codemirror/lang-php",
+  "@codemirror/lang-python",
+  "@codemirror/lang-rust",
+  "@codemirror/lang-sql",
+  "@codemirror/lang-xml",
+  "@codemirror/lang-yaml",
+  "@codemirror/language",
+  "@codemirror/legacy-modes",
+  "@codemirror/search",
+  "@codemirror/state",
+  "@codemirror/view",
+  "@lezer/highlight",
+  "clsx",
+  "node-pty",
+  "rxjs",
+  "schemastery",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-schema-form",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commandUi",
+  "connection",
+  "invariants",
+  "loader",
+  "locale",
+  "modules",
+  "profile",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "tools",
+  "webRuntime",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 9,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3,
+  "DSH_MARKETPLACE_REBOOT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 3,
+   "evidence": [
+    "packages/better-sidebar/src/agent-pty.ts:111",
+    "packages/better-sidebar/src/agent-pty.ts:219",
+    "packages/better-sidebar/src/git.ts:12",
+    "packages/better-sidebar/src/git.ts:97",
+    "packages/better-sidebar/src/index.ts:480"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/better-sidebar/src/client/editor-load.ts:39"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 19,
+   "dev": 85,
+   "evidence": [
+    "packages/better-sidebar/scripts/package-registry.mjs:18",
+    "packages/better-sidebar/scripts/package-registry.mjs:42",
+    "packages/better-sidebar/src/index.ts:273",
+    "packages/plugin-marketplace/lib/host.js:489",
+    "packages/plugin-marketplace/lib/host.js:537"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 221,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. packages/better-sidebar/src/agent-pty.ts:111, packages/better-sidebar/src/agent-pty.ts:219"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/better-sidebar/src/client/editor-load.ts:39"
+  }
+ ],
+ "level": 3
+}

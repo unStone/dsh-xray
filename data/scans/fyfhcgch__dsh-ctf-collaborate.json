@@ -1,0 +1,167 @@
+{
+ "repo": "fyfhcgch/dsh-ctf-collaborate",
+ "stars": 0,
+ "description": "为 DeepSeek Harness 提供多人 CTF 题目管理、共享笔记、Agent 任务和证据整理能力",
+ "pushed_at": "2026-08-17T17:21:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-ctf-team",
+ "deps": [
+  "better-sqlite3",
+  "element-plus",
+  "vue",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "blackboard",
+  "dockerSandbox",
+  "planner",
+  "remote",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "blackboard/append",
+  "blackboard/command",
+  "blackboard/delete",
+  "blackboard/set",
+  "blackboard/update",
+  "crypto-expert/cancel-task",
+  "crypto-expert/execute-task",
+  "crypto-expert/task-done",
+  "crypto-expert/task-fail",
+  "misc-expert/cancel-task",
+  "misc-expert/execute-task",
+  "misc-expert/task-done",
+  "misc-expert/task-fail",
+  "planner/done",
+  "planner/fail",
+  "planner/resumed",
+  "planner/start",
+  "planner/task-update",
+  "sandbox/command",
+  "sandbox/ping",
+  "session/event",
+  "verifier/clear-cache",
+  "verifier/duplicate-flag",
+  "verifier/run",
+  "verifier/submit-one",
+  "verifier/verified-fail",
+  "verifier/verified-ok",
+  "web-expert/cancel-task",
+  "web-expert/execute-task",
+  "web-expert/task-done",
+  "web-expert/task-fail",
+  "web-expert/task-progress"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PROFILE_DIR": 1,
+  "DSH_HOME": 2,
+  "DSH_BLACKBOARD_FILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 7,
+   "evidence": [
+    "dsh-ctf-team/src/agent-runner.ts:13",
+    "dsh-ctf-team/src/team-service.ts:192",
+    "dsh-ctf-team/plugins/docker-sandbox-plugin/lib/index.js:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-ctf-team/src/client/p2p.ts:322",
+    "dsh-ctf-team/plugins/crypto-expert-agent/lib/index.js:194",
+    "dsh-ctf-team/plugins/crypto-expert-agent/lib/index.js:781",
+    "dsh-ctf-team/plugins/misc-expert-agent/lib/index.js:292"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 24,
+   "evidence": [
+    "dsh-ctf-team/scripts/install-profile-plugins.mjs:116",
+    "dsh-ctf-team/scripts/install-profile-plugins.mjs:121",
+    "dsh-ctf-team/src/sync-service.ts:1",
+    "dsh-ctf-team/src/sync-service.ts:149",
+    "dsh-ctf-team/plugins/blackboard-plugin/lib/index.js:243"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 64,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. dsh-ctf-team/src/agent-runner.ts:13, dsh-ctf-team/src/team-service.ts:192"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. dsh-ctf-team/src/client/p2p.ts:322, dsh-ctf-team/plugins/crypto-expert-agent/lib/index.js:194"
+  }
+ ],
+ "level": 3
+}

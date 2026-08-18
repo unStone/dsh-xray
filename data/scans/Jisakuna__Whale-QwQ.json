@@ -1,0 +1,94 @@
+{
+ "repo": "Jisakuna/Whale-QwQ",
+ "stars": 0,
+ "description": "A theme plugin for deepseek harness",
+ "pushed_at": "2026-08-18T01:58:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-custom-bg",
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "settingsScope",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "whale-qwq/scripts/align-sprite.mjs:17",
+    "whale-qwq/scripts/align-sprite.mjs:17",
+    "whale-qwq/scripts/align-sprite.mjs:75",
+    "whale-qwq/scripts/gen-assets.mjs:17",
+    "whale-qwq/scripts/gen-assets.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "whale-qwq/scripts/gen-assets.mjs:18",
+    "whale-qwq/scripts/gen-assets.mjs:152",
+    "whale-qwq/scripts/gen-baseline.mjs:8",
+    "whale-qwq/scripts/gen-baseline.mjs:57"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. whale-qwq/scripts/align-sprite.mjs:17, whale-qwq/scripts/align-sprite.mjs:17"
+  }
+ ],
+ "level": 3
+}

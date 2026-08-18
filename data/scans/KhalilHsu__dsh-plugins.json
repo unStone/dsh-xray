@@ -1,0 +1,93 @@
+{
+ "repo": "KhalilHsu/dsh-plugins",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T04:06:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-client-ui-cot-fold",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "conversationEvents",
+  "conversationViews",
+  "invariants",
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [
+  "slash/input-begin-command",
+  "slash/input-consume-token",
+  "slash/input-insert-reference",
+  "slash/input-insert-text"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_ROOT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 76,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,89 @@
+{
+ "repo": "Youngxj/dsh-ProjectModel",
+ "stars": 0,
+ "description": "DeepSeek Harness 项目组插件",
+ "pushed_at": "2026-08-14T06:48:40Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-ProjectModel",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "restart.mjs:13",
+    "restart.mjs:13",
+    "restart.mjs:34",
+    "restart.mjs:81",
+    "restart.mjs:97"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "install.mjs:20",
+    "install.mjs:20",
+    "install.mjs:74",
+    "install.mjs:139"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. restart.mjs:13, restart.mjs:13"
+  }
+ ],
+ "level": 3
+}

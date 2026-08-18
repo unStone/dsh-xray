@@ -1,0 +1,112 @@
+{
+ "repo": "XJungit/seeker-craft",
+ "stars": 0,
+ "description": "An LLM-driven Minecraft bot that beats the Ender Dragon. Rust + Azalea protocol client, 44 tools, 23-tier task system.",
+ "pushed_at": "2026-08-16T02:13:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "sessions"
+   ]
+  }
+ },
+ "pkg_name": "dsh-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {
+  "DSH_CRAFT_VIEWER_URL": 5,
+  "DSH_HOME": 1,
+  "USERPROFILE": 2,
+  "DSH_NPX_ROOT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "tools/dsh-bridge/scripts/verify-in-harness.mjs:5",
+    "tools/dsh-bridge/scripts/verify-in-harness.mjs:5",
+    "tools/dsh-bridge/scripts/verify-in-harness.mjs:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "tools/dsh-bridge/scripts/verify-proxy.mjs:18",
+    "tools/dsh-bridge/scripts/verify-proxy.mjs:38"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "tools/dsh-toolscan/index.js:166",
+    "tools/dsh-toolscan/index.js:189",
+    "tools/dsh-toolscan/index.js:196",
+    "tools/dsh-toolscan/index.js:210",
+    "tools/dsh-toolscan/index.js:212"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "tools/dsh-bridge/scripts/verify-in-harness.mjs:55",
+    "tools/dsh-bridge/scripts/verify-proxy.mjs:51"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. tools/dsh-bridge/scripts/verify-in-harness.mjs:5, tools/dsh-bridge/scripts/verify-in-harness.mjs:5"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. tools/dsh-bridge/scripts/verify-proxy.mjs:18, tools/dsh-bridge/scripts/verify-proxy.mjs:38"
+  }
+ ],
+ "level": 3
+}

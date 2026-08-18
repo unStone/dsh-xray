@@ -1,0 +1,96 @@
+{
+ "repo": "kirkchinese/dsh-anchored-preset-installer",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T12:28:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-anchored-preset-installer",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "agents",
+  "skills",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "agent/pre-step",
+  "agent/request",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3,
+  "USERPROFILE": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "presets/anchored-standard/custom-bash.mjs:89",
+    "presets/whoami-standard/custom-bash.mjs:89",
+    "presets/zero-anchored-standard/custom-bash.mjs:89"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "index.mjs:105"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. presets/anchored-standard/custom-bash.mjs:89, presets/whoami-standard/custom-bash.mjs:89"
+  }
+ ],
+ "level": 3
+}

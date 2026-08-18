@@ -1,0 +1,72 @@
+{
+ "repo": "frozo-ai/dsh-teams",
+ "stars": 0,
+ "description": "Team access for the DeepSeek Harness (dsh) web UI — login wall + HTTP/WebSocket reverse proxy. Zero dependencies.",
+ "pushed_at": "2026-08-17T15:58:56Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-teams",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TEAMS_HOME": 1,
+  "DSH_TEAMS_PORT": 1,
+  "DSH_TEAMS_HOST": 1,
+  "DSH_UPSTREAM_PORT": 1,
+  "DSH_UPSTREAM_HOST": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/server.mjs:41"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-teams.mjs:4",
+    "bin/dsh-teams.mjs:18",
+    "src/auth.mjs:4",
+    "src/auth.mjs:34"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/server.mjs:41"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,94 @@
+{
+ "repo": "apheli0os/deepseek-harness-orchestrate",
+ "stars": 0,
+ "description": "Declarative task-DAG orchestration plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-15T11:23:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-tool-orchestrate",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workflow"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "systemPrompt",
+  "tools",
+  "workflowEngine"
+ ],
+ "hooks": [
+  "workflow/agent-start"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-package.mjs:1",
+    "scripts/check-package.mjs:1",
+    "scripts/check-package.mjs:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-package.mjs:2",
+    "scripts/check-package.mjs:15"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/check-package.mjs:1, scripts/check-package.mjs:1"
+  }
+ ],
+ "level": 3
+}

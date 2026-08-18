@@ -1,0 +1,110 @@
+{
+ "repo": "ShengenWu/dsh-obsidian-channel",
+ "stars": 0,
+ "description": "Work with a local Obsidian vault in DSH. Writes need approval; every change can be undone. 在 DSH 里管本地 Obsidian 库。改笔记会先问你，改完能一笔撤回。",
+ "pushed_at": "2026-08-18T08:35:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-obsidian-channel",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-sandbox"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "approval",
+  "connection",
+  "conversation",
+  "fs",
+  "locale",
+  "sessions",
+  "slots",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/created",
+  "fs/edit-intent",
+  "fs/write-intent"
+ ],
+ "tool_regs": 24,
+ "domains": {},
+ "env": {
+  "APPDATA": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/pick-folder.js:77",
+    "src/pick-folder.js:81"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/preset-sync.js:5",
+    "src/preset-sync.js:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 33,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/pick-folder.js:77, src/pick-folder.js:81"
+  }
+ ],
+ "level": 3
+}

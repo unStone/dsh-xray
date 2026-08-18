@@ -1,0 +1,84 @@
+{
+ "repo": "dhb861832993-star/img-preview",
+ "stars": 0,
+ "description": "Inline local image preview for DeepSeek Harness - img_serve tool + img fence, renders PNG/JPG/WebP/GIF/AVIF/BMP/SVG/ICO directly in chat.",
+ "pushed_at": "2026-08-17T13:45:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "img-preview",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "systemPrompt"
+ ],
+ "hooks": [
+  "internal/service"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_WORKSPACE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/test-tga.mjs:9",
+    "scripts/test-tga.mjs:67",
+    "scripts/test-tga.mjs:88",
+    "scripts/test-tga.mjs:148",
+    "scripts/test-tga.mjs:157"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

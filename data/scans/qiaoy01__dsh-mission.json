@@ -1,0 +1,97 @@
+{
+ "repo": "qiaoy01/dsh-mission",
+ "stars": 0,
+ "description": "DeekSeek Harness Mission Plugin",
+ "pushed_at": "2026-08-18T03:49:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@qiaoy01/mission",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "mission",
+  "sessions",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "internal/dispatch",
+  "internal/service",
+  "mission/changed",
+  "session/created"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/mission/mission/scripts/build.mjs:9",
+    "packages/mission/mission/scripts/build.mjs:9",
+    "packages/mission/mission/scripts/build.mjs:35",
+    "packages/mission/mission/scripts/build.mjs:40"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 45,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. packages/mission/mission/scripts/build.mjs:9, packages/mission/mission/scripts/build.mjs:9"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,128 @@
+{
+ "repo": "omdsh-plugins/omdsh-plughub",
+ "stars": 0,
+ "description": "The omdsh plugin hub: a Settings tab that installs and removes omdsh plugins from a configurable upstream, and configures every installed one from the settings schema it already registers",
+ "pushed_at": "2026-08-18T09:09:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  },
+  "plughub": {
+   "displayName": {
+    "": "Plugin Hub",
+    "zh": "插件中心"
+   },
+   "summary": {
+    "": "Install, disable, and configure omdsh plugins from inside Settings.",
+    "zh": "在设置里安装、停用并配置 omdsh 插件。"
+   },
+   "category": "system",
+   "settings": [
+    "omdsh-plughub"
+   ],
+   "docs": "https://github.com/omdsh-plugins/omdsh-plughub#readme",
+   "order": 0
+  }
+ },
+ "pkg_name": "@omdsh-plugins/omdsh-plughub",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-schema-form",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --build tsconfig.json && tsdown"
+ },
+ "injects": [
+  "connection",
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "settings/document-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "codeload.github.com": 2,
+  "cdn.jsdmirror.com": 1,
+  "api.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "tsdown.config.ts:101",
+    "src/installer.ts:61",
+    "src/installer.ts:164",
+    "src/installer.ts:442"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 39,
+   "evidence": [
+    "scripts/harness-source.ts:93",
+    "src/installer.ts:62",
+    "src/installer.ts:302",
+    "src/profile.ts:30",
+    "src/profile.ts:495"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. tsdown.config.ts:101, src/installer.ts:61"
+  }
+ ],
+ "level": 3
+}

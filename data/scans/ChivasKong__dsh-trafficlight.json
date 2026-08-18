@@ -1,0 +1,100 @@
+{
+ "repo": "ChivasKong/dsh-trafficlight",
+ "stars": 0,
+ "description": "一个 dsh 宿主（Host）插件 + 浏览器半区（Web GUI 订阅按钮） + macOS 全局悬浮窗，  把你订阅的每个会话的任务状态用红/黄/绿三色灯在屏幕右上角的悬浮窗里逐行实时展示。",
+ "pushed_at": "2026-08-18T03:54:33Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "@chivaskong96/dsh-trafficlight",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TL_PORT": 2,
+  "DSH_TL_OVERLAY_BIN": 1,
+  "DSH_TL_SUBS_FILE": 2,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/host/overlay-launcher.ts:9",
+    "src/host/overlay-launcher.ts:47"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "mock-bridge.mjs:94",
+    "src/host/bridge.ts:92"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/host/subscriptions.ts:80"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/host/overlay-launcher.ts:9, src/host/overlay-launcher.ts:47"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. mock-bridge.mjs:94, src/host/bridge.ts:92"
+  }
+ ],
+ "level": 3
+}

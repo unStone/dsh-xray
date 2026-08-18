@@ -1,0 +1,107 @@
+{
+ "repo": "omdsh-plugins/omdsh-chatmode",
+ "stars": 0,
+ "description": "Chat mode for the DeepSeek Harness web GUI: a Chat/Work switch above the conversation, a workspace-free session-intent surface, and the managed Chat workspace its conversations are kept in",
+ "pushed_at": "2026-08-17T05:47:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "plughub": {
+   "displayName": {
+    "": "Chat Mode",
+    "zh": "聊天模式"
+   },
+   "summary": {
+    "": "Start a conversation without picking a project directory, kept together under Chat.",
+    "zh": "不用选项目目录就能开始对话，这些对话统一放在侧栏的 Chat 下面。"
+   },
+   "category": "workspace",
+   "docs": "https://github.com/omdsh-plugins/omdsh-chatmode#readme",
+   "order": 40
+  }
+ },
+ "pkg_name": "@omdsh-plugins/omdsh-chatmode",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-workspace",
+  "@omdsh-plugins/omdsh-base",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --build tsconfig.json && tsdown"
+ },
+ "injects": [
+  "invariants",
+  "locale",
+  "sessions",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "locale/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "scripts/harness-source.ts:86"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

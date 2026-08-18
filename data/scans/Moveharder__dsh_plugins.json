@@ -1,0 +1,87 @@
+{
+ "repo": "Moveharder/dsh_plugins",
+ "stars": 0,
+ "description": "DeepSeek Harness Plugin Home.",
+ "pushed_at": "2026-08-18T08:42:09Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-whale-copilot",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/error",
+  "agent/status",
+  "approval/request",
+  "goal/changed",
+  "session/event",
+  "subagent/end",
+  "subagent/start",
+  "workflow/end",
+  "workflow/start"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-whale-copilot/lib/index.js:24"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. dsh-whale-copilot/lib/index.js:24"
+  }
+ ],
+ "level": 3
+}

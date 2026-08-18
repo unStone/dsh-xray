@@ -1,0 +1,107 @@
+{
+ "repo": "863683348/dsh-plugin-quality-hub",
+ "stars": 0,
+ "description": "Independent ratings and security signals for the DSH plugin ecosystem - which plugins are actually worth installing?",
+ "pushed_at": "2026-08-18T09:22:18Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-plugin-quality-hub",
+ "deps": [
+  "@prisma/client",
+  "@radix-ui/react-slot",
+  "@upstash/redis",
+  "class-variance-authority",
+  "clsx",
+  "lucide-react",
+  "next",
+  "next-intl",
+  "react",
+  "react-dom",
+  "tailwind-merge"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.googletagmanager.com": 2,
+  "api.github.com": 2,
+  "api.npmjs.org": 2,
+  "dshquality.com": 17,
+  "news.ycombinator.com": 1,
+  "www.reddit.com": 1,
+  "www.prisma.io": 1,
+  "api.buttondown.email": 1,
+  "schema.org": 3
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "USERPROFILE": 1,
+  "NEXT_PUBLIC_SITE_URL": 18,
+  "NEXT_PUBLIC_GA_ID": 1,
+  "VERCEL_ENV": 1,
+  "KV_REST_API_URL": 1,
+  "KV_REST_API_TOKEN": 1,
+  "GITHUB_TOKEN": 3,
+  "BUTTONDOWN_API_KEY": 1,
+  "CRON_SECRET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "app/src/lib/fetch-github.ts:185",
+    "app/src/lib/fetch-github.ts:233"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 22,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-site.mjs:5",
+    "scripts/build-site.mjs:156",
+    "scripts/build-site.mjs:174",
+    "scripts/build-site.mjs:175",
+    "scripts/build-site.mjs:176"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "app/src/i18n/request.ts:14"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 94,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. app/src/lib/fetch-github.ts:185, app/src/lib/fetch-github.ts:233"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BUTTONDOWN_API_KEY, CRON_SECRET, GITHUB_TOKEN, KV_REST_API_TOKEN"
+  }
+ ],
+ "level": 2
+}

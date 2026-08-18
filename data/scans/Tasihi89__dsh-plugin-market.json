@@ -1,0 +1,103 @@
+{
+ "repo": "Tasihi89/dsh-plugin-market",
+ "stars": 0,
+ "description": "Plugin market for DeepSeek Harness with daily/weekly/monthly trending boards, in-app install and bilingual UI",
+ "pushed_at": "2026-08-17T14:42:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@changeme/dsh-plugin-market",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "tasihi89.github.io": 2,
+  "get.pnpm.io": 2,
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_MARKET_DATA_BASE": 1,
+  "DSH_MARKET_SNAPSHOT_KEEP": 1,
+  "DSH_PLUGIN_MARKET_INSTALL_TIMEOUT_MS": 1,
+  "ComSpec": 1,
+  "DSH_PLUGIN_MARKET_HOT_MOUNT_TIMEOUT_MS": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "src/dsh-cli.ts:6",
+    "src/dsh-cli.ts:10",
+    "src/dsh-cli.ts:11",
+    "src/dsh-cli.ts:95",
+    "src/dsh-cli.ts:98"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 0,
+   "evidence": [
+    "scripts/normalize-client-banner.mjs:65",
+    "scripts/snapshot.mjs:5",
+    "scripts/snapshot.mjs:41",
+    "scripts/snapshot.mjs:42",
+    "src/hot.ts:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/hot.ts:70"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. src/dsh-cli.ts:6, src/dsh-cli.ts:10"
+  }
+ ],
+ "level": 3
+}

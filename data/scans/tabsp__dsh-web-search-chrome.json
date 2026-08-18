@@ -1,0 +1,94 @@
+{
+ "repo": "tabsp/dsh-web-search-chrome",
+ "stars": 0,
+ "description": "Free search provider for the DeepSeek Harness web seam — drives your local Chrome via agent-browser for real Bing/Google results, no paid API. MIT.",
+ "pushed_at": "2026-08-15T20:04:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-web-search-chrome",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-web"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.bing.com": 2,
+  "www.google.com": 2,
+  "example.net": 2
+ },
+ "env": {
+  "PATHEXT": 2,
+  "LOCALAPPDATA": 2,
+  "WSC_PROFILE": 1,
+  "AGENT_BROWSER_EXECUTABLE_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:159",
+    "lib/index.js:184",
+    "scripts/verify-extraction.mjs:15",
+    "src/browser.ts:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:445",
+    "src/serp.ts:79"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 14,
+   "evidence": [
+    "lib/index.js:377",
+    "scripts/verify-extraction.mjs:77",
+    "src/cache.ts:118"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. lib/index.js:2, lib/index.js:159"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:445, src/serp.ts:79"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

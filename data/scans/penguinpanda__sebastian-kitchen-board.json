@@ -1,0 +1,85 @@
+{
+ "repo": "penguinpanda/sebastian-kitchen-board",
+ "stars": 0,
+ "description": "Sebastian is a family kitchen & life assistant for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).",
+ "pushed_at": "2026-08-14T06:37:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": false
+  }
+ },
+ "pkg_name": "sebastian-kitchen-board",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "sandboxPolicy",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "sebastian-kitchen-board/lib/client.js:35",
+    "sebastian-kitchen-board/lib/client.tpl.js:35"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. sebastian-kitchen-board/lib/client.js:35, sebastian-kitchen-board/lib/client.tpl.js:35"
+  }
+ ],
+ "level": 3
+}

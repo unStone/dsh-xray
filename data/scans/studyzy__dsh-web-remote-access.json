@@ -1,0 +1,80 @@
+{
+ "repo": "studyzy/dsh-web-remote-access",
+ "stars": 0,
+ "description": "让DSH能够支持远程访问Web的插件，可指定WebToken进行认证",
+ "pushed_at": "2026-08-18T09:21:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-web-remote-access",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/schemastery",
+  "commander"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "cmdlineArgs",
+  "webServer",
+  "webStartup"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/webserver.js:224",
+    "src/webserver.ts:272"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/webserver.js:224, src/webserver.ts:272"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,79 @@
+{
+ "repo": "tancheng33/dsh-code-runtime-container",
+ "stars": 0,
+ "description": "Container-isolated backend for the DeepSeek Harness code-execution seam: Code Mode programs run in a fresh container with no network, a read-only rootfs, and kernel-enforced memory, CPU, and pid ceili",
+ "pushed_at": "2026-08-16T04:54:17Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-code-runtime-container",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-code-runtime",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.js"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.js:11",
+    "scripts/prepare.js:11",
+    "scripts/prepare.js:32",
+    "src/docker.ts:10",
+    "src/docker.ts:105"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/prepare.js:11, scripts/prepare.js:11"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,87 @@
+{
+ "repo": "xiaoqiezi-china/dsh-music-player",
+ "stars": 0,
+ "description": "为Deepseek-Harness开发的音乐播放插件。允许用户播放本地与网易云音乐。支持通过Cookie解锁VIP歌曲。提供了丰富全面的skill允许Agent控制音乐播放，自定义播放器CSS层叠样式表。允许队列结束后自动通知AI来挑选新的歌曲。",
+ "pushed_at": "2026-08-15T14:45:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-music-player",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "music.163.com": 7,
+  "apis.netstart.cn": 6
+ },
+ "env": {
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:890"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:890"
+  }
+ ],
+ "level": 3
+}

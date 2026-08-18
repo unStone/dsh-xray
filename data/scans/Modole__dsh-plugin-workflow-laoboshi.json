@@ -1,0 +1,109 @@
+{
+ "repo": "Modole/dsh-plugin-workflow-laoboshi",
+ "stars": 0,
+ "description": "面向 DSH Agent 的 DAG 工作流创建、测试、发布和执行插件。",
+ "pushed_at": "2026-08-15T17:47:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@laobos/dsh-workflow",
+ "deps": [
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "yaml",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "permissionPresets",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 20,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_AGENTS_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/git-service.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/skills-manager.js:314"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/git-service.mjs:1"
+  }
+ ],
+ "level": 3
+}

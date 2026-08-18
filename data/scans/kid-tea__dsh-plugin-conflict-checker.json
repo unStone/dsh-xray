@@ -1,0 +1,99 @@
+{
+ "repo": "kid-tea/dsh-plugin-conflict-checker",
+ "stars": 0,
+ "description": "DeepSeek Harness plugin conflict checker: pre-flight duplicate loader-entry-id detection + optional real startup smoke test (CLI + Web GUI tab).",
+ "pushed_at": "2026-08-16T18:04:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-conflict-checker",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-client-ui-slots"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_ANCHOR": 5,
+  "DSH_TELEMETRY_DISABLED": 1,
+  "DSH_SMOKE_BIN": 1,
+  "DSH_SMOKE_EXEC_ARGV": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "checker/check-plugin-conflicts.mjs:16",
+    "checker/check-plugin-conflicts.mjs:456",
+    "lib/index.js:10",
+    "lib/index.js:31",
+    "scripts/verify.mjs:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. checker/check-plugin-conflicts.mjs:16, checker/check-plugin-conflicts.mjs:456"
+  }
+ ],
+ "level": 3
+}

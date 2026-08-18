@@ -1,0 +1,78 @@
+{
+ "repo": "qinyu765/dsh-llm-auto-route",
+ "stars": 0,
+ "description": "Provider discovery, matching, health checks, and pre-output failover for DeepSeek Harness",
+ "pushed_at": "2026-08-14T08:12:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-llm-auto-route",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-pi-ai"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm"
+ ],
+ "hooks": [
+  "agent/request",
+  "agent/request-error",
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "api.openai.com": 1,
+  "api.anthropic.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

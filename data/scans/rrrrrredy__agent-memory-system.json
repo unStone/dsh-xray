@@ -1,0 +1,110 @@
+{
+ "repo": "rrrrrredy/agent-memory-system",
+ "stars": 0,
+ "description": "Local-first, evidence-backed continuous memory for coding agents",
+ "pushed_at": "2026-08-18T01:57:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@rrrrrredy/dsh-agent-memory",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessionPersistence",
+  "subprocess"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/disposed",
+  "session/event",
+  "session/flush"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "AGENT_MEMORY_OPENCODE_EVENT_LOG": 1,
+  "AGENT_MEMORY_OPENCODE_EVENT_MAX_BYTES": 1,
+  "DSH_PACKAGE_SPEC": 1,
+  "DSH_TARBALL": 1,
+  "DSH_E2E_KEEP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 5,
+   "evidence": [
+    "integrations/opencode/opencode-retrieval.mjs:1",
+    "integrations/opencode/opencode-retrieval.mjs:193",
+    "integrations/opencode/runtime-smoke.mjs:7",
+    "integrations/opencode/runtime-smoke.mjs:101",
+    "integrations/opencode/runtime-smoke.mjs:197"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "integrations/opencode/runtime-smoke.mjs:87",
+    "integrations/opencode/runtime-smoke.mjs:90",
+    "integrations/deepseek-harness/scripts/headless-e2e.mjs:299",
+    "integrations/deepseek-harness/scripts/headless-e2e.mjs:326"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "integrations/deepseek-harness/scripts/build.mjs:34",
+    "integrations/deepseek-harness/scripts/headless-e2e.mjs:284"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. integrations/opencode/opencode-retrieval.mjs:1, integrations/opencode/opencode-retrieval.mjs:193"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. integrations/opencode/runtime-smoke.mjs:87, integrations/opencode/runtime-smoke.mjs:90"
+  }
+ ],
+ "level": 3
+}

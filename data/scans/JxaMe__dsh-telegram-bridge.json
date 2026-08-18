@@ -1,0 +1,98 @@
+{
+ "repo": "JxaMe/dsh-telegram-bridge",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-17T23:45:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./extensions/dsh/cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": false
+  }
+ },
+ "pkg_name": "dsh-telegram-bridge",
+ "deps": [
+  "grammy",
+  "undici"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "agents",
+  "apiProxy",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "DSH_TELEGRAM_DATA_DIR": 4,
+  "HTTPS_PROXY": 2,
+  "https_proxy": 2,
+  "HTTP_PROXY": 2,
+  "http_proxy": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 17,
+   "evidence": [
+    "lib/config.js:1",
+    "lib/config.js:24",
+    "lib/logger.js:1",
+    "lib/logger.js:42",
+    "lib/queue.js:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 71,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./extensions/dsh/cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,121 @@
+{
+ "repo": "jcs130/dsh-minecraft-agent",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T08:47:54Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-minecraft-agent",
+ "deps": [
+  "better-sqlite3",
+  "mineflayer",
+  "mineflayer-pathfinder",
+  "mineflayer-tool",
+  "playwright-core",
+  "prismarine-viewer",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "mcIdentity",
+  "mcMemory",
+  "mcMemos",
+  "mcMystic",
+  "mcRcon",
+  "mcTransmigrators",
+  "mcVillage",
+  "mcWiki",
+  "mcWorlddb",
+  "mcbot",
+  "timer",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 64,
+ "domains": {},
+ "env": {
+  "DSH_ROOT": 2,
+  "MC_MEMOS_URL": 1,
+  "DATA_DIR": 1,
+  "MC_USERNAME": 1,
+  "MC_PERSONA": 1,
+  "MC_BACKSTORY": 1,
+  "MC_AGENT_NAME": 1,
+  "MC_EPITHET": 1,
+  "MC_EYES_FOV": 1,
+  "MC_EYES_VIEW": 1,
+  "MC_EYES_SHOT": 1,
+  "CHROME_PATH": 1,
+  "MC_VIEWER_PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "deploy.mjs:14",
+    "deploy.mjs:14",
+    "deploy.mjs:81",
+    "deploy.mjs:100",
+    "cli/mc-join.mjs:25"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "cli/mc-join.mjs:175",
+    "src/mc-panel.ts:246"
+   ]
+  },
+  "fs_write": {
+   "src": 41,
+   "dev": 0,
+   "evidence": [
+    "deploy.mjs:15",
+    "deploy.mjs:146",
+    "deploy.mjs:166",
+    "deploy.mjs:169",
+    "docker/seed-agent.mjs:11"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/mc-bot.ts:173"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. deploy.mjs:14, deploy.mjs:14"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. cli/mc-join.mjs:175, src/mc-panel.ts:246"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 12 services, 64 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

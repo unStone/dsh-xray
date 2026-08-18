@@ -1,0 +1,115 @@
+{
+ "repo": "derek2035/dsh-social",
+ "stars": 0,
+ "description": "DeepSeek Harness 社交插件：AI 代笔、默认匿名、逐条过审的观点交换网络",
+ "pushed_at": "2026-08-16T13:02:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-social",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "react",
+  "@dsh-social/core",
+  "@dsh-social/core",
+  "@dsh-social/core",
+  "@dsh-social/core",
+  "@dsh-social/core",
+  "@dsh-social/core"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "credentials",
+  "llm",
+  "slots",
+  "social",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "social.example.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/cloud/src/identity.ts:66"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "server/src/index.ts:91"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-bundle.mjs:16",
+    "scripts/build-bundle.mjs:72",
+    "packages/core/src/store.ts:89"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/cloud/src/identity.ts:66"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. server/src/index.ts:91"
+  }
+ ],
+ "level": 3
+}

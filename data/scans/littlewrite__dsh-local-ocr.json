@@ -1,0 +1,89 @@
+{
+ "repo": "littlewrite/dsh-local-ocr",
+ "stars": 0,
+ "description": "An on-demand local OCR plugin for DeepSeek Harness, powered by macOS Vision and Windows Media OCR.",
+ "pushed_at": "2026-08-16T12:42:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-local-ocr",
+ "deps": [
+  "@napi-rs/system-ocr"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_HARNESS_ROOT": 2,
+  "DSH_HOME": 1,
+  "DSH_TOOLS_MODULE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-local-ocr.mjs:7",
+    "bin/dsh-local-ocr.mjs:7",
+    "bin/dsh-local-ocr.mjs:32",
+    "bin/dsh-local-ocr.mjs:42"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/ocr.js:97"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-plugin/index.js:18",
+    "src/ocr.js:39"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bin/dsh-local-ocr.mjs:7, bin/dsh-local-ocr.mjs:7"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/ocr.js:97"
+  }
+ ],
+ "level": 3
+}

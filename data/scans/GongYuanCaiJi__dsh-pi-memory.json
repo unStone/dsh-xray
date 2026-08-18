@@ -1,0 +1,105 @@
+{
+ "repo": "GongYuanCaiJi/dsh-pi-memory",
+ "stars": 0,
+ "description": "跨会话持久记忆（移植自 pi-memory）",
+ "pushed_at": "2026-08-15T18:24:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-pi-memory",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/session-start",
+  "session/event"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {
+  "PI_MEMORY_EXIT_SUMMARY_MODEL": 2,
+  "PI_MEMORY_QMD_UPDATE": 1,
+  "PI_MEMORY_SUMMARIZE_TRANSITIONS": 1,
+  "PI_MEMORY_EXIT_SUMMARY": 1,
+  "PI_MEMORY_EXIT_SUMMARY_TIMEOUT_MS": 1,
+  "PI_MEMORY_SNAPSHOT": 1,
+  "PI_MEMORY_NO_SEARCH": 2,
+  "PI_MEMORY_DIR": 1,
+  "PORT": 1,
+  "MOCK_LLM_LOG_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 21,
+   "evidence": [
+    "index.js:31",
+    "scripts/postinstall.cjs:1",
+    "scripts/postinstall.cjs:1",
+    "scripts/postinstall.cjs:21",
+    "scripts/postinstall.cjs:28"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "mock-llm.mjs:46"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 73,
+   "evidence": [
+    "index.js:713",
+    "index.js:1488",
+    "index.js:1546",
+    "index.js:1643",
+    "index.js:1679"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. index.js:31, scripts/postinstall.cjs:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. mock-llm.mjs:46"
+  }
+ ],
+ "level": 3
+}

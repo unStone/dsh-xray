@@ -1,0 +1,131 @@
+{
+ "repo": "statem-li/dsh-usage-skill",
+ "stars": 0,
+ "description": "Token usage analytics, provider balances, and skill bundle management for the dsh web GUI",
+ "pushed_at": "2026-08-17T12:46:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-usage-skill",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "llm",
+  "locale",
+  "sessionPersistence",
+  "sessions",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "platform.sensenova.cn": 6,
+  "signin.sensecore.cn": 2,
+  "iam.sensecoreapi.cn": 1,
+  "api.z.ai": 6,
+  "api.deepseek.com": 7,
+  "opencode.ai": 5,
+  "open.bigmodel.cn": 1,
+  "api.kimi.com": 2,
+  "www.minimax.io": 2,
+  "www.minimaxi.com": 2,
+  "api.minimax.io": 2,
+  "api.minimaxi.com": 1,
+  "relay.example.com": 3,
+  "api.passionapi.com": 2,
+  "openrouter.ai": 3,
+  "token.sensenova.cn": 7,
+  "api.moonshot.cn": 2
+ },
+ "env": {
+  "DSH_HOME": 7,
+  "DSH_AGENTS_HOME": 1,
+  "SMOKE_NODE_MODULES": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/test-install.mjs:5",
+    "scripts/test-install.mjs:5",
+    "scripts/test-install.mjs:14",
+    "scripts/test-install.mjs:23"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-client.mjs:31"
+   ]
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/accounts.js:826",
+    "lib/skills-host.js:274",
+    "lib/skills-host.js:332"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:275",
+    "lib/skills-host.js:154",
+    "lib/skills-host.js:296",
+    "lib/skills-host.js:300",
+    "lib/skills-host.js:332"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/test-install.mjs:5, scripts/test-install.mjs:5"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/smoke-client.mjs:31"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/accounts.js:826, lib/skills-host.js:274"
+  }
+ ],
+ "level": 3
+}

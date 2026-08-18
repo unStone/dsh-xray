@@ -1,0 +1,79 @@
+{
+ "repo": "frozo-ai/dsh-worlds",
+ "stars": 0,
+ "description": "Remote execution worlds for DeepSeek Harness: run the agent's Bash, terminals, LSP and file tools inside a container. Zero dependencies.",
+ "pushed_at": "2026-08-18T06:05:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-worlds",
+ "deps": [
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DOCKER_HOST_SOCKET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 15,
+   "evidence": [
+    "adapter/subprocess.ts:44",
+    "adapter/subprocess.ts:45",
+    "adapter/subprocess.ts:56",
+    "src/subprocess.mjs:85",
+    "src/terminal.mjs:49"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. adapter/subprocess.ts:44, adapter/subprocess.ts:45"
+  }
+ ],
+ "level": 3
+}

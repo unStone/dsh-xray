@@ -1,0 +1,90 @@
+{
+ "repo": "nan1010082085/dsh-plugin-ima-sync",
+ "stars": 0,
+ "description": "DSH plugin: auto-upload conversation progress to Tencent IMA (daily note + Work knowledge base)",
+ "pushed_at": "2026-08-17T09:03:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-ima-sync",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "ima.qq.com": 1
+ },
+ "env": {
+  "IMA_OPENAPI_CLIENTID": 1,
+  "IMA_CLIENT_ID": 1,
+  "IMA_OPENAPI_APIKEY": 1,
+  "IMA_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:19",
+    "lib/index.js:238",
+    "lib/index.js:255",
+    "lib/index.js:269"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:17"
+  },
+  {
+   "id": "token_env",
+   "evidence": "IMA_API_KEY, IMA_OPENAPI_APIKEY"
+  }
+ ],
+ "level": 3
+}

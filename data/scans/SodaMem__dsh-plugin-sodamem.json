@@ -1,0 +1,116 @@
+{
+ "repo": "SodaMem/dsh-plugin-sodamem",
+ "stars": 0,
+ "description": "Native DeepSeek Harness (dsh) plugin for SodaMem — auto-injects evidence-grounded memory into every turn and ingests each closed turn.",
+ "pushed_at": "2026-08-18T07:18:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-sodamem",
+ "deps": [
+  "sodamem",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/inbox/claimed",
+  "agent/turn-stopping",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "SODAMEM_API_URL": 3,
+  "SODAMEM_API_KEY": 3,
+  "SODAMEM_USER_ID": 3,
+  "SODAMEM_DAEMON_CWD": 1,
+  "SODAMEM_DATA_ROOT": 1,
+  "SODAMEM_TOKEN_BUDGET": 1,
+  "SODAMEM_ITERATIONS": 1,
+  "SODAMEM_QUERIES": 2,
+  "SODAMEM_TEST_URL": 1,
+  "SODAMEM_TEST_KEY": 1,
+  "SODAMEM_TEST_USER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 4,
+   "evidence": [
+    "scripts/measure-cold-start.mjs:40",
+    "scripts/measure-cold-start.mjs:40",
+    "scripts/measure-cold-start.mjs:64",
+    "scripts/measure-cold-start.mjs:72",
+    "scripts/measure-cold-start.mjs:111"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "test-integration/servers.ts:17",
+    "test-integration/servers.ts:37",
+    "test-integration/servers.ts:63"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/measure-cold-start.mjs:40, scripts/measure-cold-start.mjs:40"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. test-integration/servers.ts:17, test-integration/servers.ts:37"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SODAMEM_API_KEY, SODAMEM_TEST_KEY, SODAMEM_TOKEN_BUDGET"
+  }
+ ],
+ "level": 3
+}

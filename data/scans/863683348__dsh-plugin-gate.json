@@ -1,0 +1,111 @@
+{
+ "repo": "863683348/dsh-plugin-gate",
+ "stars": 0,
+ "description": "Installation safety gate & data-protection guard for DeepSeek Harness: 60 static signature rules (31 high/24 medium/5 low) scan plugin sources before dsh plugin add; 12 destructive-command patterns + ",
+ "pushed_at": "2026-08-18T02:27:12Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-gate",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "api.osv.dev": 1,
+  "www.npmjs.com": 1
+ },
+ "env": {
+  "NPM_TOKEN": 2,
+  "DSH_HOME": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 9,
+   "evidence": [
+    "lib/rules.js:40",
+    "lib/rules.js:40",
+    "lib/rules.js:40",
+    "lib/rules.js:49",
+    "lib/rules.js:57"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 5,
+   "evidence": [
+    "lib/rules.js:136",
+    "lib/rules.js:144"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 3,
+   "evidence": [
+    "lib/rules.js:252",
+    "lib/rules.js:252",
+    "lib/rules.js:252",
+    "lib/rules.js:260",
+    "lib/rules.js:260"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. lib/rules.js:40, lib/rules.js:40"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/rules.js:136, lib/rules.js:144"
+  },
+  {
+   "id": "token_env",
+   "evidence": "NPM_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,89 @@
+{
+ "repo": "xingyingyuzhui/dsh-skill-manager",
+ "stars": 0,
+ "description": "Manage DeepSeek Harness skills from Settings: list, disable without editing SKILL.md, and install/uninstall user-root copies. 设置里管理技能：清单 / 本机开关 / 用户根安装卸载。",
+ "pushed_at": "2026-08-17T07:26:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-skill-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "skills",
+  "slots",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_AGENTS_HOME": 1,
+  "DSH_BUNDLED_SKILL_DIR": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "host.js:1",
+    "host.js:279",
+    "host.js:281"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "skill-policy.mjs:21",
+    "scripts/build-client.mjs:1",
+    "scripts/build-client.mjs:53"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. host.js:1, host.js:279"
+  }
+ ],
+ "level": 3
+}

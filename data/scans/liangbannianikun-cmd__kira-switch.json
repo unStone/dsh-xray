@@ -1,0 +1,88 @@
+{
+ "repo": "liangbannianikun-cmd/kira-switch",
+ "stars": 0,
+ "description": "Kira Switch — Windows SillyTavern character-card injector for Codex, Claude Code, DeepSeek Harness, Hermes, OpenClaw and OpenCode; preserves existing instructions.",
+ "pushed_at": "2026-08-15T12:47:26Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "kira-switch",
+ "deps": [
+  "adm-zip"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "KIRA_SWITCH_USER_DATA": 2,
+  "PERSONA_SWITCH_USER_DATA": 2,
+  "KIRA_SWITCH_HOME": 2,
+  "PERSONA_SWITCH_HOME": 2,
+  "KIRA_SWITCH_DEMO": 1,
+  "PERSONA_SWITCH_DEMO": 1,
+  "KIRA_SWITCH_E2E_PAYLOAD": 1,
+  "PERSONA_SWITCH_E2E_PAYLOAD": 1,
+  "KIRA_SWITCH_E2E_RESULT": 1,
+  "PERSONA_SWITCH_E2E_RESULT": 1,
+  "KIRA_SWITCH_SCREENSHOT_PATH": 1,
+  "PERSONA_SWITCH_SCREENSHOT_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "src/main.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/lib/card.js:71"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 5,
+   "evidence": [
+    "src/main.js:95",
+    "src/main.js:97",
+    "src/main.js:119",
+    "src/main.js:121",
+    "src/main.js:129"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/main.js:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/lib/card.js:71"
+  }
+ ],
+ "level": 2
+}

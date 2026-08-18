@@ -1,0 +1,90 @@
+{
+ "repo": "chengganping-ship-it/dsh-tool-codereview",
+ "stars": 0,
+ "description": "Professional Code Review & Security Scan plugin for DeepSeek Harness - SARIF output, OWASP Top 10, AI-enhanced analysis, auto-fixes",
+ "pushed_at": "2026-08-18T09:18:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": "cordis.yml"
+ },
+ "pkg_name": "dsh-tool-codereview",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 114,
+ "domains": {
+  "refactoring.guru": 1,
+  "cwe.mitre.org": 1,
+  "peps.python.org": 1
+ },
+ "env": {
+  "SECRET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:361",
+    "lib/index.js:361",
+    "lib/index.js:440",
+    "lib/index.js:440",
+    "lib/index.js:2658"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:452"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:617"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:361, lib/index.js:361"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:452"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SECRET"
+  }
+ ],
+ "level": 2
+}

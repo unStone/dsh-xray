@@ -1,0 +1,99 @@
+{
+ "repo": "iHow1/dsh-ihow-memory",
+ "stars": 0,
+ "description": "iHow Memory plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T07:36:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-ihow-memory",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "ihow-memory",
+  "@deepseek-ai/dsh-mcp-client"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "IHOW_CAPTURE_FLOOR": 4,
+  "DEMO_MODE": 1,
+  "NODE_BINARY": 1,
+  "DSH_PROFILE_DIR": 2,
+  "DSH_PACKAGE_ROOT": 1,
+  "DSH_APP_BOOT": 2,
+  "DEMO_RECEIPT_PATH": 2,
+  "DSH_MEMORY_ROOT": 1,
+  "DSH_EXISTING_QUERY": 1,
+  "DSH_EXISTING_PATH": 1,
+  "DSH_STATE_ROOT": 1,
+  "DSH_WORKSPACE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "scripts/cross-session-demo.mjs:9",
+    "scripts/cross-session-demo.mjs:62",
+    "scripts/verify-package.mjs:3",
+    "scripts/verify-package.mjs:3",
+    "scripts/verify-package.mjs:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-cross-session-demo.mjs:35",
+    "scripts/dsh-cross-session-demo.mjs:145",
+    "scripts/dsh-existing-memory-smoke.mjs:24"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-cross-session-demo.mjs:24",
+    "scripts/dsh-existing-memory-smoke.mjs:18"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/cross-session-demo.mjs:9, scripts/cross-session-demo.mjs:62"
+  }
+ ],
+ "level": 3
+}

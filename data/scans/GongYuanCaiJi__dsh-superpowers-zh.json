@@ -1,0 +1,109 @@
+{
+ "repo": "GongYuanCaiJi/dsh-superpowers-zh",
+ "stars": 0,
+ "description": "DeepSeek Harness 插件：中文版 Superpowers 技能包，20 个中文 AI 编程 skills（移植自 superpowers-zh）",
+ "pushed_at": "2026-08-15T04:01:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-superpowers-zh",
+ "deps": [
+  "@deepseek-ai/dsh-skill"
+ ],
+ "install_scripts": {
+  "prepare": "node --test test/structure.test.js"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "primeradiant.com": 1
+ },
+ "env": {
+  "PATHEXT": 1,
+  "BRAINSTORM_PORT_FILE": 1,
+  "BRAINSTORM_PORT": 2,
+  "BRAINSTORM_HOST": 1,
+  "BRAINSTORM_URL_HOST": 1,
+  "BRAINSTORM_DIR": 1,
+  "BRAINSTORM_OWNER_PID": 2,
+  "BRAINSTORM_TOKEN_FILE": 1,
+  "BRAINSTORM_TOKEN": 2,
+  "BRAINSTORM_OPEN": 1,
+  "BRAINSTORM_OPEN_CMD": 2,
+  "BRAINSTORM_IDLE_TIMEOUT_MS": 1,
+  "BRAINSTORM_LIFECYCLE_CHECK_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "skills/writing-skills/render-graphs.js:18",
+    "skills/writing-skills/render-graphs.js:18",
+    "skills/writing-skills/render-graphs.js:72",
+    "skills/writing-skills/render-graphs.js:112",
+    "skills/brainstorming/scripts/server.cjs:537"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "skills/brainstorming/scripts/server.cjs:587"
+   ]
+  },
+  "fs_write": {
+   "src": 37,
+   "dev": 5,
+   "evidence": [
+    "bin/superpowers-zh.js:3",
+    "bin/superpowers-zh.js:3",
+    "bin/superpowers-zh.js:191",
+    "bin/superpowers-zh.js:236",
+    "bin/superpowers-zh.js:255"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. skills/writing-skills/render-graphs.js:18, skills/writing-skills/render-graphs.js:18"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. skills/brainstorming/scripts/server.cjs:587"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BRAINSTORM_TOKEN, BRAINSTORM_TOKEN_FILE"
+  }
+ ],
+ "level": 3
+}

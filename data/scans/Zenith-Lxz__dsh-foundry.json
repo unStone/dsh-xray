@@ -1,0 +1,114 @@
+{
+ "repo": "Zenith-Lxz/dsh-foundry",
+ "stars": 0,
+ "description": "DSH Foundry — zero-patch desktop distribution of official DeepSeek Harness",
+ "pushed_at": "2026-08-17T09:59:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-foundry",
+ "deps": [
+  "@dsh-foundry/adapter",
+  "@dsh-foundry/contract",
+  "@deepseek-ai/dsh-agent-presets",
+  "@dsh-foundry/daily-agent",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@dsh-foundry/native",
+  "@dsh-foundry/layout",
+  "semver",
+  "@dsh-foundry/contract"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "inputTriggers",
+  "inventedService",
+  "remote",
+  "slots",
+  "systemPrompt",
+  "theme"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step",
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 151,
+   "dev": 110,
+   "evidence": [
+    "scripts/build-corpus.ts:173",
+    "scripts/build-corpus.ts:173",
+    "scripts/build-corpus.ts:179",
+    "scripts/build-corpus.ts:353",
+    "scripts/build-corpus.ts:353"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 132,
+   "dev": 141,
+   "evidence": [
+    "scripts/acceptance-matrix.ts:14",
+    "scripts/acceptance-matrix.ts:149",
+    "scripts/build-corpus.ts:15",
+    "scripts/build-corpus.ts:15",
+    "scripts/build-corpus.ts:354"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "scripts/build-corpus.ts:439",
+    "scripts/pilot.ts:62",
+    "scripts/verify-package-closure.ts:159"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 463,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×151 src, e.g. scripts/build-corpus.ts:173, scripts/build-corpus.ts:173"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TOKEN"
+  }
+ ],
+ "level": 3
+}

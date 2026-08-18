@@ -1,0 +1,91 @@
+{
+ "repo": "Modole/dsh-plugin-market-laoboshi",
+ "stars": 0,
+ "description": "劳博士专属 DSH 插件市场：在 Web GUI 与对话工具中查询（支持正则筛选）、下载安装、上传发布 GitHub dsh-plugin 生态插件。",
+ "pushed_at": "2026-08-14T17:25:11Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@laobos/dsh-market",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "api.github.com": 1,
+  "codeload.github.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "GH_TOKEN": 2,
+  "GITHUB_TOKEN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/market.js:10"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/market.js:12",
+    "lib/market.js:12",
+    "lib/market.js:395",
+    "lib/market.js:422",
+    "lib/market.js:450"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/market.js:10"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

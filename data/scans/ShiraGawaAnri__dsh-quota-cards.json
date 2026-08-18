@@ -1,0 +1,103 @@
+{
+ "repo": "ShiraGawaAnri/dsh-quota-cards",
+ "stars": 0,
+ "description": "DSH 额度查询插件：在**消息输入框左侧**常驻一张额度 Card，随当前模型自动切换，展示对应账号的额度/流量，支持手动刷新（带防抖）和按周期自动刷新。无需发布到 npm —— 打包成 zip 发给对方即可安装。",
+ "pushed_at": "2026-08-16T02:19:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-quota-cards",
+ "deps": [
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "connection",
+  "credentials",
+  "sessions",
+  "settings",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2,
+  "opencode.ai": 2
+ },
+ "env": {
+  "TEMP": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "test-harness/geom-cdp.mjs:3",
+    "test-harness/geom-cdp.mjs:9",
+    "test-harness/inspect-card.mjs:3",
+    "test-harness/inspect-card.mjs:9",
+    "test-harness/inspect-live.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "test-harness/plugin-locator.mjs:3",
+    "test-harness/smoke.mjs:8"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. test-harness/geom-cdp.mjs:3, test-harness/geom-cdp.mjs:9"
+  }
+ ],
+ "level": 3
+}

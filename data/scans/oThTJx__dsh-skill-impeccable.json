@@ -1,0 +1,145 @@
+{
+ "repo": "oThTJx/dsh-skill-impeccable",
+ "stars": 0,
+ "description": "DeepSeek Harness bundled skill: the impeccable frontend-design workflow (adapted from pbakaus/impeccable) for designing, redesigning, auditing and polishing web UIs.",
+ "pushed_at": "2026-08-18T02:35:22Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@firefly0621/dsh-skill-impeccable",
+ "deps": [
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "skills"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "impeccable.style": 9,
+  "api.openai.com": 2,
+  "localhost.evil.com": 1,
+  "127.0.0.1.evil.com": 1,
+  "fonts.googleapis.com": 2,
+  "fonts.gstatic.com": 1
+ },
+ "env": {
+  "IMPECCABLE_CATALOG_DIR": 1,
+  "IMPECCABLE_API_URL": 1,
+  "IMPECCABLE_API_TIMEOUT": 1,
+  "IMPECCABLE_NO_TELEMETRY": 1,
+  "DO_NOT_TRACK": 1,
+  "IMPECCABLE_CARD_BASE": 1,
+  "IMPECCABLE_CONCEPT_SEED": 2,
+  "IMPECCABLE_COMPOSITIONS": 1,
+  "IMPECCABLE_UPDATE_HOST": 1,
+  "IMPECCABLE_UPDATE_CACHE": 1,
+  "IMPECCABLE_CONTEXT_DIR": 1,
+  "IMPECCABLE_NO_UPDATE_CHECK": 1,
+  "IMPECCABLE_HOOK_DISABLED": 1,
+  "OPENAI_API_KEY": 2,
+  "IMPECCABLE_CRITIQUE_META": 1,
+  "IMPECCABLE_IMAGE_GEN_FAKE": 1,
+  "IMPECCABLE_LIVE_COPY_AGENT_TIMEOUT_MS": 1,
+  "IMPECCABLE_LIVE_DEBUG_EVENTS": 1,
+  "IMPECCABLE_PALETTE_SEED": 1,
+  "IMPECCABLE_QUESTION_DISABLED": 1,
+  "IMPECCABLE_QUESTION_FORCE": 1,
+  "SSH_CONNECTION": 1,
+  "DISPLAY": 2,
+  "WAYLAND_DISPLAY": 1,
+  "IMPECCABLE_LIVE_APPLY_EVENT_HARD_TIMEOUT_MS": 1,
+  "IMPECCABLE_LIVE_APPLY_EVENT_SOFT_DEADLINE_MS": 1,
+  "IMPECCABLE_LIVE_SVELTE_COMPONENT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 33,
+   "dev": 0,
+   "evidence": [
+    "skill/scripts/context-signals.mjs:23",
+    "skill/scripts/context-signals.mjs:23",
+    "skill/scripts/context-signals.mjs:66",
+    "skill/scripts/context.mjs:30",
+    "skill/scripts/context.mjs:30"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "skill/scripts/generate-image.mjs:268",
+    "skill/scripts/modern-screenshot.umd.js:1",
+    "skill/scripts/modern-screenshot.umd.js:14",
+    "skill/scripts/live/frameworks/tag-strategy.mjs:230"
+   ]
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "skill/scripts/live-server.mjs:111",
+    "skill/scripts/live-server.mjs:1656",
+    "skill/scripts/serve-question.mjs:1418"
+   ]
+  },
+  "fs_write": {
+   "src": 93,
+   "dev": 0,
+   "evidence": [
+    "scripts/adapt-skill.mjs:22",
+    "scripts/adapt-skill.mjs:109",
+    "skill/scripts/context.mjs:988",
+    "skill/scripts/critique-storage.mjs:71",
+    "skill/scripts/doctor.mjs:210"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "skill/scripts/detect.mjs:19",
+    "skill/scripts/live-browser.js:5232"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 71,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×33 src, e.g. skill/scripts/context-signals.mjs:23, skill/scripts/context-signals.mjs:23"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. skill/scripts/generate-image.mjs:268, skill/scripts/modern-screenshot.umd.js:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. skill/scripts/live-server.mjs:111, skill/scripts/live-server.mjs:1656"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

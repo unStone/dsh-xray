@@ -1,0 +1,93 @@
+{
+ "repo": "glangzh/dsh-session-cost",
+ "stars": 0,
+ "description": "为 dsh（DeepSeek Harness）网页端提供会话花费 + 账户余额查询",
+ "pushed_at": "2026-08-16T14:56:04Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/cordis"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-session-cost",
+ "deps": [
+  "@deepseek-ai/dsh-typert-protocol",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api-docs.deepseek.com": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_PRICES_FILE": 2,
+  "DEEPSEEK_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "index.js:11",
+    "index.js:258",
+    "index.js:268"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

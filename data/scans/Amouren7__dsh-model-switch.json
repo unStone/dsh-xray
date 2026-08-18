@@ -1,0 +1,67 @@
+{
+ "repo": "Amouren7/dsh-model-switch",
+ "stars": 0,
+ "description": "DSH Cordis 插件 — 按任务类型自动切换模型（设计/复查→deepseek-v4-pro，日常执行→deepseek-v4-flash）",
+ "pushed_at": "2026-08-14T07:56:02Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-auto-model-switch",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_API_BASE": 5,
+  "DSH_VERIFY_WORKSPACE": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "plugins/auto-model-switch/bundle.js:30",
+    "plugins/auto-model-switch/observer/observer.bundle.js:6",
+    "plugins/auto-model-switch/verification/driver/dsh-verify-driver.mjs:5",
+    "plugins/auto-model-switch/verification/driver/dsh-verify-driver.mjs:102",
+    "plugins/auto-model-switch/verification/driver/dsh-verify-driver2.mjs:3"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 0
+}

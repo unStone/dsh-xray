@@ -1,0 +1,120 @@
+{
+ "repo": "hollis-openlab/dsh-runtime-xray",
+ "stars": 0,
+ "description": "Read-only runtime X-Ray for DeepSeek Harness",
+ "pushed_at": "2026-08-18T02:58:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-runtime-xray",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/cordis-plugin-loader",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "invariants",
+  "loader",
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:316",
+    "scripts/build.mjs:109"
+   ]
+  },
+  "base64_decode": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:2035",
+    "lib/client.js:3393",
+    "lib/client.js:3450",
+    "lib/index.js:109",
+    "lib/index.js:110"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:40",
+    "scripts/build.mjs:52",
+    "scripts/build.mjs:81"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:94",
+    "scripts/build.mjs:103",
+    "scripts/build.mjs:107"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 42,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/index.js:316, scripts/build.mjs:109"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×11 src, e.g. lib/client.js:2035, lib/client.js:3393"
+  }
+ ],
+ "level": 3
+}

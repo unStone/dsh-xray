@@ -1,0 +1,91 @@
+{
+ "repo": "utensil/dsh-pi-tui-shim",
+ "stars": 0,
+ "description": "An experiment on how compat between pi and dsh, built by DS Flash during dinner, I haven't tried it yet.",
+ "pushed_at": "2026-08-18T07:02:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-pi-tui-shim",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@earendil-works/pi-coding-agent"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "llm",
+  "sessions",
+  "systemPrompt",
+  "tokenMeter",
+  "tools",
+  "tuiStartup",
+  "userQuestions"
+ ],
+ "hooks": [
+  "dispose",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "PI_OFFLINE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "lib/session-shim.js:14",
+    "lib/session-shim.js:623",
+    "lib/session-shim.js:630"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

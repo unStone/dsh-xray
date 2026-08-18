@@ -1,0 +1,99 @@
+{
+ "repo": "dkjsiogu/dsh-file-path",
+ "stars": 0,
+ "description": "DeepSeek Harness plugin: drag unsupported files into the composer as workspace path references",
+ "pushed_at": "2026-08-15T18:42:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-gateway",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-file-path",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node scripts/build.mjs && tsc -p tsconfig.json"
+ },
+ "injects": [
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/picker.ts:8",
+    "src/picker.ts:8",
+    "src/picker.ts:18",
+    "src/picker.ts:22",
+    "src/picker.ts:23"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:250"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 8,
+   "evidence": [
+    "src/index.ts:268"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/picker.ts:8, src/picker.ts:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/index.ts:250"
+  }
+ ],
+ "level": 3
+}

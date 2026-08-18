@@ -1,0 +1,91 @@
+{
+ "repo": "TongaiLinC/dsh-mobile-access",
+ "stars": 0,
+ "description": "DeepSeek Harness 移动端访问插件 —— 让手机 / 平板通过局域网或 VPN 访问 DeepSeek Harness Web GUI，并内置 PC 端审批门禁、LAN / VPN / 公网自动识别 与 网络模式切换。",
+ "pushed_at": "2026-08-17T17:55:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-mobile-access",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "subprocess",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-mobile-access.js:1642",
+    "dsh-mobile-access.js:1765",
+    "lib/index.js:1608",
+    "lib/index.js:1720"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-mobile-access.js:1431",
+    "lib/index.js:1432"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1588"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dsh-mobile-access.js:1642, dsh-mobile-access.js:1765"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. dsh-mobile-access.js:1431, lib/index.js:1432"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,88 @@
+{
+ "repo": "shijunan126-creator/dsh-subagent-effort",
+ "stars": 0,
+ "description": "DeepSeek Harness plugin: subagents with their own model & reasoning effort — GUI settings card + subagent_select tool",
+ "pushed_at": "2026-08-14T09:28:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-subagent-effort-project",
+ "deps": [
+  "react",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@shijunan123/dsh-client-ui-subagent-effort"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "settings",
+  "slots",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/request",
+  "internal/service"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "packages/host/lib/index.js:30",
+    "packages/host/lib/index.js:240"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

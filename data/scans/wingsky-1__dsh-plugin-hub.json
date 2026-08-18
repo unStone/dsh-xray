@@ -1,0 +1,131 @@
+{
+ "repo": "wingsky-1/dsh-plugin-hub",
+ "stars": 0,
+ "description": "DSH (DeepSeek Harness) 插件集：npm 分发，可一键装全家桶或单独安装",
+ "pushed_at": "2026-08-18T04:31:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-hub",
+ "deps": [
+  "react",
+  "schemastery",
+  "react",
+  "@wingsky-1/dsh-gzip",
+  "@wingsky-1/dsh-idle-archive",
+  "@wingsky-1/dsh-notifier",
+  "@wingsky-1/dsh-skill-explorer",
+  "@wingsky-1/dsh-opencode-usage",
+  "@wingsky-1/dsh-mcp-manager",
+  "@wingsky-1/dsh-lan-proxy"
+ ],
+ "install_scripts": {
+  "prepare": "node build.ts"
+ },
+ "injects": [
+  "sessions",
+  "skills",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/error",
+  "agent/pre-step",
+  "agent/status",
+  "agent/turn-stopping",
+  "approval/request",
+  "internal/service"
+ ],
+ "tool_regs": 5,
+ "domains": {
+  "mcp.context7.com": 1,
+  "opencode.ai": 2
+ },
+ "env": {
+  "DSH_PACKAGES_ROOT": 1,
+  "DSH_HOME": 8,
+  "OPENCODE_GO_API_KEY": 1,
+  "DSH_AGENTS_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 32,
+   "dev": 0,
+   "evidence": [
+    "scripts/bundle-host.ts:22",
+    "scripts/bundle-host.ts:22",
+    "scripts/bundle-host.ts:59",
+    "scripts/pack-check.ts:12",
+    "scripts/pack-check.ts:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "packages/dsh-lan-proxy/src/proxy.ts:260"
+   ]
+  },
+  "fs_write": {
+   "src": 33,
+   "dev": 49,
+   "evidence": [
+    "scripts/aggregate.ts:22",
+    "scripts/aggregate.ts:89",
+    "scripts/build-client.ts:31",
+    "scripts/build-client.ts:153",
+    "scripts/bundle-host.ts:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "scripts/bundle-host.ts:89"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 60,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×32 src, e.g. scripts/bundle-host.ts:22, scripts/bundle-host.ts:22"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. packages/dsh-lan-proxy/src/proxy.ts:260"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENCODE_GO_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,158 @@
+{
+ "repo": "facai0316/dsh-auto-coding",
+ "stars": 0,
+ "description": "一个代码流水线，前期磨合好了以后，会有个很舒服的 vibe coding 体验，也可以更好的把闲时 token 利用起来（白天人肉测试+写需求+审核前一天的计划和决策，晚上让流水线自己挂着跑）",
+ "pushed_at": "2026-08-17T09:54:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "auto-coding-plugins",
+ "deps": [
+  "@douyinfe/semi-ui",
+  "marked",
+  "pg",
+  "yaml",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom",
+  "@auto-coding/db-pgmas",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "@auto-coding/cm-flow",
+  "@auto-coding/cm-worktree",
+  "@auto-coding/db-pgmas",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "pg",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@douyinfe/semi-ui",
+  "marked",
+  "pg",
+  "yaml",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@douyinfe/semi-ui",
+  "marked",
+  "yaml",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "pgmas",
+  "remote",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 16,
+ "domains": {
+  "gitee.com": 5
+ },
+ "env": {
+  "DSH_HOME": 9
+ },
+ "behaviors": {
+  "exec": {
+   "src": 19,
+   "dev": 1,
+   "evidence": [
+    "dist/mega/lib/worker.js:10",
+    "dist/mega/lib/worker.js:10",
+    "dist/mega/lib/worker.js:115",
+    "dist/mega/lib/worker.js:272",
+    "packages/cm-worktree/src/index.ts:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 12,
+   "evidence": [
+    "scripts/build-dist.mjs:15",
+    "scripts/build-dist.mjs:15",
+    "scripts/build-dist.mjs:24",
+    "scripts/build-dist.mjs:52",
+    "scripts/build-dist.mjs:53"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 112,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×19 src, e.g. dist/mega/lib/worker.js:10, dist/mega/lib/worker.js:10"
+  }
+ ],
+ "level": 3
+}

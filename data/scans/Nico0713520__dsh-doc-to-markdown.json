@@ -1,0 +1,75 @@
+{
+ "repo": "Nico0713520/dsh-doc-to-markdown",
+ "stars": 0,
+ "description": "Convert PDF/DOCX to Markdown. Chinese-PDF optimized (NFKC), Windows-first. dsh / Claude Code / OpenClaw compatible SKILL.md skill.",
+ "pushed_at": "2026-08-17T16:27:41Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-doc-to-markdown",
+ "deps": [
+  "mammoth",
+  "turndown"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DOC2MD_PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 3,
+   "evidence": [
+    "scripts/lib/pdf.cjs:10",
+    "scripts/lib/pdf.cjs:10",
+    "scripts/lib/pdf.cjs:38",
+    "scripts/lib/pdf.cjs:46",
+    "scripts/lib/pdf.cjs:68"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 3,
+   "evidence": [
+    "scripts/convert.cjs:50",
+    "scripts/convert.cjs:53",
+    "scripts/lib/pdf.cjs:65",
+    "scripts/lib/pdf.cjs:66"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 5,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/lib/pdf.cjs:10, scripts/lib/pdf.cjs:10"
+  }
+ ],
+ "level": 2
+}

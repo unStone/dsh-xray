@@ -1,0 +1,112 @@
+{
+ "repo": "1710782766/dsh-llm-vision",
+ "stars": 0,
+ "description": "Reliable vision + OCR for text-only models on DeepSeek Harness: describe_image (normal/critical) + extract_text tools, auto-preprocessing, retries, and a persistent answer cache.",
+ "pushed_at": "2026-08-18T02:21:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-llm-vision",
+ "deps": [
+  "schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "conversation",
+  "locale",
+  "settingsScope",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {
+  "dashscope.aliyuncs.com": 2,
+  "open.bigmodel.cn": 1,
+  "generativelanguage.googleapis.com": 1,
+  "api.example.com": 1
+ },
+ "env": {
+  "XDG_CACHE_HOME": 1,
+  "VISION_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/preprocess.ts:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/media.ts:72"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 11,
+   "evidence": [
+    "src/cache.ts:20",
+    "src/cache.ts:139",
+    "src/preprocess.ts:95",
+    "src/preprocess.ts:115"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/preprocess.ts:11"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/media.ts:72"
+  },
+  {
+   "id": "token_env",
+   "evidence": "VISION_API_KEY"
+  }
+ ],
+ "level": 3
+}

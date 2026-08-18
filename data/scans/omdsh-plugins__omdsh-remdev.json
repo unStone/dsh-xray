@@ -1,0 +1,129 @@
+{
+ "repo": "omdsh-plugins/omdsh-remdev",
+ "stars": 0,
+ "description": "Remote development for the DeepSeek Harness web GUI: connect a workspace to an SSH server, provision a .dsh-server there, and run its files, terminals, and agents on that machine",
+ "pushed_at": "2026-08-17T05:47:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "plughub": {
+   "displayName": {
+    "": "Remote Development",
+    "zh": "远程开发"
+   },
+   "summary": {
+    "": "Attach a workspace to an SSH server: its files, terminals, agents, and project skills all live there.",
+    "zh": "把工作区接到一台 SSH 服务器上，文件、终端、智能体和项目技能都在那台机器上。"
+   },
+   "category": "workspace",
+   "settings": [
+    "omdsh-remdev"
+   ],
+   "docs": "https://github.com/omdsh-plugins/omdsh-remdev#readme",
+   "order": 20
+  }
+ },
+ "pkg_name": "@omdsh-plugins/omdsh-remdev",
+ "deps": [
+  "clsx",
+  "ssh2",
+  "ws",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --build tsconfig.json && tsdown"
+ },
+ "injects": [
+  "invariants",
+  "locale",
+  "slots",
+  "webRuntime",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "codeload.github.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/provision.ts:40",
+    "src/provision.ts:1075",
+    "src/provision.ts:1108"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "src/mirror-dir.ts:111",
+    "src/provision.ts:966",
+    "src/session-mirror.ts:307",
+    "src/transfer.ts:57",
+    "src/tui-install.ts:492"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 50,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/provision.ts:40, src/provision.ts:1075"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,111 @@
+{
+ "repo": "Failing-coachman563/dsh-skill-viewer",
+ "stars": 0,
+ "description": "Manage and organize DSH skills via a web interface with one-click enable/disable, batch migration, and workspace-based grouping.",
+ "pushed_at": "2026-08-17T06:51:26Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-api-gateway"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-skill-viewer",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-typert-protocol",
+  "yaml",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "locale",
+  "remote",
+  "sessions",
+  "skills",
+  "slots",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "DSH_HOME": 6,
+  "DSH_AGENTS_HOME": 10
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/cli.js:31",
+    "lib/cli.js:234",
+    "src/cli.ts:31",
+    "src/cli.ts:235"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:630",
+    "src/index.ts:651"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "test-groups.mjs:79",
+    "test-scope.mjs:53",
+    "test-scope.mjs:55",
+    "test-scope.mjs:85",
+    "lib/groups.js:65"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/cli.js:31, lib/cli.js:234"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:630, src/index.ts:651"
+  }
+ ],
+ "level": 3
+}

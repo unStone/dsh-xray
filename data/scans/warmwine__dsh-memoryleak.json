@@ -1,0 +1,86 @@
+{
+ "repo": "warmwine/dsh-memoryleak",
+ "stars": 0,
+ "description": "基于dsh的知识库和待办管理工具",
+ "pushed_at": "2026-08-17T16:04:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-memoryleak",
+ "deps": [
+  "schemastery",
+  "yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commandUi",
+  "commands",
+  "conversation",
+  "remote",
+  "sessions",
+  "settings",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 22,
+   "evidence": [
+    "src/journal.js:97",
+    "src/journal.js:211",
+    "src/journal.js:239",
+    "src/journal.js:268",
+    "src/vault.js:136"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

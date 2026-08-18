@@ -1,0 +1,82 @@
+{
+ "repo": "azure5100/huahua-dsh-record-replay",
+ "stars": 0,
+ "description": "DSH Record & Replay plugin: session timeline replay, replay-pack export/import, re-run recorded conversations, screen recording -> skill generation",
+ "pushed_at": "2026-08-17T04:10:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "reactjs.org": 1,
+  "gist.github.com": 2
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/pack-store.js:24",
+    "lib/recording-store.js:37",
+    "lib/recording-store.js:54",
+    "lib/recording-store.js:65",
+    "lib/skill-installer.js:69"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 87,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 7 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

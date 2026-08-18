@@ -1,0 +1,86 @@
+{
+ "repo": "sunshaobei/dsh-file-mention",
+ "stars": 0,
+ "description": "支持dsh @引用文件及文件夹",
+ "pushed_at": "2026-08-16T16:07:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-input-trigger"
+   ]
+  }
+ },
+ "pkg_name": "dsh-file-mention",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "inputTriggers",
+  "sessions",
+  "webRuntime",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step",
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:18",
+    "lib/index.js:173"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 17,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:18, lib/index.js:173"
+  }
+ ],
+ "level": 3
+}

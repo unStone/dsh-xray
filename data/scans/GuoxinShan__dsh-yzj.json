@@ -1,0 +1,206 @@
+{
+ "repo": "GuoxinShan/dsh-yzj",
+ "stars": 0,
+ "description": "云之家 (Yunzhijia) plugin bundle for DeepSeek Harness: yzj-cli bridge, 41 model-facing tools, floating workspace panel with drag/@ reference chips",
+ "pushed_at": "2026-08-18T09:18:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-input-trigger"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-yzj/bundle",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-schedule",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "react",
+  "zod",
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery",
+  "@dsh-yzj/bridge",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-schedule",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@dsh-yzj/bridge",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@dsh-yzj/bridge",
+  "@dsh-yzj/tool-yzj",
+  "js-yaml",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "connection",
+  "sessions",
+  "slots",
+  "tools",
+  "yzjBridge",
+  "yzjRobot"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "approval/request",
+  "connection/reset",
+  "session/event",
+  "tools/pre-execute",
+  "tools/result",
+  "yzj/ask-pending"
+ ],
+ "tool_regs": 224,
+ "domains": {
+  "www.yunzhijia.com": 14
+ },
+ "env": {
+  "DSH_VERIFY_BASE": 6,
+  "YZJ_E2E_GROUP": 2,
+  "DSH_GUI": 2,
+  "E2E_HEADED": 2,
+  "DSH_HOME": 6,
+  "YZJ_SEND_MSG_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 30,
+   "dev": 0,
+   "evidence": [
+    ".acceptance/verify-send.mjs:10",
+    ".acceptance/verify-todo-browser.mjs:95",
+    ".acceptance/verify-todo-confirm-e2e.mjs:11",
+    ".acceptance/verify-todo-team.mjs:9",
+    "lib/bridge.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    ".acceptance/verify-send.mjs:21",
+    "lib/ui-yzj.mjs:1591",
+    "packages/ui-yzj/src/index.ts:322"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "spike/robot/hook-recv.mjs:15"
+   ]
+  },
+  "fs_write": {
+   "src": 48,
+   "dev": 32,
+   "evidence": [
+    ".acceptance/verify-send.mjs:11",
+    ".acceptance/verify-send.mjs:21",
+    ".acceptance/verify-send.mjs:22",
+    "lib/memory-yzj.mjs:1",
+    "lib/memory-yzj.mjs:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    ".acceptance/verify-todo-e2e.mjs:20"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 194,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×30 src, e.g. .acceptance/verify-send.mjs:10, .acceptance/verify-todo-browser.mjs:95"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. .acceptance/verify-send.mjs:21, lib/ui-yzj.mjs:1591"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. spike/robot/hook-recv.mjs:15"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,110 @@
+{
+ "repo": "LeeKai233/dsh-whale-picks",
+ "stars": 0,
+ "description": "🐳 鲸选 dsh-whale-picks — 敢装，值得装：有品味的 DeepSeek Harness 插件精品商店（创始人亲测 + 安全体检 + 四维评分）",
+ "pushed_at": "2026-08-17T17:35:48Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-whale-picks",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 3,
+  "www.npmjs.com": 1
+ },
+ "env": {
+  "GITHUB_TOKEN": 4,
+  "GH_TOKEN": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-plugin.mjs:21",
+    "scripts/check-plugin.mjs:21",
+    "scripts/check-plugin.mjs:562",
+    "scripts/template-sync.mjs:10",
+    "scripts/template-sync.mjs:10"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-plugin.mjs:506"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-plugin.mjs:315",
+    "scripts/compute-scores.mjs:201",
+    "scripts/compute-scores.mjs:202",
+    "scripts/compute-scores.mjs:206",
+    "scripts/compute-scores.mjs:247"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/check-plugin.mjs:21, scripts/check-plugin.mjs:21"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/check-plugin.mjs:506"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

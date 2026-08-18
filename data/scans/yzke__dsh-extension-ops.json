@@ -1,0 +1,92 @@
+{
+ "repo": "yzke/dsh-extension-ops",
+ "stars": 0,
+ "description": "Read-only extension operations standard for DeepSeek Harness agents",
+ "pushed_at": "2026-08-17T02:19:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-extension-ops-workspace",
+ "deps": [
+  "ajv",
+  "ajv-formats",
+  "semver",
+  "@dsh-extension-ops/core",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "ops.dsh.dev": 5
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 3,
+   "evidence": [
+    "eval/harness.ts:2",
+    "eval/harness.ts:2",
+    "eval/harness.ts:365",
+    "eval/process.ts:1",
+    "eval/process.ts:22"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 14,
+   "evidence": [
+    "eval/archive.ts:272",
+    "tools/check-packed-artifacts.mjs:6",
+    "tools/check-packed-artifacts.mjs:7",
+    "tools/check-packed-artifacts.mjs:86",
+    "tools/check-packed-artifacts.mjs:90"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 50,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. eval/harness.ts:2, eval/harness.ts:2"
+  }
+ ],
+ "level": 3
+}

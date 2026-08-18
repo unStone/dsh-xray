@@ -1,0 +1,103 @@
+{
+ "repo": "Hefulalala/dsh-remote-workspace",
+ "stars": 0,
+ "description": "DSH plugin: SSH/SFTP remote sites and remote workspaces in the sidebar",
+ "pushed_at": "2026-08-18T06:06:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-workspace"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-remote-workspace",
+ "deps": [
+  "ssh2",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "tools",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "SSH_AUTH_SOCK": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:1117",
+    "src/index.ts:1137",
+    "src/index.ts:1158"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:24",
+    "src/index.ts:25",
+    "src/index.ts:232",
+    "src/index.ts:693",
+    "src/index.ts:699"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. src/index.ts:1117, src/index.ts:1137"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SSH_AUTH_SOCK"
+  }
+ ],
+ "level": 3
+}

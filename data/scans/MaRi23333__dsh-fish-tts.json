@@ -1,0 +1,122 @@
+{
+ "repo": "MaRi23333/dsh-fish-tts",
+ "stars": 0,
+ "description": "Fish Audio TTS plugin for DeepSeek Harness — per-reply read-aloud, auto-read toggle, BYOK, third-party. 语音合成插件：逐条朗读、自动朗读；仅支持 Fish Audio API，需自备 Key；第三方非官方。",
+ "pushed_at": "2026-08-17T16:38:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-fish-tts",
+ "deps": [
+  "undici",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "internal/service",
+  "locale/change"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.fish.audio": 4
+ },
+ "env": {
+  "FISH_API_KEY": 2,
+  "USERNAME": 2,
+  "DSH_HOME": 2,
+  "HTTPS_PROXY": 2,
+  "https_proxy": 2,
+  "HTTP_PROXY": 2,
+  "http_proxy": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:6",
+    "lib/index.js:6",
+    "lib/index.js:168",
+    "scripts/check-pack.mjs:6",
+    "scripts/check-pack.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:221",
+    "lib/index.js:222",
+    "lib/index.js:223",
+    "src/index.ts:286",
+    "src/index.ts:287"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 11,
+   "evidence": [
+    "lib/index.js:2",
+    "lib/index.js:200",
+    "lib/index.js:293",
+    "src/index.ts:23",
+    "src/index.ts:264"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. lib/index.js:6, lib/index.js:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×6 src, e.g. lib/index.js:221, lib/index.js:222"
+  },
+  {
+   "id": "token_env",
+   "evidence": "FISH_API_KEY"
+  }
+ ],
+ "level": 3
+}

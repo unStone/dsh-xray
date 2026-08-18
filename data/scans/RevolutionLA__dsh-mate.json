@@ -1,0 +1,86 @@
+{
+ "repo": "RevolutionLA/dsh-mate",
+ "stars": 0,
+ "description": "DSH Mate（求索伴侣）— DeepSeek Harness 的鸿蒙手机远程伴侣：电脑端 dsh-mate 插件 + 鸿蒙 App，扫码配对后远程查看/操作 AI 任务并收通知。零账号·零登录·零信息收集。Mit licensed.",
+ "pushed_at": "2026-08-18T03:06:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-mate-monorepo",
+ "deps": [
+  "qrcode-terminal",
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "apiProxy"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dsh.promptbox.top": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/mock-bridge.mjs:70",
+    "packages/dsh-mate/src/server/http.ts:183"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-mate/src/pairing/devices.ts:6",
+    "packages/dsh-mate/src/pairing/devices.ts:41"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/mock-bridge.mjs:70, packages/dsh-mate/src/server/http.ts:183"
+  }
+ ],
+ "level": 3
+}

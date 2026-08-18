@@ -1,0 +1,76 @@
+{
+ "repo": "dmsobtl/dsh-agent-eval",
+ "stars": 0,
+ "description": "DSH 插件：Agent 能力评估框架 — 定义任务、跑 benchmark、评分、跟踪改进。",
+ "pushed_at": "2026-08-14T15:26:47Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-agent-eval",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/runner.ts:12",
+    "src/runner.ts:12",
+    "src/runner.ts:23",
+    "src/runner.ts:87"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:92"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/runner.ts:12, src/runner.ts:12"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 4 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

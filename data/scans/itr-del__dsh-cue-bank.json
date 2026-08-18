@@ -1,0 +1,102 @@
+{
+ "repo": "itr-del/dsh-cue-bank",
+ "stars": 0,
+ "description": "Cross-session event-cue memory plugin for DeepSeek Harness: auto-builds a persistent cue bank from conversations and re-injects remembered context on topic switches.",
+ "pushed_at": "2026-08-15T12:05:11Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": {
+   "id": "cue-bank",
+   "name": "cue-bank",
+   "defaultConfig": {
+    "storageRoot": "",
+    "matchMode": "auto",
+    "embedding": {
+     "provider": "openai-compatible",
+     "baseURL": "https://api.siliconflow.cn/v1",
+     "apiKeyEnv": "SILICONFLOW_API_KEY",
+     "model": "BAAI/bge-m3",
+     "dimensions": 1024,
+     "timeoutMs": 5000
+    },
+    "topic": {
+     "switchDetection": true,
+     "switchThreshold": 0.25,
+     "scanEveryTurn": false
+    },
+    "inject": {
+     "enabled": true,
+     "maxCues": 3,
+     "maxDetailChars": 400
+    },
+    "extract": {
+     "enabled": true,
+     "maxKeywordsPerTurn": 12,
+     "keywordMinLen": 2,
+     "userIdiomWindowTurns": 10,
+     "maxIdiomHints": 5
+    },
+    "dbg": false
+   }
+  }
+ },
+ "pkg_name": "@local/dsh-cue-bank",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/status"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.siliconflow.cn": 1
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/store.js:31",
+    "src/store.js:88"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

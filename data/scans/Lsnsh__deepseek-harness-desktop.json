@@ -1,0 +1,91 @@
+{
+ "repo": "Lsnsh/deepseek-harness-desktop",
+ "stars": 0,
+ "description": "DeepSeek Harness thrid-party desktop version (macOS)",
+ "pushed_at": "2026-08-16T13:40:32Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "vite.dev": 1
+ },
+ "env": {
+  "DSH_DESKTOP_DSH_VERSION": 2,
+  "DSH_DESKTOP_PRUNE": 2,
+  "APPLE_SIGNING_IDENTITY": 1,
+  "DSH_DESKTOP_NODE_VERSION": 1,
+  "DSH_DESKTOP_PNPM_VERSION": 1,
+  "DSH_UPDATE_MANIFEST_URL": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 25,
+   "dev": 0,
+   "evidence": [
+    "scripts/assemble-runtime.mjs:27",
+    "scripts/assemble-runtime.mjs:27",
+    "scripts/assemble-runtime.mjs:67",
+    "scripts/assemble-runtime.mjs:303",
+    "scripts/assemble-runtime.mjs:304"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-update.mjs:151",
+    "scripts/verify-update.mjs:154",
+    "scripts/verify-update.mjs:167",
+    "scripts/verify-update.mjs:170"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 31,
+   "dev": 0,
+   "evidence": [
+    "scripts/assemble-runtime.mjs:29",
+    "scripts/assemble-runtime.mjs:29",
+    "scripts/assemble-runtime.mjs:56",
+    "scripts/assemble-runtime.mjs:60",
+    "scripts/assemble-runtime.mjs:77"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×25 src, e.g. scripts/assemble-runtime.mjs:27, scripts/assemble-runtime.mjs:27"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. scripts/verify-update.mjs:151, scripts/verify-update.mjs:154"
+  }
+ ],
+ "level": 2
+}

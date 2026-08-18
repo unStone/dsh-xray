@@ -1,0 +1,112 @@
+{
+ "repo": "binsarjr/dsh-codex-media",
+ "stars": 0,
+ "description": "Image & document analysis tools for DeepSeek Harness, powered by a local OpenAI Codex CLI (zero deps, 3 transports, pairs with dsh-drop-to-path)",
+ "pushed_at": "2026-08-16T08:37:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-codex-media",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "api.openai.com": 2
+ },
+ "env": {
+  "CODEX_ANALYSIS_API_KEY": 1,
+  "CODEX_ANALYSIS_BASE_URL": 1,
+  "CODEX_ANALYSIS_MEDIA_ROOT": 2,
+  "CODEX_ANALYSIS_PUBLIC_URL": 2,
+  "CODEX_ANALYSIS_TRANSPORT": 3,
+  "CODEX_ANALYSIS_GENERATION_TRANSPORT": 3,
+  "CODEX_ANALYSIS_GENERATION_MODEL": 2,
+  "CODEX_ANALYSIS_TIMEOUT_MS": 2,
+  "CODEX_ANALYSIS_IMAGE_MODELS": 2,
+  "CODEX_ANALYSIS_DOCUMENT_MODELS": 2,
+  "CODEX_ANALYSIS_CODEX_BIN": 1,
+  "CODEX_ANALYSIS_MAX_IMAGE_BYTES": 1,
+  "CODEX_ANALYSIS_MAX_DOCUMENT_BYTES": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/engine.mjs:17",
+    "src/engine.mjs:111"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/api-client.mjs:224"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/mock-api-test.mjs:23",
+    "scripts/mock-api-test.mjs:68"
+   ]
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/make-fixtures.mjs:12",
+    "scripts/make-fixtures.mjs:176",
+    "scripts/make-fixtures.mjs:177",
+    "scripts/mock-api-test.mjs:195",
+    "scripts/mock-api-test.mjs:197"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/engine.mjs:17, src/engine.mjs:111"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/api-client.mjs:224"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/mock-api-test.mjs:23, scripts/mock-api-test.mjs:68"
+  },
+  {
+   "id": "token_env",
+   "evidence": "CODEX_ANALYSIS_API_KEY"
+  }
+ ],
+ "level": 3
+}

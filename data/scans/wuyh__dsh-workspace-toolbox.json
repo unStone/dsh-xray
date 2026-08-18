@@ -1,0 +1,107 @@
+{
+ "repo": "wuyh/dsh-workspace-toolbox",
+ "stars": 0,
+ "description": "DSH (DeepSeek Harness) Web 工作区工具箱插件：文件浏览、Docker 与 Vite 项目管控、SSH/容器终端。",
+ "pushed_at": "2026-08-17T09:27:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-workspace-toolbox",
+ "deps": [
+  "@xterm/addon-fit",
+  "dompurify",
+  "highlight.js",
+  "marked",
+  "ssh2",
+  "ws",
+  "xterm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-host-webserver",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "fs",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "ComSpec": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 20,
+   "dev": 0,
+   "evidence": [
+    "scripts/dev.mjs:10",
+    "scripts/dev.mjs:10",
+    "scripts/dev.mjs:21",
+    "scripts/dev.mjs:26",
+    "lib/host/docker/routes.js:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:29",
+    "scripts/build-client.mjs:238",
+    "lib/host/docker/manager.js:8",
+    "lib/host/docker/manager.js:30",
+    "src/host/docker/manager.ts:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 58,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×20 src, e.g. scripts/dev.mjs:10, scripts/dev.mjs:10"
+  }
+ ],
+ "level": 3
+}

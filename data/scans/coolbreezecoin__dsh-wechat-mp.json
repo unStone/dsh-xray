@@ -1,0 +1,109 @@
+{
+ "repo": "coolbreezecoin/dsh-wechat-mp",
+ "stars": 0,
+ "description": "DeepSeek Harness plugin: turn markdown into a typeset WeChat Official Account draft",
+ "pushed_at": "2026-08-16T07:44:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-wechat-mp",
+ "deps": [
+  "cheerio",
+  "highlight.js",
+  "juice",
+  "marked",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "remote",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 8,
+ "domains": {
+  "api.weixin.qq.com": 1
+ },
+ "env": {
+  "WECHAT_MP_APPID": 2,
+  "WECHAT_MP_SECRET": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 2,
+   "evidence": [
+    "scripts/e2e-draft.mjs:37",
+    "scripts/e2e-draft.mjs:38",
+    "scripts/prep-demo.mjs:67",
+    "scripts/prep-demo.mjs:68",
+    "scripts/prep-demo.mjs:69"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WECHAT_MP_SECRET"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,80 @@
+{
+ "repo": "lanshuye123/DSH-Terminal",
+ "stars": 0,
+ "description": "DSH WebUI 终端(Terminal)插件。可以在WebUI中获得终端模拟器。",
+ "pushed_at": "2026-08-14T06:19:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "src/client.js:646",
+    "src/client.js:814",
+    "src/client.js:1144",
+    "src/client.js:1158",
+    "src/client.js:1325"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-payload.js:32"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-payload.js:44",
+    "scripts/build-payload.js:54"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. src/client.js:646, src/client.js:814"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/build-payload.js:32"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

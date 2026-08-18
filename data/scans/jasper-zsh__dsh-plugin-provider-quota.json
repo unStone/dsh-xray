@@ -1,0 +1,83 @@
+{
+ "repo": "jasper-zsh/dsh-plugin-provider-quota",
+ "stars": 0,
+ "description": "DeepSeek Harness（DSH） 的 Web 插件：在对话输入框底部展示模型 Provider 的订阅额度与限流窗口，点击徽标即可查看详情。",
+ "pushed_at": "2026-08-18T06:09:17Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-provider-quota",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "credentials",
+  "llm",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "chatgpt.com": 2,
+  "api.openai.com": 1,
+  "api.deepseek.com": 2,
+  "api.kimi.com": 3,
+  "openrouter.ai": 2,
+  "api.z.ai": 2,
+  "open.bigmodel.cn": 2
+ },
+ "env": {
+  "DSHPQ_CLEAN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/providers/codex.ts:24"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/providers/codex.ts:24"
+  }
+ ],
+ "level": 2
+}

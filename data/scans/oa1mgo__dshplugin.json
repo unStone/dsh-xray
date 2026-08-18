@@ -1,0 +1,77 @@
+{
+ "repo": "oa1mgo/dshplugin",
+ "stars": 0,
+ "description": "Community-built discovery and verification registry for DeepSeek Harness plugins.",
+ "pushed_at": "2026-08-18T07:14:36Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dshplugin",
+ "deps": [
+  "@fontsource-variable/manrope",
+  "@fontsource/ibm-plex-mono",
+  "@phosphor-icons/react",
+  "@vitejs/plugin-react",
+  "jose",
+  "react",
+  "react-dom",
+  "vite",
+  "wrangler"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "GITHUB_TOKEN": 1,
+  "GH_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/sync-awesome-catalog.mjs:159",
+    "scripts/sync-github-topic-catalog.mjs:320"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 14,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

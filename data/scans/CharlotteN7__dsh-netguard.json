@@ -1,0 +1,86 @@
+{
+ "repo": "CharlotteN7/dsh-netguard",
+ "stars": 0,
+ "description": "A host allowlist on DeepSeek Harness web_fetch and web_search, enforced at connect time",
+ "pushed_at": "2026-08-18T07:08:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-netguard",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools",
+  "web"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "schema.ocsf.io": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 37,
+   "evidence": [
+    "src/policy.ts:23",
+    "src/policy.ts:454",
+    "src/sink.ts:19",
+    "src/sink.ts:19",
+    "src/sink.ts:72"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/search-provider.ts:303"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

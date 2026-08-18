@@ -1,0 +1,103 @@
+{
+ "repo": "ArcoCodes/bloome-finance-plugin",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-17T06:21:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "bloome-finance-plugin",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools",
+  "userQuestions"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "react.dev": 8,
+  "finance.bloome.im": 1,
+  "fonts.googleapis.com": 4,
+  "fonts.gstatic.com": 4,
+  "json.schemastore.org": 2
+ },
+ "env": {
+  "BLOOME_PLUGIN_ROOT": 1,
+  "BLOOME_FINANCE_URL": 1,
+  "BLOOME_FINANCE_CREDENTIAL_FILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "plugins/bloome-finance-plugin/mcp/finance-client.cjs:7",
+    "plugins/bloome-finance-plugin/mcp/finance-client.cjs:55"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 45,
+   "evidence": [
+    "plugins/bloome-finance-plugin/dist/render-report.cjs:126",
+    "plugins/bloome-finance-plugin/dist/render-report.cjs:126",
+    "plugins/bloome-finance-plugin/mcp/finance-client.cjs:22",
+    "plugins/bloome-finance-plugin/mcp/finance-client.cjs:122",
+    "plugins/bloome-finance-plugin/scripts/core.mjs:32"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugins/bloome-finance-plugin/mcp/server.cjs:315"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. plugins/bloome-finance-plugin/mcp/finance-client.cjs:7, plugins/bloome-finance-plugin/mcp/finance-client.cjs:55"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BLOOME_FINANCE_CREDENTIAL_FILE"
+  }
+ ],
+ "level": 3
+}

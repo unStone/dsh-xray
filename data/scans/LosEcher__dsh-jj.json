@@ -1,0 +1,78 @@
+{
+ "repo": "LosEcher/dsh-jj",
+ "stars": 0,
+ "description": "DSH bundle: jj (Jujutsu) version control via a zero-dependency MCP stdio server — mcp__jj__* tools for DeepSeek Harness, Claude Code, Codex",
+ "pushed_at": "2026-08-18T03:52:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-jj",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "JJ_MCP_BIN": 1,
+  "JJ_MCP_TIMEOUT_MS": 1,
+  "JJ_MCP_DEFAULT_REPO": 1,
+  "JJ_MCP_LOG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "server.mjs:10",
+    "server.mjs:23",
+    "server.mjs:76"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. server.mjs:10, server.mjs:23"
+  }
+ ],
+ "level": 3
+}

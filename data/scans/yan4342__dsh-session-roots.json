@@ -1,0 +1,97 @@
+{
+ "repo": "yan4342/dsh-session-roots",
+ "stars": 0,
+ "description": "让一个 DSH 会话有多个工作区，同时可写多个项目文件夹。",
+ "pushed_at": "2026-08-16T16:24:03Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-session-roots",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "sessions",
+  "typert",
+  "workspaces"
+ ],
+ "hooks": [
+  "session/created",
+  "session/disposed"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "remote.js:23",
+    "remote.js:243",
+    "remote.js:333",
+    "scripts/test-acl-revoke.mjs:17",
+    "scripts/test-acl-revoke.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "remote.js:22",
+    "remote.js:229",
+    "remote.js:432",
+    "scripts/test-acl-revoke.mjs:18",
+    "scripts/test-acl-revoke.mjs:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. remote.js:23, remote.js:243"
+  }
+ ],
+ "level": 3
+}

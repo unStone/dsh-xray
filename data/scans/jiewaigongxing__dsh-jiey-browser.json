@@ -1,0 +1,92 @@
+{
+ "repo": "jiewaigongxing/dsh-jiey-browser",
+ "stars": 0,
+ "description": "DeepSeek Harness plugin: drive Jiey Browser over MCP",
+ "pushed_at": "2026-08-18T08:44:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-jiey-browser",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@modelcontextprotocol/sdk",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {
+  "www.gongxingglobal.com": 1,
+  "docs.browser.gongxingglobal.com": 1
+ },
+ "env": {
+  "BROWSEROS_URL": 1,
+  "JIEY_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:453"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:453"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:17"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/index.ts:453"
+  }
+ ],
+ "level": 3
+}

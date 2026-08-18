@@ -1,0 +1,81 @@
+{
+ "repo": "chengyimingvb/dsh-silent-pwsh",
+ "stars": 0,
+ "description": "可以禁止DeepSeek-Harness执行任务的时候弹出烦人的黑色弹窗",
+ "pushed_at": "2026-08-15T15:50:16Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-silent-pwsh",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_INSTALL_ROOT": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:83",
+    "lib/index.js:86",
+    "lib/index.js:95"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "test.mjs:2",
+    "test.mjs:38",
+    "test.mjs:39",
+    "test.mjs:54",
+    "lib/index.js:22"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "test.mjs:8"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:83, lib/index.js:86"
+  }
+ ],
+ "level": 3
+}

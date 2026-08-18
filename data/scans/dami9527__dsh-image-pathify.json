@@ -1,0 +1,112 @@
+{
+ "repo": "dami9527/dsh-image-pathify",
+ "stars": 0,
+ "description": "DeepSeek Harness 插件：让 deepseek-v4-flash 等不能看图的模型也能处理聊天图片，内置识图工具。安装：dsh plugin --profile web add dsh-image-pathify",
+ "pushed_at": "2026-08-17T16:57:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ]
+  }
+ },
+ "pkg_name": "dsh-image-pathify",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-attachment",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "node build.mjs"
+ },
+ "injects": [
+  "connection",
+  "llm",
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [
+  "connection/reset",
+  "llm/stream",
+  "system-prompt/assemble",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 3,
+ "domains": {
+  "dashscope.aliyuncs.com": 1,
+  "registry.npmmirror.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:14",
+    "build.mjs:14",
+    "build.mjs:59"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/pathify.ts:110"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 36,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "system-prompt/assemble, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. build.mjs:14, build.mjs:14"
+  }
+ ],
+ "level": 3
+}

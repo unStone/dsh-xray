@@ -1,0 +1,109 @@
+{
+ "repo": "tvrpdfe/dsh-chat-manager",
+ "stars": 0,
+ "description": "DeepSeek Harness (DSH) Web UI 会话管理插件，可以直接聊天、删除会话、管理已归档会话",
+ "pushed_at": "2026-08-16T06:51:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-chat-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "llm",
+  "locale",
+  "sessionPersistence",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "systemPrompt",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_CHROME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "tools/cdp-lib.mjs:4",
+    "tools/cdp-lib.mjs:33",
+    "tools/test-patch-fork4.mjs:4",
+    "tools/test-patch-fork4.mjs:4",
+    "tools/test-patch-fork4.mjs:56"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "tools/cdp-lib.mjs:58",
+    "tools/cdp-metrics.mjs:65",
+    "tools/dump-css.mjs:28",
+    "tools/dump-css.mjs:29",
+    "tools/gen-repro.mjs:51"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. tools/cdp-lib.mjs:4, tools/cdp-lib.mjs:33"
+  }
+ ],
+ "level": 3
+}

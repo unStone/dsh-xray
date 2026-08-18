@@ -1,0 +1,103 @@
+{
+ "repo": "Skylake0216/DSH-for-VSCode",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T13:13:17Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "embedded-deepseek-harness-for-vs-code",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "TEMP": 1,
+  "DSH_SESSION_PKG": 3,
+  "LOCALAPPDATA": 2,
+  "APPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 2,
+   "evidence": [
+    "src/host/hostManager.ts:11",
+    "src/host/hostManager.ts:257",
+    "src/host/hostManager.ts:441",
+    "src/host/hostManager.ts:472",
+    "src/host/hostManager.ts:521"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "tools/_e2e-connect.cjs:60"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "src/host/hostUtils.ts:142",
+    "src/host/hostUtils.ts:154",
+    "src/host/hostUtils.ts:156"
+   ]
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 18,
+   "evidence": [
+    "src/extension.ts:18",
+    "src/extension.ts:242",
+    "tools/session-log-check.mjs:26",
+    "tools/session-log-check.mjs:305",
+    "tools/session-log-check.mjs:309"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tools/session-log-check.mjs:213"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. src/host/hostManager.ts:11, src/host/hostManager.ts:257"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. tools/_e2e-connect.cjs:60"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. src/host/hostUtils.ts:142, src/host/hostUtils.ts:154"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 2 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

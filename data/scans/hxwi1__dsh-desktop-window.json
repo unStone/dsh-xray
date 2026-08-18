@@ -1,0 +1,85 @@
+{
+ "repo": "hxwi1/dsh-desktop-window",
+ "stars": 0,
+ "description": "Desktop window for the DeepSeek Harness WebUI (Cordis plugin)",
+ "pushed_at": "2026-08-14T12:42:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop-window",
+ "deps": [
+  "electron"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_DIR": 1,
+  "DSH_DESKTOP_URL": 1,
+  "DSH_DESKTOP_TITLE": 1,
+  "DSH_DESKTOP_WIDTH": 1,
+  "DSH_DESKTOP_HEIGHT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "start.mjs:1",
+    "start.mjs:84",
+    "stop.mjs:1",
+    "stop.mjs:1",
+    "stop.mjs:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "start.mjs:2",
+    "start.mjs:2",
+    "start.mjs:56",
+    "start.mjs:87",
+    "start.mjs:91"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. start.mjs:1, start.mjs:84"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

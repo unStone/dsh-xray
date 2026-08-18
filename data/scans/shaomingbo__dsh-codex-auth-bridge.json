@@ -1,0 +1,92 @@
+{
+ "repo": "shaomingbo/dsh-codex-auth-bridge",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T11:20:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-codex-auth-bridge",
+ "deps": [
+  "@earendil-works/pi-ai"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "timer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.openai.com": 1
+ },
+ "env": {
+  "DSH_CODEX_BRIDGE_SOURCE": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "bin/install.js:3",
+    "bin/install.js:3",
+    "bin/install.js:31"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/bridge.js:17"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "bin/install.js:43",
+    "lib/bridge.js:76"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. bin/install.js:3, bin/install.js:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/bridge.js:17"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,149 @@
+{
+ "repo": "Mintcolour/dsh-sidechat",
+ "stars": 0,
+ "description": "A DeepSeek Harness Web plugin that adds a Codex-style split-screen side chat with model switching and compact history navigation.",
+ "pushed_at": "2026-08-14T03:59:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-commands"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-sidechat",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-workspace",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "apiProxy",
+  "approval",
+  "commands",
+  "connection",
+  "inputTriggers",
+  "llm",
+  "locale",
+  "permissionPresets",
+  "sessionPersistence",
+  "sessionTitle",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "systemPrompt",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "connection/reset",
+  "locale/change",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:150",
+    "lib/index.js:151"
+   ]
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1319",
+    "lib/client.js:1370",
+    "lib/index.js:1320",
+    "lib/index.js:1371"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "apiProxy, approval, systemPrompt"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, approval, systemPrompt"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/client.js:150, lib/index.js:151"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/client.js:1319, lib/client.js:1370"
+  }
+ ],
+ "level": 3
+}

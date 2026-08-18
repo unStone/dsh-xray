@@ -1,0 +1,111 @@
+{
+ "repo": "Arnoldkevin/prismrelay-mcp",
+ "stars": 0,
+ "description": "Vision-first local MCP that gives text-only Agents image understanding through Agnes AI (BYOK).",
+ "pushed_at": "2026-08-14T03:05:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "prismrelay-mcp",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "sharp",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 14,
+ "domains": {
+  "tools.ietf.org": 8,
+  "gist.github.com": 1,
+  "mathiasbynens.be": 1,
+  "www.safaribooksonline.com": 1,
+  "spec.openapis.org": 1,
+  "stackoverflow.com": 1,
+  "apihub.agnes-ai.com": 2
+ },
+ "env": {
+  "AGNES_API_KEY": 5
+ },
+ "behaviors": {
+  "exec": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "dist/prismrelay-mcp.mjs:13977",
+    "dist/prismrelay-mcp.mjs:13977",
+    "dist/prismrelay-mcp.mjs:23747",
+    "dist/prismrelay-mcp.mjs:23752",
+    "dist/prismrelay-mcp.mjs:23822"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dist/prismrelay-mcp.mjs:2946"
+   ]
+  },
+  "base64_decode": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "dist/prismrelay-mcp.mjs:7649",
+    "dist/prismrelay-mcp.mjs:8665",
+    "dist/prismrelay-mcp.mjs:8722",
+    "dist/prismrelay-mcp.mjs:12870",
+    "dist/prismrelay-mcp.mjs:14859"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "dist/prismrelay-mcp.mjs:22889",
+    "src/cli.ts:80",
+    "src/media.ts:76"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×12 src, e.g. dist/prismrelay-mcp.mjs:13977, dist/prismrelay-mcp.mjs:13977"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. dist/prismrelay-mcp.mjs:2946"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×7 src, e.g. dist/prismrelay-mcp.mjs:7649, dist/prismrelay-mcp.mjs:8665"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AGNES_API_KEY"
+  }
+ ],
+ "level": 3
+}

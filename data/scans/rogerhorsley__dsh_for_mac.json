@@ -1,0 +1,82 @@
+{
+ "repo": "rogerhorsley/dsh_for_mac",
+ "stars": 0,
+ "description": "One-click macOS desktop client for DeepSeek Harness — Electron shell around the local dsh web runtime",
+ "pushed_at": "2026-08-17T20:59:10Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-for-mac",
+ "deps": [
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh",
+  "yaml"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "auth.openai.com": 1
+ },
+ "env": {
+  "DSH_CLI_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/dsh-runtime.ts:13",
+    "src/dsh-runtime.ts:50"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/chatgpt-codex-beta.ts:64",
+    "src/dsh-runtime.ts:106",
+    "src/dsh-runtime.ts:109"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/chatgpt-codex-beta.ts:123",
+    "src/dsh-settings.ts:41"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/dsh-runtime.ts:13, src/dsh-runtime.ts:50"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. src/chatgpt-codex-beta.ts:64, src/dsh-runtime.ts:106"
+  }
+ ],
+ "level": 2
+}

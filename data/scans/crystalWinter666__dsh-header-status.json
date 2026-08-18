@@ -1,0 +1,92 @@
+{
+ "repo": "crystalWinter666/dsh-header-status",
+ "stars": 0,
+ "description": "Move the info bar at the bottom of the chat to next to the title",
+ "pushed_at": "2026-08-13T21:46:14Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-header-status",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "llm",
+  "settings",
+  "slots",
+  "subprocess",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "openrouter.ai": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "BAL_URL": 1,
+  "BAL_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:123"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:123"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BAL_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,106 @@
+{
+ "repo": "tangwenhao616-netizen/dsh-anywhere",
+ "stars": 1,
+ "description": "Put a dsh (DeepSeek Harness) workspace on ANY machine — fleet enrollment for NAT'd off-site machines + SSH execution world, two modes in one plugin",
+ "pushed_at": "2026-08-18T08:11:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-anywhere",
+ "deps": [
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-subprocess"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.apple.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 17,
+   "dev": 7,
+   "evidence": [
+    "lib/launcher.js:13",
+    "lib/launcher.js:96",
+    "lib/launcher.js:147",
+    "lib/provisioner-ssh.js:12",
+    "lib/ssh-conn.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 1,
+   "evidence": [
+    "lib/ssh-fs-core-win.js:94",
+    "lib/ssh-fs-core-win.js:119",
+    "lib/ssh-fs-core-win.js:145"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/launcher.js:24",
+    "lib/launcher.js:26"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 16,
+   "evidence": [
+    "lib/fleet-store.js:5",
+    "lib/fleet-store.js:55",
+    "lib/launcher.js:15",
+    "lib/launcher.js:15",
+    "lib/launcher.js:144"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 45,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×17 src, e.g. lib/launcher.js:13, lib/launcher.js:96"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/ssh-fs-core-win.js:94, lib/ssh-fs-core-win.js:119"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/launcher.js:24, lib/launcher.js:26"
+  }
+ ],
+ "level": 3
+}

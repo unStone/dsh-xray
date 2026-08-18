@@ -1,0 +1,120 @@
+{
+ "repo": "kaisersong/dsh-xiaok-plugins",
+ "stars": 0,
+ "description": "xiaok-native Cordis plugins for DeepSeek Harness: evidence-based delivery, intent routing, review separation",
+ "pushed_at": "2026-08-18T01:16:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-xiaok-plugins",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@xiaok/dsh-evidence",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@xiaok/dsh-evidence",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@xiaok/dsh-evidence",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@xiaok/dsh-intent-router",
+  "@deepseek-ai/cordis",
+  "@xiaok/dsh-review-separation",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@xiaok/dsh-review-separation"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "evidenceStore",
+  "intentRegistry",
+  "reviewPolicy",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/turn-stopping"
+ ],
+ "tool_regs": 16,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-probe.mjs:6",
+    "scripts/e2e-probe.mjs:15",
+    "scripts/e2e-verify.mjs:12",
+    "scripts/e2e-verify.mjs:35"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-probe.mjs:18",
+    "scripts/e2e-verify.mjs:37"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,114 @@
+{
+ "repo": "ywgATustcbbs/dsh-human-task",
+ "stars": 0,
+ "description": "Human-in-the-loop plugin family for DeepSeek Harness: ctx.humanTasks service, human_task tools, skill, and web dialogs",
+ "pushed_at": "2026-08-15T07:42:40Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-human-task-client",
+ "deps": [
+  "react",
+  "dsh-human-task",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/cordis",
+  "dsh-human-task",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools",
+  "dsh-human-task-tools",
+  "dsh-human-task-client",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "humanTasks",
+  "locale",
+  "remote",
+  "skills",
+  "slots",
+  "theme",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/harness-build.mjs:21",
+    "scripts/harness-build.mjs:21",
+    "scripts/harness-build.mjs:44"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "plugin/client.js:112",
+    "packages/dsh-human-task-client/src/client/index.tsx:224"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "scripts/embed-sound.mjs:9",
+    "scripts/embed-sound.mjs:21",
+    "scripts/harness-build.mjs:18",
+    "scripts/harness-build.mjs:18",
+    "scripts/harness-build.mjs:79"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/harness-build.mjs:21, scripts/harness-build.mjs:21"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. plugin/client.js:112, packages/dsh-human-task-client/src/client/index.tsx:224"
+  }
+ ],
+ "level": 2
+}

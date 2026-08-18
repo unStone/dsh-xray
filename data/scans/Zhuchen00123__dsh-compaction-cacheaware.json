@@ -1,0 +1,95 @@
+{
+ "repo": "Zhuchen00123/dsh-compaction-cacheaware",
+ "stars": 0,
+ "description": "Reasonix-style cache-aware compaction backend for DeepSeek Harness (DSH). Modular compact plugin with auto-sync from esengine/DeepSeek-Reasonix.",
+ "pushed_at": "2026-08-18T04:10:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-compaction-cacheaware",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "sessions",
+  "tokenMeter"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request-error",
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/sync-reasonix-compact.mjs:11",
+    "scripts/sync-reasonix-compact.mjs:11",
+    "scripts/sync-reasonix-compact.mjs:63"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/sync-reasonix-compact.mjs:12",
+    "scripts/sync-reasonix-compact.mjs:12",
+    "scripts/sync-reasonix-compact.mjs:80",
+    "scripts/sync-reasonix-compact.mjs:91",
+    "scripts/sync-reasonix-compact.mjs:241"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/sync-reasonix-compact.mjs:11, scripts/sync-reasonix-compact.mjs:11"
+  }
+ ],
+ "level": 3
+}

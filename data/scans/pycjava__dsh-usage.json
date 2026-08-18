@@ -1,0 +1,90 @@
+{
+ "repo": "pycjava/dsh-usage",
+ "stars": 0,
+ "description": "DSH 跨会话 token 记账插件：进程内每一次模型调用都记入本地 SQLite 账本，设置面板一眼看全、agent 一问即答。只做 token,不做钱。",
+ "pushed_at": "2026-08-17T05:53:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-usage-ledger",
+ "deps": [
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "dshHomePath",
+  "locale",
+  "slots",
+  "tools",
+  "usageLedger"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_APP_BACKEND_NODE_MODULES": 2,
+  "DSH_HOME": 1,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "dsh-usage-ledger/scripts/patch-settings-icon.mjs:27",
+    "dsh-usage-ledger/scripts/patch-settings-icon.mjs:129"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

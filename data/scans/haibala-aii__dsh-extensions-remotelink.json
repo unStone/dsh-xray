@@ -1,0 +1,118 @@
+{
+ "repo": "haibala-aii/dsh-extensions-remotelink",
+ "stars": 0,
+ "description": "Haibala mobile remote control for DeepSeek Harness: scan-to-pair QR and a phone surface at /m",
+ "pushed_at": "2026-08-15T19:51:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@haibala-aii/dsh-extensions-remotelink",
+ "deps": [
+  "cloudflared",
+  "clsx",
+  "qrcode.react",
+  "schemastery",
+  "zod",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-settings",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "api/gate",
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "example.trycloudflare.com": 2,
+  "xxx.trycloudflare.com": 7,
+  "foo.trycloudflare.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:10",
+    "src/update.ts:14",
+    "src/update.ts:382"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 60,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "webServer, api/gate"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:10, src/update.ts:14"
+  }
+ ],
+ "level": 3
+}

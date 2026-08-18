@@ -1,0 +1,148 @@
+{
+ "repo": "Xs1KVerOA/dsh-plugin",
+ "stars": 0,
+ "description": "dsh plugin repo",
+ "pushed_at": "2026-08-18T09:19:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-input-trigger"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-collection",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "ws",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "react",
+  "@aws-sdk/client-s3",
+  "@elastic/elasticsearch",
+  "@smithy/node-http-handler",
+  "basic-ftp",
+  "cassandra-driver",
+  "dockerode",
+  "mongodb",
+  "mssql",
+  "mysql2",
+  "pg",
+  "redis",
+  "socks",
+  "schemastery",
+  "ssh2",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "approval",
+  "credentials",
+  "dshSecurity",
+  "fs",
+  "inputTriggers",
+  "remote",
+  "sandboxPolicy",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "storage",
+  "storageDomain",
+  "timer",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 32,
+ "domains": {
+  "minio.example.com": 2
+ },
+ "env": {
+  "DSH_CORE_ROOT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "resource-center-plugin/client.js:1374",
+    "resource-center-plugin/client.js:1419",
+    "resource-center-plugin/service-manager-host.js:377",
+    "resource-center-plugin/client/modules/service-manager/index.js:270",
+    "resource-center-plugin/client/modules/service-manager/index.js:315"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 12,
+   "evidence": [
+    "resource-center-plugin/service-manager-host.js:415"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "resource-center-plugin/service-manager-host.js:653",
+    "resource-center-plugin/service-manager-host.js:669",
+    "resource-center-plugin/scripts/build-client.js:1",
+    "resource-center-plugin/scripts/build-client.js:33"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×5 src, e.g. resource-center-plugin/client.js:1374, resource-center-plugin/client.js:1419"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. resource-center-plugin/service-manager-host.js:415"
+  }
+ ],
+ "level": 3
+}

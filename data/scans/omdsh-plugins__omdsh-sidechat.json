@@ -1,0 +1,105 @@
+{
+ "repo": "omdsh-plugins/omdsh-sidechat",
+ "stars": 0,
+ "description": "Summon a conversation of its own anywhere in the DeepSeek Harness web GUI: a side panel anchored to whatever you were looking at, asking in its own session so the conversation you are running is untou",
+ "pushed_at": "2026-08-17T05:48:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "plughub": {
+   "displayName": {
+    "": "Side Chat",
+    "zh": "侧边对话"
+   },
+   "summary": {
+    "": "Summon a conversation of its own anywhere, anchored to whatever you were looking at.",
+    "zh": "在任何位置召唤一条独立的对话，带上你正看着的东西作为锚点。"
+   },
+   "category": "input",
+   "docs": "https://github.com/omdsh-plugins/omdsh-sidechat#readme",
+   "order": 40
+  }
+ },
+ "pkg_name": "@omdsh-plugins/omdsh-sidechat",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --build tsconfig.json && tsdown"
+ },
+ "injects": [
+  "invariants",
+  "locale",
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/harness-source.ts:86"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 39,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

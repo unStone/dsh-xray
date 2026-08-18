@@ -1,0 +1,92 @@
+{
+ "repo": "JimchengChina/dsh-frontier-repro",
+ "stars": 0,
+ "description": "Evidence-first frontier AI radar and reproducibility gate for DeepSeek Harness",
+ "pushed_at": "2026-08-17T13:32:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-frontier-repro",
+ "deps": [
+  "cheerio",
+  "undici",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 18,
+ "domains": {
+  "export.arxiv.org": 1,
+  "openai.com": 3,
+  "www.anthropic.com": 4,
+  "deepmind.google": 2,
+  "api-docs.deepseek.com": 1,
+  "docs.z.ai": 1,
+  "huggingface.co": 9,
+  "blog.samaltman.com": 1,
+  "importai.substack.com": 1,
+  "x.com": 4,
+  "api.github.com": 2,
+  "api.x.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/store.js:118"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,110 @@
+{
+ "repo": "stimQQ/dshplugins",
+ "stars": 0,
+ "description": "Verified marketplace of DeepSeek Harness (dsh) plugins — every entry checked against its published npm tarball. 719 installable plugins, 688 passing all seven structural checks. Free public JSON API. ",
+ "pushed_at": "2026-08-16T14:04:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "plugin": {
+   "schemaVersion": 1,
+   "category": "devtools",
+   "displayName": {
+    "en": "Plugin Check",
+    "zh-CN": "插件体检"
+   },
+   "summary": {
+    "en": "Checks the plugins you already installed against the public registry and reports what is broken, stale, or risky.",
+    "zh-CN": "拿你已装的插件去公开注册表比对，报告哪些坏了、哪些版本过期、哪些有风险。"
+   }
+  }
+ },
+ "pkg_name": "dshplugins",
+ "deps": [
+  "@next/third-parties",
+  "next",
+  "react",
+  "react-dom",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@types/semver",
+  "semver",
+  "tar",
+  "yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "dshplugins.co": 3,
+  "schema.org": 8,
+  "opensource.org": 1,
+  "api.npmjs.org": 2,
+  "api.github.com": 1,
+  "www.npmjs.com": 1,
+  "creativecommons.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/registry/src/build.ts:8",
+    "packages/registry/src/build.ts:8",
+    "packages/registry/src/build.ts:82"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "apps/web/scripts/build-api.mjs:39",
+    "packages/registry/src/build.ts:247",
+    "packages/registry/src/build.ts:267",
+    "packages/registry/src/build.ts:300",
+    "packages/registry/src/crawl.ts:134"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 39,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/registry/src/build.ts:8, packages/registry/src/build.ts:8"
+  }
+ ],
+ "level": 3
+}

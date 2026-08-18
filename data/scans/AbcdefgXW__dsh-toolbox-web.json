@@ -1,0 +1,101 @@
+{
+ "repo": "AbcdefgXW/dsh-toolbox-web",
+ "stars": 0,
+ "description": "dsh 工具箱：会话/回收站/子目录/搜索/预设/配置管理 + 定时心跳/长消息折叠 | Toolbox plugin for dsh: session/trash/subdir/search/preset/config + scheduled heartbeat & long-message collapse",
+ "pushed_at": "2026-08-17T18:16:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-toolbox-web",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "js-yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "connection",
+  "remote",
+  "settings",
+  "settingsScope",
+  "slots",
+  "typert"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.siliconflow.cn": 8
+ },
+ "env": {
+  "DSH_HOME": 9,
+  "DSH_CHANNELS_STATE_DIR": 4,
+  "DSH_CHANNELS_CWD": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 33,
+   "dev": 0,
+   "evidence": [
+    "index.js:422",
+    "index.js:430",
+    "index.js:614",
+    "index.js:717",
+    "index.js:764"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,67 @@
+{
+ "repo": "dingge001/dsh-redact",
+ "stars": 0,
+ "description": "DSH / DeepSeek Harness plugin: runtime secret & PII redaction with mask, reversible vault and execution-time substitution",
+ "pushed_at": "2026-08-14T08:18:47Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-redact",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "session-telemetry/record",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/vault.ts:140"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 0
+}

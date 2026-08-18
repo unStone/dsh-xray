@@ -1,0 +1,85 @@
+{
+ "repo": "mahiro6/dsh-billing",
+ "stars": 0,
+ "description": "简陋deepseekharness计费插件,可查询显示余额.设置预算,累计汇总。",
+ "pushed_at": "2026-08-16T14:30:16Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-billing",
+ "deps": [
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [
+  "connection/reset",
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "api-docs.deepseek.com": 1
+ },
+ "env": {
+  "DEEPSEEK_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "lib/store.js:12",
+    "lib/store.js:387"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

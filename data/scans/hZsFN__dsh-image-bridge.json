@@ -1,0 +1,69 @@
+{
+ "repo": "hZsFN/dsh-image-bridge",
+ "stars": 0,
+ "description": "Image message bridge for text-only models in DeepSeek Harness (dsh): image blocks → text placeholder + local path, vision via qwen script",
+ "pushed_at": "2026-08-14T10:19:30Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-image-bridge",
+ "deps": [
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_VISION_SCRIPT": 1,
+  "DASHSCOPE_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY"
+  }
+ ],
+ "level": 2
+}

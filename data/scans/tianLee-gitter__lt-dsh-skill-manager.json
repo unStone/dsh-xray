@@ -1,0 +1,99 @@
+{
+ "repo": "tianLee-gitter/lt-dsh-skill-manager",
+ "stars": 0,
+ "description": "DSH 技能管理插件：在设置页管理 ~/.dsh/skills 的技能，支持多目录导入与 AI 名称解析（导入后可用 /name 引用）",
+ "pushed_at": "2026-08-17T11:11:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "lt-dsh-skill-manager",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery",
+  "yaml",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:279",
+    "lib/index.js:492",
+    "src/index.ts:279",
+    "src/index.ts:498"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:486",
+    "lib/index.js:493",
+    "scripts/build.mjs:15",
+    "scripts/build.mjs:28",
+    "scripts/build.mjs:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/index.js:279, lib/index.js:492"
+  }
+ ],
+ "level": 3
+}

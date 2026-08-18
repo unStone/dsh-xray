@@ -1,0 +1,73 @@
+{
+ "repo": "avaritiachaos/dsh-plugin-mcp",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T17:18:25Z",
+ "status": "ok",
+ "manifest": {
+  "displayName": "MCP Protocol Bridge",
+  "description": "Connects Anthropic Model Context Protocol (MCP) servers to DeepSeek agent tools",
+  "icon": "plug",
+  "service": "mcp",
+  "category": "tools"
+ },
+ "pkg_name": "@shion-lab/dsh-plugin-mcp",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsc"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/client.ts:1",
+    "src/client.ts:74"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/client.ts:1, src/client.ts:74"
+  }
+ ],
+ "level": 2
+}

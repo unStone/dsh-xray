@@ -1,0 +1,101 @@
+{
+ "repo": "hezhongtang/dsh-capability-optimizer",
+ "stars": 0,
+ "description": "External-expert consultation for DeepSeek Harness: headless Claude Code CLI with role personas (advisor/reviewer/designer, extensible), replies as reference answers — thinking effort, model fallback, ",
+ "pushed_at": "2026-08-18T08:44:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-capability-optimizer",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/turn-stopping",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 6,
+   "evidence": [
+    "eval/run.mjs:29",
+    "eval/run.mjs:29",
+    "eval/run.mjs:160",
+    "lib/claude.js:18",
+    "lib/claude.js:138"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 11,
+   "evidence": [
+    "eval/run.mjs:26",
+    "eval/run.mjs:368",
+    "eval/run.mjs:369",
+    "lib/settings.js:434"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/tools.js:116"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 46,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. eval/run.mjs:29, eval/run.mjs:29"
+  }
+ ],
+ "level": 3
+}

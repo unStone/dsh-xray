@@ -1,0 +1,110 @@
+{
+ "repo": "YuLee-314/dsh-vision-bridge",
+ "stars": 0,
+ "description": "DeepSeek Harness 视觉补全：孪生路由解锁原生图片体验，本地 Ollama 请求层看图，零云端依赖。Vision twin + local agentic vision tools for DeepSeek Harness.",
+ "pushed_at": "2026-08-16T15:58:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@yulee-314/dsh-vision-bridge",
+ "deps": [
+  "openai",
+  "sharp"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "tools"
+ ],
+ "hooks": [
+  "internal/plugin"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DEEPSEEK_BASE_URL": 1,
+  "VISION_CACHE_DIR": 1,
+  "VISION_CACHE_MAX_ENTRIES": 1,
+  "VISION_CLIPBOARD_DIR": 1,
+  "VISION_PS_PATH": 1,
+  "VISION_COMPARE_HEIGHT": 1,
+  "VISION_MAX_DIM": 1,
+  "VISION_JPEG_QUALITY": 1,
+  "VISION_PREPROCESS": 1,
+  "OLLAMA_BASE_URL": 1,
+  "OLLAMA_VISION_MODEL": 1,
+  "OLLAMA_API_KEY": 1,
+  "VISION_MAX_TOKENS": 1,
+  "VISION_TEMPERATURE": 1,
+  "VISION_MAX_RETRIES": 1,
+  "VISION_CONCURRENCY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/core/clipboard.js:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/deepseek-vision.mjs:19",
+    "lib/deepseek-vision.mjs:39",
+    "lib/deepseek-vision.mjs:78",
+    "lib/index.js:24",
+    "lib/index.js:43"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/core/clipboard.js:6"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OLLAMA_API_KEY, VISION_MAX_TOKENS"
+  }
+ ],
+ "level": 3
+}

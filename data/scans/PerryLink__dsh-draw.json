@@ -1,0 +1,120 @@
+{
+ "repo": "PerryLink/dsh-draw",
+ "stars": 0,
+ "description": "Unified static-image generation router for DeepSeek Harness: one image_generate tool with standard parameters, config-driven engine routing (OpenAI Images, Zhipu CogView, and any compatible endpoint) ",
+ "pushed_at": "2026-08-18T00:17:15Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ]
+  }
+ },
+ "pkg_name": "dsh-draw",
+ "deps": [
+  "tsdown",
+  "typescript",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "api.openai.com": 2,
+  "open.bigmodel.cn": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:22",
+    "scripts/verify-artifacts.mjs:5",
+    "scripts/verify-artifacts.mjs:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/http.ts:157"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:7",
+    "scripts/prepare.mjs:28"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:28",
+    "scripts/verify-artifacts.mjs:34"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 40,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/prepare.mjs:6, scripts/prepare.mjs:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/http.ts:157"
+  }
+ ],
+ "level": 3
+}

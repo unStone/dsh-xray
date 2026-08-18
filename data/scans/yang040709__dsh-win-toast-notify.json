@@ -1,0 +1,80 @@
+{
+ "repo": "yang040709/dsh-win-toast-notify",
+ "stars": 0,
+ "description": "DeepSeek Harness (DSH) dynamic Cordis plugin: native Windows toast notification when an agent task completes (WSL2)",
+ "pushed_at": "2026-08-16T15:06:33Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-win-toast-notify",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessionTitle",
+  "subprocess"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/error",
+  "agent/status",
+  "agent/turn-stopping",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "host.js:162",
+    "win-task-notify.mjs:174"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. host.js:162, win-task-notify.mjs:174"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,92 @@
+{
+ "repo": "Rinsonlaw/law-dsh-plugin",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T15:03:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-cursor-glow",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "webRuntime",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_NODE_MODULES": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-git-graph/lib/git.js:7",
+    "dsh-git-graph/lib/git.js:32"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-icon-preview/scripts/generate-preview.mjs:26"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "dsh-cursor-glow/scripts/build.mjs:10",
+    "dsh-cursor-glow/scripts/build.mjs:29",
+    "dsh-git-graph/scripts/build.mjs:10",
+    "dsh-git-graph/scripts/build.mjs:29",
+    "dsh-icon-preview/scripts/generate-preview.mjs:158"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. dsh-git-graph/lib/git.js:7, dsh-git-graph/lib/git.js:32"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. dsh-icon-preview/scripts/generate-preview.mjs:26"
+  }
+ ],
+ "level": 3
+}

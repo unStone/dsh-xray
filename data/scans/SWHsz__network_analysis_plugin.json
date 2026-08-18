@@ -1,0 +1,94 @@
+{
+ "repo": "SWHsz/network_analysis_plugin",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T15:11:39Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "traffic-analysis-plugin",
+ "deps": [
+  "@duckdb/node-api",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@duckdb/node-api"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 10,
+ "domains": {
+  "2.na.dl.wireshark.org": 1,
+  "www.wireshark.org": 2
+ },
+ "env": {
+  "TRAFFIC_PLUGIN_CACHE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/promotion-report.mjs:71",
+    "packages/traffic-core/src/backend/provider.ts:2",
+    "packages/traffic-core/src/backend/spawn.ts:1",
+    "packages/traffic-core/src/backend/spawn.ts:52",
+    "packages/traffic-core/src/backend/spawn.ts:140"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/generate-samples.mjs:161",
+    "scripts/generate-samples.mjs:164",
+    "scripts/generate-samples.mjs:165",
+    "packages/traffic-core/src/session.ts:192",
+    "packages/traffic-core/src/session.ts:237"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-runtime-smoke.mjs:24"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/promotion-report.mjs:71, packages/traffic-core/src/backend/provider.ts:2"
+  }
+ ],
+ "level": 3
+}

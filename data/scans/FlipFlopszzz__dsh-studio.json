@@ -1,0 +1,126 @@
+{
+ "repo": "FlipFlopszzz/dsh-studio",
+ "stars": 0,
+ "description": "Desktop workbench & plugin collection for DeepSeek Harness (DSH): Electron shell, IDE-ification plugins, and MCP services",
+ "pushed_at": "2026-08-17T09:38:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {},
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-studio",
+ "deps": [
+  "@agent-infra/browser-ui",
+  "puppeteer-core",
+  "ws",
+  "@deepseek-ai/dsh-tools",
+  "zod",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "betterSidebar",
+  "conversation",
+  "sessions",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/request-error",
+  "agent/status",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 15,
+ "domains": {
+  "www.bing.com": 1
+ },
+ "env": {
+  "DSH_GUI_PORT": 1,
+  "DSH_WEBVIEW_BRIDGE_PORT": 2,
+  "ComSpec": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "apps/shell/main.js:11",
+    "apps/shell/main.js:306",
+    "apps/shell/main.js:319",
+    "apps/shell/main.js:437",
+    "plugins/hooks/lib/index.js:35"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "plugins/electron-browser/src/index.ts:758"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "apps/shell/main.js:90"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 6,
+   "evidence": [
+    "apps/shell/main.js:41",
+    "apps/shell/main.js:305",
+    "plugins/electron-browser/src/index.ts:26",
+    "plugins/electron-browser/src/index.ts:758",
+    "plugins/permission/scripts/wrap-client.mjs:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 35,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. apps/shell/main.js:11, apps/shell/main.js:306"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. plugins/electron-browser/src/index.ts:758"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. apps/shell/main.js:90"
+  }
+ ],
+ "level": 2
+}

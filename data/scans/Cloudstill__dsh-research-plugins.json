@@ -1,0 +1,123 @@
+{
+ "repo": "Cloudstill/dsh-research-plugins",
+ "stars": 0,
+ "description": "Auditable research evidence system (research plugins) for DeepSeek Harness",
+ "pushed_at": "2026-08-15T07:31:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-bundle-research",
+ "deps": [
+  "@deepseek-ai/dsh-research",
+  "@deepseek-ai/dsh-research-router-risk",
+  "@deepseek-ai/dsh-research-profiles-default",
+  "@deepseek-ai/dsh-research-runtime-subagent",
+  "@deepseek-ai/dsh-tool-research",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "zod",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-research",
+  "@deepseek-ai/cordis",
+  "zod",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-research",
+  "@deepseek-ai/cordis",
+  "zod",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-research",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-research",
+  "@deepseek-ai/dsh-research-runtime-subagent",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "research",
+  "researchSubagent",
+  "sessions",
+  "tools"
+ ],
+ "hooks": [
+  "agent/request",
+  "internal/dispatch",
+  "session/created"
+ ],
+ "tool_regs": 22,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/pack-research.mjs:20",
+    "scripts/pack-research.mjs:20",
+    "scripts/pack-research.mjs:99"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "scripts/pack-research.mjs:28",
+    "scripts/pack-research.mjs:29",
+    "scripts/pack-research.mjs:130",
+    "scripts/pack-research.mjs:164"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 87,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/pack-research.mjs:20, scripts/pack-research.mjs:20"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,97 @@
+{
+ "repo": "godcreator02/dsh-mechanics-lab",
+ "stars": 0,
+ "description": "DeepSeek Harness 插件系统原理的独立研究项目：一套可复跑的实验，判定写在用例 docstring 里",
+ "pushed_at": "2026-08-18T02:25:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "lab-recorder",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "definitelyNotAService",
+  "labAlpha",
+  "labBare",
+  "labFlavor",
+  "labKlass",
+  "labObserver",
+  "labRegistry",
+  "labRoster",
+  "webServer"
+ ],
+ "hooks": [
+  "dispose",
+  "hmr/change",
+  "hmr/config-update-failed",
+  "hmr/reload",
+  "internal/config",
+  "internal/get",
+  "internal/listener",
+  "internal/plugin",
+  "internal/service",
+  "internal/set",
+  "internal/status",
+  "internal/update",
+  "loader/config-update",
+  "loader/entry-init",
+  "loader/partial-dispose",
+  "loader/patch-context"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 97,
+   "evidence": [
+    "observatory/lab-recorder/index.js:34",
+    "observatory/lab-recorder/index.js:34",
+    "observatory/lab-recorder/index.js:70",
+    "observatory/lab-recorder/index.js:138",
+    "observatory/lab-recorder/index.js:264"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 107,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

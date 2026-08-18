@@ -1,0 +1,84 @@
+{
+ "repo": "minyang2020/dsh-feishu-bridge",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T02:35:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "feishu-dsh-bridge",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@larksuiteoapi/node-sdk"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "open.feishu.cn": 5
+ },
+ "env": {
+  "DSH_BASE_URL": 1,
+  "DSH_SESSION_CWD": 1,
+  "REPLY_CHUNK_CHARS": 1,
+  "STREAMING": 1,
+  "STREAM_UPDATE_INTERVAL_MS": 1,
+  "LOG_LEVEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/plugin.js:16",
+    "src/plugin.js:63"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/session-map.js:42"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/plugin.js:16, src/plugin.js:63"
+  }
+ ],
+ "level": 3
+}

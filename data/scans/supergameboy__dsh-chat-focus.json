@@ -1,0 +1,133 @@
+{
+ "repo": "supergameboy/dsh-chat-focus",
+ "stars": 0,
+ "description": "dsh web conversation plugin: fold runtime activity into expandable boxes, chat bubbles, deep customization (fork of dsh-client-ui-conversation)",
+ "pushed_at": "2026-08-17T13:16:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-chat-focus",
+ "deps": [
+  "clsx",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm-retry",
+  "@deepseek-ai/dsh-session-stats",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversation",
+  "conversationEvents",
+  "conversationViews",
+  "invariants",
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [
+  "slash/input-begin-command",
+  "slash/input-consume-token",
+  "slash/input-insert-reference",
+  "slash/input-insert-text"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/install.mjs:11",
+    "scripts/install.mjs:11",
+    "scripts/install.mjs:62",
+    "scripts/install.mjs:64",
+    "scripts/uninstall.mjs:13"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/patch-skin-center.mjs:23",
+    "scripts/patch-skin-center.mjs:64",
+    "scripts/uninstall.mjs:15",
+    "scripts/uninstall.mjs:15",
+    "scripts/uninstall.mjs:60"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 81,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/install.mjs:11, scripts/install.mjs:11"
+  }
+ ],
+ "level": 3
+}

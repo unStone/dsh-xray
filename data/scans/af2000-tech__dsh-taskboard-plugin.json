@@ -1,0 +1,141 @@
+{
+ "repo": "af2000-tech/dsh-taskboard-plugin",
+ "stars": 0,
+ "description": "Taskboard plugin for DeepSeek Harness (DSH) — issue kanban with a sidebar board panel, a 13-command agent tool, and a managed self-contained local service",
+ "pushed_at": "2026-08-18T07:27:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-taskboard-plugin",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "export.dhtmlx.com": 1,
+  "docs.dhtmlx.com": 7,
+  "reactflow.dev": 3,
+  "p1-hera.feishucdn.com": 1,
+  "git-scm.com": 1,
+  "chevrotain.io": 20,
+  "en.wikipedia.org": 1,
+  "langium.org": 1,
+  "react.dev": 2
+ },
+ "env": {
+  "DSH_SESSION_ID": 2,
+  "DSH_HOME": 2,
+  "TASKBOARD_DATA_DIR": 1,
+  "CODEX_HOME": 1,
+  "TASKBOARD_PORT": 1,
+  "TASKBOARD_HOST": 1,
+  "TASKBOARD_LISTEN_FD": 2,
+  "CODEX_EXECUTABLE": 1,
+  "TASKBOARD_RUNTIME_FILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 65,
+   "dev": 4,
+   "evidence": [
+    "dist/host.js:2",
+    "dist/host.js:534",
+    "dist/host.js:638",
+    "src/host.ts:4",
+    "src/host.ts:240"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "app/dist/web/assets/cytoscape.esm-DnGd5Fuo.js:321",
+    "app/dist/web/assets/swimlanes-SLNWSIFB-CHWf6qkp.js:2"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/port-blocker.mjs:10",
+    "app/server/app.mjs:1212"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 1,
+   "evidence": [
+    "scripts/build.mjs:56",
+    "app/server/app.mjs:1190",
+    "app/server/app.mjs:1725",
+    "app/server/app.mjs:1765",
+    "app/server/jira-config.mjs:145"
+   ]
+  },
+  "dyn_import": {
+   "src": 55,
+   "dev": 1,
+   "evidence": [
+    "app/dist/web/assets/chunk-I66GZJ75-Mf5tuy4D.js:2",
+    "app/dist/web/assets/mermaid-parser.core-D5Hqb6gO.js:5",
+    "app/dist/web/assets/mermaid-parser.core-D5Hqb6gO.js:5",
+    "app/dist/web/assets/mermaid-parser.core-D5Hqb6gO.js:5",
+    "app/dist/web/assets/mermaid-parser.core-D5Hqb6gO.js:5"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 133,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×65 src, e.g. dist/host.js:2, dist/host.js:534"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. app/dist/web/assets/cytoscape.esm-DnGd5Fuo.js:321, app/dist/web/assets/swimlanes-SLNWSIFB-CHWf6qkp.js:2"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/port-blocker.mjs:10, app/server/app.mjs:1212"
+  }
+ ],
+ "level": 3
+}

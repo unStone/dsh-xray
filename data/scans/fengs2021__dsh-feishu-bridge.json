@@ -1,0 +1,90 @@
+{
+ "repo": "fengs2021/dsh-feishu-bridge",
+ "stars": 0,
+ "description": "DSH 飞书机器人桥接插件：飞书消息进 DSH 会话，流式交互卡片实时回复（思维链/正文/工具链分区，打字机效果）",
+ "pushed_at": "2026-08-17T03:25:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-feishu-bridge",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "sessions"
+ ],
+ "hooks": [
+  "dispose",
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/channel-registry.js:23",
+    "lib/channel-registry.js:61",
+    "lib/index.js:20",
+    "lib/index.js:204",
+    "lib/index.js:1000"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/channel-registry.js:24",
+    "lib/channel-registry.js:24",
+    "lib/channel-registry.js:141",
+    "lib/channel-registry.js:146",
+    "lib/channel-registry.js:193"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/channel-registry.js:23, lib/channel-registry.js:61"
+  }
+ ],
+ "level": 3
+}

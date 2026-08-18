@@ -1,0 +1,103 @@
+{
+ "repo": "Mshir0/context-graph-deepseek-harness",
+ "stars": 0,
+ "description": "Context Graph 是 DeepSeek Harness 的上下文管理插件，可扫描代码、构建语义图谱，并按任务精准注入上下文。",
+ "pushed_at": "2026-08-17T10:55:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-context-graph",
+ "deps": [
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "llm",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start",
+  "llm/stream"
+ ],
+ "tool_regs": 25,
+ "domains": {},
+ "env": {
+  "DEPENDENCY_SKILL_PYTHON": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/core.js:1",
+    "src/dependency-skill.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 104,
+   "evidence": [
+    "src/core.js:108",
+    "src/core.js:370",
+    "src/core.js:382",
+    "src/implementation-index.js:278"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/core.js:1, src/dependency-skill.js:1"
+  }
+ ],
+ "level": 3
+}

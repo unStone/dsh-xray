@@ -1,0 +1,115 @@
+{
+ "repo": "LingyeSoul/dsh-rider",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T04:54:56Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-rider",
+ "deps": [
+  "ddg-kit"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "attachments",
+  "llm",
+  "locale",
+  "sessions",
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 10,
+ "domains": {
+  "www.bing.com": 1
+ },
+ "env": {
+  "DUCKDUCKGO_PROXY_URL": 1,
+  "DSH_HOME": 5
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:85"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:412",
+    "index.mjs:1005",
+    "scripts/gates/run.mjs:750"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:303",
+    "index.mjs:1031",
+    "scripts/gates/run.mjs:20",
+    "scripts/gates/run.mjs:20",
+    "scripts/gates/run.mjs:265"
+   ]
+  },
+  "dyn_import": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/gates/run.mjs:478",
+    "scripts/gates/run.mjs:497",
+    "scripts/gates/run.mjs:587",
+    "scripts/gates/run.mjs:715"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. index.mjs:85"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. index.mjs:412, index.mjs:1005"
+  }
+ ],
+ "level": 3
+}

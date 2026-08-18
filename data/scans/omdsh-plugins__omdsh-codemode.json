@@ -1,0 +1,125 @@
+{
+ "repo": "omdsh-plugins/omdsh-codemode",
+ "stars": 0,
+ "description": "Code mode for the DeepSeek Harness web GUI: a third segment beside Chat and Work whose column is the harness's own terminal, running in the conversation's workspace",
+ "pushed_at": "2026-08-17T05:47:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  },
+  "plughub": {
+   "displayName": {
+    "": "Code Mode",
+    "zh": "代码模式"
+   },
+   "summary": {
+    "": "A harness terminal in the conversation's workspace, beside Chat and Work.",
+    "zh": "在对话所属的工作区里开一个 harness 终端，与 Chat、Work 并列。"
+   },
+   "category": "workspace",
+   "docs": "https://github.com/omdsh-plugins/omdsh-codemode#readme",
+   "order": 40
+  }
+ },
+ "pkg_name": "@omdsh-plugins/omdsh-codemode",
+ "deps": [
+  "node-pty",
+  "ws",
+  "xterm",
+  "@xterm/addon-fit",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "@omdsh-plugins/omdsh-base",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --build tsconfig.json && tsdown"
+ },
+ "injects": [
+  "invariants",
+  "locale",
+  "sessions",
+  "slots",
+  "webRuntime",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "locale/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/harness-pty.ts:268",
+    "src/harness-pty.ts:383"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/harness-source.ts:86",
+    "scripts/repair-session-logs.ts:19",
+    "scripts/repair-session-logs.ts:122"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 43,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/harness-pty.ts:268, src/harness-pty.ts:383"
+  }
+ ],
+ "level": 3
+}

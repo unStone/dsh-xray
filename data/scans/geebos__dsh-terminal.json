@@ -1,0 +1,100 @@
+{
+ "repo": "geebos/dsh-terminal",
+ "stars": 0,
+ "description": "Embeds a collapsible interactive terminal inside DeepSeek Harness Web conversations",
+ "pushed_at": "2026-08-17T04:53:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@geebos/dsh-terminal",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "bellard.org": 1
+ },
+ "env": {
+  "DSH_TERMINAL_SANDBOX": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 24,
+   "evidence": [
+    "src/protocol.ts:24",
+    "src/pty-session.ts:205",
+    "src/terminal-service.ts:149",
+    "src/client/terminal.tsx:51"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/embed-xterm-css.mjs:6",
+    "scripts/embed-xterm-css.mjs:26",
+    "src/terminal-service.ts:104",
+    "src/terminal-service.ts:138"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/protocol.ts:24, src/pty-session.ts:205"
+  }
+ ],
+ "level": 3
+}

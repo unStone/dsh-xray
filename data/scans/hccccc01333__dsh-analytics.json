@@ -1,0 +1,106 @@
+{
+ "repo": "hccccc01333/dsh-analytics",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-14T06:23:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "permissions": "none",
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-analytics",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p . && tsc -p tsconfig.client.json && tsdown"
+ },
+ "injects": [],
+ "hooks": [
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "PORT": 1,
+  "EDGE": 1,
+  "BASE_URL": 1,
+  "WINDOW": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/visual-qa.mjs:12",
+    "scripts/visual-qa.mjs:123"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "scripts/preview.mjs:109"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/visual-qa.mjs:12, scripts/visual-qa.mjs:123"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/preview.mjs:109"
+  }
+ ],
+ "level": 3
+}

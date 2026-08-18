@@ -1,0 +1,88 @@
+{
+ "repo": "XN-289/dsh-NINGLET-novel-Agent",
+ "stars": 0,
+ "description": "专门适配于 DeepSeek v4 pro 正式版 与 DeepSeek Harness 上的小说创作插件：让 AI 写小说，但读者闻不出 AI 味。",
+ "pushed_at": "2026-08-17T09:42:59Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "ninglet",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-tool-ninglet",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-sandbox-policy"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "llm",
+  "remote",
+  "sandboxPolicy",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/settle-ch1.mjs:2",
+    "scripts/settle-ch1.mjs:58",
+    "scripts/settle-ch1.mjs:61",
+    "scripts/settle-ch1.mjs:62",
+    "scripts/settle-ch1.mjs:63"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

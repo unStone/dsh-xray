@@ -1,0 +1,104 @@
+{
+ "repo": "ghost616/module_agent_deepseek",
+ "stars": 0,
+ "description": "DeepSeek Harness 多智能体协同开发插件，内置七级智能体（岐伯、隶首、风后、夔、力牧、皋陶、离朱），覆盖项目初始化、代码归类、计划编排、批量执行、代码审查与测试验证的完整开发闭环。基于 @deepseek-ai/cordis 插件体系，为 dsh 提供“风后力牧”式多智能体协作能力。",
+ "pushed_at": "2026-08-17T16:08:41Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@deepseek-ai/dsh-module-agent",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "llm",
+  "sessions",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/status",
+  "subagent/start",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 52,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/lib/testing.ts:2",
+    "src/lib/testing.ts:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 26,
+   "dev": 0,
+   "evidence": [
+    "src/lib/development_plan.ts:2",
+    "src/lib/development_plan.ts:161",
+    "src/lib/execution_result.ts:1",
+    "src/lib/execution_result.ts:72",
+    "src/lib/execution_result.ts:92"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 69,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/lib/testing.ts:2, src/lib/testing.ts:3"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 6 services, 52 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

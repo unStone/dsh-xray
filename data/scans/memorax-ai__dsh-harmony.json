@@ -1,0 +1,133 @@
+{
+ "repo": "memorax-ai/dsh-harmony",
+ "stars": 10,
+ "description": "A library for patching, replacing and decorating dsh plugin during runtime",
+ "pushed_at": "2026-08-17T04:30:40Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": {
+   "schemaVersion": 1,
+   "displayName": {
+    "zh-CN": "Harmony",
+    "en": "Harmony"
+   },
+   "summary": {
+    "zh-CN": "一个用于在运行时修补、替换和装饰 DeepSeek Harness 插件的库。",
+    "en": "A library for patching, replacing and decorating DeepSeek Harness plugins during runtime"
+   },
+   "category": "plugin-development"
+  },
+  "bundle": {
+   "patch": "./harmony.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-harmony",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@phenomnomnominal/tsquery",
+  "magic-string",
+  "semver",
+  "typescript",
+  "yaml",
+  "@deepseek-ai/dsh",
+  "dsh-harmony",
+  "dsh-harmony-react"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build",
+  "postinstall": "node -e \"if (process.env.npm_config_global === 'true') import('./scripts/postinstall.cjs')\""
+ },
+ "injects": [
+  "appExit",
+  "harmony",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "internal/plugin"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HARMONY_DSH_ENTRY": 1,
+  "DSH_HARMONY_ACTIVE": 2,
+  "ComSpec": 1,
+  "DSH_HARMONY_IGNORE_ONCE": 2,
+  "DSH_DESKTOP": 1,
+  "DSH_HARMONY_REACT_TRACE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 22,
+   "evidence": [
+    "src/installer.ts:1",
+    "src/installer.ts:43",
+    "src/installer.ts:90"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 6,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 313,
+   "evidence": [
+    "src/control.ts:1",
+    "src/control.ts:1",
+    "src/control.ts:22",
+    "src/control.ts:27",
+    "src/profile.ts:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 3,
+   "dev": 11,
+   "evidence": [
+    "src/bin.ts:24",
+    "src/bin.ts:109",
+    "src/extension.ts:60"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./harmony.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node -e \"if (process.env.npm_config_global === 'true') import('./scripts/postinstall.cjs')\""
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/installer.ts:1, src/installer.ts:43"
+  }
+ ],
+ "level": 3
+}

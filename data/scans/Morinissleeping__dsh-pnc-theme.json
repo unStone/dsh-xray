@@ -1,0 +1,108 @@
+{
+ "repo": "Morinissleeping/dsh-pnc-theme",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T07:21:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-pnc-theme",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "opencode.ai": 2
+ },
+ "env": {
+  "PNC_BG_VIDEO": 4,
+  "PNC_CREDS_PATH": 2,
+  "PNC_PYTHON": 4,
+  "PNC_CWD": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:234",
+    "src/index.ts:237"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:562",
+    "lib/index.js:654",
+    "src/index.ts:533",
+    "src/index.ts:618"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:572",
+    "lib/index.js:671",
+    "src/index.ts:540",
+    "src/index.ts:632"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:234, src/index.ts:237"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. lib/index.js:562, lib/index.js:654"
+  },
+  {
+   "id": "token_env",
+   "evidence": "PNC_CREDS_PATH"
+  }
+ ],
+ "level": 3
+}

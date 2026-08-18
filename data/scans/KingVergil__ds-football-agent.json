@@ -1,0 +1,104 @@
+{
+ "repo": "KingVergil/ds-football-agent",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T08:37:44Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "ds-agents-lota-data",
+ "deps": [
+  "zod",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-storage-domain",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "storageDomain",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created"
+ ],
+ "tool_regs": 28,
+ "domains": {},
+ "env": {
+  "LOTA_API_KEY": 1,
+  "DSH_SCHEDULED_RUN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "harness-plugin/dataflow.js:16",
+    "harness-plugin/dataflow.js:117",
+    "harness-plugin/index.js:14",
+    "harness-plugin/index.js:276",
+    "harness-plugin/index.js:324"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 31,
+   "evidence": [
+    "harness-plugin/index.js:13",
+    "harness-plugin/index.js:88",
+    "harness-plugin/replay.js:17",
+    "harness-plugin/replay.js:54",
+    "harness-plugin/replay.js:451"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. harness-plugin/dataflow.js:16, harness-plugin/dataflow.js:117"
+  },
+  {
+   "id": "token_env",
+   "evidence": "LOTA_API_KEY"
+  }
+ ],
+ "level": 3
+}

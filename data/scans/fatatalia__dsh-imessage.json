@@ -1,0 +1,105 @@
+{
+ "repo": "fatatalia/dsh-imessage",
+ "stars": 0,
+ "description": "dsh iMessage 插件：监听/路由/自动回复/typing/已读回执，随 dsh web 启停",
+ "pushed_at": "2026-08-16T11:56:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-imessage",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agentPresets",
+  "agents",
+  "remote",
+  "sessionPersistence",
+  "sessionTitle",
+  "sessions",
+  "settings",
+  "slots",
+  "tools",
+  "typert",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "IMSG_CHAT_DB": 1,
+  "IMSG_CMD": 1,
+  "IMSG_DEFAULT_WORKSPACE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/gateway-core.mjs:15",
+    "lib/gateway-core.mjs:228",
+    "lib/gateway-core.mjs:397"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/gateway-core.mjs:189"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/gateway-core.mjs:15, lib/gateway-core.mjs:228"
+  }
+ ],
+ "level": 3
+}

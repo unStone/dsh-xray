@@ -1,0 +1,93 @@
+{
+ "repo": "qschen86/dsh-calendar-todo",
+ "stars": 0,
+ "description": "DSH web plugin: per-folder calendar + todo app with iCal import and conversation tools",
+ "pushed_at": "2026-08-17T07:05:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots",
+    "workspaces",
+    "sessions",
+    "locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-calendar-todo",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "tools",
+  "userQuestions",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [
+  "tools/execute"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_CALENDAR_TODO_DATA": 3,
+  "DSH_CALENDAR_TODO_TZ_GUARD": 1,
+  "DSH_CALENDAR_TODO_CALENDARS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:39",
+    "lib/index.js:154",
+    "lib/index.js:242",
+    "lib/index.js:479"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

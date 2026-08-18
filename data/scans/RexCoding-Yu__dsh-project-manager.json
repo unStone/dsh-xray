@@ -1,0 +1,126 @@
+{
+ "repo": "RexCoding-Yu/dsh-project-manager",
+ "stars": 0,
+ "description": "使用项目管理方法论使用dsh",
+ "pushed_at": "2026-08-17T10:48:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-commands",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-project-manager",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-commands",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "@vitejs/plugin-react",
+  "lucide-react",
+  "vite",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "sessions",
+  "skills",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "command/executed"
+ ],
+ "tool_regs": 48,
+ "domains": {},
+ "env": {
+  "DSH_PM_ARTIFACT_ROOT": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "scripts/run-compiled-tests.mjs:2",
+    "scripts/run-compiled-tests.mjs:2",
+    "scripts/run-compiled-tests.mjs:40",
+    "packages/dsh-project-manager/build.mjs:3",
+    "packages/dsh-project-manager/build.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 1,
+   "evidence": [
+    "packages/dsh-project-manager/build.mjs:106",
+    "packages/dsh-project-manager/build.mjs:107",
+    "src/persistence/file.ts:28",
+    "src/persistence/workspace.ts:119",
+    "packages/dsh-project-manager/lib/index.js:1117"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 149,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. scripts/run-compiled-tests.mjs:2, scripts/run-compiled-tests.mjs:2"
+  }
+ ],
+ "level": 3
+}

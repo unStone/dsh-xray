@@ -1,0 +1,101 @@
+{
+ "repo": "msilita/dsh-graceful-restart",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-17T08:43:19Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-graceful-restart",
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "slots",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/status",
+  "connection/reset",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3,
+  "DSH_LAUNCHED_BY": 1,
+  "DSH_LAUNCHER_WRAPPER": 2,
+  "DSH_GRACEFUL_RESTART_WAKE": 2,
+  "DSH_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 7,
+   "evidence": [
+    "lib/index.js:29",
+    "lib/index.js:29",
+    "lib/index.js:351",
+    "lib/index.js:383",
+    "lib/index.js:418"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 7,
+   "evidence": [
+    "lib/index.js:67",
+    "lib/index.js:247",
+    "lib/index.js:252",
+    "lib/index.js:264",
+    "lib/index.js:292"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. lib/index.js:29, lib/index.js:29"
+  }
+ ],
+ "level": 3
+}

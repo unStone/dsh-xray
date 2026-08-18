@@ -1,0 +1,90 @@
+{
+ "repo": "La-Theresa/dsh-math-modeling",
+ "stars": 0,
+ "description": "a simple personal try on top of dsh-anchored-standard, developd for math modeling",
+ "pushed_at": "2026-08-16T12:58:48Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "skills",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "USERPROFILE": 2,
+  "MATH_MODELING_PYTHON": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "custom-bash.mjs:90",
+    "math-tools.mjs:111"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "math-tools.mjs:230"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. custom-bash.mjs:90, math-tools.mjs:111"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 5 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

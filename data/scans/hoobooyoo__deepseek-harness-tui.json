@@ -1,0 +1,95 @@
+{
+ "repo": "hoobooyoo/deepseek-harness-tui",
+ "stars": 0,
+ "description": "deepseek harness tui",
+ "pushed_at": "2026-08-18T09:24:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deepcode",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "blessed",
+  "ink",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "sessions"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DISPLAY": 1,
+  "DEEPCODE_SMOKE": 1,
+  "FORCE_COLOR": 1,
+  "NO_COLOR": 1,
+  "COLORTERM": 1,
+  "TERM_PROGRAM": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "bin/deepcode.js:17",
+    "bin/deepcode.js:133",
+    "bin/deepcode.js:134",
+    "lib/app.js:14",
+    "lib/app.js:98"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "bin/deepcode.js:18",
+    "bin/deepcode.js:56"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. bin/deepcode.js:17, bin/deepcode.js:133"
+  }
+ ],
+ "level": 3
+}

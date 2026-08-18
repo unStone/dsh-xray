@@ -1,0 +1,90 @@
+{
+ "repo": "PengboNB/skk-gal-dsh",
+ "stars": 0,
+ "description": "DSH的外观插件",
+ "pushed_at": "2026-08-17T07:46:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots",
+    "connection"
+   ]
+  }
+ },
+ "pkg_name": "skk-gal",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "SKK_GAL_DSH_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    ".dsh-plugin/index.mjs:4",
+    ".dsh-plugin/index.mjs:61"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 5,
+   "evidence": [
+    ".dsh-plugin/index.mjs:33",
+    ".dsh-plugin/index.mjs:42",
+    ".dsh-plugin/session-trash-worker.mjs:24",
+    "scripts/build-client.mjs:2",
+    "scripts/build-client.mjs:2"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. .dsh-plugin/index.mjs:4, .dsh-plugin/index.mjs:61"
+  }
+ ],
+ "level": 3
+}

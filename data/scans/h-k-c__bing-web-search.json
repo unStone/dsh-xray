@@ -1,0 +1,90 @@
+{
+ "repo": "h-k-c/bing-web-search",
+ "stars": 0,
+ "description": "DeepSeek Harness 网页搜索插件：有 Tavily key 走 Tavily，没有自动退回免费无 key 的 Bing，搜索永远可用（零配置起步）",
+ "pushed_at": "2026-08-15T16:46:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "bing-web-search",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.bing.com": 3,
+  "api.tavily.com": 1,
+  "site-a.com": 2,
+  "site-b.com": 2,
+  "t1.com": 2,
+  "t3.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "TAVILY_API_KEY": 2,
+  "SEARCH_MAX_RESULTS": 3,
+  "SEARCH_TAVILY_TIMEOUT_MS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:72"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. index.mjs:72"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TAVILY_API_KEY"
+  }
+ ],
+ "level": 3
+}

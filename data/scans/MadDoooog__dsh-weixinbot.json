@@ -1,0 +1,106 @@
+{
+ "repo": "MadDoooog/dsh-weixinbot",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T02:01:42Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-weixinbot",
+ "deps": [
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 4,
+  "novac2c.cdn.weixin.qq.com": 1
+ },
+ "env": {
+  "DSH_HOME": 8,
+  "DSH_SESSION_ID": 2,
+  "WX_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "tools/mount.mjs:22",
+    "tools/mount.mjs:22",
+    "tools/mount.mjs:112",
+    "tools/self-restart.mjs:19",
+    "tools/self-restart.mjs:19"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/adapter/cdn.ts:43"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/server/health.ts:18"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 6,
+   "evidence": [
+    "src/continuation.ts:50",
+    "src/credentials.ts:34",
+    "src/credentials.ts:50",
+    "src/util.ts:96",
+    "tools/mount.mjs:143"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. tools/mount.mjs:22, tools/mount.mjs:22"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/adapter/cdn.ts:43"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/server/health.ts:18"
+  }
+ ],
+ "level": 3
+}

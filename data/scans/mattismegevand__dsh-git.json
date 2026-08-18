@@ -1,0 +1,113 @@
+{
+ "repo": "mattismegevand/dsh-git",
+ "stars": 0,
+ "description": "A session-scoped working-tree review panel for DeepSeek Harness",
+ "pushed_at": "2026-08-16T14:30:46Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@mattismegevand/dsh-dock",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ]
+  }
+ },
+ "pkg_name": "@mattismegevand/dsh-git",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@pierre/diffs",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "conversation",
+  "dock",
+  "inputTriggers",
+  "invariants",
+  "locale",
+  "sandbox",
+  "sandboxPolicy",
+  "sessions",
+  "slots",
+  "subprocess",
+  "theme",
+  "webServer"
+ ],
+ "hooks": [
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 11,
+   "evidence": [
+    "src/git-runner.ts:12",
+    "src/git-runner.ts:78"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 22,
+   "evidence": [
+    "scripts/verify-translation-pairing.mjs:2",
+    "scripts/verify-translation-pairing.mjs:29"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 36,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/git-runner.ts:12, src/git-runner.ts:78"
+  }
+ ],
+ "level": 3
+}

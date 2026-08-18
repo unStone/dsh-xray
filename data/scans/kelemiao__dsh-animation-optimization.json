@@ -2,9 +2,12 @@
  "repo": "kelemiao/dsh-animation-optimization",
  "stars": 4,
  "description": "DSH 动画优化：输出流式动画与 Claude Code 风格外观插件",
- "pushed_at": "2026-08-16T13:45:50Z",
+ "pushed_at": "2026-08-18T09:02:17Z",
  "status": "ok",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "inject": [
     "@deepseek-ai/dsh-client-runtime"
@@ -63,6 +66,11 @@
  "files_scanned": 3,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

@@ -1,0 +1,93 @@
+{
+ "repo": "QLM1234/dsh-dynamic-assembler",
+ "stars": 0,
+ "description": "Natural-language driven, security-gated dynamic assembly plugin for DeepSeek Harness (dsh)",
+ "pushed_at": "2026-08-17T18:47:25Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-dynamic-assembler",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 9,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 2,
+   "evidence": [
+    "src/inspect.ts:17",
+    "src/inspect.ts:116",
+    "src/inspect.ts:116",
+    "src/inspect.ts:116",
+    "src/inspect.ts:116"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "src/inspect.ts:114",
+    "src/inspect.ts:115"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 6,
+   "evidence": [
+    "src/inspect.ts:117",
+    "src/inspect.ts:117",
+    "src/inspect.ts:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/dynamic-assembler.ts:568"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. src/inspect.ts:17, src/inspect.ts:116"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. src/inspect.ts:114, src/inspect.ts:115"
+  }
+ ],
+ "level": 3
+}

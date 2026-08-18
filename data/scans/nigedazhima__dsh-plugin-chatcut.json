@@ -1,0 +1,97 @@
+{
+ "repo": "nigedazhima/dsh-plugin-chatcut",
+ "stars": 0,
+ "description": "Edit videos with AI inside DeepSeek Harness — 50 ChatCut MCP tools, one-time OAuth, auto token refresh",
+ "pushed_at": "2026-08-17T15:19:45Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "@dsh-external/dsh-plugin-chatcut",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.chatcut.io": 2,
+  "app.chatcut.io": 1
+ },
+ "env": {
+  "CHATCUT_MCP_URL": 1,
+  "CHATCUT_TOKEN_FILE": 2,
+  "DSH_APP_NODE_MODULES": 1,
+  "CHATCUT_OAUTH_CLIENT_ID": 1,
+  "CHATCUT_MEDIA_IMPORT_ENDPOINT": 1,
+  "FFMPEG_PATH": 1,
+  "FFPROBE_PATH": 1,
+  "CHATCUT_MEDIA_IMPORT_CACHE_DIR": 1,
+  "CHATCUT_MEDIA_IMPORT_HWACCEL": 1,
+  "CHATCUT_MEDIA_IMPORT_HW_ENCODERS": 2,
+  "CHATCUT_MEDIA_IMPORT_VAAPI_DEVICE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/chatcut-login.mjs:14",
+    "skills/chatcut/resources/asset-import/scripts/upload-media.mjs:3",
+    "skills/chatcut/resources/asset-import/scripts/upload-media.mjs:3",
+    "skills/chatcut/resources/asset-import/scripts/upload-media.mjs:241",
+    "skills/chatcut/resources/asset-import/scripts/upload-media.mjs:331"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/chatcut-login.mjs:93",
+    "skills/chatcut/resources/asset-import/scripts/serve-local-media.mjs:88"
+   ]
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/chatcut-bridge.mjs:11",
+    "scripts/chatcut-bridge.mjs:49",
+    "scripts/chatcut-login.mjs:15",
+    "scripts/chatcut-login.mjs:123",
+    "skills/chatcut/resources/asset-import/scripts/upload-media.mjs:5"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 5,
+ "has_skill_md": true,
+ "type": "skill",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/chatcut-login.mjs:14, skills/chatcut/resources/asset-import/scripts/upload-media.mjs:3"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/chatcut-login.mjs:93, skills/chatcut/resources/asset-import/scripts/serve-local-media.mjs:88"
+  },
+  {
+   "id": "token_env",
+   "evidence": "CHATCUT_OAUTH_CLIENT_ID, CHATCUT_TOKEN_FILE"
+  }
+ ],
+ "level": 2
+}

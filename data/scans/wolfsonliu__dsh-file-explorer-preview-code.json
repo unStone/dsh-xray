@@ -1,0 +1,83 @@
+{
+ "repo": "wolfsonliu/dsh-file-explorer-preview-code",
+ "stars": 0,
+ "description": "DSH Web file-explorer preview plugin: code preview & editor for DSH Web — per-language syntax highlighting, in-place editing with autosave, and dark/light themes. Overrides dsh-file-explorer's plain-t",
+ "pushed_at": "2026-08-18T02:50:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-file-explorer-preview-code",
+ "deps": [
+  "@codemirror/language",
+  "@codemirror/language-data",
+  "@codemirror/state",
+  "@codemirror/theme-one-dark",
+  "codemirror"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fileExplorer",
+  "locale"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/client/CodePreview.tsx:68",
+    "src/client/CodePreview.tsx:148",
+    "lib/types/client/CodePreview.js:55",
+    "lib/types/client/CodePreview.js:128"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

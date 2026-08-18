@@ -1,0 +1,84 @@
+{
+ "repo": "sjh9714/dsh-lean",
+ "stars": 0,
+ "description": "DeepSeek bills peak hours at 2x and peak is 09-12 and 14-18 Beijing time, the working day. npx dsh-lean audit shows what your session paid, what it costs off-peak, and which tool schemas your prompt p",
+ "pushed_at": "2026-08-17T02:42:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lean",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api-docs.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-lean.mjs:14",
+    "bin/dsh-lean.mjs:14",
+    "bin/dsh-lean.mjs:49",
+    "scripts/run-bench.mjs:12",
+    "scripts/run-bench.mjs:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:112",
+    "index.mjs:113",
+    "scripts/run-bench.mjs:13",
+    "scripts/run-bench.mjs:169"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. bin/dsh-lean.mjs:14, bin/dsh-lean.mjs:14"
+  }
+ ],
+ "level": 3
+}

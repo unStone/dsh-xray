@@ -1,0 +1,122 @@
+{
+ "repo": "CyanoOrg/dsh-norm-spec",
+ "stars": 0,
+ "description": "plugin for norm-spec: session-scoped .norm convention injection, post-edit validation, and native norm tools.",
+ "pushed_at": "2026-08-18T08:44:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-norm-spec",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-skill"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "agent/session-start",
+  "tools/post-execute",
+  "tools/result"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_NORM_BRIDGE": 4,
+  "DSH_NORM_PAYLOAD": 4,
+  "BUILD_TARGET": 1,
+  "BUILD_OUTPUT": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 29,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-candidate-set.mjs:6",
+    "scripts/check-candidate-set.mjs:6",
+    "scripts/check-candidate-set.mjs:13",
+    "scripts/check-staging-smoke.ts:8",
+    "scripts/check-staging-smoke.ts:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/dsh-e2e-postedit.mjs:38",
+    "scripts/dsh-e2e-postedit.mjs:111",
+    "scripts/dsh-e2e-slot.mjs:47",
+    "scripts/dsh-e2e-slot.mjs:138",
+    "scripts/dsh-e2e-stub.mjs:22"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 5,
+   "evidence": [
+    "scripts/check-candidate-set.mjs:53",
+    "scripts/check-staging-smoke.ts:46",
+    "scripts/check-staging-smoke.ts:49",
+    "scripts/cordis-smoke.mjs:26",
+    "scripts/dsh-e2e-postedit.mjs:114"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "scripts/check-staging-smoke.ts:71",
+    "scripts/check-staging-smoke.ts:83",
+    "scripts/cordis-smoke.mjs:45",
+    "scripts/pack-platform.mjs:16",
+    "scripts/pack-root.mjs:14"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×29 src, e.g. scripts/check-candidate-set.mjs:6, scripts/check-candidate-set.mjs:6"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. scripts/dsh-e2e-postedit.mjs:38, scripts/dsh-e2e-postedit.mjs:111"
+  }
+ ],
+ "level": 3
+}

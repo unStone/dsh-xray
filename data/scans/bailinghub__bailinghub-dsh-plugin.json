@@ -1,0 +1,72 @@
+{
+ "repo": "bailinghub/bailinghub-dsh-plugin",
+ "stars": 0,
+ "description": "Submit and track governed business tasks from DeepSeek Harness through one operator-configured BailingHub route.",
+ "pushed_at": "2026-08-18T08:07:41Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-bailinghub",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "BAILINGHUB_BASE_URL": 1,
+  "BAILINGHUB_CLIENT_TOKEN": 1,
+  "BAILINGHUB_ROUTE": 1,
+  "GITHUB_REF_NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "BAILINGHUB_CLIENT_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,97 @@
+{
+ "repo": "Gdnaiteab/pingo-dsh-plugin",
+ "stars": 0,
+ "description": "DSH plugin: Pingo desktop-pet companion (catgirl pet in the dsh Web GUI + 14 Pingo persona/strategy skills). Official bundle plugin, install via `dsh plugin --profile web add \"github:Gdnaiteab/pingo-d",
+ "pushed_at": "2026-08-17T05:59:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  },
+  "skills": [
+   "./skills/sts2-strategy-guide/SKILL.md",
+   "./skills/skill-writer/SKILL.md",
+   "./skills/pingo-persona-01-sun-wukong/SKILL.md",
+   "./skills/pingo-persona-02-jade-rabbit/SKILL.md",
+   "./skills/pingo-persona-03-egyptian-cat-queen/SKILL.md",
+   "./skills/pingo-persona-04-nine-tailed-fox/SKILL.md",
+   "./skills/pingo-persona-06-red-hood-wolf-ear-girl/SKILL.md",
+   "./skills/pingo-persona-09-maid-butler/SKILL.md",
+   "./skills/pingo-persona-10-cyber-idol/SKILL.md",
+   "./skills/pingo-persona-11-siamese-cat-angler/SKILL.md",
+   "./skills/pingo-persona-default/SKILL.md",
+   "./skills/pingo-persona-penguin-chibi/SKILL.md",
+   "./skills/pingo-persona-penguin-pixel/SKILL.md",
+   "./skills/pingo-persona-qq-penguin-girl/SKILL.md"
+  ]
+ },
+ "pkg_name": "pingo-dsh-plugin",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "jobs",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/request-error",
+  "agent/session-start",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "PINGO_REPO": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 44,
+   "evidence": [
+    "index.mjs:10",
+    "index.mjs:184",
+    "scripts/convert-persona-skills.mjs:8",
+    "scripts/convert-persona-skills.mjs:135"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

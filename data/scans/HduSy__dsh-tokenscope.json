@@ -1,0 +1,110 @@
+{
+ "repo": "HduSy/dsh-tokenscope",
+ "stars": 0,
+ "description": "Usage dashboard plugin for DeepSeek Harness: per-day token/cost aggregation with a TokenScope-style web panel",
+ "pushed_at": "2026-08-15T16:00:57Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-web-react"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-usage-dashboard",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "modern-screenshot",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-web-react",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "models.dev": 9
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:240"
+   ]
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1224",
+    "lib/index.js:59",
+    "lib/index.js:60"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:3",
+    "lib/index.js:1004",
+    "src/persistence.ts:10",
+    "src/persistence.ts:27",
+    "lib/types/persistence.js:9"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 50,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:240"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/client.js:1224, lib/index.js:59"
+  }
+ ],
+ "level": 2
+}

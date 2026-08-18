@@ -1,0 +1,84 @@
+{
+ "repo": "SouleyMoni1/dsh-experience-plugin",
+ "stars": 0,
+ "description": "DSH plugin: per-model reasoning levels for custom API models, with family presets and an official-settings-page editor.",
+ "pushed_at": "2026-08-18T06:07:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-experience-plugin",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-host-apiproxy"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "settings"
+ ],
+ "hooks": [
+  "settings/document-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.example.com": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-model-reasoning.mjs:2",
+    "scripts/e2e-model-reasoning.mjs:2",
+    "scripts/e2e-model-reasoning.mjs:15",
+    "scripts/e2e-model-reasoning.mjs:46",
+    "scripts/e2e-model-reasoning.mjs:53"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

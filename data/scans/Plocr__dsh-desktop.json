@@ -1,0 +1,129 @@
+{
+ "repo": "Plocr/dsh-desktop",
+ "stars": 0,
+ "description": "DeepSeek Harness 桌面工作台：Electron 原生壳 + 内嵌 harness 运行时（离线、免装 Node），壳仅保留桌面原生能力，与 harness 间以 bridge 插件通信",
+ "pushed_at": "2026-08-17T02:33:08Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [
+  "electron-updater",
+  "bufferutil",
+  "utf-8-validate"
+ ],
+ "install_scripts": {
+  "prepare": "node build-client.js"
+ },
+ "injects": [
+  "connection",
+  "layout",
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "dispose",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1,
+  "deepseek-harness.github.io": 1,
+  "api.deepseek.com": 6,
+  "api.example.com": 1,
+  "opencode.ai": 2,
+  "openrouter.ai": 2,
+  "api.moonshot.cn": 2,
+  "tools.ietf.org": 1,
+  "www.cl.cam.ac.uk": 1,
+  "html.spec.whatwg.org": 1
+ },
+ "env": {
+  "DSH_HOME": 3,
+  "DSH_DESKTOP_ELECTRON_ARGS": 1,
+  "DSH_FEED_PORT": 1,
+  "DSH_RUNTIME_NODE_VERSION": 1,
+  "DSH_RUNTIME_DSH_VERSION": 1,
+  "DSH_RUNTIME_TAR": 1,
+  "LOCALAPPDATA": 4,
+  "XDG_DATA_HOME": 1,
+  "DSH_DESKTOP_NPM_ROOT": 2,
+  "APPDATA": 1,
+  "DSH_DESKTOP_DSH_BIN": 1,
+  "DSH_DESKTOP_UPDATE_URL": 1,
+  "WS_NO_BUFFER_UTIL": 1,
+  "WS_NO_UTF_8_VALIDATE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 26,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:11",
+    "scripts/build.mjs:11",
+    "scripts/build.mjs:15",
+    "scripts/build.mjs:50",
+    "scripts/dev.mjs:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/feed-server.mjs:11",
+    "packages/bridge/vendor/ws/lib/websocket-server.js:103"
+   ]
+  },
+  "fs_write": {
+   "src": 62,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:10",
+    "scripts/build.mjs:33",
+    "scripts/dev-link.mjs:10",
+    "scripts/dev-link.mjs:55",
+    "scripts/generate-loading.mjs:7"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 59,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×26 src, e.g. scripts/build.mjs:11, scripts/build.mjs:11"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/feed-server.mjs:11, packages/bridge/vendor/ws/lib/websocket-server.js:103"
+  }
+ ],
+ "level": 2
+}

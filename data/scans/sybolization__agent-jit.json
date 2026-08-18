@@ -1,0 +1,99 @@
+{
+ "repo": "sybolization/agent-jit",
+ "stars": 0,
+ "description": "DeepSeek Harness (dsh) 插件：把 LLM agent loop 中确定性的执行路径编译成 DSL 程序并直接执行，显著降低 token、往返轮次与上下文暴露。A DeepSeek Harness plugin that compiles deterministic agent paths into DSL programs.",
+ "pushed_at": "2026-08-14T06:00:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "agent-jit",
+ "deps": [
+  "typebox",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 77,
+ "domains": {
+  "api.deepseek.com": 1,
+  "api.github.com": 3
+ },
+ "env": {
+  "DEEPSEEK_API_KEY": 11,
+  "GITHUB_TOKEN": 5
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/experiments/plotReport.ts:14",
+    "src/experiments/plotReport.ts:14",
+    "src/experiments/plotReport.ts:384"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 20,
+   "evidence": [
+    "src/experiments/dslGenerationExperiment.ts:411",
+    "src/experiments/plotReport.ts:381",
+    "src/experiments/programmaticBenchmark.ts:350",
+    "src/experiments/r4eBenchmark.ts:494",
+    "src/experiments/r5ReasoningAnalyze.ts:171"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 207,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/experiments/plotReport.ts:14, src/experiments/plotReport.ts:14"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

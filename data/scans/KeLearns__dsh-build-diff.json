@@ -1,0 +1,94 @@
+{
+ "repo": "KeLearns/dsh-build-diff",
+ "stars": 0,
+ "description": "Agent-loop change review for the DeepSeek Harness web GUI",
+ "pushed_at": "2026-08-16T12:27:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@kelearns/dsh-build-diff",
+ "deps": [
+  "@deepseek-ai/dsh-client-ui-slots",
+  "dsh-better-sidebar",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "betterSidebar",
+  "locale",
+  "sessions",
+  "slots",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/session-start",
+  "agent/status",
+  "locale/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 29,
+   "evidence": [
+    "index.js:138",
+    "index.js:153",
+    "index.js:169",
+    "lib/engine.js:500"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

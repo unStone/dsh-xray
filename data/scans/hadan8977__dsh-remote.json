@@ -1,0 +1,77 @@
+{
+ "repo": "hadan8977/dsh-remote",
+ "stars": 0,
+ "description": "Remote access suite for DeepSeek Harness: QR pairing, HMAC sessions, cloudflared tunnel and PWA. Zero installs on any device.",
+ "pushed_at": "2026-08-15T17:22:30Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-remote-plugin",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "goal/changed"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.day.app": 1,
+  "sctapi.ftqq.com": 1,
+  "api.telegram.org": 1
+ },
+ "env": {
+  "DSH_REMOTE_UPSTREAM": 1,
+  "DSH_REMOTE_DIR": 2,
+  "DSH_REMOTE_VERSION": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "server/gateway.js:451"
+   ]
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "server/gateway.js:55",
+    "server/gateway.js:59",
+    "server/gateway.js:78",
+    "server/gateway.js:107",
+    "server/gateway.js:152"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. server/gateway.js:451"
+  }
+ ],
+ "level": 2
+}

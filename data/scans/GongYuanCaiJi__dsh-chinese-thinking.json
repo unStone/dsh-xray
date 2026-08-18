@@ -1,0 +1,87 @@
+{
+ "repo": "GongYuanCaiJi/dsh-chinese-thinking",
+ "stars": 0,
+ "description": "DeepSeek Harness 插件：让 agent 默认用中文思考与回复（移植自 superpowers-zh）",
+ "pushed_at": "2026-08-15T18:24:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-chinese-thinking",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "npm run test"
+ },
+ "injects": [
+  "systemPrompt"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-verbatim.mjs:15",
+    "scripts/verify-verbatim.mjs:15",
+    "scripts/verify-verbatim.mjs:51",
+    "scripts/verify-verbatim.mjs:52"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-verbatim.mjs:17",
+    "scripts/verify-verbatim.mjs:101"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-verbatim.mjs:64"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/verify-verbatim.mjs:15, scripts/verify-verbatim.mjs:15"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,101 @@
+{
+ "repo": "Xrainsmile/DSH-Plugin-Doctor",
+ "stars": 0,
+ "description": "Compatibility, security, isolated install, and rollback doctor for DeepSeek Harness plugin bundles",
+ "pushed_at": "2026-08-14T13:38:27Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-doctor",
+ "deps": [
+  "commander",
+  "semver",
+  "tar",
+  "yaml"
+ ],
+ "install_scripts": {
+  "postinstall": "node setup.js"
+ },
+ "injects": [],
+ "hooks": [
+  "agent/request"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 1,
+   "evidence": [
+    "src/isolation.js:6",
+    "src/isolation.js:52",
+    "src/scanner.js:16",
+    "src/scanner.js:16",
+    "src/scanner.js:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/isolation.js:27",
+    "src/isolation.js:30"
+   ]
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 2,
+   "evidence": [
+    "src/report.js:70",
+    "src/report.js:71",
+    "src/scanner.js:21",
+    "src/scanner.js:21",
+    "src/scanner.js:21"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 18,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node setup.js"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. src/isolation.js:6, src/isolation.js:52"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. src/isolation.js:27, src/isolation.js:30"
+  }
+ ],
+ "level": 3
+}

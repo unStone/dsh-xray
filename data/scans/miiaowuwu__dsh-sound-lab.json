@@ -1,0 +1,111 @@
+{
+ "repo": "miiaowuwu/dsh-sound-lab",
+ "stars": 0,
+ "description": "语音控制插件（安洁莉娜「hirari do～」）",
+ "pushed_at": "2026-08-18T06:20:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-sound-lab",
+ "deps": [
+  "react",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.aliyun.com": 1,
+  "prts.wiki": 2,
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "APPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "tools/install.mjs:21",
+    "tools/install.mjs:21",
+    "tools/install.mjs:127",
+    "tools/install.mjs:161",
+    "tools/install.mjs:174"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tools/test-client.mjs:103"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "tools/test-host.mjs:48",
+    "tools/test-host.mjs:49"
+   ]
+  },
+  "fs_write": {
+   "src": 24,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:239",
+    "lib/index.js:453",
+    "lib/index.js:535",
+    "lib/index.js:577",
+    "lib/index.js:734"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. tools/install.mjs:21, tools/install.mjs:21"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. tools/test-client.mjs:103"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. tools/test-host.mjs:48, tools/test-host.mjs:49"
+  }
+ ],
+ "level": 3
+}

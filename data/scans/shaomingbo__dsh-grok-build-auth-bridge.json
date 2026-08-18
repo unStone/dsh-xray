@@ -1,0 +1,92 @@
+{
+ "repo": "shaomingbo/dsh-grok-build-auth-bridge",
+ "stars": 0,
+ "description": "Reuse the official Grok Build CLI subscription login in DeepSeek Harness",
+ "pushed_at": "2026-08-15T12:06:24Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-grok-build-auth-bridge",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "settings",
+  "timer"
+ ],
+ "hooks": [
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "auth.x.ai": 1,
+  "cli-chat-proxy.grok.com": 1
+ },
+ "env": {
+  "DSH_GROK_BUILD_BRIDGE_SOURCE": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bin/install.js:3",
+    "bin/install.js:3",
+    "bin/install.js:31",
+    "lib/bridge.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/bridge.js:20"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "bin/install.js:43"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bin/install.js:3, bin/install.js:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/bridge.js:20"
+  }
+ ],
+ "level": 3
+}

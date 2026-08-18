@@ -1,0 +1,128 @@
+{
+ "repo": "JinPLu/dsh-plugin-discussion-intent",
+ "stars": 0,
+ "description": "A DSH Discussion Mode that keeps complex AI conversations aligned with your goals and turns them into evidence-based next steps.",
+ "pushed_at": "2026-08-16T02:56:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@jinplu/dsh-plugin-discussion-intent",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "agents",
+  "commands",
+  "discussionIntent",
+  "locale",
+  "sessionPersistence",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "discussion-intent/change",
+  "session/created"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_SMOKE_DSH_VERSION": 2,
+  "DSH_SMOKE_DSH_REPO": 2,
+  "DISCUSSION_SMOKE_WORKSPACE": 3,
+  "DSH_SMOKE_PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:1",
+    "scripts/consumer-smoke.mjs:53",
+    "scripts/consumer-smoke.mjs:115",
+    "scripts/ui-smoke-server.mjs:1",
+    "scripts/ui-smoke-server.mjs:34"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 1,
+   "evidence": [
+    "scripts/consumer-smoke.mjs:293",
+    "scripts/consumer-smoke.mjs:294",
+    "scripts/consumer-smoke.mjs:295",
+    "scripts/consumer-smoke.mjs:296",
+    "scripts/ui-smoke-server.mjs:75"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 23,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/consumer-smoke.mjs:1, scripts/consumer-smoke.mjs:53"
+  }
+ ],
+ "level": 3
+}

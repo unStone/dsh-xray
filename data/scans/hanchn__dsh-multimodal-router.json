@@ -1,0 +1,110 @@
+{
+ "repo": "hanchn/dsh-multimodal-router",
+ "stars": 0,
+ "description": "A zero-config, multi-provider vision tool for DeepSeek Harness with automatic local model discovery and privacy-aware remote fallback.",
+ "pushed_at": "2026-08-17T08:10:00Z",
+ "status": "ok",
+ "manifest": {
+  "runtimeDependencies": [
+   {
+    "id": "mlx-audio",
+    "kind": "python-service",
+    "optional": true,
+    "managedByPlugin": true,
+    "purpose": "High-quality local Qwen3-TTS spoken replies on Apple Silicon",
+    "install": "npx @hanchn/dsh-multimodal-router setup-tts (interactive, opt-in)",
+    "start": "mlx_audio.server --host 127.0.0.1 --port 8000",
+    "healthUrl": "http://127.0.0.1:8000/v1/models"
+   }
+  ],
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@hanchn/dsh-multimodal-router",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "opencc-js"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "llm",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "src/cli.js:3",
+    "src/cli.js:3",
+    "src/cli.js:23",
+    "src/cli.js:71",
+    "src/index.js:4"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:506"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:534",
+    "src/index.js:572"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. src/cli.js:3, src/cli.js:3"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/index.js:506"
+  }
+ ],
+ "level": 3
+}

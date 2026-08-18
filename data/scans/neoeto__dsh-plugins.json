@@ -1,0 +1,90 @@
+{
+ "repo": "neoeto/dsh-plugins",
+ "stars": 0,
+ "description": "deepseek harness的插件库",
+ "pushed_at": "2026-08-14T10:09:38Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-d2-diagram",
+ "deps": [
+  "react",
+  "mermaid",
+  "puppeteer-core",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "MERMAID_CHROMIUM_PATH": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-mermaid-diagram/lib/index.js:8",
+    "dsh-mermaid-diagram/lib/index.js:97"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-mermaid-diagram/lib/index.js:10",
+    "dsh-mermaid-diagram/lib/index.js:96",
+    "dsh-mermaid-diagram/lib/render.mjs:9",
+    "dsh-mermaid-diagram/lib/render.mjs:51"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. dsh-mermaid-diagram/lib/index.js:8, dsh-mermaid-diagram/lib/index.js:97"
+  }
+ ],
+ "level": 3
+}

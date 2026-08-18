@@ -1,0 +1,148 @@
+{
+ "repo": "shengshifantang/dsh-evidence-arena",
+ "stars": 0,
+ "description": "Evidence Arena: parallel isolated DSH coding runs with deterministic judging and guarded promotion — standalone workbench plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-17T12:32:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-evidence-arena",
+ "deps": [
+  "@deepseek-ai/dsh-agent-spine-demo",
+  "@deepseek-ai/dsh-sdk-client",
+  "@deepseek-ai/dsh-sdk-jsonrpc-demo",
+  "@deepseek-ai/dsh-sdk-jsonrpc-server",
+  "@deepseek-ai/dsh-sdk-protocol",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-bash-sandbox",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-compaction-basic",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-fs-observation-policy",
+  "@deepseek-ai/dsh-fs-sandbox",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm-deepseek",
+  "@deepseek-ai/dsh-llm-pi-ai",
+  "@deepseek-ai/dsh-pwsh-sandbox",
+  "@deepseek-ai/dsh-pwsh-local",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-sandbox-local",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session-checkpoint-policy",
+  "@deepseek-ai/dsh-session-persistence-jsonl",
+  "@deepseek-ai/dsh-shell-env",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-subprocess-local",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tool-fs",
+  "@deepseek-ai/dsh-tool-pwsh",
+  "@deepseek-ai/dsh-tool-todo",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "connection",
+  "credentials",
+  "invariants",
+  "locale",
+  "sandbox",
+  "slots",
+  "subprocess",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "src/process-runner.ts:83",
+    "src/security.ts:99"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/policy.ts:139",
+    "src/policy.ts:257"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 22,
+   "evidence": [
+    "src/store.ts:4",
+    "src/store.ts:111",
+    "src/store.ts:229",
+    "src/store.ts:304"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 47,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/process-runner.ts:83, src/security.ts:99"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/policy.ts:139, src/policy.ts:257"
+  }
+ ],
+ "level": 3
+}

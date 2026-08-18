@@ -1,0 +1,84 @@
+{
+ "repo": "SuperPaiGu/dsh-desktop",
+ "stars": 0,
+ "description": "DSH desktop-window bundle: installs a /desktop command that opens DeepSeek Harness in a native desktop window, plus a portable Electron app and installer command",
+ "pushed_at": "2026-08-17T19:11:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-desktop",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 1,
+  "DSH_DESKTOP_KILL_ATTACHED": 1,
+  "DSH_DESKTOP_REPO": 3,
+  "NODE_BIN": 1,
+  "DSH_BIN": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 0,
+   "evidence": [
+    "index.js:12",
+    "index.js:35",
+    "bin/dsh-desktop.mjs:11",
+    "bin/dsh-desktop.mjs:11",
+    "bin/dsh-desktop.mjs:29"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "desktop/src/main.js:20",
+    "desktop/src/main.js:169"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. index.js:12, index.js:35"
+  }
+ ],
+ "level": 3
+}

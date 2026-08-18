@@ -1,0 +1,106 @@
+{
+ "repo": "quicksandznzn/dsh-session-share",
+ "stars": 0,
+ "description": "Share and import complete DeepSeek Harness Session trees as validated, offline Capsules with local ZIP transfer and attachment remapping.",
+ "pushed_at": "2026-08-17T07:08:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-session-share",
+ "deps": [
+  "fflate"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build && husky"
+ },
+ "injects": [
+  "attachments",
+  "commands",
+  "locale",
+  "sessionPersistence",
+  "sessionQuery",
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:14",
+    "scripts/check-package.mjs:1",
+    "scripts/check-package.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:59"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. scripts/build.mjs:2, scripts/build.mjs:2"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/build.mjs:59"
+  }
+ ],
+ "level": 3
+}

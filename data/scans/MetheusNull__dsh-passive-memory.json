@@ -1,0 +1,96 @@
+{
+ "repo": "MetheusNull/dsh-passive-memory",
+ "stars": 0,
+ "description": "Evidence-linked passive long-term memory for DeepSeek Harness · 让长期记忆自然涌现",
+ "pushed_at": "2026-08-15T13:28:31Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-passive-memory",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "llm",
+  "sessions"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/created",
+  "session/event",
+  "session/flush"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "generativelanguage.googleapis.com": 1
+ },
+ "env": {
+  "PASSIVE_MEMORY_DB_PATH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/start-with-harness.mjs:5",
+    "scripts/start-with-harness.mjs:62"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "scripts/import-legacy-dialogue.mjs:163",
+    "scripts/import-legacy-dialogue.mjs:164",
+    "scripts/import-legacy-dialogue.mjs:165",
+    "scripts/import-legacy-dialogue.mjs:183",
+    "scripts/start-with-harness.mjs:60"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 39,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/start-with-harness.mjs:5, scripts/start-with-harness.mjs:62"
+  },
+  {
+   "id": "token_env",
+   "evidence": "PASSIVE_MEMORY_DB_PATH"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 4 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

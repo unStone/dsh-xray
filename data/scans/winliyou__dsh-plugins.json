@@ -1,0 +1,114 @@
+{
+ "repo": "winliyou/dsh-plugins",
+ "stars": 0,
+ "description": "deepseek harness plugin set",
+ "pushed_at": "2026-08-17T16:30:38Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots",
+    "locale",
+    "remote"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugins",
+ "deps": [
+  "@deepseek-ai/dsh-sandbox"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "llm",
+  "locale",
+  "remote",
+  "sandbox",
+  "sandboxPolicy",
+  "sessionPersistence",
+  "sessions",
+  "slots",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/inbox/inserted",
+  "agent/pre-step",
+  "agent/request",
+  "session/event",
+  "tools/result"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 26,
+  "DSH_CWD": 3,
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/vision-router/lib/index.mjs:625"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 24,
+   "dev": 0,
+   "evidence": [
+    "scripts/test.mjs:278",
+    "scripts/test.mjs:285",
+    "scripts/test.mjs:442",
+    "scripts/test.mjs:443",
+    "scripts/test.mjs:951"
+   ]
+  },
+  "dyn_import": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "scripts/test.mjs:20",
+    "scripts/test.mjs:21",
+    "scripts/test.mjs:40",
+    "scripts/test.mjs:45",
+    "scripts/test.mjs:140"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/vision-router/lib/index.mjs:625"
+  }
+ ],
+ "level": 3
+}

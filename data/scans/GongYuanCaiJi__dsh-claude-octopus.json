@@ -1,0 +1,131 @@
+{
+ "repo": "GongYuanCaiJi/dsh-claude-octopus",
+ "stars": 0,
+ "description": "multi-agent 编排（移植自 claude-octopus）",
+ "pushed_at": "2026-08-15T20:18:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-claude-octopus",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@modelcontextprotocol/sdk",
+  "zod",
+  "@modelcontextprotocol/sdk",
+  "@sinclair/typebox",
+  "openclaw",
+  "@types/tinycolor2",
+  "glob",
+  "tinycolor2"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "commands",
+  "shell",
+  "subagents"
+ ],
+ "hooks": [],
+ "tool_regs": 32,
+ "domains": {
+  "design-tokens.github.io": 1,
+  "tr.designtokens.org": 1
+ },
+ "env": {
+  "CLAUDE_CODE_REMOTE": 1,
+  "OCTOPUS_REMOTE_SESSION": 1,
+  "OCTOPUS_REMOTE_STATUSLINE": 1,
+  "CLAUDE_CODE_SESSION_ID": 3,
+  "CLAUDE_SESSION_ID": 3,
+  "OPENAI_API_KEY": 7,
+  "AGY_AUTH_TOKEN": 7,
+  "ANTIGRAVITY_API_KEY": 7,
+  "OCTO_BUDGET_CEILING": 1,
+  "OPENROUTER_API_KEY": 6,
+  "PERPLEXITY_API_KEY": 6,
+  "ANTHROPIC_BASE_URL": 6,
+  "ANTHROPIC_AUTH_TOKEN": 6,
+  "COPILOT_GITHUB_TOKEN": 6,
+  "GH_TOKEN": 6,
+  "GITHUB_TOKEN": 6,
+  "OCTO_CLAW_ENABLED": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "hooks/octopus-hud.mjs:28",
+    "hooks/octopus-hud.mjs:28",
+    "hooks/octopus-hud.mjs:266",
+    "hooks/octopus-hud.mjs:711",
+    "mcp-server/dist/index.js:28"
+   ]
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/token-extraction/extractors/styled-components.ts:228",
+    "scripts/token-extraction/extractors/tailwind.ts:167",
+    "scripts/token-extraction/extractors/theme-file.ts:186"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 20,
+   "dev": 9,
+   "evidence": [
+    "hooks/octopus-hud.mjs:23",
+    "hooks/octopus-hud.mjs:350",
+    "hooks/octopus-hud.mjs:374",
+    "hooks/octopus-hud.mjs:462",
+    "hooks/octopus-hud.mjs:869"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 62,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. hooks/octopus-hud.mjs:28, hooks/octopus-hud.mjs:28"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. scripts/token-extraction/extractors/styled-components.ts:228, scripts/token-extraction/extractors/tailwind.ts:167"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AGY_AUTH_TOKEN, ANTHROPIC_AUTH_TOKEN, ANTIGRAVITY_API_KEY, COPILOT_GITHUB_TOKEN, GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

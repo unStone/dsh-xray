@@ -1,0 +1,107 @@
+{
+ "repo": "weijiafu14/dsh-remote-sandbox",
+ "stars": 0,
+ "description": "Crash-resilient remote execution world for DeepSeek Harness: ctx.fs/ctx.subprocess over an E2B sandbox with heartbeat keep-alive, transparent recovery, and workspace sync.",
+ "pushed_at": "2026-08-14T01:29:16Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-remote-sandbox-monorepo",
+ "deps": [
+  "dsh-sandbox-keeper",
+  "dsh-fs-remote",
+  "dsh-subprocess-remote",
+  "dsh-remote-protocol",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-invariants",
+  "dsh-sandbox-keeper",
+  "dsh-remote-protocol",
+  "dsh-remote-sidecar",
+  "e2b",
+  "ws",
+  "tar",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-invariants",
+  "dsh-remote-protocol",
+  "ws",
+  "dsh-remote-protocol",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-invariants",
+  "dsh-sandbox-keeper"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remoteSandbox"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_REMOTE_DEBUG": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 18,
+   "evidence": [
+    "packages/keeper/src/client.ts:204",
+    "packages/keeper/src/keeper.ts:90",
+    "packages/keeper/src/sync.ts:43",
+    "packages/keeper/src/sync.ts:65",
+    "packages/sidecar/src/main.ts:144"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 9,
+   "evidence": [
+    "packages/keeper/src/backend.ts:32",
+    "packages/keeper/src/backend.ts:62",
+    "packages/keeper/src/keeper.ts:187",
+    "packages/sidecar/src/util.ts:87",
+    "packages/subprocess-remote/src/collected.ts:12"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. packages/keeper/src/client.ts:204, packages/keeper/src/keeper.ts:90"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,123 @@
+{
+ "repo": "ZhenHuangLab/dsh-sync",
+ "stars": 0,
+ "description": "Git sync for DeepSeek Harness settings and profile configuration.",
+ "pushed_at": "2026-08-16T04:22:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-commands",
+    "@deepseek-ai/dsh-client-ui-input-trigger"
+   ]
+  }
+ },
+ "pkg_name": "dsh-sync",
+ "deps": [
+  "clsx",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-commands",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commandUi",
+  "commands",
+  "locale",
+  "sessions",
+  "settings",
+  "slots"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PROFILE": 2,
+  "INVOCATION_ID": 2,
+  "DSH_VERSION": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 19,
+   "evidence": [
+    "scripts/build.mjs:8",
+    "scripts/build.mjs:8",
+    "scripts/build.mjs:16",
+    "lib/host/git.js:5",
+    "lib/host/relaunch.js:5"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 17,
+   "evidence": [
+    "scripts/build.mjs:9",
+    "scripts/build.mjs:82",
+    "lib/host/files.js:41",
+    "lib/host/lock.js:49",
+    "lib/host/sync-service.js:1166"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 98,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. scripts/build.mjs:8, scripts/build.mjs:8"
+  }
+ ],
+ "level": 3
+}

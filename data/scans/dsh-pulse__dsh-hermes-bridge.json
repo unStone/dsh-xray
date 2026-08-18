@@ -1,0 +1,83 @@
+{
+ "repo": "dsh-pulse/dsh-hermes-bridge",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T08:20:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.yml"
+  }
+ },
+ "pkg_name": "@dsh-pulse/dsh-hermes-bridge",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "agents",
+  "sessionPersistence",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:17",
+    "lib/index.js:62"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:409"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:17, lib/index.js:62"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. lib/index.js:409"
+  }
+ ],
+ "level": 3
+}

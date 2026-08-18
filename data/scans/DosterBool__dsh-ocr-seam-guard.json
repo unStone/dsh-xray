@@ -1,0 +1,87 @@
+{
+ "repo": "DosterBool/dsh-ocr-seam-guard",
+ "stars": 0,
+ "description": "Self-healing guard for dsh-ocr: auto re-applies the llm-deepseek adapter OCR seam and plugin fixes wiped by dsh upgrades",
+ "pushed_at": "2026-08-16T06:49:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-ocr-seam-guard",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_OCR_ADAPTER_FILE": 2,
+  "APPDATA": 1,
+  "DSH_HOME": 1,
+  "DSH_OCR_PYTHONPATH": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:25",
+    "lib/index.js:25",
+    "lib/index.js:42",
+    "lib/index.js:182"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:26",
+    "lib/index.js:26",
+    "lib/index.js:180",
+    "lib/index.js:184",
+    "lib/index.js:222"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:182"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:25, lib/index.js:25"
+  }
+ ],
+ "level": 3
+}

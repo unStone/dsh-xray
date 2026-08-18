@@ -1,0 +1,72 @@
+{
+ "repo": "wyyxhn1314/dsh-mcp-server-image",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T05:06:45Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-mcp-server-image",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.openai.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "NODE_USE_ENV_PROXY": 1,
+  "HTTPS_PROXY": 1,
+  "HTTP_PROXY": 1,
+  "ALL_PROXY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bin.mjs:123"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "bin.mjs:22",
+    "bin.mjs:138"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. bin.mjs:123"
+  }
+ ],
+ "level": 2
+}

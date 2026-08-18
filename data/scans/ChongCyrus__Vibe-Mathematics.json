@@ -2,12 +2,15 @@
  "repo": "ChongCyrus/Vibe-Mathematics",
  "stars": 2,
  "description": "Vibe Mathematics —— 多代理数学问题求解与形式化验证框架",
- "pushed_at": "2026-08-18T07:07:47Z",
+ "pushed_at": "2026-08-18T08:57:19Z",
  "status": "ok",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
-  }
+  },
+  "minVersion": "0.1.0-rc.5",
+  "testedVersion": "0.1.0-rc.5",
+  "compatNote": "依赖宿主提供的 subagents/agents/tools/commands/fs 服务与 @deepseek-ai/dsh-* 插件行；低于 minVersion 的 DSH 未验证，可能无法挂载 preset（安装器启动时会做能力自检并告警）"
  },
  "pkg_name": "dsh-vibe-math",
  "deps": [],
@@ -57,9 +60,9 @@
    "evidence": [
     "installer.js:20",
     "installer.js:57",
-    "installer.js:99",
-    "installer.js:109",
-    "installer.js:117"
+    "installer.js:128",
+    "installer.js:138",
+    "installer.js:146"
    ]
   },
   "dyn_import": {

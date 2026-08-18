@@ -1,0 +1,113 @@
+{
+ "repo": "9087/dsh-diff-approval",
+ "stars": 0,
+ "description": "Pending-change review for DSH: whole-file diffs with per-file Keep/Revert, create/delete tracking, and restart-safe persistence.",
+ "pushed_at": "2026-08-17T17:34:54Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-diff-approval",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@shikijs/langs",
+  "diff",
+  "shiki",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsc -b tsconfig.json && tsdown --env.DSH_BUILD_FACE client"
+ },
+ "injects": [
+  "connection",
+  "fs",
+  "locale",
+  "sessions",
+  "slots",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "connection/reset",
+  "fs/edit-intent",
+  "fs/write-intent",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "src/open.ts:8",
+    "src/open.ts:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "src/persist.ts:111"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/open.ts:8, src/open.ts:17"
+  }
+ ],
+ "level": 3
+}

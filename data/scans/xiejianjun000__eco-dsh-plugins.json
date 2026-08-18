@@ -1,0 +1,86 @@
+{
+ "repo": "xiejianjun000/eco-dsh-plugins",
+ "stars": 0,
+ "description": "dsh plugins ported from eco-agent (xiejianjun000): permission gate, SM3 audit chain, memory tree",
+ "pushed_at": "2026-08-18T09:18:15Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "eco-dsh-plugins",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {
+  "ECO_PROFILES_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "packages/eco-audit-chain/src/index.ts:21",
+    "packages/eco-audit-chain/src/index.ts:21",
+    "packages/eco-audit-chain/src/index.ts:99",
+    "packages/eco-memory-tree/src/index.ts:23",
+    "packages/eco-memory-tree/src/index.ts:115"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 18 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

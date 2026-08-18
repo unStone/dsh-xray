@@ -1,0 +1,90 @@
+{
+ "repo": "weike-zhang/dsh-svg-motion",
+ "stars": 0,
+ "description": "Turn any SVG logo into a motion video inside DeepSeek Harness. dsh plugin: animate_svg tool renders a transparent 30fps assembly animation and synthesizes an MP4.",
+ "pushed_at": "2026-08-16T10:48:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-svg-motion",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/compose-grid-gif.mjs:7",
+    "scripts/compose-grid-gif.mjs:68",
+    "src/renderer.ts:19",
+    "src/renderer.ts:148"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/renderer.ts:110",
+    "src/renderer.ts:116"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/compose-grid-gif.mjs:8",
+    "scripts/compose-grid-gif.mjs:63",
+    "src/renderer.ts:110",
+    "src/renderer.ts:116"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/compose-grid-gif.mjs:7, scripts/compose-grid-gif.mjs:68"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/renderer.ts:110, src/renderer.ts:116"
+  }
+ ],
+ "level": 3
+}

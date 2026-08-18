@@ -1,0 +1,141 @@
+{
+ "repo": "wangyaominde/dsh-llm-grok-oauth",
+ "stars": 0,
+ "description": "Grok subscription OAuth plugin for DeepSeek Harness: one-click login in Settings → Models",
+ "pushed_at": "2026-08-16T12:43:52Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web",
+   "immediately": true
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "market": {
+   "displayName": "Grok OAuth",
+   "icon": "https://raw.githubusercontent.com/wangyaominde/dsh-llm-grok-oauth/main/docs/icon.png",
+   "categories": [
+    "llm",
+    "provider",
+    "oauth"
+   ],
+   "screenshots": [
+    "https://raw.githubusercontent.com/wangyaominde/dsh-llm-grok-oauth/main/docs/en/models-login.jpg"
+   ]
+  },
+  "marketplace": {
+   "profiles": [
+    "web"
+   ],
+   "requiresBuildApproval": false,
+   "requiresRestart": true,
+   "manualSteps": false
+  }
+ },
+ "pkg_name": "dsh-llm-grok-oauth",
+ "deps": [
+  "undici",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "llm",
+  "locale",
+  "remote",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "cli-chat-proxy.grok.com": 1,
+  "auth.x.ai": 7,
+  "accounts.x.ai": 1
+ },
+ "env": {
+  "HTTPS_PROXY": 1,
+  "https_proxy": 1,
+  "ALL_PROXY": 1,
+  "all_proxy": 1,
+  "HTTP_PROXY": 1,
+  "http_proxy": 1,
+  "DSH_HOME": 2,
+  "GROK_AUTH_FILE": 3,
+  "GROK_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/net.js:8",
+    "lib/oauth.js:11",
+    "lib/oauth.js:68",
+    "lib/oauth.js:70",
+    "lib/oauth.js:72"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/oauth.js:141",
+    "lib/oauth.js:227",
+    "lib/oauth.js:306"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/net.js:8, lib/oauth.js:11"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GROK_AUTH_FILE"
+  }
+ ],
+ "level": 3
+}

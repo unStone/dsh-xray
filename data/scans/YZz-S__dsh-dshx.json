@@ -1,0 +1,83 @@
+{
+ "repo": "YZz-S/dsh-dshx",
+ "stars": 0,
+ "description": "MCP client hub (stdio / Streamable HTTP / SSE) with a web console for DeepSeek Harness — manage MCP servers, agent skills, slash commands, project & global memory, and prompt sections.",
+ "pushed_at": "2026-08-15T07:32:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dshx",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "skills",
+  "systemPrompt",
+  "tools",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 21,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 5
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 32,
+   "dev": 0,
+   "evidence": [
+    "lib/command-manager.mjs:15",
+    "lib/command-manager.mjs:15",
+    "lib/command-manager.mjs:78",
+    "lib/command-manager.mjs:117",
+    "lib/command-manager.mjs:127"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

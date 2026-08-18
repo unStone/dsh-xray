@@ -1,0 +1,110 @@
+{
+ "repo": "PerryLink/dsh-test-drive",
+ "stars": 0,
+ "description": "Isolated install-and-smoke test drives for DeepSeek Harness plugins: installs a repo or npm package into a throwaway DSH_HOME profile, verifies the bundle patch layer and boot logs, records a structur",
+ "pushed_at": "2026-08-18T00:45:44Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-test-drive",
+ "deps": [
+  "tsdown",
+  "typescript",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "commands",
+  "jobs",
+  "subprocess",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DEEPSEEK_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 1,
+   "evidence": [
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:22",
+    "scripts/release.mjs:27",
+    "scripts/release.mjs:27"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 9,
+   "evidence": [
+    "scripts/prepare.mjs:7",
+    "scripts/prepare.mjs:28",
+    "scripts/release.mjs:28",
+    "scripts/release.mjs:70",
+    "scripts/release.mjs:83"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:26"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/prepare.mjs:6, scripts/prepare.mjs:6"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

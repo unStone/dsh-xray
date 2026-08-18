@@ -1,0 +1,118 @@
+{
+ "repo": "An0range/dsh-plugins",
+ "stars": 0,
+ "description": "个人维护的 DeepSeek Harness（DSH）动态 Cordis 插件集合：选段批示与追问（anno）、布局命名检查器（linsp）。",
+ "pushed_at": "2026-08-17T12:11:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  }
+ },
+ "pkg_name": "@lyc/dsh-anno",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "fs",
+  "inputTriggers",
+  "llm",
+  "remote",
+  "sandboxPolicy",
+  "sessionQuery",
+  "slots",
+  "subagents",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-anno/lib/client.js:1135",
+    "packages/dsh-anno/lib/client.js:1186",
+    "packages/dsh-shot-helper/lib/client.js:1111",
+    "packages/dsh-shot-helper/lib/client.js:1162"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "tools/detect-banner.mjs:19"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 58,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. packages/dsh-anno/lib/client.js:1135, packages/dsh-anno/lib/client.js:1186"
+  }
+ ],
+ "level": 3
+}

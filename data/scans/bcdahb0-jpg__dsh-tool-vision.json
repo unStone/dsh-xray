@@ -1,0 +1,92 @@
+{
+ "repo": "bcdahb0-jpg/dsh-tool-vision",
+ "stars": 0,
+ "description": "DeepSeek Harness 外置视觉模型插件：inspect_image 工具 + 文本模型图片桥（聊天显示图片、模型收文本提示）。External vision model + image bridge for DeepSeek Harness.",
+ "pushed_at": "2026-08-16T05:45:45Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-tool-vision",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "react",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "llm",
+  "locale",
+  "settingsScope",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api.openai.com": 3,
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {
+  "OPENAI_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "index.js:149",
+    "vendor/dsh-settings-expose.js:13",
+    "vendor/dsh-settings-expose.js:50"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "webServer, system-prompt/assemble"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

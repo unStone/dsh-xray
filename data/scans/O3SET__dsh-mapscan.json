@@ -1,0 +1,93 @@
+{
+ "repo": "O3SET/dsh-mapscan",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-15T17:54:17Z",
+ "status": "ok",
+ "manifest": {
+  "entry": "./dist/mapscan-host.js",
+  "loader": "./dist/mapscan-plugin.mjs",
+  "half": "host"
+ },
+ "pkg_name": "mapscan-dsh",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "husky"
+ },
+ "injects": [
+  "shell",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 58,
+ "domains": {
+  "fofa.info": 6,
+  "developer.shodan.io": 3,
+  "api.shodan.io": 3,
+  "hunter.qianxin.com": 6,
+  "www.zoomeye.org": 3,
+  "api.zoomeye.org": 3,
+  "quake.360.net": 6
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_PROFILE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-dist-sync.mjs:6",
+    "scripts/check-dist-sync.mjs:6",
+    "scripts/check-dist-sync.mjs:12",
+    "scripts/check-dist-sync.mjs:14",
+    "scripts/check-dist-sync.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:16",
+    "scripts/build.mjs:116",
+    "scripts/build.mjs:117",
+    "scripts/install.mjs:19",
+    "scripts/install.mjs:20"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "scripts/build.mjs:123"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 38,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/check-dist-sync.mjs:6, scripts/check-dist-sync.mjs:6"
+  }
+ ],
+ "level": 2
+}

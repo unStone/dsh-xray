@@ -1,0 +1,106 @@
+{
+ "repo": "maoruoyu/dsh-plugin-store",
+ "stars": 0,
+ "description": "DeepSeek Harness 插件雷达：dsh.do 官方目录 + 精选注册表 + GitHub topic 探针，App Store 风格设置页，支持手动/自动刷新、一键安装卸载。",
+ "pushed_at": "2026-08-18T03:29:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-store",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-api-remotes",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "dsh.do": 2,
+  "awesome-dsh-plugin.com": 2,
+  "api.github.com": 1,
+  "www.npmjs.com": 1
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_GITHUB_API": 1,
+  "GITHUB_API": 1,
+  "DSH_GITHUB_TOKEN": 1,
+  "GITHUB_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:10",
+    "lib/index.js:10",
+    "lib/index.js:279"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:179",
+    "lib/index.js:190"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:10, lib/index.js:10"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_GITHUB_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

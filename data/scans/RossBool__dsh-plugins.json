@@ -1,0 +1,124 @@
+{
+ "repo": "RossBool/dsh-plugins",
+ "stars": 0,
+ "description": "DeepSeek Harness (DSH) 插件合集：协作编排、跨会话、团队模式、计划引擎、话题时间轴、语音、MCP 管理、提示词增强",
+ "pushed_at": "2026-08-17T06:17:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-workflow-run"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-agent-orchestration",
+ "deps": [
+  "@xyflow/react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "connection",
+  "llm",
+  "locale",
+  "remote",
+  "settings",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "agent/pre-step",
+  "connection/reset",
+  "internal/service"
+ ],
+ "tool_regs": 18,
+ "domains": {
+  "api.openai.com": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "MCP_DEMO_SERVER": 1,
+  "MCP_DEMO_NODE": 3,
+  "DSH_WEB_PATCH": 1,
+  "MCP_DEMO_STORAGE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh-voice/src/index.ts:3",
+    "dsh-voice/src/index.ts:198",
+    "dsh-voice/src/index.ts:427",
+    "dsh-voice/src/index.ts:881"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 2,
+   "evidence": [
+    "dsh-agent-orchestration/build-client.mjs:4",
+    "dsh-agent-orchestration/build-client.mjs:32",
+    "dsh-voice/build-client.mjs:3",
+    "dsh-voice/build-client.mjs:30",
+    "mcp-demo-server/server.js:13"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dsh-voice/src/index.ts:3, dsh-voice/src/index.ts:198"
+  }
+ ],
+ "level": 3
+}

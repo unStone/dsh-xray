@@ -1,0 +1,95 @@
+{
+ "repo": "EricXu20266/dsh-skillmanager",
+ "stars": 0,
+ "description": "DSH skill manager — list, group and enable/disable skills, delegate creation to the host agent",
+ "pushed_at": "2026-08-15T18:46:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-skillmanager",
+ "deps": [
+  "js-yaml",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_AGENTS_HOME": 1,
+  "DSH_BUNDLED_SKILL_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:7",
+    "scripts/prepare.mjs:7",
+    "scripts/prepare.mjs:22"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/routes.ts:9",
+    "src/routes.ts:216",
+    "src/routes.ts:255"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/prepare.mjs:7, scripts/prepare.mjs:7"
+  }
+ ],
+ "level": 3
+}

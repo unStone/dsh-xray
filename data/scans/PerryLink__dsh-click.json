@@ -1,0 +1,105 @@
+{
+ "repo": "PerryLink/dsh-click",
+ "stars": 0,
+ "description": "Cross-platform native desktop control for DeepSeek Harness (Windows first): screen_shot, screen_read, click/type/scroll/key, app_list/app_launch - approval-gated, never stealing foreground focus",
+ "pushed_at": "2026-08-18T00:17:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-click",
+ "deps": [
+  "tsdown",
+  "typescript",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "approval/request"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 1,
+   "evidence": [
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:22",
+    "scripts/release.mjs:27",
+    "scripts/release.mjs:27"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/tools.ts:233"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:7",
+    "scripts/prepare.mjs:28",
+    "scripts/release.mjs:28",
+    "scripts/release.mjs:70",
+    "scripts/release.mjs:84"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:26"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/prepare.mjs:6, scripts/prepare.mjs:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/tools.ts:233"
+  }
+ ],
+ "level": 3
+}

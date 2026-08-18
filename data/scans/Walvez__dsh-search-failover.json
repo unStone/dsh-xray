@@ -1,0 +1,80 @@
+{
+ "repo": "Walvez/dsh-search-failover",
+ "stars": 0,
+ "description": "DSH provider-level web search failover pool: 8 free/paid backends with quota-aware circuit breaking (keeps native web_search)",
+ "pushed_at": "2026-08-17T06:02:59Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-search-failover",
+ "deps": [
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-web"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "web"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.exa.ai": 1,
+  "api.tavily.com": 1,
+  "google.serper.dev": 1,
+  "serpapi.com": 1,
+  "api.search.brave.com": 1,
+  "s.jina.ai": 1,
+  "html.duckduckgo.com": 1
+ },
+ "env": {
+  "SEARXNG_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

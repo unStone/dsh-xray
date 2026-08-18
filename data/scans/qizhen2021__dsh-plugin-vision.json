@@ -1,0 +1,95 @@
+{
+ "repo": "qizhen2021/dsh-plugin-vision",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-14T07:38:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@qizhen2021/dsh-plugin-vision",
+ "deps": [
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "openai",
+  "yaml"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "opencode.ai": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 3,
+   "evidence": [
+    "lib/run-script.js:1",
+    "lib/run-script.js:1",
+    "lib/run-script.js:48",
+    "lib/run-script.js:89",
+    "src/run-script.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/vlm.js:1",
+    "lib/vlm.js:86",
+    "src/vlm.ts:1",
+    "src/vlm.ts:106"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 33,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. lib/run-script.js:1, lib/run-script.js:1"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,98 @@
+{
+ "repo": "guopeifeng1688/dsh-anchored-standard-profile",
+ "stars": 0,
+ "description": "AGENTS.md profile for DeepSeek Harness: Anchored Standard + PowerShell 7 + busybox, boosting deepseek-v4-pro at MAX",
+ "pushed_at": "2026-08-16T16:29:22Z",
+ "status": "ok",
+ "manifest": {
+  "profile": {
+   "bundles": [
+    "@deepseek-ai/dsh-base",
+    "@deepseek-ai/dsh-web-app",
+    "dshmarket",
+    "@dsh-external/dsh-client-ui-skin-maid-atelier",
+    "@linxin666/dsh-web-ui-all",
+    "@dsh-external/dsh-evox",
+    "@liustack/modlens",
+    "@dsh-external/dsh-super-injector",
+    "dsh-better-sidebar"
+   ]
+  }
+ },
+ "pkg_name": "dsh-profile-web",
+ "deps": [
+  "@dsh-external/dsh-client-ui-skin-maid-atelier",
+  "@dsh-external/dsh-evox",
+  "@dsh-external/dsh-super-injector",
+  "@linxin666/dsh-web-ui-all",
+  "@liustack/modlens",
+  "dsh-better-sidebar",
+  "dsh-deep-whale",
+  "dshmarket"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "PORT": 1,
+  "HOST": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 7,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "case-studies/gargantua/project/server.js:32"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "case-studies/gargantua/project/tools/make_audio.mjs:5",
+    "case-studies/gargantua/project/tools/make_audio.mjs:102"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "system-prompt/assemble"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. case-studies/gargantua/project/server.js:32"
+  }
+ ],
+ "level": 3
+}

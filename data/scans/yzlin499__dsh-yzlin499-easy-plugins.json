@@ -1,0 +1,107 @@
+{
+ "repo": "yzlin499/dsh-yzlin499-easy-plugins",
+ "stars": 0,
+ "description": "非常好的小工具，毛坯房DSH可以看看。",
+ "pushed_at": "2026-08-18T08:53:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-yzlin499-easy-plugins",
+ "deps": [
+  "dsh-better-sidebar"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "betterSidebar",
+  "fs",
+  "inputTriggers",
+  "llm",
+  "loader",
+  "locale",
+  "permissionPresets",
+  "sessions",
+  "settings",
+  "slots",
+  "subprocess",
+  "tools",
+  "webRuntime",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/status",
+  "approval/request",
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "opencode.ai": 2
+ },
+ "env": {
+  "LOCALAPPDATA": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 5,
+   "evidence": [
+    "dsh-svn-manager/svn.js:1",
+    "dsh-svn-manager/svn.js:41",
+    "dsh-win-notify/index.js:145",
+    "dsh-workspace-openmenu/index.js:56",
+    "dsh-workspace-openmenu/index.js:66"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. dsh-svn-manager/svn.js:1, dsh-svn-manager/svn.js:41"
+  }
+ ],
+ "level": 3
+}

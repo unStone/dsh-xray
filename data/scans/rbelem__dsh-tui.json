@@ -1,0 +1,85 @@
+{
+ "repo": "rbelem/dsh-tui",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T07:30:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@rbelem/dsh-tui",
+ "deps": [
+  "commander",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-host-webserver"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "cmdlineArgs",
+  "tuiStartup",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "bundle/lib/index.js:16",
+    "bundle/lib/index.js:87",
+    "scripts/release/check-loader.mjs:14",
+    "scripts/release/check-loader.mjs:14"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/release/check-loader.mjs:40",
+    "scripts/release/check-loader.mjs:41",
+    "scripts/release/check-loader.mjs:55"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. bundle/lib/index.js:16, bundle/lib/index.js:87"
+  }
+ ],
+ "level": 3
+}

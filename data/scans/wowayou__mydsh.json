@@ -1,0 +1,88 @@
+{
+ "repo": "wowayou/mydsh",
+ "stars": 0,
+ "description": "Personal Agent System on DeepSeek Harness — everything is a plugin: completion notifications, vision for text models, reply annotations, multi-session tabs, video support, sandbox patch",
+ "pushed_at": "2026-08-16T05:36:39Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@mydsh/ui-annotate",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/status",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DISPLAY": 1,
+  "WAYLAND_DISPLAY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "host/notify.ts:21",
+    "host/notify.ts:21",
+    "host/notify.ts:40",
+    "preset/plugins/notify-tool.ts:14"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 13,
+   "evidence": [
+    "host/notify.ts:22",
+    "host/notify.ts:75",
+    "host/notify.ts:84",
+    "host/notify.ts:92",
+    "host/notify.ts:114"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 8,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. host/notify.ts:21, host/notify.ts:21"
+  }
+ ],
+ "level": 2
+}

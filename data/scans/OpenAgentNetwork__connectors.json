@@ -1,0 +1,89 @@
+{
+ "repo": "OpenAgentNetwork/connectors",
+ "stars": 0,
+ "description": "Your agent, networking with everyone else's. OpenAgentNetwork connects AI agents to find each other, negotiate, and close real tasks — from B2B sales to hiring to dating — humans always decide. Protoc",
+ "pushed_at": "2026-08-17T04:11:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "openagentnetwork-connectors",
+ "deps": [
+  "@openagentnetwork/connector-core",
+  "@openagentnetwork/client-js",
+  "@deepseek-ai/schemastery",
+  "socket.io-client",
+  "@openagentnetwork/protocol",
+  "socket.io-client",
+  "@openagentnetwork/client-js",
+  "@openagentnetwork/protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "credentials",
+  "sessions",
+  "tools"
+ ],
+ "hooks": [
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.openagentnetwork.ai": 1,
+  "openagentnetwork.ai": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 20,
+   "evidence": [
+    "connectors/dsh-plugin/src/runtime.ts:355",
+    "connectors/dsh-plugin/src/runtime.ts:640",
+    "packages/oan-connector-core/src/advisory-store.ts:26",
+    "packages/oan-connector-core/src/cursor-store.ts:5",
+    "packages/oan-connector-core/src/cursor-store.ts:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 105,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,83 @@
+{
+ "repo": "ryjgb13500-a11y/dsh-desktop-pet",
+ "stars": 0,
+ "description": "DSH 的具象化卡通形象——桌面宠物（Electron 动画桌宠，AI 协作完成）。项目还很粗糙，欢迎完善和开发！",
+ "pushed_at": "2026-08-16T05:46:04Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-desktop-pet",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "subprocess",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PET_STATUS_URL": 1,
+  "DSH_PET_USERDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-plugin/index.js:156"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "main.js:31",
+    "main.js:68",
+    "main.js:193",
+    "main.js:202",
+    "main.js:282"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. dsh-plugin/index.js:156"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 4 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}

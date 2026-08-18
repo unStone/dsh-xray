@@ -1,0 +1,107 @@
+{
+ "repo": "BroBFG/dsh-tool-docx",
+ "stars": 0,
+ "description": "Model-facing MS Word (.docx) tools for DeepSeek Harness: docx_read, docx_create, docx_edit",
+ "pushed_at": "2026-08-17T22:05:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-tool-docx",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "docx",
+  "fast-xml-parser",
+  "jszip",
+  "yauzl",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-fs-sandbox",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "invariants",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/install-web.mjs:17",
+    "scripts/install-web.mjs:17",
+    "scripts/install-web.mjs:29",
+    "scripts/install-web.mjs:30"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 4,
+   "evidence": [
+    "lib/fs-binary-local-n8Ls-bn_.js:60",
+    "scripts/install-web.mjs:18",
+    "scripts/install-web.mjs:66",
+    "scripts/install-web.mjs:69",
+    "src/fsio-bytes.ts:72"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 69,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/install-web.mjs:17, scripts/install-web.mjs:17"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,126 @@
+{
+ "repo": "wenheguo2/dsh-delegation-suite",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T07:21:16Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "patch.yml"
+  },
+  "client": {
+   "inject": [
+    "slots",
+    "locale",
+    "connection",
+    "remote"
+   ]
+  }
+ },
+ "pkg_name": "dsh-delegation-suite",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "remote",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "agent/request",
+  "llm/stream"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "www.codebuddy.cn": 2,
+  "api.deepseek.com": 1,
+  "api.kimi.com": 1,
+  "api.moonshot.cn": 1,
+  "api.z.ai": 1,
+  "open.bigmodel.cn": 1,
+  "api2.minimaxi.com": 1
+ },
+ "env": {
+  "DSH_HOME": 3,
+  "TS_URL": 1,
+  "TS_KEY": 1,
+  "TS_AUTH": 1,
+  "TS_HEADERS": 1,
+  "TS_METHOD": 1,
+  "TS_BODY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/token-stats.host.js:344",
+    "scripts/validate.mjs:7",
+    "scripts/validate.mjs:7",
+    "scripts/validate.mjs:17"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "lib/delegation.js:16",
+    "lib/delegation.js:72",
+    "lib/studio.host.js:8",
+    "lib/studio.host.js:36",
+    "lib/studio.host.js:94"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/token-stats.host.js:344, scripts/validate.mjs:7"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TS_AUTH, TS_KEY"
+  }
+ ],
+ "level": 3
+}

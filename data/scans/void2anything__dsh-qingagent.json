@@ -1,0 +1,131 @@
+{
+ "repo": "void2anything/dsh-qingagent",
+ "stars": 0,
+ "description": "在 DeepSeek Harness 里使用青简 — 一行命令安装的 DSH 插件：对话里起草改稿，右侧长出与青简桌面端同源的宣纸面板，逐条审阅后落稿",
+ "pushed_at": "2026-08-18T09:16:50Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-qingagent",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "conversation",
+  "inputTriggers",
+  "layout",
+  "llm",
+  "sessions",
+  "slots",
+  "storageDomain",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step"
+ ],
+ "tool_regs": 12,
+ "domains": {
+  "qingagent.com": 1
+ },
+ "env": {
+  "QING_ROOT": 5,
+  "QINGAGENT_DRAWIO_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "src/clientInstallation.ts:1",
+    "src/clientInstallation.ts:46",
+    "src/engine.ts:3",
+    "src/engine.ts:144"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/bridge.ts:494"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "scripts/extract-qingdoc-css.mjs:563"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 80,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. src/clientInstallation.ts:1, src/clientInstallation.ts:46"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/bridge.ts:494"
+  }
+ ],
+ "level": 3
+}

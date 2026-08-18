@@ -1,0 +1,79 @@
+{
+ "repo": "Wang-Lin-Chang/dsh-cross-platform",
+ "stars": 0,
+ "description": "Linux backend for dsh-witness/dsh-anchor: chattr + bubblewrap sandbox recipes. Every claim carries an experiment number.",
+ "pushed_at": "2026-08-16T19:58:21Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-cross-platform",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 42,
+   "dev": 4,
+   "evidence": [
+    "src/detach-runner-linux.cjs:11",
+    "src/detach-runner-linux.cjs:11",
+    "src/detach-runner-linux.cjs:16",
+    "src/detach-runner-linux.cjs:81",
+    "src/linux-backend.mjs:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/detach-runner-linux.cjs:14",
+    "vendor/detach-runner-linux.cjs:14",
+    "vendor/detach-runner.cjs:28"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 30,
+   "dev": 2,
+   "evidence": [
+    "src/detach-runner-linux.cjs:33",
+    "src/detach-runner-linux.cjs:39",
+    "src/detach-runner-linux.cjs:94",
+    "src/linux-utils.mjs:29",
+    "vendor/detach-runner-linux.cjs:33"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×42 src, e.g. src/detach-runner-linux.cjs:11, src/detach-runner-linux.cjs:11"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. src/detach-runner-linux.cjs:14, vendor/detach-runner-linux.cjs:14"
+  }
+ ],
+ "level": 2
+}

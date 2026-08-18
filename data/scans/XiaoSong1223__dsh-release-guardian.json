@@ -1,0 +1,122 @@
+{
+ "repo": "XiaoSong1223/dsh-release-guardian",
+ "stars": 0,
+ "description": "Deterministic release-risk checks and quality gates for DeepSeek Harness",
+ "pushed_at": "2026-08-17T05:38:20Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-release-guardian",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "cross-spawn",
+  "minimatch",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "GITHUB_REF_NAME": 1,
+  "GITHUB_ACTIONS": 1,
+  "GITHUB_REPOSITORY_DEFAULT_BRANCH": 1,
+  "GITHUB_EVENT_NAME": 1,
+  "GITHUB_REF_TYPE": 1,
+  "GITHUB_REF": 1,
+  "GITHUB_SHA": 2,
+  "GITHUB_OUTPUT": 4,
+  "LOG_STREAM": 1,
+  "LOG_TOKENS": 1,
+  "PATHEXT": 2,
+  "OSTYPE": 2,
+  "comspec": 1,
+  "__MINIMATCH_TESTING_PLATFORM__": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 24,
+   "dev": 7,
+   "evidence": [
+    "scripts/claude-commit-gate.mjs:8",
+    "scripts/claude-commit-gate.mjs:8",
+    "scripts/claude-commit-gate.mjs:90",
+    "scripts/dsh-smoke.mjs:1",
+    "scripts/dsh-smoke.mjs:18"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "skills/release-guardian/scripts/release-guardian.mjs:2611",
+    "skills/release-guardian/scripts/release-guardian.mjs:2613"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 13,
+   "evidence": [
+    "scripts/dsh-smoke.mjs:72",
+    "scripts/dsh-smoke.mjs:75",
+    "scripts/dsh-smoke.mjs:105",
+    "scripts/dsh-smoke.mjs:135",
+    "scripts/release-validate.mjs:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 34,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×24 src, e.g. scripts/claude-commit-gate.mjs:8, scripts/claude-commit-gate.mjs:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. skills/release-guardian/scripts/release-guardian.mjs:2611, skills/release-guardian/scripts/release-guardian.mjs:2613"
+  },
+  {
+   "id": "token_env",
+   "evidence": "LOG_TOKENS"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,102 @@
+{
+ "repo": "creativedswork/dsh-mcp-apps",
+ "stars": 0,
+ "description": "Run interactive MCP Apps directly in DeepSeek Harness",
+ "pushed_at": "2026-08-16T07:45:07Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@creative-dswork/dsh-mcp-apps",
+ "deps": [
+  "@modelcontextprotocol/ext-apps",
+  "@modelcontextprotocol/sdk",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/host.ts:405"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 2,
+   "evidence": [
+    "demo/server.ts:63",
+    "demo/server.ts:121",
+    "src/sandbox.ts:150",
+    "src/sandbox.ts:181"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/host.ts:405"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. demo/server.ts:63, demo/server.ts:121"
+  }
+ ],
+ "level": 3
+}

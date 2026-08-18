@@ -1,0 +1,93 @@
+{
+ "repo": "c04817958-hub/dsh-phone-ui",
+ "stars": 0,
+ "description": "DSH Phone UI：手机端 UI 与 HyperOS 动画套件（本仓库一切均由 AI 独立完成，无一丝人类痕迹）",
+ "pushed_at": "2026-08-15T18:24:38Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": null,
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commandUi",
+  "connection",
+  "conversation",
+  "conversationEvents",
+  "conversationViews",
+  "layout",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "theme",
+  "workspaces"
+ ],
+ "hooks": [
+  "connection/reset",
+  "slash/input-begin-command",
+  "slash/input-consume-token",
+  "slash/input-insert-reference",
+  "slash/input-insert-text",
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "ui/conversation-client.js:1731"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "ui/conversation-client.js:1549",
+    "ui/conversation-client.js:1550"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. ui/conversation-client.js:1731"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. ui/conversation-client.js:1549, ui/conversation-client.js:1550"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 13 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

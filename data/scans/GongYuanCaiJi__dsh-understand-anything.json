@@ -1,0 +1,122 @@
+{
+ "repo": "GongYuanCaiJi/dsh-understand-anything",
+ "stars": 0,
+ "description": "理解任何东西技能包（移植自 Understand-Anything）",
+ "pushed_at": "2026-08-15T16:58:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-understand-anything",
+ "deps": [
+  "@deepseek-ai/dsh-skill",
+  "graphology",
+  "graphology-communities-louvain",
+  "@tree-sitter-grammars/tree-sitter-kotlin",
+  "@understand-anything/tree-sitter-dart-wasm",
+  "@understand-anything/tree-sitter-swift-wasm",
+  "fuse.js",
+  "ignore",
+  "tree-sitter-c-sharp",
+  "tree-sitter-cpp",
+  "tree-sitter-go",
+  "tree-sitter-java",
+  "tree-sitter-javascript",
+  "tree-sitter-php",
+  "tree-sitter-python",
+  "tree-sitter-ruby",
+  "tree-sitter-rust",
+  "tree-sitter-scala",
+  "tree-sitter-typescript",
+  "web-tree-sitter",
+  "yaml",
+  "zod"
+ ],
+ "install_scripts": {
+  "prepare": "node --test test/structure.test.js"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.figma.com": 1,
+  "www.figma.com": 1
+ },
+ "env": {
+  "UNDERSTAND_FIGMA_FORCE": 1,
+  "UA_COMPUTE_BATCHES_FORCE_LOUVAIN_THROW": 1,
+  "PLUGIN_ROOT": 1,
+  "FIGMA_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 17,
+   "evidence": [
+    "skills/understand/scan-project.mjs:73",
+    "skills/understand/scan-project.mjs:73",
+    "skills/understand/scan-project.mjs:502",
+    "packages/core/src/staleness.ts:1",
+    "packages/core/src/staleness.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 22,
+   "dev": 57,
+   "evidence": [
+    "skills/understand-figma/figma-merge.mjs:2",
+    "skills/understand-figma/figma-merge.mjs:28",
+    "skills/understand-figma/figma-merge.mjs:29",
+    "skills/understand-figma/figma-scan.mjs:2",
+    "skills/understand-figma/figma-scan.mjs:73"
+   ]
+  },
+  "dyn_import": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "skills/understand/build-fingerprints.mjs:44",
+    "skills/understand/build-fingerprints.mjs:46",
+    "skills/understand/compute-batches.mjs:49",
+    "skills/understand/compute-batches.mjs:51",
+    "skills/understand/extract-import-map.mjs:78"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 178,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. skills/understand/scan-project.mjs:73, skills/understand/scan-project.mjs:73"
+  },
+  {
+   "id": "token_env",
+   "evidence": "FIGMA_TOKEN"
+  }
+ ],
+ "level": 3
+}

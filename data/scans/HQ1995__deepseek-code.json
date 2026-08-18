@@ -1,0 +1,118 @@
+{
+ "repo": "HQ1995/deepseek-code",
+ "stars": 0,
+ "description": "The grok-build terminal UI driving the DeepSeek Harness.",
+ "pushed_at": "2026-08-17T22:45:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-grok-leader",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/schemastery",
+  "@iarna/toml"
+ ],
+ "install_scripts": {
+  "postinstall": "node bin/postinstall.js"
+ },
+ "injects": [
+  "agents",
+  "invariants"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/inbox/claimed",
+  "approval/request",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DEEPSEEK_LEADER_COMBINE_QUEUED": 1,
+  "DEEPSEEK_LEADER_DEBUG": 2,
+  "GROK_HOME": 1,
+  "GROK_NPM_REGISTRY": 1,
+  "GROK_INSTALL_COMPLETIONS": 1,
+  "XAI_ROOT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:16",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:16",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:205",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:225",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:225"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bridge/grok-leader/src/index.ts:2303"
+   ]
+  },
+  "fs_write": {
+   "src": 110,
+   "dev": 0,
+   "evidence": [
+    "bridge/grok-leader/src/index.ts:16",
+    "bridge/grok-leader/src/index.ts:2333",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:72",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:84",
+    "third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:107"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node bin/postinstall.js"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:16, third_party/grok-build/crates/codegen/xai-grok-pager/npm/grok/bin/postinstall.js:16"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. bridge/grok-leader/src/index.ts:2303"
+  }
+ ],
+ "level": 3
+}

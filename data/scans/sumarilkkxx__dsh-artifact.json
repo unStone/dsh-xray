@@ -1,0 +1,90 @@
+{
+ "repo": "sumarilkkxx/dsh-artifact",
+ "stars": 0,
+ "description": "Inline ECharts rendering plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-18T04:09:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-artifact",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "www.apache.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "assets/echarts.min.js:45"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "assets/echarts.min.js:45"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. assets/echarts.min.js:45"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. assets/echarts.min.js:45"
+  }
+ ],
+ "level": 3
+}

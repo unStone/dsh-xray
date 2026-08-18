@@ -1,11 +1,15 @@
 {
  "repo": "nexu-io/open-design",
- "stars": 88603,
+ "stars": 88631,
  "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, sli",
- "pushed_at": "2026-08-18T08:33:00Z",
+ "pushed_at": "2026-08-18T09:11:48Z",
  "status": "ok",
- "manifest": null,
- "pkg_name": "@open-design/daemon",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "open-design",
  "deps": [
   "@babel/parser",
   "@modelcontextprotocol/sdk",
@@ -90,9 +94,57 @@
   "react",
   "react-dom",
   "shiki",
-  "three"
+  "three",
+  "@open-design/contracts",
+  "react",
+  "@open-design/release",
+  "zod",
+  "jszip",
+  "@open-design/platform",
+  "@deepseek-ai/dsh-cmdline",
+  "commander",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@open-design/release",
+  "@open-design/release",
+  "@open-design/sidecar-proto",
+  "zod",
+  "@open-design/contracts",
+  "zod",
+  "zod",
+  "@open-design/release",
+  "@open-design/platform",
+  "@open-design/sidecar",
+  "@open-design/sidecar-proto",
+  "cac",
+  "@electron/notarize",
+  "@electron/rebuild",
+  "@open-design/launcher-proto",
+  "@open-design/platform",
+  "@open-design/release",
+  "@open-design/sidecar",
+  "@open-design/sidecar-proto",
+  "cac",
+  "electron-builder",
+  "resedit",
+  "@open-design/launcher-proto",
+  "@open-design/release",
+  "cac",
+  "yaml",
+  "@open-design/release",
+  "cac",
+  "react",
+  "react-dom",
+  "remotion"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "postinstall": "node ./scripts/postinstall.mjs"
+ },
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
@@ -360,8 +412,16 @@
  "has_apply": false,
  "files_scanned": 598,
  "has_skill_md": true,
- "type": "skill",
+ "type": "plugin",
  "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node ./scripts/postinstall.mjs"
+  },
   {
    "id": "exec",
    "evidence": "×74 src, e.g. apps/daemon/scripts/verify-amr-real-vela.mjs:23, apps/daemon/scripts/verify-amr-real-vela.mjs:49"
@@ -379,5 +439,5 @@
    "evidence": "AIHUBMIX_API_KEY, ANTHROPIC_API_KEY, AZURE_API_KEY, AZURE_OPENAI_API_KEY, GEMINI_API_KEY, GOOGLE_API_KEY"
   }
  ],
- "level": 2
+ "level": 3
 }

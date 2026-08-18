@@ -1,0 +1,101 @@
+{
+ "repo": "zbsph/dsh-j-space-warm",
+ "stars": 0,
+ "description": "J-Space First V3 Warm agent preset plugin for DeepSeek Harness (dsh): anchored two-phase bootstrap + warm-up round + J-Space protocol injection. Installable bundle that syncs the preset into ~/.dsh/.a",
+ "pushed_at": "2026-08-18T07:46:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-j-space-warm",
+ "deps": [
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "skills",
+  "subprocess",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/inbox/inserted",
+  "agent/pre-step",
+  "agent/request",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3,
+  "USERPROFILE": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "presets/j-a-w-bash/custom-bash.mjs:89",
+    "presets/j-space-exp-v3/custom-bash.mjs:89"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 13,
+   "evidence": [
+    "lib/index.js:28",
+    "lib/index.js:204",
+    "lib/index.js:211",
+    "lib/index.js:230",
+    "lib/index.js:298"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. presets/j-a-w-bash/custom-bash.mjs:89, presets/j-space-exp-v3/custom-bash.mjs:89"
+  }
+ ],
+ "level": 3
+}

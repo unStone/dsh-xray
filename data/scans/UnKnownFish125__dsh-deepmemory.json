@@ -1,0 +1,84 @@
+{
+ "repo": "UnKnownFish125/dsh-deepmemory",
+ "stars": 0,
+ "description": "DeepSeek Harness 长期记忆系统：跨会话记忆 + 无限上下文（设计对齐 AstrBot livingmemory，作者 lxfight；AGPL-3.0）",
+ "pushed_at": "2026-08-17T07:24:00Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./dsh.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-deepmemory",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/turn-stopping",
+  "session/event"
+ ],
+ "tool_regs": 12,
+ "domains": {},
+ "env": {
+  "PLUGIN_PATH": 1,
+  "CLIENT_JS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify/plugin-check.mjs:5"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh.patch.yml"
+  }
+ ],
+ "level": 2
+}

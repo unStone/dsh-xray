@@ -1,0 +1,95 @@
+{
+ "repo": "Rycar1/dsh-for-wsl",
+ "stars": 0,
+ "description": "WSL workspace integration and shell routing plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-16T12:11:51Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-wsl-idea",
+ "deps": [
+  "@deepseek-ai/dsh-fs-local",
+  "@deepseek-ai/dsh-fs-sandbox",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-sandbox"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "shell",
+  "slots",
+  "subprocess",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {
+  "DSH_DESKTOP_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:58",
+    "scripts/wsl-pty-smoke.mjs:28"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:58, scripts/wsl-pty-smoke.mjs:28"
+  }
+ ],
+ "level": 3
+}

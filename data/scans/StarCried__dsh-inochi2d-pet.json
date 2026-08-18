@@ -1,0 +1,98 @@
+{
+ "repo": "StarCried/dsh-inochi2d-pet",
+ "stars": 0,
+ "description": "A privacy-conscious Inochi2D desktop companion for DeepSeek Harness on Windows 11 + WSL2.",
+ "pushed_at": "2026-08-18T04:13:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-inochi2d-pet-workspace",
+ "deps": [
+  "@dsh-inochi2d-pet/protocol",
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-deep-link",
+  "@tauri-apps/plugin-dialog"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "tauri.localhost": 2
+ },
+ "env": {
+  "DSH_PACKAGE_ROOT": 1,
+  "INOCHI2D_WEB_DIST": 1,
+  "DSH_INOCHI2D_PET_EXE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "tools/check-plugin-package.mjs:1",
+    "tools/check-plugin-package.mjs:1",
+    "tools/check-plugin-package.mjs:18",
+    "tools/check-release.mjs:1",
+    "tools/check-release.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-plugin/src/server.ts:44",
+    "packages/dsh-plugin/src/server.ts:159"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "tools/generate-release-metadata.mjs:26",
+    "tools/generate-release-metadata.mjs:61",
+    "tools/generate-release-metadata.mjs:68",
+    "tools/sync-inochi2d-runtime.mjs:113"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "apps/desktop/src/renderer.ts:17"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. tools/check-plugin-package.mjs:1, tools/check-plugin-package.mjs:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. packages/dsh-plugin/src/server.ts:44, packages/dsh-plugin/src/server.ts:159"
+  }
+ ],
+ "level": 3
+}

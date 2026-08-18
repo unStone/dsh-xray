@@ -1,0 +1,87 @@
+{
+ "repo": "Quan-Robin/dsh-plugin-desktop",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T06:21:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-desktop",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "workspaces"
+ ],
+ "hooks": [
+  "approval/request",
+  "dsh/event",
+  "event",
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:515",
+    "lib/index.js:515",
+    "lib/index.js:516",
+    "lib/index.js:517"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:515, lib/index.js:515"
+  }
+ ],
+ "level": 3
+}

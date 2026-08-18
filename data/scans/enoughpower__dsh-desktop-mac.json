@@ -1,0 +1,154 @@
+{
+ "repo": "enoughpower/dsh-desktop-mac",
+ "stars": 0,
+ "description": "DeepSeekHarnessMac精简版",
+ "pushed_at": "2026-08-18T09:24:28Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "react",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings-general",
+  "react",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings-general",
+  "react",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings-general",
+  "@deepseek-ai/cordis",
+  "react",
+  "@deepseek-ai/cordis",
+  "js-yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
+  "react-dom",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "remote",
+  "sessions",
+  "shell",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 1,
+  "platform.deepseek.com": 2,
+  "dashscope.aliyuncs.com": 3
+ },
+ "env": {
+  "MMV_DEBUG_LOG": 1,
+  "MM_VISION_CONFIG": 1,
+  "MM_VISION_API_KEY": 1,
+  "DASHSCOPE_API_KEY": 1,
+  "QWEN_API_KEY": 1,
+  "OPENAI_API_KEY": 1,
+  "GEMINI_API_KEY": 1,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "launcher.mjs:14",
+    "launcher.mjs:71",
+    "plugins/dsh-billing/lib/index.js:1",
+    "plugins/dsh-billing/lib/index.js:325",
+    "plugins/dsh-git/lib/index.js:1"
+   ]
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-plugin-image-input/lib/index.js:91",
+    "plugins/dsh-plugin-image-input/lib/index.js:236",
+    "plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:269"
+   ]
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-plugin-image-input/lib/index.js:236",
+    "plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:1445",
+    "plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:1496"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "plugins/dsh-billing/lib/index.js:2",
+    "plugins/dsh-billing/lib/index.js:97",
+    "plugins/dsh-plugin-image-input/lib/index.js:18",
+    "plugins/dsh-plugin-image-input/lib/index.js:18",
+    "plugins/dsh-plugin-image-input/lib/index.js:30"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. launcher.mjs:14, launcher.mjs:71"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. plugins/dsh-plugin-image-input/lib/index.js:91, plugins/dsh-plugin-image-input/lib/index.js:236"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. plugins/dsh-plugin-image-input/lib/index.js:236, plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:1445"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DASHSCOPE_API_KEY, GEMINI_API_KEY, MM_VISION_API_KEY, OPENAI_API_KEY, QWEN_API_KEY"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,167 @@
+{
+ "repo": "qq247505/DeepSeek-VisionPlus",
+ "stars": 0,
+ "description": "DeepSeek VisionPlus — official-grade vision extension for DeepSeek Harness. Routes image understanding to a free vision-model pool (Zhipu GLM, SiliconFlow Qwen) with automatic fallback, rate limiting,",
+ "pushed_at": "2026-08-16T20:11:48Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "react"
+   ],
+   "immediately": false
+  }
+ },
+ "pkg_name": "dsh-visionplus",
+ "deps": [],
+ "install_scripts": {
+  "postinstall": "node scripts/enhance.mjs"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "attachments",
+  "connection",
+  "credentials",
+  "llm",
+  "modelDirectories",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/request",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "stackoverflow.com": 2,
+  "undici.nodejs.org": 2,
+  "docs.expo.dev": 3,
+  "datatracker.ietf.org": 2,
+  "platform.claude.com": 3,
+  "docs.claude.com": 14,
+  "docs.anthropic.com": 2,
+  "example-server.modelcontextprotocol.io": 1,
+  "api.anthropic.com": 19,
+  "open.bigmodel.cn": 10,
+  "api.siliconflow.cn": 3,
+  "api.deepseek.com": 17,
+  "jimmy.warting.se": 3,
+  "bedrock-runtime.us-east-1.amazonaws.com": 104,
+  "bedrock-runtime.eu-central-1.amazonaws.com": 10,
+  "api.ant-ling.com": 4,
+  "api.cerebras.ai": 4,
+  "gateway.ai.cloudflare.com": 42,
+  "api.cloudflare.com": 13,
+  "api.fireworks.ai": 17,
+  "api.individual.githubcopilot.com": 30,
+  "generativelanguage.googleapis.com": 25,
+  "api.groq.com": 8,
+  "router.huggingface.co": 51,
+  "api.kimi.com": 5,
+  "api.minimax.io": 4,
+  "api.minimaxi.com": 4,
+  "api.mistral.ai": 31,
+  "api.moonshot.ai": 11,
+  "api.moonshot.cn": 11,
+  "integrate.api.nvidia.com": 19,
+  "api.openai.com": 43,
+  "chatgpt.com": 9,
+  "opencode.ai": 74,
+  "openrouter.ai": 277,
+  "token-plan.ap-southeast-1.maas.aliyuncs.com": 16,
+  "token-plan.cn-beijing.maas.aliyuncs.com": 16,
+  "api.together.ai": 17,
+  "ai-gateway.vercel.sh": 193,
+  "api.x.ai": 4,
+  "api.xiaomimimo.com": 7,
+  "token-plan-ams.xiaomimimo.com": 4,
+  "token-plan-cn.xiaomimimo.com": 4,
+  "token-plan-sgp.xiaomimimo.com": 4,
+  "api.z.ai": 7,
+  "docs.aws.amazon.com": 1,
+  "cloud.google.com": 1,
+  "radius.pi.dev": 1,
+  "platform.openai.com": 30,
+  "help.openai.com": 2,
+  "example-resource.azure.openai.com": 2,
+  "fetch.spec.whatwg.org": 3,
+  "w3c.github.io": 8
+ },
+ "env": {
+  "DEBUG": 4
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dist/index.mjs:2092",
+    "dist/schemas-DXny_Pxn.mjs:141"
+   ]
+  },
+  "base64_decode": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "dist/index.mjs:68",
+    "dist/index.mjs:69",
+    "dist/openai-Cca5FEqG.mjs:3243",
+    "dist/openai-Cca5FEqG.mjs:3246",
+    "dist/openai-Cca5FEqG.mjs:6089"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dist/multipart-parser-OozLCVYw.mjs:34",
+    "dist/multipart-parser-OozLCVYw.mjs:69",
+    "scripts/uninstall.mjs:6",
+    "scripts/uninstall.mjs:15"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/enhance.mjs"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. dist/index.mjs:2092, dist/schemas-DXny_Pxn.mjs:141"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×8 src, e.g. dist/index.mjs:68, dist/index.mjs:69"
+  }
+ ],
+ "level": 3
+}

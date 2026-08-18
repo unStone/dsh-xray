@@ -1,0 +1,100 @@
+{
+ "repo": "1841220388zzzcccxxx-star/dsh-wechat",
+ "stars": 0,
+ "description": "DeepSeek Harness WeChat plugin: scan QR with WeChat to chat with DSH",
+ "pushed_at": "2026-08-16T04:49:55Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@xmanrui/dsh-weixin",
+ "deps": [
+  "qrcode"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "credentials",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "ilinkai.weixin.qq.com": 2
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_WEIXIN_CLIENT_ID": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "bin/dsh-weixin.mjs:3",
+    "bin/dsh-weixin.mjs:3",
+    "bin/dsh-weixin.mjs:30",
+    "lib/index.js:468",
+    "lib/index.js:598"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:458",
+    "src/config-store.mjs:176",
+    "src/state-store.mjs:106",
+    "plugin-src/client/build.mjs:37"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 30,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. bin/dsh-weixin.mjs:3, bin/dsh-weixin.mjs:3"
+  }
+ ],
+ "level": 3
+}

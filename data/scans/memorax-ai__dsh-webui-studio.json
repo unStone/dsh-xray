@@ -1,0 +1,130 @@
+{
+ "repo": "memorax-ai/dsh-webui-studio",
+ "stars": 0,
+ "description": "DeepSeek WebUI Studio for interactive, visual-first client plugin development",
+ "pushed_at": "2026-08-17T03:08:04Z",
+ "status": "ok",
+ "manifest": {
+  "plugin": {
+   "schemaVersion": 1,
+   "displayName": {
+    "zh-CN": "DeepSeek WebUI Studio",
+    "en": "DeepSeek WebUI Studio"
+   },
+   "summary": {
+    "zh-CN": "在真实 DSH WebUI 预览上构建和测试 Harmony Patch。",
+    "en": "Build and test Harmony patches against a live DSH WebUI preview."
+   },
+   "category": "plugin-development"
+  },
+  "harmony": {
+   "extension": "./lib/index.js"
+  }
+ },
+ "pkg_name": "dsh-webui-studio",
+ "deps": [
+  "dsh-harmony",
+  "dsh-harmony-react",
+  "pnpm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-modules",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "agents",
+  "ambient-service",
+  "clientModules",
+  "harmony",
+  "loader",
+  "subprocess",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {},
+ "env": {
+  "DSH_STUDIO_PREVIEW_DRAFT_ROOT": 1,
+  "DSH_STUDIO_PREVIEW_CONTROL_TOKEN": 1,
+  "DSH_STUDIO_PREVIEW_PARENT_ORIGIN": 1,
+  "DSH_STUDIO_PREVIEW_BRIDGE_CAPABILITY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 13,
+   "evidence": [
+    "src/host/build.ts:108",
+    "src/host/drafts.ts:2",
+    "src/host/drafts.ts:17",
+    "src/host/preview.ts:2",
+    "src/host/preview.ts:121"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 86,
+   "evidence": [
+    "src/host/drafts.ts:221",
+    "src/host/drafts.ts:222",
+    "src/host/drafts.ts:223",
+    "src/host/drafts.ts:224",
+    "src/host/drafts.ts:336"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 60,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. src/host/build.ts:108, src/host/drafts.ts:2"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_STUDIO_PREVIEW_CONTROL_TOKEN"
+  }
+ ],
+ "level": 3
+}

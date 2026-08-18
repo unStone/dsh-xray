@@ -1,0 +1,75 @@
+{
+ "repo": "chou109/dsh-workspace-launcher",
+ "stars": 0,
+ "description": "在 DeepSeek Harness 侧边栏工作区的\"...\"菜单里，一键用文件资源管理器、VS Code 或终端打开工作区文件夹，或复制其绝对/相对路径——不用再满硬盘翻找文件夹在哪。  open your DeepSeek Harness workspace folder in File Explorer, VS Code, or a terminal — or copy its absolu",
+ "pushed_at": "2026-08-15T14:51:25Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-workspace-launcher",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 2,
+  "ProgramFiles": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "plugin/dsh-workspace-launcher/lib/index.js:28",
+    "plugin/dsh-workspace-launcher/lib/index.js:64"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. plugin/dsh-workspace-launcher/lib/index.js:28, plugin/dsh-workspace-launcher/lib/index.js:64"
+  }
+ ],
+ "level": 2
+}

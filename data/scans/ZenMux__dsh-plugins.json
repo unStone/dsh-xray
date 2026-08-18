@@ -1,0 +1,124 @@
+{
+ "repo": "ZenMux/dsh-plugins",
+ "stars": 0,
+ "description": "zenmux for deepseek harness",
+ "pushed_at": "2026-08-17T11:40:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-model-selection",
+    "@deepseek-ai/dsh-client-ui-commands",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@zenmux/dsh-plugins",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "https-proxy-agent",
+  "socks-proxy-agent",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-commands",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-timeout",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commandUi",
+  "commands",
+  "credentials",
+  "invariants",
+  "modelDirectories",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [
+  "command/executed"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "zenmux.ai": 4
+ },
+ "env": {
+  "ZENMUX_OAUTH_SCOPES": 2,
+  "ZENMUX_OAUTH_NO_BROWSER": 2,
+  "HTTPS_PROXY": 2,
+  "https_proxy": 2,
+  "ZENMUX_MODELS_CATALOG_URL": 1,
+  "ZENMUX_ANTHROPIC_MODELS_CATALOG_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/sync-zenmux-models.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:345",
+    "src/index.ts:448"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "scripts/sync-zenmux-models.mjs:182"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. scripts/sync-zenmux-models.mjs:3"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/index.js:345, src/index.ts:448"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ZENMUX_OAUTH_NO_BROWSER, ZENMUX_OAUTH_SCOPES"
+  }
+ ],
+ "level": 3
+}

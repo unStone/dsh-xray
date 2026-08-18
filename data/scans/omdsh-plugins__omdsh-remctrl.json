@@ -1,0 +1,92 @@
+{
+ "repo": "omdsh-plugins/omdsh-remctrl",
+ "stars": 0,
+ "description": "Remote control for the DeepSeek Harness: a second front door on its own port, behind device pairing and a tiered method allowlist, so a phone on your tailnet can watch a session, approve what it asks ",
+ "pushed_at": "2026-08-17T02:51:49Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "plughub": {
+   "displayName": {
+    "": "Remote Control",
+    "zh": "远程控制"
+   },
+   "summary": {
+    "": "Watch, approve, and dispatch from a phone on your tailnet.",
+    "zh": "在 tailnet 上用手机查看进度、批准工具调用、下发新任务。"
+   },
+   "category": "system",
+   "settings": [
+    "omdsh-remctrl"
+   ],
+   "docs": "https://github.com/omdsh-plugins/omdsh-remctrl#readme",
+   "order": 30
+  }
+ },
+ "pkg_name": "@omdsh-plugins/omdsh-remctrl",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "tsc --build tsconfig.json && tsdown"
+ },
+ "injects": [
+  "connection"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/server.ts:116"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/server.ts:116"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,88 @@
+{
+ "repo": "ddll8023/dsh-access-mode",
+ "stars": 0,
+ "description": "Session access-mode plugin (Default / No Edit / Auto) for DeepSeek Harness (DSH). dsh-plugin",
+ "pushed_at": "2026-08-15T02:04:14Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots",
+    "remote",
+    "remote.commands"
+   ]
+  }
+ },
+ "pkg_name": "dsh-access-mode",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "approval",
+  "commands",
+  "remote",
+  "sessionProjections",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 2
+}

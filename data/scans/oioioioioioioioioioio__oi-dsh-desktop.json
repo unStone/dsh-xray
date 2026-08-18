@@ -1,0 +1,94 @@
+{
+ "repo": "oioioioioioioioioioio/oi-dsh-desktop",
+ "stars": 0,
+ "description": "DeepSeek Harness Windows Electron 客户端与源码扩展，支持 IPC，多工作区、代码编辑和 Markdown 预览。 Windows Electron client and source extension for DeepSeek Harness with IPC, multi-workspace projects, code editing, and Markdo",
+ "pushed_at": "2026-08-17T16:49:38Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "oi-dsh-desktop",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-include",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-app-boot",
+  "@deepseek-ai/dsh-base",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-web-app",
+  "@deepseek-ai/dsh-web-frontend",
+  "@electron/packager",
+  "electron",
+  "oi-dsh-desktop-bundle",
+  "pnpm"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "OI_DSH_DEBUG_GRAPH": 2,
+  "DSH_TELEMETRY_DISABLED": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "src/installer.ts:2",
+    "src/installer.ts:163",
+    "src/installer.ts:187",
+    "src/installer.ts:203",
+    "src/standalone-launcher.ts:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 2,
+   "evidence": [
+    "src/profile.ts:2",
+    "src/profile.ts:62",
+    "src/profile.ts:145",
+    "src/profile.ts:158",
+    "src/profile.ts:174"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 21,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. src/installer.ts:2, src/installer.ts:163"
+  }
+ ],
+ "level": 2
+}

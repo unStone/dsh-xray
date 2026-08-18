@@ -1,0 +1,87 @@
+{
+ "repo": "Andiii208/dsh-ultramath",
+ "stars": 0,
+ "description": "UltraMath 数学建模竞赛多 Agent 求解 DSH 插件: 5 角色预设 + 33 篇模型库技能 + SKILL.md 主入口 (plugin_check pass)",
+ "pushed_at": "2026-08-18T03:41:08Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-ultramath",
+ "deps": [
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/validate-package.mjs:4",
+    "scripts/validate-package.mjs:4",
+    "scripts/validate-package.mjs:4",
+    "scripts/validate-package.mjs:36",
+    "scripts/validate-package.mjs:87"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:14",
+    "lib/index.js:165",
+    "lib/index.js:172",
+    "lib/index.js:193",
+    "lib/index.js:261"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/validate-package.mjs:4, scripts/validate-package.mjs:4"
+  }
+ ],
+ "level": 3
+}

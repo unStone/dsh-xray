@@ -1,0 +1,78 @@
+{
+ "repo": "renjianguojinqianfan/dsh-skill-eval",
+ "stars": 1,
+ "description": "DSH 插件：用 LLM judge 评测技能 description 的触发准确率（欠触发/过触发）",
+ "pushed_at": "2026-08-17T18:35:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-skill-eval",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "llm",
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "index.js:73",
+    "scripts/refresh-catalog-fixture.mjs:35",
+    "scripts/refresh-catalog-fixture.mjs:48"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/refresh-catalog-fixture.mjs:58"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. index.js:73, scripts/refresh-catalog-fixture.mjs:35"
+  }
+ ],
+ "level": 3
+}

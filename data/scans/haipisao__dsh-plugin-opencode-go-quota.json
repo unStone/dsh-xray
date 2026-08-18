@@ -1,0 +1,89 @@
+{
+ "repo": "haipisao/dsh-plugin-opencode-go-quota",
+ "stars": 0,
+ "description": "deepseek web端的一个小插件，显示opencode go套餐剩余额度的",
+ "pushed_at": "2026-08-17T02:45:19Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-model-selection",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-opencode-go-quota",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "opencode.ai": 1
+ },
+ "env": {
+  "OPENCODE_GO_API_KEY": 1,
+  "OPENCODE_GO_AUTH_PATH": 2,
+  "LOCALAPPDATA": 2,
+  "APPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "OPENCODE_GO_API_KEY, OPENCODE_GO_AUTH_PATH"
+  }
+ ],
+ "level": 3
+}

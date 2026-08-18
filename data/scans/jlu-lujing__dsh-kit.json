@@ -1,0 +1,146 @@
+{
+ "repo": "jlu-lujing/dsh-kit",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-17T08:56:54Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection"
+   ]
+  }
+ },
+ "pkg_name": "dsh-kit",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "dsh-kit-input-history",
+  "dsh-kit-lan-auth",
+  "dsh-kit-notifier",
+  "dsh-kit-scheduler",
+  "dsh-kit-webui",
+  "dsh-kit-worktree",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver"
+ ],
+ "install_scripts": {
+  "postinstall": "electron-builder install-app-deps"
+ },
+ "injects": [
+  "agents",
+  "connection",
+  "loader",
+  "locale",
+  "skills",
+  "slots",
+  "subprocess",
+  "theme",
+  "tools",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "api.github.com": 1,
+  "update.dsh-kit.dev": 1
+ },
+ "env": {
+  "GITHUB_REF_NAME": 1,
+  "DSH_HOME": 11,
+  "DISPLAY": 1,
+  "USERPROFILE": 2,
+  "GITHUB_TOKEN": 1,
+  "DSH_DESKTOP_NO_AUTOSTART": 2,
+  "DSH_DESKTOP_FEED_URL": 1,
+  "DSH_DESKTOP_PROBE_PORT": 1,
+  "DSH_DESKTOP_SKIP_FAMILY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 56,
+   "dev": 6,
+   "evidence": [
+    "scripts/dev-host-watch.ts:21",
+    "scripts/dev-host-watch.ts:78",
+    "scripts/dev.ts:20",
+    "scripts/dev.ts:29",
+    "apps/dsh-runtime/scripts/build.mjs:20"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 46,
+   "dev": 9,
+   "evidence": [
+    "apps/dsh-runtime/scripts/build.mjs:22",
+    "apps/dsh-runtime/scripts/build.mjs:22",
+    "apps/dsh-runtime/scripts/build.mjs:56",
+    "apps/dsh-runtime/scripts/build.mjs:135",
+    "apps/dsh-runtime/scripts/build.mjs:136"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 74,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: electron-builder install-app-deps"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, webServer, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×56 src, e.g. scripts/dev-host-watch.ts:21, scripts/dev-host-watch.ts:78"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -2,20 +2,28 @@
  "repo": "DreamRift/dsh-web-search-pool",
  "stars": 2,
  "description": "DeepSeek Harness 网页搜索插件：多个 Tavily/Exa key 按限流负载均衡，429 自动换 key，含设置页 UI 与 Tavily 额度总览。",
- "pushed_at": "2026-08-16T07:49:19Z",
+ "pushed_at": "2026-08-18T09:17:50Z",
  "status": "ok",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
+   "platform": "web",
    "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection",
     "@deepseek-ai/dsh-client-runtime",
     "@deepseek-ai/dsh-client-ui-settings"
-   ],
-   "platform": "web"
+   ]
   }
  },
  "pkg_name": "dsh-web-search-pool",
  "deps": [
   "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
   "@deepseek-ai/dsh-credentials",
   "@deepseek-ai/dsh-launch-environment",
   "@deepseek-ai/dsh-settings",
@@ -76,7 +84,7 @@
     "scripts/patch-api-proxy-namespace.mjs:18",
     "scripts/patch-api-proxy-namespace.mjs:93",
     "scripts/patch-api-proxy-namespace.mjs:103",
-    "scripts/patch-api-proxy-namespace.mjs:137"
+    "scripts/patch-api-proxy-namespace.mjs:160"
    ]
   },
   "dyn_import": {
@@ -88,14 +96,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 28,
+ "files_scanned": 31,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
   {
    "id": "exec",
    "evidence": "×3 src, e.g. scripts/patch-api-proxy-namespace.mjs:20, scripts/patch-api-proxy-namespace.mjs:20"
   }
  ],
- "level": 2
+ "level": 3
 }

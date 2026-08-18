@@ -1,0 +1,133 @@
+{
+ "repo": "KyoMio/dsh-zen-remote",
+ "stars": 0,
+ "description": "Turn DeepSeek Harness into a phone app you can securely reach from anywhere: minimal mobile UI rework + pairing-code gateway + PWA + Web Push. 让 DSH 变成可公网安全访问的手机 App",
+ "pushed_at": "2026-08-17T17:09:21Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-zen-remote",
+ "deps": [
+  "web-push",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-log-export",
+  "react",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "locale",
+  "sessionLogDownload",
+  "sessions",
+  "slots",
+  "subprocess",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "dev.to": 2
+ },
+ "env": {
+  "DSH_HOME": 3,
+  "LAN_GATE_PORT": 1,
+  "DSH_PUSH_EVENTS": 1,
+  "DSH_PUSH_DEBOUNCE_MS": 1,
+  "DSH_PUSH_SUMMARY": 2,
+  "DSH_PUSH_TOOL": 2,
+  "LAN_GATE_ALLOW_HTTP_PUSH": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "lan-gate.mjs:43",
+    "scripts/cdp-probe.mjs:1",
+    "scripts/cdp-probe.mjs:11"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "pwa/inject.js:67"
+   ]
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 3,
+   "evidence": [
+    "lib/lan-gate-server.cjs:544",
+    "scripts/cdp-probe.mjs:7",
+    "scripts/cdp-probe.mjs:8",
+    "scripts/check-upload-endpoint.mjs:30",
+    "scripts/check-upload-endpoint.mjs:31"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "lib/lan-gate-server.cjs:96",
+    "scripts/build-client.mjs:98"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 85,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lan-gate.mjs:43, scripts/cdp-probe.mjs:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. pwa/inject.js:67"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. lib/lan-gate-server.cjs:544, scripts/cdp-probe.mjs:7"
+  }
+ ],
+ "level": 3
+}

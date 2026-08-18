@@ -1,0 +1,114 @@
+{
+ "repo": "BlackDawnNova/dsh-web-open",
+ "stars": 0,
+ "description": "DSH Desktop embedded browser: open_url tool opens webpages in an in-window browser (tabs, favicons, smart zoom, search engine settings). One-click installer.",
+ "pushed_at": "2026-08-17T06:00:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-web-open",
+ "deps": [
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "cdn.jsdelivr.net": 3,
+  "www.bing.com": 5,
+  "www.baidu.com": 4,
+  "www.google.com": 4,
+  "www.sogou.com": 4,
+  "codeload.github.com": 4,
+  "api.github.com": 4
+ },
+ "env": {
+  "SystemRoot": 4,
+  "PROGRAMFILES": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 27,
+   "dev": 0,
+   "evidence": [
+    "patch/dsh-web-open-patch.js:8",
+    "patch/dsh-web-open-patch.js:8",
+    "patch/dsh-web-open-patch.js:29",
+    "patch/dsh-web-open-patch.js:45",
+    "patch/dsh-web-open-patch.js:45"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "patch/dsh-web-open-patch.js:1250",
+    "patch/dsh-web-open-patch.js:1354",
+    "patch/fixed_server.js:86",
+    "patch/fixed_server.js:190",
+    "plugin/assets/dsh-web-open-patch.js:972"
+   ]
+  },
+  "fs_write": {
+   "src": 47,
+   "dev": 0,
+   "evidence": [
+    "patch/dsh-web-open-patch.js:32",
+    "patch/dsh-web-open-patch.js:778",
+    "patch/dsh-web-open-patch.js:958",
+    "patch/dsh-web-open-patch.js:966",
+    "patch/dsh-web-open-patch.js:1055"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×27 src, e.g. patch/dsh-web-open-patch.js:8, patch/dsh-web-open-patch.js:8"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×8 src, e.g. patch/dsh-web-open-patch.js:1250, patch/dsh-web-open-patch.js:1354"
+  }
+ ],
+ "level": 3
+}

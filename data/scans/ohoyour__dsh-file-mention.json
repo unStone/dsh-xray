@@ -1,0 +1,110 @@
+{
+ "repo": "ohoyour/dsh-file-mention",
+ "stars": 0,
+ "description": "在 Harness 输入框中输入 `@` 加文件名或目录名即可搜索并插入引用。",
+ "pushed_at": "2026-08-18T01:47:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@ohoyo/dsh-file-mention-workspace",
+ "deps": [
+  "@ohoyo/dsh-file-mention-host",
+  "@ohoyo/dsh-client-ui-file-mention",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-input-trigger",
+  "@deepseek-ai/dsh-typert-protocol",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "fs",
+  "inputTriggers",
+  "remote"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "fs/observed"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "GITHUB_REF_NAME": 1,
+  "DEEPSEEK_HARNESS_CHECKOUT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/pack-local.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-client-bundle.mjs:36"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/link-local-checkout.mjs:13",
+    "scripts/link-local-checkout.mjs:49",
+    "scripts/unlink-local-checkout.mjs:6",
+    "scripts/unlink-local-checkout.mjs:16"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-client-bundle.mjs:18"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. scripts/pack-local.mjs:3"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/smoke-client-bundle.mjs:36"
+  }
+ ],
+ "level": 3
+}

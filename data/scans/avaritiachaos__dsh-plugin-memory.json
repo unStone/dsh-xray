@@ -1,0 +1,80 @@
+{
+ "repo": "avaritiachaos/dsh-plugin-memory",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T17:18:12Z",
+ "status": "ok",
+ "manifest": {
+  "displayName": "Persistent Cognitive Memory",
+  "description": "4-Tier long term memory with vector embeddings, red-light guard, and conflict resolution",
+  "icon": "brain",
+  "service": "memory",
+  "category": "productivity"
+ },
+ "pkg_name": "@shion-lab/dsh-plugin-memory",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "cordis"
+ ],
+ "install_scripts": {
+  "prepare": "tsc"
+ },
+ "injects": [],
+ "hooks": [
+  "ready"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.openai.com": 1
+ },
+ "env": {
+  "EMBEDDING_API_BASE": 1,
+  "EMBEDDING_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/index.ts:693",
+    "src/index.ts:722"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "token_env",
+   "evidence": "EMBEDDING_API_KEY"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,93 @@
+{
+ "repo": "Dwsy/dsh-pi-extension-bridge",
+ "stars": 0,
+ "description": "TypeScript compatibility bridge for running Pi Coding Agent extensions and terminal UI inside DeepSeek DSH.",
+ "pushed_at": "2026-08-17T02:39:04Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-pi-extension-bridge",
+ "deps": [
+  "@wterm/dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "slots"
+ ],
+ "hooks": [
+  "agent/request",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:109"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:2764",
+    "src/host/index.ts:252"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "system-prompt/assemble"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/client.js:109"
+  }
+ ],
+ "level": 3
+}

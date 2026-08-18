@@ -1,0 +1,106 @@
+{
+ "repo": "linhut/dsh-manager",
+ "stars": 0,
+ "description": "⚡ DeepSeek Harness 桌面管理工具 — 一键安装、插件市场、版本管理 | 官网: https://dsh.linhut.cn/ | 镜像: GitCode/AtomGit",
+ "pushed_at": "2026-08-18T08:40:38Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-manager",
+ "deps": [
+  "@dsh-manager/core",
+  "@dsh-manager/marketplace",
+  "execa",
+  "execa",
+  "@dsh-manager/core",
+  "execa"
+ ],
+ "install_scripts": {
+  "postinstall": "echo 'Skipping electron-builder install-app-deps'"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 3,
+  "registry.npmmirror.com": 2,
+  "www.npmjs.com": 2,
+  "gallery.dsh-market.com": 1,
+  "mirrors.cloud.tencent.com": 1,
+  "repo.huaweicloud.com": 1,
+  "www.linhut.cn": 1
+ },
+ "env": {
+  "DSH_HOME": 2,
+  "GITHUB_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 59,
+   "dev": 0,
+   "evidence": [
+    "electron/ipc-handlers.js:79",
+    "electron/ipc-handlers.js:132",
+    "electron/ipc-handlers.js:132",
+    "electron/ipc-handlers.js:134",
+    "electron/ipc-handlers.js:149"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/marketplace/src/github-api.js:293",
+    "packages/marketplace/src/github-api.js:347"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "electron/main.js:11",
+    "packages/core/src/config.js:7",
+    "packages/core/src/config.js:60",
+    "packages/core/src/data-manager.js:8",
+    "packages/core/src/data-manager.js:87"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "install_script",
+   "evidence": "postinstall: echo 'Skipping electron-builder install-app-deps'"
+  },
+  {
+   "id": "exec",
+   "evidence": "×59 src, e.g. electron/ipc-handlers.js:79, electron/ipc-handlers.js:132"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/marketplace/src/github-api.js:293, packages/marketplace/src/github-api.js:347"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,96 @@
+{
+ "repo": "acosmi/dsh-session-supervisor",
+ "stars": 0,
+ "description": "Durable, bounded lifecycle supervisor with scheduled evaluation for live DeepSeek Harness sessions (community plugin)",
+ "pushed_at": "2026-08-14T03:56:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-session-supervisor",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessions",
+  "timer",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "session/event"
+ ],
+ "tool_regs": 11,
+ "domains": {},
+ "env": {
+  "DSH_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/profile-install-smoke.mjs:11",
+    "scripts/profile-install-smoke.mjs:11",
+    "scripts/profile-install-smoke.mjs:23"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 30,
+   "evidence": [
+    "scripts/profile-install-smoke.mjs:12",
+    "scripts/profile-install-smoke.mjs:64",
+    "src/store.ts:14",
+    "src/store.ts:14",
+    "src/store.ts:152"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/profile-install-smoke.mjs:11, scripts/profile-install-smoke.mjs:11"
+  }
+ ],
+ "level": 3
+}

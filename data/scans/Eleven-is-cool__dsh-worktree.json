@@ -1,0 +1,106 @@
+{
+ "repo": "Eleven-is-cool/dsh-worktree",
+ "stars": 0,
+ "description": "Git worktree plugin for DeepSeek Harness web: browse/create worktrees from the workspace panel",
+ "pushed_at": "2026-08-17T06:17:48Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@eleven-is-cool/dsh-worktree",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-workspace"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-worktree",
+ "deps": [
+  "clsx",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@eleven-is-cool/dsh-worktree",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "packages/worktree/lib/index.js:2",
+    "packages/worktree/src/git.ts:6",
+    "packages/worktree/lib/types/git.js:6"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/worktree/lib/client.js:140"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/worktree/lib/client.js:1158",
+    "packages/worktree/lib/client.js:1209"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 52,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/worktree/lib/index.js:2, packages/worktree/src/git.ts:6"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/worktree/lib/client.js:140"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/worktree/lib/client.js:1158, packages/worktree/lib/client.js:1209"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,111 @@
+{
+ "repo": "uAcharGG/dsh-vision",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-16T05:12:45Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-api-remotes"
+   ]
+  },
+  "patchHook": "scripts/apply-dsh-patch.mjs"
+ },
+ "pkg_name": "@uachar/dsh-vision-plugin",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {
+  "prepare": "node -e \"console.log('[vision-prepare] RAN')\" && node scripts/apply-dsh-patch.mjs"
+ },
+ "injects": [
+  "invariants",
+  "remote",
+  "slots"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "open.bigmodel.cn": 1
+ },
+ "env": {
+  "DSH_CHECKOUT": 2,
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/apply-dsh-patch.mjs:26",
+    "scripts/apply-dsh-patch.mjs:26",
+    "scripts/apply-dsh-patch.mjs:72",
+    "scripts/apply-dsh-patch.mjs:81",
+    "src/index.ts:272"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/apply-dsh-patch.mjs:25",
+    "scripts/apply-dsh-patch.mjs:65",
+    "src/index.ts:14",
+    "src/index.ts:153",
+    "src/index.ts:178"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/apply-dsh-patch.mjs:26, scripts/apply-dsh-patch.mjs:26"
+  }
+ ],
+ "level": 3
+}

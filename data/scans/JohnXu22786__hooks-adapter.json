@@ -1,0 +1,89 @@
+{
+ "repo": "JohnXu22786/hooks-adapter",
+ "stars": 0,
+ "description": "Universal hooks compatibility layer for DeepSeek Harness: run hooks declared in Claude Code / Codex / opencode configs on dsh",
+ "pushed_at": "2026-08-17T01:32:30Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "hooks-adapter",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start",
+  "agent/turn-stopping",
+  "session/disposed",
+  "subagent/end",
+  "subagent/start",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "HOOKS_ADAPTER_CONFIG": 2,
+  "HOOKS_ADAPTER_HOME": 1,
+  "HOOK_PROMPT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 5,
+   "evidence": [
+    "lib/execute.js:10",
+    "lib/execute.js:10",
+    "lib/execute.js:256",
+    "lib/execute.js:326"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 61,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 28,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/execute.js:10, lib/execute.js:10"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,133 @@
+{
+ "repo": "NOirBRight/dsh-llm-grok",
+ "stars": 0,
+ "description": "Grok subscription OAuth provider and Web configuration plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-18T04:21:10Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-llm-grok",
+ "deps": [
+  "@earendil-works/pi-ai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-pi-ai",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "auth.x.ai": 4,
+  "cli-chat-proxy.grok.com": 8
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:9",
+    "lib/index.js:663",
+    "scripts/check-pack.mjs:1",
+    "scripts/check-pack.mjs:1",
+    "scripts/check-pack.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 6,
+   "evidence": [
+    "lib/index.js:810",
+    "lib/index.js:813",
+    "scripts/e2e-empty-thinking.mjs:80",
+    "scripts/e2e-empty-thinking.mjs:81",
+    "src/oauth.ts:337"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:525",
+    "src/session.ts:112"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-empty-thinking.mjs:20"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 67,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. lib/index.js:9, lib/index.js:663"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. lib/index.js:810, lib/index.js:813"
+  }
+ ],
+ "level": 3
+}

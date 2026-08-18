@@ -1,0 +1,124 @@
+{
+ "repo": "sl82976818/dsh-gpt-bridge",
+ "stars": 0,
+ "description": "Read-only engineering evidence bridge between DeepSeek Harness (DSH) and Custom GPTs.",
+ "pushed_at": "2026-08-15T21:43:13Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-gpt-bridge",
+ "deps": [
+  "zod",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-ui-conversation"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare-custom-gpt.mjs"
+ },
+ "injects": [
+  "credentials",
+  "remote",
+  "slots",
+  "subprocess",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "replace-with-cloudflared-tunnel.trycloudflare.com": 1
+ },
+ "env": {
+  "TUNNEL_URL": 1,
+  "ACTIONS_AUTH_TOKEN": 1,
+  "BRIDGE_HOST": 1,
+  "BRIDGE_PORT": 1,
+  "BRIDGE_ALLOW_NO_AUTH": 1,
+  "ARTIFACT_ROOTS": 1,
+  "DSH_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "dsh-gpt-bridge-manager/src/manager-controller.mjs:113",
+    "dsh-gpt-bridge-manager/src/manager-controller.mjs:171"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/server.mjs:62"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 7,
+   "evidence": [
+    "scripts/prepare-custom-gpt.mjs:43"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 33,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. dsh-gpt-bridge-manager/src/manager-controller.mjs:113, dsh-gpt-bridge-manager/src/manager-controller.mjs:171"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/server.mjs:62"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ACTIONS_AUTH_TOKEN, BRIDGE_ALLOW_NO_AUTH"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,97 @@
+{
+ "repo": "Casually/deepseek-harness-plugs-manage",
+ "stars": 0,
+ "description": "Deepseek Harness 插件管理工具，方便搜索安装官方插件库",
+ "pushed_at": "2026-08-16T08:36:34Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plug-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "casually.github.io": 1,
+  "api.github.com": 1,
+  "codeload.github.com": 1,
+  "registry.npmmirror.com": 1
+ },
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "index.js:25",
+    "index.js:25",
+    "index.js:111",
+    "index.js:131",
+    "index.js:413"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "index.js:26",
+    "index.js:89",
+    "index.js:453",
+    "index.js:540",
+    "index.js:544"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. index.js:25, index.js:25"
+  }
+ ],
+ "level": 3
+}

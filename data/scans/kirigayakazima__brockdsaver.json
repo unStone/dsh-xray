@@ -1,0 +1,97 @@
+{
+ "repo": "kirigayakazima/brockdsaver",
+ "stars": 0,
+ "description": "Pre-boot rescue toolkit for DeepSeek Harness — validates profile composition, detects broken plugins, and provides one-click recovery without starting DSH.",
+ "pushed_at": "2026-08-16T10:06:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "brockdsaver",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "timer",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "USERPROFILE": 2,
+  "APPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/doctor.js:7",
+    "lib/doctor.js:7",
+    "lib/doctor.js:7",
+    "lib/doctor.js:31",
+    "lib/doctor.js:57"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/doctor.js:5",
+    "lib/doctor.js:182",
+    "lib/doctor.js:202",
+    "lib/doctor.js:218",
+    "lib/doctor.js:306"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. lib/doctor.js:7, lib/doctor.js:7"
+  }
+ ],
+ "level": 3
+}

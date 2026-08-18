@@ -1,0 +1,95 @@
+{
+ "repo": "glangzh/dsh-imagegen",
+ "stars": 0,
+ "description": "dsh 插件,为 agent 补上图像能力(主模型本身不能看图、不会生图)",
+ "pushed_at": "2026-08-16T01:13:21Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/cordis"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-imagegen",
+ "deps": [
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "credentials",
+  "llm",
+  "settings",
+  "settingsScope",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "credentials/updated"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "api.agnes-ai.cn": 3
+ },
+ "env": {
+  "AGNES_API_KEY": 1,
+  "AGNES_API_TOKEN": 1,
+  "AGNES_API_BASE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:211"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "token_env",
+   "evidence": "AGNES_API_KEY, AGNES_API_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -1,0 +1,107 @@
+{
+ "repo": "mishiqian/lan-im",
+ "stars": 0,
+ "description": "让局域网内所有安装本插件的 DeepSeek Harness 实例以账号身份互相发现、可靠地互发消息聊天。",
+ "pushed_at": "2026-08-16T16:09:31Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "@mishiqian/lan-im",
+ "deps": [
+  "bonjour-service",
+  "ws"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 4,
+  "DATA_DIR": 1,
+  "CONTROL_PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e.mjs:7",
+    "scripts/e2e.mjs:26"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/host/file-transfer.ts:60",
+    "src/host/file-transfer.ts:137",
+    "src/host/shared-file-store.ts:288"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-node.mjs:30"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e.mjs:8",
+    "scripts/e2e.mjs:312",
+    "src/host/file-transfer.ts:74",
+    "src/host/file-transfer.ts:145",
+    "src/host/shared-file-store.ts:105"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/e2e.mjs:7, scripts/e2e.mjs:26"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. src/host/file-transfer.ts:60, src/host/file-transfer.ts:137"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/e2e-node.mjs:30"
+  }
+ ],
+ "level": 3
+}

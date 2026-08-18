@@ -1,0 +1,93 @@
+{
+ "repo": "LSAI2023/dsh-ide-context",
+ "stars": 0,
+ "description": "dsh-ide-context — DeepSeek Harness bundle: inject your IDE's open files and current selection into each turn (IntelliJ IDEA & VS Code).",
+ "pushed_at": "2026-08-16T04:42:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-ide-context",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "invariants"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "check-build.mjs:8",
+    "check-build.mjs:8",
+    "check-build.mjs:16",
+    "check-build.mjs:19",
+    "check-build.mjs:22"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "smoke-test.mjs:25"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 7,
+   "evidence": [
+    "smoke-test.mjs:6",
+    "smoke-test.mjs:6",
+    "smoke-test.mjs:146",
+    "smoke-test.mjs:189",
+    "smoke-test.mjs:202"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. check-build.mjs:8, check-build.mjs:8"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. smoke-test.mjs:25"
+  }
+ ],
+ "level": 3
+}

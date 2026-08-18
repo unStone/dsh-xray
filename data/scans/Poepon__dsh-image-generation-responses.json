@@ -1,0 +1,86 @@
+{
+ "repo": "Poepon/dsh-image-generation-responses",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T07:55:34Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-image-generation-responses",
+ "deps": [
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "conversation",
+  "credentials",
+  "locale",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 7,
+ "domains": {
+  "api.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "lib/protocol.js:518"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/protocol.js:518"
+  }
+ ],
+ "level": 2
+}

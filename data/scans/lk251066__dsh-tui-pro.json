@@ -1,0 +1,160 @@
+{
+ "repo": "lk251066/dsh-tui-pro",
+ "stars": 0,
+ "description": "Fixed framed terminal workbench plugin for DeepSeek Harness with transcript-only scrolling and persistent sessions.",
+ "pushed_at": "2026-08-18T08:46:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./packages/dsh-tui/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@lk251066/dsh-tui",
+ "deps": [
+  "@deepseek-ai/dsh-brand",
+  "@deepseek-ai/dsh-session-projection-cache",
+  "@deepseek-ai/dsh-session-reference",
+  "@deepseek-ai/dsh-session-stats",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-storage-json",
+  "@deepseek-ai/dsh-tool-ask-user",
+  "@deepseek-ai/dsh-workspace",
+  "@earendil-works/pi-tui",
+  "cli-highlight",
+  "clipboardy",
+  "diff",
+  "get-east-asian-width",
+  "marked",
+  "saxes",
+  "schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-loop",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-goal",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-retry",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-plan-mode",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-token-meter",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "invariants",
+  "llm",
+  "sessions",
+  "storageDomain",
+  "systemPrompt",
+  "tokenMeter",
+  "tools",
+  "tuiPrompt",
+  "userQuestions",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent-loop/config-start-failed",
+  "agent/created",
+  "agent/disposed",
+  "agent/error",
+  "agent/inbox/claimed",
+  "agent/inbox/discarded",
+  "agent/inbox/inserted",
+  "agent/status",
+  "approval/request",
+  "commands/change",
+  "domain/changed",
+  "llm/adapters-updated",
+  "session/event",
+  "session/flush",
+  "skills/change"
+ ],
+ "tool_regs": 10,
+ "domains": {},
+ "env": {
+  "ComSpec": 2,
+  "DSH_PUBLIC_SMOKE_ROOT": 1,
+  "COLORTERM": 1,
+  "WT_SESSION": 1,
+  "TERM_PROGRAM": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 7,
+   "evidence": [
+    "scripts/pack-artifact.mjs:1",
+    "scripts/pack-artifact.mjs:13",
+    "scripts/verify-public-dsh-host.mjs:1",
+    "scripts/verify-public-dsh-host.mjs:22",
+    "packages/dsh-tui/src/clipboard-image.ts:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 15,
+   "evidence": [
+    "scripts/render-pty-capture.mjs:30",
+    "scripts/verify-public-dsh-host.mjs:45",
+    "packages/dsh-tui/scripts/cleanup-bundled-dependencies.mjs:1",
+    "packages/dsh-tui/scripts/cleanup-bundled-dependencies.mjs:1",
+    "packages/dsh-tui/scripts/cleanup-bundled-dependencies.mjs:20"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 118,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./packages/dsh-tui/cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/pack-artifact.mjs:1, scripts/pack-artifact.mjs:13"
+  }
+ ],
+ "level": 3
+}

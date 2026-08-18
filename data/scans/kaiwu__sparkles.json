@@ -1,0 +1,134 @@
+{
+ "repo": "kaiwu/sparkles",
+ "stars": 0,
+ "description": "Pi and DSH plugins for stock market",
+ "pushed_at": "2026-08-18T07:13:57Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "pi-sparkles",
+ "deps": [
+  "pdfjs-dist"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "sessionProjections",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "agent/session-start"
+ ],
+ "tool_regs": 101,
+ "domains": {
+  "www.npmjs.com": 3,
+  "sparkles.extensio.cn": 2,
+  "webapi.futunn.com": 4,
+  "static.cninfo.com.cn": 1,
+  "www.csrc.gov.cn": 1,
+  "www1.hkexnews.hk": 1,
+  "www.sfc.hk": 1,
+  "api.stlouisfed.org": 1,
+  "data.alpaca.markets": 4,
+  "paper-api.alpaca.markets": 1
+ },
+ "env": {
+  "DSH_SPARKLES_DSH_COMMAND": 1,
+  "PI_SPARKLES_PI_COMMAND": 1,
+  "PI_SOURCE_DIR": 1,
+  "AGENT_CONTACT": 24,
+  "FRED_API_KEY": 2,
+  "ALPACA_API_KEY_ID": 6,
+  "ALPACA_API_SECRET_KEY": 6,
+  "PI_SPARKLES_TEST_JOBS": 1,
+  "TUSHARE_TOKEN": 5,
+  "TWELVE_DATA_API_KEY": 1,
+  "OPENFIGI_API_KEY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 3,
+   "evidence": [
+    "scripts/dsh-npm-package.js:117",
+    "scripts/dsh-verify.js:11",
+    "scripts/dsh-verify.js:11",
+    "scripts/dsh-verify.js:24",
+    "scripts/dsh-verify.js:25"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "finance/finance_archive/src/archive_ffi.mjs:25",
+    "finance/finance_capco/src/finance_capco/pdf_text_ffi.mjs:33",
+    "finance/finance_pdf/src/finance_pdf/inspector_ffi.mjs:24"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 82,
+   "dev": 69,
+   "evidence": [
+    "scripts/aggregate-bundle.js:9",
+    "scripts/aggregate-bundle.js:10",
+    "scripts/aggregate-bundle.js:360",
+    "scripts/aggregate-bundle.js:388",
+    "scripts/aggregate-bundle.js:657"
+   ]
+  },
+  "dyn_import": {
+   "src": 6,
+   "dev": 83,
+   "evidence": [
+    "dsh/plugin.mjs:113",
+    "scripts/dsh-npm-package.js:888",
+    "scripts/dsh-verify.js:96",
+    "scripts/npm-package.js:929",
+    "scripts/test-live-provider-calls.js:683"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 219,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/dsh-npm-package.js:117, scripts/dsh-verify.js:11"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. finance/finance_archive/src/archive_ffi.mjs:25, finance/finance_capco/src/finance_capco/pdf_text_ffi.mjs:33"
+  },
+  {
+   "id": "token_env",
+   "evidence": "ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, FRED_API_KEY, OPENFIGI_API_KEY, TUSHARE_TOKEN, TWELVE_DATA_API_KEY"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 7 services, 101 tool regs, no manifest"
+  }
+ ],
+ "level": 3
+}
