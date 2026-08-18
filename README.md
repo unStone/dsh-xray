@@ -32,6 +32,17 @@ dsh-xray statically scans every plugin in the ecosystem and publishes a **capabi
 
 Every flag carries **file:line evidence**. Levels **C0–C3** measure capability surface and transparency — *not* maliciousness. A C3 plugin can be perfectly legitimate; you just deserve to know before it touches your agent.
 
+## Features
+
+- **Whole-ecosystem coverage** — every repository under the `dsh-plugin` topic (7,000+), rescanned daily.
+- **Capability cards** — injected services, attached hooks, runtime patches, outbound domains, credential-class env reads and install-time scripts, each with `file:line` evidence.
+- **C0–C3 levels** — a compact read on how much surface a plugin has, and whether it combines powerful capability with sensitive behavior.
+- **Shipped vs. test code** — risk flags fire only on shipped code, so a fixture in `tests/` never inflates a rating.
+- **Deterministic manifests** — in a monorepo the plugin's own root manifest wins, so two scans of one repo agree.
+- **Static only** — nothing is executed, downloaded code is streamed and read, never run.
+- **Embeddable badges** — plugin authors can publish their own capability card.
+- **Trilingual site** — English, 简体中文, 日本語, plus a crawlable page per plugin.
+
 ## Capability levels
 
 [![capability levels](https://unstone.github.io/dsh-xray/og.png)](https://unstone.github.io/dsh-xray/levels.html)
@@ -81,4 +92,11 @@ gh auth refresh -s workflow && git -C . add .github/workflows/scan.yml && git co
 - [ ] Multi-harness: Abu-Cowork & Claude Code plugin formats
 - [ ] Private registry / org policy engine (enterprise)
 
-Apache-2.0
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE). The scan data under `data/` and `docs/` is published under the same terms.
+
+## Changelog
+
+[What changed and why](https://unstone.github.io/dsh-xray/report.html?doc=changelog) — method and product changes; scan results refresh daily on their own.
+
