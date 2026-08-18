@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh-xray — Ecosystem report</title>
+<meta name="description" content="The dsh plugin ecosystem has no permission model: a capability survey.">
+<link rel="stylesheet" href="style.css">
+<style>
+.md { max-width: 760px; margin: 0 auto; }
+.md h1 { font-size: 32px; letter-spacing: -0.8px; margin: 28px 0 8px; line-height: 1.2; }
+.md h2 { font-size: 22px; letter-spacing: -0.4px; margin: 38px 0 10px; padding-top: 18px; border-top: 1px solid var(--border); }
+.md h3 { font-size: 17px; margin: 24px 0 6px; }
+.md p { margin: 12px 0; }
+.md ul { margin: 12px 0; padding-left: 22px; }
+.md li { margin: 5px 0; }
+.md blockquote { margin: 20px 0; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+.md blockquote p { margin: 0; font-size: 16.5px; font-weight: 600; }
+.md table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+.md th, .md td { border: 1px solid var(--border); padding: 7px 11px; text-align: left; vertical-align: top; }
+.md th { background: var(--chip-bg); font-weight: 600; }
+.md pre { background: var(--code-bg); border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 14px 0; }
+.md pre code { background: none; padding: 0; font-size: 12.5px; line-height: 1.5; }
+.md hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+.md em { color: var(--muted); }
+.md .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="./">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="registry.html" data-i18n="nav.registry">Registry</a>
+    <a href="https://github.com/unStone/dsh-xray" data-i18n="nav.github">GitHub</a>
+  </div>
+  <div class="chips" id="langSwitch"></div>
+</nav>
+<article class="md" id="md">Loading…</article>
+<footer>
+  <span data-i18n="foot.oss"></span> <a href="https://github.com/unStone/dsh-xray/issues" data-i18n="foot.issue"></a>
+</footer>
+</div>
+
+<script src="i18n.js"></script>
+<script>
+xray.applyStatic();
+xray.mountSwitcher(document.getElementById('langSwitch'));
+
+const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* Minimal markdown renderer: headings, tables, code, lists, quotes, inline marks.
+   Enough for these reports; not a general-purpose parser. */
+function md2html(src) {
+  src = src.replace(/<!--[\s\S]*?-->/g, '');  // strip stat-injection markers
+  const blocks = [];
+  src = src.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => {
+    blocks.push('<pre><code>' + esc(code.replace(/\n$/, '')) + '</code></pre>');
+    return ' BLOCK' + (blocks.length - 1) + ' ';
+  });
+
+  const inline = s => esc(s)
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+  const out = [];
+  const lines = src.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const ln = lines[i];
+    if (/^ BLOCK\d+ $/.test(ln.trim())) { out.push(ln.trim()); continue; }
+    if (/^\s*$/.test(ln)) continue;
+    if (/^---+$/.test(ln.trim())) { out.push('<hr>'); continue; }
+    let m;
+    if ((m = ln.match(/^(#{1,4})\s+(.*)$/))) {
+      const lvl = m[1].length;
+      out.push('<h' + lvl + '>' + inline(m[2]) + '</h' + lvl + '>');
+      continue;
+    }
+    if (ln.startsWith('> ')) {
+      const buf = [];
+      while (i < lines.length && lines[i].startsWith('> ')) buf.push(lines[i++].slice(2));
+      i--;
+      out.push('<blockquote><p>' + inline(buf.join(' ')) + '</p></blockquote>');
+      continue;
+    }
+    if (ln.trim().startsWith('|')) {
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) rows.push(lines[i++].trim());
+      i--;
+      const cells = r => r.replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+      const isSep = r => /^\|[\s:|-]+\|$/.test(r);
+      let html = '<div class="table-wrap"><table>';
+      rows.forEach((r, idx) => {
+        if (isSep(r)) return;
+        const tag = idx === 0 ? 'th' : 'td';
+        html += '<tr>' + cells(r).map(c => '<' + tag + '>' + inline(c) + '</' + tag + '>').join('') + '</tr>';
+      });
+      out.push(html + '</table></div>');
+      continue;
+    }
+    if (/^[-*]\s+/.test(ln)) {
+      const items = [];
+      while (i < lines.length && /^[-*]\s+/.test(lines[i])) items.push(lines[i++].replace(/^[-*]\s+/, ''));
+      i--;
+      out.push('<ul>' + items.map(t => '<li>' + inline(t) + '</li>').join('') + '</ul>');
+      continue;
+    }
+    out.push('<p>' + inline(ln) + '</p>');
+  }
+  return out.join('\n').replace(/ BLOCK(\d+) /g, (_, n) => blocks[+n]);
+}
+
+// zh has its own translation; other locales fall back to the English report.
+const file = xray.lang === 'zh' ? 'report/2026-08.zh.md' : 'report/2026-08.md';
+fetch(file)
+  .then(r => r.ok ? r.text() : Promise.reject(r.status))
+  .then(text => {
+    document.getElementById('md').innerHTML = md2html(text);
+    const h1 = document.querySelector('.md h1');
+    if (h1) document.title = 'dsh-xray · ' + h1.textContent;
+  })
+  .catch(() => {
+    document.getElementById('md').innerHTML =
+      '<p>Report unavailable. Read it on <a href="https://github.com/unStone/dsh-xray/tree/master/docs/report">GitHub</a>.</p>';
+  });
+</script>
+</body>
+</html>
