@@ -85,7 +85,7 @@ fetch('data.json').then(r => r.json()).then(d => {
   const ok = d.plugins.filter(p => p.level >= 0);
   const c = l => ok.filter(p => p.level === l).length;
   document.getElementById('liveStat').textContent = xray.t('hero.stat', {
-    scanned: d.scanned, c3: c(3), c2: c(2), date: d.generated_at.slice(0, 16).replace('T', ' ')
+    scanned: d.scanned, discovered: d.discovered || d.total, c3: c(3), c2: c(2), date: d.generated_at.slice(0, 16).replace('T', ' ')
   });
 }).catch(() => {});
 </script>

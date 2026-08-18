@@ -33,49 +33,55 @@ def wanted(path):
     return path.endswith(scan_core.CODE_EXT) or base == 'package.json' or base.upper() == 'SKILL.MD'
 
 
-def fetch_files(full_name):
-    """Stream the tarball through `gh api` and pull out code files as they pass.
+def fetch_files(full_name, branch=None):
+    """Stream a repo tarball and pull out code files as they pass.
 
-    Streaming (mode 'r|gz') means repository size barely matters: we stop once
-    MAX_FILES code files are collected instead of buffering the whole archive,
-    so asset-heavy repos stay scannable.
+    Downloads from codeload rather than the REST API: public tarballs need no
+    auth there and do not consume the hourly API quota, which matters when a
+    full sweep touches thousands of repositories. Streaming (mode 'r|gz') means
+    repository size barely matters -- we stop once MAX_FILES code files are
+    collected instead of buffering the whole archive.
     """
-    proc = subprocess.Popen(['gh', 'api', f'repos/{full_name}/tarball'],
-                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    files, read = {}, 0
-    try:
-        with tarfile.open(fileobj=proc.stdout, mode='r|gz') as tf:
-            for m in tf:
-                if read > MAX_BYTES_READ:
-                    break
-                read += m.size
-                if not m.isfile() or m.size > MAX_FILE_SIZE:
-                    continue
-                path = m.name.split('/', 1)[-1]  # strip the tarball root dir
-                if not wanted(path):
-                    continue
-                # package.json files are small and carry the manifest — never let
-                # the code-file cap truncate them, or which manifest we report
-                # would depend on tar ordering.
-                if path.rsplit('/', 1)[-1] != 'package.json' and len(files) >= MAX_FILES:
-                    continue
-                try:
-                    files[path] = tf.extractfile(m).read().decode('utf-8', errors='ignore')
-                except Exception:
-                    continue
-    except Exception as e:
-        if not files:
-            raise ValueError(f'download failed: {type(e).__name__}')
-    finally:
+    refs = [f'refs/heads/{branch}'] if branch else []
+    refs += ['refs/heads/main', 'refs/heads/master']
+    last_err = 'no ref matched'
+    for ref in refs:
+        url = f'https://codeload.github.com/{full_name}/tar.gz/{ref}'
+        proc = subprocess.Popen(['curl', '-sL', '--max-time', '120', '--fail', url],
+                                stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+        files, read = {}, 0
         try:
-            proc.stdout.close()
-        except Exception:
-            pass
-        proc.terminate()
-        proc.wait(timeout=10)
-    if not files:
-        raise ValueError('no scannable files')
-    return files
+            with tarfile.open(fileobj=proc.stdout, mode='r|gz') as tf:
+                for m in tf:
+                    if read > MAX_BYTES_READ:
+                        break
+                    read += m.size
+                    if not m.isfile() or m.size > MAX_FILE_SIZE:
+                        continue
+                    path = m.name.split('/', 1)[-1]  # strip the tarball root dir
+                    if not wanted(path):
+                        continue
+                    # package.json files are small and carry the manifest -- never
+                    # let the code-file cap truncate them, or which manifest we
+                    # report would depend on tar ordering.
+                    if path.rsplit('/', 1)[-1] != 'package.json' and len(files) >= MAX_FILES:
+                        continue
+                    try:
+                        files[path] = tf.extractfile(m).read().decode('utf-8', errors='ignore')
+                    except Exception:
+                        continue
+        except Exception as e:
+            last_err = f'{type(e).__name__}'
+        finally:
+            try:
+                proc.stdout.close()
+            except Exception:
+                pass
+            proc.terminate()
+            proc.wait(timeout=10)
+        if files:
+            return files
+    raise ValueError(f'no scannable files ({last_err})')
 
 
 def scan_repo(repo):
@@ -83,7 +89,7 @@ def scan_repo(repo):
     out = {'repo': repo['full_name'], 'stars': repo['stars'], 'description': repo['description'],
            'pushed_at': repo['pushed_at'], 'status': 'ok'}
     try:
-        card = scan_core.scan_files(fetch_files(repo['full_name']))
+        card = scan_core.scan_files(fetch_files(repo['full_name'], repo.get('default_branch')))
         out.update(card)
     except Exception as e:
         out['status'] = f'skipped: {e}'
@@ -113,32 +119,84 @@ def write_badge(card):
         'message': msg, 'color': LEVEL_COLORS.get(level, 'lightgrey')}))
 
 
-def main(limit=100, workers=8):
-    repos = json.loads((ROOT / 'data' / 'repos.json').read_text())[:limit]
+def load_cached(slug):
+    f = SCANS / f'{slug}.json'
+    if not f.exists():
+        return None
+    try:
+        return json.loads(f.read_text())
+    except Exception:
+        return None
+
+
+def main(limit=None, workers=8, budget=None):
+    """Scan repos.json.
+
+    limit  -- only consider the top N repositories by stars (None = all)
+    budget -- cap how many repos are actually fetched this run; unchanged repos
+              reuse their cached card for free, so a daily run converges toward
+              full coverage without re-downloading the whole ecosystem.
+    """
+    repos = json.loads((ROOT / 'data' / 'repos.json').read_text())
+    if limit:
+        repos = repos[:limit]
     SCANS.mkdir(parents=True, exist_ok=True)
     (DOCS / 'badge').mkdir(parents=True, exist_ok=True)
-    results = []
+
+    results, todo = [], []
+    for r in repos:
+        cached = load_cached(r['full_name'].replace('/', '__'))
+        # Re-fetch when we have no card, when the repo moved on, or when a
+        # previous run failed -- a transient failure should not be permanent.
+        fresh = (cached and cached.get('pushed_at') == r['pushed_at']
+                 and cached.get('status') == 'ok')
+        if fresh:
+            cached['stars'] = r['stars']          # stars drift without a push
+            cached['description'] = r['description']
+            results.append(cached)
+        else:
+            todo.append(r)
+
+    dropped = 0
+    if budget and len(todo) > budget:
+        dropped = len(todo) - budget
+        todo.sort(key=lambda r: -r['stars'])
+        for r in todo[budget:]:
+            cached = load_cached(r['full_name'].replace('/', '__'))
+            if cached:
+                results.append(cached)
+        todo = todo[:budget]
+    print(f'{len(results)} cached, {len(todo)} to fetch'
+          + (f', {dropped} deferred to a later run (budget {budget})' if dropped else ''))
+
     with cf.ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(scan_repo, r): r for r in repos}
+        futures = {pool.submit(scan_repo, r): r for r in todo}
         for i, fut in enumerate(cf.as_completed(futures), 1):
-            card = fut.result()
-            results.append(card)
-            write_badge(card)
-            if i % 10 == 0 or i == len(repos):
-                print(f'[{i}/{len(repos)}] scanned')
+            results.append(fut.result())
+            if i % 50 == 0 or i == len(todo):
+                print(f'[{i}/{len(todo)}] fetched')
+
+    for card in results:
+        write_badge(card)
     results.sort(key=lambda c: -c['stars'])
     ok = [c for c in results if c['status'] == 'ok']
     (DOCS / 'data.json').write_text(json.dumps({
         'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
-        'total': len(results), 'scanned': len(ok),
+        # discovered = repositories in the topic; total = repositories we hold a
+        # card for; scanned = cards that actually parsed. Publishing all three
+        # keeps real coverage visible instead of implying we cover everything.
+        'discovered': len(repos), 'total': len(results), 'scanned': len(ok),
         'plugins': [summarize(c) for c in results],
     }, ensure_ascii=False))
     lv = {}
     for c in ok:
         lv[c['level']] = lv.get(c['level'], 0) + 1
     print(f"done: {len(ok)}/{len(results)} scanned, levels={dict(sorted(lv.items()))}")
+    if dropped:
+        print(f'NOTE: {dropped} repositories were not fetched this run (budget); '
+              f'they carry stale or missing cards until a later run picks them up.')
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]) if len(sys.argv) > 1 else 100,
-         int(sys.argv[2]) if len(sys.argv) > 2 else 8)
+    arg = lambda i, d: (int(sys.argv[i]) if len(sys.argv) > i and sys.argv[i] != 'all' else d)
+    main(arg(1, None), arg(2, 8), arg(3, None))

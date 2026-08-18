@@ -8,7 +8,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -18,8 +18,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scanner/discover.py 5
-          cd scanner && python pipeline.py 500 8
+          python scanner/discover.py all
+          # all repos, 12 workers, at most 1500 fetched per run: unchanged repos
+          # reuse cached cards, so daily runs converge to full coverage and then
+          # stay cheap. Downloads go to codeload, not the API quota.
+          cd scanner && python pipeline.py all 12 1500
+          python render_report.py
       - name: commit results
         run: |
           git config user.name 'dsh-xray-bot'
