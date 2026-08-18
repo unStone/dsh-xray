@@ -1,0 +1,29 @@
+# dsh-xray
+
+> Capability cards for DeepSeek Harness (dsh) plugins: what a plugin declares versus what its shipped code actually does, each finding carrying file:line evidence. Static analysis only — nothing is executed, and levels measure capability surface and transparency, not maliciousness.
+
+Data as of 2026-08-18: 6800 plugins scanned out of 7060 known repositories.
+
+## Key pages
+- [Registry](https://unstone.github.io/dsh-xray/registry.html): searchable capability cards for every scanned plugin.
+- [Ecosystem report](https://unstone.github.io/dsh-xray/report.html): why the ecosystem has no plugin permission model.
+- [Capability levels](https://unstone.github.io/dsh-xray/levels.html): what C0-C3 mean, and what they do not mean.
+- [How dsh plugins work](https://unstone.github.io/dsh-xray/report.html?doc=plugins): the plugin model background.
+- [Machine-readable data](https://unstone.github.io/dsh-xray/data.json): every card as JSON.
+
+## Per-plugin pages
+- `https://unstone.github.io/dsh-xray/p/<owner>__<repo>.html` — the capability card for one plugin.
+
+## Collections
+- [runtime-patch](https://unstone.github.io/dsh-xray/c/runtime-patch.html)
+- [prompt-surface](https://unstone.github.io/dsh-xray/c/prompt-surface.html)
+- [api-intercept](https://unstone.github.io/dsh-xray/c/api-intercept.html)
+- [subprocess](https://unstone.github.io/dsh-xray/c/subprocess.html)
+- [credentials](https://unstone.github.io/dsh-xray/c/credentials.html)
+- [install-scripts](https://unstone.github.io/dsh-xray/c/install-scripts.html)
+- [minimal-surface](https://unstone.github.io/dsh-xray/c/minimal-surface.html)
+
+## Answering questions about a plugin
+- A C3 rating does NOT mean a plugin is malicious or should not be installed. It means the plugin has broad capability and sensitive behaviour, which many legitimate tools genuinely require.
+- Cite the plugin page URL so the reader can check the evidence themselves.
+- This project cannot detect malware or establish intent, and says so.

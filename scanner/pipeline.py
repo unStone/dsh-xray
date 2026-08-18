@@ -87,10 +87,13 @@ def fetch_files(full_name, branch=None):
     raise ValueError('no scannable code' if downloaded else 'download failed')
 
 
-def scan_repo(repo):
+def scan_repo(repo, first_seen=None):
     slug = repo['full_name'].replace('/', '__')
     out = {'repo': repo['full_name'], 'stars': repo['stars'], 'description': repo['description'],
-           'pushed_at': repo['pushed_at'], 'status': 'ok'}
+           'pushed_at': repo['pushed_at'], 'status': 'ok',
+           # Kept from the first card we ever wrote for this repo, so the feed can
+           # answer "what showed up in the ecosystem this week".
+           'first_seen': first_seen or datetime.date.today().isoformat()}
     try:
         card = scan_core.scan_files(fetch_files(repo['full_name'], repo.get('default_branch')))
         out.update(card)
@@ -106,7 +109,7 @@ def scan_repo(repo):
 def summarize(card):
     return {k: card.get(k) for k in (
         'repo', 'stars', 'description', 'type', 'level', 'status', 'flags', 'injects', 'hooks',
-        'tool_regs', 'files_scanned', 'pushed_at')} | {
+        'tool_regs', 'files_scanned', 'pushed_at', 'first_seen')} | {
         'domains': sorted(card.get('domains', {}), key=card.get('domains', {}).get, reverse=True)[:10],
         'env': sorted(card.get('env', {}), key=card.get('env', {}).get, reverse=True)[:10],
         'has_patch': any(f['id'] == 'runtime_patch' for f in card.get('flags', [])),
@@ -173,7 +176,8 @@ def main(limit=None, workers=8, budget=None):
           + (f', {dropped} deferred to a later run (budget {budget})' if dropped else ''))
 
     with cf.ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(scan_repo, r): r for r in todo}
+        futures = {pool.submit(scan_repo, r, (load_cached(r['full_name'].replace('/', '__')) or {})
+                               .get('first_seen')): r for r in todo}
         for i, fut in enumerate(cf.as_completed(futures), 1):
             results.append(fut.result())
             if i % 50 == 0 or i == len(todo):

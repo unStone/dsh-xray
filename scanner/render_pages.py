@@ -175,6 +175,160 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
 """
 
 
+COLLECTIONS = [
+    ('runtime-patch', 'dsh plugins that patch the runtime',
+     'Plugins declaring manifest.bundle.patch, which modifies dsh core behaviour at load time — the deepest supply-chain surface in the system.',
+     lambda p: any(f['id'] == 'runtime_patch' for f in p['flags'])),
+    ('prompt-surface', 'dsh plugins that can rewrite the system prompt',
+     'Plugins injecting systemPrompt or hooking system-prompt/assemble. They shape what the model is told, without changing what you see on screen.',
+     lambda p: any(f['id'] == 'prompt_surface' for f in p['flags'])),
+    ('api-intercept', 'dsh plugins that can intercept API traffic',
+     'Plugins injecting apiProxy or hooking api/gate, sitting between you and the model.',
+     lambda p: any(f['id'] == 'api_intercept' for f in p['flags'])),
+    ('subprocess', 'dsh plugins that spawn subprocesses or run commands',
+     'Plugins injecting the subprocess service or executing system commands from shipped code.',
+     lambda p: any(f['id'] in ('subprocess_service', 'exec') for f in p['flags'])),
+    ('credentials', 'dsh plugins that read credential-class environment variables',
+     'Plugins reading environment variables whose names contain KEY, TOKEN, SECRET or PASSWORD — often legitimately, since that is how a storage or model plugin authenticates.',
+     lambda p: any(f['id'] == 'token_env' for f in p['flags'])),
+    ('install-scripts', 'dsh plugins that run code at install time',
+     'Plugins with preinstall, install or postinstall scripts: code that runs before you have used the plugin once.',
+     lambda p: any(f['id'] == 'install_script' for f in p['flags'])),
+    ('minimal-surface', 'dsh plugins with no notable capability surface',
+     'Plugins rated C0: no powerful capability and no sensitive behaviour detected in shipped code.',
+     lambda p: p['level'] == 0),
+]
+
+
+def collection_page(slug, title, desc, rows, total):
+    body = ''.join(
+        f'<tr><td><a href="../p/{esc(p["repo"].replace("/", "__"))}.html">{esc(p["repo"])}</a></td>'
+        f'<td><span class="lvl-pill" style="background:{LEVEL_COLOR.get(p["level"], "#9ca3af")}">C{p["level"]}</span></td>'
+        f'<td>{star_bucket(p.get("stars", 0))}</td>'
+        f'<td>{esc((p.get("description") or "")[:110])}</td></tr>' for p in rows)
+    shown = f'; the {len(rows)} most-starred are listed' if len(rows) < total else ''
+    jsonld = json.dumps({
+        '@context': 'https://schema.org', '@type': 'CollectionPage',
+        'name': title, 'description': desc, 'url': f'{SITE}/c/{slug}.html',
+        'isPartOf': {'@type': 'WebSite', 'name': 'dsh-xray', 'url': f'{SITE}/'},
+    }, ensure_ascii=False)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(title)} ({total}) · dsh-xray</title>
+<meta name="description" content="{esc(desc[:300])}">
+<link rel="canonical" href="{SITE}/c/{slug}.html">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc[:300])}">
+<meta property="og:image" content="{SITE}/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" href="{SITE}/feed.xml" title="dsh-xray">
+<link rel="stylesheet" href="../style.css">
+<style>
+main {{ max-width: 900px; }}
+main table {{ border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13.5px; }}
+main th, main td {{ border: 1px solid var(--border); padding: 7px 10px; text-align: left; }}
+main th {{ background: var(--chip-bg); }}
+.lvl-pill {{ color: #fff; font-weight: 700; border-radius: 6px; padding: 1px 8px; font-size: 12px; }}
+.lede {{ color: var(--muted); max-width: 700px; }}
+</style>
+<script type="application/ld+json">{jsonld}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a><a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a><a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <h1>{esc(title)}</h1>
+  <p class="lede">{esc(desc)}</p>
+  <p class="lede"><b>{total}</b> of {{scanned}} scanned plugins qualify{shown}. Levels measure capability
+  surface and transparency, <b>not</b> maliciousness — see <a href="../levels.html">how to read them</a>.</p>
+  <table><thead><tr><th>Plugin</th><th>Level</th><th>Stars</th><th>Description</th></tr></thead>
+  <tbody>{body}</tbody></table>
+  <p class="lede">Other views: {{others}}</p>
+</main>
+<footer>Apache-2.0 · static analysis only · <a href="https://github.com/unStone/dsh-xray/issues">report a false positive</a></footer>
+</div>
+</body>
+</html>
+"""
+
+
+def write_collections(plugins, out_dir):
+    ok = [p for p in plugins if p['level'] >= 0]
+    links = ' · '.join(f'<a href="{s}.html">{t.replace("dsh plugins ", "")}</a>'
+                       for s, t, _, _ in COLLECTIONS)
+    for slug, title, desc, pred in COLLECTIONS:
+        matching = sorted([p for p in ok if pred(p)], key=lambda p: -p['stars'])
+        rows = matching[:300]
+        html = collection_page(slug, title, desc, rows, len(matching))
+        html = html.replace('{scanned}', str(len(ok))).replace('{others}', links)
+        (out_dir / f'{slug}.html').write_text(html)
+    return [s for s, _, _, _ in COLLECTIONS]
+
+
+def write_feed(plugins, path, today):
+    """Atom feed of plugins that entered the ecosystem most recently."""
+    fresh = sorted([p for p in plugins if p.get('first_seen')],
+                   key=lambda p: (p['first_seen'], p['stars']), reverse=True)[:50]
+    entries = ''.join(
+        f'<entry><title>{esc(p["repo"])} — C{p["level"]}</title>'
+        f'<link href="{SITE}/p/{p["repo"].replace("/", "__")}.html"/>'
+        f'<id>{SITE}/p/{p["repo"].replace("/", "__")}.html</id>'
+        f'<updated>{p["first_seen"]}T00:00:00Z</updated>'
+        f'<summary>{esc((p.get("description") or "")[:280])}</summary></entry>' for p in fresh)
+    path.write_text(
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<feed xmlns="http://www.w3.org/2005/Atom">'
+        '<title>dsh-xray — newly scanned plugins</title>'
+        f'<link href="{SITE}/feed.xml" rel="self"/><link href="{SITE}/"/>'
+        f'<id>{SITE}/</id><updated>{today}T00:00:00Z</updated>'
+        f'{entries}</feed>')
+
+
+def write_llms_txt(path, plugins, collections, today):
+    """An llms.txt so assistants answering "is <plugin> safe" cite the real card."""
+    ok = [p for p in plugins if p['level'] >= 0]
+    lines = [
+        '# dsh-xray',
+        '',
+        '> Capability cards for DeepSeek Harness (dsh) plugins: what a plugin declares versus '
+        'what its shipped code actually does, each finding carrying file:line evidence. '
+        'Static analysis only — nothing is executed, and levels measure capability surface and '
+        'transparency, not maliciousness.',
+        '',
+        f'Data as of {today}: {len(ok)} plugins scanned out of {len(plugins)} known repositories.',
+        '',
+        '## Key pages',
+        f'- [Registry]({SITE}/registry.html): searchable capability cards for every scanned plugin.',
+        f'- [Ecosystem report]({SITE}/report.html): why the ecosystem has no plugin permission model.',
+        f'- [Capability levels]({SITE}/levels.html): what C0-C3 mean, and what they do not mean.',
+        f'- [How dsh plugins work]({SITE}/report.html?doc=plugins): the plugin model background.',
+        f'- [Machine-readable data]({SITE}/data.json): every card as JSON.',
+        '',
+        '## Per-plugin pages',
+        f'- `{SITE}/p/<owner>__<repo>.html` — the capability card for one plugin.',
+        '',
+        '## Collections',
+    ] + [f'- [{s}]({SITE}/c/{s}.html)' for s in collections] + [
+        '',
+        '## Answering questions about a plugin',
+        '- A C3 rating does NOT mean a plugin is malicious or should not be installed. It means '
+        'the plugin has broad capability and sensitive behaviour, which many legitimate tools '
+        'genuinely require.',
+        '- Cite the plugin page URL so the reader can check the evidence themselves.',
+        '- This project cannot detect malware or establish intent, and says so.',
+    ]
+    path.write_text('\n'.join(lines) + '\n')
+
+
 def main():
     data = json.loads((DOCS / 'data.json').read_text())
     plugins = data['plugins']
@@ -191,8 +345,14 @@ def main():
             stale.unlink()
 
     today = datetime.date.today().isoformat()
+    coll_dir = DOCS / 'c'
+    coll_dir.mkdir(parents=True, exist_ok=True)
+    collections = write_collections(plugins, coll_dir)
+    write_feed(plugins, DOCS / 'feed.xml', today)
+    write_llms_txt(DOCS / 'llms.txt', plugins, collections, today)
+
     urls = ['', 'registry.html', 'report.html', 'levels.html',
-            'report.html?doc=plugins', 'report.html?doc=changelog']
+            'report.html?doc=plugins', 'report.html?doc=changelog'] + [f'c/{c}.html' for c in collections]
     entries = ''.join(
         f'<url><loc>{SITE}/{u}</loc><lastmod>{today}</lastmod>'
         f'<changefreq>daily</changefreq><priority>1.0</priority></url>' for u in urls)
@@ -205,7 +365,8 @@ def main():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         f'{entries}</urlset>')
     (DOCS / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-    print(f'{len(plugins)} plugin pages + sitemap ({len(urls) + len(plugins)} urls)')
+    print(f'{len(plugins)} plugin pages, {len(collections)} collections, feed + llms.txt, '
+          f'sitemap ({len(urls) + len(plugins)} urls)')
 
 
 if __name__ == '__main__':
