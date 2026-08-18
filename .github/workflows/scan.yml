@@ -8,6 +8,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,8 +18,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scanner/discover.py 3
-          cd scanner && python pipeline.py 200 8
+          python scanner/discover.py 5
+          cd scanner && python pipeline.py 500 8
       - name: commit results
         run: |
           git config user.name 'dsh-xray-bot'
