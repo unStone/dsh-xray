@@ -32,9 +32,9 @@ def levels_block(zh=False):
     labels = ({3: '强能力 + 敏感行为', 2: '强能力(其一)', 1: '常规', 0: '无显著能力面'} if zh else
               {3: 'Powerful + sensitive behavior', 2: 'Powerful (one of)', 1: 'Ordinary', 0: 'No notable surface'})
     rows = ''.join(f'| **C{l}** | {labels[l]} | {c[l]} | {pct(c[l])} |\n' for l in (3, 2, 1, 0))
-    tail = (f'\n**{pct(strong)} 的头部插件带强能力面(C2+),{pct(c[3])} 同时存在敏感行为(C3)。**\n'
+    tail = (f'\n**{pct(strong)} 的插件带强能力面(C2+),{pct(c[3])} 同时存在敏感行为(C3)。**\n'
             if zh else
-            f'\n**{pct(strong)} of top plugins carry a powerful capability surface (C2+); '
+            f'\n**{pct(strong)} of scanned plugins carry a powerful capability surface (C2+); '
             f'{pct(c[3])} combine it with sensitive behavior (C3).**\n')
     return head + rows + tail
 
