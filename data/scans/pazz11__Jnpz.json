@@ -1,0 +1,94 @@
+{
+ "repo": "pazz11/Jnpz",
+ "stars": 9,
+ "description": "改配置+重启才能加 MCP？DeepSeek Harness (DSH) 插件「技能配置」解决：设置页粘贴 JSON 即连 MCP 服务器、热加载免重启；上传 zip/.skill 自动识别 SKILL.md，创建/编辑/启停技能，即点即用",
+ "pushed_at": "2026-08-17T06:07:15Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "Jnpz",
+ "deps": [
+  "react",
+  "yaml",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-mcp-client",
+  "@deepseek-ai/dsh-skill"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:548"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 7,
+   "evidence": [
+    "lib/index.js:87",
+    "lib/index.js:593",
+    "lib/index.js:602",
+    "lib/index.js:656",
+    "lib/index.js:730"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:548"
+  }
+ ],
+ "level": 2
+}

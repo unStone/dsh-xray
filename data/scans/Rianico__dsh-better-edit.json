@@ -1,0 +1,100 @@
+{
+ "repo": "Rianico/dsh-better-edit",
+ "stars": 9,
+ "description": "Hash-anchored read/edit/batch_edit/undo_last_edit tools for DeepSeek Harness (dsh) — dsh port of pi-hashline-edit-lsz",
+ "pushed_at": "2026-08-18T07:50:53Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-better-edit",
+ "deps": [
+  "@deepseek-ai/dsh-sandbox",
+  "diff",
+  "file-type",
+  "xxhash-wasm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {
+  "npm_config_dry_run": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/assert-tagged.mjs:11",
+    "scripts/assert-tagged.mjs:11",
+    "scripts/assert-tagged.mjs:34",
+    "scripts/release.mjs:20",
+    "scripts/release.mjs:20"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 53,
+   "evidence": [
+    "scripts/release.mjs:21",
+    "scripts/release.mjs:97",
+    "scripts/release.mjs:101",
+    "scripts/release.mjs:113",
+    "src/fs-write.ts:71"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 97,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/assert-tagged.mjs:11, scripts/assert-tagged.mjs:11"
+  }
+ ],
+ "level": 3
+}

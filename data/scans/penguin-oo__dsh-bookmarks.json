@@ -1,0 +1,114 @@
+{
+ "repo": "penguin-oo/dsh-bookmarks",
+ "stars": 9,
+ "description": "Bookmark assistant replies in DeepSeek Harness: per-message bookmarks with notes/tags, a cross-session center, and one-click Markdown export.",
+ "pushed_at": "2026-08-16T14:58:18Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-bookmarks",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "remote",
+  "sessionPersistence",
+  "sessions",
+  "slots",
+  "storageDomain"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_E2E_BASE": 1,
+  "DSH_E2E_WORKSPACE": 1,
+  "DSH_E2E_SESSION_TITLE": 1,
+  "DSH_E2E_BROWSER": 1,
+  "TEMP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e-screenshot.mjs:5",
+    "scripts/e2e-screenshot.mjs:28"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:1291",
+    "lib/client.js:2649",
+    "lib/client.js:2706"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:6",
+    "scripts/build-client.mjs:41",
+    "scripts/e2e-screenshot.mjs:6",
+    "scripts/e2e-screenshot.mjs:25"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/e2e-screenshot.mjs:5, scripts/e2e-screenshot.mjs:28"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. lib/client.js:1291, lib/client.js:2649"
+  }
+ ],
+ "level": 3
+}

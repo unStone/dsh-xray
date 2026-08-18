@@ -1,0 +1,78 @@
+{
+ "repo": "AlliotTech/deepseek-harness-docker",
+ "stars": 9,
+ "description": "deepseek-harness docker部署",
+ "pushed_at": "2026-08-18T03:06:55Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "deepseek-harness-docker",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "pnpm"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TRUSTED_HOSTS": 1,
+  "DSH_ALLOW_REMOTE_CONFIGURATION": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "docker-entrypoint.mjs:3",
+    "docker-entrypoint.mjs:34",
+    "docker-entrypoint.mjs:114"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "docker-entrypoint.mjs:129"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "patches/enable-remote-configuration.mjs:1",
+    "patches/enable-remote-configuration.mjs:85"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. docker-entrypoint.mjs:3, docker-entrypoint.mjs:34"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. docker-entrypoint.mjs:129"
+  }
+ ],
+ "level": 2
+}

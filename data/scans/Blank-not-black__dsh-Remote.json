@@ -1,0 +1,101 @@
+{
+ "repo": "Blank-not-black/dsh-Remote",
+ "stars": 8,
+ "description": "DSH Remote · 口袋里的 DSH 控制台 会话 · 审批 · 提问 · 文件传输，局域网 / Tailscale 直连 多服务器自动选优，聊天记录离线可看 带 Token 鉴权，数据只在你的设备之间流动 Sessions · approvals · questions · file transfer over LAN / Tailscale. Automatic fastest-serv",
+ "pushed_at": "2026-08-18T07:02:34Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "dsh-remote",
+ "deps": [
+  "@capacitor/android",
+  "@capacitor/app",
+  "@capacitor/camera",
+  "@capacitor/core",
+  "@capacitor/local-notifications"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 1
+ },
+ "env": {
+  "PORT": 1,
+  "HOST": 1,
+  "DSH_UPSTREAM": 1,
+  "TOKEN_FILE": 1,
+  "DSH_REMOTE_NOTES": 1,
+  "UPDATE_CHECK_URL": 1,
+  "UPDATE_INTERVAL_MS": 1,
+  "DSH_REMOTE_FS_ROOT": 1,
+  "DSH_REMOTE_FS_MAX_UPLOAD": 1,
+  "TOKEN": 3,
+  "UPDATE_PROXY": 1,
+  "HTTPS_PROXY": 1,
+  "HTTP_PROXY": 1,
+  "DSH_REMOTE_FEEDBACK_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "gateway-stats.cjs:23",
+    "gateway-stats.cjs:279"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "gateway.js:1544"
+   ]
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "gateway-stats.cjs:191",
+    "gateway-stats.cjs:208",
+    "gateway.js:150",
+    "gateway.js:164",
+    "gateway.js:194"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "other",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. gateway-stats.cjs:23, gateway-stats.cjs:279"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. gateway.js:1544"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TOKEN, TOKEN_FILE"
+  }
+ ],
+ "level": 2
+}

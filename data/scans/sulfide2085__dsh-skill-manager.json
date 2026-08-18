@@ -1,0 +1,96 @@
+{
+ "repo": "sulfide2085/dsh-skill-manager",
+ "stars": 9,
+ "description": "在 DeepSeek Harness 设置页统一管理 DSH / Codex / Claude 的 AI 技能：热开关启停、GitHub 技能市场一键发现安装、本地 ZIP 导入（dsh-plugin skill hub）",
+ "pushed_at": "2026-08-14T19:13:39Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-api-gateway"
+   ]
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-skill-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "locale",
+  "remote",
+  "sessions",
+  "skills",
+  "slots",
+  "typert"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_AGENTS_HOME": 1,
+  "CODEX_HOME": 1,
+  "CLAUDE_CONFIG_DIR": 1,
+  "DSH_SKILL_GITHUB_BASE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:659"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 12,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 26,
+   "evidence": [
+    "lib/index.js:91",
+    "lib/skill-repo.js:219",
+    "lib/skill-zip.js:216",
+    "lib/skill-zip.js:343"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:659"
+  }
+ ],
+ "level": 3
+}

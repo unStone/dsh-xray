@@ -1,0 +1,98 @@
+{
+ "repo": "dongsheng123132/task-passport",
+ "stars": 9,
+ "description": "Open task handoff protocol for DeepSeek Harness, WorkBuddy, Claude Code and Codex — verified state, not chat logs",
+ "pushed_at": "2026-08-15T20:11:26Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "task-passport",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {
+  "taskpack.org": 1
+ },
+ "env": {
+  "TASK_PASSPORT_STORE": 2,
+  "TASK_PASSPORT_HARNESS": 3,
+  "TASK_PASSPORT_UKING": 1,
+  "UKING_EXECUTABLE": 1,
+  "LOCALAPPDATA": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "core.js:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 7,
+   "evidence": [
+    "cli.js:218",
+    "cli.js:283",
+    "core.js:72",
+    "mcp.js:225",
+    "mcp.js:270"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. core.js:1"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TASK_PASSPORT_HARNESS, TASK_PASSPORT_STORE, TASK_PASSPORT_UKING"
+  }
+ ],
+ "level": 3
+}

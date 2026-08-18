@@ -1,0 +1,115 @@
+{
+ "repo": "2672243194/dsh-read-url",
+ "stars": 9,
+ "description": "DeepSeek Harness URL reader: fetch any page and return clean main-content text/Markdown. Auto charset (GBK/GB2312/UTF-8/Big5), token-efficient (6000-char cap, cache, offset), zero deps, no API key. 网页",
+ "pushed_at": "2026-08-18T06:44:09Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-read-url",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {
+  "www.bilibili.com": 1,
+  "www.xiaoheihe.cn": 1,
+  "juejin.cn": 1,
+  "www.zhihu.com": 1,
+  "weibo.com": 1,
+  "www.csdn.net": 1,
+  "www.cnblogs.com": 1,
+  "news.sina.com.cn": 2,
+  "news.qq.com": 1,
+  "news.163.com": 1,
+  "www.douban.com": 1,
+  "www.baidu.com": 1,
+  "www.ruanyifeng.com": 3,
+  "zh.wikipedia.org": 2,
+  "www.sohu.com": 1,
+  "www.ifeng.com": 1,
+  "sspai.com": 1,
+  "www.v2ex.com": 1,
+  "www.bbc.com": 1,
+  "en.wikipedia.org": 1,
+  "www.africau.edu": 1,
+  "httpbin.org": 3,
+  "nonexistent-domain-xyz123.com": 1,
+  "spa.example.com": 2,
+  "dup.example.com": 1,
+  "external.com": 1
+ },
+ "env": {
+  "HTTPS_PROXY": 1,
+  "https_proxy": 1,
+  "HTTP_PROXY": 1,
+  "http_proxy": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "proxy-fallback.js:16",
+    "proxy-fallback.js:16",
+    "proxy-fallback.js:28"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "test-spa.mjs:44",
+    "test.mjs:316",
+    "test.mjs:325",
+    "test.mjs:393",
+    "test.mjs:402"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. proxy-fallback.js:16, proxy-fallback.js:16"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. test-spa.mjs:44, test.mjs:316"
+  }
+ ],
+ "level": 3
+}

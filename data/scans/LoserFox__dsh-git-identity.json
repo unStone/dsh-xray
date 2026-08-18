@@ -1,0 +1,82 @@
+{
+ "repo": "LoserFox/dsh-git-identity",
+ "stars": 7,
+ "description": "DSH 插件：git 提交固定使用环境自身作者身份（优先 gh CLI 登录账号，GitHub noreply 邮箱），GIT_AUTHOR_*/GIT_COMMITTER_* 环境变量注入压过一切 git config",
+ "pushed_at": "2026-08-13T13:11:37Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@loserfox/git-identity",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "GIT_AUTHOR_NAME": 2,
+  "GIT_AUTHOR_EMAIL": 2,
+  "GIT_COMMITTER_NAME": 1,
+  "GIT_COMMITTER_EMAIL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "index.mjs:28",
+    "index.mjs:28",
+    "index.mjs:39",
+    "index.mjs:52",
+    "index.mjs:65"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. index.mjs:28, index.mjs:28"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GIT_AUTHOR_EMAIL, GIT_AUTHOR_NAME"
+  }
+ ],
+ "level": 3
+}

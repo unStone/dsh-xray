@@ -1,0 +1,118 @@
+{
+ "repo": "lanlandeli/dsh-usage-stats",
+ "stars": 10,
+ "description": "DeepSeek Harness 使用统计插件｜Token 总量与构成、7/30 天趋势、年度活跃热力图、模型占比、工作区/任务筛选、CSV/JSON 导出",
+ "pushed_at": "2026-08-17T15:21:52Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-usage-stats",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-query",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessionQuery",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "npm_execpath": 3,
+  "CHROME_PATH": 1,
+  "DSH_BIN": 1,
+  "APP_URL": 1,
+  "CDP_URL": 1,
+  "SCREENSHOT_DIR": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "scripts/capture-assets.mjs:1",
+    "scripts/capture-assets.mjs:22",
+    "scripts/capture-assets.mjs:98",
+    "scripts/capture-assets.mjs:106",
+    "scripts/check-package.mjs:1"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-web-ui.mjs:102"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/capture-assets.mjs:91",
+    "scripts/smoke-clean-profile.mjs:54",
+    "scripts/verify-web-ui.mjs:103",
+    "src/index.ts:201"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 14,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×9 src, e.g. scripts/capture-assets.mjs:1, scripts/capture-assets.mjs:22"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/verify-web-ui.mjs:102"
+  }
+ ],
+ "level": 3
+}

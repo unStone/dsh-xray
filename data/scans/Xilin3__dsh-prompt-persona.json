@@ -1,0 +1,90 @@
+{
+ "repo": "Xilin3/dsh-prompt-persona",
+ "stars": 8,
+ "description": "DSH plugin: edit the system prompt (deployment persona) from the Settings page, with live preview.",
+ "pushed_at": "2026-08-13T15:42:36Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@xilin3/dsh-prompt-persona",
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "cordis",
+  "react",
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "settings",
+  "slots",
+  "systemPrompt"
+ ],
+ "hooks": [
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

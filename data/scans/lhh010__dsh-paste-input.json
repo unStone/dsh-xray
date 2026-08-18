@@ -1,0 +1,73 @@
+{
+ "repo": "lhh010/dsh-paste-input",
+ "stars": 8,
+ "description": "DSH WebUI 文件输入增强：Ctrl+V 粘贴（带首次告知弹窗）+ 拖拽 + 选择文件，发送时复制进会话工作区临时目录",
+ "pushed_at": "2026-08-13T13:53:44Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-community/dsh-paste-input",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "conversation",
+  "inputTriggers",
+  "loader",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:421"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

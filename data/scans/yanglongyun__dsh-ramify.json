@@ -1,0 +1,148 @@
+{
+ "repo": "yanglongyun/dsh-ramify",
+ "stars": 9,
+ "description": "Ramify 是 DeepSeek Harness 的创意分支画布插件，用树状工作区生成、对比和迭代多个可交互方案。",
+ "pushed_at": "2026-08-17T02:37:28Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@ramify/dsh-ramify",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react",
+  "marked",
+  "react",
+  "react-dom",
+  "react-router-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "locale",
+  "slots",
+  "systemPrompt",
+  "theme",
+  "tools"
+ ],
+ "hooks": [
+  "locale/change",
+  "theme/change"
+ ],
+ "tool_regs": 36,
+ "domains": {
+  "reactjs.org": 1,
+  "reactrouter.com": 2
+ },
+ "env": {
+  "RAMIFY_APP_DIR": 2,
+  "RAMIFY_DATA_DIR": 4,
+  "APPDATA": 2,
+  "XDG_DATA_HOME": 2,
+  "RAMIFY_VERSION": 2,
+  "RAMIFY_INSTANCE_ID": 2,
+  "PORT": 2,
+  "HOST": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:35",
+    "lib/index.js:117",
+    "src/runtime.ts:2",
+    "src/runtime.ts:113"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "app/dist/server.mjs:2424",
+    "app/src/server/index.ts:10"
+   ]
+  },
+  "fs_write": {
+   "src": 21,
+   "dev": 9,
+   "evidence": [
+    "scripts/build-plugin.mjs:30",
+    "app/dist/server.mjs:2144",
+    "app/dist/server.mjs:2144",
+    "app/dist/server.mjs:2144",
+    "app/dist/server.mjs:2217"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "app/dist/public/assets/index-C42me2IJ.js:51"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 106,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:35, lib/index.js:117"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. app/dist/server.mjs:2424, app/src/server/index.ts:10"
+  }
+ ],
+ "level": 3
+}

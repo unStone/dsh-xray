@@ -2,7 +2,7 @@
  "repo": "Hilbert-beinghappy/seektty",
  "stars": 20,
  "description": "Pluggable DeepSeek-colored TUI for DeepSeek Harness",
- "pushed_at": "2026-08-18T06:57:03Z",
+ "pushed_at": "2026-08-18T08:05:32Z",
  "status": "ok",
  "manifest": {
   "bundle": {
@@ -92,6 +92,7 @@
   "connection/reset",
   "internal/dispatch",
   "internal/service",
+  "settings/document-updated",
   "slash/input-begin-command",
   "slash/input-consume-token",
   "slash/input-insert-reference",
@@ -103,20 +104,19 @@
   "docs.deepseek.com": 1
  },
  "env": {
-  "DSH_APP_HANDOFF_FILE": 2,
   "DSH_BIN": 1,
   "SEEKTTY_SPEC": 1
  },
  "behaviors": {
   "exec": {
-   "src": 13,
-   "dev": 0,
+   "src": 18,
+   "dev": 7,
    "evidence": [
-    "lib/bin.js:5",
-    "lib/bin.js:5",
-    "lib/bin.js:46",
-    "lib/startup-fAI-vm30.js:7",
-    "lib/startup-fAI-vm30.js:1854"
+    "lib/bin.js:62",
+    "lib/bin.js:75",
+    "lib/startup-C08eAhrI.js:5",
+    "lib/startup-C08eAhrI.js:859",
+    "scripts/stock-dsh-cycle.mjs:10"
    ]
   },
   "eval": {
@@ -137,14 +137,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 13,
-   "dev": 11,
+   "src": 21,
+   "dev": 24,
    "evidence": [
-    "lib/startup-fAI-vm30.js:1",
-    "lib/startup-fAI-vm30.js:1",
-    "lib/startup-fAI-vm30.js:1298",
-    "lib/startup-fAI-vm30.js:1327",
-    "lib/startup-fAI-vm30.js:1873"
+    "lib/startup-C08eAhrI.js:2",
+    "lib/startup-C08eAhrI.js:2",
+    "lib/startup-C08eAhrI.js:163",
+    "lib/startup-C08eAhrI.js:196",
+    "lib/startup-C08eAhrI.js:230"
    ]
   },
   "dyn_import": {
@@ -154,7 +154,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 459,
+ "files_scanned": 545,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -172,7 +172,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×13 src, e.g. lib/bin.js:5, lib/bin.js:5"
+   "evidence": "×18 src, e.g. lib/bin.js:62, lib/bin.js:75"
   },
   {
    "id": "base64_decode",

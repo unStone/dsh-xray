@@ -1,0 +1,107 @@
+{
+ "repo": "PerryLink/dsh-checkpoint-rewind",
+ "stars": 8,
+ "description": "Claude Code /rewind for DeepSeek Harness — git-first workspace snapshots before every mutation, turn-boundary session forks, one-shot /rewind restore. A dsh-plugin capability seam.",
+ "pushed_at": "2026-08-18T00:27:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-checkpoint-rewind",
+ "deps": [
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "locale",
+  "remote",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [
+  "fs/edit-intent",
+  "fs/write-intent",
+  "session/event",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 6,
+   "evidence": [
+    "lib/providers/git.mjs:15",
+    "lib/providers/git.mjs:76"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 64,
+   "evidence": [
+    "lib/providers/copy.mjs:189"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 36,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/providers/git.mjs:15, lib/providers/git.mjs:76"
+  }
+ ],
+ "level": 3
+}

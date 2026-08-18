@@ -1,0 +1,105 @@
+{
+ "repo": "Hu9956/dsh-codex-provider",
+ "stars": 8,
+ "description": "OpenAI Codex provider for DeepSeek Harness with device-code OAuth, Codex CLI import, token refresh, and a web settings panel.",
+ "pushed_at": "2026-08-13T20:38:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-codex-provider",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-settings",
+  "react",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-web-react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "remote",
+  "settings",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "auth.openai.com": 1,
+  "api.openai.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:124"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:77"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/index.js:124"
+  }
+ ],
+ "level": 3
+}

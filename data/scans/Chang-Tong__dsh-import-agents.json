@@ -1,0 +1,94 @@
+{
+ "repo": "Chang-Tong/dsh-import-agents",
+ "stars": 10,
+ "description": "Import pi / opencode / codex / claude-code sessions, chat history, and agents into DeepSeek Harness — one-click Sync button, slash commands, session-start migration prompt",
+ "pushed_at": "2026-08-17T07:18:05Z",
+ "status": "ok",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-import-agents",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-user-questions"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "remote",
+  "sessionPersistence",
+  "slots",
+  "userQuestions"
+ ],
+ "hooks": [
+  "agent/session-start"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_AGENTS_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 14,
+   "dev": 0,
+   "evidence": [
+    "export.mjs:13",
+    "export.mjs:138",
+    "lib/agents.mjs:16",
+    "lib/agents.mjs:156",
+    "lib/dsh-writer.mjs:14"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

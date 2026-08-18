@@ -1,0 +1,98 @@
+{
+ "repo": "Starfie1d1272/dsh-builtin-toggles",
+ "stars": 7,
+ "description": "Evidence-backed built-in capability inspector with fail-closed controls for DeepSeek Harness Web.",
+ "pushed_at": "2026-08-17T08:47:05Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-builtin-toggles",
+ "deps": [
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/cordis",
+  "react",
+  "@deepseek-ai/dsh"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "loader",
+  "locale",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/check-package.mjs:1",
+    "scripts/check-package.mjs:1",
+    "scripts/check-package.mjs:10",
+    "scripts/check-package.mjs:13",
+    "scripts/check-package.mjs:20"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 6,
+   "evidence": [
+    "scripts/check-package.mjs:2",
+    "scripts/check-package.mjs:39",
+    "scripts/rc6-scoped-smoke.ts:28",
+    "scripts/rc6-scoped-smoke.ts:103"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/check-package.mjs:1, scripts/check-package.mjs:1"
+  }
+ ],
+ "level": 3
+}

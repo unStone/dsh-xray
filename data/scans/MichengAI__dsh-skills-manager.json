@@ -1,0 +1,94 @@
+{
+ "repo": "MichengAI/dsh-skills-manager",
+ "stars": 7,
+ "description": "DSH Skills Manager 基于 DeepSeek Harness 的Skills管理插件",
+ "pushed_at": "2026-08-17T11:56:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-workspace"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@michengai/dsh-skills-manager",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-client-ui-workspace",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "skills",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_AGENTS_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 20,
+   "evidence": [
+    "lib/core.js:228",
+    "lib/index.js:7",
+    "lib/index.js:26"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

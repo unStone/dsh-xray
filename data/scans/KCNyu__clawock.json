@@ -2,7 +2,7 @@
  "repo": "KCNyu/clawock",
  "stars": 10,
  "description": "AI argues. Code settles. The losses stay on the page. A real HK + US brokerage account run by agents that must debate every call, settled by code the model never touches. Install the same decision wor",
- "pushed_at": "2026-08-18T07:40:17Z",
+ "pushed_at": "2026-08-18T08:03:40Z",
  "status": "ok",
  "manifest": {
   "bundle": {
@@ -26,28 +26,17 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "njump.me": 1,
-  "kcnyu.github.io": 1,
-  "api.tavily.com": 2
+  "njump.me": 1
  },
  "env": {
   "NOSTR_TOOLS_PATH": 2,
   "NOSTR_RELAYS": 1,
-  "NOSTR_PRIVATE_KEY": 1,
-  "CHROME_EXE": 2,
-  "URL": 1,
-  "OUT_DIR": 1,
-  "FRAME_DIR": 1,
-  "TMP_DIR": 1,
-  "CAPTURE_GIF": 1,
-  "TAVILY_LEDGER_PATH": 1,
-  "TAVILY_API_KEY": 2,
-  "TAVILY_TEST_FETCH_MODE": 1
+  "NOSTR_PRIVATE_KEY": 1
  },
  "behaviors": {
   "exec": {
    "src": 0,
-   "dev": 7,
+   "dev": 1,
    "evidence": []
   },
   "eval": {
@@ -62,28 +51,22 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 2,
+   "dev": 0,
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
-   "dev": 38,
-   "evidence": [
-    "skills/tavily-search/lib/ledger.mjs:34",
-    "skills/tavily-search/lib/ledger.mjs:41",
-    "skills/tavily-search/lib/ledger.mjs:119",
-    "skills/tavily-search/lib/ledger.mjs:140",
-    "skills/tavily-search/lib/ledger.mjs:163"
-   ]
+   "src": 0,
+   "dev": 3,
+   "evidence": []
   },
   "dyn_import": {
    "src": 0,
-   "dev": 11,
+   "dev": 0,
    "evidence": []
   }
  },
  "has_apply": true,
- "files_scanned": 46,
+ "files_scanned": 28,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -93,7 +76,7 @@
   },
   {
    "id": "token_env",
-   "evidence": "NOSTR_PRIVATE_KEY, TAVILY_API_KEY"
+   "evidence": "NOSTR_PRIVATE_KEY"
   }
  ],
  "level": 3

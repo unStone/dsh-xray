@@ -1,0 +1,86 @@
+{
+ "repo": "SummerSec/SumSec-Skills",
+ "stars": 7,
+ "description": "SummerSec 个人自定义Skill仓库",
+ "pushed_at": "2026-08-15T06:31:02Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "sumsec-skills",
+ "deps": [],
+ "install_scripts": {
+  "postinstall": "python .claude/skills/sync-skills/scripts/sync-skills.py"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "SEMANTIC_LINTER_MODE": 1,
+  "SEMANTIC_LINTER_DEFAULT_MODE": 1,
+  "PLUGIN_ROOT": 3,
+  "CODEX_PLUGIN_ROOT": 3,
+  "CLAUDE_PLUGIN_ROOT": 2,
+  "PLUGIN_DATA": 3,
+  "CODEX_PLUGIN_DATA": 1,
+  "CLAUDE_PLUGIN_DATA": 2,
+  "SEMANTIC_LINTER_STATE_DIR": 2,
+  "USERPROFILE": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "semantic-linter/hooks/runtime.js:41",
+    "semantic-linter/hooks/runtime.js:46",
+    "semantic-linter/lib/state-manager.js:73",
+    "semantic-linter/scripts/build-lexicon.js:222",
+    "semantic-linter/scripts/build-rules.js:205"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 23,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh/cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: python .claude/skills/sync-skills/scripts/sync-skills.py"
+  }
+ ],
+ "level": 3
+}

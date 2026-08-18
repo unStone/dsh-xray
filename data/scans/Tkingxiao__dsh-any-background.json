@@ -1,0 +1,101 @@
+{
+ "repo": "Tkingxiao/dsh-any-background",
+ "stars": 9,
+ "description": "一个自定义主题插件，包括背景图（大小和位置），主界面和设置界面（透明度，色轮全色主题色）插件",
+ "pushed_at": "2026-08-17T21:32:57Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-any-background",
+ "deps": [
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-invariants",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "locale",
+  "slots",
+  "theme"
+ ],
+ "hooks": [
+  "dispose",
+  "theme/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:192",
+    "src/index.ts:236"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:163",
+    "lib/index.js:192",
+    "src/index.ts:204",
+    "src/index.ts:236"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:192, src/index.ts:236"
+  }
+ ],
+ "level": 3
+}

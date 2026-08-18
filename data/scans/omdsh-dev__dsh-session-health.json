@@ -1,0 +1,73 @@
+{
+ "repo": "omdsh-dev/dsh-session-health",
+ "stars": 8,
+ "description": "DSH 会话健康检查插件：多帧 zstd 会话文件的帧级扫描诊断（torn/损坏/空会话检测），零依赖只读，注册 session_health 工具",
+ "pushed_at": "2026-08-18T04:09:16Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-session-health",
+ "deps": [
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 9,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/deep.js:38",
+    "src/deep.ts:59"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

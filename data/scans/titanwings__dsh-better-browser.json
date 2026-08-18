@@ -1,0 +1,91 @@
+{
+ "repo": "titanwings/dsh-better-browser",
+ "stars": 9,
+ "description": "DSH 真实浏览器插件：通过 Kimi WebBridge 让 Agent 操作用户已登录的浏览器，并提供 13 个 webbridge_* 工具。 / Let DSH Agents use your signed-in browser through thirteen Kimi WebBridge tools.",
+ "pushed_at": "2026-08-13T16:18:43Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-better-browser",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 42,
+ "domains": {
+  "cdn.kimi.com": 6
+ },
+ "env": {
+  "DSH_CHECKOUT": 6,
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:16",
+    "scripts/build.mjs:16",
+    "scripts/build.mjs:35",
+    "scripts/build.mjs:111"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 18,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 6,
+   "evidence": [
+    "scripts/build.mjs:17",
+    "scripts/build.mjs:74",
+    "scripts/build.mjs:124",
+    "scripts/dev-env.mjs:31",
+    "scripts/dev-env.mjs:34"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/build.mjs:16, scripts/build.mjs:16"
+  }
+ ],
+ "level": 3
+}

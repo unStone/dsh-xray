@@ -1,0 +1,71 @@
+{
+ "repo": "fly233338/dsh-overleaf",
+ "stars": 7,
+ "description": "Connect Overleaf projects to DeepSeek Harness (DSH) through OverleafMCP and MCP tools.",
+ "pushed_at": "2026-08-14T12:00:11Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-overleaf",
+ "deps": [
+  "@mjyoo2/overleaf-mcp",
+  "@deepseek-ai/dsh-mcp-client"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "index.js:43",
+    "index.js:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

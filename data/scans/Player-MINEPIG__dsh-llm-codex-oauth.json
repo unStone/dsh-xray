@@ -1,0 +1,89 @@
+{
+ "repo": "Player-MINEPIG/dsh-llm-codex-oauth",
+ "stars": 8,
+ "description": "在 dsh（DeepSeek Harness）里使用你的 ChatGPT / Codex 订阅。插件通过 OpenAI Codex 的 OAuth 流程登录 ChatGPT 账号，把订阅额度暴露成 dsh 的 `codex-oauth` 模型提供方。",
+ "pushed_at": "2026-08-16T16:35:29Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-llm-codex-oauth",
+ "deps": [
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@earendil-works/pi-ai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "credentials",
+  "llm",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 3,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 15,
+   "dev": 5,
+   "evidence": [
+    "build.mjs:2",
+    "build.mjs:2",
+    "build.mjs:38",
+    "build.mjs:40",
+    "scripts/install.mjs:19"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

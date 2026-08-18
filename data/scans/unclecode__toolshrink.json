@@ -1,0 +1,73 @@
+{
+ "repo": "unclecode/toolshrink",
+ "stars": 9,
+ "description": "Cut large agent tool output by what it means, not by where it was cut. 9 content-aware reducers + DeepSeek Harness plugin.",
+ "pushed_at": "2026-08-17T12:41:08Z",
+ "status": "ok",
+ "manifest": null,
+ "pkg_name": "toolshrink",
+ "deps": [
+  "tsx"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [
+  "tools/post-execute"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 8,
+   "evidence": [
+    "src/spill.ts:9",
+    "src/spill.ts:9",
+    "src/spill.ts:46",
+    "src/spill.ts:72",
+    "adapters/harness/toolshrink.mjs:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/pipeline.ts:118"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 1
+}

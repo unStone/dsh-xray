@@ -1,0 +1,85 @@
+{
+ "repo": "OK-wx/dsh-ocgo-lite",
+ "stars": 7,
+ "description": "OpenCode Go 用量常驻条：套餐余量圆环 + token/花费实时统计（本次会话/全部范围 + 按模型联动，官方实时定价），一键复制 API Key。OpenCode Go usage bar for DeepSeek Harness.",
+ "pushed_at": "2026-08-17T15:44:06Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web"
+  },
+  "marketplace": {
+   "profiles": [
+    "web"
+   ],
+   "requiresBuildApproval": false,
+   "requiresRestart": true,
+   "manualSteps": false
+  }
+ },
+ "pkg_name": "dsh-ocgo-lite",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "opencode.ai": 4
+ },
+ "env": {
+  "USERPROFILE": 1,
+  "OPENCODE_DATA_DIR": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

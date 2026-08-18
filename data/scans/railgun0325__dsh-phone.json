@@ -1,0 +1,92 @@
+{
+ "repo": "railgun0325/dsh-phone",
+ "stars": 10,
+ "description": "让 DeepSeek Harness 的 agent 跑在手机里，通过 Magisk root 原生操作安卓系统（截图/点击/滑动/开应用）+ 移动端布局 + WebView APK",
+ "pushed_at": "2026-08-15T18:45:35Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-android-control",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 29,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "plugin/index.js:8",
+    "plugin/index.js:8",
+    "plugin/index.js:34",
+    "scripts/patch-dsh.mjs:29",
+    "scripts/patch-dsh.mjs:30"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/dns-fwd.mjs:46"
+   ]
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/patch-dsh-link.mjs:6",
+    "scripts/patch-dsh-link.mjs:47",
+    "scripts/patch-dsh.mjs:7",
+    "scripts/patch-dsh.mjs:36"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. plugin/index.js:8, plugin/index.js:8"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. scripts/dns-fwd.mjs:46"
+  }
+ ],
+ "level": 3
+}

@@ -19,10 +19,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scanner/discover.py all
-          # all repos, 12 workers, at most 1500 fetched per run: unchanged repos
+          # all repos, 24 workers, at most 3500 fetched per run: unchanged repos
           # reuse cached cards, so daily runs converge to full coverage and then
           # stay cheap. Downloads go to codeload, not the API quota.
-          cd scanner && python pipeline.py all 12 1500
+          cd scanner && python pipeline.py all 24 3500
           python render_report.py
       - name: commit results
         run: |

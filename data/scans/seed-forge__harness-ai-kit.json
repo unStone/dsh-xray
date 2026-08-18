@@ -1,0 +1,89 @@
+{
+ "repo": "seed-forge/harness-ai-kit",
+ "stars": 10,
+ "description": "Package manager for AI agent assets — 42 skills, 5 CLIs, 1 plugin. Skills for AI/LLM agent engineering, eval-driven dev, spec-driven dev, database (MySQL/PG/Redis/Kafka/Mongo/Oracle/NL2SQL), K8s/Docke",
+ "pushed_at": "2026-08-18T04:32:00Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "harness-ai-kit-plugin",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "E2E_BASE_URL": 1,
+  "E2E_USER": 1,
+  "E2E_PASS": 1,
+  "E2E_DBSERVER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "plugins/harness-ai-kit-plugin/src/index.js:12",
+    "plugins/harness-ai-kit-plugin/src/index.js:12",
+    "plugins/harness-ai-kit-plugin/src/index.js:48"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "skills/devlab-web-deep-acceptance/scripts/run.js:94",
+    "skills/devlab-web-deep-acceptance/scripts/lib/precheck.js:384",
+    "skills/devlab-web-deep-acceptance/scripts/lib/report.js:27",
+    "skills/devlab-web-deep-acceptance/scripts/lib/report.js:50",
+    "skills/devlab-web-deep-acceptance/scripts/tools/dashboard.js:139"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. plugins/harness-ai-kit-plugin/src/index.js:12, plugins/harness-ai-kit-plugin/src/index.js:12"
+  },
+  {
+   "id": "token_env",
+   "evidence": "E2E_PASS"
+  }
+ ],
+ "level": 3
+}

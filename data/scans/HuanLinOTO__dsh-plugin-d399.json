@@ -1,0 +1,86 @@
+{
+ "repo": "HuanLinOTO/dsh-plugin-d399",
+ "stars": 8,
+ "description": "模型生成时右下角弹出小游戏菜单（Wordle/消消乐/192 款参数化小游戏，可拓展注册表） | Pops up a mini-game menu while the model generates (Wordle/Match-3/192 parametric mini-games, extensible registry)",
+ "pushed_at": "2026-08-15T09:05:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@huanlin/dsh-plugin-d399",
+ "deps": [
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "d399Games",
+  "invariants",
+  "sessions"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/client.js:5642",
+    "src/client/games/mini/engines-strategy.tsx:604"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. lib/client.js:5642, src/client/games/mini/engines-strategy.tsx:604"
+  }
+ ],
+ "level": 3
+}

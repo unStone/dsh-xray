@@ -1,0 +1,113 @@
+{
+ "repo": "Owen718/snapgrep",
+ "stars": 8,
+ "description": "An in-process trigram index that makes code search in Pi&DSH 20-70x faster than ripgrep, with identical results and no sidecar process.",
+ "pushed_at": "2026-08-15T11:01:47Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "snapgrep",
+ "deps": [
+  "@earendil-works/pi-coding-agent",
+  "@deepseek-ai/dsh-tools",
+  "@ff-labs/fff-node"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 17,
+ "domains": {},
+ "env": {
+  "SNAPGREP_BUILD_TARGET": 1,
+  "PI_FAST_GREP_PROFILE_SOURCE_DIGEST": 1,
+  "PI_FAST_GREP_PROFILE_GC": 1,
+  "PI_FAST_GREP_PROFILE_DIRECT_ONLY": 1,
+  "PI_FAST_GREP_PROFILE_DIRECT_DIGEST": 1,
+  "XDG_CACHE_HOME": 2,
+  "PI_FAST_GREP_ZOEKT_DELTA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 26,
+   "dev": 2,
+   "evidence": [
+    "benchmarks/generate-queries.ts:1",
+    "benchmarks/generate-queries.ts:1",
+    "benchmarks/generate-queries.ts:55",
+    "benchmarks/run.ts:4",
+    "benchmarks/run.ts:986"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "src/rg.ts:433",
+    "src/zoekt-client.ts:160",
+    "artifacts/pi-extension/pi-fast-grep/src/rg.js:339",
+    "artifacts/pi-extension/pi-fast-grep/src/zoekt-client.js:102"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "src/index-manager.ts:262",
+    "src/index-manager.ts:265",
+    "artifacts/pi-extension/pi-fast-grep/src/index-manager.js:149",
+    "artifacts/pi-extension/pi-fast-grep/src/index-manager.js:152"
+   ]
+  },
+  "fs_write": {
+   "src": 37,
+   "dev": 120,
+   "evidence": [
+    "benchmarks/generate-queries.ts:2",
+    "benchmarks/generate-queries.ts:157",
+    "benchmarks/run.ts:607",
+    "benchmarks/run.ts:1080",
+    "benchmarks/run.ts:1247"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-pi-extension.mjs:144"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 71,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×26 src, e.g. benchmarks/generate-queries.ts:1, benchmarks/generate-queries.ts:1"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×4 src, e.g. src/rg.ts:433, src/zoekt-client.ts:160"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. src/index-manager.ts:262, src/index-manager.ts:265"
+  }
+ ],
+ "level": 3
+}

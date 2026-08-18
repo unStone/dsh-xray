@@ -1,0 +1,127 @@
+{
+ "repo": "omdsh-dev/dsh-llm-fallbacks",
+ "stars": 8,
+ "description": "An dsh plugin for role-based LLM retry&fallback strategy. 基于角色的模型重试备用策略插件",
+ "pushed_at": "2026-08-18T08:08:58Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./bundle/cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-llm-fallbacks",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-gateway",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry",
+  "react",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "connection",
+  "conversationEvents",
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/request",
+  "agent/request-error",
+  "agent/status",
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 14,
+   "evidence": [
+    "scripts/repair-fallbacks-switch-logs.ts:52",
+    "scripts/repair-fallbacks-switch-logs.ts:52",
+    "scripts/repair-fallbacks-switch-logs.ts:199",
+    "scripts/repair-fallbacks-switch-logs.ts:205",
+    "scripts/repair-fallbacks-switch-logs.ts:246"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 8,
+   "evidence": [
+    "scripts/prepare-release.ts:40",
+    "scripts/prepare-release.ts:167",
+    "scripts/prepare-release.ts:208",
+    "scripts/repair-fallbacks-switch-logs.ts:59",
+    "scripts/repair-fallbacks-switch-logs.ts:61"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 78,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./bundle/cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. scripts/repair-fallbacks-switch-logs.ts:52, scripts/repair-fallbacks-switch-logs.ts:52"
+  }
+ ],
+ "level": 3
+}

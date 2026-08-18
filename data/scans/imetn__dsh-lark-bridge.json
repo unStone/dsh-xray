@@ -1,0 +1,119 @@
+{
+ "repo": "imetn/dsh-lark-bridge",
+ "stars": 7,
+ "description": "Bidirectional Lark/Feishu controller for DeepSeek Harness",
+ "pushed_at": "2026-08-14T06:53:32Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lark-bridge",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tool-ask-user",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "credentials",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "approval/request",
+  "session/event"
+ ],
+ "tool_regs": 1,
+ "domains": {
+  "open.feishu.cn": 2,
+  "open.larksuite.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_LARK_APP_ID": 1,
+  "DSH_LARK_APP_SECRET": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:11",
+    "build.mjs:11",
+    "build.mjs:113",
+    "scripts/check-built.mjs:3",
+    "scripts/check-built.mjs:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 4,
+   "evidence": [
+    "build.mjs:8",
+    "build.mjs:9",
+    "build.mjs:15",
+    "build.mjs:105",
+    "src/cli.ts:355"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 29,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. build.mjs:11, build.mjs:11"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_LARK_APP_SECRET"
+  }
+ ],
+ "level": 3
+}

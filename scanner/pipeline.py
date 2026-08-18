@@ -42,9 +42,8 @@ def fetch_files(full_name, branch=None):
     repository size barely matters -- we stop once MAX_FILES code files are
     collected instead of buffering the whole archive.
     """
-    refs = [f'refs/heads/{branch}'] if branch else []
-    refs += ['refs/heads/main', 'refs/heads/master']
-    last_err = 'no ref matched'
+    refs = [f'refs/heads/{b}' for b in dict.fromkeys(filter(None, [branch, 'main', 'master']))]
+    downloaded = False
     for ref in refs:
         url = f'https://codeload.github.com/{full_name}/tar.gz/{ref}'
         proc = subprocess.Popen(['curl', '-sL', '--max-time', '120', '--fail', url],
@@ -70,8 +69,9 @@ def fetch_files(full_name, branch=None):
                         files[path] = tf.extractfile(m).read().decode('utf-8', errors='ignore')
                     except Exception:
                         continue
-        except Exception as e:
-            last_err = f'{type(e).__name__}'
+            downloaded = True
+        except Exception:
+            pass  # ref missing or archive unreadable; try the next ref
         finally:
             try:
                 proc.stdout.close()
@@ -81,7 +81,10 @@ def fetch_files(full_name, branch=None):
             proc.wait(timeout=10)
         if files:
             return files
-    raise ValueError(f'no scannable files ({last_err})')
+    # Distinguish "we read the repo and it has no code" from "we never got the
+    # repo": the site reports these differently and conflating them would
+    # overstate coverage.
+    raise ValueError('no scannable code' if downloaded else 'download failed')
 
 
 def scan_repo(repo):

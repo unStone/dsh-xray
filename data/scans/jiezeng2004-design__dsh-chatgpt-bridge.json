@@ -1,0 +1,113 @@
+{
+ "repo": "jiezeng2004-design/dsh-chatgpt-bridge",
+ "stars": 9,
+ "description": "MCP bridge that lets ChatGPT create, view, continue, and control DeepSeek Harness (DSH) agent sessions.",
+ "pushed_at": "2026-08-16T15:28:23Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-chatgpt-bridge",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-title",
+  "@deepseek-ai/schemastery",
+  "@modelcontextprotocol/sdk",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "loader",
+  "sessionPersistence",
+  "sessionTitle",
+  "sessions"
+ ],
+ "hooks": [
+  "approval/request"
+ ],
+ "tool_regs": 31,
+ "domains": {},
+ "env": {
+  "USERPROFILE": 2,
+  "DSH_CHATGPT_BRIDGE_DEBUG": 2,
+  "DSH_HOME": 4,
+  "DSH_CHATGPT_BRIDGE_URL": 3,
+  "DSH_CHATGPT_BRIDGE_PROFILE": 1,
+  "DSH_CHATGPT_BRIDGE_WORKDIR": 1,
+  "DSH_CHATGPT_BRIDGE_BOOTLOG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 15,
+   "dev": 0,
+   "evidence": [
+    "lib/temp-resources.js:7",
+    "lib/temp-resources.js:7",
+    "lib/temp-resources.js:103",
+    "scripts/resume-test.mjs:8",
+    "scripts/resume-test.mjs:15"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/http.js:67",
+    "src/http.ts:82"
+   ]
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 15,
+   "evidence": [
+    "lib/config.js:3",
+    "lib/config.js:50",
+    "lib/goal-control.js:6",
+    "lib/goal-control.js:251",
+    "lib/log.js:1"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 79,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×15 src, e.g. lib/temp-resources.js:7, lib/temp-resources.js:7"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. lib/http.js:67, src/http.ts:82"
+  }
+ ],
+ "level": 3
+}

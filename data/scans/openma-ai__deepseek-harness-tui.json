@@ -2,7 +2,7 @@
  "repo": "openma-ai/deepseek-harness-tui",
  "stars": 38,
  "description": "Self-Improvement TUI Plugin of DeepSeek Harness. dsh-tui",
- "pushed_at": "2026-08-18T07:47:39Z",
+ "pushed_at": "2026-08-18T08:01:55Z",
  "status": "ok",
  "manifest": {
   "bundle": {
@@ -39,6 +39,8 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
+  "DSH_TUI_READELF_BIN": 1,
+  "DSH_TUI_CONTAINER_BIN": 1,
   "DSH_TUI_BIN": 6,
   "DSH_TUI_AGENT": 2,
   "DSH_HOME": 1,
@@ -46,14 +48,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 16,
-   "dev": 31,
+   "src": 22,
+   "dev": 39,
    "evidence": [
-    "scripts/test-attach.mjs:12",
-    "scripts/test-attach.mjs:20",
-    "npm/bin/dsh-tui.js:5",
-    "npm/bin/dsh-tui.js:5",
-    "npm/bin/dsh-tui.js:53"
+    "scripts/check-static-elf.mjs:3",
+    "scripts/check-static-elf.mjs:3",
+    "scripts/check-static-elf.mjs:12",
+    "scripts/smoke-old-linux.mjs:3",
+    "scripts/smoke-old-linux.mjs:3"
    ]
   },
   "eval": {
@@ -78,7 +80,7 @@
   },
   "fs_write": {
    "src": 2,
-   "dev": 40,
+   "dev": 52,
    "evidence": [
     "scripts/profile-smoke-tui.mjs:12",
     "scripts/profile-smoke-tui.mjs:19"
@@ -91,7 +93,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 50,
+ "files_scanned": 54,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -105,7 +107,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×16 src, e.g. scripts/test-attach.mjs:12, scripts/test-attach.mjs:20"
+   "evidence": "×22 src, e.g. scripts/check-static-elf.mjs:3, scripts/check-static-elf.mjs:3"
   },
   {
    "id": "eval",

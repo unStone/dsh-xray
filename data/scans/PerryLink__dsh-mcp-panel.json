@@ -1,0 +1,114 @@
+{
+ "repo": "PerryLink/dsh-mcp-panel",
+ "stars": 9,
+ "description": "MCP management console for the official DeepSeek Harness MCP client: /mcp command with health diagnostics and pipeline trial calls, a Settings MCP tab with server CRUD (approval-gated writes, automati",
+ "pushed_at": "2026-08-18T00:17:34Z",
+ "status": "ok",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-mcp-panel",
+ "deps": [
+  "tsdown",
+  "typescript",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "loader",
+  "locale",
+  "remote",
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 9,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_INSTALL_ANCHOR": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:6",
+    "scripts/prepare.mjs:22",
+    "scripts/release.mjs:27",
+    "scripts/release.mjs:27"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 2,
+   "evidence": [
+    "scripts/prepare.mjs:7",
+    "scripts/prepare.mjs:28",
+    "scripts/release.mjs:28",
+    "scripts/release.mjs:70",
+    "scripts/release.mjs:84"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:23",
+    "scripts/verify-artifacts.mjs:27"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 46,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. scripts/prepare.mjs:6, scripts/prepare.mjs:6"
+  }
+ ],
+ "level": 3
+}
