@@ -30,10 +30,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scanner/discover.py all
-          # all repos, 24 workers, at most 3500 fetched per run: unchanged repos
+          # all repos, 24 workers, generous per-run fetch cap: unchanged repos
           # reuse cached cards, so daily runs converge to full coverage and then
           # stay cheap. Downloads go to codeload, not the API quota.
-          cd scanner && python pipeline.py all 24 3500
+          cd scanner && python pipeline.py all 24 8000
           python render_report.py
           python render_docs.py
           python render_pages.py
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name 'dsh-xray-bot'
           git config user.email 'bot@dsh-xray'
-          git add docs
+          git add data docs
           if git diff --cached --quiet; then
             echo "nothing changed"; exit 0
           fi

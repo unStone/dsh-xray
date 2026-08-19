@@ -167,10 +167,19 @@ def main(limit=None, workers=8, budget=None):
     if budget and len(todo) > budget:
         dropped = len(todo) - budget
         todo.sort(key=lambda r: -r['stars'])
+        # Anything deferred keeps whatever we last published, so a cold cache or a
+        # tight budget delays a refresh instead of deleting the plugin's page.
+        published = {}
+        prev = DOCS / 'data.json'
+        if prev.exists():
+            try:
+                published = {p['repo']: p for p in json.loads(prev.read_text())['plugins']}
+            except Exception:
+                published = {}
         for r in todo[budget:]:
-            cached = load_cached(r['full_name'].replace('/', '__'))
-            if cached:
-                results.append(cached)
+            stale = load_cached(r['full_name'].replace('/', '__')) or published.get(r['full_name'])
+            if stale:
+                results.append(stale)
         todo = todo[:budget]
     print(f'{len(results)} cached, {len(todo)} to fetch'
           + (f', {dropped} deferred to a later run (budget {budget})' if dropped else ''))
