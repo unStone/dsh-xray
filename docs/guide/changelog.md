@@ -4,6 +4,27 @@
 
 ---
 
+## 2026-08-19 · We audited our own flags, and two rules were wrong
+
+The whole project rests on findings being checkable, so we checked them: a random sample of flags, with the cited source line fetched and read by hand. Two rules were crediting plugins with code they had not written.
+
+**Comments matched.** A plugin whose doc comment read *"this gates the tool-call surface, NOT plugin-internal code (child_process/fetch/eval inside the plugin body)"* scored an `exec` flag — for a sentence explaining that it does not do that. Comments are now blanked before matching, with newlines preserved so cited line numbers still point at the right place.
+
+**Build output was read as authored code.** This was the larger error. 32% of all line-cited flags sat in `lib/` or `dist/` — bundler output containing inlined dependencies. For `eval` it was 44%, for base64 45%. Four of six sampled `eval` flags pointed at the same upstream library, schemastery, which ships with dsh itself: we were marking plugins down for using an official dependency.
+
+Findings in build output now report as `*_bundled` — stated, because it is true that the code is there, but not counted toward the level, because it is not the author's code.
+
+**What it cost.** On a 327-plugin sample, 49 plugins moved down a level: C3 51%→43%, C0 7%→14%, C2+ 90%→81%. Our published figures were overstated by roughly eight points. The report now carries a correction saying so.
+
+### Also in this release
+
+- **Rule tests.** The scanner had none, while a scheduled run re-rated thousands of plugins daily. Ten test groups now pin the rules that decide a level, and CI runs them before scanning.
+- **Failure reporting.** A broken scan used to leave the site quietly serving stale data; it now opens an issue.
+- **Capability-change feed.** The Atom feed reports plugins whose level moved or that gained a powerful capability, not only newly scanned ones — the case that matters if you already installed something.
+- **Scan cards out of git.** 35MB of per-repo cards were rewritten on every run. They live in the CI cache now; a cache miss costs one slower sweep.
+
+---
+
 ## 2026-08-18 · First release
 
 ### Full ecosystem coverage

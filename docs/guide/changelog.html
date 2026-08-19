@@ -55,6 +55,15 @@
 <h1>Changelog</h1>
 <p><em><a href="changelog.html?lang=zh">中文版</a> · Scan results refresh daily; this page records changes to method and product</em></p>
 <hr>
+<h2>2026-08-19 · We audited our own flags, and two rules were wrong</h2>
+<p>The whole project rests on findings being checkable, so we checked them: a random sample of flags, with the cited source line fetched and read by hand. Two rules were crediting plugins with code they had not written.</p>
+<p><strong>Comments matched.</strong> A plugin whose doc comment read <em>"this gates the tool-call surface, NOT plugin-internal code (child_process/fetch/eval inside the plugin body)"</em> scored an <code>exec</code> flag — for a sentence explaining that it does not do that. Comments are now blanked before matching, with newlines preserved so cited line numbers still point at the right place.</p>
+<p><strong>Build output was read as authored code.</strong> This was the larger error. 32% of all line-cited flags sat in <code>lib/</code> or <code>dist/</code> — bundler output containing inlined dependencies. For <code>eval</code> it was 44%, for base64 45%. Four of six sampled <code>eval</code> flags pointed at the same upstream library, schemastery, which ships with dsh itself: we were marking plugins down for using an official dependency.</p>
+<p>Findings in build output now report as <code>*_bundled</code> — stated, because it is true that the code is there, but not counted toward the level, because it is not the author's code.</p>
+<p><strong>What it cost.</strong> On a 327-plugin sample, 49 plugins moved down a level: C3 51%→43%, C0 7%→14%, C2+ 90%→81%. Our published figures were overstated by roughly eight points. The report now carries a correction saying so.</p>
+<h3>Also in this release</h3>
+<ul><li><strong>Rule tests.</strong> The scanner had none, while a scheduled run re-rated thousands of plugins daily. Ten test groups now pin the rules that decide a level, and CI runs them before scanning.</li><li><strong>Failure reporting.</strong> A broken scan used to leave the site quietly serving stale data; it now opens an issue.</li><li><strong>Capability-change feed.</strong> The Atom feed reports plugins whose level moved or that gained a powerful capability, not only newly scanned ones — the case that matters if you already installed something.</li><li><strong>Scan cards out of git.</strong> 35MB of per-repo cards were rewritten on every run. They live in the CI cache now; a cache miss costs one slower sweep.</li></ul>
+<hr>
 <h2>2026-08-18 · First release</h2>
 <h3>Full ecosystem coverage</h3>
 <p>GitHub search returns at most 1000 results per query, and the <code>dsh-plugin</code> topic holds 7,000+ repositories. Discovery now partitions adaptively — <strong>by star bucket, then by recursively halved creation-date windows</strong> — and enumerates 6,942 repositories (forks and archives excluded).</p>
