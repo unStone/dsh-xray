@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>youyli03/dsh-bib — capability card (C3) · dsh-xray</title>
-<meta name="description" content="youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.">
+<meta name="description" content="youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/youyli03__dsh-bib.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="youyli03/dsh-bib — dsh plugin capability card">
-<meta property="og:description" content="youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.">
+<meta property="og:description" content="youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/youyli03__dsh-bib.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bib", "identifier": "youyli03/dsh-bib", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.", "codeRepository": "https://github.com/youyli03/dsh-bib", "url": "https://unstone.github.io/dsh-xray/p/youyli03__dsh-bib.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bib", "identifier": "youyli03/dsh-bib", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, starts a network server.", "codeRepository": "https://github.com/youyli03/dsh-bib", "url": "https://unstone.github.io/dsh-xray/p/youyli03__dsh-bib.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/youyli03/dsh-bib" rel="nofollow ugc">youyli03/dsh-bib source on GitHub</a>
      · <a href="../registry.html#youyli03__dsh-bib">this plugin in the registry</a></p>
-  <p>youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 src, e.g. plugin/host.template.js:68, plugin-pkg/lib/index.js:85</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 src, e.g. bridge/bridge.js:184, bridge/bridge.js:186</td></tr></tbody></table>
+  <p>youyli03/dsh-bib is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, starts a network server.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. plugin-pkg/lib/index.js:85</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. bridge/bridge.js:184, bridge/bridge.js:186</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>slots</span> <span>subprocess</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
   
   

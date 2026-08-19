@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yyxcnasd/amadeus-for-dsh — capability card (C3) · dsh-xray</title>
-<meta name="description" content="yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, eval_bundled, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/yyxcnasd__amadeus-for-dsh.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yyxcnasd/amadeus-for-dsh — dsh plugin capability card">
-<meta property="og:description" content="yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, eval_bundled, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/yyxcnasd__amadeus-for-dsh.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "amadeus-for-dsh", "identifier": "yyxcnasd/amadeus-for-dsh", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/yyxcnasd/amadeus-for-dsh", "url": "https://unstone.github.io/dsh-xray/p/yyxcnasd__amadeus-for-dsh.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "amadeus-for-dsh", "identifier": "yyxcnasd/amadeus-for-dsh", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, eval_bundled, decodes base64 payloads.", "codeRepository": "https://github.com/yyxcnasd/amadeus-for-dsh", "url": "https://unstone.github.io/dsh-xray/p/yyxcnasd__amadeus-for-dsh.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,11 +47,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/yyxcnasd/amadeus-for-dsh" rel="nofollow ugc">yyxcnasd/amadeus-for-dsh source on GitHub</a>
      · <a href="../registry.html#yyxcnasd__amadeus-for-dsh">this plugin in the registry</a></p>
-  <p>yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 src, e.g. package/host.mjs:375, package/host.mjs:559</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×6 src, e.g. plugin/web/vendor/pixi-v6.min.js:8, plugin/web/vendor/pixi-v6.min.js:8</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 src, e.g. plugin/web/panel.js:267, plugin/web/panel.js:271</td></tr></tbody></table>
+  <p>yyxcnasd/amadeus-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, eval_bundled, decodes base64 payloads.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. package/host.mjs:375, package/host.mjs:559</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. plugin/web/vendor/pixi.min.js:302, plugin/web/vendor/pixi.min.js:307</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. plugin/web/panel.js:267, plugin/web/panel.js:271</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>slots</span> <span>subprocess</span> <span>timer</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>connection/reset</span> <span>session/event</span> <span>subagent/end</span> <span>workflow/end</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.openai.com</span> <span>cdn.jsdelivr.net</span> <span>api.tts.quest</span> <span>live2d.com</span> <span>www.opensource.org</span> <span>www.pixijs.com</span> <span>cubism.live2d.com</span> <span>www.live2d.com</span> <span>mths.be</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.openai.com</span> <span>cdn.jsdelivr.net</span> <span>api.tts.quest</span> <span>cubism.live2d.com</span> <span>pixijs.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>AMADEUS_ROOT</span> <span>ComSpec</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

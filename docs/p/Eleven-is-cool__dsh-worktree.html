@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eleven-is-cool/dsh-worktree — capability card (C2) · dsh-xray</title>
-<meta name="description" content="Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval_bundled, base64_decode_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Eleven-is-cool__dsh-worktree.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eleven-is-cool/dsh-worktree — dsh plugin capability card">
-<meta property="og:description" content="Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval_bundled, base64_decode_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Eleven-is-cool__dsh-worktree.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-worktree", "identifier": "Eleven-is-cool/dsh-worktree", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/Eleven-is-cool/dsh-worktree", "url": "https://unstone.github.io/dsh-xray/p/Eleven-is-cool__dsh-worktree.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-worktree", "identifier": "Eleven-is-cool/dsh-worktree", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval_bundled, base64_decode_bundled.", "codeRepository": "https://github.com/Eleven-is-cool/dsh-worktree", "url": "https://unstone.github.io/dsh-xray/p/Eleven-is-cool__dsh-worktree.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/Eleven-is-cool/dsh-worktree" rel="nofollow ugc">Eleven-is-cool/dsh-worktree source on GitHub</a>
      · <a href="../registry.html#Eleven-is-cool__dsh-worktree">this plugin in the registry</a></p>
-  <p>Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 src, e.g. packages/worktree/lib/index.js:2, packages/worktree/src/git.ts:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. packages/worktree/lib/client.js:140</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. packages/worktree/lib/client.js:1158, packages/worktree/lib/client.js:1209</td></tr></tbody></table>
+  <p>Eleven-is-cool/dsh-worktree is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval_bundled, base64_decode_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. packages/worktree/src/git.ts:6</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. packages/worktree/lib/client.js:140</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. packages/worktree/lib/client.js:1158, packages/worktree/lib/client.js:1209</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>slots</span> <span>workspaces</span></p>
   
   

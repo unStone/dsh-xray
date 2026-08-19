@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/osmondlee/dsh-shell" rel="nofollow ugc">osmondlee/dsh-shell source on GitHub</a>
      · <a href="../registry.html#osmondlee__dsh-shell">this plugin in the registry</a></p>
   <p>osmondlee/dsh-shell is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, reads credential-class env vars, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. scripts/check.js:10</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 4 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/check.js:10</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 4 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span></p>

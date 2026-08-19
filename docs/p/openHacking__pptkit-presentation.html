@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/openHacking/pptkit-presentation" rel="nofollow ugc">openHacking/pptkit-presentation source on GitHub</a>
      · <a href="../registry.html#openHacking__pptkit-presentation">this plugin in the registry</a></p>
   <p>openHacking/pptkit-presentation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 src, e.g. scripts/dev-preview.mjs:3, scripts/dev-preview.mjs:47</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. apps/preview/src/transfer.ts:107</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. scripts/dev-preview.mjs:3, scripts/dev-preview.mjs:47</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. apps/preview/src/transfer.ts:107</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>skills</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>openhacking.github.io</span></p>

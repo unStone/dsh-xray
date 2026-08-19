@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>statem-li/dsh-webui — capability card (C3) · dsh-xray</title>
-<meta name="description" content="statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, uses eval / new Function.">
+<meta name="description" content="statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, eval_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/statem-li__dsh-webui.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="statem-li/dsh-webui — dsh plugin capability card">
-<meta property="og:description" content="statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, eval_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/statem-li__dsh-webui.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-webui", "identifier": "statem-li/dsh-webui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/statem-li/dsh-webui", "url": "https://unstone.github.io/dsh-xray/p/statem-li__dsh-webui.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-webui", "identifier": "statem-li/dsh-webui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, eval_bundled.", "codeRepository": "https://github.com/statem-li/dsh-webui", "url": "https://unstone.github.io/dsh-xray/p/statem-li__dsh-webui.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,11 +47,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/statem-li/dsh-webui" rel="nofollow ugc">statem-li/dsh-webui source on GitHub</a>
      · <a href="../registry.html#statem-li__dsh-webui">this plugin in the registry</a></p>
-  <p>statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, uses eval / new Function.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 src, e.g. lib/index.js:4, lib/index.js:7272</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. lib/index.js:285</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×9 src, e.g. lib/index.js:73, lib/index.js:74</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 src, e.g. lib/index.js:8508, lib/browser/chrome.js:35</td></tr></tbody></table>
+  <p>statem-li/dsh-webui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, eval_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. src/task-done-sound.ts:12, src/task-done-sound.ts:100</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:285</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/browser/index.ts:454, src/browser/index.ts:504</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/browser/chrome.ts:39</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>conversationEvents</span> <span>credentials</span> <span>fs</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sandboxPolicy</span> <span>sessionPersistence</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>shell</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>web</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>llm/stream</span> <span>session/event</span> <span>tools/pre-execute</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.anysearch.com</span> <span>lucide.dev</span> <span>api.deepseek.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.anysearch.com</span> <span>api.deepseek.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>CHROME_PATH</span> <span>USERPROFILE</span> <span>DSH_WEB_SEARCH_PROVIDER</span> <span>DSH_WEB_FETCH_PROVIDER</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

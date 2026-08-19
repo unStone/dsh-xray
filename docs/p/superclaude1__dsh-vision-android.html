@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>superclaude1/dsh-vision-android — capability card (C3) · dsh-xray</title>
-<meta name="description" content="superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta name="description" content="superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/superclaude1__dsh-vision-android.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="superclaude1/dsh-vision-android — dsh plugin capability card">
-<meta property="og:description" content="superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/superclaude1__dsh-vision-android.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-vision-android", "identifier": "superclaude1/dsh-vision-android", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/superclaude1/dsh-vision-android", "url": "https://unstone.github.io/dsh-xray/p/superclaude1__dsh-vision-android.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-vision-android", "identifier": "superclaude1/dsh-vision-android", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.", "codeRepository": "https://github.com/superclaude1/dsh-vision-android", "url": "https://unstone.github.io/dsh-xray/p/superclaude1__dsh-vision-android.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/superclaude1/dsh-vision-android" rel="nofollow ugc">superclaude1/dsh-vision-android source on GitHub</a>
      · <a href="../registry.html#superclaude1__dsh-vision-android">this plugin in the registry</a></p>
-  <p>superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 src, e.g. lib/index.js:5942, lib/index.js:5945</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. lib/index.js:2143</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. lib/index.js:67, lib/index.js:68</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_VISION_API_KEY</td></tr></tbody></table>
+  <p>superclaude1/dsh-vision-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/adb.ts:1, src/adb.ts:20</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:2143</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:67, lib/index.js:68</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_VISION_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span></p>

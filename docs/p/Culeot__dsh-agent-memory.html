@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Culeot/dsh-agent-memory — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Culeot__dsh-agent-memory.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Culeot/dsh-agent-memory — dsh plugin capability card">
-<meta property="og:description" content="Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Culeot__dsh-agent-memory.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agent-memory", "identifier": "Culeot/dsh-agent-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/Culeot/dsh-agent-memory", "url": "https://unstone.github.io/dsh-xray/p/Culeot__dsh-agent-memory.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agent-memory", "identifier": "Culeot/dsh-agent-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.", "codeRepository": "https://github.com/Culeot/dsh-agent-memory", "url": "https://unstone.github.io/dsh-xray/p/Culeot__dsh-agent-memory.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Culeot/dsh-agent-memory" rel="nofollow ugc">Culeot/dsh-agent-memory source on GitHub</a>
      · <a href="../registry.html#Culeot__dsh-agent-memory">this plugin in the registry</a></p>
-  <p>Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. scripts/build.mjs:5, scripts/build.mjs:5</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. lib/client.js:266</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. lib/client.js:88, lib/client.js:89</td></tr></tbody></table>
+  <p>Culeot/dsh-agent-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/build.mjs:5, scripts/build.mjs:5</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:266</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/client.js:88, lib/client.js:89</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>storageDomain</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/pre-step</span></p>
   

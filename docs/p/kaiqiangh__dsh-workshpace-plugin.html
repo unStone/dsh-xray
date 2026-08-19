@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kaiqiangh/dsh-workshpace-plugin — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta name="description" content="kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kaiqiangh__dsh-workshpace-plugin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kaiqiangh/dsh-workshpace-plugin — dsh plugin capability card">
-<meta property="og:description" content="kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kaiqiangh__dsh-workshpace-plugin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-workshpace-plugin", "identifier": "kaiqiangh/dsh-workshpace-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/kaiqiangh/dsh-workshpace-plugin", "url": "https://unstone.github.io/dsh-xray/p/kaiqiangh__dsh-workshpace-plugin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-workshpace-plugin", "identifier": "kaiqiangh/dsh-workshpace-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.", "codeRepository": "https://github.com/kaiqiangh/dsh-workshpace-plugin", "url": "https://unstone.github.io/dsh-xray/p/kaiqiangh__dsh-workshpace-plugin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/kaiqiangh/dsh-workshpace-plugin" rel="nofollow ugc">kaiqiangh/dsh-workshpace-plugin source on GitHub</a>
      · <a href="../registry.html#kaiqiangh__dsh-workshpace-plugin">this plugin in the registry</a></p>
-  <p>kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 src, e.g. lib/index.js:7, scripts/build.mjs:2</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. lib/client.js:279</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. lib/client.js:1449, lib/client.js:1500</td></tr></tbody></table>
+  <p>kaiqiangh/dsh-workshpace-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/build.mjs:2, scripts/check.mjs:3</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:279</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/client.js:1449, lib/client.js:1500</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>conversationEvents</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/result</span></p>
   

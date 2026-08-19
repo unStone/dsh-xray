@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/SC0321/harnessbay" rel="nofollow ugc">SC0321/harnessbay source on GitHub</a>
      · <a href="../registry.html#SC0321__harnessbay">this plugin in the registry</a></p>
   <p>SC0321/harnessbay is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×34 src, e.g. scripts/pack-harness.mjs:3, scripts/pack-harness.mjs:3</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. src/main/port.ts:6, src/main/port.ts:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CSC_KEY_PASSWORD, HARNESSBAY_TEST_PFX_PASSWORD, WIN_CSC_KEY_PASSWORD</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×34 in authored code, e.g. scripts/pack-harness.mjs:3, scripts/pack-harness.mjs:3</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/main/port.ts:6, src/main/port.ts:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CSC_KEY_PASSWORD, HARNESSBAY_TEST_PFX_PASSWORD, WIN_CSC_KEY_PASSWORD</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>timestamp.digicert.com</span> <span>api.github.com</span> <span>npmmirror.com</span> <span>signpath.org</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>api.github.com</span> <span>npmmirror.com</span> <span>timestamp.digicert.com</span> <span>signpath.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>CSC_LINK</span> <span>DSH_UPDATE_REGISTRY</span> <span>npm_config_cache</span> <span>DSH_PLUGIN_SEARCH_URL</span> <span>NPM_REGISTRY</span> <span>DSH_VERSION</span> <span>NODE_VERSION</span> <span>NODE_MIRROR</span> <span>PNPM_VERSION</span> <span>HARNESSBAY_SIGN_MODE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>863683348/dsh-plugin-quality-hub — capability card (C2) · dsh-xray</title>
-<meta name="description" content="863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars, ships no manifest.">
+<meta name="description" content="863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, reads credential-class env vars, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/863683348__dsh-plugin-quality-hub.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="863683348/dsh-plugin-quality-hub — dsh plugin capability card">
-<meta property="og:description" content="863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars, ships no manifest.">
+<meta property="og:description" content="863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, reads credential-class env vars, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/863683348__dsh-plugin-quality-hub.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-quality-hub", "identifier": "863683348/dsh-plugin-quality-hub", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/863683348/dsh-plugin-quality-hub", "url": "https://unstone.github.io/dsh-xray/p/863683348__dsh-plugin-quality-hub.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-quality-hub", "identifier": "863683348/dsh-plugin-quality-hub", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/863683348/dsh-plugin-quality-hub", "url": "https://unstone.github.io/dsh-xray/p/863683348__dsh-plugin-quality-hub.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/863683348/dsh-plugin-quality-hub" rel="nofollow ugc">863683348/dsh-plugin-quality-hub source on GitHub</a>
      · <a href="../registry.html#863683348__dsh-plugin-quality-hub">this plugin in the registry</a></p>
-  <p>863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. git-status.js:2, git-status.js:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. app/src/lib/fetch-github.ts:185, app/src/lib/fetch-github.ts:233</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_SECRET, BUTTONDOWN_API_KEY, CRON_SECRET, GITHUB_TOKEN, GOOGLE_CLIENT_SECRET, KV_REST_API_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 0 services, 6 tool regs, no manifest</td></tr></tbody></table>
+  <p>863683348/dsh-plugin-quality-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, reads credential-class env vars, ships no manifest.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. git-status.js:2, git-status.js:2</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. app/src/lib/fetch-github.ts:185, app/src/lib/fetch-github.ts:233</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_SECRET, BUTTONDOWN_API_KEY, CRON_SECRET, GITHUB_TOKEN, GOOGLE_CLIENT_SECRET, KV_REST_API_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 0 services, 6 tool regs, no manifest</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>dshquality.com</span> <span>schema.org</span> <span>www.googletagmanager.com</span> <span>api.github.com</span> <span>api.npmjs.org</span> <span>news.ycombinator.com</span> <span>www.reddit.com</span> <span>accounts.google.com</span> <span>oauth2.googleapis.com</span> <span>www.googleapis.com</span></p>

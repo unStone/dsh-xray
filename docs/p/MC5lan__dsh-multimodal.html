@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/MC5lan/dsh-multimodal" rel="nofollow ugc">MC5lan/dsh-multimodal source on GitHub</a>
      · <a href="../registry.html#MC5lan__dsh-multimodal">this plugin in the registry</a></p>
   <p>MC5lan/dsh-multimodal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. lib/image-gen.js:632, src/image-gen.ts:792</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/image-gen.ts:792</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>conversation</span> <span>llm</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span> <span>api.siliconflow.cn</span> <span>open.bigmodel.cn</span> <span>api.example.com</span> <span>maas-api.cn-huabei-1.xf-yun.com</span> <span>api-inference.modelscope.cn</span> <span>qianfan.baidubce.com</span> <span>api.deepseek.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span> <span>api.siliconflow.cn</span> <span>open.bigmodel.cn</span> <span>maas-api.cn-huabei-1.xf-yun.com</span> <span>api-inference.modelscope.cn</span> <span>qianfan.baidubce.com</span> <span>api.example.com</span> <span>api.deepseek.com</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

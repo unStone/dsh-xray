@@ -48,11 +48,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Lixiaoyiao/deepseek-harness-action" rel="nofollow ugc">Lixiaoyiao/deepseek-harness-action source on GitHub</a>
      · <a href="../registry.html#Lixiaoyiao__deepseek-harness-action">this plugin in the registry</a></p>
   <p>Lixiaoyiao/deepseek-harness-action is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 src, e.g. dist/index.js:9, dist/index.js:14</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 src, e.g. dist/index.js:2, dist/index.js:9</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 src, e.g. dist/index.js:3, src/dsh/proxy.ts:217</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/verify-dsh-config.mjs:4, scripts/verify-dsh-config.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/github/repository.ts:39</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/dsh/proxy.ts:217, src/dsh/proxy.ts:271</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>docs.github.com</span> <span>api.deepseek.com</span> <span>jimmy.warting.se</span> <span>uploads.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_EVENT_PATH</span> <span>GITHUB_RUN_ID</span> <span>GITHUB_SERVER_URL</span> <span>NODE_DEBUG</span> <span>NODE_V8_COVERAGE</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_WORKSPACE</span> <span>UNDICI_NO_FG</span> <span>JEST_WORKER_ID</span> <span>http_proxy</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>docs.github.com</span> <span>api.deepseek.com</span> <span>uploads.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>NODE_DEBUG</span> <span>NODE_V8_COVERAGE</span> <span>GITHUB_SERVER_URL</span> <span>GITHUB_WORKSPACE</span> <span>GITHUB_EVENT_PATH</span> <span>UNDICI_NO_FG</span> <span>SystemRoot</span> <span>GITHUB_RUN_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

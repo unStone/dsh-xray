@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/luis1232023/dsh-workspace-enhance" rel="nofollow ugc">luis1232023/dsh-workspace-enhance source on GitHub</a>
      · <a href="../registry.html#luis1232023__dsh-workspace-enhance">this plugin in the registry</a></p>
   <p>luis1232023/dsh-workspace-enhance is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. build.mjs:18, build.mjs:61</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 src, e.g. scripts/dry-run-client.mjs:114, scripts/test-real-store.mjs:44</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. build.mjs:18, build.mjs:61</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/dry-run-client.mjs:114, scripts/test-real-store.mjs:44</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>sessions</span> <span>slots</span> <span>workspaces</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.gnu.org</span> <span>html.spec.whatwg.org</span> <span>en.cppreference.com</span> <span>docs.docker.com</span> <span>docs.swift.org</span> <span>prismjs.com</span> <span>kotlinlang.org</span> <span>doc.rust-lang.org</span> <span>drafts.csswg.org</span> <span>stackoverflow.com</span></p>
+  
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

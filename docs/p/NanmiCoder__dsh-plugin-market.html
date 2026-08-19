@@ -48,11 +48,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/NanmiCoder/dsh-plugin-market" rel="nofollow ugc">NanmiCoder/dsh-plugin-market source on GitHub</a>
      · <a href="../registry.html#NanmiCoder__dsh-plugin-market">this plugin in the registry</a></p>
   <p>NanmiCoder/dsh-plugin-market is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 src, e.g. scripts/verify.mjs:129, scripts/verify.mjs:129</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, DEEPSEEK_API_KEY, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/verify.mjs:129, scripts/verify.mjs:129</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, DEEPSEEK_API_KEY, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/service</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.kimi.com</span> <span>npmjs.com</span> <span>api.example.com</span> <span>api.anthropic.com</span> <span>api.deepseek.com</span> <span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>ANTHROPIC_API_KEY</span> <span>ANTHROPIC_AUTH_TOKEN</span> <span>ANTHROPIC_BASE_URL</span> <span>DEEPSEEK_API_KEY</span> <span>GITHUB_TOKEN</span> <span>LLM_MODEL</span> <span>LLM_BASE_URL</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.kimi.com</span> <span>npmjs.com</span> <span>api.example.com</span> <span>api.deepseek.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ANTHROPIC_AUTH_TOKEN</span> <span>ANTHROPIC_BASE_URL</span> <span>ANTHROPIC_API_KEY</span> <span>DEEPSEEK_API_KEY</span> <span>GITHUB_TOKEN</span> <span>LLM_MODEL</span> <span>LLM_BASE_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kelemiao/dsh-api — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, starts a network server, reads credential-class env vars.">
+<meta name="description" content="kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, net_server_bundled, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kelemiao__dsh-api.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kelemiao/dsh-api — dsh plugin capability card">
-<meta property="og:description" content="kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, net_server_bundled, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kelemiao__dsh-api.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-api", "identifier": "kelemiao/dsh-api", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/kelemiao/dsh-api", "url": "https://unstone.github.io/dsh-xray/p/kelemiao__dsh-api.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-api", "identifier": "kelemiao/dsh-api", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, net_server_bundled, reads credential-class env vars.", "codeRepository": "https://github.com/kelemiao/dsh-api", "url": "https://unstone.github.io/dsh-xray/p/kelemiao__dsh-api.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/kelemiao/dsh-api" rel="nofollow ugc">kelemiao/dsh-api source on GitHub</a>
      · <a href="../registry.html#kelemiao__dsh-api">this plugin in the registry</a></p>
-  <p>kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, starts a network server, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. lib/server.js:41</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_API_TOKEN</td></tr></tbody></table>
+  <p>kelemiao/dsh-api is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, net_server_bundled, reads credential-class env vars.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/server.js:41</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_API_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>apiProxy</span></p>
   
   

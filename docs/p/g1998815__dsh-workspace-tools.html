@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/g1998815/dsh-workspace-tools" rel="nofollow ugc">g1998815/dsh-workspace-tools source on GitHub</a>
      · <a href="../registry.html#g1998815__dsh-workspace-tools">this plugin in the registry</a></p>
   <p>g1998815/dsh-workspace-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 src, e.g. scripts/install.mjs:4, scripts/install.mjs:4</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/install.mjs:4, scripts/install.mjs:4</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>fs</span> <span>sessions</span> <span>slots</span> <span>subprocess</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>fs/edit-intent</span> <span>fs/write-intent</span> <span>session/event</span> <span>tools/result</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>bellard.org</span></p>
+  
   <h2>Environment variables it reads</h2><p class="kv"><span>windir</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Plocr/dsh-desktop" rel="nofollow ugc">Plocr/dsh-desktop source on GitHub</a>
      · <a href="../registry.html#Plocr__dsh-desktop">this plugin in the registry</a></p>
   <p>Plocr/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×26 src, e.g. scripts/build.mjs:11, scripts/build.mjs:11</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. scripts/feed-server.mjs:11, packages/bridge/vendor/ws/lib/websocket-server.js:103</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/build.mjs:11, scripts/build.mjs:11</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. scripts/feed-server.mjs:11</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>opencode.ai</span> <span>openrouter.ai</span> <span>api.moonshot.cn</span> <span>api.github.com</span> <span>deepseek-harness.github.io</span> <span>api.example.com</span> <span>tools.ietf.org</span> <span>www.cl.cam.ac.uk</span> <span>html.spec.whatwg.org</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>opencode.ai</span> <span>openrouter.ai</span> <span>api.moonshot.cn</span> <span>api.github.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>DSH_HOME</span> <span>DSH_DESKTOP_NPM_ROOT</span> <span>DSH_DESKTOP_ELECTRON_ARGS</span> <span>DSH_FEED_PORT</span> <span>DSH_RUNTIME_NODE_VERSION</span> <span>DSH_RUNTIME_DSH_VERSION</span> <span>DSH_RUNTIME_TAR</span> <span>XDG_DATA_HOME</span> <span>APPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

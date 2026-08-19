@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/kingsunb/dsh-model-plus" rel="nofollow ugc">kingsunb/dsh-model-plus source on GitHub</a>
      · <a href="../registry.html#kingsunb__dsh-model-plus">this plugin in the registry</a></p>
   <p>kingsunb/dsh-model-plus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. dsh-model-plus/scripts/security-smoke.mjs:24</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. dsh-model-plus/scripts/security-smoke.mjs:140, dsh-model-plus/scripts/security-smoke.mjs:145</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. dsh-model-plus/scripts/security-smoke.mjs:24</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. dsh-model-plus/scripts/security-smoke.mjs:140, dsh-model-plus/scripts/security-smoke.mjs:145</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>slots</span> <span>timer</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>models.dev</span> <span>a.com</span> <span>ai.example.com</span> <span>evil.com</span> <span>ai.superaiapi.kdns.fr</span> <span>x.com</span> <span>gh-proxy.org</span> <span>www.npmjs.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>models.dev</span> <span>a.com</span> <span>ai.example.com</span> <span>evil.com</span> <span>gh-proxy.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>HTTPS_PROXY</span> <span>https_proxy</span> <span>HTTP_PROXY</span> <span>http_proxy</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

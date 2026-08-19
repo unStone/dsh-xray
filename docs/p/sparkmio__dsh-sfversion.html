@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sparkmio/dsh-sfversion — capability card (C2) · dsh-xray</title>
-<meta name="description" content="sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.">
+<meta name="description" content="sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sparkmio__dsh-sfversion.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sparkmio/dsh-sfversion — dsh plugin capability card">
-<meta property="og:description" content="sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sparkmio__dsh-sfversion.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-sfversion", "identifier": "sparkmio/dsh-sfversion", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/sparkmio/dsh-sfversion", "url": "https://unstone.github.io/dsh-xray/p/sparkmio__dsh-sfversion.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-sfversion", "identifier": "sparkmio/dsh-sfversion", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled.", "codeRepository": "https://github.com/sparkmio/dsh-sfversion", "url": "https://unstone.github.io/dsh-xray/p/sparkmio__dsh-sfversion.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/sparkmio/dsh-sfversion" rel="nofollow ugc">sparkmio/dsh-sfversion source on GitHub</a>
      · <a href="../registry.html#sparkmio__dsh-sfversion">this plugin in the registry</a></p>
-  <p>sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 src, e.g. lib/document.js:9, lib/document.js:653</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 src, e.g. lib/client.js:157, lib/document.js:502</td></tr></tbody></table>
+  <p>sparkmio/dsh-sfversion is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/release-notes.mjs:3, scripts/release-notes.mjs:3</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×4 in build output only, e.g. lib/client.js:157, lib/document.js:502</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>connection</span> <span>conversationEvents</span> <span>credentials</span> <span>fs</span> <span>sandboxPolicy</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>timer</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.stepfun.com</span></p>

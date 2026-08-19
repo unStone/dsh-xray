@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Lanxi26/dsh-bash-windows" rel="nofollow ugc">Lanxi26/dsh-bash-windows source on GitHub</a>
      · <a href="../registry.html#Lanxi26__dsh-bash-windows">this plugin in the registry</a></p>
   <p>Lanxi26/dsh-bash-windows is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. packages/shell/bash-local/src/index.ts:266, packages/shell/bash-local/src/index.ts:297</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. packages/shell/bash-local/src/index.ts:266, packages/shell/bash-local/src/index.ts:297</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>sandbox</span> <span>sandboxPolicy</span> <span>subprocess</span> <span>terminals</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/dispatch</span></p>
   

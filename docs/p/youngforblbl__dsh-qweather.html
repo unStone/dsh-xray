@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/youngforblbl/dsh-qweather" rel="nofollow ugc">youngforblbl/dsh-qweather source on GitHub</a>
      · <a href="../registry.html#youngforblbl__dsh-qweather">this plugin in the registry</a></p>
   <p>youngforblbl/dsh-qweather is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. scripts/debug-client.mjs:36</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>QW_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/debug-client.mjs:36</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>QW_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>locale</span> <span>skills</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>devapi.qweather.com</span> <span>geoapi.qweather.com</span> <span>dev.qweather.com</span> <span>www.qweather.com</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>openma-ai/deepseek-harness-tui — capability card (C3) · dsh-xray</title>
-<meta name="description" content="openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta name="description" content="openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/openma-ai__deepseek-harness-tui.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openma-ai/deepseek-harness-tui — dsh plugin capability card">
-<meta property="og:description" content="openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/openma-ai__deepseek-harness-tui.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-tui", "identifier": "openma-ai/deepseek-harness-tui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/openma-ai/deepseek-harness-tui", "url": "https://unstone.github.io/dsh-xray/p/openma-ai__deepseek-harness-tui.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-tui", "identifier": "openma-ai/deepseek-harness-tui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.", "codeRepository": "https://github.com/openma-ai/deepseek-harness-tui", "url": "https://unstone.github.io/dsh-xray/p/openma-ai__deepseek-harness-tui.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/openma-ai/deepseek-harness-tui" rel="nofollow ugc">openma-ai/deepseek-harness-tui source on GitHub</a>
      · <a href="../registry.html#openma-ai__deepseek-harness-tui">this plugin in the registry</a></p>
-  <p>openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×27 src, e.g. scripts/check-static-elf.mjs:3, scripts/check-static-elf.mjs:3</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. npm/lib/client-run.js:44</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. npm/lib/spawn-tui.js:85, npm/lib/spawn-tui.js:88</td></tr></tbody></table>
+  <p>openma-ai/deepseek-harness-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, eval_bundled.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. scripts/check-static-elf.mjs:3, scripts/check-static-elf.mjs:3</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. npm/lib/client-run.js:44</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. npm/lib/spawn-tui.js:85, npm/lib/spawn-tui.js:88</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>acpClient</span> <span>acpClientEvents</span> <span>acpServer</span> <span>acpSessionConfig</span> <span>acpSessionPlan</span> <span>acpSessionStats</span> <span>agentPresets</span> <span>appExit</span> <span>cmdlineArgs</span> <span>loader</span> <span>skills</span> <span>systemPrompt</span> <span>theme</span> <span>timer</span> <span>tuiCommands</span> <span>tuiCordisClientRunner</span> <span>tuiOverlay</span> <span>tuiSlots</span> <span>tuiTheme</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/plugin</span></p>
   

@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/AnkoCD/dsh-server-deployment" rel="nofollow ugc">AnkoCD/dsh-server-deployment source on GitHub</a>
      · <a href="../registry.html#AnkoCD__dsh-server-deployment">this plugin in the registry</a></p>
   <p>AnkoCD/dsh-server-deployment is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 src, e.g. gateway/auth.js:3, gateway/auth.js:3</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 src, e.g. gateway/_smoke.js:31, gateway/_smoke.js:47</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>COOKIE_SECURE, SECRET_FILE</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. gateway/auth.js:3, gateway/auth.js:3</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. gateway/_smoke.js:31, gateway/_smoke.js:47</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>COOKIE_SECURE, SECRET_FILE</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>

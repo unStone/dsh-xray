@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wave-av/wave-runtime-registry" rel="nofollow ugc">wave-av/wave-runtime-registry source on GitHub</a>
      · <a href="../registry.html#wave-av__wave-runtime-registry">this plugin in the registry</a></p>
   <p>wave-av/wave-runtime-registry is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 src, e.g. bin/sweep.mjs:9, bin/sweep.mjs:13</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WAVE_GATEWAY_API_KEY, WAVE_MAIL_KEY_ENV, WAVE_RUNTIME_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 1 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. bin/sweep.mjs:13, bin/sweep.mjs:13</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WAVE_GATEWAY_API_KEY, WAVE_MAIL_KEY_ENV, WAVE_RUNTIME_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 1 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>subagents</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>runtime.wave.online</span> <span>jakes-mac-studio.tail2cd79a.ts.net</span> <span>api.agentmail.to</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>jakes-mac-studio.tail2cd79a.ts.net</span> <span>api.agentmail.to</span> <span>runtime.wave.online</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>WAVE_POOL_URL</span> <span>WAVE_POOL_MODEL</span> <span>WAVE_MAIL_INBOX</span> <span>WAVE_MAIL_KEY_ENV</span> <span>WAVE_RUNTIME_API_KEY</span> <span>WAVE_GATEWAY_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

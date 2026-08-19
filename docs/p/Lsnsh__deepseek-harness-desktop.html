@@ -48,10 +48,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Lsnsh/deepseek-harness-desktop" rel="nofollow ugc">Lsnsh/deepseek-harness-desktop source on GitHub</a>
      · <a href="../registry.html#Lsnsh__deepseek-harness-desktop">this plugin in the registry</a></p>
   <p>Lsnsh/deepseek-harness-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 src, e.g. scripts/assemble-runtime.mjs:27, scripts/assemble-runtime.mjs:27</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 src, e.g. scripts/verify-update.mjs:151, scripts/verify-update.mjs:154</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. scripts/assemble-runtime.mjs:27, scripts/assemble-runtime.mjs:27</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. scripts/verify-update.mjs:151, scripts/verify-update.mjs:154</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>vite.dev</span></p>
+  
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_DESKTOP_DSH_VERSION</span> <span>DSH_DESKTOP_PRUNE</span> <span>DSH_UPDATE_MANIFEST_URL</span> <span>APPLE_SIGNING_IDENTITY</span> <span>DSH_DESKTOP_NODE_VERSION</span> <span>DSH_DESKTOP_PNPM_VERSION</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

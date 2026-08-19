@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/ohoyour/dsh-file-mention" rel="nofollow ugc">ohoyour/dsh-file-mention source on GitHub</a>
      · <a href="../registry.html#ohoyour__dsh-file-mention">this plugin in the registry</a></p>
   <p>ohoyour/dsh-file-mention is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 src, e.g. scripts/pack-local.mjs:3</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 src, e.g. scripts/smoke-client-bundle.mjs:36</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. scripts/pack-local.mjs:3</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/smoke-client-bundle.mjs:36</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>inputTriggers</span> <span>remote</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>fs/observed</span></p>
   
