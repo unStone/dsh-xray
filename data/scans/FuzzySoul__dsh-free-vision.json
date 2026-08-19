@@ -2,8 +2,9 @@
  "repo": "FuzzySoul/dsh-free-vision",
  "stars": 2,
  "description": "Vision bridge plugin for DeepSeek Harness (dsh): image understanding for text-only models via luma-mcp, free Qwen3-VL-Flash by default.",
- "pushed_at": "2026-08-18T09:17:15Z",
+ "pushed_at": "2026-08-18T12:49:13Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,6 +26,8 @@
   "postinstall": "node scripts/patch-luma.mjs"
  },
  "injects": [
+  "attachments",
+  "conversation",
   "slots",
   "tools"
  ],
@@ -68,9 +71,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "dsh/index.js:1006"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -79,10 +84,10 @@
   },
   "fs_write": {
    "src": 7,
-   "dev": 16,
+   "dev": 22,
    "evidence": [
     "dsh/index.js:23",
-    "dsh/index.js:147",
+    "dsh/index.js:165",
     "scripts/patch-luma.mjs:10",
     "scripts/patch-luma.mjs:54",
     "scripts/release.mjs:7"
@@ -95,7 +100,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 11,
+ "files_scanned": 14,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -110,6 +115,10 @@
   {
    "id": "exec",
    "evidence": "×5 src, e.g. scripts/release.mjs:6, scripts/release.mjs:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. dsh/index.js:1006"
   },
   {
    "id": "token_env",

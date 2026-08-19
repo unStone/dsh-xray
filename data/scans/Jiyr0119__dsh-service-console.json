@@ -2,8 +2,9 @@
  "repo": "Jiyr0119/dsh-service-console",
  "stars": 0,
  "description": "Local development service console for DeepSeek Harness: discovers listening ports, shows service ownership, and safely inspects/stops/restarts services. DSH 本地开发服务控制台。",
- "pushed_at": "2026-08-17T12:22:59Z",
+ "pushed_at": "2026-08-18T12:51:21Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -49,10 +50,14 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 1,
-   "dev": 9,
+   "src": 9,
+   "dev": 8,
    "evidence": [
-    "dynamic/host.js:5"
+    "dynamic/host.js:5",
+    "lib/host/process-inspector.js:1",
+    "lib/host/process-inspector.js:1",
+    "lib/host/process-inspector.js:20",
+    "src/host/process-inspector.ts:2"
    ]
   },
   "eval": {
@@ -97,7 +102,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×1 src, e.g. dynamic/host.js:5"
+   "evidence": "×9 src, e.g. dynamic/host.js:5, lib/host/process-inspector.js:1"
   }
  ],
  "level": 3

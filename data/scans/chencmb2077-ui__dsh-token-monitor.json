@@ -1,0 +1,89 @@
+{
+ "repo": "chencmb2077-ui/dsh-token-monitor",
+ "stars": 0,
+ "description": "DSH 静态 Host 插件：Web 界面右下角实时监控 token 用量与 DeepSeek 账户余额",
+ "pushed_at": "2026-08-18T14:10:44Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-token-monitor",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2,
+  "api.github.com": 2
+ },
+ "env": {
+  "DEEPSEEK_BALANCE_URL": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "DSH_GH_TAG": 2,
+  "DSH_GH_TOKEN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:191"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-zip.mjs:86"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. index.js:191"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, DSH_GH_TOKEN"
+  }
+ ],
+ "level": 3
+}

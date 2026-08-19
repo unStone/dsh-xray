@@ -2,8 +2,9 @@
  "repo": "wulun811/dsh-plugin-vet",
  "stars": 2,
  "description": "Trust pipeline for deepseek-harness plugins: deterministic static scan (11 rules) + LLM-driven audit protocol + two-part scorecard, with optional runtime guard (T1 sentinel / T2 fs & child_process hoo",
- "pushed_at": "2026-08-17T17:00:57Z",
+ "pushed_at": "2026-08-18T15:54:07Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -46,29 +47,31 @@
   "api.osv.dev": 2,
   "www.jsdelivr.com": 1,
   "www.chartjs.org": 1,
-  "oauth2.googleapis.com": 1
+  "oauth2.googleapis.com": 1,
+  "webhook.site": 1
  },
  "env": {
   "DSH_PLUGIN_VET_CACHE_DIR": 1,
   "DEEPSEEK_API_KEY": 1,
   "VET_E2E_PROFILE": 1,
-  "DSH_PLUGIN_VET_ARCHIVE_DIR": 1
+  "DSH_PLUGIN_VET_ARCHIVE_DIR": 1,
+  "DSH_PLUGIN_VET_BASELINE_DIR": 1
  },
  "behaviors": {
   "exec": {
-   "src": 38,
-   "dev": 38,
+   "src": 39,
+   "dev": 42,
    "evidence": [
+    "scanner-bin/engine.ts:352",
     "scripts/e2e-local.mjs:10",
     "scripts/e2e-local.mjs:10",
     "scripts/e2e-local.mjs:27",
-    "scripts/e2e-local.mjs:65",
-    "scripts/e2e-local.mjs:71"
+    "scripts/e2e-local.mjs:65"
    ]
   },
   "eval": {
    "src": 1,
-   "dev": 6,
+   "dev": 8,
    "evidence": [
     "scanner-bin/rules/dynamic-exec.ts:113"
    ]
@@ -89,8 +92,8 @@
    ]
   },
   "fs_write": {
-   "src": 30,
-   "dev": 134,
+   "src": 32,
+   "dev": 170,
    "evidence": [
     "scanner-bin/cache.ts:2",
     "scanner-bin/cache.ts:69",
@@ -106,7 +109,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 64,
+ "files_scanned": 73,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -116,7 +119,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×38 src, e.g. scripts/e2e-local.mjs:10, scripts/e2e-local.mjs:10"
+   "evidence": "×39 src, e.g. scanner-bin/engine.ts:352, scripts/e2e-local.mjs:10"
   },
   {
    "id": "eval",

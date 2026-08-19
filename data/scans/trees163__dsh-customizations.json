@@ -1,0 +1,140 @@
+{
+ "repo": "trees163/dsh-customizations",
+ "stars": 0,
+ "description": "DeepSeek Harness 全家桶定制——All-in-one customization suite for DeepSeek Harness: 3 agent presets (Classic / Pro Anchored / Flash Routed) with measured speedups, VS Code-style layout + 19 file API endpoint",
+ "pushed_at": "2026-08-18T18:17:30Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-client-ui-beauty",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "fs",
+  "skills",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "theme",
+  "timer",
+  "tools",
+  "web",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/request",
+  "dispose",
+  "system-prompt/assemble",
+  "theme/change"
+ ],
+ "tool_regs": 21,
+ "domains": {
+  "context7.com": 3,
+  "mcp.exa.ai": 3
+ },
+ "env": {
+  "DSH_PYTHON": 4,
+  "DSH_DOC_CONVERT": 1,
+  "DSH_WPS_CONVERT": 1,
+  "APPDATA": 4,
+  "DSH_MEMORY_DIR": 5,
+  "DSH_GLANCE": 3,
+  "DSH_WIDGET_FILE": 3,
+  "EXA_API_KEY": 9,
+  "DSH_CG_DIR": 3,
+  "DSH_NODE": 3,
+  "DSH_PLAYWRITER_BIN": 3,
+  "DSH_CODEGRAPH_NODE": 3,
+  "DSH_CODEGRAPH_JS": 3,
+  "DSH_ERR_FILE": 3,
+  "DSH_REASONIX_CONFIG": 3,
+  "DSH_NPX_ROOT": 3,
+  "DSH_SKILLS_ROOT": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-host-files/lib/index.js:1",
+    "presets/reasonix-anchored/plugins/base-tools.mjs:7",
+    "presets/reasonix-anchored/plugins/base-tools.mjs:206",
+    "presets/reasonix-anchored/plugins/mcp-bridge.mjs:9",
+    "presets/reasonix-anchored/plugins/mcp-bridge.mjs:94"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "packages/dsh-host-files/lib/index.js:237",
+    "packages/dsh-host-files/lib/index.js:391",
+    "packages/dsh-host-files/lib/index.js:613",
+    "packages/dsh-host-files/lib/index.js:632"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer, system-prompt/assemble"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×13 src, e.g. packages/dsh-host-files/lib/index.js:1, presets/reasonix-anchored/plugins/base-tools.mjs:7"
+  },
+  {
+   "id": "token_env",
+   "evidence": "EXA_API_KEY"
+  }
+ ],
+ "level": 3
+}

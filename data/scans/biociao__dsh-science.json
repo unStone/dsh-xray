@@ -1,34 +1,54 @@
 {
  "repo": "biociao/dsh-science",
- "stars": 16,
+ "stars": 19,
  "description": "",
- "pushed_at": "2026-08-17T03:09:38Z",
+ "pushed_at": "2026-08-18T09:50:28Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
   }
  },
  "pkg_name": "dsh-science",
- "deps": [],
+ "deps": [
+  "react",
+  "dsh-model-tier"
+ ],
  "install_scripts": {},
  "injects": [
-  "tools"
+  "llm",
+  "slots",
+  "tools",
+  "webServer"
  ],
- "hooks": [],
- "tool_regs": 30,
+ "hooks": [
+  "agent/request",
+  "dispose"
+ ],
+ "tool_regs": 32,
  "domains": {},
  "env": {
+  "DSH_HOME": 7,
   "DSH_CLIENT_RUNTIME": 1
  },
  "behaviors": {
   "exec": {
-   "src": 3,
+   "src": 9,
    "dev": 0,
    "evidence": [
-    "scripts/patch-session-isolation.mjs:38",
-    "scripts/patch-session-isolation.mjs:38",
-    "scripts/patch-session-isolation.mjs:61"
+    "engines/remote-compute.mjs:36",
+    "engines/remote-compute.mjs:229",
+    "engines/remote-hosts-ui.mjs:17",
+    "engines/remote-hosts-ui.mjs:99",
+    "scripts/patch-session-isolation.mjs:38"
    ]
   },
   "eval": {
@@ -42,34 +62,38 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/dsh-model-tier/scripts/mock-llm-server.mjs:12",
+    "packages/dsh-model-tier/scripts/mock-llm-server.mjs:55"
+   ]
   },
   "fs_write": {
-   "src": 38,
-   "dev": 0,
+   "src": 60,
+   "dev": 3,
    "evidence": [
     "engines/artifact-registry.mjs:244",
     "engines/artifact-registry.mjs:526",
-    "engines/core.mjs:130",
-    "engines/core.mjs:158",
-    "engines/core.mjs:239"
+    "engines/core.mjs:147",
+    "engines/core.mjs:175",
+    "engines/core.mjs:256"
    ]
   },
   "dyn_import": {
-   "src": 4,
-   "dev": 0,
+   "src": 9,
+   "dev": 1,
    "evidence": [
-    "scripts/smoke-test.mjs:58",
-    "scripts/smoke-test.mjs:59",
-    "scripts/stability-test.mjs:45",
-    "scripts/stability-test.mjs:46"
+    "scripts/smoke-test.mjs:61",
+    "scripts/smoke-test.mjs:93",
+    "scripts/smoke-test.mjs:94",
+    "scripts/smoke-test.mjs:117",
+    "scripts/smoke-test.mjs:168"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 9,
+ "files_scanned": 22,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -79,7 +103,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. scripts/patch-session-isolation.mjs:38, scripts/patch-session-isolation.mjs:38"
+   "evidence": "×9 src, e.g. engines/remote-compute.mjs:36, engines/remote-compute.mjs:229"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. packages/dsh-model-tier/scripts/mock-llm-server.mjs:12, packages/dsh-model-tier/scripts/mock-llm-server.mjs:55"
   }
  ],
  "level": 3

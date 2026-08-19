@@ -1,9 +1,10 @@
 {
  "repo": "PGZXB/dsh-feishu",
- "stars": 1,
+ "stars": 8,
  "description": "The Feishu UI for DeepSeek Harness  — a panel-driven control console: every slash command a button on the ⚙️ control-panel card, in-card approvals & questions, live streaming cards, one-QR setup. | De",
- "pushed_at": "2026-08-16T19:52:08Z",
+ "pushed_at": "2026-08-19T00:26:18Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -36,6 +37,7 @@
  ],
  "tool_regs": 0,
  "domains": {
+  "api.github.com": 1,
   "open.feishu.cn": 2,
   "accounts.feishu.cn": 1,
   "ask.feishu.cn": 2
@@ -56,14 +58,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 9,
+   "src": 25,
    "dev": 43,
    "evidence": [
-    "scripts/release.mjs:14",
-    "scripts/release.mjs:14",
-    "scripts/release.mjs:31",
-    "src/projects.ts:12",
-    "src/projects.ts:19"
+    "scripts/check-conventions.mjs:18",
+    "scripts/check-conventions.mjs:18",
+    "scripts/check-conventions.mjs:37",
+    "scripts/check-mergeable.mjs:16",
+    "scripts/check-mergeable.mjs:16"
    ]
   },
   "eval": {
@@ -82,7 +84,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 17,
+   "src": 21,
    "dev": 53,
    "evidence": [
     "scripts/release.mjs:15",
@@ -101,8 +103,8 @@
   }
  },
  "has_apply": true,
- "files_scanned": 72,
- "has_skill_md": false,
+ "files_scanned": 77,
+ "has_skill_md": true,
  "type": "plugin",
  "flags": [
   {
@@ -111,7 +113,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×9 src, e.g. scripts/release.mjs:14, scripts/release.mjs:14"
+   "evidence": "×25 src, e.g. scripts/check-conventions.mjs:18, scripts/check-conventions.mjs:18"
   },
   {
    "id": "token_env",

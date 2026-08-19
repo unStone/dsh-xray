@@ -1,9 +1,10 @@
 {
  "repo": "magian1127/deepseek-harness-zh_pro",
- "stars": 11,
+ "stars": 12,
  "description": "DeepSeek Harness (DSH) plugin:  A comprehensive enhancement plugin with UI polish, layout tweaks, prompt injection, and more.  综合性增强插件，界面优化、布局调整与提示词注入等更多功能。",
- "pushed_at": "2026-08-18T04:39:13Z",
+ "pushed_at": "2026-08-18T14:38:26Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,48 +20,31 @@
  },
  "pkg_name": "deepseek-harness-zh_pro",
  "deps": [],
- "install_scripts": {},
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
  "injects": [
   "loader",
-  "locale",
   "settings",
-  "slots",
   "systemPrompt"
  ],
  "hooks": [
-  "agent/pre-step"
+  "agent/pre-step",
+  "internal/service"
  ],
  "tool_regs": 0,
  "domains": {},
- "env": {
-  "DSH_HOME": 11,
-  "DSH_ZH_VERIFY_ARGS": 3,
-  "DSH_ZH_VERIFY_SHIM_ARGS": 3,
-  "DSH_ZH_VERIFY_CMD_ARGS": 3,
-  "DSH_ZH_VERIFY_PS1_ARGS": 2,
-  "DSH_ZH_VERIFY_PNPM_ARGS": 3,
-  "DSH_ZH_VERIFY_UNSAFE_ARGS": 3,
-  "USERPROFILE": 1,
-  "SystemRoot": 1
- },
+ "env": {},
  "behaviors": {
   "exec": {
-   "src": 10,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "verify-cli.mjs:5",
-    "verify-cli.mjs:5",
-    "verify-cli.mjs:45",
-    "bin/dsh-zh.mjs:19",
-    "bin/dsh-zh.mjs:19"
-   ]
+   "evidence": []
   },
   "eval": {
-   "src": 1,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "verify-pairs.cjs:274"
-   ]
+   "evidence": []
   },
   "base64_decode": {
    "src": 0,
@@ -73,27 +57,25 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 34,
+   "src": 4,
    "dev": 0,
    "evidence": [
-    "verify-cli.mjs:3",
-    "verify-cli.mjs:3",
-    "verify-cli.mjs:35",
-    "verify-cli.mjs:44",
-    "verify-cli.mjs:59"
+    "src/lib/hot-mount.ts:3",
+    "src/lib/hot-mount.ts:3",
+    "src/lib/hot-mount.ts:19",
+    "src/lib/hot-mount.ts:175"
    ]
   },
   "dyn_import": {
-   "src": 2,
+   "src": 1,
    "dev": 0,
    "evidence": [
-    "verify-cli.mjs:219",
-    "lib/index.js:465"
+    "src/lib/hot-mount.ts:64"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 5,
+ "files_scanned": 24,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -104,15 +86,7 @@
   {
    "id": "prompt_surface",
    "evidence": "systemPrompt"
-  },
-  {
-   "id": "exec",
-   "evidence": "×10 src, e.g. verify-cli.mjs:5, verify-cli.mjs:5"
-  },
-  {
-   "id": "eval",
-   "evidence": "×1 src, e.g. verify-pairs.cjs:274"
   }
  ],
- "level": 3
+ "level": 2
 }

@@ -1,0 +1,92 @@
+{
+ "repo": "tonytanglab/deepseek-harness-relay-mcp",
+ "stars": 1,
+ "description": "Delegate long-running work to DeepSeek Harness from any MCP agent—and monitor it to completion.",
+ "pushed_at": "2026-08-19T03:07:47Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-relay",
+ "deps": [
+  "@modelcontextprotocol/sdk",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {
+  "prepare": "node prepare.mjs"
+ },
+ "injects": [
+  "commands",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 15,
+ "domains": {},
+ "env": {
+  "DSH_WEB_URL": 1,
+  "DSH_MCP_WEB_URL": 1,
+  "DSH_MCP_WORKSPACE_ROOTS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "prepare.mjs:6",
+    "prepare.mjs:6",
+    "prepare.mjs:12",
+    "src/attach.ts:3"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "src/mcp-config.ts:62",
+    "src/mcp-config.ts:74"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. prepare.mjs:6, prepare.mjs:6"
+  }
+ ],
+ "level": 3
+}

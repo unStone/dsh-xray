@@ -2,8 +2,9 @@
  "repo": "memorax-ai/dsh-patchouli",
  "stars": 1,
  "description": "Agent knowledge hub and deepseek-harness plugin",
- "pushed_at": "2026-08-17T05:39:49Z",
+ "pushed_at": "2026-08-18T17:45:04Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -30,11 +31,11 @@
  "pkg_name": "dsh-patchouli",
  "deps": [
   "@deepseek-ai/schemastery",
-  "@memorax-agent/dsh-patchouli-agent-loop",
-  "@memorax-agent/dsh-patchouli-artifact-ingestor",
-  "@memorax-agent/dsh-patchouli-session-indexer",
-  "@memorax-agent/dsh-patchouli-workspace-indexer",
-  "@memorax-agent/patchouli-protocol",
+  "dsh-patchouli-agent-loop",
+  "dsh-patchouli-artifact-ingestor",
+  "dsh-patchouli-session-indexer",
+  "dsh-patchouli-workspace-indexer",
+  "dsh-patchouli-protocol",
   "zod",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-storage-domain",
@@ -48,12 +49,12 @@
   "@deepseek-ai/dsh-tools",
   "dsh-patchouli",
   "@deepseek-ai/schemastery",
-  "@memorax-agent/patchouli-protocol",
+  "dsh-patchouli-protocol",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-fs",
   "dsh-patchouli",
-  "@memorax-agent/patchouli-protocol",
+  "dsh-patchouli-protocol",
   "@deepseek-ai/cordis",
   "dsh-patchouli",
   "@deepseek-ai/cordis",
@@ -98,23 +99,17 @@
  "tool_regs": 6,
  "domains": {},
  "env": {
-  "PATCHOULI_DEPLOY_ROOT": 1,
-  "PATCHOULI_ENDPOINT": 1,
-  "PATCHOULI_CONFIG": 1,
-  "PATCHOULI_PROVIDERS": 2,
-  "PATCHOULI_ARTIFACTS": 1,
   "GITHUB_REF_NAME": 2
  },
  "behaviors": {
   "exec": {
-   "src": 12,
+   "src": 4,
    "dev": 0,
    "evidence": [
     "integration/crud-plugin.ts:8",
     "integration/crud-plugin.ts:128",
-    "scripts/deploy-daemon.ts:1",
-    "scripts/deploy-daemon.ts:1",
-    "scripts/deploy-daemon.ts:43"
+    "src/service.ts:1",
+    "src/service.ts:582"
    ]
   },
   "eval": {
@@ -135,11 +130,9 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
+   "src": 2,
    "dev": 9,
    "evidence": [
-    "scripts/deploy-daemon.ts:2",
-    "scripts/deploy-daemon.ts:31",
     "src/goojfc/adapters/engramory.ts:7",
     "src/goojfc/adapters/engramory.ts:148"
    ]
@@ -151,7 +144,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 64,
+ "files_scanned": 63,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -161,7 +154,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×12 src, e.g. integration/crud-plugin.ts:8, integration/crud-plugin.ts:128"
+   "evidence": "×4 src, e.g. integration/crud-plugin.ts:8, integration/crud-plugin.ts:128"
   },
   {
    "id": "base64_decode",

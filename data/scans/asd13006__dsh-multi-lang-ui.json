@@ -1,0 +1,89 @@
+{
+ "repo": "asd13006/dsh-multi-lang-ui",
+ "stars": 0,
+ "description": "Multi-language UI plugin for DeepSeek Harness: 繁體中文 / 日本語 / 한국어 / Français / Deutsch / Español language options with hand-polished translations and automatic fallbacks",
+ "pushed_at": "2026-08-19T02:19:47Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-multi-lang-ui",
+ "deps": [
+  "cordis",
+  "@deepseek-ai/dsh-client-locale"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DEBUG_RESOLVED": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/collect-chars.mjs:53",
+    "scripts/extract.mjs:172",
+    "scripts/extract.mjs:245"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/assemble.mjs:315",
+    "scripts/collect-chars.mjs:74",
+    "scripts/extract.mjs:248",
+    "scripts/extract.mjs:476",
+    "scripts/extract.mjs:477"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. scripts/collect-chars.mjs:53, scripts/extract.mjs:172"
+  }
+ ],
+ "level": 3
+}

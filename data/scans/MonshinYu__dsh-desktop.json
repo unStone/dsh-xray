@@ -1,13 +1,33 @@
 {
  "repo": "MonshinYu/dsh-desktop",
- "stars": 0,
+ "stars": 1,
  "description": "DeepSeek Harness的Desktop版本",
- "pushed_at": "2026-08-14T23:48:22Z",
+ "pushed_at": "2026-08-19T00:27:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-desktop",
  "deps": [
-  "@deepseek-ai/dsh"
+  "@deepseek-ai/cordis-plugin-group",
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-anonymous-user-id",
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-bash-local",
+  "@deepseek-ai/dsh-code-runtime",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-output-retention",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-scope",
+  "@deepseek-ai/dsh-session-telemetry",
+  "@deepseek-ai/dsh-session-title-llm",
+  "@deepseek-ai/dsh-shell",
+  "@deepseek-ai/dsh-spill",
+  "@deepseek-ai/dsh-subagent-in-process-driver",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-workflow"
  ],
  "install_scripts": {},
  "injects": [],
@@ -24,7 +44,7 @@
    "dev": 0,
    "evidence": [
     "electron/dsh-server.ts:3",
-    "electron/dsh-server.ts:150"
+    "electron/dsh-server.ts:154"
    ]
   },
   "eval": {
@@ -41,7 +61,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "electron/dsh-server.ts:29"
+    "electron/dsh-server.ts:33"
    ]
   },
   "fs_write": {
@@ -50,15 +70,15 @@
    "evidence": [
     "electron/dsh-server.ts:4",
     "electron/dsh-server.ts:4",
-    "electron/dsh-server.ts:52",
-    "electron/dsh-server.ts:133"
+    "electron/dsh-server.ts:56",
+    "electron/dsh-server.ts:137"
    ]
   },
   "dyn_import": {
    "src": 1,
    "dev": 0,
    "evidence": [
-    "electron/dsh-server.ts:139"
+    "electron/dsh-server.ts:143"
    ]
   }
  },
@@ -69,11 +89,11 @@
  "flags": [
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. electron/dsh-server.ts:3, electron/dsh-server.ts:150"
+   "evidence": "×2 src, e.g. electron/dsh-server.ts:3, electron/dsh-server.ts:154"
   },
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. electron/dsh-server.ts:29"
+   "evidence": "×1 src, e.g. electron/dsh-server.ts:33"
   }
  ],
  "level": 2

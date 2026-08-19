@@ -2,8 +2,9 @@
  "repo": "buhuikongpan/dsh-win-gitbash",
  "stars": 3,
  "description": "Git Bash tool plugin for Windows (replaces pwsh and WSL-only bash)",
- "pushed_at": "2026-08-18T04:30:13Z",
+ "pushed_at": "2026-08-18T11:59:54Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -32,14 +33,18 @@
  "hooks": [],
  "tool_regs": 2,
  "domains": {},
- "env": {},
+ "env": {
+  "USERPROFILE": 1,
+  "SystemRoot": 1,
+  "SCOOP": 1
+ },
  "behaviors": {
   "exec": {
    "src": 2,
    "dev": 0,
    "evidence": [
-    "lib/index.js:187",
-    "lib/index.js:225"
+    "lib/index.js:207",
+    "lib/index.js:245"
    ]
   },
   "eval": {
@@ -87,7 +92,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. lib/index.js:187, lib/index.js:225"
+   "evidence": "×2 src, e.g. lib/index.js:207, lib/index.js:245"
   }
  ],
  "level": 3

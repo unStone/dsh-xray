@@ -2,8 +2,9 @@
  "repo": "DLive/dsh-qqbot-community",
  "stars": 1,
  "description": "为 DeepSeek Harness 提供 QQ 官方机器人的接入能力",
- "pushed_at": "2026-08-17T16:30:27Z",
+ "pushed_at": "2026-08-18T16:12:12Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -48,19 +49,22 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
-  },
-  "fs_write": {
-   "src": 9,
+   "src": 2,
    "dev": 0,
    "evidence": [
+    "scripts/smoke-http-api.mjs:48",
+    "scripts/smoke-http-api.mjs:49"
+   ]
+  },
+  "fs_write": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-http-api.mjs:10",
+    "scripts/smoke-http-api.mjs:113",
     "src/dsh-bookkeeping.ts:40",
     "src/gateway.ts:111",
-    "src/inbound.ts:273",
-    "src/refindex.ts:7",
-    "src/refindex.ts:82"
+    "src/inbound.ts:278"
    ]
   },
   "dyn_import": {
@@ -70,14 +74,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 15,
+ "files_scanned": 19,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke-http-api.mjs:48, scripts/smoke-http-api.mjs:49"
   }
  ],
- "level": 2
+ "level": 3
 }

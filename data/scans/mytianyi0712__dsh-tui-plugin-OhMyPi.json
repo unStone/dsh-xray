@@ -1,9 +1,10 @@
 {
  "repo": "mytianyi0712/dsh-tui-plugin-OhMyPi",
- "stars": 4,
+ "stars": 5,
  "description": "一个dsh的终端样式插件，灵感来自Oh My Pi",
- "pushed_at": "2026-08-18T04:42:21Z",
+ "pushed_at": "2026-08-19T01:31:31Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -78,6 +79,8 @@
   "ilinkai.weixin.qq.com": 1
  },
  "env": {
+  "OMP_EXE": 3,
+  "LOCALAPPDATA": 2,
   "DSH_REAL": 1,
   "DSH_HOME": 1,
   "OMDSH_NO_BOOTSTRAP": 1,
@@ -89,13 +92,13 @@
  "behaviors": {
   "exec": {
    "src": 6,
-   "dev": 0,
+   "dev": 5,
    "evidence": [
-    "scripts/omdsh.js:11",
-    "scripts/omdsh.js:11",
-    "scripts/omdsh.js:71",
+    "scripts/omdsh.js:12",
+    "scripts/omdsh.js:12",
     "scripts/omdsh.js:73",
-    "scripts/omdsh.js:79"
+    "scripts/omdsh.js:75",
+    "scripts/omdsh.js:81"
    ]
   },
   "eval": {
@@ -114,14 +117,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 5,
-   "dev": 0,
+   "src": 7,
+   "dev": 4,
    "evidence": [
+    "scripts/generate-omp-themes.mjs:19",
+    "scripts/generate-omp-themes.mjs:221",
     "src/wechat/core/receiver-lock.ts:65",
     "src/wechat/core/receiver-lock.ts:80",
-    "src/wechat/core/state.ts:59",
-    "src/wechat/core/state.ts:138",
-    "src/wechat/core/state.ts:174"
+    "src/wechat/core/state.ts:59"
    ]
   },
   "dyn_import": {
@@ -131,7 +134,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 59,
+ "files_scanned": 63,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -141,7 +144,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×6 src, e.g. scripts/omdsh.js:11, scripts/omdsh.js:11"
+   "evidence": "×6 src, e.g. scripts/omdsh.js:12, scripts/omdsh.js:12"
   }
  ],
  "level": 3

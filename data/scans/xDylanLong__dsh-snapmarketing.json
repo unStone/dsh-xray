@@ -2,8 +2,9 @@
  "repo": "xDylanLong/dsh-snapmarketing",
  "stars": 2,
  "description": "dsh-snapmarketing is a thin DeepSeek Harness surface for discovering, installing, and managing allowlisted plugins.",
- "pushed_at": "2026-08-17T08:13:20Z",
+ "pushed_at": "2026-08-18T09:52:15Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -45,12 +46,15 @@
   "api.github.com": 1
  },
  "env": {
+  "LLM_API_KEY": 1,
+  "LLM_BASE_URL": 1,
+  "LLM_MODEL": 1,
   "GITHUB_TOKEN": 1,
   "DSH_HOME": 1
  },
  "behaviors": {
   "exec": {
-   "src": 8,
+   "src": 9,
    "dev": 0,
    "evidence": [
     "scripts/dev.mjs:2",
@@ -76,11 +80,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
+   "src": 3,
    "dev": 4,
    "evidence": [
-    "scripts/build-marketing-manifest.mjs:141",
-    "scripts/collect-topic-manifest.mjs:266"
+    "scripts/build-marketing-manifest.mjs:54",
+    "scripts/classify-marketing-plugins.mjs:345",
+    "scripts/collect-topic-manifest.mjs:289"
    ]
   },
   "dyn_import": {
@@ -90,7 +95,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 40,
+ "files_scanned": 44,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -100,11 +105,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×8 src, e.g. scripts/dev.mjs:2, scripts/dev.mjs:80"
+   "evidence": "×9 src, e.g. scripts/dev.mjs:2, scripts/dev.mjs:80"
   },
   {
    "id": "token_env",
-   "evidence": "GITHUB_TOKEN"
+   "evidence": "GITHUB_TOKEN, LLM_API_KEY"
   }
  ],
  "level": 3

@@ -1,0 +1,75 @@
+{
+ "repo": "EIGHTfs/dsh-bili-publisher",
+ "stars": 0,
+ "description": "DSH B站动态发布插件：扫码登录 + 发纯文本/图文动态 + 删动态（工具 + HTTP API）",
+ "pushed_at": "2026-08-18T16:52:33Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-bili-publisher",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 3,
+ "domains": {
+  "t.bilibili.com": 5,
+  "passport.bilibili.com": 2,
+  "api.bilibili.com": 3,
+  "api.vc.bilibili.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "test-core.mjs:6",
+    "test-core.mjs:6",
+    "test-core.mjs:54",
+    "test-core.mjs:62",
+    "test-core.mjs:67"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,86 @@
+{
+ "repo": "winditer/dsh-elf",
+ "stars": 0,
+ "description": "A temporary dialogue elf designed specifically for DSH",
+ "pushed_at": "2026-08-19T02:49:55Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "immediately": true
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-elf",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.deepseek.com": 1,
+  "api.deepseek.com": 2,
+  "api.openai.com": 1,
+  "api.moonshot.cn": 1,
+  "open.bigmodel.cn": 1,
+  "dashscope.aliyuncs.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:4",
+    "scripts/build.mjs:58",
+    "scripts/build.mjs:59"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

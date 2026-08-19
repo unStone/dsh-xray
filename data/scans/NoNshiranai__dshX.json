@@ -2,8 +2,9 @@
  "repo": "NoNshiranai/dshX",
  "stars": 1,
  "description": "一个基于 dsh 的优化版 TUI",
- "pushed_at": "2026-08-18T08:09:42Z",
+ "pushed_at": "2026-08-18T10:38:30Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,6 +34,7 @@
  "tool_regs": 4,
  "domains": {},
  "env": {
+  "DSHX_LAUNCHER_VERSION": 1,
   "CC_TUI_LANG": 1,
   "DSH_HOME": 8,
   "DSHX_SANDBOX_MODE": 1,
@@ -68,14 +70,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 28,
-   "dev": 7,
+   "src": 32,
+   "dev": 9,
    "evidence": [
-    "lib/preset-sync.js:52",
-    "lib/skill-sync.js:66",
-    "preset/install.mjs:17",
-    "preset/install.mjs:18",
-    "preset/install.mjs:87"
+    "lib/bundle-order.js:25",
+    "lib/bundle-order.js:76",
+    "lib/pnpm-policy.js:21",
+    "lib/pnpm-policy.js:80",
+    "lib/preset-sync.js:52"
    ]
   },
   "dyn_import": {
@@ -85,7 +87,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 29,
+ "files_scanned": 33,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [

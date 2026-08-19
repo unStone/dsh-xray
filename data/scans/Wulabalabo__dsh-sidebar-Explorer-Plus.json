@@ -1,0 +1,84 @@
+{
+ "repo": "Wulabalabo/dsh-sidebar-Explorer-Plus",
+ "stars": 0,
+ "description": "一个 dsh-better-sidebar 的消费插件：在侧边栏新增一个「文件」tab，内置一棵固定在工作区（cwd）内的文件树，提供真正的文件管理能力——上传、移动、删除、重命名、新建文件夹。它补充了 better-sidebar 自带 Explorer 缺失的「写」操作（Explorer 只读）",
+ "pushed_at": "2026-08-18T15:19:33Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "dsh-better-sidebar"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-sidebar-explorer-plus",
+ "deps": [
+  "cordis",
+  "dsh-better-sidebar",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "betterSidebar",
+  "sessions",
+  "webRuntime",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:15",
+    "build.mjs:46",
+    "lib/index.js:174",
+    "src/index.ts:272"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

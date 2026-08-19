@@ -2,13 +2,20 @@
  "repo": "IvanWu2015/dsh-connect",
  "stars": 0,
  "description": "Bridge DeepSeek Harness (DSH) agents to Feishu/Lark & DingTalk — chat, stream replies, and arrange work from your messaging app.",
- "pushed_at": "2026-08-16T13:38:34Z",
+ "pushed_at": "2026-08-19T01:49:21Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-connect-workspace",
  "deps": [
   "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "dsh-connect",
+  "@deepseek-ai/schemastery",
   "@larksuiteoapi/node-sdk",
+  "@deepseek-ai/cordis",
+  "dsh-connect",
+  "@deepseek-ai/schemastery",
   "@deepseek-ai/cordis",
   "dsh-connect",
   "@deepseek-ai/cordis",
@@ -31,12 +38,18 @@
   "session/event"
  ],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "oapi.dingtalk.com": 1,
+  "api.telegram.org": 1
+ },
  "env": {
+  "DINGTALK_WEBHOOK_URL": 1,
+  "DINGTALK_WEBHOOK_SECRET": 2,
   "FEISHU_APP_ID": 2,
   "FEISHU_APP_SECRET": 2,
   "DSH_HOME": 1,
   "USERPROFILE": 1,
+  "TELEGRAM_BOT_TOKEN": 2,
   "DSH_CONNECT_STATE_DIR": 1
  },
  "behaviors": {
@@ -61,14 +74,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 8,
+   "src": 10,
    "dev": 2,
    "evidence": [
     "packages/connect-feishu/src/adapter.ts:8",
-    "packages/connect-feishu/src/adapter.ts:279",
+    "packages/connect-feishu/src/adapter.ts:281",
     "packages/connect-feishu/src/onboard.ts:9",
     "packages/connect-feishu/src/onboard.ts:41",
-    "packages/connect/src/binding.ts:8"
+    "packages/connect-telegram/src/client.ts:8"
    ]
   },
   "dyn_import": {
@@ -78,13 +91,13 @@
   }
  },
  "has_apply": true,
- "files_scanned": 20,
+ "files_scanned": 29,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "token_env",
-   "evidence": "FEISHU_APP_SECRET"
+   "evidence": "DINGTALK_WEBHOOK_SECRET, FEISHU_APP_SECRET, TELEGRAM_BOT_TOKEN"
   },
   {
    "id": "no_manifest",

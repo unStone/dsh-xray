@@ -1,9 +1,10 @@
 {
  "repo": "lencx/Minke",
- "stars": 149,
+ "stars": 211,
  "description": "🐳 DeepSeek Harness Desktop",
- "pushed_at": "2026-08-18T00:33:41Z",
+ "pushed_at": "2026-08-19T00:17:02Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -51,6 +52,7 @@
  },
  "env": {
   "LOCALAPPDATA": 4,
+  "APPIMAGETOOL_PATH": 2,
   "DSH_FORGE_WORKER": 2,
   "ComSpec": 3,
   "npm_execpath": 1,
@@ -60,14 +62,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 27,
-   "dev": 14,
+   "src": 31,
+   "dev": 15,
    "evidence": [
     "desktop/main/harness-runtime.ts:1",
     "desktop/main/harness-runtime.ts:130",
-    "scripts/forge/generate-icons.mjs:3",
-    "scripts/forge/generate-icons.mjs:3",
-    "scripts/forge/generate-icons.mjs:27"
+    "scripts/forge/appimage.mjs:17",
+    "scripts/forge/appimage.mjs:17",
+    "scripts/forge/appimage.mjs:53"
    ]
   },
   "eval": {
@@ -86,14 +88,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 7,
+   "src": 10,
    "dev": 42,
    "evidence": [
     "desktop/main/minke-config.ts:236",
-    "scripts/forge/generate-icons.mjs:83",
-    "scripts/forge/generate-icons.mjs:125",
-    "scripts/harness/runtime-prune.mjs:206",
-    "scripts/harness/runtime-state.mjs:115"
+    "scripts/forge/appimage.mjs:18",
+    "scripts/forge/appimage.mjs:86",
+    "scripts/forge/appimage.mjs:183",
+    "scripts/forge/generate-icons.mjs:83"
    ]
   },
   "dyn_import": {
@@ -103,7 +105,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 187,
+ "files_scanned": 189,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -117,7 +119,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×27 src, e.g. desktop/main/harness-runtime.ts:1, desktop/main/harness-runtime.ts:130"
+   "evidence": "×31 src, e.g. desktop/main/harness-runtime.ts:1, desktop/main/harness-runtime.ts:130"
   }
  ],
  "level": 3

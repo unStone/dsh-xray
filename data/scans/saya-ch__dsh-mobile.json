@@ -1,9 +1,10 @@
 {
  "repo": "saya-ch/dsh-mobile",
- "stars": 17,
+ "stars": 32,
  "description": "DeepSeek Harness 移动端适配与安全局域网访问插件，支持 Android App 和手机浏览器。",
- "pushed_at": "2026-08-18T08:01:45Z",
+ "pushed_at": "2026-08-18T15:27:42Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,11 +26,14 @@
   "qrcode",
   "selfsigned",
   "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
   "react"
  ],
  "install_scripts": {},
  "injects": [
+  "commands",
   "new-runtime",
   "webServer"
  ],
@@ -58,37 +62,40 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 2,
+   "src": 3,
    "dev": 0,
    "evidence": [
-    "src/gateway.ts:777",
-    "src/gateway.ts:1182"
+    "src/client.ts:282",
+    "src/gateway.ts:852",
+    "src/gateway.ts:1374"
    ]
   },
   "net_server": {
    "src": 0,
-   "dev": 5,
+   "dev": 8,
    "evidence": []
   },
   "fs_write": {
-   "src": 8,
-   "dev": 14,
+   "src": 9,
+   "dev": 18,
    "evidence": [
-    "src/cli.ts:128",
-    "src/cli.ts:143",
-    "src/cli.ts:159",
-    "src/cli.ts:171",
-    "src/cli.ts:176"
+    "src/cli.ts:129",
+    "src/cli.ts:144",
+    "src/cli.ts:160",
+    "src/cli.ts:176",
+    "src/cli.ts:181"
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "src/extensions.ts:565"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 34,
+ "files_scanned": 38,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -102,7 +109,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. src/gateway.ts:777, src/gateway.ts:1182"
+   "evidence": "×3 src, e.g. src/client.ts:282, src/gateway.ts:852"
   }
  ],
  "level": 3

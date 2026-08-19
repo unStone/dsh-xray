@@ -1,9 +1,10 @@
 {
  "repo": "memorax-ai/dsh-webui-studio",
- "stars": 0,
+ "stars": 1,
  "description": "DeepSeek WebUI Studio for interactive, visual-first client plugin development",
- "pushed_at": "2026-08-17T03:08:04Z",
+ "pushed_at": "2026-08-18T23:27:12Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "plugin": {
    "schemaVersion": 1,
@@ -19,10 +20,14 @@
   },
   "harmony": {
    "extension": "./lib/index.js"
+  },
+  "bundle": {
+   "patch": "./studio.patch.yml"
   }
  },
  "pkg_name": "dsh-webui-studio",
  "deps": [
+  "@phenomnomnominal/tsquery",
   "dsh-harmony",
   "dsh-harmony-react",
   "pnpm",
@@ -52,24 +57,27 @@
   "webServer"
  ],
  "hooks": [],
- "tool_regs": 7,
+ "tool_regs": 8,
  "domains": {},
  "env": {
   "DSH_STUDIO_PREVIEW_DRAFT_ROOT": 1,
   "DSH_STUDIO_PREVIEW_CONTROL_TOKEN": 1,
   "DSH_STUDIO_PREVIEW_PARENT_ORIGIN": 1,
-  "DSH_STUDIO_PREVIEW_BRIDGE_CAPABILITY": 1
+  "DSH_STUDIO_PREVIEW_BRIDGE_CAPABILITY": 1,
+  "DSH_STUDIO_PREVIEW_PACKAGE_DIRS": 1,
+  "DSH_STUDIO_PREVIEW_PORT_RANGE": 1,
+  "DSH_HARMONY_DSH_ENTRY": 1
  },
  "behaviors": {
   "exec": {
    "src": 6,
-   "dev": 13,
+   "dev": 15,
    "evidence": [
     "src/host/build.ts:108",
     "src/host/drafts.ts:2",
     "src/host/drafts.ts:17",
     "src/host/preview.ts:2",
-    "src/host/preview.ts:121"
+    "src/host/preview.ts:143"
    ]
   },
   "eval": {
@@ -84,18 +92,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 2,
    "evidence": []
   },
   "fs_write": {
-   "src": 9,
-   "dev": 86,
+   "src": 13,
+   "dev": 100,
    "evidence": [
-    "src/host/drafts.ts:221",
-    "src/host/drafts.ts:222",
-    "src/host/drafts.ts:223",
-    "src/host/drafts.ts:224",
-    "src/host/drafts.ts:336"
+    "src/host/drafts.ts:245",
+    "src/host/drafts.ts:246",
+    "src/host/drafts.ts:247",
+    "src/host/drafts.ts:248",
+    "src/host/drafts.ts:249"
    ]
   },
   "dyn_import": {
@@ -105,10 +113,14 @@
   }
  },
  "has_apply": true,
- "files_scanned": 60,
+ "files_scanned": 82,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./studio.patch.yml"
+  },
   {
    "id": "prompt_surface",
    "evidence": "subprocess, systemPrompt, webServer"

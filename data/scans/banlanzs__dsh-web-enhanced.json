@@ -2,8 +2,9 @@
  "repo": "banlanzs/dsh-web-enhanced",
  "stars": 3,
  "description": "[building……] DeepSeek Harness's web enhancement plugin—brings task dashboards, Git graphs, workspace file panels, balance displays, and graph recognition into the DSH web interface.",
- "pushed_at": "2026-08-18T07:31:19Z",
+ "pushed_at": "2026-08-19T02:10:00Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -75,6 +76,7 @@
   "opencode.ai": 6
  },
  "env": {
+  "DSH_LOCAL_CLONE": 1,
   "DSH_ROOT": 1,
   "DSH_BIN": 1,
   "WEB_ENHANCED_PACK_MAX_TARBALL": 1,
@@ -82,14 +84,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 16,
+   "src": 23,
    "dev": 2,
    "evidence": [
     "lib/index.js:2204",
     "lib/index.js:3176",
-    "scripts/e2e.mjs:22",
-    "scripts/e2e.mjs:22",
-    "scripts/e2e.mjs:83"
+    "scripts/ci-local.mjs:28",
+    "scripts/ci-local.mjs:28",
+    "scripts/ci-local.mjs:28"
    ]
   },
   "eval": {
@@ -105,8 +107,8 @@
    "evidence": [
     "lib/client.js:1323",
     "lib/client.js:1374",
-    "lib/client.js:7541",
-    "lib/client.js:9621",
+    "lib/client.js:7543",
+    "lib/client.js:9623",
     "src/client/media.ts:26"
    ]
   },
@@ -118,14 +120,14 @@
    ]
   },
   "fs_write": {
-   "src": 14,
+   "src": 21,
    "dev": 60,
    "evidence": [
     "lib/index.js:1275",
     "lib/index.js:2111",
     "lib/index.js:2921",
-    "scripts/e2e.mjs:24",
-    "scripts/e2e.mjs:154"
+    "scripts/ci-local.mjs:30",
+    "scripts/ci-local.mjs:30"
    ]
   },
   "dyn_import": {
@@ -137,7 +139,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 304,
+ "files_scanned": 310,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -155,7 +157,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×16 src, e.g. lib/index.js:2204, lib/index.js:3176"
+   "evidence": "×23 src, e.g. lib/index.js:2204, lib/index.js:3176"
   },
   {
    "id": "eval",

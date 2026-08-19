@@ -2,8 +2,9 @@
  "repo": "wsz987/dsh-channels",
  "stars": 2,
  "description": "把微信 / QQ / 钉钉 / 飞书 / Telegram 接入 DeepSeek Harness：统一配置、扫码授权，直接在各 IM 与 Agent 对话；支持图片与文件收发，Agent 可读取 PDF、DOCX、XLSX 和文本内容。",
- "pushed_at": "2026-08-17T17:52:29Z",
+ "pushed_at": "2026-08-18T18:02:28Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "platform": "web",
@@ -53,6 +54,7 @@
   "zod",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
   "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-brand",
   "@deepseek-ai/dsh-commands",
@@ -134,7 +136,6 @@
  "hooks": [
   "agent/inbox/claimed",
   "agent/inbox/discarded",
-  "llm/stream",
   "session/event"
  ],
  "tool_regs": 6,
@@ -188,7 +189,7 @@
    "evidence": [
     "packages/channel-lark/src/openapi-outbound.ts:319",
     "packages/channel-weixin/src/media/download.ts:77",
-    "packages/channel-weixin/src/upstream/tencent-upstream.ts:463"
+    "packages/channel-weixin/src/upstream/tencent-upstream.ts:464"
    ]
   },
   "net_server": {
@@ -216,7 +217,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 339,
+ "files_scanned": 348,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

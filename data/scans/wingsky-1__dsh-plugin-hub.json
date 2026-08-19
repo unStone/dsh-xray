@@ -1,9 +1,10 @@
 {
  "repo": "wingsky-1/dsh-plugin-hub",
- "stars": 0,
+ "stars": 1,
  "description": "DSH (DeepSeek Harness) 插件集：npm 分发，可一键装全家桶或单独安装",
- "pushed_at": "2026-08-18T04:31:04Z",
+ "pushed_at": "2026-08-18T17:15:45Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -20,7 +21,8 @@
   "@wingsky-1/dsh-skill-explorer",
   "@wingsky-1/dsh-opencode-usage",
   "@wingsky-1/dsh-mcp-manager",
-  "@wingsky-1/dsh-lan-proxy"
+  "@wingsky-1/dsh-lan-proxy",
+  "@wingsky-1/dsh-web-file-preview"
  ],
  "install_scripts": {
   "prepare": "node build.ts"
@@ -28,7 +30,6 @@
  "injects": [
   "sessions",
   "skills",
-  "slots",
   "systemPrompt",
   "tools",
   "webServer"
@@ -44,8 +45,9 @@
  ],
  "tool_regs": 5,
  "domains": {
-  "mcp.context7.com": 1,
-  "opencode.ai": 2
+  "opencode.ai": 2,
+  "www.npmjs.com": 1,
+  "mcp.context7.com": 1
  },
  "env": {
   "DSH_PACKAGES_ROOT": 1,
@@ -55,12 +57,12 @@
  },
  "behaviors": {
   "exec": {
-   "src": 32,
-   "dev": 0,
+   "src": 36,
+   "dev": 3,
    "evidence": [
     "scripts/bundle-host.ts:22",
     "scripts/bundle-host.ts:22",
-    "scripts/bundle-host.ts:59",
+    "scripts/bundle-host.ts:72",
     "scripts/pack-check.ts:12",
     "scripts/pack-check.ts:12"
    ]
@@ -79,17 +81,17 @@
    "src": 1,
    "dev": 1,
    "evidence": [
-    "packages/dsh-lan-proxy/src/proxy.ts:260"
+    "packages/dsh-lan-proxy/src/proxy.ts:344"
    ]
   },
   "fs_write": {
    "src": 33,
-   "dev": 49,
+   "dev": 63,
    "evidence": [
     "scripts/aggregate.ts:22",
     "scripts/aggregate.ts:89",
     "scripts/build-client.ts:31",
-    "scripts/build-client.ts:153",
+    "scripts/build-client.ts:169",
     "scripts/bundle-host.ts:19"
    ]
   },
@@ -97,12 +99,12 @@
    "src": 1,
    "dev": 1,
    "evidence": [
-    "scripts/bundle-host.ts:89"
+    "scripts/bundle-host.ts:102"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 60,
+ "files_scanned": 79,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -116,11 +118,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×32 src, e.g. scripts/bundle-host.ts:22, scripts/bundle-host.ts:22"
+   "evidence": "×36 src, e.g. scripts/bundle-host.ts:22, scripts/bundle-host.ts:22"
   },
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. packages/dsh-lan-proxy/src/proxy.ts:260"
+   "evidence": "×1 src, e.g. packages/dsh-lan-proxy/src/proxy.ts:344"
   },
   {
    "id": "token_env",

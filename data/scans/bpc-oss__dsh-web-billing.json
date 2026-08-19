@@ -2,8 +2,9 @@
  "repo": "bpc-oss/dsh-web-billing",
  "stars": 10,
  "description": "RMB/USD token-billing plugin for DeepSeek Harness (dsh web): official-policy auto pricing with peak/off-peak hours, per-message ledger, account balance, locale-driven currency display. 人民币/美元 token 计费",
- "pushed_at": "2026-08-18T09:09:57Z",
+ "pushed_at": "2026-08-18T14:21:49Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,7 +16,8 @@
  "pkg_name": "dsh-web-billing",
  "deps": [
   "@deepseek-ai/schemastery",
-  "@deepseek-ai/dsh-home-paths"
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/cordis"
  ],
  "install_scripts": {},
  "injects": [
@@ -29,7 +31,8 @@
  "tool_regs": 0,
  "domains": {
   "api.github.com": 1,
-  "api.deepseek.com": 1
+  "api.deepseek.com": 1,
+  "api-docs.deepseek.com": 1
  },
  "env": {
   "DEEPSEEK_BASE_URL": 3,
@@ -58,11 +61,11 @@
   },
   "fs_write": {
    "src": 7,
-   "dev": 0,
+   "dev": 4,
    "evidence": [
-    "lib/index.js:463",
-    "lib/index.js:685",
-    "lib/index.js:719",
+    "lib/index.js:547",
+    "lib/index.js:765",
+    "lib/index.js:799",
     "scripts/sync-coding-plans.mjs:15",
     "scripts/sync-coding-plans.mjs:124"
    ]
@@ -74,7 +77,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 11,
+ "files_scanned": 13,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

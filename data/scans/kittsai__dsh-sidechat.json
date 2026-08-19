@@ -2,8 +2,9 @@
  "repo": "kittsai/dsh-sidechat",
  "stars": 2,
  "description": "deepseek harness web侧边聊天插件",
- "pushed_at": "2026-08-17T12:26:38Z",
+ "pushed_at": "2026-08-18T10:02:34Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,18 +20,21 @@
  "pkg_name": "dsh-sidechat",
  "deps": [
   "zod",
+  "@deepseek-ai/schemastery",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-brand",
   "@deepseek-ai/dsh-invariants",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
-  "@deepseek-ai/dsh-typert-protocol"
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-typert-registry"
  ],
  "install_scripts": {},
  "injects": [
   "invariants",
   "layout",
   "remote",
+  "settingsScope",
   "slots"
  ],
  "hooks": [],
@@ -75,7 +79,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 25,
+ "files_scanned": 32,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

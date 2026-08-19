@@ -2,8 +2,9 @@
  "repo": "chengxiaosheng/dsh-desktop",
  "stars": 1,
  "description": "deepseek-harness 的桌面端插件",
- "pushed_at": "2026-08-18T09:20:18Z",
+ "pushed_at": "2026-08-18T15:07:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [],
@@ -193,7 +194,6 @@
   "@deepseek-ai/dsh-workflow-worker-thread",
   "@deepseek-ai/dsh-workspace",
   "@deepseek-ai/schemastery",
-  "@pnpm/exe",
   "dsh-plugin-desktop-connection",
   "node-addon-require-builtin",
   "yaml"
@@ -217,14 +217,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 5,
+   "src": 6,
    "dev": 0,
    "evidence": [
-    "packages/dsh-plugin-desktop/electron/desktop-services.ts:20",
-    "packages/dsh-plugin-desktop/electron/desktop-services.ts:80",
-    "packages/dsh-plugin-desktop/electron/desktop-services.ts:102",
-    "packages/dsh-plugin-desktop/electron/desktop-services.ts:167",
-    "packages/dsh-plugin-desktop/electron/desktop-services.ts:186"
+    "packages/dsh-plugin-desktop/electron/desktop-services.ts:24",
+    "packages/dsh-plugin-desktop/electron/desktop-services.ts:83",
+    "packages/dsh-plugin-desktop/electron/desktop-services.ts:94",
+    "packages/dsh-plugin-desktop/electron/desktop-services.ts:157",
+    "packages/dsh-plugin-desktop/electron/desktop-services.ts:176"
    ]
   },
   "eval": {
@@ -233,10 +233,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 2,
-   "dev": 5,
+   "src": 3,
+   "dev": 7,
    "evidence": [
-    "packages/dsh-plugin-desktop/electron/ipc.ts:206",
+    "packages/dsh-plugin-desktop/electron/host-bridge.ts:83",
+    "packages/dsh-plugin-desktop/electron/ipc.ts:208",
     "packages/dsh-plugin-desktop-connection/src/client/host-http.ts:243"
    ]
   },
@@ -247,13 +248,13 @@
   },
   "fs_write": {
    "src": 16,
-   "dev": 47,
+   "dev": 58,
    "evidence": [
     "scripts/add-missing-deps.mjs:2",
     "scripts/add-missing-deps.mjs:54",
     "packages/dsh-plugin-desktop/electron/boot-desktop.ts:11",
     "packages/dsh-plugin-desktop/electron/boot-desktop.ts:11",
-    "packages/dsh-plugin-desktop/electron/boot-desktop.ts:240"
+    "packages/dsh-plugin-desktop/electron/boot-desktop.ts:241"
    ]
   },
   "dyn_import": {
@@ -263,17 +264,17 @@
   }
  },
  "has_apply": true,
- "files_scanned": 50,
+ "files_scanned": 60,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "exec",
-   "evidence": "×5 src, e.g. packages/dsh-plugin-desktop/electron/desktop-services.ts:20, packages/dsh-plugin-desktop/electron/desktop-services.ts:80"
+   "evidence": "×6 src, e.g. packages/dsh-plugin-desktop/electron/desktop-services.ts:24, packages/dsh-plugin-desktop/electron/desktop-services.ts:83"
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. packages/dsh-plugin-desktop/electron/ipc.ts:206, packages/dsh-plugin-desktop-connection/src/client/host-http.ts:243"
+   "evidence": "×3 src, e.g. packages/dsh-plugin-desktop/electron/host-bridge.ts:83, packages/dsh-plugin-desktop/electron/ipc.ts:208"
   }
  ],
  "level": 2

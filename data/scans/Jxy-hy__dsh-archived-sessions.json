@@ -2,8 +2,9 @@
  "repo": "Jxy-hy/dsh-archived-sessions",
  "stars": 1,
  "description": "DSH web plugin: manage archived sessions from the Settings page — unarchive to restore, or permanently delete (log + attachments) behind a confirmation dialog.",
- "pushed_at": "2026-08-17T09:48:02Z",
+ "pushed_at": "2026-08-18T14:53:44Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -40,7 +41,7 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
-  "DSH_HOME": 1
+  "DSH_HOME": 5
  },
  "behaviors": {
   "exec": {
@@ -59,14 +60,22 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/smoke-test.mjs:76",
+    "scripts/smoke-test.mjs:83"
+   ]
   },
   "fs_write": {
-   "src": 0,
+   "src": 4,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/smoke-test.mjs:17",
+    "scripts/smoke-test.mjs:17",
+    "scripts/smoke-test.mjs:107",
+    "scripts/smoke-test.mjs:187"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -75,9 +84,14 @@
   }
  },
  "has_apply": true,
- "files_scanned": 7,
+ "files_scanned": 8,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke-test.mjs:76, scripts/smoke-test.mjs:83"
+  }
+ ],
+ "level": 2
 }

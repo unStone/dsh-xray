@@ -1,0 +1,80 @@
+{
+ "repo": "kungfu-systems/dsh-kungfu",
+ "stars": 0,
+ "description": "Typed, read-only DeepSeek Harness tools for installed Kungfu Projects and Work.",
+ "pushed_at": "2026-08-18T11:01:12Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@kungfu-tech/dsh-kungfu",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {
+  "KUNGFU_BIN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-installed.mjs:3",
+    "scripts/smoke-installed.mjs:10",
+    "src/runner.ts:1",
+    "src/runner.ts:86"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/smoke-installed.mjs:3, scripts/smoke-installed.mjs:10"
+  }
+ ],
+ "level": 3
+}

@@ -2,8 +2,9 @@
  "repo": "1e0zj/dsh-plugin-mall",
  "stars": 2,
  "description": "DSH 插件市场：搜索 GitHub dsh-plugin 话题插件，一键安装到本地 dsh（agent 工具 + 设置页插件市场 tab）",
- "pushed_at": "2026-08-18T07:01:56Z",
+ "pushed_at": "2026-08-18T15:50:56Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,6 +34,7 @@
  "injects": [
   "connection",
   "jobs",
+  "loader",
   "slots",
   "systemPrompt",
   "tools"
@@ -54,7 +56,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 15,
+   "src": 18,
    "dev": 0,
    "evidence": [
     "src/cli.js:27",
@@ -82,7 +84,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 264,
+   "src": 280,
    "dev": 0,
    "evidence": [
     "src/cli.js:35",
@@ -113,7 +115,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×15 src, e.g. src/cli.js:27, src/cli.js:170"
+   "evidence": "×18 src, e.g. src/cli.js:27, src/cli.js:170"
   },
   {
    "id": "base64_decode",

@@ -1,0 +1,115 @@
+{
+ "repo": "Eve-146T/DSH-CODEX-SUBSCRIPTION-POOL",
+ "stars": 2,
+ "description": "dsh plugin for openai codex subscriptions that can pool multiple accounts. ",
+ "pushed_at": "2026-08-17T08:48:43Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-tool"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-openai-codex-auth",
+ "deps": [
+  "@deepseek-ai/dsh-atomic-write",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "conversation",
+  "credentials",
+  "locale",
+  "openaiCodexAuth",
+  "slots",
+  "tools",
+  "web"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "auth.openai.com": 12,
+  "chatgpt.com": 6,
+  "api.openai.com": 4
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/image-tool.js:73",
+    "src/image-tool.ts:99"
+   ]
+  },
+  "net_server": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:737",
+    "lib/index.js:878",
+    "lib/index.js:903",
+    "src/index.ts:782",
+    "src/index.ts:905"
+   ]
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/image-tool.js:102",
+    "src/image-tool.ts:126"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/image-tool.js:73, src/image-tool.ts:99"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×6 src, e.g. lib/index.js:737, lib/index.js:878"
+  }
+ ],
+ "level": 3
+}

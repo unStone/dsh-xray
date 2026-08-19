@@ -1,11 +1,19 @@
 {
  "repo": "tuogusa/dsh-whale-background",
  "stars": 1,
- "description": "DeepSeek Harness Web 背景插件（client-only）",
- "pushed_at": "2026-08-15T14:51:02Z",
+ "description": "DeepSeek Harness Web 背景插件（client-only）：深海鲸鱼娘壁纸 + 半透明磨砂应用表面，支持设置页换图、透明度、contain/cover 与恢复默认",
+ "pushed_at": "2026-08-19T02:24:18Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
    "platform": "web"
   },
   "bundle": {
@@ -15,7 +23,10 @@
  "pkg_name": "dsh-whale-background",
  "deps": [],
  "install_scripts": {},
- "injects": [],
+ "injects": [
+  "locale",
+  "slots"
+ ],
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
@@ -55,7 +66,7 @@
    "evidence": []
   }
  },
- "has_apply": false,
+ "has_apply": true,
  "files_scanned": 5,
  "has_skill_md": false,
  "type": "plugin",

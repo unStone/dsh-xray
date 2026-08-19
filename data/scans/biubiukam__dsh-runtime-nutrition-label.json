@@ -1,0 +1,102 @@
+{
+ "repo": "biubiukam/dsh-runtime-nutrition-label",
+ "stars": 0,
+ "description": "Runtime nutrition labels for DeepSeek Harness plugins and tools, with bounded evidence for tool, filesystem, network, and side-effect activity.",
+ "pushed_at": "2026-08-18T23:17:26Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  },
+  "runtimePeers": {
+   "@deepseek-ai/dsh-tools": ">=0.0.1-rc.1 <0.2.0",
+   "@deepseek-ai/dsh-fs": ">=0.0.1-rc.1 <0.2.0",
+   "@deepseek-ai/dsh-commands": ">=0.0.1-rc.1 <0.2.0",
+   "@deepseek-ai/dsh-invariants": ">=0.0.1-rc.1 <0.2.0",
+   "@deepseek-ai/dsh-session": ">=0.0.1-rc.1 <0.2.0",
+   "@deepseek-ai/dsh-session-projection": ">=0.0.1-rc.1 <0.2.0"
+  }
+ },
+ "pkg_name": "dsh-runtime-nutrition-label",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm build"
+ },
+ "injects": [
+  "commands",
+  "invariants",
+  "runtimeNutritionLabels",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "fs/edit-intent",
+  "fs/observed",
+  "fs/write-intent",
+  "tools/change",
+  "tools/pre-execute",
+  "tools/result"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 2
+}

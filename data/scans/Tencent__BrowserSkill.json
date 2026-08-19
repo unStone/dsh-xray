@@ -1,10 +1,23 @@
 {
  "repo": "Tencent/BrowserSkill",
- "stars": 1127,
+ "stars": 1152,
  "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
- "pushed_at": "2026-08-18T07:57:44Z",
+ "pushed_at": "2026-08-18T14:28:58Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ]
+  }
+ },
  "pkg_name": "browser-skill",
  "deps": [
   "@browser-skill/i18n",
@@ -13,6 +26,16 @@
   "@remixicon/react",
   "react",
   "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react",
   "i18next",
   "i18next-browser-languagedetector",
   "react-i18next",
@@ -25,9 +48,17 @@
   "react-dom"
  ],
  "install_scripts": {},
- "injects": [],
- "hooks": [],
- "tool_regs": 0,
+ "injects": [
+  "sessions",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "session/created",
+  "session/event",
+  "tools/result"
+ ],
+ "tool_regs": 12,
  "domains": {
   "developer.chrome.com": 2,
   "chrome.google.com": 1
@@ -37,9 +68,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 0,
-   "dev": 3,
-   "evidence": []
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:16",
+    "packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:16",
+    "packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:46",
+    "packages/dsh-plugin-browserskill/src/runner.ts:8"
+   ]
   },
   "eval": {
    "src": 0,
@@ -50,7 +86,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "apps/extension/src/tools/observation.ts:101"
+    "apps/extension/src/tools/observation.ts:104"
    ]
   },
   "net_server": {
@@ -59,11 +95,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
-   "dev": 6,
+   "src": 7,
+   "dev": 11,
    "evidence": [
     "scripts/render-version-json.mjs:16",
-    "scripts/render-version-json.mjs:101"
+    "scripts/render-version-json.mjs:101",
+    "packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:17",
+    "packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:34",
+    "packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:71"
    ]
   },
   "dyn_import": {
@@ -72,15 +111,23 @@
    "evidence": []
   }
  },
- "has_apply": false,
- "files_scanned": 141,
+ "has_apply": true,
+ "files_scanned": 182,
  "has_skill_md": true,
- "type": "skill",
+ "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:16, packages/dsh-plugin-browserskill/scripts/build-client-css.mjs:16"
+  },
+  {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. apps/extension/src/tools/observation.ts:101"
+   "evidence": "×1 src, e.g. apps/extension/src/tools/observation.ts:104"
   }
  ],
- "level": 2
+ "level": 3
 }

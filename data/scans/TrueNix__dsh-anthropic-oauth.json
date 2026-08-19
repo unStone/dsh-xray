@@ -1,0 +1,98 @@
+{
+ "repo": "TrueNix/dsh-anthropic-oauth",
+ "stars": 0,
+ "description": "Bridge Claude Code OAuth (Pro/Max/Team) into DeepSeek Harness — reuses ~/.claude/.credentials.json, auto-refreshes, no hardcoding",
+ "pushed_at": "2026-08-18T18:58:19Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-anthropic-oauth",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "fs",
+  "settings",
+  "slots",
+  "timer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "platform.claude.com": 1,
+  "api.anthropic.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:77",
+    "lib/index.js:78"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:61",
+    "lib/index.js:62"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:132",
+    "lib/index.js:301",
+    "lib/index.js:390",
+    "lib/index.js:393"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:77, lib/index.js:78"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:61, lib/index.js:62"
+  }
+ ],
+ "level": 3
+}

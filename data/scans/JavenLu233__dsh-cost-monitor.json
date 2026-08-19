@@ -1,9 +1,10 @@
 {
  "repo": "JavenLu233/dsh-cost-monitor",
- "stars": 2,
+ "stars": 3,
  "description": "DeepSeek Harness 费用展示插件：底部累计费用 + 每条消息本轮费用 + 会话统计图 | DSH plugin: session cost total in the composer, plus per-turn cost on each message",
- "pushed_at": "2026-08-17T16:30:06Z",
+ "pushed_at": "2026-08-18T16:14:59Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,7 +26,9 @@
   "sessionProjections",
   "slots"
  ],
- "hooks": [],
+ "hooks": [
+  "session/created"
+ ],
  "tool_regs": 0,
  "domains": {},
  "env": {},
@@ -65,7 +68,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 23,
+ "files_scanned": 27,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

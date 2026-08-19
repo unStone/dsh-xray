@@ -2,8 +2,9 @@
  "repo": "V-Reason/dsh-task-notify",
  "stars": 1,
  "description": "DeepSeekHarness任务完成时进行消息推送提醒（微信+Windows通知）",
- "pushed_at": "2026-08-17T07:10:57Z",
+ "pushed_at": "2026-08-18T19:29:53Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -31,6 +32,7 @@
  ],
  "hooks": [
   "agent/status",
+  "session/event",
   "subagent/end",
   "workflow/end"
  ],
@@ -47,7 +49,7 @@
    "dev": 0,
    "evidence": [
     "src/index.js:15",
-    "src/index.js:97"
+    "src/index.js:115"
    ]
   },
   "eval": {
@@ -89,7 +91,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. src/index.js:15, src/index.js:97"
+   "evidence": "×2 src, e.g. src/index.js:15, src/index.js:115"
   }
  ],
  "level": 3

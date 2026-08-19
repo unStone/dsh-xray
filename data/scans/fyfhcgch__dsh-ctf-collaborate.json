@@ -2,8 +2,9 @@
  "repo": "fyfhcgch/dsh-ctf-collaborate",
  "stars": 0,
  "description": "为 DeepSeek Harness 提供多人 CTF 题目管理、共享笔记、Agent 任务和证据整理能力",
- "pushed_at": "2026-08-17T17:21:06Z",
+ "pushed_at": "2026-08-18T15:40:10Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -92,19 +93,43 @@
   "web-expert/task-progress"
  ],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "api.deepseek.com": 5,
+  "dashscope.aliyuncs.com": 3,
+  "coding.dashscope.aliyuncs.com": 2,
+  "qianfan.baidu.com": 3,
+  "ark.cn-beijing.volces.com": 6,
+  "open.bigmodel.cn": 4,
+  "api.z.ai": 1,
+  "api.hunyuan.cloud.tencent.com": 1,
+  "tokenhub.tencentmaas.com": 3,
+  "api.lkeap.cloud.tencent.com": 6,
+  "api.moonshot.cn": 1,
+  "api.kimi.com": 2,
+  "api.siliconflow.cn": 2,
+  "api.minimaxi.com": 3,
+  "api.xiaomimimo.com": 3,
+  "api.stepfun.com": 3,
+  "spark-api-open.xf-yun.com": 1,
+  "api.sensenova.cn": 1,
+  "api.baichuan-ai.com": 1,
+  "pro.dasctf.com": 3
+ },
  "env": {
   "DSH_PROFILE_DIR": 1,
   "DSH_HOME": 2,
+  "DASCTF_REQUEST_SPACING_MS": 1,
   "DSH_BLACKBOARD_FILE": 1
  },
  "behaviors": {
   "exec": {
-   "src": 3,
-   "dev": 7,
+   "src": 5,
+   "dev": 14,
    "evidence": [
-    "dsh-ctf-team/src/agent-runner.ts:13",
-    "dsh-ctf-team/src/team-service.ts:192",
+    "dsh-ctf-team/src/agent-runner.ts:60",
+    "dsh-ctf-team/src/host-adapter.ts:2",
+    "dsh-ctf-team/src/host-adapter.ts:438",
+    "dsh-ctf-team/src/team-service.ts:194",
     "dsh-ctf-team/plugins/docker-sandbox-plugin/lib/index.js:9"
    ]
   },
@@ -130,7 +155,7 @@
   },
   "fs_write": {
    "src": 5,
-   "dev": 24,
+   "dev": 32,
    "evidence": [
     "dsh-ctf-team/scripts/install-profile-plugins.mjs:116",
     "dsh-ctf-team/scripts/install-profile-plugins.mjs:121",
@@ -146,7 +171,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 64,
+ "files_scanned": 67,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -156,7 +181,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. dsh-ctf-team/src/agent-runner.ts:13, dsh-ctf-team/src/team-service.ts:192"
+   "evidence": "×5 src, e.g. dsh-ctf-team/src/agent-runner.ts:60, dsh-ctf-team/src/host-adapter.ts:2"
   },
   {
    "id": "base64_decode",

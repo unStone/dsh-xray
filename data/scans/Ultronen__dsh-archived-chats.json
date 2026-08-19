@@ -2,8 +2,9 @@
  "repo": "Ultronen/dsh-archived-chats",
  "stars": 3,
  "description": "DeepSeek Harness 已归档会话管理页：在设置里查看、搜索、取消归档、删除已归档的聊天，按项目分组。An Archived Chats settings page for DeepSeek Harness: browse, search, unarchive, and delete archived sessions, grouped by workspace.",
- "pushed_at": "2026-08-16T05:31:23Z",
+ "pushed_at": "2026-08-19T02:40:23Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,7 +34,7 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
-  "DSH_HOME": 1
+  "DSH_HOME": 2
  },
  "behaviors": {
   "exec": {
@@ -43,7 +44,7 @@
   },
   "eval": {
    "src": 0,
-   "dev": 1,
+   "dev": 2,
    "evidence": []
   },
   "base64_decode": {
@@ -57,10 +58,11 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 1,
-   "dev": 6,
+   "src": 2,
+   "dev": 33,
    "evidence": [
-    "lib/index.js:146"
+    "lib/index.js:150",
+    "lib/metadata.js:82"
    ]
   },
   "dyn_import": {
@@ -70,7 +72,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 5,
+ "files_scanned": 9,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

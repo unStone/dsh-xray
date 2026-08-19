@@ -1,0 +1,93 @@
+{
+ "repo": "DM-Odyssey/dsh-session-manager",
+ "stars": 0,
+ "description": "dsh Session Manager（会话管理插件）",
+ "pushed_at": "2026-08-18T23:43:04Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dm-odyssey/dsh-session-manager",
+ "deps": [
+  "@deepseek-ai/dsh-session-manager",
+  "@deepseek-ai/dsh-client-ui-session-manager",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-session-manager",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote",
+  "sessionQuery",
+  "slots",
+  "storageDomain",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "dist/session-manager-lib/index.js:585",
+    "dist/session-manager-lib/types/index.js:514",
+    "packages/session-manager/lib/index.js:585",
+    "packages/session-manager/src/index.ts:49",
+    "packages/session-manager/src/index.ts:522"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/session-manager/scripts/rewrite-remote-zod.mjs:1",
+    "packages/session-manager/scripts/rewrite-remote-zod.mjs:24"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. dist/session-manager-lib/index.js:585, dist/session-manager-lib/types/index.js:514"
+  }
+ ],
+ "level": 3
+}

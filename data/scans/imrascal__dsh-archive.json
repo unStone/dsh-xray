@@ -2,8 +2,9 @@
  "repo": "imrascal/dsh-archive",
  "stars": 0,
  "description": "DeepSeek Harness归档会话管理插件",
- "pushed_at": "2026-08-17T17:22:00Z",
+ "pushed_at": "2026-08-18T11:55:25Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -23,6 +24,7 @@
  "install_scripts": {},
  "injects": [
   "locale",
+  "sessionPersistence",
   "sessions",
   "slots",
   "workspaces"
@@ -38,10 +40,11 @@
    "evidence": []
   },
   "eval": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "scripts/eval-check.mjs:25"
+    "scripts/eval-check.mjs:33",
+    "scripts/eval-check.mjs:202"
    ]
   },
   "base64_decode": {
@@ -55,13 +58,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
+   "src": 6,
    "dev": 0,
    "evidence": [
+    "scripts/cordis4-strict-test.mjs:130",
+    "scripts/cordis4-strict-test.mjs:170",
     "scripts/host-logic-test.mjs:110",
     "scripts/host-logic-test.mjs:169",
-    "scripts/host-logic-test.mjs:178",
-    "scripts/host-robustness-test.mjs:146"
+    "scripts/host-logic-test.mjs:178"
    ]
   },
   "dyn_import": {
@@ -71,7 +75,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 5,
+ "files_scanned": 6,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -81,7 +85,7 @@
   },
   {
    "id": "eval",
-   "evidence": "×1 src, e.g. scripts/eval-check.mjs:25"
+   "evidence": "×2 src, e.g. scripts/eval-check.mjs:33, scripts/eval-check.mjs:202"
   }
  ],
  "level": 3

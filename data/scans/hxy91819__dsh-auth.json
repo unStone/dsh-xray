@@ -1,0 +1,127 @@
+{
+ "repo": "hxy91819/dsh-auth",
+ "stars": 1,
+ "description": "Caddy-fronted administrator authentication for DeepSeek Harness: Argon2id, revocable sessions, bilingual UI, zero upstream forks.",
+ "pushed_at": "2026-08-19T02:43:51Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-general"
+   ],
+   "platform": "web"
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-auth",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-general",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-settings",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_E2E_CHROME_BIN": 2,
+  "DSH_E2E_CWD": 1,
+  "DSH_E2E_DSH_BIN": 1,
+  "DSH_E2E_EDGE": 1,
+  "DSH_E2E_CADDY_BIN": 1,
+  "DSH_E2E_CADDY_TLS": 1,
+  "DSH_E2E_BOOTSTRAP": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 46,
+   "dev": 16,
+   "evidence": [
+    "scripts/caddy-e2e.mjs:4",
+    "scripts/caddy-e2e.mjs:4",
+    "scripts/caddy-e2e.mjs:74",
+    "scripts/caddy-release.mjs:2",
+    "scripts/caddy-release.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/password.ts:36"
+   ]
+  },
+  "net_server": {
+   "src": 4,
+   "dev": 4,
+   "evidence": [
+    "scripts/check-caddy.mjs:68",
+    "scripts/edge-benchmark.mjs:88",
+    "scripts/real-integration.mjs:192",
+    "scripts/real-integration.mjs:193"
+   ]
+  },
+  "fs_write": {
+   "src": 71,
+   "dev": 102,
+   "evidence": [
+    "scripts/caddy-e2e.mjs:6",
+    "scripts/caddy-e2e.mjs:103",
+    "scripts/caddy-release.mjs:10",
+    "scripts/caddy-release.mjs:11",
+    "scripts/caddy-release.mjs:68"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 70,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×46 src, e.g. scripts/caddy-e2e.mjs:4, scripts/caddy-e2e.mjs:4"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/password.ts:36"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×4 src, e.g. scripts/check-caddy.mjs:68, scripts/edge-benchmark.mjs:88"
+  }
+ ],
+ "level": 3
+}

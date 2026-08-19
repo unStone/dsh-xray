@@ -1,9 +1,10 @@
 {
  "repo": "ai-shushu/dsh-quota-meter",
- "stars": 1,
+ "stars": 6,
  "description": "Per-session quota meter for DSH: real-token billing, live progress bar, budget blocking, configurable multi-model pricing. 会话额度监控：真实记账、进度条、额度拦截、价目可配。",
- "pushed_at": "2026-08-16T16:03:26Z",
+ "pushed_at": "2026-08-18T14:13:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -16,6 +17,7 @@
  "deps": [],
  "install_scripts": {},
  "injects": [
+  "apiProxy",
   "dshHomePath",
   "slots",
   "webServer"
@@ -52,14 +54,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
+   "src": 7,
    "dev": 0,
    "evidence": [
     "index.js:9",
     "index.js:9",
-    "index.js:183",
-    "index.js:190",
-    "index.js:378"
+    "index.js:250",
+    "index.js:257",
+    "index.js:467"
    ]
   },
   "dyn_import": {
@@ -76,6 +78,10 @@
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
   }
  ],
  "level": 2

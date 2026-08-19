@@ -1,9 +1,10 @@
 {
  "repo": "zhuiyueya/dsh-im-gateway",
- "stars": 23,
+ "stars": 27,
  "description": "把 dsh agent 接入微信、飞书等 20+ 聊天平台的聚合网关插件 | Aggregate IM gateway for DeepSeek Harness (dsh): connect your agents to WeChat, Feishu, Telegram, Discord & 20+ chat platforms",
- "pushed_at": "2026-08-18T01:48:27Z",
+ "pushed_at": "2026-08-18T13:08:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -31,6 +32,7 @@
   "@deepseek-ai/dsh-user-approval",
   "@deepseek-ai/dsh-user-questions",
   "@deepseek-ai/schemastery",
+  "qrcode",
   "@deepseek-ai/cordis"
  ],
  "install_scripts": {},
@@ -52,10 +54,11 @@
  "tool_regs": 0,
  "domains": {
   "api.qrserver.com": 2,
-  "icons.duckduckgo.com": 2,
   "discord.com": 4,
   "docs.openclaw.ai": 4,
   "open.feishu.cn": 2,
+  "open.dingtalk.com": 2,
+  "developer.work.weixin.qq.com": 2,
   "t.me": 2,
   "q.qq.com": 2,
   "api.slack.com": 2,
@@ -84,11 +87,15 @@
   "ilinkai.weixin.qq.com": 2,
   "novac2c.cdn.weixin.qq.com": 2,
   "openapi.zalo.me": 2,
+  "oapi.dingtalk.com": 2,
+  "work.weixin.qq.com": 6,
   "mattermost.example.com": 1,
   "nextcloud.example.com": 1
  },
  "env": {
   "DSH_HOME": 4,
+  "DSH_DINGTALK_CLIENT_ID": 2,
+  "DSH_DINGTALK_CLIENT_SECRET": 2,
   "DSH_DISCORD_TOKEN": 2,
   "DSH_FEISHU_APP_ID": 2,
   "DSH_FEISHU_APP_SECRET": 2,
@@ -117,6 +124,8 @@
   "DSH_TELEGRAM_TOKEN": 2,
   "DSH_TWITCH_BOT_NAME": 2,
   "DSH_TWITCH_TOKEN": 2,
+  "DSH_WECOM_BOT_ID": 2,
+  "DSH_WECOM_SECRET": 2,
   "DSH_ZALO_TOKEN": 2
  },
  "behaviors": {
@@ -175,7 +184,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 117,
+ "files_scanned": 128,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -197,7 +206,7 @@
   },
   {
    "id": "token_env",
-   "evidence": "DSH_DISCORD_TOKEN, DSH_FEISHU_APP_SECRET, DSH_LINE_SECRET, DSH_LINE_TOKEN, DSH_MATRIX_ACCESS_TOKEN, DSH_MATTERMOST_TOKEN"
+   "evidence": "DSH_DINGTALK_CLIENT_SECRET, DSH_DISCORD_TOKEN, DSH_FEISHU_APP_SECRET, DSH_LINE_SECRET, DSH_LINE_TOKEN, DSH_MATRIX_ACCESS_TOKEN"
   }
  ],
  "level": 3

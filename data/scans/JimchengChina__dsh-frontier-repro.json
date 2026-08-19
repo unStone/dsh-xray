@@ -2,9 +2,20 @@
  "repo": "JimchengChina/dsh-frontier-repro",
  "stars": 0,
  "description": "Evidence-first frontier AI radar and reproducibility gate for DeepSeek Harness",
- "pushed_at": "2026-08-17T13:32:26Z",
+ "pushed_at": "2026-08-18T12:07:02Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  },
   "bundle": {
    "patch": "./cordis.patch.yml"
   }
@@ -18,32 +29,43 @@
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/schemastery"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "postinstall": "node scripts/postinstall.mjs"
+ },
  "injects": [
+  "connection",
+  "locale",
+  "slots",
   "systemPrompt",
   "tools"
  ],
  "hooks": [],
- "tool_regs": 18,
+ "tool_regs": 30,
  "domains": {
   "export.arxiv.org": 1,
   "openai.com": 3,
-  "www.anthropic.com": 4,
+  "www.anthropic.com": 5,
   "deepmind.google": 2,
+  "www.minimax.io": 1,
+  "platform.kimi.com": 1,
   "api-docs.deepseek.com": 1,
+  "www.deepseek.com": 1,
   "docs.z.ai": 1,
-  "huggingface.co": 9,
+  "developer.nvidia.com": 1,
+  "rocm.blogs.amd.com": 1,
+  "newsroom.intel.com": 1,
+  "huggingface.co": 14,
+  "api.github.com": 7,
   "blog.samaltman.com": 1,
   "importai.substack.com": 1,
   "x.com": 4,
-  "api.github.com": 2,
   "api.x.com": 2
  },
  "env": {},
  "behaviors": {
   "exec": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   },
   "eval": {
@@ -63,9 +85,9 @@
   },
   "fs_write": {
    "src": 1,
-   "dev": 0,
+   "dev": 1,
    "evidence": [
-    "lib/store.js:118"
+    "lib/store.js:259"
    ]
   },
   "dyn_import": {
@@ -75,7 +97,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 25,
+ "files_scanned": 34,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -84,9 +106,13 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/postinstall.mjs"
+  },
+  {
    "id": "prompt_surface",
    "evidence": "systemPrompt"
   }
  ],
- "level": 2
+ "level": 3
 }

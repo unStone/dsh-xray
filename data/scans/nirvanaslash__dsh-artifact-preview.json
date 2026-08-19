@@ -2,9 +2,13 @@
  "repo": "nirvanaslash/dsh-artifact-preview",
  "stars": 0,
  "description": "Codex-style artifact preview for DeepSeek Harness (DSH): produced-files card row in chat + split-screen side preview (Markdown / code / CSV / JSON / images / HTML)",
- "pushed_at": "2026-08-15T10:29:28Z",
+ "pushed_at": "2026-08-18T14:36:48Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "inject": [
     "@deepseek-ai/dsh-client-ui-conversation"
@@ -60,6 +64,11 @@
  "files_scanned": 2,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

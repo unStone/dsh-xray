@@ -2,14 +2,15 @@
  "repo": "staavanothanh/dsh-ecc",
  "stars": 0,
  "description": "DSH adapter for Everything Claude Code agents, skills, hooks, and new tool spawn_subagent",
- "pushed_at": "2026-08-18T08:20:14Z",
+ "pushed_at": "2026-08-18T12:54:49Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
   }
  },
- "pkg_name": "dsh-ecc",
+ "pkg_name": "@staavanothanh/dsh-ecc",
  "deps": [
   "yaml",
   "@deepseek-ai/dsh-agent",
@@ -23,87 +24,19 @@
  "hooks": [],
  "tool_regs": 2,
  "domains": {
-  "git-scm.com": 1,
-  "cursor.com": 1,
-  "compute.itomarkets.com": 1,
-  "registry.nasiko.dev": 1,
-  "discord.gg": 1,
-  "cdn.jsdelivr.net": 1,
   "itomarkets.com": 2
  },
- "env": {
-  "ECC_HOOK_INPUT_TRUNCATED": 3,
-  "ECC_HOOK_INPUT_MAX_BYTES": 3,
-  "CLAUDE_TRANSCRIPT_PATH": 4,
-  "ECC_SESSION_ID": 6,
-  "CLAUDE_SESSION_ID": 13,
-  "TMUX": 2,
-  "TERM_PROGRAM": 2,
-  "CLAUDE_CONFIG_DIR": 2,
-  "GATEGUARD_STATE_DIR": 1,
-  "USERPROFILE": 4,
-  "GATEGUARD_BASH_EXTRA_DESTRUCTIVE": 1,
-  "GATEGUARD_EXEMPT_GLOBS": 1,
-  "GATEGUARD_BASH_ROUTINE_DISABLED": 1,
-  "GATEGUARD_DISABLED": 1,
-  "ECC_GATEGUARD": 1,
-  "CLAUDE_PROJECT_DIR": 3,
-  "GATEGUARD_FACT_FORCE_FULL_DENIALS": 1,
-  "ECC_GOVERNANCE_CAPTURE": 1,
-  "CLAUDE_HOOK_EVENT_NAME": 2,
-  "ECC_ENABLE_INSAITS": 1,
-  "ECC_MCP_HEALTH_STATE_PATH": 2,
-  "ECC_MCP_CONFIG_PATH": 2,
-  "ECC_MCP_RECONNECT_COMMAND": 1,
-  "ECC_MCP_HEALTH_FAIL_OPEN": 1,
-  "CLAUDE_PLUGIN_ROOT": 9,
-  "ECC_PLUGIN_ROOT": 4,
-  "BASH": 10,
-  "ECC_HOOK_ID": 2,
-  "ECC_OBSERVE_RUNNER_TIMEOUT_MS": 1,
-  "ECC_PLAN_CANVAS_STATE_DIR": 2,
-  "ECC_POSTTOOLUSE_PASSTHROUGH": 1,
-  "NAME": 1,
-  "API_KEY": 1,
-  "PATHEXT": 1,
-  "ECC_QUALITY_GATE_FIX": 1,
-  "ECC_QUALITY_GATE_STRICT": 1,
-  "ECC_LLM_SUMMARY_INTERVAL": 1,
-  "ECC_SESSION_RETENTION_DAYS": 1,
-  "ECC_SESSION_START_CONTEXT": 1,
-  "ECC_SESSION_START_MAX_CHARS": 1,
-  "ECC_INSTINCT_CONFIDENCE_THRESHOLD": 1,
-  "ECC_MAX_INJECTED_INSTINCTS": 1,
-  "COMPACT_STATE_TTL_DAYS": 1,
-  "COMPACT_THRESHOLD": 1,
-  "CURSOR_VERSION": 2,
-  "CURSOR_PROJECT_DIR": 3,
-  "CODEX_HOME": 1,
-  "ECC_GH_SHIM": 2,
-  "CLAUDE_RULES_DIR": 1,
-  "ECC_INSTINCT_RELEVANCE_RANKING": 1,
-  "ECC_LLM_SUMMARY_MODEL": 1,
-  "ECC_LLM_SUMMARY_CONTEXT_THRESHOLD": 1,
-  "ECC_SKIP_LLM_SUMMARY": 1,
-  "CLV2_HOMUNCULUS_DIR": 1,
-  "XDG_DATA_HOME": 1,
-  "CLAUDE_PACKAGE_MANAGER": 1,
-  "ECC_TUI_BIN": 3,
-  "ECC_DISABLED_MCPS": 1,
-  "ECC_SESSION_RECORDING_DIR": 3,
-  "CODEX_SESSIONS_DIR": 1,
-  "OPENCODE_STORAGE_DIR": 1
- },
+ "env": {},
  "behaviors": {
   "exec": {
-   "src": 170,
-   "dev": 1,
+   "src": 24,
+   "dev": 0,
    "evidence": [
-    "assets/ecc/scripts/hooks/auto-tmux-dev.js:29",
-    "assets/ecc/scripts/hooks/auto-tmux-dev.js:29",
-    "assets/ecc/scripts/hooks/auto-tmux-dev.js:72",
-    "assets/ecc/scripts/hooks/block-no-verify.js:543",
-    "assets/ecc/scripts/hooks/config-protection.js:79"
+    "assets/ecc/skills/ck/commands/shared.mjs:11",
+    "assets/ecc/skills/ck/commands/shared.mjs:11",
+    "assets/ecc/skills/ck/commands/shared.mjs:147",
+    "assets/ecc/skills/ck/hooks/session-start.mjs:20",
+    "assets/ecc/skills/ck/hooks/session-start.mjs:20"
    ]
   },
   "eval": {
@@ -112,44 +45,37 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 2,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "assets/ecc/scripts/lib/codex-legacy-sync.js:317",
-    "assets/ecc/scripts/lib/codex-legacy-sync.js:551"
-   ]
+   "evidence": []
   },
   "net_server": {
-   "src": 2,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "assets/ecc/scripts/lib/control-pane/server.js:188",
-    "assets/ecc/scripts/lib/plan-canvas/server.js:531"
-   ]
+   "evidence": []
   },
   "fs_write": {
-   "src": 115,
-   "dev": 5,
+   "src": 12,
+   "dev": 3,
    "evidence": [
-    "assets/ecc/scripts/hooks/cost-tracker.js:43",
-    "assets/ecc/scripts/hooks/cost-tracker.js:227",
-    "assets/ecc/scripts/hooks/desktop-notify.js:182",
-    "assets/ecc/scripts/hooks/ecc-context-monitor.js:86",
-    "assets/ecc/scripts/hooks/ecc-context-monitor.js:90"
+    "src/model-catalog.ts:153",
+    "assets/ecc/skills/ck/commands/forget.mjs:14",
+    "assets/ecc/skills/ck/commands/forget.mjs:33",
+    "assets/ecc/skills/ck/commands/save.mjs:19",
+    "assets/ecc/skills/ck/commands/save.mjs:202"
    ]
   },
   "dyn_import": {
-   "src": 3,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "src/runtime/dsh.ts:288",
-    "src/runtime/dsh.ts:295",
-    "assets/ecc/scripts/lib/plan-canvas/ui.js:32"
+    "src/runtime/dsh.ts:307",
+    "src/runtime/dsh.ts:314"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 217,
+ "files_scanned": 39,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -159,19 +85,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×170 src, e.g. assets/ecc/scripts/hooks/auto-tmux-dev.js:29, assets/ecc/scripts/hooks/auto-tmux-dev.js:29"
-  },
-  {
-   "id": "base64_decode",
-   "evidence": "×2 src, e.g. assets/ecc/scripts/lib/codex-legacy-sync.js:317, assets/ecc/scripts/lib/codex-legacy-sync.js:551"
-  },
-  {
-   "id": "net_server",
-   "evidence": "×2 src, e.g. assets/ecc/scripts/lib/control-pane/server.js:188, assets/ecc/scripts/lib/plan-canvas/server.js:531"
-  },
-  {
-   "id": "token_env",
-   "evidence": "API_KEY, ECC_POSTTOOLUSE_PASSTHROUGH"
+   "evidence": "×24 src, e.g. assets/ecc/skills/ck/commands/shared.mjs:11, assets/ecc/skills/ck/commands/shared.mjs:11"
   }
  ],
  "level": 3

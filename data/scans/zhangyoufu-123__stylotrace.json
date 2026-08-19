@@ -1,0 +1,156 @@
+{
+ "repo": "zhangyoufu-123/stylotrace",
+ "stars": 1,
+ "description": "越写越像你：学会同事/领导/偶像的写作风格，AI 替你写但像你写的。DeepSeek Harness 写作插件：41 个 MCP 工具 + 项目自动提炼 + 去 AI 味 + 文件预览",
+ "pushed_at": "2026-08-19T02:33:08Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "stylotrace",
+ "deps": [
+  "@deepseek-ai/dsh-mcp-client"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "doi.org": 3,
+  "api.deepseek.com": 7,
+  "api.openai.com": 6,
+  "openrouter.ai": 4,
+  "api.moonshot.cn": 4,
+  "dashscope.aliyuncs.com": 4,
+  "open.bigmodel.cn": 7,
+  "generativelanguage.googleapis.com": 4,
+  "api.anthropic.com": 6,
+  "api.tavily.com": 3,
+  "google.serper.dev": 3,
+  "html.duckduckgo.com": 3,
+  "cn.bing.com": 3,
+  "api.bilibili.com": 3,
+  "www.bilibili.com": 3,
+  "www.baidu.com": 3,
+  "zh.wikipedia.org": 6
+ },
+ "env": {
+  "STYLOTRACE_WEB_DATA": 2,
+  "STYLOTRACE_QUICK": 2,
+  "STYLOTRACE_LLM_TIMEOUT_MS": 4,
+  "PORT": 1,
+  "STYLOTRACE_WEB_PASSWORD": 1,
+  "STYLOTRACE_MOCK_LLM": 6,
+  "STYLOTRACE_LLM_RETRIES": 2,
+  "STYLOTRACE_SEARCH_PROVIDER": 2,
+  "STYLOTRACE_LLM_MODEL": 3,
+  "STYLOTRACE_DEBUG": 3,
+  "STYLOTRACE_WORKSPACE": 6,
+  "STYLOTRACE_BLOCK_PRIVATE_URL": 3,
+  "STYLOTRACE_HOME": 12,
+  "DEEPSEEK_API_KEY": 3,
+  "DEEPSEEK_BASE_URL": 3,
+  "DEEPSEEK_MODEL": 3,
+  "STYLOTRACE_ENGINE_DIR": 3,
+  "STYLOTRACE_DECODE_N": 6,
+  "STYLOTRACE_CONCRETIZE": 6,
+  "DSH_HOME": 2,
+  "CODEX_HOME": 2,
+  "STYLOTRACE_LLM_API_KEY": 1,
+  "OPENAI_API_KEY": 1,
+  "STYLOTRACE_LLM_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 53,
+   "dev": 38,
+   "evidence": [
+    "web/server.mjs:14",
+    "web/server.mjs:14",
+    "web/server.mjs:430",
+    "agent/src/doc-pipeline.js:9",
+    "agent/src/doc-pipeline.js:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "web/server.mjs:751"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "web/server.mjs:488"
+   ]
+  },
+  "fs_write": {
+   "src": 301,
+   "dev": 101,
+   "evidence": [
+    "scripts/overflow-summary.mjs:65",
+    "web/server.mjs:278",
+    "web/server.mjs:284",
+    "web/server.mjs:421",
+    "web/server.mjs:422"
+   ]
+  },
+  "dyn_import": {
+   "src": 75,
+   "dev": 101,
+   "evidence": [
+    "web/server.mjs:67",
+    "web/server.mjs:77",
+    "web/server.mjs:80",
+    "web/server.mjs:83",
+    "web/server.mjs:86"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 291,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×53 src, e.g. web/server.mjs:14, web/server.mjs:14"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. web/server.mjs:751"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. web/server.mjs:488"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, OPENAI_API_KEY, STYLOTRACE_LLM_API_KEY, STYLOTRACE_WEB_PASSWORD"
+  }
+ ],
+ "level": 3
+}

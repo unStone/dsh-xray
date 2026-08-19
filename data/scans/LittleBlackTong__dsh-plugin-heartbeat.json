@@ -1,0 +1,86 @@
+{
+ "repo": "LittleBlackTong/dsh-plugin-heartbeat",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-19T01:10:18Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ]
+  }
+ },
+ "pkg_name": "dsh-plugin-heartbeat",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "slots"
+ ],
+ "hooks": [
+  "agent/created"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/store.js:15",
+    "lib/store.js:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/rehearse.mjs:16",
+    "scripts/rehearse.mjs:146"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

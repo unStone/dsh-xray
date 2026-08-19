@@ -44,14 +44,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。</p>
-  <p class="lede">★ 12k+ ·
+  <p class="lede">★ 13k+ ·
      <a href="https://github.com/anywhere-labs/deepseek-harness-desktop" rel="nofollow ugc">anywhere-labs/deepseek-harness-desktop source on GitHub</a>
      · <a href="../registry.html#anywhere-labs__deepseek-harness-desktop">this plugin in the registry</a></p>
   <p>anywhere-labs/deepseek-harness-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, decodes base64 payloads.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×46 src, e.g. scripts/verify-layout.mjs:1, scripts/verify-layout.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. dsh-plugin-desktop/scripts/release-preflight.ts:56, dsh-community-market/src/install/service.ts:208</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>appExit</span> <span>desktopPnpm</span> <span>desktopPnpmBootstrap</span> <span>desktopProfiles</span> <span>desktopRuntime</span> <span>locale</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>subprocess</span> <span>theme</span> <span>webRuntime</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>settings/updated</span> <span>theme/change</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>plugins.example.org</span> <span>electronjs.org</span> <span>www.dshdesktop.cn</span> <span>deepseek1024.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>plugins.example.org</span> <span>electronjs.org</span> <span>www.dshdesktop.cn</span> <span>deepseek1024.com</span> <span>api.dshfind.com</span> <span>dshfind.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TELEMETRY_DISABLED</span> <span>SystemRoot</span> <span>WINDIR</span> <span>NODE</span> <span>npm_node_execpath</span> <span>npm_config_runtime</span> <span>npm_config_target</span> <span>npm_config_disturl</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

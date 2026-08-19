@@ -2,8 +2,9 @@
  "repo": "seven282/oss-prompt-optimizer",
  "stars": 4,
  "description": "用于优化 DeepSeek harness提示词优化器，提升 AI 输出质量",
- "pushed_at": "2026-08-18T08:07:31Z",
+ "pushed_at": "2026-08-18T15:35:49Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -48,7 +49,8 @@
   "tools"
  ],
  "hooks": [
-  "agent/pre-step"
+  "agent/pre-step",
+  "prompt-optimizer/optimize:success"
  ],
  "tool_regs": 2,
  "domains": {},
@@ -86,7 +88,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 17,
+ "files_scanned": 30,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

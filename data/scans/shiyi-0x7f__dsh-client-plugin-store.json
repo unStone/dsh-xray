@@ -1,0 +1,91 @@
+{
+ "repo": "shiyi-0x7f/dsh-client-plugin-store",
+ "stars": 0,
+ "description": "Community plugin store panel for the DeepSeek Harness Web UI (browse/search dshplugin.org index, copyable pinned install commands)",
+ "pushed_at": "2026-08-18T13:17:36Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-client-plugin-store",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "dshplugin.org": 1
+ },
+ "env": {
+  "DSH_HOME": 3
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "index.js:13",
+    "index.js:71"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "index.js:14",
+    "index.js:123"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. index.js:13, index.js:71"
+  }
+ ],
+ "level": 3
+}

@@ -2,8 +2,9 @@
  "repo": "Neplich/dsh_plugin",
  "stars": 1,
  "description": "",
- "pushed_at": "2026-08-18T07:51:11Z",
+ "pushed_at": "2026-08-18T11:57:48Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,15 +12,16 @@
  },
  "pkg_name": "dsh-plugin-root",
  "deps": [
-  "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery",
   "playwright-core",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
   "@deepseek-ai/cordis",
   "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery",
@@ -29,6 +31,8 @@
   "mermaid",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/cordis",
+  "@neplich/dsh-chat-autoload",
   "@deepseek-ai/schemastery",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-host-webserver",
@@ -88,9 +92,9 @@
    "src": 6,
    "dev": 0,
    "evidence": [
-    "packages/feature/dsh-agent-webuse/src/index.ts:14",
-    "packages/feature/dsh-agent-webuse/src/index.ts:15",
-    "packages/feature/dsh-agent-webuse/src/index.ts:154",
+    "packages/agent/dsh-agent-webuse/src/index.ts:14",
+    "packages/agent/dsh-agent-webuse/src/index.ts:15",
+    "packages/agent/dsh-agent-webuse/src/index.ts:157",
     "packages/feature/dsh-web-workpanel/src/terminal.ts:107",
     "packages/feature/dsh-web-workpanel/src/terminal.ts:126"
    ]
@@ -104,23 +108,23 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "packages/feature/dsh-agent-webuse/src/index.ts:412"
+    "packages/agent/dsh-agent-webuse/src/index.ts:423"
    ]
   },
   "net_server": {
    "src": 2,
    "dev": 0,
    "evidence": [
-    "packages/feature/dsh-agent-imagevault/src/index.ts:121",
-    "packages/feature/dsh-agent-webuse/driver/server.mjs:183"
+    "packages/agent/dsh-agent-imagevault/src/index.ts:121",
+    "packages/agent/dsh-agent-webuse/driver/server.mjs:183"
    ]
   },
   "fs_write": {
    "src": 4,
    "dev": 16,
    "evidence": [
-    "packages/feature/dsh-agent-imagevault/src/index.ts:113",
-    "packages/feature/dsh-agent-webuse/driver/server.mjs:169",
+    "packages/agent/dsh-agent-imagevault/src/index.ts:113",
+    "packages/agent/dsh-agent-webuse/driver/server.mjs:169",
     "packages/feature/dsh-config-instructions/src/server/instructions.ts:70",
     "packages/feature/dsh-config-mcp/src/server/mcp.ts:78"
    ]
@@ -136,7 +140,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 99,
+ "files_scanned": 113,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -150,15 +154,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×6 src, e.g. packages/feature/dsh-agent-webuse/src/index.ts:14, packages/feature/dsh-agent-webuse/src/index.ts:15"
+   "evidence": "×6 src, e.g. packages/agent/dsh-agent-webuse/src/index.ts:14, packages/agent/dsh-agent-webuse/src/index.ts:15"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. packages/feature/dsh-agent-webuse/src/index.ts:412"
+   "evidence": "×1 src, e.g. packages/agent/dsh-agent-webuse/src/index.ts:423"
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. packages/feature/dsh-agent-imagevault/src/index.ts:121, packages/feature/dsh-agent-webuse/driver/server.mjs:183"
+   "evidence": "×2 src, e.g. packages/agent/dsh-agent-imagevault/src/index.ts:121, packages/agent/dsh-agent-webuse/driver/server.mjs:183"
   }
  ],
  "level": 3

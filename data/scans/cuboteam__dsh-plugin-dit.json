@@ -2,20 +2,33 @@
  "repo": "cuboteam/dsh-plugin-dit",
  "stars": 1,
  "description": "DIT.ai provider bundle for DeepSeek Harness",
- "pushed_at": "2026-08-18T03:06:42Z",
+ "pushed_at": "2026-08-19T01:58:24Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
   }
  },
  "pkg_name": "dsh-plugin-dit",
  "deps": [],
  "install_scripts": {},
- "injects": [],
+ "injects": [
+  "connection",
+  "slots"
+ ],
  "hooks": [],
  "tool_regs": 0,
  "domains": {
+  "dit.ai": 2,
   "api.dit.ai": 1
  },
  "env": {
@@ -54,8 +67,8 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "scripts/harness-smoke.mjs:94",
-    "scripts/harness-smoke.mjs:116"
+    "scripts/harness-smoke.mjs:99",
+    "scripts/harness-smoke.mjs:121"
    ]
   },
   "dyn_import": {
@@ -64,8 +77,8 @@
    "evidence": []
   }
  },
- "has_apply": false,
- "files_scanned": 3,
+ "has_apply": true,
+ "files_scanned": 5,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

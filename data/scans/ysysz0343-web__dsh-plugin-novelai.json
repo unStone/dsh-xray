@@ -1,9 +1,10 @@
 {
  "repo": "ysysz0343-web/dsh-plugin-novelai",
- "stars": 0,
+ "stars": 1,
  "description": "NovelAI Diffusion V4.5 Full image generation for DeepSeek Harness (nai_generate_image tool)",
- "pushed_at": "2026-08-18T09:23:23Z",
+ "pushed_at": "2026-08-18T17:03:42Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -12,20 +13,21 @@
  "pkg_name": "dsh-plugin-novelai",
  "deps": [
   "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-tools"
  ],
  "install_scripts": {},
  "injects": [
+  "settings",
   "tools"
  ],
  "hooks": [],
- "tool_regs": 2,
+ "tool_regs": 6,
  "domains": {
-  "image.novelai.net": 1
+  "image.novelai.net": 1,
+  "tagsuggest.zeabur.app": 1
  },
- "env": {
-  "NOVELAI_API_KEY": 1
- },
+ "env": {},
  "behaviors": {
   "exec": {
    "src": 1,
@@ -50,12 +52,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 3,
+   "src": 5,
    "dev": 0,
    "evidence": [
     "novelai-core.mjs:15",
-    "novelai-core.mjs:260",
-    "novelai-core.mjs:315"
+    "novelai-core.mjs:15",
+    "novelai-core.mjs:261",
+    "novelai-core.mjs:303",
+    "novelai-core.mjs:319"
    ]
   },
   "dyn_import": {
@@ -76,10 +80,6 @@
   {
    "id": "exec",
    "evidence": "×1 src, e.g. novelai-core.mjs:13"
-  },
-  {
-   "id": "token_env",
-   "evidence": "NOVELAI_API_KEY"
   }
  ],
  "level": 3

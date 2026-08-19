@@ -2,8 +2,9 @@
  "repo": "sudoprivacy/dsh-shareone-plugin",
  "stars": 0,
  "description": "ShareOne tools for DeepSeek Harness",
- "pushed_at": "2026-08-18T06:50:08Z",
+ "pushed_at": "2026-08-18T10:14:21Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,18 +12,20 @@
  },
  "pkg_name": "dsh-shareone-plugin",
  "deps": [
+  "@deepseek-ai/dsh-credentials",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/schemastery",
   "@deepseek-ai/cordis"
  ],
  "install_scripts": {},
  "injects": [
+  "credentials",
   "tools"
  ],
  "hooks": [],
  "tool_regs": 16,
  "domains": {
-  "shareone.vip": 2
+  "shareone.vip": 3
  },
  "env": {},
  "behaviors": {
@@ -42,15 +45,18 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/test-credentials.mjs:7",
+    "scripts/test-credentials.mjs:29"
+   ]
   },
   "fs_write": {
    "src": 1,
    "dev": 0,
    "evidence": [
-    "index.js:560"
+    "index.js:571"
    ]
   },
   "dyn_import": {
@@ -60,14 +66,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 3,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/test-credentials.mjs:7, scripts/test-credentials.mjs:29"
   }
  ],
- "level": 2
+ "level": 3
 }

@@ -1,0 +1,88 @@
+{
+ "repo": "EIGHTfs/dsh-image-preview",
+ "stars": 0,
+ "description": "DSH 会话内图片预览插件：静态图片服务 + 文本渲染(双字体防乱码) + SVG转PNG，让 AI 在会话里直接发图片",
+ "pushed_at": "2026-08-18T14:01:02Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-image-preview",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_WORKSPACE": 1,
+  "PYTHONPATH": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/render.js:9",
+    "lib/render.js:9",
+    "lib/render.js:55",
+    "lib/render.js:78",
+    "lib/render.js:196"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/render.js:210"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "test-apply.mjs:18",
+    "test-apply.mjs:126"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/render.js:9, lib/render.js:9"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/render.js:210"
+  }
+ ],
+ "level": 3
+}

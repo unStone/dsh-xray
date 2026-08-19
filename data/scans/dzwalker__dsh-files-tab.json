@@ -2,8 +2,9 @@
  "repo": "dzwalker/dsh-files-tab",
  "stars": 0,
  "description": "A DeepSeek Harness (DSH) conversation 'Files' tab plugin: open, read (Markdown + TOC) and edit (Monaco) workspace files without leaving the chat.",
- "pushed_at": "2026-08-18T02:36:00Z",
+ "pushed_at": "2026-08-18T10:54:38Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -16,6 +17,7 @@
  },
  "pkg_name": "dsh-files-tab",
  "deps": [
+  "@cyntler/react-doc-viewer",
   "monaco-editor",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-api-remotes",
@@ -47,7 +49,9 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "unpkg.com": 1
+ },
  "env": {},
  "behaviors": {
   "exec": {
@@ -61,9 +65,12 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/client-ui-files/src/client/ReadView.tsx:121",
+    "packages/client-ui-files/src/client/store.ts:109"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -82,9 +89,14 @@
   }
  },
  "has_apply": true,
- "files_scanned": 17,
+ "files_scanned": 18,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/client-ui-files/src/client/ReadView.tsx:121, packages/client-ui-files/src/client/store.ts:109"
+  }
+ ],
+ "level": 2
 }

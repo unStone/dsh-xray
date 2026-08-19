@@ -1,9 +1,10 @@
 {
  "repo": "kanchengw/dsh-mindseye",
  "stars": 1,
- "description": "Plug-in vision for text-only models on DSH, with native multimodal interaction, layered evidence memory and cache, and intent router.",
- "pushed_at": "2026-08-18T00:30:35Z",
+ "description": "Plug-in vision for text-only models on DSH, with native interaction for image understanding and generation, layered evidence memory and cache, and intent-driven VLM router.",
+ "pushed_at": "2026-08-18T15:51:32Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -26,6 +27,7 @@
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-anonymous-user-id",
   "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-client-connection",
   "@deepseek-ai/dsh-client-locale",
   "@deepseek-ai/dsh-client-runtime",
@@ -42,14 +44,15 @@
  ],
  "install_scripts": {},
  "injects": [
+  "attachments",
+  "sessions",
   "slots",
   "tools"
  ],
  "hooks": [
-  "llm/stream",
-  "tools/pre-execute"
+  "llm/stream"
  ],
- "tool_regs": 12,
+ "tool_regs": 14,
  "domains": {},
  "env": {
   "DSH_HOME": 1,
@@ -67,9 +70,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "src/image-generation.ts:144"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -92,7 +97,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 53,
+ "files_scanned": 63,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -101,9 +106,9 @@
    "evidence": "./cordis.patch.yml"
   },
   {
-   "id": "tool_gate",
-   "evidence": "hook: tools/pre-execute"
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/image-generation.ts:144"
   }
  ],
- "level": 2
+ "level": 3
 }

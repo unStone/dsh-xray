@@ -1,9 +1,10 @@
 {
  "repo": "lk251066/dsh-tui-pro",
- "stars": 0,
- "description": "Fixed framed terminal workbench plugin for DeepSeek Harness with transcript-only scrolling and persistent sessions.",
- "pushed_at": "2026-08-18T08:46:37Z",
+ "stars": 1,
+ "description": "Multi-session terminal workbench for DeepSeek Harness — durable Assistant, persistent project sessions, structured tools, diffs, plans, and subagents.",
+ "pushed_at": "2026-08-19T01:34:28Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./packages/dsh-tui/cordis.patch.yml"
@@ -96,8 +97,8 @@
  },
  "behaviors": {
   "exec": {
-   "src": 11,
-   "dev": 7,
+   "src": 9,
+   "dev": 4,
    "evidence": [
     "scripts/pack-artifact.mjs:1",
     "scripts/pack-artifact.mjs:13",
@@ -122,14 +123,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 12,
+   "src": 17,
    "dev": 15,
    "evidence": [
-    "scripts/render-pty-capture.mjs:30",
-    "scripts/verify-public-dsh-host.mjs:45",
-    "packages/dsh-tui/scripts/cleanup-bundled-dependencies.mjs:1",
-    "packages/dsh-tui/scripts/cleanup-bundled-dependencies.mjs:1",
-    "packages/dsh-tui/scripts/cleanup-bundled-dependencies.mjs:20"
+    "scripts/capture-readme-frame.ts:347",
+    "scripts/capture-readme-frame.ts:351",
+    "scripts/capture-readme-frame.ts:364",
+    "scripts/capture-readme-frame.ts:384",
+    "scripts/encode-readme-demo.ts:36"
    ]
   },
   "dyn_import": {
@@ -139,7 +140,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 118,
+ "files_scanned": 125,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -153,7 +154,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×11 src, e.g. scripts/pack-artifact.mjs:1, scripts/pack-artifact.mjs:13"
+   "evidence": "×9 src, e.g. scripts/pack-artifact.mjs:1, scripts/pack-artifact.mjs:13"
   }
  ],
  "level": 3

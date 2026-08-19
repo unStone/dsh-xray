@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zhouCode/dsh-squad — capability card (C3) · dsh-xray</title>
-<meta name="description" content="zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta name="description" content="zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zhouCode__dsh-squad.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zhouCode/dsh-squad — dsh plugin capability card">
-<meta property="og:description" content="zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta property="og:description" content="zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zhouCode__dsh-squad.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-squad", "identifier": "zhouCode/dsh-squad", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/zhouCode/dsh-squad", "url": "https://unstone.github.io/dsh-xray/p/zhouCode__dsh-squad.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-squad", "identifier": "zhouCode/dsh-squad", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/zhouCode/dsh-squad", "url": "https://unstone.github.io/dsh-xray/p/zhouCode__dsh-squad.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,12 +47,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/zhouCode/dsh-squad" rel="nofollow ugc">zhouCode/dsh-squad source on GitHub</a>
      · <a href="../registry.html#zhouCode__dsh-squad">this plugin in the registry</a></p>
-  <p>zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 src, e.g. scripts/smoke-delegation.mjs:2, scripts/smoke-delegation.mjs:2</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. scripts/smoke-delegation.mjs:64, scripts/smoke-delegation.mjs:67</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>llm</span> <span>locale</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
+  <p>zhouCode/dsh-squad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 src, e.g. scripts/smoke-delegation.mjs:2, scripts/smoke-delegation.mjs:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. packages/plugin/src/update/release.ts:84</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. scripts/smoke-delegation.mjs:70, scripts/smoke-delegation.mjs:73</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_SQUAD_RELEASE_SIGNING_KEY, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>commands</span> <span>llm</span> <span>locale</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>SQUAD_SMOKE_KEEP</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>bob.example.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SQUAD_RELEASE_SIGNING_KEY</span> <span>DSH_SQUAD_RELEASE_PUBLISHED_AT</span> <span>SQUAD_SMOKE_KEEP</span> <span>GITHUB_TOKEN</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

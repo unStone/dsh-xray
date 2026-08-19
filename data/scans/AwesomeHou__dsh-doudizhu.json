@@ -1,0 +1,95 @@
+{
+ "repo": "AwesomeHou/dsh-doudizhu",
+ "stars": 1,
+ "description": "DSH 斗地主插件：在 DeepSeek Harness 里等回复时来一把（PVP → DSH Agent）",
+ "pushed_at": "2026-08-18T15:59:27Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-web-react"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-doudizhu",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "react",
+  "react-dom",
+  "hono"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "ready"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dsh-doudizhu.1546567314.workers.dev": 2,
+  "dsh-doudizhu.xxx.workers.dev": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "worker/src/auth.ts:18"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 31,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. worker/src/auth.ts:18"
+  }
+ ],
+ "level": 3
+}

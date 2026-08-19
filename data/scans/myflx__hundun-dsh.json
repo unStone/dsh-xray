@@ -1,0 +1,92 @@
+{
+ "repo": "myflx/hundun-dsh",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T16:47:39Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "hundun-dsh",
+ "deps": [
+  "@hundun/dsh-workspace-canvas",
+  "@hundun/dsh-panel-protocol",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "E2E_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/aggregate.mjs:24",
+    "scripts/aggregate.mjs:287",
+    "scripts/aggregate.mjs:289",
+    "scripts/plugin-new.mjs:14",
+    "scripts/plugin-new.mjs:89"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 82,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

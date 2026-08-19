@@ -1,0 +1,98 @@
+{
+ "repo": "kaixinbaba/dsh-model-preset",
+ "stars": 0,
+ "description": "DeepSeek Harness model preset shortcuts with Settings customization",
+ "pushed_at": "2026-08-18T19:39:07Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-model-selection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-model-preset",
+ "deps": [
+  "schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "modelDirectories",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1,
+  "DSH_PLUGIN_STANDARD_VERIFY": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-install.mjs:2",
+    "scripts/smoke-install.mjs:2",
+    "scripts/smoke-install.mjs:11",
+    "scripts/smoke-install.mjs:18",
+    "scripts/smoke-install.mjs:23"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:9",
+    "lib/index.js:102",
+    "scripts/smoke-install.mjs:3",
+    "scripts/smoke-install.mjs:32",
+    "scripts/smoke-install.mjs:33"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/smoke-install.mjs:2, scripts/smoke-install.mjs:2"
+  }
+ ],
+ "level": 3
+}

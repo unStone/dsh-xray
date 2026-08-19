@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-fast",
  "stars": 0,
  "description": "Read-only performance diagnostics for DeepSeek Harness: session load (open/restore) timing, spill-hit counts, compaction count and trigger, context-injection volume (AGENTS.md/skills/tool-schema token",
- "pushed_at": "2026-08-18T00:17:18Z",
+ "pushed_at": "2026-08-18T15:05:09Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,14 +16,14 @@
   "typescript",
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
-  "@deepseek-ai/dsh-session",
-  "@deepseek-ai/dsh-tools",
   "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
   "@deepseek-ai/dsh-storage-json",
-  "@deepseek-ai/dsh-storage-domain"
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -44,11 +45,11 @@
  "behaviors": {
   "exec": {
    "src": 10,
-   "dev": 0,
+   "dev": 4,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:21",
+    "scripts/prepare.mjs:22",
     "scripts/release.mjs:27",
     "scripts/release.mjs:27"
    ]
@@ -69,13 +70,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 0,
+   "src": 6,
+   "dev": 7,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/release.mjs:28",
     "scripts/release.mjs:70",
-    "scripts/release.mjs:80",
-    "scripts/release.mjs:91"
+    "scripts/release.mjs:80"
    ]
   },
   "dyn_import": {
@@ -87,7 +89,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 26,
+ "files_scanned": 30,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

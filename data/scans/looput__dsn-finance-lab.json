@@ -2,8 +2,9 @@
  "repo": "looput/dsn-finance-lab",
  "stars": 1,
  "description": "DeepSeek Harness finance plugin: direct market HTTP APIs, portfolio settings, model tools",
- "pushed_at": "2026-08-18T08:20:41Z",
+ "pushed_at": "2026-08-19T02:40:57Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -40,6 +41,8 @@
   "@deepseek-ai/dsh-settings",
   "@deepseek-ai/dsh-system-prompt",
   "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/dsh-host-webserver",
   "@deepseek-ai/schemastery",
   "react"
  ],
@@ -50,27 +53,36 @@
   "settingsScope",
   "slots",
   "systemPrompt",
-  "tools"
+  "tools",
+  "web",
+  "webServer"
  ],
  "hooks": [],
- "tool_regs": 40,
+ "tool_regs": 62,
  "domains": {
   "fc.yahoo.com": 1,
   "query1.finance.yahoo.com": 3,
-  "push2.eastmoney.com": 4,
+  "push2.eastmoney.com": 6,
   "quote.eastmoney.com": 9,
   "push2his.eastmoney.com": 1,
   "proxy.finance.qq.com": 1,
   "gu.qq.com": 2,
-  "33.push2.eastmoney.com": 1,
   "datacenter.eastmoney.com": 2,
   "emweb.securities.eastmoney.com": 1,
-  "17.push2.eastmoney.com": 2,
+  "17.push2.eastmoney.com": 1,
   "searchapi.eastmoney.com": 1,
   "qt.gtimg.cn": 1,
   "html.duckduckgo.com": 1,
   "duckduckgo.com": 1,
-  "api.duckduckgo.com": 1
+  "api.duckduckgo.com": 1,
+  "fund.eastmoney.com": 4,
+  "datacenter-web.eastmoney.com": 1,
+  "data.eastmoney.com": 1,
+  "np-listapi.eastmoney.com": 1,
+  "kuaixun.eastmoney.com": 1,
+  "finance.eastmoney.com": 1,
+  "search-api-web.eastmoney.com": 1,
+  "so.eastmoney.com": 1
  },
  "env": {},
  "behaviors": {
@@ -95,12 +107,13 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 3,
+   "src": 4,
    "dev": 0,
    "evidence": [
     "scripts/build-client.mjs:5",
     "scripts/build-client.mjs:37",
-    "scripts/probe_sources.ts:89"
+    "scripts/probe_sources.ts:89",
+    "src/store.ts:70"
    ]
   },
   "dyn_import": {
@@ -110,7 +123,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 16,
+ "files_scanned": 19,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -120,7 +133,7 @@
   },
   {
    "id": "prompt_surface",
-   "evidence": "systemPrompt"
+   "evidence": "systemPrompt, webServer"
   }
  ],
  "level": 2

@@ -2,8 +2,9 @@
  "repo": "yxccai/dsh-desktop",
  "stars": 10,
  "description": "Unofficial Windows and macOS desktop app for DeepSeek Harness, with bundled runtime and automatic reuse of existing DSH environments.",
- "pushed_at": "2026-08-18T06:47:33Z",
+ "pushed_at": "2026-08-18T15:15:15Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -35,7 +36,11 @@
   "webServer",
   "workspaces"
  ],
- "hooks": [],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "approval/request"
+ ],
  "tool_regs": 0,
  "domains": {
   "awesome-dsh-plugin.com": 5,
@@ -86,10 +91,10 @@
    "src": 50,
    "dev": 65,
    "evidence": [
-    "src/config.js:46",
-    "src/dsh-integration.js:80",
+    "src/config.js:48",
     "src/dsh-integration.js:82",
-    "src/dsh-integration.js:98",
+    "src/dsh-integration.js:84",
+    "src/dsh-integration.js:100",
     "src/main.js:75"
    ]
   },
@@ -100,7 +105,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 32,
+ "files_scanned": 34,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

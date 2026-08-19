@@ -2,20 +2,33 @@
  "repo": "Walvez/dsh-search-failover",
  "stars": 0,
  "description": "DSH provider-level web search failover pool: 8 free/paid backends with quota-aware circuit breaking (keeps native web_search)",
- "pushed_at": "2026-08-17T06:02:59Z",
+ "pushed_at": "2026-08-18T13:39:28Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
   }
  },
  "pkg_name": "dsh-search-failover",
  "deps": [
   "@deepseek-ai/dsh-launch-environment",
-  "@deepseek-ai/dsh-web"
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
  "injects": [
+  "locale",
+  "slots",
   "web"
  ],
  "hooks": [
@@ -23,13 +36,19 @@
  ],
  "tool_regs": 0,
  "domains": {
+  "dashboard.exa.ai": 1,
   "api.exa.ai": 1,
+  "app.tavily.com": 1,
   "api.tavily.com": 1,
+  "serper.dev": 1,
   "google.serper.dev": 1,
-  "serpapi.com": 1,
+  "serpapi.com": 3,
+  "brave.com": 1,
   "api.search.brave.com": 1,
+  "jina.ai": 1,
   "s.jina.ai": 1,
-  "html.duckduckgo.com": 1
+  "html.duckduckgo.com": 1,
+  "docs.searxng.org": 1
  },
  "env": {
   "SEARXNG_BASE_URL": 1
@@ -67,7 +86,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 8,
+ "files_scanned": 14,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

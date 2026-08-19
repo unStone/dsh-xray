@@ -1,0 +1,122 @@
+{
+ "repo": "WizisCool/dsh-ears",
+ "stars": 1,
+ "description": "Voice input plugin for DeepSeek Harness (dsh): mic -> transcript -> optional polish -> editable draft",
+ "pushed_at": "2026-08-19T03:06:33Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes/client",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins"
+   ]
+  }
+ },
+ "pkg_name": "dsh-ears",
+ "deps": [
+  "@thesvg/react",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "locale",
+  "remote",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.groq.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/asr/local-whisper.ts:2",
+    "src/asr/local-whisper.ts:104",
+    "src/asr/whisper-models.ts:1",
+    "src/asr/whisper-models.ts:313",
+    "src/asr/whisper-models.ts:489"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/polish/service.ts:382"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 4,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 13,
+   "evidence": [
+    "scripts/create-dev-patch.mjs:10",
+    "src/asr/local-whisper.ts:69",
+    "src/asr/whisper-models.ts:358"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 67,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/asr/local-whisper.ts:2, src/asr/local-whisper.ts:104"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/polish/service.ts:382"
+  }
+ ],
+ "level": 3
+}

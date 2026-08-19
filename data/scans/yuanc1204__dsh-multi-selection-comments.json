@@ -1,0 +1,83 @@
+{
+ "repo": "yuanc1204/dsh-multi-selection-comments",
+ "stars": 1,
+ "description": "Codex-style multiple independent selection comments for DeepSeek Harness (DSH).",
+ "pushed_at": "2026-08-19T02:59:46Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-plugin-multi-selection-comments",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:2",
+    "scripts/build.mjs:53",
+    "scripts/build.mjs:54"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/test.mjs:10"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

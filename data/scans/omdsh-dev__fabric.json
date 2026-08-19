@@ -1,9 +1,10 @@
 {
  "repo": "omdsh-dev/fabric",
- "stars": 14,
- "description": "一种类似MC Fabric的hook处理器",
- "pushed_at": "2026-08-17T02:23:53Z",
+ "stars": 15,
+ "description": "一种类似MC Fabric的dsh hook处理器",
+ "pushed_at": "2026-08-18T17:30:08Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -60,9 +61,7 @@
  "tool_regs": 2,
  "domains": {},
  "env": {
-  "DSH_HARNESS": 2,
-  "DSH_HOME": 1,
-  "DSH_PROFILE": 1,
+  "DSH_HARNESS": 1,
   "DSH_FABRIC_CONFIG": 2,
   "DSH_FABRIC_PROFILE": 1,
   "DSH_FABRIC_FORCE_ASYNC_HOOKS": 1,
@@ -70,8 +69,8 @@
  },
  "behaviors": {
   "exec": {
-   "src": 17,
-   "dev": 18,
+   "src": 16,
+   "dev": 21,
    "evidence": [
     "scripts/extract-patch.mjs:30",
     "scripts/extract-patch.mjs:30",
@@ -97,7 +96,7 @@
   },
   "fs_write": {
    "src": 18,
-   "dev": 26,
+   "dev": 37,
    "evidence": [
     "scripts/extract-patch.mjs:33",
     "scripts/extract-patch.mjs:113",
@@ -107,10 +106,11 @@
    ]
   },
   "dyn_import": {
-   "src": 4,
+   "src": 5,
    "dev": 31,
    "evidence": [
     "packages/cordis-fabric/preload.mjs:33",
+    "scripts/fabric-dsh/main.mjs:79",
     "packages/cordis-fabric/src/catalog.ts:217",
     "packages/cordis-fabric/src/node-loader.ts:718",
     "packages/cordis-fabric/src/testkit-runner.ts:54"
@@ -118,7 +118,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 65,
+ "files_scanned": 70,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -136,7 +136,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×17 src, e.g. scripts/extract-patch.mjs:30, scripts/extract-patch.mjs:30"
+   "evidence": "×16 src, e.g. scripts/extract-patch.mjs:30, scripts/extract-patch.mjs:30"
   }
  ],
  "level": 3

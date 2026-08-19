@@ -2,9 +2,13 @@
  "repo": "poiuyjie/dsh-md-preview",
  "stars": 1,
  "description": "DeepSeek Harness plugin: open .md references from chat in a dockable side-by-side preview panel instead of the system editor; per-session recent-file tracking; pairs with dsh-vision-opencode for visua",
- "pushed_at": "2026-08-16T11:57:53Z",
+ "pushed_at": "2026-08-19T02:17:53Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "platform": "web"
   }
@@ -60,6 +64,11 @@
  "files_scanned": 2,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

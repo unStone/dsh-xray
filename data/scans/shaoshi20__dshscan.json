@@ -1,0 +1,111 @@
+{
+ "repo": "shaoshi20/dshscan",
+ "stars": 5,
+ "description": "DShScan - DSH plugin security scanner inspired by NVIDIA SkillSpector",
+ "pushed_at": "2026-08-18T20:27:00Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@shaoshi/dshscan",
+ "deps": [
+  "adm-zip",
+  "yaml",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {
+  "dshbase.com": 3,
+  "api.openai.com": 2
+ },
+ "env": {
+  "DSCAN_INDEX": 2,
+  "DSCAN_LLM_API_KEY": 1,
+  "OPENAI_API_KEY": 1,
+  "DSCAN_LLM_BASE_URL": 1,
+  "DSCAN_LLM_MODEL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 10,
+   "dev": 1,
+   "evidence": [
+    "src/rules.ts:28",
+    "src/rules.ts:30",
+    "src/rules.ts:30",
+    "src/scanner.ts:1",
+    "src/scanner.ts:1"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "src/rules.ts:26"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/cli.ts:182"
+   ]
+  },
+  "fs_write": {
+   "src": 16,
+   "dev": 1,
+   "evidence": [
+    "scripts/parse-dshbase-directory.mjs:13",
+    "scripts/parse-dshbase-directory.mjs:37",
+    "scripts/parse-dshbase-directory.mjs:87",
+    "src/cli.ts:1",
+    "src/cli.ts:375"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×10 src, e.g. src/rules.ts:28, src/rules.ts:30"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. src/rules.ts:26"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/cli.ts:182"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSCAN_LLM_API_KEY, OPENAI_API_KEY"
+  }
+ ],
+ "level": 3
+}

@@ -2,8 +2,9 @@
  "repo": "tafcear/kimi-tide",
  "stars": 3,
  "description": "月汐 — Kimi Code (Moonshot) 接入 DeepSeek Harness 的完整方案：标准 DSH 插件 + Kimi CLI 桥接维护 fork + Agent 协作闭环方法论",
- "pushed_at": "2026-08-18T08:42:12Z",
+ "pushed_at": "2026-08-19T02:45:23Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -23,6 +24,7 @@
   "js-yaml",
   "@earendil-works/pi-ai",
   "schemastery",
+  "yaml",
   "zod",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-commands",
@@ -50,6 +52,7 @@
  "hooks": [
   "agent/created",
   "agent/disposed",
+  "agent/image-admission",
   "agent/pre-step",
   "agent/request",
   "llm/adapters-updated",
@@ -59,6 +62,13 @@
  "tool_regs": 8,
  "domains": {
   "auth.kimi.com": 1,
+  "modelfit.io": 1,
+  "apidog.com": 1,
+  "forum.moonshot.ai": 1,
+  "pypi.org": 2,
+  "hokai.io": 1,
+  "www.digit.in": 1,
+  "matharena.ai": 1,
   "api.kimi.com": 1
  },
  "env": {
@@ -93,8 +103,8 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 12,
-   "dev": 34,
+   "src": 14,
+   "dev": 54,
    "evidence": [
     "scripts/repair-kimi-session.mjs:9",
     "scripts/repair-kimi-session.mjs:127",
@@ -112,7 +122,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 58,
+ "files_scanned": 76,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

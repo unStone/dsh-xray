@@ -2,10 +2,13 @@
  "repo": "git-hub-cloud/workled",
  "stars": 0,
  "description": "workled skill",
- "pushed_at": "2026-08-17T14:10:44Z",
+ "pushed_at": "2026-08-19T01:40:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
-  "bundle": "./patch.yml"
+  "bundle": {
+   "patch": "./patch.yml"
+  }
  },
  "pkg_name": "workled",
  "deps": [],
@@ -37,9 +40,9 @@
    "dev": 7,
    "evidence": [
     "index.js:24",
-    "skill-install.mjs:2086",
-    "skill-install.mjs:2086",
-    "skill-install.mjs:2090"
+    "skill-install.mjs:2106",
+    "skill-install.mjs:2106",
+    "skill-install.mjs:2110"
    ]
   },
   "eval": {
@@ -80,13 +83,17 @@
  "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./patch.yml"
+  },
+  {
    "id": "tool_gate",
    "evidence": "hook: tools/pre-execute"
   },
   {
    "id": "exec",
-   "evidence": "×4 src, e.g. index.js:24, skill-install.mjs:2086"
+   "evidence": "×4 src, e.g. index.js:24, skill-install.mjs:2106"
   }
  ],
- "level": 2
+ "level": 3
 }

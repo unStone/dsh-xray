@@ -1,0 +1,92 @@
+{
+ "repo": "edelah/dsh-task-board-model",
+ "stars": 0,
+ "description": "dsh-task-board-model",
+ "pushed_at": "2026-08-18T13:50:54Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-task-board-model",
+ "deps": [
+  "schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "systemPrompt",
+  "workspaces"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/inline-client-css.mjs:27"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 67,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

@@ -1,9 +1,10 @@
 {
  "repo": "op7418/pilot-harness",
- "stars": 69,
+ "stars": 188,
  "description": "Pilot Harness — a CodePilot-inspired desktop client and plugin suite for DeepSeek Harness on macOS, Windows, and Linux.",
- "pushed_at": "2026-08-18T09:12:32Z",
+ "pushed_at": "2026-08-18T15:40:45Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -354,8 +355,10 @@
   "@deepseek-ai/cordis",
   "@agentclientprotocol/sdk",
   "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-user-approval",
   "@deepseek-ai/cordis",
@@ -802,8 +805,6 @@
   "shiki",
   "@deepseek-ai/dsh-invariants",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-settings",
-  "@deepseek-ai/schemastery",
   "clsx",
   "@deepseek-ai/dsh-api-remotes",
   "@deepseek-ai/dsh-client-connection",
@@ -1522,6 +1523,7 @@
   "@modelcontextprotocol/sdk",
   "@deepseek-ai/schemastery",
   "zod",
+  "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-invariants",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-subprocess",
@@ -2267,7 +2269,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 42,
+   "src": 45,
    "dev": 56,
    "evidence": [
     "apps/cli/src/plugin.ts:13",
@@ -2283,9 +2285,10 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 1,
+   "src": 2,
    "dev": 4,
    "evidence": [
+    "packages/acp/acp/src/content.ts:55",
     "packages/client/runtime/src/client/sessions/session.ts:276"
    ]
   },
@@ -2325,11 +2328,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×42 src, e.g. apps/cli/src/plugin.ts:13, apps/cli/src/plugin.ts:13"
+   "evidence": "×45 src, e.g. apps/cli/src/plugin.ts:13, apps/cli/src/plugin.ts:13"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. packages/client/runtime/src/client/sessions/session.ts:276"
+   "evidence": "×2 src, e.g. packages/acp/acp/src/content.ts:55, packages/client/runtime/src/client/sessions/session.ts:276"
   }
  ],
  "level": 2

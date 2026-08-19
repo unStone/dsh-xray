@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-score",
  "stars": 0,
  "description": "Multi-dimensional quality scoring for DeepSeek Harness plugins: scores one repo or npm package across install success (consuming dsh-test-drive results), maintenance activity, documentation completene",
- "pushed_at": "2026-08-18T00:18:22Z",
+ "pushed_at": "2026-08-18T15:06:05Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,13 +16,13 @@
   "typescript",
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-jobs",
   "@deepseek-ai/dsh-storage-domain",
   "@deepseek-ai/dsh-subprocess",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -39,11 +40,11 @@
  "behaviors": {
   "exec": {
    "src": 14,
-   "dev": 2,
+   "dev": 6,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:22",
+    "scripts/prepare.mjs:23",
     "scripts/release.mjs:27",
     "scripts/release.mjs:27"
    ]
@@ -66,14 +67,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
-   "dev": 0,
+   "src": 8,
+   "dev": 8,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/prepare.mjs:7",
-    "scripts/prepare.mjs:28",
-    "scripts/release.mjs:28",
-    "scripts/release.mjs:70",
-    "scripts/release.mjs:83"
+    "scripts/prepare.mjs:29",
+    "scripts/release.mjs:28"
    ]
   },
   "dyn_import": {
@@ -85,7 +86,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 33,
+ "files_scanned": 39,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

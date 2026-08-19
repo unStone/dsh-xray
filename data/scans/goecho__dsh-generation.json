@@ -1,0 +1,82 @@
+{
+ "repo": "goecho/dsh-generation",
+ "stars": 0,
+ "description": "Fork agent presets and run tasks on the next generation. Make, not a compiler.",
+ "pushed_at": "2026-08-19T03:12:18Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-generation",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "agents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 1,
+   "evidence": [
+    "src/index.js:371"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  }
+ ],
+ "level": 2
+}

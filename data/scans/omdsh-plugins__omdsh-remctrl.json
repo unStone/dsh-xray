@@ -2,11 +2,20 @@
  "repo": "omdsh-plugins/omdsh-remctrl",
  "stars": 0,
  "description": "Remote control for the DeepSeek Harness: a second front door on its own port, behind device pairing and a tiered method allowlist, so a phone on your tailnet can watch a session, approve what it asks ",
- "pushed_at": "2026-08-17T02:51:49Z",
+ "pushed_at": "2026-08-18T10:07:02Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
   },
   "plughub": {
    "displayName": {
@@ -14,8 +23,8 @@
     "zh": "远程控制"
    },
    "summary": {
-    "": "Watch, approve, and dispatch from a phone on your tailnet.",
-    "zh": "在 tailnet 上用手机查看进度、批准工具调用、下发新任务。"
+    "": "Your dsh window, on a public address, behind a passcode.",
+    "zh": "把你的 dsh 界面开放到公网地址，前面挡一道通行码。"
    },
    "category": "system",
    "settings": [
@@ -28,27 +37,40 @@
  "pkg_name": "@omdsh-plugins/omdsh-remctrl",
  "deps": [
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery"
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/schemastery",
+  "react"
  ],
  "install_scripts": {
   "prepare": "tsc --build tsconfig.json && tsdown"
  },
  "injects": [
-  "connection"
+  "connection",
+  "locale",
+  "slots"
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "dsh.example.com": 6,
+  "developers.cloudflare.com": 1
+ },
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "src/cloudflared.ts:224",
+    "src/index.ts:61",
+    "src/index.ts:357"
+   ]
   },
   "eval": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   },
   "base64_decode": {
@@ -58,15 +80,17 @@
   },
   "net_server": {
    "src": 1,
-   "dev": 2,
+   "dev": 6,
    "evidence": [
-    "src/server.ts:116"
+    "src/door.ts:384"
    ]
   },
   "fs_write": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/harness-source.ts:92"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -75,7 +99,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 20,
+ "files_scanned": 42,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -84,8 +108,12 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "exec",
+   "evidence": "×3 src, e.g. src/cloudflared.ts:224, src/index.ts:61"
+  },
+  {
    "id": "net_server",
-   "evidence": "×1 src, e.g. src/server.ts:116"
+   "evidence": "×1 src, e.g. src/door.ts:384"
   }
  ],
  "level": 3

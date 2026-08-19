@@ -2,8 +2,9 @@
  "repo": "WTStarMark/QAQ",
  "stars": 4,
  "description": "QAQ 是 DeepSeek Harness（DSH）的启动容灾守卫：监督 dsh web 进程，通过 headless Chrome + CDP 读取真实 DOM，捕获宿主崩溃、UI 红屏与插件劣化，自动回滚到最近一次可用的成功配置并重启。非侵入、一键懒人脚本、结构化日志；附带插件热更新守护（client 插件 bundle 热换验证与回滚，bundle/dist 变更自动受监督重启）。",
- "pushed_at": "2026-08-17T12:29:34Z",
+ "pushed_at": "2026-08-18T14:04:28Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -23,7 +24,9 @@
   "session/event"
  ],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "codeload.github.com": 1
+ },
  "env": {
   "PROGRAMFILES": 4,
   "LOCALAPPDATA": 4,
@@ -36,14 +39,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 19,
+   "src": 18,
    "dev": 0,
    "evidence": [
     "scripts/check-plugin-lib.mjs:11",
     "scripts/check-plugin-lib.mjs:11",
     "scripts/check-plugin-lib.mjs:32",
     "src/cdp.ts:6",
-    "src/cdp.ts:81"
+    "src/cdp.ts:104"
    ]
   },
   "eval": {
@@ -62,14 +65,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 63,
-   "dev": 147,
+   "src": 66,
+   "dev": 157,
    "evidence": [
     "scripts/check-plugin-lib.mjs:12",
     "scripts/check-plugin-lib.mjs:29",
     "scripts/check-plugin-lib.mjs:49",
     "src/cdp.ts:7",
-    "src/cdp.ts:96"
+    "src/cdp.ts:119"
    ]
   },
   "dyn_import": {
@@ -82,7 +85,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 64,
+ "files_scanned": 67,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -92,7 +95,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×19 src, e.g. scripts/check-plugin-lib.mjs:11, scripts/check-plugin-lib.mjs:11"
+   "evidence": "×18 src, e.g. scripts/check-plugin-lib.mjs:11, scripts/check-plugin-lib.mjs:11"
   }
  ],
  "level": 3

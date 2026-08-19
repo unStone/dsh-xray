@@ -2,8 +2,9 @@
  "repo": "Altairpaca/dshelm",
  "stars": 5,
  "description": "DSHelm — The batteries-included agent layer for DeepSeek Harness. OmO-inspired. DSH-native. Ecosystem-composable.",
- "pushed_at": "2026-08-18T06:49:03Z",
+ "pushed_at": "2026-08-19T01:44:43Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -17,10 +18,14 @@
    "platform": "web"
   }
  },
- "pkg_name": "dshelm",
+ "pkg_name": "dshelm-workspace",
  "deps": [
+  "@earendil-works/pi-ai",
+  "zod",
+  "@dshelm/auth",
   "@dshelm/core",
   "@dshelm/dsh",
+  "@dshelm/model-knowledge",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-agent-loop",
@@ -30,7 +35,9 @@
   "@deepseek-ai/dsh-subagent",
   "@deepseek-ai/dsh-system-prompt",
   "@deepseek-ai/dsh-tools",
+  "@earendil-works/pi-ai",
   "@dshelm/compat-omo",
+  "zod",
   "@dshelm/core",
   "jsonc-parser",
   "jsonc-parser",
@@ -47,8 +54,10 @@
   "@deepseek-ai/dsh-subagent-in-process-driver",
   "@deepseek-ai/dsh-tools",
   "@dshelm/core",
+  "@dshelm/model-knowledge",
   "react",
   "react-dom",
+  "zod",
   "zod"
  ],
  "install_scripts": {},
@@ -61,16 +70,28 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
- "env": {},
+ "domains": {
+  "docs.anthropic.com": 4,
+  "api-docs.deepseek.com": 9,
+  "platform.openai.com": 4,
+  "huggingface.co": 3
+ },
+ "env": {
+  "DEEPSEEK_API_KEY": 1,
+  "DSHELM_LIVE_DEEPSEEK_CONFIRM": 1,
+  "DSHELM_DSH_BUNDLE_SPEC": 2,
+  "DSHELM_DSH_BUNDLE_SPECS": 2
+ },
  "behaviors": {
   "exec": {
-   "src": 3,
+   "src": 11,
    "dev": 0,
    "evidence": [
-    "packages/cli/src/index.ts:12",
-    "packages/cli/src/index.ts:12",
-    "packages/cli/src/index.ts:43"
+    "packages/cli/src/auth-discovery.ts:1",
+    "packages/cli/src/auth-discovery.ts:1",
+    "packages/cli/src/auth-discovery.ts:104",
+    "packages/cli/src/auth-discovery.ts:177",
+    "packages/cli/src/index.ts:12"
    ]
   },
   "eval": {
@@ -91,12 +112,14 @@
    ]
   },
   "fs_write": {
-   "src": 3,
-   "dev": 3,
+   "src": 7,
+   "dev": 8,
    "evidence": [
     "scripts/qa-web-renderer.ts:128",
-    "packages/cli/src/index.ts:204",
-    "packages/cli/src/index.ts:206"
+    "packages/auth/src/pi-ai-store.ts:109",
+    "packages/cli/src/index.ts:207",
+    "packages/cli/src/index.ts:209",
+    "packages/cli/src/user-commands.ts:2"
    ]
   },
   "dyn_import": {
@@ -106,7 +129,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 39,
+ "files_scanned": 60,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -116,11 +139,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. packages/cli/src/index.ts:12, packages/cli/src/index.ts:12"
+   "evidence": "×11 src, e.g. packages/cli/src/auth-discovery.ts:1, packages/cli/src/auth-discovery.ts:1"
   },
   {
    "id": "net_server",
    "evidence": "×1 src, e.g. scripts/qa-web-renderer.ts:61"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
   }
  ],
  "level": 3

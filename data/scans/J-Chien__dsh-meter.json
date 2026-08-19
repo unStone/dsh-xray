@@ -2,8 +2,9 @@
  "repo": "J-Chien/dsh-meter",
  "stars": 1,
  "description": "Per-session billing plugin for DeepSeek Harness: token buckets, cache hit rate, and peak-aware cost in the session header + a price-table settings page",
- "pushed_at": "2026-08-18T06:05:11Z",
+ "pushed_at": "2026-08-18T12:49:06Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -61,12 +62,21 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "DSH_HARNESS_ROOT": 2,
+  "CHROME_BIN": 1,
+  "DSH_URL": 1,
+  "SESSION_HINT": 1,
+  "CDP_PORT": 1
+ },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-card.mjs:24",
+    "scripts/verify-card.mjs:67"
+   ]
   },
   "eval": {
    "src": 0,
@@ -98,14 +108,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 30,
+ "files_scanned": 31,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. scripts/verify-card.mjs:24, scripts/verify-card.mjs:67"
   }
  ],
- "level": 2
+ "level": 3
 }

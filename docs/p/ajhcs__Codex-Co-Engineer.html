@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ajhcs/Codex-Co-Engineer — capability card (C2) · dsh-xray</title>
-<meta name="description" content="ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.">
+<meta name="description" content="ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ajhcs__Codex-Co-Engineer.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ajhcs/Codex-Co-Engineer — dsh plugin capability card">
-<meta property="og:description" content="ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ajhcs__Codex-Co-Engineer.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Codex-Co-Engineer", "identifier": "ajhcs/Codex-Co-Engineer", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/ajhcs/Codex-Co-Engineer", "url": "https://unstone.github.io/dsh-xray/p/ajhcs__Codex-Co-Engineer.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Codex-Co-Engineer", "identifier": "ajhcs/Codex-Co-Engineer", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/ajhcs/Codex-Co-Engineer", "url": "https://unstone.github.io/dsh-xray/p/ajhcs__Codex-Co-Engineer.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,12 +47,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/ajhcs/Codex-Co-Engineer" rel="nofollow ugc">ajhcs/Codex-Co-Engineer source on GitHub</a>
      · <a href="../registry.html#ajhcs__Codex-Co-Engineer">this plugin in the registry</a></p>
-  <p>ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 src, e.g. scripts/inspector-preflight.mjs:4, scripts/inspector-preflight.mjs:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. plugins/plumbob-harness-control/mcp/daemon.mjs:63</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CODEX_CO_ENGINEER_MODEL_API_KEY_FILE, CURSOR_API_AUTH_SCHEME, MODEL_API_KEY, PLUMBOB_HARNESS_MODEL_API_KEY_FILE, XAI_API_KEY</td></tr></tbody></table>
+  <p>ajhcs/Codex-Co-Engineer is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×61 src, e.g. scripts/inspector-preflight.mjs:4, scripts/inspector-preflight.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 src, e.g. tools/acpx-vendor/verify-publish-provenance.mjs:252, plugins/plumbob-harness-control/assets/acpx-runtime.mjs:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. plugins/plumbob-harness-control/mcp/daemon.mjs:345</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CODEX_CO_ENGINEER_MODEL_API_KEY_FILE, CURSOR_API_AUTH_SCHEME, GEMINI_API_KEY, GOOGLE_API_KEY, MODEL_API_KEY, PLUMBOB_HARNESS_MODEL_API_KEY_FILE</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>sessions</span></p>
   
-  
-  <h2>Outbound domains</h2><p class="kv"><span>api.cursor.com</span> <span>cursor.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>MODEL_API_KEY</span> <span>XDG_STATE_HOME</span> <span>CODEX_CO_ENGINEER_STATE_DIR</span> <span>PLUMBOB_HARNESS_STATE_DIR</span> <span>CURSOR_API_AUTH_SCHEME</span> <span>CURSOR_API_ORIGIN</span> <span>XAI_API_KEY</span> <span>MCP_INSPECTOR_COMMAND</span> <span>CURSOR_CLOUD_CONTROL_STATE_DIR</span> <span>CODEX_CO_ENGINEER_RUNTIME_WORKSPACE</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>cursor.com</span> <span>slsa.dev</span> <span>in-toto.io</span> <span>api.cursor.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MODEL_API_KEY</span> <span>XAI_API_KEY</span> <span>MCP_INSPECTOR_COMMAND</span> <span>CURSOR_API_AUTH_SCHEME</span> <span>CURSOR_API_ORIGIN</span> <span>CODEX_TEST_BWRAP_PATH</span> <span>ACPX_GEMINI_ACP_STARTUP_TIMEOUT_MS</span> <span>ACPX_CLAUDE_ACP_SESSION_CREATE_TIMEOUT_MS</span> <span>GEMINI_API_KEY</span> <span>GOOGLE_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

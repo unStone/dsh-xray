@@ -2,8 +2,9 @@
  "repo": "Mingbing-get/dsh-plugins",
  "stars": 0,
  "description": "deepseek harness 的插件",
- "pushed_at": "2026-08-18T09:18:30Z",
+ "pushed_at": "2026-08-18T09:30:50Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -41,9 +42,13 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "gomoku/scripts/release.mjs:1",
+    "gomoku/scripts/release.mjs:1",
+    "gomoku/scripts/release.mjs:13"
+   ]
   },
   "eval": {
    "src": 0,
@@ -75,14 +80,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 13,
+ "files_scanned": 14,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. gomoku/scripts/release.mjs:1, gomoku/scripts/release.mjs:1"
   }
  ],
- "level": 2
+ "level": 3
 }

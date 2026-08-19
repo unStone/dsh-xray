@@ -1,9 +1,10 @@
 {
  "repo": "tuogusa/dsh-skill-manager",
  "stars": 4,
- "description": "DeepSeek Harness 技能管理器（host + client 一体包）",
- "pushed_at": "2026-08-15T14:50:52Z",
+ "description": "DeepSeek Harness 技能管理器：扫描/删除/撤回/检查更新技能，支持 GitHub/Gitee Release（host + client 一体包）",
+ "pushed_at": "2026-08-19T02:16:24Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -31,16 +32,23 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "gitee.com": 2,
+  "api.github.com": 1
+ },
  "env": {
-  "DSH_HOME": 1,
+  "DSH_HOME": 2,
   "DSH_AGENTS_HOME": 1
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/update.js:6",
+    "lib/update.js:6",
+    "lib/update.js:162"
+   ]
   },
   "eval": {
    "src": 0,
@@ -58,11 +66,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
-   "dev": 0,
+   "src": 10,
+   "dev": 13,
    "evidence": [
-    "lib/index.js:11",
-    "lib/index.js:199"
+    "lib/index.js:17",
+    "lib/index.js:119",
+    "lib/index.js:188",
+    "lib/index.js:358",
+    "lib/index.js:364"
    ]
   },
   "dyn_import": {
@@ -72,14 +83,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 5,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/update.js:6, lib/update.js:6"
   }
  ],
- "level": 2
+ "level": 3
 }

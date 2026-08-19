@@ -2,20 +2,46 @@
  "repo": "wave-av/wave-runtime-registry",
  "stars": 0,
  "description": "WAVE's curated index of the agent-harness plugin ecosystem — measured stars + WAVE verdicts per entry. Public, CI-gated.",
- "pushed_at": "2026-08-18T03:19:05Z",
+ "pushed_at": "2026-08-19T03:04:57Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
- "pkg_name": null,
- "deps": [],
+ "pkg_name": "@wave-av/dsh-plugin-wave-dispatch",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@wave-av/runtime-sdk"
+ ],
  "install_scripts": {},
- "injects": [],
- "hooks": [],
- "tool_regs": 0,
- "domains": {},
- "env": {},
+ "injects": [
+  "settings",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 1,
+ "domains": {
+  "jakes-mac-studio.tail2cd79a.ts.net": 1,
+  "api.agentmail.to": 1,
+  "runtime.wave.online": 2
+ },
+ "env": {
+  "WAVE_POOL_URL": 1,
+  "WAVE_POOL_MODEL": 1,
+  "WAVE_MAIL_INBOX": 1,
+  "WAVE_MAIL_KEY_ENV": 1,
+  "DSH_HOME": 2,
+  "WAVE_RUNTIME_API_KEY": 1,
+  "WAVE_GATEWAY_API_KEY": 1
+ },
  "behaviors": {
   "exec": {
-   "src": 7,
+   "src": 9,
    "dev": 0,
    "evidence": [
     "bin/sweep.mjs:9",
@@ -41,11 +67,13 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
+   "src": 4,
    "dev": 0,
    "evidence": [
     "bin/sweep.mjs:12",
-    "bin/sweep.mjs:45"
+    "bin/sweep.mjs:45",
+    "packages/dsh-plugin-wave-pay/index.ts:14",
+    "packages/dsh-plugin-wave-pay/index.ts:31"
    ]
   },
   "dyn_import": {
@@ -54,14 +82,22 @@
    "evidence": []
   }
  },
- "has_apply": false,
- "files_scanned": 2,
+ "has_apply": true,
+ "files_scanned": 14,
  "has_skill_md": false,
- "type": "other",
+ "type": "plugin",
  "flags": [
   {
    "id": "exec",
-   "evidence": "×7 src, e.g. bin/sweep.mjs:9, bin/sweep.mjs:13"
+   "evidence": "×9 src, e.g. bin/sweep.mjs:9, bin/sweep.mjs:13"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WAVE_GATEWAY_API_KEY, WAVE_MAIL_KEY_ENV, WAVE_RUNTIME_API_KEY"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 3 services, 1 tool regs, no manifest"
   }
  ],
  "level": 2

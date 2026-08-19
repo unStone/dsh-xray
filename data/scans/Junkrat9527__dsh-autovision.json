@@ -1,0 +1,80 @@
+{
+ "repo": "Junkrat9527/dsh-autovision",
+ "stars": 0,
+ "description": "dsh-autovision: paste an image into a text-only model composer and a configured multimodal model transcribes it to text automatically. Twin-provider auto-routing + agent-callable read-image tool. No b",
+ "pushed_at": "2026-08-18T10:37:02Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "@iroam2375/dsh-autovision",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "attachments",
+  "llm"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/request",
+  "llm/adapters-updated"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:86"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

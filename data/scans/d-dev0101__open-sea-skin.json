@@ -1,9 +1,10 @@
 {
  "repo": "d-dev0101/open-sea-skin",
- "stars": 1,
- "description": "WebGPU ocean skin for DeepSeek Harness, Chrome and Edge — native plugin, static installer, and new-tab extension.",
- "pushed_at": "2026-08-17T12:59:27Z",
+ "stars": 176,
+ "description": "WebGPU ocean skin for DeepSeek Harness — DSH plugin, Harness-only Chrome/Edge extension, static installer, and native integration.",
+ "pushed_at": "2026-08-18T16:11:09Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -48,7 +49,7 @@
   "www.shadertoy.com": 4
  },
  "env": {
-  "OSS_HEADLESS": 1,
+  "OSS_HEADLESS": 2,
   "OSS_CHROME_BIN": 1,
   "OSS_HARNESS_URL": 1
  },
@@ -59,8 +60,8 @@
    "evidence": [
     "scripts/browser-acceptance.mjs:6",
     "scripts/browser-acceptance.mjs:6",
-    "scripts/browser-acceptance.mjs:81",
-    "scripts/browser-acceptance.mjs:115",
+    "scripts/browser-acceptance.mjs:90",
+    "scripts/browser-acceptance.mjs:124",
     "scripts/capture-gallery.mjs:2"
    ]
   },
@@ -88,19 +89,19 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "scripts/browser-support.mjs:60",
-    "scripts/browser-support.mjs:81"
+    "scripts/browser-support.mjs:61",
+    "scripts/browser-support.mjs:82"
    ]
   },
   "fs_write": {
-   "src": 9,
+   "src": 13,
    "dev": 5,
    "evidence": [
     "scripts/build-dsh-bundle.mjs:1",
     "scripts/build-dsh-bundle.mjs:70",
-    "scripts/build-runtime.mjs:1",
-    "scripts/build-runtime.mjs:1",
-    "scripts/build-runtime.mjs:25"
+    "scripts/build-pages.mjs:1",
+    "scripts/build-pages.mjs:1",
+    "scripts/build-pages.mjs:8"
    ]
   },
   "dyn_import": {
@@ -110,7 +111,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 54,
+ "files_scanned": 57,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -132,7 +133,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. scripts/browser-support.mjs:60, scripts/browser-support.mjs:81"
+   "evidence": "×2 src, e.g. scripts/browser-support.mjs:61, scripts/browser-support.mjs:82"
   }
  ],
  "level": 3

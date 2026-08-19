@@ -1,12 +1,16 @@
 {
  "repo": "wxxb789/dsh-raven-research",
  "stars": 0,
- "description": "",
- "pushed_at": "2026-08-17T07:27:23Z",
+ "description": "Source-grounded deep research, writing, and learning plugin for DeepSeek Harness (dsh): steerable checkpoints, mid-run steering, and citations verified against retrieved sources.",
+ "pushed_at": "2026-08-19T01:05:00Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-raven-research",
- "deps": [],
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
  "install_scripts": {},
  "injects": [
   "systemPrompt",
@@ -18,7 +22,8 @@
  "tool_regs": 1,
  "domains": {},
  "env": {
-  "DSH_CHECKOUT": 2
+  "DSH_CHECKOUT": 2,
+  "RAVEN_PACK_USERCONFIG": 1
  },
  "behaviors": {
   "exec": {
@@ -49,10 +54,10 @@
    "src": 4,
    "dev": 0,
    "evidence": [
-    "scripts/verify-dsh.ts:54",
-    "scripts/verify-packed-install.ts:50",
-    "scripts/verify-packed-install.ts:109",
-    "scripts/verify-packed-install.ts:134"
+    "scripts/verify-dsh.ts:57",
+    "scripts/verify-packed-install.ts:57",
+    "scripts/verify-packed-install.ts:128",
+    "scripts/verify-packed-install.ts:172"
    ]
   },
   "dyn_import": {
@@ -62,7 +67,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 19,
+ "files_scanned": 25,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

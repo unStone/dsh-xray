@@ -1,0 +1,92 @@
+{
+ "repo": "yanzwzz/dsh-whale-girl-pet",
+ "stars": 0,
+ "description": "🐋 DeepSeek 娘桌宠：住进 DeepSeek Harness Web 界面的蓝发鲸鱼女仆。工作链路、任务完成统计（用时/消耗/花费）、睡眠系统、时间感知、余额/天气/喂食按钮、完整设置面板。",
+ "pushed_at": "2026-08-19T02:57:54Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-whale-girl-pet",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "settings",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "goal/changed",
+  "subagent/end",
+  "tools/result",
+  "workflow/end"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "wttr.in": 1,
+  "api.bigdatacloud.net": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

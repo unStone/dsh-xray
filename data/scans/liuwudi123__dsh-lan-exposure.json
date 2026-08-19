@@ -1,0 +1,88 @@
+{
+ "repo": "liuwudi123/dsh-lan-exposure",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-18T09:46:34Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@dsh-lan-exposure/lan",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_LAN_ENABLED": 1,
+  "DSH_LAN_LISTEN_HOST": 1,
+  "DSH_LAN_PORT": 1,
+  "DSH_LAN_TARGET_HOST": 1,
+  "DSH_LAN_TARGET_PORT": 1,
+  "DSH_LAN_AUTH_USER": 1,
+  "DSH_LAN_AUTH_PASS": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:118"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "index.js:134"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. index.js:118"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. index.js:134"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_LAN_AUTH_PASS, DSH_LAN_AUTH_USER"
+  }
+ ],
+ "level": 3
+}

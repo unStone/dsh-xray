@@ -1,10 +1,15 @@
 {
  "repo": "agi-fans/oh-my-dsh",
- "stars": 16,
+ "stars": 17,
  "description": "A focused, keyboard-first DeepSeek coding agent built on the plugin architecture of DeepSeek Harness and inspired by the interaction quality of oh-my-pi.",
- "pushed_at": "2026-08-18T06:15:17Z",
+ "pushed_at": "2026-08-18T18:24:23Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./config/cordis.yml"
+  }
+ },
  "pkg_name": "oh-my-dsh",
  "deps": [
   "@deepseek-ai/cordis-plugin-loader",
@@ -28,6 +33,7 @@
   "@deepseek-ai/dsh-launch-environment",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-llm-deepseek",
+  "@deepseek-ai/dsh-llm-pi-ai",
   "@deepseek-ai/dsh-mcp-client",
   "@deepseek-ai/dsh-permission-presets",
   "@deepseek-ai/dsh-persona",
@@ -61,6 +67,8 @@
   "@deepseek-ai/dsh-settings-file",
   "@deepseek-ai/dsh-credentials-local",
   "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
   "@deepseek-ai/cordis-plugin-loader",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-agent-default-model",
@@ -80,6 +88,7 @@
   "@deepseek-ai/dsh-session-title",
   "@deepseek-ai/dsh-settings",
   "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-subagent",
   "@deepseek-ai/dsh-token-meter",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/dsh-user-approval",
@@ -109,6 +118,8 @@
   "agent/status",
   "approval/request",
   "commands/change",
+  "session/created",
+  "session/disposed",
   "session/event",
   "skills/change",
   "tools/change"
@@ -133,14 +144,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 15,
-   "dev": 10,
+   "src": 18,
+   "dev": 21,
    "evidence": [
     "scripts/happy-smoke.mjs:6",
     "scripts/happy-smoke.mjs:26",
     "scripts/pty-smoke.mjs:7",
     "scripts/pty-smoke.mjs:30",
-    "packages/tui/omdsh-tui/src/commands/auth.ts:3"
+    "apps/omdsh/src/plugin.ts:12"
    ]
   },
   "eval": {
@@ -161,8 +172,8 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 17,
-   "dev": 27,
+   "src": 19,
+   "dev": 58,
    "evidence": [
     "scripts/format-markdown.mjs:103",
     "scripts/happy-smoke.mjs:7",
@@ -173,27 +184,27 @@
   },
   "dyn_import": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   }
  },
  "has_apply": true,
- "files_scanned": 121,
+ "files_scanned": 131,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./config/cordis.yml"
+  },
+  {
    "id": "exec",
-   "evidence": "×15 src, e.g. scripts/happy-smoke.mjs:6, scripts/happy-smoke.mjs:26"
+   "evidence": "×18 src, e.g. scripts/happy-smoke.mjs:6, scripts/happy-smoke.mjs:26"
   },
   {
    "id": "base64_decode",
    "evidence": "×1 src, e.g. packages/tui/omdsh-tui/src/input/image-paste.ts:249"
-  },
-  {
-   "id": "no_manifest",
-   "evidence": "uses 14 services, 0 tool regs, no manifest"
   }
  ],
- "level": 2
+ "level": 3
 }

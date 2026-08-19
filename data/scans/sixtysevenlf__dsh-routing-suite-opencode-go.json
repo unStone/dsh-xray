@@ -1,0 +1,141 @@
+{
+ "repo": "sixtysevenlf/dsh-routing-suite-opencode-go",
+ "stars": 0,
+ "description": "dsh-routing-suite adapted for OpenCode Go API (opencode-go provider + DSH rc.6 compatibility)",
+ "pushed_at": "2026-08-18T18:36:16Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-routing-suite-opencode-go",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "cordis",
+  "schemastery",
+  "cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "loader",
+  "slots",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "llm/stream",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 62,
+ "domains": {
+  "api.deepseek.com": 1,
+  "opencode.ai": 1
+ },
+ "env": {
+  "DSH_HOME": 5,
+  "DSH_CHECKOUT": 1,
+  "USERPROFILE": 1,
+  "DSH_WEB": 1,
+  "PROBE_MODEL": 1,
+  "PROBE_BASE_URL": 1,
+  "PROBE_MAX_TOKENS": 28
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "injector/lib/index.js:5",
+    "injector/lib/index.js:5",
+    "injector/lib/index.js:9097",
+    "injector/lib/index.js:9108",
+    "injector/lib/index.js:9135"
+   ]
+  },
+  "eval": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "injector/lib/index.js:2094",
+    "injector/lib/index.js:7854",
+    "injector/lib/index.js:7927"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "injector/lib/index.js:70",
+    "injector/lib/index.js:71"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 56,
+   "dev": 0,
+   "evidence": [
+    "injector/lib/index.js:3",
+    "injector/lib/index.js:3",
+    "injector/lib/index.js:3",
+    "injector/lib/index.js:6769",
+    "injector/lib/index.js:6777"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "preset/probe/eval-cart.mjs:36",
+    "preset/probe/eval-coder.mjs:31"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 53,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, system-prompt/assemble"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. injector/lib/index.js:5, injector/lib/index.js:5"
+  },
+  {
+   "id": "eval",
+   "evidence": "×3 src, e.g. injector/lib/index.js:2094, injector/lib/index.js:7854"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. injector/lib/index.js:70, injector/lib/index.js:71"
+  },
+  {
+   "id": "token_env",
+   "evidence": "PROBE_MAX_TOKENS"
+  }
+ ],
+ "level": 3
+}

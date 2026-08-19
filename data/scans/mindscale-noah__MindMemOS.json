@@ -1,0 +1,82 @@
+{
+ "repo": "mindscale-noah/MindMemOS",
+ "stars": 938,
+ "description": "",
+ "pushed_at": "2026-08-18T11:40:58Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": null,
+ "pkg_name": "@mindmemos/deepseek-harness-plugin",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "openclaw"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "plugins/deepseek-harness-plugin/src/mindmemos-cli.ts:1",
+    "plugins/deepseek-harness-plugin/src/mindmemos-cli.ts:25",
+    "plugins/openclaw-plugin/src/index.ts:481",
+    "plugins/openclaw-plugin/src/mindmemos-cli.ts:1",
+    "plugins/openclaw-plugin/src/mindmemos-cli.ts:25"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. plugins/deepseek-harness-plugin/src/mindmemos-cli.ts:1, plugins/deepseek-harness-plugin/src/mindmemos-cli.ts:25"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 1 services, 0 tool regs, no manifest"
+  }
+ ],
+ "level": 2
+}

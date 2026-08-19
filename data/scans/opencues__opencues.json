@@ -1,9 +1,10 @@
 {
  "repo": "opencues/opencues",
- "stars": 33,
+ "stars": 34,
  "description": "Turn any text field into a two-way LLM channel: it reads what you write and fills what you ask. Flags a slip as you type, answers anything you end with _. Claude Code, OpenCode, Gemini CLI, shell, Chr",
- "pushed_at": "2026-08-18T06:38:04Z",
+ "pushed_at": "2026-08-18T23:52:18Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -52,7 +53,9 @@
   "api.openai.com": 10,
   "generativelanguage.googleapis.com": 9,
   "api.anthropic.com": 9,
+  "api.deepseek.com": 4,
   "opencode.ai": 3,
+  "api.moonshot.ai": 5,
   "linkedin.com": 3,
   "www.reddit.com": 2,
   "en.wikipedia.org": 2,
@@ -71,6 +74,7 @@
   "hnrss.org": 1,
   "bun.sh": 10,
   "inference-docs.cerebras.ai": 4,
+  "api.moonshot.cn": 1,
   "claude.com": 1,
   "gist.github.com": 2,
   "git-scm.com": 1,
@@ -85,8 +89,9 @@
   "DEBUG_OPENCUES": 7,
   "OPENCUES_RATE_LIMIT_RETRIES": 2,
   "USERPROFILE": 2,
-  "OPENCUES_HOME": 77,
+  "OPENCUES_HOME": 79,
   "OPENCUES_CLI": 1,
+  "DSH_HOME": 1,
   "XDG_DATA_HOME": 1,
   "OPENCUES_INSTALL_LOG": 1,
   "OPENCUES_INSTALL_VERBOSE": 3,
@@ -153,8 +158,8 @@
  },
  "behaviors": {
   "exec": {
-   "src": 220,
-   "dev": 112,
+   "src": 222,
+   "dev": 115,
    "evidence": [
     "scripts/check-cc-patch-boot.cjs:268",
     "scripts/check-cc-patch-boot.cjs:269",
@@ -168,10 +173,10 @@
    "dev": 3,
    "evidence": [
     "scripts/check-cc-patch-boot.cjs:78",
-    "integrations/dsh/client.js:4263",
-    "integrations/dsh/client.js:4263",
-    "integrations/dsh/client.js:4263",
-    "integrations/dsh/client.js:4271"
+    "integrations/dsh/client.js:4287",
+    "integrations/dsh/client.js:4287",
+    "integrations/dsh/client.js:4287",
+    "integrations/dsh/client.js:4295"
    ]
   },
   "base64_decode": {
@@ -193,8 +198,8 @@
    ]
   },
   "fs_write": {
-   "src": 193,
-   "dev": 366,
+   "src": 195,
+   "dev": 375,
    "evidence": [
     "scripts/build-shipped-manifest.cjs:96",
     "scripts/gen-countries-data.cjs:115",
@@ -222,11 +227,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×220 src, e.g. scripts/check-cc-patch-boot.cjs:268, scripts/check-cc-patch-boot.cjs:269"
+   "evidence": "×222 src, e.g. scripts/check-cc-patch-boot.cjs:268, scripts/check-cc-patch-boot.cjs:269"
   },
   {
    "id": "eval",
-   "evidence": "×12 src, e.g. scripts/check-cc-patch-boot.cjs:78, integrations/dsh/client.js:4263"
+   "evidence": "×12 src, e.g. scripts/check-cc-patch-boot.cjs:78, integrations/dsh/client.js:4287"
   },
   {
    "id": "base64_decode",

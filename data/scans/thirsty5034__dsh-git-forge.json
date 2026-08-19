@@ -2,8 +2,9 @@
  "repo": "thirsty5034/dsh-git-forge",
  "stars": 0,
  "description": "DSH community plugin: GitHub/Gitea accounts, project grants, push policy (better-sidebar)",
- "pushed_at": "2026-08-18T08:31:09Z",
+ "pushed_at": "2026-08-18T10:49:08Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -34,19 +35,27 @@
  "domains": {
   "gitea.example.com": 5,
   "api.github.com": 4,
+  "git-scm.com": 1,
   "gitea.company": 1,
   "gitea.mi.pp00.top": 4,
   "gitee.com": 2,
   "api.bitbucket.org": 1
  },
  "env": {
-  "DSH_HOME": 2
+  "DSH_HOME": 3,
+  "GIT_CONFIG_GLOBAL": 5,
+  "DSH_GIT_FORGE_HELPER_DEBUG": 1,
+  "DSH_GIT_FORGE_PROJECT": 1
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/shared/remote-resolve.js:5",
+    "lib/shared/remote-resolve.js:5",
+    "lib/shared/remote-resolve.js:10"
+   ]
   },
   "eval": {
    "src": 0,
@@ -64,11 +73,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
+   "src": 3,
    "dev": 0,
    "evidence": [
     "lib/index.js:12",
-    "lib/index.js:72"
+    "lib/index.js:77",
+    "lib/index.js:736"
    ]
   },
   "dyn_import": {
@@ -78,14 +88,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 6,
+ "files_scanned": 9,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/shared/remote-resolve.js:5, lib/shared/remote-resolve.js:5"
   }
  ],
- "level": 2
+ "level": 3
 }

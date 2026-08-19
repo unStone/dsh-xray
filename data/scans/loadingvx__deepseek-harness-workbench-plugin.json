@@ -1,9 +1,10 @@
 {
  "repo": "loadingvx/deepseek-harness-workbench-plugin",
- "stars": 14,
+ "stars": 17,
  "description": "Deepseek-harness-workbench-plugin ",
- "pushed_at": "2026-08-18T07:06:09Z",
+ "pushed_at": "2026-08-18T23:42:18Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -14,7 +15,8 @@
     "@deepseek-ai/dsh-client-runtime",
     "@deepseek-ai/dsh-client-ui-tool",
     "@deepseek-ai/dsh-client-ui-conversation",
-    "@deepseek-ai/dsh-client-locale"
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-input-trigger"
    ]
   }
  },
@@ -51,8 +53,11 @@
  "install_scripts": {},
  "injects": [
   "agentDefaultModel",
+  "commands",
+  "inputTriggers",
   "llm",
   "locale",
+  "sessions",
   "slots",
   "tools",
   "webServer"
@@ -67,18 +72,19 @@
   "platform.deepseek.com": 1
  },
  "env": {
+  "WSL_DISTRO_NAME": 2,
   "SYSTEMROOT": 2
  },
  "behaviors": {
   "exec": {
-   "src": 15,
+   "src": 17,
    "dev": 4,
    "evidence": [
     "lib/index.js:4",
     "lib/index.js:336",
-    "lib/index.js:3659",
-    "lib/index.js:3895",
-    "lib/index.js:3922"
+    "lib/index.js:3677",
+    "lib/index.js:3712",
+    "lib/index.js:3989"
    ]
   },
   "eval": {
@@ -97,14 +103,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
-   "dev": 101,
+   "src": 8,
+   "dev": 105,
    "evidence": [
     "lib/index.js:950",
+    "lib/index.js:5845",
     "src/client/api.ts:165",
     "src/host/workspace-fs.ts:474",
-    "src/client/workbench/EditorPane.tsx:159",
-    "src/client/workbench/FileTree.tsx:586"
+    "src/client/workbench/EditorPane.tsx:159"
    ]
   },
   "dyn_import": {
@@ -114,7 +120,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 142,
+ "files_scanned": 168,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -128,7 +134,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×15 src, e.g. lib/index.js:4, lib/index.js:336"
+   "evidence": "×17 src, e.g. lib/index.js:4, lib/index.js:336"
   }
  ],
  "level": 3

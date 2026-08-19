@@ -2,36 +2,33 @@
  "repo": "knGear/dsh-mobile",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-15T07:59:53Z",
+ "pushed_at": "2026-08-19T01:48:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "inject": [
-    "sessions"
+    "slots"
    ],
    "platform": "web",
    "immediately": true
   }
  },
- "pkg_name": "mobile-AndroidNotify",
- "deps": [],
+ "pkg_name": "dshm-ui",
+ "deps": [
+  "cordis"
+ ],
  "install_scripts": {},
  "injects": [
-  "layout",
-  "sessions",
+  "loader",
   "slots",
-  "tools",
   "webServer"
  ],
- "hooks": [
-  "agent/disposed",
-  "agent/error",
-  "agent/status",
-  "dsh-notify/banner",
-  "session/event",
-  "tools/result"
- ],
- "tool_regs": 4,
+ "hooks": [],
+ "tool_regs": 0,
  "domains": {},
  "env": {
   "DSH_HOME": 1,
@@ -39,14 +36,13 @@
  },
  "behaviors": {
   "exec": {
-   "src": 10,
+   "src": 4,
    "dev": 0,
    "evidence": [
-    "plugins/mobile-AndroidNotify/index.js:3",
-    "plugins/mobile-AndroidNotify/index.js:3",
-    "plugins/mobile-AndroidNotify/index.js:44",
-    "plugins/mobile-AndroidNotify/index.js:46",
-    "plugins/mobile-AndroidNotify/index.js:49"
+    "plugins/dshm-ui/index.js:6",
+    "plugins/dshm-ui/index.js:6",
+    "plugins/dshm-ui/index.js:23",
+    "plugins/dshm-ui/index.js:106"
    ]
   },
   "eval": {
@@ -65,7 +61,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 7,
+   "src": 6,
    "dev": 0,
    "evidence": [
     "scripts/dsh-addone-mobile.mjs:11",
@@ -82,14 +78,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 5,
- "has_skill_md": false,
+ "files_scanned": 4,
+ "has_skill_md": true,
  "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
    "id": "exec",
-   "evidence": "×10 src, e.g. plugins/mobile-AndroidNotify/index.js:3, plugins/mobile-AndroidNotify/index.js:3"
+   "evidence": "×4 src, e.g. plugins/dshm-ui/index.js:6, plugins/dshm-ui/index.js:6"
   }
  ],
- "level": 2
+ "level": 3
 }

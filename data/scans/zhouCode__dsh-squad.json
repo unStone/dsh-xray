@@ -2,8 +2,9 @@
  "repo": "zhouCode/dsh-squad",
  "stars": 1,
  "description": "让分布在不同设备与网络中的个人 Agent，在各自的工作区与权限边界内组成可持久委派的团队。 DSH-native delegation for personal Agents across devices and networks, without giving up local workspaces, credentials, or control.",
- "pushed_at": "2026-08-16T17:18:18Z",
+ "pushed_at": "2026-08-19T02:55:57Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,6 +26,7 @@
   "@deepseek-ai/dsh-agent-default-model",
   "@deepseek-ai/dsh-agent-presets",
   "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-home-paths",
   "@deepseek-ai/dsh-host-webserver",
   "@deepseek-ai/dsh-llm",
@@ -44,6 +46,7 @@
   "agentDefaultModel",
   "agentPresets",
   "agents",
+  "commands",
   "llm",
   "locale",
   "sessionPersistence",
@@ -53,20 +56,28 @@
   "webServer"
  ],
  "hooks": [],
- "tool_regs": 5,
- "domains": {},
+ "tool_regs": 13,
+ "domains": {
+  "bob.example.com": 1,
+  "api.github.com": 1
+ },
  "env": {
-  "SQUAD_SMOKE_KEEP": 1
+  "DSH_SQUAD_RELEASE_SIGNING_KEY": 1,
+  "DSH_SQUAD_RELEASE_PUBLISHED_AT": 1,
+  "SQUAD_SMOKE_KEEP": 1,
+  "GITHUB_TOKEN": 1,
+  "DSH_HOME": 1
  },
  "behaviors": {
   "exec": {
-   "src": 4,
+   "src": 9,
    "dev": 0,
    "evidence": [
     "scripts/smoke-delegation.mjs:2",
     "scripts/smoke-delegation.mjs:2",
-    "scripts/smoke-delegation.mjs:43",
-    "scripts/smoke-delegation.mjs:138"
+    "scripts/smoke-delegation.mjs:49",
+    "scripts/smoke-delegation.mjs:144",
+    "packages/plugin/src/updater/executor.ts:1"
    ]
   },
   "eval": {
@@ -75,27 +86,29 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/plugin/src/update/release.ts:84"
+   ]
   },
   "net_server": {
    "src": 2,
-   "dev": 2,
+   "dev": 8,
    "evidence": [
-    "scripts/smoke-delegation.mjs:64",
-    "scripts/smoke-delegation.mjs:67"
+    "scripts/smoke-delegation.mjs:70",
+    "scripts/smoke-delegation.mjs:73"
    ]
   },
   "fs_write": {
-   "src": 6,
-   "dev": 2,
+   "src": 15,
+   "dev": 7,
    "evidence": [
-    "scripts/smoke-delegation.mjs:256",
-    "scripts/smoke-delegation.mjs:996",
-    "packages/plugin/scripts/build-client.mjs:48",
-    "packages/plugin/src/host/attachments.ts:226",
-    "packages/plugin/src/host/identity.ts:16"
+    "scripts/create-release-manifest.mjs:127",
+    "scripts/create-release-manifest.mjs:130",
+    "scripts/create-release-manifest.mjs:133",
+    "scripts/smoke-delegation.mjs:262",
+    "scripts/smoke-delegation.mjs:1093"
    ]
   },
   "dyn_import": {
@@ -105,7 +118,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 30,
+ "files_scanned": 54,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -115,11 +128,19 @@
   },
   {
    "id": "exec",
-   "evidence": "×4 src, e.g. scripts/smoke-delegation.mjs:2, scripts/smoke-delegation.mjs:2"
+   "evidence": "×9 src, e.g. scripts/smoke-delegation.mjs:2, scripts/smoke-delegation.mjs:2"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/plugin/src/update/release.ts:84"
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. scripts/smoke-delegation.mjs:64, scripts/smoke-delegation.mjs:67"
+   "evidence": "×2 src, e.g. scripts/smoke-delegation.mjs:70, scripts/smoke-delegation.mjs:73"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_SQUAD_RELEASE_SIGNING_KEY, GITHUB_TOKEN"
   }
  ],
  "level": 3

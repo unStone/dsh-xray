@@ -2,8 +2,9 @@
  "repo": "Mby159/dsh-desktop-browser",
  "stars": 0,
  "description": "Cordis plugin that opens the dsh Web UI in a browser with no address bar (--app mode)",
- "pushed_at": "2026-08-17T22:31:24Z",
+ "pushed_at": "2026-08-18T23:44:45Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,14 +26,14 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 12,
+   "src": 18,
    "dev": 0,
    "evidence": [
     "dist/index.mjs:1",
     "dist/index.mjs:1",
-    "dist/index.mjs:30",
-    "dist/index.mjs:40",
-    "dist/index.mjs:183"
+    "dist/index.mjs:35",
+    "dist/index.mjs:38",
+    "dist/index.mjs:103"
    ]
   },
   "eval": {
@@ -51,9 +52,15 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 12,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "dist/index.mjs:2",
+    "dist/index.mjs:103",
+    "dist/index.mjs:112",
+    "dist/index.mjs:120",
+    "dist/index.mjs:126"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -72,7 +79,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×12 src, e.g. dist/index.mjs:1, dist/index.mjs:1"
+   "evidence": "×18 src, e.g. dist/index.mjs:1, dist/index.mjs:1"
   }
  ],
  "level": 3

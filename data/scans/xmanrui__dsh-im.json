@@ -1,9 +1,10 @@
 {
  "repo": "xmanrui/dsh-im",
- "stars": 48,
+ "stars": 53,
  "description": "通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).",
- "pushed_at": "2026-08-18T08:49:38Z",
+ "pushed_at": "2026-08-18T19:53:05Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,6 +34,7 @@
   "credentials",
   "locale",
   "slots",
+  "typertGateway",
   "webServer",
   "workspaces"
  ],
@@ -48,7 +50,8 @@
   "slack.com": 1,
   "api.telegram.org": 1,
   "work.weixin.qq.com": 2,
-  "ilinkai.weixin.qq.com": 1
+  "ilinkai.weixin.qq.com": 1,
+  "novac2c.cdn.weixin.qq.com": 1
  },
  "env": {
   "DSH_HOME": 8,
@@ -85,9 +88,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 1,
+   "dev": 8,
+   "evidence": [
+    "src/channels/weixin/weixin-api.mjs:43"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -114,7 +119,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 237,
+ "files_scanned": 245,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -125,6 +130,10 @@
   {
    "id": "exec",
    "evidence": "×8 src, e.g. bin/dsh-im.mjs:6, bin/dsh-im.mjs:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/channels/weixin/weixin-api.mjs:43"
   },
   {
    "id": "token_env",

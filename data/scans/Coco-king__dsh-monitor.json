@@ -1,0 +1,98 @@
+{
+ "repo": "Coco-king/dsh-monitor",
+ "stars": 0,
+ "description": "DeepSeek Harness 会话计费 + 通用提供方用量查询插件：会话费用角标(峰谷两档精确计费、刷新后依然准确)、按模型提供方配置的用量面板(DeepSeek 官方余额 / OpenCode Go 5小时·周·月套餐额度 / 自定义 HTTP 用量查询),官方价格一键同步,双币种(USD/CNY)价格表。",
+ "pushed_at": "2026-08-18T19:41:36Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-monitor",
+ "deps": [
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-home-paths",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "remote"
+ ],
+ "hooks": [
+  "connection/reset"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api-docs.deepseek.com": 2,
+  "opencode.ai": 1,
+  "api.deepseek.com": 1,
+  "gitee.com": 1
+ },
+ "env": {
+  "USERPROFILE": 1,
+  "XDG_CONFIG_HOME": 2,
+  "DEEPSEEK_BASE_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/release.mjs:19",
+    "scripts/release.mjs:19",
+    "scripts/release.mjs:67"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 5,
+   "evidence": [
+    "lib/store.js:14",
+    "lib/store.js:865",
+    "scripts/build-client.mjs:20",
+    "scripts/build-client.mjs:61",
+    "scripts/release.mjs:18"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/release.mjs:19, scripts/release.mjs:19"
+  }
+ ],
+ "level": 3
+}

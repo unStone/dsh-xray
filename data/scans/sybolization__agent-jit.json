@@ -2,8 +2,9 @@
  "repo": "sybolization/agent-jit",
  "stars": 0,
  "description": "DeepSeek Harness (dsh) 插件：把 LLM agent loop 中确定性的执行路径编译成 DSL 程序并直接执行，显著降低 token、往返轮次与上下文暴露。A DeepSeek Harness plugin that compiles deterministic agent paths into DSL programs.",
- "pushed_at": "2026-08-14T06:00:28Z",
+ "pushed_at": "2026-08-19T02:46:51Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -22,13 +23,13 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 77,
+ "tool_regs": 87,
  "domains": {
   "api.deepseek.com": 1,
   "api.github.com": 3
  },
  "env": {
-  "DEEPSEEK_API_KEY": 11,
+  "DEEPSEEK_API_KEY": 12,
   "GITHUB_TOKEN": 5
  },
  "behaviors": {
@@ -57,7 +58,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 15,
+   "src": 19,
    "dev": 20,
    "evidence": [
     "src/experiments/dslGenerationExperiment.ts:411",
@@ -74,7 +75,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 207,
+ "files_scanned": 227,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

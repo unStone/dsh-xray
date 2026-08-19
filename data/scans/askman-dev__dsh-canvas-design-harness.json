@@ -1,0 +1,101 @@
+{
+ "repo": "askman-dev/dsh-canvas-design-harness",
+ "stars": 1,
+ "description": "A DeepSeek Harness plugin and AI skill for Figma-style canvas design. Generates, previews, and iterates multi-frame UI drafts directly from chat, storing living design specifications as clean HTML fil",
+ "pushed_at": "2026-08-19T02:16:23Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "dsh-canvas-design-harness",
+ "deps": [
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "canvasHarness",
+  "locale",
+  "sessions",
+  "skills",
+  "slots",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 9,
+ "domains": {},
+ "env": {
+  "CANVAS_HARNESS_PORT": 2,
+  "DSH_WEB_PORT": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 3,
+   "evidence": [
+    "plugin.js:27",
+    "plugin.js:119"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    ".agents/skills/canvas-design-harness/server/src/index.js:48"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 10,
+   "evidence": [
+    "scripts/build-client.mjs:13",
+    "scripts/build-client.mjs:32",
+    ".agents/skills/canvas-design-harness/server/src/mcp.js:87"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. plugin.js:27, plugin.js:119"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. .agents/skills/canvas-design-harness/server/src/index.js:48"
+  }
+ ],
+ "level": 3
+}

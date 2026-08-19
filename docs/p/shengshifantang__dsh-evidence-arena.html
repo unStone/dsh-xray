@@ -48,11 +48,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/shengshifantang/dsh-evidence-arena" rel="nofollow ugc">shengshifantang/dsh-evidence-arena source on GitHub</a>
      · <a href="../registry.html#shengshifantang__dsh-evidence-arena">this plugin in the registry</a></p>
   <p>shengshifantang/dsh-evidence-arena is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 src, e.g. src/process-runner.ts:83, src/security.ts:99</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. src/policy.ts:139, src/policy.ts:257</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>credentials</span> <span>invariants</span> <span>locale</span> <span>sandbox</span> <span>slots</span> <span>subprocess</span> <span>workspaceRegistry</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. scripts/smoke-profile.mjs:1, scripts/smoke-profile.mjs:45</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. src/policy.ts:139, src/policy.ts:257</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 src, e.g. scripts/smoke-profile.mjs:16, scripts/smoke-profile.mjs:20</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>credentials</span> <span>invariants</span> <span>locale</span> <span>sandbox</span> <span>slots</span> <span>subprocess</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>DSH_BIN</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -2,8 +2,9 @@
  "repo": "feiertu/dsh-input-rewriter",
  "stars": 0,
  "description": "一个用于实时改写提示词的deepseek harness插件。",
- "pushed_at": "2026-08-18T08:14:35Z",
+ "pushed_at": "2026-08-18T10:30:18Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -66,9 +67,15 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 6,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/index.js:3",
+    "lib/index.js:173",
+    "lib/index.js:265",
+    "src/rewrite/annotate.ts:69",
+    "src/rewrite/service.ts:7"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -77,7 +84,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 19,
+ "files_scanned": 21,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

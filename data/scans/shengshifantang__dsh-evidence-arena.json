@@ -2,8 +2,9 @@
  "repo": "shengshifantang/dsh-evidence-arena",
  "stars": 0,
  "description": "Evidence Arena: parallel isolated DSH coding runs with deterministic judging and guarded promotion — standalone workbench plugin for DeepSeek Harness",
- "pushed_at": "2026-08-17T12:32:51Z",
+ "pushed_at": "2026-08-19T03:12:23Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -36,6 +37,7 @@
   "@deepseek-ai/dsh-client-ui-sidebar",
   "@deepseek-ai/dsh-client-ui-slots",
   "@deepseek-ai/dsh-compaction-basic",
+  "@deepseek-ai/dsh-compaction-tool-result-pruner",
   "@deepseek-ai/dsh-credentials",
   "@deepseek-ai/dsh-fs-observation-policy",
   "@deepseek-ai/dsh-fs-sandbox",
@@ -45,17 +47,25 @@
   "@deepseek-ai/dsh-llm-pi-ai",
   "@deepseek-ai/dsh-pwsh-sandbox",
   "@deepseek-ai/dsh-pwsh-local",
+  "@deepseek-ai/dsh-repeat-tool-reminder",
   "@deepseek-ai/dsh-sandbox",
   "@deepseek-ai/dsh-sandbox-local",
   "@deepseek-ai/dsh-sandbox-policy",
   "@deepseek-ai/dsh-session-checkpoint-policy",
   "@deepseek-ai/dsh-session-persistence-jsonl",
   "@deepseek-ai/dsh-shell-env",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-subagent-spawn-in-process",
   "@deepseek-ai/dsh-subprocess",
   "@deepseek-ai/dsh-subprocess-local",
   "@deepseek-ai/dsh-token-meter",
   "@deepseek-ai/dsh-tool-fs",
+  "@deepseek-ai/dsh-tool-fs-search",
   "@deepseek-ai/dsh-tool-pwsh",
+  "@deepseek-ai/dsh-tool-str-replace-editor",
+  "@deepseek-ai/dsh-tool-subagent",
+  "@deepseek-ai/dsh-tool-subagent-control",
+  "@deepseek-ai/dsh-tool-subagent-report",
   "@deepseek-ai/dsh-tool-todo",
   "@deepseek-ai/dsh-user-approval",
   "@deepseek-ai/dsh-workspace",
@@ -73,47 +83,62 @@
   "sandbox",
   "slots",
   "subprocess",
-  "workspaceRegistry"
+  "workspaceRegistry",
+  "workspaces"
  ],
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "ComSpec": 1,
+  "DSH_BIN": 1,
+  "DSH_HOME": 1
+ },
  "behaviors": {
   "exec": {
-   "src": 2,
-   "dev": 1,
+   "src": 6,
+   "dev": 2,
    "evidence": [
-    "src/process-runner.ts:83",
-    "src/security.ts:99"
+    "scripts/smoke-profile.mjs:1",
+    "scripts/smoke-profile.mjs:45",
+    "scripts/verify-package.mjs:1",
+    "src/process-runner.ts:100",
+    "src/process-runner.ts:159"
    ]
   },
   "eval": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   },
   "base64_decode": {
    "src": 2,
-   "dev": 0,
+   "dev": 1,
    "evidence": [
     "src/policy.ts:139",
     "src/policy.ts:257"
    ]
   },
   "net_server": {
-   "src": 0,
+   "src": 5,
    "dev": 1,
-   "evidence": []
+   "evidence": [
+    "scripts/smoke-profile.mjs:16",
+    "scripts/smoke-profile.mjs:20",
+    "src/preview.ts:22",
+    "src/preview.ts:99",
+    "src/preview.ts:101"
+   ]
   },
   "fs_write": {
-   "src": 4,
-   "dev": 22,
+   "src": 9,
+   "dev": 29,
    "evidence": [
-    "src/store.ts:4",
-    "src/store.ts:111",
-    "src/store.ts:229",
-    "src/store.ts:304"
+    "src/service.ts:929",
+    "src/service.ts:930",
+    "src/service.ts:931",
+    "src/service.ts:932",
+    "src/service.ts:933"
    ]
   },
   "dyn_import": {
@@ -123,7 +148,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 47,
+ "files_scanned": 53,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -137,11 +162,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. src/process-runner.ts:83, src/security.ts:99"
+   "evidence": "×6 src, e.g. scripts/smoke-profile.mjs:1, scripts/smoke-profile.mjs:45"
   },
   {
    "id": "base64_decode",
    "evidence": "×2 src, e.g. src/policy.ts:139, src/policy.ts:257"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. scripts/smoke-profile.mjs:16, scripts/smoke-profile.mjs:20"
   }
  ],
  "level": 3

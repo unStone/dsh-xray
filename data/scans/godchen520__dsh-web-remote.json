@@ -2,8 +2,9 @@
  "repo": "godchen520/dsh-web-remote",
  "stars": 4,
  "description": "DSH 手机/外网远程访问插件：Cloudflare Quick Tunnel 公网隧道 + token 鉴权 + gzip 压缩 + 局域网 HTTPS 直连 + 手机图标面板 + QQ 机器人取链接",
- "pushed_at": "2026-08-18T08:56:19Z",
+ "pushed_at": "2026-08-18T12:37:16Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -18,8 +19,9 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "api.qrserver.com": 1,
-  "api.pwmqr.com": 1
+  "api.qrserver.com": 2,
+  "api.pwmqr.com": 1,
+  "ilinkai.weixin.qq.com": 1
  },
  "env": {
   "DSH_HOME": 2
@@ -29,7 +31,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "lib/index.mjs:1062"
+    "lib/index.mjs:1220"
    ]
   },
   "eval": {
@@ -48,16 +50,18 @@
    "evidence": [
     "lib/index.mjs:313",
     "lib/index.mjs:476",
-    "lib/index.mjs:1151"
+    "lib/index.mjs:1905"
    ]
   },
   "fs_write": {
-   "src": 3,
+   "src": 5,
    "dev": 2,
    "evidence": [
     "lib/index.mjs:525",
     "lib/index.mjs:530",
-    "lib/index.mjs:544"
+    "lib/index.mjs:544",
+    "lib/index.mjs:1255",
+    "lib/index.mjs:1262"
    ]
   },
   "dyn_import": {
@@ -77,7 +81,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×1 src, e.g. lib/index.mjs:1062"
+   "evidence": "×1 src, e.g. lib/index.mjs:1220"
   },
   {
    "id": "net_server",

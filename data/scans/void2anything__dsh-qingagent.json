@@ -2,8 +2,9 @@
  "repo": "void2anything/dsh-qingagent",
  "stars": 0,
  "description": "在 DeepSeek Harness 里使用青简 — 一行命令安装的 DSH 插件：对话里起草改稿，右侧长出与青简桌面端同源的宣纸面板，逐条审阅后落稿",
- "pushed_at": "2026-08-18T09:16:50Z",
+ "pushed_at": "2026-08-19T02:56:24Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -41,6 +42,7 @@
  ],
  "install_scripts": {},
  "injects": [
+  "agents",
   "conversation",
   "inputTriggers",
   "layout",
@@ -53,15 +55,17 @@
   "webServer"
  ],
  "hooks": [
+  "agent/created",
   "agent/disposed",
   "agent/pre-step"
  ],
  "tool_regs": 12,
  "domains": {
-  "qingagent.com": 1
+  "qingagent.com": 2,
+  "t.qingagent.com": 1
  },
  "env": {
-  "QING_ROOT": 5,
+  "QING_ROOT": 6,
   "QINGAGENT_DRAWIO_ROOT": 1
  },
  "behaviors": {
@@ -84,7 +88,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "src/bridge.ts:494"
+    "src/bridge.ts:553"
    ]
   },
   "net_server": {
@@ -96,7 +100,7 @@
    "src": 1,
    "dev": 2,
    "evidence": [
-    "scripts/extract-qingdoc-css.mjs:563"
+    "scripts/extract-qingdoc-css.mjs:620"
    ]
   },
   "dyn_import": {
@@ -106,7 +110,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 80,
+ "files_scanned": 97,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -124,7 +128,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. src/bridge.ts:494"
+   "evidence": "×1 src, e.g. src/bridge.ts:553"
   }
  ],
  "level": 3

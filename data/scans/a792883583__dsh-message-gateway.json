@@ -1,0 +1,111 @@
+{
+ "repo": "a792883583/dsh-message-gateway",
+ "stars": 0,
+ "description": "Universal message-platform gateway for the DSH web GUI: WeCom AI bot / Telegram / Discord / QQ / Email bridges with per-chat sessions, streaming replies, and auto context compression",
+ "pushed_at": "2026-08-19T02:24:14Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-message-gateway",
+ "deps": [
+  "@wecom/aibot-node-sdk",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "locale",
+  "sessions",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "qyapi.weixin.qq.com": 4,
+  "api.weixin.qq.com": 4,
+  "graph.facebook.com": 2,
+  "discord.com": 2,
+  "api.telegram.org": 2,
+  "bots.qq.com": 2,
+  "api.sgroup.qq.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/host/callback-bridges.ts:64",
+    "src/host/callback-bridges.ts:90"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-test.mjs:421",
+    "scripts/smoke-test.mjs:422"
+   ]
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/host/gateway-store.ts:44"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/host/callback-bridges.ts:64, src/host/callback-bridges.ts:90"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke-test.mjs:421, scripts/smoke-test.mjs:422"
+  }
+ ],
+ "level": 3
+}

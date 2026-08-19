@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-local-ai",
  "stars": 1,
  "description": "Local-model (Ollama) integration for DeepSeek Harness: discover, pull, remove, and inspect local models, route requests to them by task type or keyword with automatic fallback to the cloud, and get a ",
- "pushed_at": "2026-08-18T00:17:26Z",
+ "pushed_at": "2026-08-19T01:52:01Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -14,12 +15,12 @@
   "tsdown",
   "typescript",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
-  "@deepseek-ai/dsh-llm",
-  "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/dsh-subprocess",
   "@deepseek-ai/dsh-commands",
-  "@deepseek-ai/dsh-timeout"
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -39,11 +40,11 @@
  "behaviors": {
   "exec": {
    "src": 11,
-   "dev": 0,
+   "dev": 4,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:21",
+    "scripts/prepare.mjs:22",
     "scripts/release.mjs:28",
     "scripts/release.mjs:28"
    ]
@@ -60,17 +61,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 4,
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 0,
+   "src": 6,
+   "dev": 8,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/release.mjs:29",
     "scripts/release.mjs:71",
-    "scripts/release.mjs:84",
-    "scripts/release.mjs:95"
+    "scripts/release.mjs:84"
    ]
   },
   "dyn_import": {
@@ -82,7 +84,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 29,
+ "files_scanned": 34,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

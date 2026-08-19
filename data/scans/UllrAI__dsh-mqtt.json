@@ -1,9 +1,10 @@
 {
  "repo": "UllrAI/dsh-mqtt",
- "stars": 1,
+ "stars": 2,
  "description": "MQTT protocol driver and agent worker gateway for DSH",
- "pushed_at": "2026-08-18T05:12:24Z",
+ "pushed_at": "2026-08-18T13:57:40Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -17,7 +18,13 @@
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-agent-default-model",
   "@deepseek-ai/dsh-llm",
-  "@deepseek-ai/dsh-session"
+  "@deepseek-ai/dsh-session",
+  "@icons-pack/react-simple-icons",
+  "@vitejs/plugin-react",
+  "lucide-react",
+  "react",
+  "react-dom",
+  "vite"
  ],
  "install_scripts": {
   "prepare": "pnpm build"
@@ -32,8 +39,12 @@
   "session/event"
  ],
  "tool_regs": 0,
- "domains": {},
- "env": {},
+ "domains": {
+  "react.dev": 2
+ },
+ "env": {
+  "DSH_MQTT_MANAGEMENT_API": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -51,15 +62,17 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
-   "dev": 2,
-   "evidence": []
+   "src": 1,
+   "dev": 6,
+   "evidence": [
+    "src/management-server.ts:96"
+   ]
   },
   "fs_write": {
    "src": 1,
    "dev": 2,
    "evidence": [
-    "src/state-store.ts:316"
+    "src/state-store.ts:491"
    ]
   },
   "dyn_import": {
@@ -69,14 +82,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 21,
+ "files_scanned": 32,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/management-server.ts:96"
   }
  ],
- "level": 2
+ "level": 3
 }

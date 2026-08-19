@@ -1,0 +1,88 @@
+{
+ "repo": "Renzic-Stone/DSH-EasyRewrite",
+ "stars": 1,
+ "description": "DSH Web内目前最无感的消息重编辑插件，原版体验，兼容性强，功能简单可开关，设置丰富，现代化轻量ui框架",
+ "pushed_at": "2026-08-18T21:46:35Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "slots",
+    "sessions",
+    "workspaces"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-easyrewrite",
+ "deps": [],
+ "install_scripts": {
+  "prepare": "node build.mjs"
+ },
+ "injects": [
+  "sessions",
+  "settings",
+  "slots",
+  "webServer",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2,
+  "DSH_EASYREWRITE_DEBUG": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:20",
+    "lib/index.js:12",
+    "lib/index.js:39",
+    "lib/index.js:207"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -1,0 +1,98 @@
+{
+ "repo": "Yancey2023/dsh-fold",
+ "stars": 0,
+ "description": "Adds clean, flexible folding to keep content compact, organized, and easy to navigate.",
+ "pushed_at": "2026-08-19T02:00:25Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "slots",
+    "locale",
+    "sessions"
+   ]
+  }
+ },
+ "pkg_name": "dsh-fold",
+ "deps": [
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "build.mjs:13",
+    "build.mjs:13",
+    "build.mjs:17",
+    "scripts/install-dsh.cjs:15",
+    "scripts/install-dsh.cjs:15"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "demo/build-dynamic.mjs:11",
+    "demo/build-dynamic.mjs:44"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 44,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. build.mjs:13, build.mjs:13"
+  }
+ ],
+ "level": 3
+}

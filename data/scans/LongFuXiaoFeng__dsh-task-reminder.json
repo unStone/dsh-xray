@@ -2,8 +2,9 @@
  "repo": "LongFuXiaoFeng/dsh-task-reminder",
  "stars": 1,
  "description": "一个DSH插件，在代理任务完成时播放清晰的叮当声，来提示用户代理任务完成。A DSH (DeepSeek Harness) Cordis plugin that plays a crisp ding when the agent finishes a task",
- "pushed_at": "2026-08-16T06:25:15Z",
+ "pushed_at": "2026-08-18T19:35:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-taskreminder",
  "deps": [],
@@ -18,7 +19,9 @@
  ],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "DSH_HOME": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -41,9 +44,15 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 5,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "bin/cli.js:68",
+    "bin/cli.js:72",
+    "bin/cli.js:85",
+    "bin/cli.js:88",
+    "bin/cli.js:102"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -52,7 +61,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 1,
+ "files_scanned": 2,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

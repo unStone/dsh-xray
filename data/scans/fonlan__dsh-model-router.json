@@ -1,9 +1,10 @@
 {
  "repo": "fonlan/dsh-model-router",
- "stars": 0,
+ "stars": 1,
  "description": "",
- "pushed_at": "2026-08-18T02:02:11Z",
+ "pushed_at": "2026-08-18T13:46:09Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -16,6 +17,8 @@
     "@deepseek-ai/dsh-client-ui-slots",
     "@deepseek-ai/dsh-client-ui-primitives",
     "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes",
     "@deepseek-ai/dsh-client-ui-conversation",
     "@deepseek-ai/dsh-client-ui-model-selection"
    ]
@@ -41,10 +44,13 @@
   "prepare": "pnpm build"
  },
  "injects": [
+  "connection",
   "llm",
   "locale",
   "modelDirectories",
+  "remote",
   "sessions",
+  "settingsScope",
   "slots"
  ],
  "hooks": [

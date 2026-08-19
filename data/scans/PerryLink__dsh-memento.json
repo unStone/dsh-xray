@@ -1,9 +1,10 @@
 {
  "repo": "PerryLink/dsh-memento",
- "stars": 57,
+ "stars": 58,
  "description": "Bounded, layered, approval-gated, auditable cross-session memory for DeepSeek Harness (capability seam: ctx.memory + SQLite provider + memory tool + frozen snapshot injection)",
- "pushed_at": "2026-08-18T00:17:37Z",
+ "pushed_at": "2026-08-18T17:14:25Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -38,12 +39,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 3,
-   "dev": 0,
+   "src": 6,
+   "dev": 3,
    "evidence": [
     "scripts/check-coverage.mjs:12",
     "scripts/check-coverage.mjs:12",
-    "scripts/check-coverage.mjs:64"
+    "scripts/check-coverage.mjs:64",
+    "scripts/verify-artifacts.mjs:4",
+    "scripts/verify-artifacts.mjs:4"
    ]
   },
   "eval": {
@@ -63,17 +66,19 @@
   },
   "fs_write": {
    "src": 0,
-   "dev": 27,
+   "dev": 35,
    "evidence": []
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 1,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-artifacts.mjs:32"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 37,
+ "files_scanned": 42,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -87,7 +92,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. scripts/check-coverage.mjs:12, scripts/check-coverage.mjs:12"
+   "evidence": "×6 src, e.g. scripts/check-coverage.mjs:12, scripts/check-coverage.mjs:12"
   }
  ],
  "level": 3

@@ -2,9 +2,16 @@
  "repo": "itr-del/dsh-cue-bank",
  "stars": 0,
  "description": "Cross-session event-cue memory plugin for DeepSeek Harness: auto-builds a persistent cue bank from conversations and re-injects remembered context on topic switches.",
- "pushed_at": "2026-08-15T12:05:11Z",
+ "pushed_at": "2026-08-18T11:32:40Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web"
+  },
   "plugin": {
    "id": "cue-bank",
    "name": "cue-bank",
@@ -41,7 +48,9 @@
   }
  },
  "pkg_name": "@local/dsh-cue-bank",
- "deps": [],
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
  "install_scripts": {},
  "injects": [
   "agents"
@@ -81,7 +90,7 @@
   },
   "fs_write": {
    "src": 2,
-   "dev": 0,
+   "dev": 3,
    "evidence": [
     "src/store.js:31",
     "src/store.js:88"
@@ -94,9 +103,14 @@
   }
  },
  "has_apply": false,
- "files_scanned": 5,
+ "files_scanned": 8,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

@@ -1,0 +1,221 @@
+{
+ "repo": "tong-io/tongflow",
+ "stars": 860,
+ "description": "TongFlow — multimodal workflow studio and engine (canvas + Python plugin engine) and dsh-tongflow, the DeepSeek Harness studio plugin",
+ "pushed_at": "2026-08-19T00:51:40Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-locale"
+   ]
+  }
+ },
+ "pkg_name": "tongflow-app",
+ "deps": [
+  "@google/genai",
+  "@hookform/resolvers",
+  "@radix-ui/react-alert-dialog",
+  "@radix-ui/react-checkbox",
+  "@radix-ui/react-dialog",
+  "@radix-ui/react-dropdown-menu",
+  "@radix-ui/react-label",
+  "@radix-ui/react-progress",
+  "@radix-ui/react-select",
+  "@radix-ui/react-separator",
+  "@radix-ui/react-slider",
+  "@radix-ui/react-slot",
+  "@radix-ui/react-switch",
+  "@radix-ui/react-tabs",
+  "@radix-ui/react-tooltip",
+  "@sparkjsdev/spark",
+  "@types/three",
+  "@xyflow/react",
+  "better-sqlite3",
+  "chokidar",
+  "class-variance-authority",
+  "clsx",
+  "dotenv",
+  "drizzle-orm",
+  "drizzle-zod",
+  "isomorphic-git",
+  "lucide-react",
+  "masonic",
+  "nanoid",
+  "next",
+  "next-intl",
+  "react",
+  "react-dom",
+  "react-hook-form",
+  "react-hot-toast",
+  "server-only",
+  "tailwind-merge",
+  "three",
+  "tongflow",
+  "use-intl",
+  "uuid",
+  "zod",
+  "zustand",
+  "@deepseek-ai/schemastery",
+  "tongflow",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-jobs",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@types/json-schema",
+  "json-schema-to-ts",
+  "zod",
+  "@radix-ui/react-alert-dialog",
+  "@radix-ui/react-checkbox",
+  "@radix-ui/react-dialog",
+  "@radix-ui/react-dropdown-menu",
+  "@radix-ui/react-label",
+  "@radix-ui/react-progress",
+  "@radix-ui/react-select",
+  "@radix-ui/react-separator",
+  "@radix-ui/react-slider",
+  "@radix-ui/react-slot",
+  "@radix-ui/react-switch",
+  "@radix-ui/react-tabs",
+  "@radix-ui/react-tooltip",
+  "@sparkjsdev/spark",
+  "@xyflow/react",
+  "class-variance-authority",
+  "clsx",
+  "lucide-react",
+  "masonic",
+  "react",
+  "react-dom",
+  "react-hot-toast",
+  "tailwind-merge",
+  "three",
+  "tw-animate-css",
+  "use-intl",
+  "uuid",
+  "zustand"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "sessions",
+  "slots",
+  "tools",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/pre-step"
+ ],
+ "tool_regs": 31,
+ "domains": {
+  "discord.gg": 1,
+  "app.tongflow.com": 1,
+  "modal.com": 1,
+  "huggingface.co": 1,
+  "view.officeapps.live.com": 1,
+  "scaniverse.com": 1
+ },
+ "env": {
+  "TONGFLOW_RESOURCES_DIR": 3,
+  "TONGFLOW_PLUGINS_DIR": 3,
+  "PYTHON": 4,
+  "PYTHON3": 2,
+  "PYTHONPATH": 4,
+  "NEXT_PUBLIC_MANAGED_PLUGINS": 3,
+  "FEATURES_CONFIG_PATH": 1,
+  "TONGFLOW_DATA_DIR": 1,
+  "PORT": 1,
+  "DSH_HOME": 1,
+  "TASK_WEBHOOK_TOKEN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 27,
+   "dev": 0,
+   "evidence": [
+    "scripts/verify-plugins-scan.ts:6",
+    "scripts/verify-plugins-scan.ts:6",
+    "scripts/verify-plugins-scan.ts:38",
+    "src/ext-default/task-dispatch.ts:4",
+    "packages/tongflow/scripts/gen-abi-types.ts:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/lib/plugin-executor/convert-output-fileref.ts:108",
+    "packages/tongflow/src/canvas/nodes/add/add-image-node.tsx:157"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 12,
+   "dev": 8,
+   "evidence": [
+    "scripts/generate-tongflow-abi.mjs:108",
+    "src/ext-default/settings-store.ts:1",
+    "src/ext-default/settings-store.ts:29",
+    "src/ext-default/storage-driver.ts:26",
+    "packages/tongflow/scripts/gen-abi-types.ts:243"
+   ]
+  },
+  "dyn_import": {
+   "src": 15,
+   "dev": 2,
+   "evidence": [
+    "src/i18n/request.ts:37",
+    "packages/dsh-tongflow/src/http/routes.ts:567",
+    "packages/dsh-tongflow/src/tools/run-tools.ts:454",
+    "packages/tongflow/src/canvas/nodes/modality/model-node.tsx:349",
+    "packages/tongflow/src/canvas/nodes/modality/model-node.tsx:753"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 401,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×27 src, e.g. scripts/verify-plugins-scan.ts:6, scripts/verify-plugins-scan.ts:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. src/lib/plugin-executor/convert-output-fileref.ts:108, packages/tongflow/src/canvas/nodes/add/add-image-node.tsx:157"
+  },
+  {
+   "id": "token_env",
+   "evidence": "TASK_WEBHOOK_TOKEN"
+  }
+ ],
+ "level": 3
+}

@@ -2,11 +2,18 @@
  "repo": "33moren33/dsh-memory-pyramid",
  "stars": 1,
  "description": "Timeline memory for DeepSeek Harness (dsh): append-only fact log + agent-maintained summary pyramid, fixed reading budget at any scale. 给 dsh 补上带时间轴的无限记忆",
- "pushed_at": "2026-08-17T01:23:03Z",
+ "pushed_at": "2026-08-18T13:41:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
   }
  },
  "pkg_name": "dsh-memory-pyramid",
@@ -17,7 +24,7 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 5,
+ "tool_regs": 6,
  "domains": {},
  "env": {
   "DSH_CWD": 2
@@ -30,13 +37,15 @@
   },
   "eval": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "lib/client.js:134"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -44,10 +53,11 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 7,
+   "src": 5,
+   "dev": 13,
    "evidence": [
-    "lib/log.js:96",
+    "lib/handoff.js:159",
+    "lib/log.js:109",
     "lib/store.js:154",
     "lib/store.js:292",
     "lib/store.js:344"
@@ -60,7 +70,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 5,
+ "files_scanned": 12,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -71,7 +81,11 @@
   {
    "id": "prompt_surface",
    "evidence": "systemPrompt"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. lib/client.js:134"
   }
  ],
- "level": 2
+ "level": 3
 }

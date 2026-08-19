@@ -1,9 +1,10 @@
 {
  "repo": "shaobeichen/dsh-pocket",
- "stars": 104,
+ "stars": 172,
  "description": "把 DeepSeek Harness 装进你的口袋：电脑上跑 dsh web，手机扫码即同步访问（局域网 + 公网，实时同屏）",
- "pushed_at": "2026-08-17T14:09:00Z",
+ "pushed_at": "2026-08-18T15:48:42Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -44,7 +45,7 @@
  },
  "env": {
   "DSH_POCKET_CLIENT_ID": 1,
-  "DSH_HOME": 2
+  "DSH_HOME": 3
  },
  "behaviors": {
   "exec": {
@@ -52,7 +53,7 @@
    "dev": 0,
    "evidence": [
     "lib/index.js:13",
-    "lib/index.js:88",
+    "lib/index.js:117",
     "lib/restart.js:14",
     "lib/restart.js:44",
     "lib/restart.js:69"
@@ -70,20 +71,20 @@
   },
   "net_server": {
    "src": 1,
-   "dev": 12,
+   "dev": 16,
    "evidence": [
-    "lib/proxy.mjs:73"
+    "lib/proxy.mjs:133"
    ]
   },
   "fs_write": {
-   "src": 10,
-   "dev": 4,
+   "src": 13,
+   "dev": 5,
    "evidence": [
     "client/build.mjs:46",
-    "lib/index.js:58",
-    "lib/restart.js:72",
-    "lib/tunnel.mjs:12",
-    "lib/tunnel.mjs:55"
+    "lib/index.js:14",
+    "lib/index.js:56",
+    "lib/index.js:87",
+    "lib/restart.js:72"
    ]
   },
   "dyn_import": {
@@ -103,11 +104,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×10 src, e.g. lib/index.js:13, lib/index.js:88"
+   "evidence": "×10 src, e.g. lib/index.js:13, lib/index.js:117"
   },
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. lib/proxy.mjs:73"
+   "evidence": "×1 src, e.g. lib/proxy.mjs:133"
   }
  ],
  "level": 3

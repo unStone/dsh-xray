@@ -2,8 +2,9 @@
  "repo": "AgentConnect/dsh-awiki",
  "stars": 3,
  "description": "AWiki identity and messaging plugin for DeepSeek Harness",
- "pushed_at": "2026-08-18T09:17:00Z",
+ "pushed_at": "2026-08-19T01:47:41Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -82,14 +83,14 @@
    ]
   },
   "base64_decode": {
-   "src": 8,
+   "src": 14,
    "dev": 0,
    "evidence": [
     "lib/client.js:1321",
     "lib/client.js:1372",
-    "lib/client.js:6165",
-    "lib/index.js:941",
-    "src/index.ts:450"
+    "lib/client.js:5550",
+    "lib/client.js:6834",
+    "lib/index.js:722"
    ]
   },
   "net_server": {
@@ -98,13 +99,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 3,
+   "src": 7,
+   "dev": 4,
    "evidence": [
-    "lib/index.js:589",
+    "lib/index.js:590",
+    "lib/index.js:689",
     "scripts/normalize-built.mjs:29",
-    "src/session.ts:38",
-    "lib/types/session.js:37"
+    "src/attachment-cache.ts:90",
+    "src/session.ts:38"
    ]
   },
   "dyn_import": {
@@ -114,7 +116,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 120,
+ "files_scanned": 127,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -132,7 +134,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×8 src, e.g. lib/client.js:1321, lib/client.js:1372"
+   "evidence": "×14 src, e.g. lib/client.js:1321, lib/client.js:1372"
   }
  ],
  "level": 3

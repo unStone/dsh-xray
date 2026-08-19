@@ -2,8 +2,9 @@
  "repo": "SisyphusSQ/dsh-plugins",
  "stars": 2,
  "description": "A monorepo for composable DeepSeek Harness (DSH) plugins.",
- "pushed_at": "2026-08-16T16:59:20Z",
+ "pushed_at": "2026-08-18T13:10:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -31,6 +32,19 @@
   "react",
   "@deepseek-ai/dsh-skill",
   "@deepseek-ai/schemastery",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-typert-protocol",
+  "react",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-api-remotes",
@@ -39,6 +53,14 @@
   "@deepseek-ai/dsh-client-ui-input-trigger",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-user-questions",
+  "@earendil-works/pi-ai",
   "@deepseek-ai/schemastery",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-agent",
@@ -80,9 +102,12 @@
   "commandUi",
   "commands",
   "connection",
+  "conversation",
   "conversationEvents",
+  "credentials",
   "inputTriggers",
   "locale",
+  "modelDirectories",
   "remote",
   "sessionQuery",
   "sessionReferenceResolver",
@@ -91,11 +116,13 @@
   "slots",
   "tools",
   "typert",
+  "userQuestions",
   "workspaceRegistry",
   "workspaces"
  ],
  "hooks": [
   "agent/pre-step",
+  "agent/request",
   "connection/reset"
  ],
  "tool_regs": 9,
@@ -107,14 +134,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 5,
+   "src": 6,
    "dev": 8,
    "evidence": [
     "packages/dsh-agent-plugins/src/store.ts:19",
+    "packages/dsh-openai-codex-oauth/src/open-url.ts:1",
     "packages/dsh-worktree-workspaces/src/git.ts:1",
     ".agents/skills/release-npm-packages/scripts/audit-packages.mjs:3",
-    ".agents/skills/release-npm-packages/scripts/audit-packages.mjs:3",
-    ".agents/skills/release-npm-packages/scripts/audit-packages.mjs:308"
+    ".agents/skills/release-npm-packages/scripts/audit-packages.mjs:3"
    ]
   },
   "eval": {
@@ -128,12 +155,14 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
+   "src": 1,
    "dev": 2,
-   "evidence": []
+   "evidence": [
+    "packages/dsh-openai-codex-oauth/src/runtime.ts:84"
+   ]
   },
   "fs_write": {
-   "src": 8,
+   "src": 9,
    "dev": 19,
    "evidence": [
     "packages/dsh-agent-plugins/scripts/build-client.mjs:18",
@@ -150,7 +179,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 100,
+ "files_scanned": 136,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -164,7 +193,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×5 src, e.g. packages/dsh-agent-plugins/src/store.ts:19, packages/dsh-worktree-workspaces/src/git.ts:1"
+   "evidence": "×6 src, e.g. packages/dsh-agent-plugins/src/store.ts:19, packages/dsh-openai-codex-oauth/src/open-url.ts:1"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. packages/dsh-openai-codex-oauth/src/runtime.ts:84"
   }
  ],
  "level": 3

@@ -2,8 +2,9 @@
  "repo": "hili986/dshpack",
  "stars": 0,
  "description": "把一个 dsh 场景导出成可安装、可分享、可审计的 pack，再把 pack 装成标准 dsh profile",
- "pushed_at": "2026-08-18T07:56:38Z",
+ "pushed_at": "2026-08-19T02:50:43Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -47,7 +48,7 @@
  "behaviors": {
   "exec": {
    "src": 23,
-   "dev": 61,
+   "dev": 63,
    "evidence": [
     "scripts/schema-artifacts.mjs:1",
     "scripts/schema-artifacts.mjs:1",
@@ -62,7 +63,7 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 8,
+   "src": 9,
    "dev": 3,
    "evidence": [
     "packages/cli/src/install/content-validation.ts:19",
@@ -79,7 +80,7 @@
   },
   "fs_write": {
    "src": 20,
-   "dev": 735,
+   "dev": 796,
    "evidence": [
     "scripts/collect-real-dsh-fixtures.mjs:139",
     "scripts/collect-real-dsh-fixtures.mjs:157",
@@ -95,7 +96,7 @@
   }
  },
  "has_apply": false,
- "files_scanned": 231,
+ "files_scanned": 250,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -109,7 +110,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×8 src, e.g. packages/cli/src/install/content-validation.ts:19, packages/cli/src/install/engine-apply.ts:40"
+   "evidence": "×9 src, e.g. packages/cli/src/install/content-validation.ts:19, packages/cli/src/install/engine-apply.ts:40"
   }
  ],
  "level": 3

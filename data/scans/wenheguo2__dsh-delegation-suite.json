@@ -2,18 +2,21 @@
  "repo": "wenheguo2/dsh-delegation-suite",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-18T07:21:16Z",
+ "pushed_at": "2026-08-19T01:46:32Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "patch.yml"
   },
   "client": {
+   "platform": "web",
    "inject": [
-    "slots",
-    "locale",
-    "connection",
-    "remote"
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
    ]
   }
  },
@@ -79,9 +82,11 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "tools/codebuddy-developer-role-forwarder.js:15"
+   ]
   },
   "fs_write": {
    "src": 11,
@@ -101,7 +106,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 7,
+ "files_scanned": 8,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -116,6 +121,10 @@
   {
    "id": "exec",
    "evidence": "×4 src, e.g. lib/token-stats.host.js:344, scripts/validate.mjs:7"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. tools/codebuddy-developer-role-forwarder.js:15"
   },
   {
    "id": "token_env",

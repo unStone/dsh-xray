@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-talk",
  "stars": 0,
  "description": "Voice-first session loop for DeepSeek Harness: a composer microphone button with browser/local speech-to-text (Web Speech, FunASR, whisper.cpp), a speak tool for text-to-speech replies (browser, edge-",
- "pushed_at": "2026-08-18T00:18:06Z",
+ "pushed_at": "2026-08-18T15:06:25Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -24,11 +25,11 @@
   "typescript",
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-subprocess",
   "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/dsh-typert-protocol"
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -51,11 +52,11 @@
  "behaviors": {
   "exec": {
    "src": 7,
-   "dev": 1,
+   "dev": 5,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:22",
+    "scripts/prepare.mjs:23",
     "scripts/verify-artifacts.mjs:5",
     "scripts/verify-artifacts.mjs:5"
    ]
@@ -75,18 +76,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 2,
    "evidence": []
   },
   "fs_write": {
-   "src": 5,
-   "dev": 0,
+   "src": 7,
+   "dev": 5,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/prepare.mjs:7",
-    "scripts/prepare.mjs:28",
-    "src/engine.ts:225",
-    "src/settings-patch.ts:237",
-    "src/settings-patch.ts:250"
+    "scripts/prepare.mjs:29",
+    "src/engine.ts:225"
    ]
   },
   "dyn_import": {
@@ -99,7 +100,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 32,
+ "files_scanned": 38,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

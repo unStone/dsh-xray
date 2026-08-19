@@ -1,0 +1,93 @@
+{
+ "repo": "Che-Year/dsh-unidoc",
+ "stars": 0,
+ "description": "DSH 插件 - 用于处理非结构化文档 (Unstructured Document Processing)",
+ "pushed_at": "2026-08-18T16:09:56Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-unidoc",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "fs",
+  "sandboxPolicy",
+  "sessionQuery",
+  "slots",
+  "systemPrompt",
+  "timer",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 13,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:93",
+    "scripts/build-client.mjs:95"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-client.mjs:139"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "eval",
+   "evidence": "×2 src, e.g. scripts/build-client.mjs:93, scripts/build-client.mjs:95"
+  }
+ ],
+ "level": 3
+}

@@ -2,8 +2,9 @@
  "repo": "A-G-guy/dsh-plus",
  "stars": 0,
  "description": "DSH+ —— DeepSeek Harness 自定义插件 monorepo：移动端窄屏适配 / 任务结束邮件通知 / 子代理独立模型 / 自定义 LLM 路由 / ......",
- "pushed_at": "2026-08-18T06:31:15Z",
+ "pushed_at": "2026-08-18T10:54:07Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -16,6 +17,13 @@
   "@dsh-plus/subagent-model",
   "@dsh-plus/llm-pi",
   "@dsh-plus/skill-manual",
+  "@dsh-plus/lifeboat",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery",
+  "yaml",
   "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-settings",
@@ -48,6 +56,7 @@
   "llm",
   "locale",
   "remote",
+  "settings",
   "skills",
   "slots",
   "subagents",
@@ -56,6 +65,7 @@
  "hooks": [
   "agent/request",
   "fs/observed",
+  "ready",
   "session/disposed",
   "session/event",
   "tools/pre-execute"
@@ -87,9 +97,10 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 6,
+   "src": 5,
+   "dev": 8,
    "evidence": [
+    "packages/lifeboat/src/patch-file.ts:42",
     "packages/notify-email/src/audit.ts:7",
     "packages/notify-email/src/audit.ts:43",
     "packages/llm-pi/src/catalog/models-dev.ts:20",
@@ -103,7 +114,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 91,
+ "files_scanned": 104,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

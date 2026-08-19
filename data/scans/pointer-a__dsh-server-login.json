@@ -1,0 +1,126 @@
+{
+ "repo": "pointer-a/dsh-server-login",
+ "stars": 0,
+ "description": "面向公网的多租户 DSH 托管平台 —— 部署到一台公网服务器后，多个用户注册并经管理员审核，各自获得一套相互隔离的 deepseek-harness（DSH）环境，随时通过域名安全访问。",
+ "pushed_at": "2026-08-19T02:45:01Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "plugin": true,
+  "kind": "server",
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-server-login",
+ "deps": [
+  "@fastify/rate-limit",
+  "@fastify/static",
+  "better-sqlite3",
+  "fastify"
+ ],
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_SERVER_LOGIN_ADMIN_PASSWORD": 2,
+  "DSH_SERVER_LOGIN_BASE_UID": 4,
+  "DSH_SERVER_LOGIN_DATA_ROOT": 2,
+  "DSH_SERVER_LOGIN_PORT": 3,
+  "DSH_SERVER_LOGIN_DSH_BIN": 2,
+  "DSH_SERVER_LOGIN_PLUGINS": 2,
+  "DSH_SERVER_LOGIN_SECURE_COOKIES": 2,
+  "DSH_SERVER_LOGIN_SESSION_TTL": 2,
+  "DSH_SERVER_LOGIN_MAX_UPLOAD": 2,
+  "DSH_SERVER_LOGIN_RESTART_BACKOFF": 2,
+  "DSH_SERVER_LOGIN_BASE_DOMAIN": 2,
+  "DSH_SERVER_LOGIN_COOKIE_DOMAIN": 2,
+  "DSH_SERVER_LOGIN_ROLE": 1,
+  "DSH_SERVER_LOGIN_HANDOFF_PATH": 1,
+  "DEEPSEEK_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "scripts/fake-setpriv.mjs:4",
+    "scripts/fake-setpriv.mjs:12",
+    "lib/supervisor/orchestrator.js:12",
+    "lib/supervisor/orchestrator.js:132",
+    "lib/supervisor/orchestrator.js:137"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/web/routes/desktop.js:95",
+    "src/web/routes/desktop.ts:94"
+   ]
+  },
+  "net_server": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/fake-dsh.mjs:38",
+    "lib/supervisor/spawn.js:38",
+    "lib/supervisor/spawn.js:40",
+    "src/supervisor/spawn.ts:41",
+    "src/supervisor/spawn.ts:43"
+   ]
+  },
+  "fs_write": {
+   "src": 30,
+   "dev": 0,
+   "evidence": [
+    "scripts/fake-dsh.mjs:6",
+    "scripts/fake-dsh.mjs:18",
+    "scripts/fake-dsh.mjs:30",
+    "scripts/fake-dsh.mjs:31",
+    "scripts/fake-setpriv.mjs:5"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 90,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. scripts/fake-setpriv.mjs:4, scripts/fake-setpriv.mjs:12"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/web/routes/desktop.js:95, src/web/routes/desktop.ts:94"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×5 src, e.g. scripts/fake-dsh.mjs:38, lib/supervisor/spawn.js:38"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY, DSH_SERVER_LOGIN_ADMIN_PASSWORD, DSH_SERVER_LOGIN_COOKIE_DOMAIN, DSH_SERVER_LOGIN_SECURE_COOKIES"
+  }
+ ],
+ "level": 3
+}

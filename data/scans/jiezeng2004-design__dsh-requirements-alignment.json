@@ -1,9 +1,10 @@
 {
  "repo": "jiezeng2004-design/dsh-requirements-alignment",
- "stars": 5,
+ "stars": 7,
  "description": "Lightweight requirement alignment for DeepSeek Harness — align important decisions before execution without a full spec workflow.",
- "pushed_at": "2026-08-16T15:36:11Z",
+ "pushed_at": "2026-08-18T15:22:08Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,15 +16,21 @@
   "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-persistence",
+  "@deepseek-ai/dsh-session-persistence-jsonl",
+  "@deepseek-ai/dsh-storage",
+  "@deepseek-ai/dsh-storage-domain",
   "@deepseek-ai/dsh-system-prompt",
   "@deepseek-ai/dsh-tool-ask-user",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/dsh-user-questions",
   "@deepseek-ai/schemastery",
+  "zod",
   "@deepseek-ai/dsh-agent"
  ],
  "install_scripts": {},
  "injects": [
+  "storage",
   "systemPrompt",
   "tools",
   "userQuestions"
@@ -34,7 +41,10 @@
  ],
  "tool_regs": 4,
  "domains": {},
- "env": {},
+ "env": {
+  "REAL_SESSION_DIR": 1,
+  "REAL_SESSION_ID": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -57,13 +67,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 10,
+   "src": 8,
+   "dev": 11,
    "evidence": [
-    "src/align-driver.ts:11",
-    "src/align-driver.ts:98",
-    "src/scripted-provider.ts:12",
-    "src/scripted-provider.ts:67"
+    "src/align-driver.ts:19",
+    "src/align-driver.ts:113",
+    "src/migration.ts:379",
+    "src/migration.ts:419",
+    "src/migration.ts:529"
    ]
   },
   "dyn_import": {
@@ -73,7 +84,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 25,
+ "files_scanned": 34,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

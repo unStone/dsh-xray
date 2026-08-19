@@ -1,9 +1,10 @@
 {
  "repo": "PerryLink/dsh-mcp-panel",
- "stars": 9,
+ "stars": 10,
  "description": "MCP management console for the official DeepSeek Harness MCP client: /mcp command with health diagnostics and pipeline trial calls, a Settings MCP tab with server CRUD (approval-gated writes, automati",
- "pushed_at": "2026-08-18T00:17:34Z",
+ "pushed_at": "2026-08-18T15:05:40Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,11 +26,11 @@
   "zod",
   "@deepseek-ai/cordis",
   "@deepseek-ai/cordis-plugin-loader",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-jobs",
   "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/dsh-typert-protocol"
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -52,11 +53,11 @@
  "behaviors": {
   "exec": {
    "src": 10,
-   "dev": 0,
+   "dev": 4,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:22",
+    "scripts/prepare.mjs:23",
     "scripts/release.mjs:27",
     "scripts/release.mjs:27"
    ]
@@ -73,18 +74,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 2,
    "evidence": []
   },
   "fs_write": {
-   "src": 12,
-   "dev": 2,
+   "src": 14,
+   "dev": 7,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/prepare.mjs:7",
-    "scripts/prepare.mjs:28",
-    "scripts/release.mjs:28",
-    "scripts/release.mjs:70",
-    "scripts/release.mjs:84"
+    "scripts/prepare.mjs:29",
+    "scripts/release.mjs:28"
    ]
   },
   "dyn_import": {
@@ -97,7 +98,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 46,
+ "files_scanned": 52,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

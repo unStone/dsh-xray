@@ -1,9 +1,10 @@
 {
  "repo": "22-ai-00/dsh-enhanced",
- "stars": 0,
+ "stars": 1,
  "description": "专门用来实现dsh的增强插件集",
- "pushed_at": "2026-08-18T07:13:20Z",
+ "pushed_at": "2026-08-19T03:00:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -23,7 +24,15 @@
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-session-title",
   "@deepseek-ai/dsh-user-approval",
-  "@deepseek-ai/cordis"
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/cordis",
+  "@agentclientprotocol/sdk",
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm"
  ],
  "install_scripts": {},
  "injects": [
@@ -43,6 +52,8 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
+  "npm_config_user_agent": 1,
+  "npm_execpath": 1,
   "DSH_ACP_PROFILE": 1,
   "DSH_COMMAND": 1,
   "DSH_ENTRY": 1,
@@ -51,8 +62,8 @@
  },
  "behaviors": {
   "exec": {
-   "src": 5,
-   "dev": 0,
+   "src": 17,
+   "dev": 28,
    "evidence": [
     "plugins/acp/scripts/stdio-smoke.mjs:1",
     "plugins/acp/scripts/stdio-smoke.mjs:16",
@@ -77,11 +88,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
-   "dev": 0,
+   "src": 6,
+   "dev": 3,
    "evidence": [
     "scripts/create-plugin.mjs:68",
-    "scripts/create-plugin.mjs:77"
+    "scripts/create-plugin.mjs:77",
+    "scripts/release-version.mjs:38",
+    "scripts/release-version.mjs:88",
+    "plugins/coding-subscription-provider/scripts/capture-cli-fixtures.mjs:31"
    ]
   },
   "dyn_import": {
@@ -91,7 +105,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 14,
+ "files_scanned": 57,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -101,7 +115,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×5 src, e.g. plugins/acp/scripts/stdio-smoke.mjs:1, plugins/acp/scripts/stdio-smoke.mjs:16"
+   "evidence": "×17 src, e.g. plugins/acp/scripts/stdio-smoke.mjs:1, plugins/acp/scripts/stdio-smoke.mjs:16"
   }
  ],
  "level": 3

@@ -1,0 +1,99 @@
+{
+ "repo": "CypherNaught-0x/DSH-Subagent-Model-Router",
+ "stars": 0,
+ "description": "Deepseek Harness plugin that allows automatic delegation of subtasks to different models based on user preferences",
+ "pushed_at": "2026-08-18T11:44:08Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-subagent",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-subagent-dynamic-model",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "zod",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "llm",
+  "remote",
+  "sessionProjections",
+  "sessions",
+  "settings",
+  "skills",
+  "slots",
+  "subagents",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "connection/reset",
+  "subagent/provider-added",
+  "subagent/provider-removed"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

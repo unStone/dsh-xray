@@ -2,8 +2,9 @@
  "repo": "april-jk/dsh-mobile-plugin",
  "stars": 0,
  "description": "Unofficial DSH plugin for paired mobile access to a local DeepSeek Harness",
- "pushed_at": "2026-08-18T06:30:30Z",
+ "pushed_at": "2026-08-18T17:48:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -30,7 +31,8 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "relay.dshmobile.online": 2
+  "relay.dshmobile.online": 2,
+  "api.github.com": 2
  },
  "env": {
   "DSH_REMOTE_CONFIG": 2,
@@ -41,9 +43,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 4,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "dist/updater.js:1",
+    "dist/updater.js:11",
+    "src/updater.ts:1",
+    "src/updater.ts:30"
+   ]
   },
   "eval": {
    "src": 0,
@@ -54,15 +61,15 @@
    "src": 4,
    "dev": 0,
    "evidence": [
-    "dist/relay-client.js:252",
-    "dist/relay-client.js:300",
-    "src/relay-client.ts:293",
-    "src/relay-client.ts:348"
+    "dist/relay-client.js:253",
+    "dist/relay-client.js:301",
+    "src/relay-client.ts:294",
+    "src/relay-client.ts:349"
    ]
   },
   "net_server": {
    "src": 0,
-   "dev": 8,
+   "dev": 10,
    "evidence": []
   },
   "fs_write": {
@@ -80,7 +87,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 26,
+ "files_scanned": 31,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -89,8 +96,12 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dist/updater.js:1, dist/updater.js:11"
+  },
+  {
    "id": "base64_decode",
-   "evidence": "×4 src, e.g. dist/relay-client.js:252, dist/relay-client.js:300"
+   "evidence": "×4 src, e.g. dist/relay-client.js:253, dist/relay-client.js:301"
   }
  ],
  "level": 3

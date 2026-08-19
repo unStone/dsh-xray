@@ -1,0 +1,87 @@
+{
+ "repo": "YaoaY/dsh-gpt-compat",
+ "stars": 0,
+ "description": "DSH 的 GPT/Codex 沙箱提权参数兼容插件 | Fail-closed GPT/Codex sandbox escalation compatibility for DeepSeek Harness",
+ "pushed_at": "2026-08-18T21:08:14Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-gpt-compat",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "sandboxPolicy",
+  "tools"
+ ],
+ "hooks": [
+  "tools/pre-execute"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/package-smoke.mjs:7"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/package-smoke.mjs:22",
+    "scripts/package-smoke.mjs:31"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. scripts/package-smoke.mjs:7"
+  }
+ ],
+ "level": 3
+}

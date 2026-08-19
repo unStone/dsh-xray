@@ -1,10 +1,22 @@
 {
  "repo": "Blank-not-black/dsh-Remote",
- "stars": 8,
+ "stars": 10,
  "description": "DSH Remote · 口袋里的 DSH 控制台 会话 · 审批 · 提问 · 文件传输，局域网 / Tailscale 直连 多服务器自动选优，聊天记录离线可看 带 Token 鉴权，数据只在你的设备之间流动 Sessions · approvals · questions · file transfer over LAN / Tailscale. Automatic fastest-serv",
- "pushed_at": "2026-08-18T07:02:34Z",
+ "pushed_at": "2026-08-18T18:51:49Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
  "pkg_name": "dsh-remote",
  "deps": [
   "@capacitor/android",
@@ -14,35 +26,58 @@
   "@capacitor/local-notifications"
  ],
  "install_scripts": {},
- "injects": [],
- "hooks": [],
+ "injects": [
+  "agents",
+  "commands",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
  "tool_regs": 0,
  "domains": {
-  "api.github.com": 1
+  "api.github.com": 2,
+  "gitee.com": 4,
+  "space.bilibili.com": 4,
+  "en.wikipedia.org": 2,
+  "www.d-project.com": 2,
+  "www.opensource.org": 2,
+  "www.denso-wave.com": 2,
+  "stackoverflow.com": 2
  },
  "env": {
-  "PORT": 1,
-  "HOST": 1,
-  "DSH_UPSTREAM": 1,
-  "TOKEN_FILE": 1,
-  "DSH_REMOTE_NOTES": 1,
-  "UPDATE_CHECK_URL": 1,
-  "UPDATE_INTERVAL_MS": 1,
-  "DSH_REMOTE_FS_ROOT": 1,
-  "DSH_REMOTE_FS_MAX_UPLOAD": 1,
-  "TOKEN": 3,
-  "UPDATE_PROXY": 1,
-  "HTTPS_PROXY": 1,
-  "HTTP_PROXY": 1,
-  "DSH_REMOTE_FEEDBACK_URL": 1
+  "PORT": 2,
+  "HOST": 2,
+  "DSH_UPSTREAM": 2,
+  "TOKEN_FILE": 2,
+  "DSH_REMOTE_NOTES": 2,
+  "UPDATE_CHECK_URL": 2,
+  "UPDATE_INTERVAL_MS": 2,
+  "DSH_REMOTE_FS_ROOT": 2,
+  "DSH_REMOTE_FS_MAX_UPLOAD": 2,
+  "TOKEN": 6,
+  "UPDATE_PROXY": 2,
+  "HTTPS_PROXY": 2,
+  "HTTP_PROXY": 2,
+  "DSH_REMOTE_FEEDBACK_URL": 2,
+  "SYNC_STANDALONE_DIR": 1,
+  "DSH_RELEASE_DEPLOY_KEY": 1,
+  "DSH_REMOTE_GATEWAY": 1,
+  "DSH_REMOTE_TOKEN": 2,
+  "DSH_REMOTE_AUTOSTART": 1,
+  "DSH_REMOTE_GATEWAY_PORT": 1
  },
  "behaviors": {
   "exec": {
-   "src": 2,
-   "dev": 0,
+   "src": 16,
+   "dev": 3,
    "evidence": [
     "gateway-stats.cjs:23",
-    "gateway-stats.cjs:279"
+    "gateway-stats.cjs:279",
+    "scripts/release.mjs:9",
+    "scripts/release.mjs:9",
+    "scripts/release.mjs:71"
    ]
   },
   "eval": {
@@ -56,21 +91,22 @@
    "evidence": []
   },
   "net_server": {
-   "src": 1,
-   "dev": 0,
+   "src": 2,
+   "dev": 4,
    "evidence": [
-    "gateway.js:1544"
+    "gateway.js:1672",
+    "packages/plugin/gateway.cjs:1672"
    ]
   },
   "fs_write": {
-   "src": 14,
-   "dev": 0,
+   "src": 46,
+   "dev": 8,
    "evidence": [
     "gateway-stats.cjs:191",
     "gateway-stats.cjs:208",
     "gateway.js:150",
     "gateway.js:164",
-    "gateway.js:194"
+    "gateway.js:203"
    ]
   },
   "dyn_import": {
@@ -79,23 +115,27 @@
    "evidence": []
   }
  },
- "has_apply": false,
- "files_scanned": 2,
+ "has_apply": true,
+ "files_scanned": 31,
  "has_skill_md": false,
- "type": "other",
+ "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
    "id": "exec",
-   "evidence": "×2 src, e.g. gateway-stats.cjs:23, gateway-stats.cjs:279"
+   "evidence": "×16 src, e.g. gateway-stats.cjs:23, gateway-stats.cjs:279"
   },
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. gateway.js:1544"
+   "evidence": "×2 src, e.g. gateway.js:1672, packages/plugin/gateway.cjs:1672"
   },
   {
    "id": "token_env",
-   "evidence": "TOKEN, TOKEN_FILE"
+   "evidence": "DSH_RELEASE_DEPLOY_KEY, DSH_REMOTE_TOKEN, TOKEN, TOKEN_FILE"
   }
  ],
- "level": 2
+ "level": 3
 }

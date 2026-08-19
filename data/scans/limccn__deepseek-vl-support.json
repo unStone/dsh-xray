@@ -2,16 +2,24 @@
  "repo": "limccn/deepseek-vl-support",
  "stars": 1,
  "description": "Give DeepSeek (text-only) models **vision** in Claude Code and Codex by routing image files to any OpenAI-compatible vision endpoint (OpenRouter, SiliconFlow, DashScope, Ollama, llama.cpp, vLLM, LM St",
- "pushed_at": "2026-08-18T02:21:06Z",
+ "pushed_at": "2026-08-19T03:01:01Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
  "pkg_name": "deepseek-vl-support",
  "deps": [],
  "install_scripts": {},
- "injects": [],
+ "injects": [
+  "tools"
+ ],
  "hooks": [],
- "tool_regs": 0,
+ "tool_regs": 11,
  "domains": {
+  "devin.ai": 1,
   "openrouter.ai": 1,
   "api.moonshot.cn": 1,
   "api.minimaxi.com": 1,
@@ -24,11 +32,13 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 2,
-   "dev": 8,
+   "src": 4,
+   "dev": 11,
    "evidence": [
+    "extensions/deepseek-vision.ts:19",
+    "extensions/deepseek-vision.ts:102",
     "src/plugin.ts:21",
-    "src/plugin.ts:192"
+    "src/plugin.ts:237"
    ]
   },
   "eval": {
@@ -37,9 +47,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "extensions/deepseek-vision.ts:156"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -47,31 +59,39 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 46,
-   "dev": 68,
+   "src": 75,
+   "dev": 88,
    "evidence": [
+    "dist/dsh-plugin.js:28",
+    "dist/dsh-plugin.js:229",
+    "extensions/deepseek-vision.ts:156",
     "src/cache.ts:105",
-    "src/codex.ts:10",
-    "src/codex.ts:79",
-    "src/codex.ts:100",
-    "src/codex.ts:107"
+    "src/cliagents.ts:34"
    ]
   },
   "dyn_import": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   }
  },
- "has_apply": false,
- "files_scanned": 29,
+ "has_apply": true,
+ "files_scanned": 39,
  "has_skill_md": true,
- "type": "skill",
+ "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
    "id": "exec",
-   "evidence": "×2 src, e.g. src/plugin.ts:21, src/plugin.ts:192"
+   "evidence": "×4 src, e.g. extensions/deepseek-vision.ts:19, extensions/deepseek-vision.ts:102"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. extensions/deepseek-vision.ts:156"
   }
  ],
- "level": 2
+ "level": 3
 }

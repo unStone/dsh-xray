@@ -1,0 +1,79 @@
+{
+ "repo": "Clarklevis1995/dsh-plugin-mobile-gateway",
+ "stars": 0,
+ "description": "以websocket为通信方式的dsh网关插件，支持在同一网域内移动端的接入，实现移动端的dsh app",
+ "pushed_at": "2026-08-18T16:39:25Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-plugin-mobile-gateway",
+ "deps": [
+  "ws"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "apiProxy",
+  "typertGateway",
+  "webServer"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:69"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  }
+ ],
+ "level": 2
+}

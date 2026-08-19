@@ -1,9 +1,10 @@
 {
  "repo": "zhu168/dsh-save-money",
- "stars": 30,
+ "stars": 31,
  "description": "Save-money plugin for DSH (DeepSeek Harness) — define your own \"pause / resume\" time windows; at pause time running long tasks are paused (not stopped) automatically, and they resume when the window e",
- "pushed_at": "2026-08-18T08:38:37Z",
+ "pushed_at": "2026-08-18T11:05:22Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,11 +34,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 2,
+   "src": 8,
    "dev": 2,
    "evidence": [
     "plugin/index.js:660",
-    "src/balance-host.ts:134"
+    "scripts/release.js:53",
+    "scripts/release.js:53",
+    "scripts/release.js:82",
+    "scripts/release.js:99"
    ]
   },
   "eval": {
@@ -56,7 +60,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 16,
+   "src": 21,
    "dev": 0,
    "evidence": [
     "scripts/build.js:19",
@@ -73,7 +77,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 41,
+ "files_scanned": 42,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -83,7 +87,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. plugin/index.js:660, src/balance-host.ts:134"
+   "evidence": "×8 src, e.g. plugin/index.js:660, scripts/release.js:53"
   }
  ],
  "level": 3

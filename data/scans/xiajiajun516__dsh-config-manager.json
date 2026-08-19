@@ -1,9 +1,10 @@
 {
  "repo": "xiajiajun516/dsh-config-manager",
- "stars": 3,
+ "stars": 4,
  "description": "Backup / export / import / migrate your DeepSeek Harness (DSH) configuration - dual-face Cordis plugin (host engine + Web UI). One-click restore on any machine.",
- "pushed_at": "2026-08-18T07:41:07Z",
+ "pushed_at": "2026-08-18T23:22:50Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -46,22 +47,27 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "dav.example.com": 2,
+  "dav.jianguoyun.com": 1,
+  "dav.box.com": 1
+ },
  "env": {
   "DSH_CONFIG_MANAGER_LOG_LEVEL": 1,
   "DSH_CONFIG_MANAGER_INSTALL_TIMEOUT_MS": 1,
-  "ComSpec": 1
+  "ComSpec": 1,
+  "DSH_CONFIG_MARKET_URL": 1
  },
  "behaviors": {
   "exec": {
-   "src": 9,
+   "src": 12,
    "dev": 1,
    "evidence": [
     "src/index.ts:38",
+    "src/cli/index.ts:20",
     "src/core/plugin-cli.ts:18",
     "src/core/plugin-cli.ts:19",
-    "src/core/plugin-cli.ts:272",
-    "src/core/plugin-cli.ts:274"
+    "src/core/plugin-cli.ts:272"
    ]
   },
   "eval": {
@@ -70,10 +76,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "src/profiles/profile-manager.ts:130"
+    "src/profiles/profile-manager.ts:130",
+    "src/sync/snapshot-crypto.ts:34"
    ]
   },
   "net_server": {
@@ -82,14 +89,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 38,
-   "dev": 110,
+   "src": 47,
+   "dev": 132,
    "evidence": [
     "src/index.ts:39",
-    "src/index.ts:244",
-    "src/index.ts:613",
-    "src/index.ts:637",
-    "src/index.ts:640"
+    "src/index.ts:294",
+    "src/index.ts:663",
+    "src/index.ts:687",
+    "src/index.ts:690"
    ]
   },
   "dyn_import": {
@@ -99,7 +106,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 168,
+ "files_scanned": 192,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -109,11 +116,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×9 src, e.g. src/index.ts:38, src/core/plugin-cli.ts:18"
+   "evidence": "×12 src, e.g. src/index.ts:38, src/cli/index.ts:20"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. src/profiles/profile-manager.ts:130"
+   "evidence": "×2 src, e.g. src/profiles/profile-manager.ts:130, src/sync/snapshot-crypto.ts:34"
   }
  ],
  "level": 3

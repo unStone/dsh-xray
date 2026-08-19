@@ -1,0 +1,119 @@
+{
+ "repo": "Syhz-666/dsh-no-workspace",
+ "stars": 1,
+ "description": "Locked read-only sessions for DeepSeek Harness — start without choosing a workspace; once chosen, the session stays read-only forever (approval-gated file reads, no shell).",
+ "pushed_at": "2026-08-18T09:46:07Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": []
+  }
+ },
+ "pkg_name": "dsh-no-workspace",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-command-compact",
+  "@deepseek-ai/dsh-compaction-basic",
+  "@deepseek-ai/dsh-compaction-tool-result-pruner",
+  "@deepseek-ai/dsh-persona",
+  "@deepseek-ai/dsh-tool-ask-user",
+  "@deepseek-ai/dsh-tool-goal",
+  "@deepseek-ai/dsh-tool-session-query",
+  "@deepseek-ai/dsh-tool-todo",
+  "@deepseek-ai/dsh-tool-web",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-presets",
+  "@deepseek-ai/dsh-client-modules",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-sandbox",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tool-fs-search",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-approval"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentPresets",
+  "agents",
+  "commands",
+  "fs",
+  "sessions",
+  "settings",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent-preset/selected",
+  "approval/request",
+  "session/created",
+  "session/event"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/clean.mjs:2",
+    "scripts/clean.mjs:3",
+    "scripts/migrate-legacy-session.mjs:219"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

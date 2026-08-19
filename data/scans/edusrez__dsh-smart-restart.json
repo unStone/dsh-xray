@@ -1,0 +1,90 @@
+{
+ "repo": "edusrez/dsh-smart-restart",
+ "stars": 1,
+ "description": "Wake the main agent after a DeepSeek Harness (DSH) restart so interrupted work resumes without the user prompting.",
+ "pushed_at": "2026-08-18T13:14:13Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-smart-restart",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-home-paths",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "agent/session-start"
+ ],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:24",
+    "src/index.ts:499"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:25",
+    "src/index.ts:25",
+    "src/index.ts:130",
+    "src/index.ts:155",
+    "src/index.ts:185"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/index.ts:24, src/index.ts:499"
+  }
+ ],
+ "level": 3
+}

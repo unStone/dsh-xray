@@ -1,0 +1,87 @@
+{
+ "repo": "jacujay/dsh-model-balance",
+ "stars": 0,
+ "description": "DSH plugin: auto-detect current model vendor and show balance/quota in the composer input row (DeepSeek/Moonshot/MiniMax/StepFun/Zhipu/SiliconFlow/OpenRouter + custom endpoints)",
+ "pushed_at": "2026-08-18T15:02:09Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ]
+  }
+ },
+ "pkg_name": "dsh-model-balance",
+ "deps": [
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.example.com": 1,
+  "api.deepseek.com": 1,
+  "api.moonshot.cn": 1,
+  "api.minimaxi.com": 1,
+  "api.stepfun.com": 1,
+  "open.bigmodel.cn": 1,
+  "api.siliconflow.cn": 1,
+  "openrouter.ai": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/config.js:9",
+    "lib/config.js:25"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 6,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

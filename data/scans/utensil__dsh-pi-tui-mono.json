@@ -1,0 +1,109 @@
+{
+ "repo": "utensil/dsh-pi-tui-mono",
+ "stars": 0,
+ "description": "An experiment on how compat between pi and dsh, focus on TUI drop-in experience for the part I use",
+ "pushed_at": "2026-08-18T17:25:18Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-pi-tui-mono",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "pi2dsh",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery",
+  "@earendil-works/pi-coding-agent",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-loop",
+  "@deepseek-ai/dsh-cmdline",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-skill-filesystem",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "commander"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "commands",
+  "llm",
+  "sessions",
+  "systemPrompt",
+  "tokenMeter",
+  "tools",
+  "tuiStartup",
+  "userQuestions"
+ ],
+ "hooks": [
+  "dispose",
+  "session/event",
+  "system-prompt/assemble"
+ ],
+ "tool_regs": 1,
+ "domains": {},
+ "env": {
+  "NODE_OPTIONS": 2,
+  "PI_TUI_ESC_TIMEOUT": 3,
+  "PI_OFFLINE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 8,
+   "dev": 35,
+   "evidence": [
+    "packages/migrate/lib/index.js:11",
+    "packages/migrate/lib/index.js:227",
+    "packages/tui/lib/bridge.js:20",
+    "packages/tui/lib/bridge.js:20",
+    "packages/tui/lib/bridge.js:117"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, system-prompt/assemble"
+  }
+ ],
+ "level": 2
+}

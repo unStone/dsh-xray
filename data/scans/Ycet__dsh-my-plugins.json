@@ -2,8 +2,9 @@
  "repo": "Ycet/dsh-my-plugins",
  "stars": 1,
  "description": "DSH 设置-插件页新增「我的插件」标签：双列卡片展示用户自己安装的插件（配置状态、Cordis 状态、插件介绍）。Add a \"My Plugins\" tab to the DSH settings plugins page, listing user-installed plugins in two-column cards with configuration status, Cordis ",
- "pushed_at": "2026-08-16T13:24:02Z",
+ "pushed_at": "2026-08-18T17:33:55Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -27,13 +28,18 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "api.github.com": 1
+ },
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/index.js:5",
+    "lib/index.js:356"
+   ]
   },
   "eval": {
    "src": 0,
@@ -51,9 +57,13 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 3,
+   "dev": 5,
+   "evidence": [
+    "lib/index.js:3",
+    "lib/index.js:3",
+    "lib/index.js:91"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -62,14 +72,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 3,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:5, lib/index.js:356"
   }
  ],
- "level": 2
+ "level": 3
 }

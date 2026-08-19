@@ -2,8 +2,9 @@
  "repo": "c-ling/dsh-plugin-pet",
  "stars": 5,
  "description": "DeepSeek Harness 桌面电子宠物插件：跟随 agent 状态变换心情的内置/自定义/Codex 精灵图伙伴。",
- "pushed_at": "2026-08-15T17:19:48Z",
+ "pushed_at": "2026-08-18T18:26:26Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "platform": "web",
@@ -12,11 +13,18 @@
   }
  },
  "pkg_name": "dsh-plugin-pet",
- "deps": [],
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
  "install_scripts": {},
  "injects": [
+  "connection",
   "locale",
+  "remote",
   "sessions",
+  "settings",
+  "settingsScope",
   "slots",
   "webServer"
  ],
@@ -53,7 +61,7 @@
    "src": 1,
    "dev": 1,
    "evidence": [
-    "lib/index.js:234"
+    "lib/index.js:493"
    ]
   },
   "dyn_import": {

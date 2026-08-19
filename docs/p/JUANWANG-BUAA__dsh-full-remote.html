@@ -43,16 +43,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>JUANWANG-BUAA/dsh-full-remote</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness plugin for remote access: a token-gated reverse proxy keeps settings, credentials, and file access working over public tunnels and on other devices instead of returning 403. Per-devic</p>
+  <p class="lede">Auditable, token-gated DeepSeek Harness remote gateway: mobile QR access, per-device sessions, Host/Origin rewrite, settings/credentials/directory support.</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/JUANWANG-BUAA/dsh-full-remote" rel="nofollow ugc">JUANWANG-BUAA/dsh-full-remote source on GitHub</a>
      · <a href="../registry.html#JUANWANG-BUAA__dsh-full-remote">this plugin in the registry</a></p>
   <p>JUANWANG-BUAA/dsh-full-remote is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 src, e.g. scripts/bootstrap.mjs:15, scripts/bootstrap.mjs:15</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. scripts/capture-screenshots.ts:155, scripts/capture-screenshots.ts:163</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 src, e.g. scripts/capture-screenshots.ts:215, src/proxy.ts:727</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 src, e.g. scripts/bootstrap.mjs:10, scripts/bootstrap.mjs:10</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. scripts/capture-screenshots.ts:155, scripts/capture-screenshots.ts:163</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 src, e.g. scripts/browser-smoke.mjs:16, scripts/capture-screenshots.ts:215</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>betterSidebar</span> <span>slots</span> <span>webServer</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>HARNESS_DIR</span> <span>PORT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>HARNESS_DIR</span> <span>PATH_DELIMITER</span> <span>EXTRA_PATCHES</span> <span>DSH_FULL_REMOTE_USE_NATIVE_PICKER</span> <span>PORT</span> <span>PACK_PLUGIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

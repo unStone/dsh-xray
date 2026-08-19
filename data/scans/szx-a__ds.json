@@ -1,0 +1,101 @@
+{
+ "repo": "szx-a/ds",
+ "stars": 1,
+ "description": "LMA (Layered Memory Architecture) 是一个为 DeepSeek Harness 设计的地基插件（Foundation Plugin）。它定义了 “记忆体（Memory Body）” 这一抽象概念及其挂载/卸载协议。  它与其他记忆插件的本质区别在于：LMA 是一个容器和载体，让 dsh-memory-evolve、EchoCore 等“能力性插件”可以挂载其上，它本",
+ "pushed_at": "2026-08-18T14:36:01Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@2464500754/dsh-layered-memory-architecture-preset",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/schemastery",
+  "@2464500754/dsh-layered-memory-architecture",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-locale",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "llm",
+  "memoryStore",
+  "remote",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "agent/status"
+ ],
+ "tool_regs": 4,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "packages/memory/memory-body/src/store.ts:21",
+    "packages/memory/memory-body/src/store.ts:143",
+    "packages/memory/memory-body/src/store.ts:169",
+    "packages/memory/memory-body/src/store.ts:229",
+    "packages/memory/memory-body/src/store.ts:238"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 15,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [],
+ "level": 1
+}

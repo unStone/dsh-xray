@@ -1,9 +1,10 @@
 {
  "repo": "sjh9714/dsh-what-changed",
- "stars": 1,
+ "stars": 2,
  "description": "看得见 Agent 到底改了什么。一个会话里所有文件改动，一屏看完再决定要不要提交 | See what the agent actually changed. Every file it wrote this session, in one review panel.",
- "pushed_at": "2026-08-17T08:56:15Z",
+ "pushed_at": "2026-08-19T02:08:47Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -21,7 +22,9 @@
   "zod",
   "react"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "prepare": "node scripts/build.mjs"
+ },
  "injects": [
   "locale",
   "sessionProjections",

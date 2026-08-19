@@ -2,8 +2,9 @@
  "repo": "Links2008/DeepSeek-Harness-Desktop",
  "stars": 22,
  "description": " Windows 桌面版 DeepSeek Harness 发行版，支持原生通知、流畅的窗口控制、捆绑运行时和自动更新。追踪官方主分支。针对官方版本进行了桌面美化和功能补充",
- "pushed_at": "2026-08-18T08:21:40Z",
+ "pushed_at": "2026-08-19T02:32:27Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-desktop",
  "deps": [
@@ -13,18 +14,20 @@
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "api.deepseek.com": 1
+ },
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 9,
+   "src": 14,
    "dev": 9,
    "evidence": [
     "main.js:3",
-    "main.js:233",
-    "scripts/create-runtime-manifest.mjs:1",
-    "scripts/create-runtime-manifest.mjs:1",
-    "scripts/create-runtime-manifest.mjs:15"
+    "main.js:41",
+    "main.js:41",
+    "main.js:49",
+    "main.js:49"
    ]
   },
   "eval": {
@@ -43,14 +46,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 13,
+   "src": 15,
    "dev": 0,
    "evidence": [
-    "main.js:44",
-    "main.js:57",
-    "main.js:64",
-    "main.js:211",
-    "main.js:221"
+    "main.js:81",
+    "main.js:94",
+    "main.js:101",
+    "main.js:143",
+    "main.js:306"
    ]
   },
   "dyn_import": {
@@ -66,7 +69,7 @@
  "flags": [
   {
    "id": "exec",
-   "evidence": "×9 src, e.g. main.js:3, main.js:233"
+   "evidence": "×14 src, e.g. main.js:3, main.js:41"
   }
  ],
  "level": 2

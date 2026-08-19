@@ -1,9 +1,10 @@
 {
  "repo": "lhwwxy/dsh-agentic-router",
  "stars": 0,
- "description": "",
- "pushed_at": "2026-08-18T09:15:29Z",
+ "description": "监听每次模型请求，按任务类型与复杂度把请求路由到最合适的模型档位；四个专家并行推荐、EXP3 元选择器决定听谁的；每回合按质量代理信号（工具失败、模型重试、延迟）计算奖励并回传，路由策略随使用越学越准。全部决策与奖励落盘，可审计、可重放。",
+ "pushed_at": "2026-08-19T03:02:20Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -17,6 +18,7 @@
  ],
  "hooks": [
   "agent/error",
+  "agent/inbox/claimed",
   "agent/pre-step",
   "agent/request",
   "agent/request-error",

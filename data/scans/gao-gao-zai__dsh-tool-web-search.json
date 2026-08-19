@@ -1,0 +1,84 @@
+{
+ "repo": "gao-gao-zai/dsh-tool-web-search",
+ "stars": 0,
+ "description": "Persistent DSH web search and bounded webpage fetching for Bing and SearXNG",
+ "pushed_at": "2026-08-18T17:27:00Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@linxin666/dsh-tool-web-search",
+ "deps": [
+  "cheerio",
+  "@deepseek-ai/schemastery",
+  "turndown",
+  "@joplin/turndown-plugin-gfm",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-skill-filesystem"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "invariants",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 12,
+ "domains": {
+  "www.bing.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 24,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

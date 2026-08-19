@@ -1,0 +1,104 @@
+{
+ "repo": "cuddly-guacamole/dsh-auto-approval-llm",
+ "stars": 0,
+ "description": "LLM-assisted auto approval + timeout fallback for the DeepSeek Harness Auto preset",
+ "pushed_at": "2026-08-18T19:19:04Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-settings-plugins",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ]
+  }
+ },
+ "pkg_name": "dsh-auto-approval-llm",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "approval",
+  "commands",
+  "llm",
+  "permissionPresets",
+  "sessions",
+  "settings",
+  "slots",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.example.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:22",
+    "src/index.ts:22",
+    "src/index.ts:451",
+    "src/index.ts:453",
+    "src/index.ts:482"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

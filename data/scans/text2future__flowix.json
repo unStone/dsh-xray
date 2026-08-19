@@ -1,9 +1,10 @@
 {
  "repo": "text2future/flowix",
- "stars": 316,
+ "stars": 320,
  "description": "Notes for you, Memory for your agents. / 内置 Deepseek harness Agent / 适用 办公 & 写作 & Coding",
- "pushed_at": "2026-08-17T17:47:52Z",
+ "pushed_at": "2026-08-18T17:14:06Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -2244,8 +2245,9 @@
   "docs.deepseek.com": 1
  },
  "env": {
+  "FLOWIX_DSH_BUILD_ID": 1,
   "FLOWIX_DSH_STRIP": 1,
-  "FLOWIX_DSH_RUNTIME_PATH": 1,
+  "FLOWIX_DSH_HOME": 1,
   "FLOWIX_DSH_CORDIS_CONFIG": 1,
   "FLOWIX_DSH_PRESET_ROOT": 1,
   "FLOWIX_DSH_SESSION_ROOT": 1,
@@ -2261,14 +2263,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 41,
+   "src": 44,
    "dev": 58,
    "evidence": [
+    "app/flowix-dsh-host/scripts/build-host.mjs:1",
+    "app/flowix-dsh-host/scripts/build-host.mjs:56",
+    "app/flowix-dsh-host/scripts/build-host.mjs:133",
     "app/flowix-dsh-host/scripts/build-runtime.mjs:1",
-    "app/flowix-dsh-host/scripts/build-runtime.mjs:8",
-    "app/flowix-dsh-host/scripts/build-sidecars.mjs:1",
-    "app/flowix-dsh-host/scripts/build-sidecars.mjs:161",
-    "app/flowix-dsh-host/scripts/sync-upstream.mjs:4"
+    "app/flowix-dsh-host/scripts/build-runtime.mjs:8"
    ]
   },
   "eval": {
@@ -2289,14 +2291,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 23,
+   "src": 25,
    "dev": 367,
    "evidence": [
+    "app/flowix-dsh-host/scripts/build-host.mjs:2",
+    "app/flowix-dsh-host/scripts/build-host.mjs:34",
     "app/flowix-dsh-host/src/runtime/environment.ts:1",
-    "app/flowix-dsh-host/src/runtime/environment.ts:102",
-    "app/flowix-dsh-host/src/runtime/environment.ts:122",
-    "app/flowix-dsh-host/src/runtime/environment.ts:123",
-    "app/flowix-dsh-host/vendor/deepseek-harness/apps/cli/src/profile-boot.ts:14"
+    "app/flowix-dsh-host/src/runtime/environment.ts:137",
+    "app/flowix-dsh-host/src/runtime/environment.ts:157"
    ]
   },
   "dyn_import": {
@@ -2320,7 +2322,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×41 src, e.g. app/flowix-dsh-host/scripts/build-runtime.mjs:1, app/flowix-dsh-host/scripts/build-runtime.mjs:8"
+   "evidence": "×44 src, e.g. app/flowix-dsh-host/scripts/build-host.mjs:1, app/flowix-dsh-host/scripts/build-host.mjs:56"
   },
   {
    "id": "base64_decode",

@@ -2,8 +2,9 @@
  "repo": "omdsh-plugins/omdsh-codemode",
  "stars": 0,
  "description": "Code mode for the DeepSeek Harness web GUI: a third segment beside Chat and Work whose column is the harness's own terminal, running in the conversation's workspace",
- "pushed_at": "2026-08-17T05:47:46Z",
+ "pushed_at": "2026-08-18T10:06:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -32,10 +33,12 @@
  },
  "pkg_name": "@omdsh-plugins/omdsh-codemode",
  "deps": [
+  "@xterm/addon-fit",
   "node-pty",
   "ws",
   "xterm",
-  "@xterm/addon-fit",
+  "xterm-addon-canvas",
+  "xterm-addon-webgl",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-client-locale",
   "@deepseek-ai/dsh-client-runtime",
@@ -45,7 +48,7 @@
   "@deepseek-ai/dsh-host-webserver",
   "@deepseek-ai/dsh-invariants",
   "@deepseek-ai/dsh-session",
-  "@omdsh-plugins/omdsh-base",
+  "@omdsh-plugins/omdsh-basemode",
   "react"
  ],
  "install_scripts": {

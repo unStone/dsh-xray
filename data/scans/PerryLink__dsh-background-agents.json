@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-background-agents",
  "stars": 5,
  "description": "Interactive long-session background agents for DeepSeek Harness: start a durable continuable child agent, watch its progress in the Web UI sidebar, message it any time, and interrupt it - all through ",
- "pushed_at": "2026-08-18T00:27:02Z",
+ "pushed_at": "2026-08-19T01:54:04Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -24,15 +25,15 @@
  "deps": [
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
-  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
-  "@deepseek-ai/dsh-subagent",
   "@deepseek-ai/dsh-storage",
-  "@deepseek-ai/dsh-storage-json",
   "@deepseek-ai/dsh-storage-domain",
-  "@deepseek-ai/dsh-commands"
+  "@deepseek-ai/dsh-storage-json",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
  "injects": [
@@ -55,8 +56,8 @@
  },
  "behaviors": {
   "exec": {
-   "src": 5,
-   "dev": 0,
+   "src": 8,
+   "dev": 3,
    "evidence": [
     "scripts/pack-smoke.mjs:12",
     "scripts/pack-smoke.mjs:12",
@@ -75,7 +76,7 @@
    "dev": 0,
    "evidence": [
     "lib/client.js:860",
-    "lib/index.js:882"
+    "lib/index.js:883"
    ]
   },
   "net_server": {
@@ -84,24 +85,26 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 9,
-   "dev": 4,
+   "src": 11,
+   "dev": 16,
    "evidence": [
     "scripts/clean.mjs:1",
     "scripts/clean.mjs:3",
-    "scripts/gen-aliases.mjs:18",
-    "scripts/gen-aliases.mjs:136",
-    "scripts/gen-aliases.mjs:137"
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
+    "scripts/gen-aliases.mjs:18"
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-artifacts.mjs:26"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 59,
+ "files_scanned": 72,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -111,11 +114,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×5 src, e.g. scripts/pack-smoke.mjs:12, scripts/pack-smoke.mjs:12"
+   "evidence": "×8 src, e.g. scripts/pack-smoke.mjs:12, scripts/pack-smoke.mjs:12"
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. lib/client.js:860, lib/index.js:882"
+   "evidence": "×2 src, e.g. lib/client.js:860, lib/index.js:883"
   }
  ],
  "level": 3

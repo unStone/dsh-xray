@@ -1,0 +1,158 @@
+{
+ "repo": "shenkonghui/dsh-llm-acp",
+ "stars": 1,
+ "description": "DeepSeek Harness 的 ACP 客户端 LLM 适配器 + ACP 服务设置界面。通过外部 [Agent Client Protocol](https://agentclientprotocol.com) 服务器作为模型提供方接入 harness 的 LLM 层，并提供一个 Web 设置页面用于浏览 ACP 注册表和管理已配置的服务器。",
+ "pushed_at": "2026-08-19T02:39:03Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-api-remotes"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@deepseek-ai/dsh-llm-acp",
+ "deps": [
+  "@agentclientprotocol/sdk",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-timeout",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "remote",
+  "slots",
+  "subprocess"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "agoragentic.com": 2,
+  "www.augmentcode.com": 2,
+  "www.autohand.ai": 2,
+  "cline.bot": 2,
+  "www.codebuddy.cn": 2,
+  "docs.snowflake.com": 2,
+  "sfc-repo.snowflakecomputing.com": 12,
+  "corust.ai": 2,
+  "crow-ai.dev": 2,
+  "cursor.com": 2,
+  "downloads.cursor.com": 12,
+  "docs.langchain.com": 2,
+  "docs.devin.ai": 2,
+  "static.devin.ai": 12,
+  "dimcode.dev": 2,
+  "dirac.run": 2,
+  "factory.ai": 2,
+  "fast-agent.ai": 2,
+  "geminicli.com": 2,
+  "block.github.io": 2,
+  "x.ai": 2,
+  "harnlang.com": 2,
+  "junie.jetbrains.com": 2,
+  "kilo.ai": 2,
+  "moonshotai.github.io": 2,
+  "mistral.ai": 2,
+  "www.compassap.ai": 2,
+  "opencode.ai": 2,
+  "poolside.ai": 2,
+  "downloads.poolside.ai": 12,
+  "qoder.com": 2,
+  "qwenlm.github.io": 2,
+  "stakpak.dev": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:367",
+    "lib/index.js:1786",
+    "src/connection.ts:90",
+    "src/connection.ts:126",
+    "src/index.ts:48"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 8,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1774",
+    "lib/index.js:1819",
+    "lib/index.js:1830",
+    "src/index.ts:241",
+    "src/index.ts:285"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 32,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. lib/index.js:367, lib/index.js:1786"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×8 src, e.g. lib/index.js:1774, lib/index.js:1819"
+  }
+ ],
+ "level": 3
+}

@@ -2,18 +2,80 @@
  "repo": "xiangyun0519/dsh-trace-narrator",
  "stars": 0,
  "description": "DeepSeek Harness 插件：把 dsh 最被称赞的 trajectory 特性从本地私有日志变成可分享、可复盘、可教学的结构化报告。  内置 5 套 schema（summary / postmortem / tutorial / debug / executive），支持中英日三语，严格脱敏默认开启，数据不出本地。",
- "pushed_at": "2026-08-18T08:07:47Z",
- "status": "skipped: no scannable code",
- "type": "unknown",
- "level": -1,
- "flags": [],
- "injects": [],
+ "pushed_at": "2026-08-19T02:01:06Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-trace-narrator",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "ajv",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "settings"
+ ],
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
- "env": {},
- "files_scanned": 0,
- "manifest": null,
- "install_scripts": {},
- "behaviors": {}
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 9,
+   "evidence": [
+    "src/index.ts:24",
+    "src/index.ts:376",
+    "src/index.ts:380",
+    "src/narrator.ts:50",
+    "src/narrator.ts:254"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 42,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

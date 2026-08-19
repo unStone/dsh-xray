@@ -1,0 +1,84 @@
+{
+ "repo": "sorry123maker/dsh-plugin-manager",
+ "stars": 0,
+ "description": "dsh三方插件管理，支持安装启用停用，支持热重载",
+ "pushed_at": "2026-08-18T16:13:16Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@zhuyh-sai7n/dsh-plugin-manager",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:282"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "src/index.js:1",
+    "src/index.js:194",
+    "src/index.js:266"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/index.js:282"
+  }
+ ],
+ "level": 3
+}

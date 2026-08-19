@@ -1,0 +1,138 @@
+{
+ "repo": "Loping151/dsh-vibeos",
+ "stars": 2,
+ "description": "VibeOS inside DeepSeek Harness: the whole web UI becomes a virtual desktop whose app windows are HTML the model writes as you use them. Ported from benis-me/VibeOS.",
+ "pushed_at": "2026-08-18T19:59:03Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": []
+  },
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-vibeos",
+ "deps": [
+  "clsx",
+  "dompurify",
+  "react",
+  "schemastery",
+  "ws",
+  "zod",
+  "zustand",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-timeout",
+  "react",
+  "@deepseek-ai/dsh-client-ui-settings"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "invariants",
+  "llm",
+  "modules",
+  "slots",
+  "storageDomain",
+  "theme",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "tailwindcss.com": 1,
+  "www.baidu.com": 2,
+  "lucide.dev": 2
+ },
+ "env": {
+  "VIBEOS_LOG_LEVEL": 2,
+  "DSH_HOME": 2,
+  "DSH_BIN": 1,
+  "VIBEOS_PACK_MAX_TARBALL": 1,
+  "VIBEOS_PACK_MAX_UNPACKED": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 11,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-css.mjs:8",
+    "scripts/build-css.mjs:8",
+    "scripts/build-css.mjs:23",
+    "scripts/e2e.mjs:19",
+    "scripts/e2e.mjs:96"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:3180",
+    "src/host/state/imageStore.ts:68"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/e2e.mjs:35",
+    "scripts/e2e.mjs:37"
+   ]
+  },
+  "fs_write": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:3196",
+    "scripts/e2e.mjs:93",
+    "scripts/verify-pack.mjs:9",
+    "scripts/verify-pack.mjs:73",
+    "src/host/state/imageStore.ts:83"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 285,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×11 src, e.g. scripts/build-css.mjs:8, scripts/build-css.mjs:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.js:3180, src/host/state/imageStore.ts:68"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/e2e.mjs:35, scripts/e2e.mjs:37"
+  }
+ ],
+ "level": 3
+}

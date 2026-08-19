@@ -2,8 +2,9 @@
  "repo": "xiaowei2025cqu23phy/dsh-desktop",
  "stars": 1,
  "description": "DeepSeek Harness 桌面端:内嵌 Web UI、AI 屏保(替换系统屏保)、全模型切换、手机 PWA 远程控制、QQ 机器人通道",
- "pushed_at": "2026-08-17T20:10:59Z",
+ "pushed_at": "2026-08-18T18:28:46Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-desktop",
  "deps": [
@@ -32,7 +33,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 10,
+   "src": 16,
    "dev": 0,
    "evidence": [
     "scripts/check-privacy.mjs:15",
@@ -63,18 +64,18 @@
    "dev": 0,
    "evidence": [
     "scripts/proxy-log.mjs:10",
-    "src/main/gateway.ts:132"
+    "src/main/gateway.ts:133"
    ]
   },
   "fs_write": {
-   "src": 16,
+   "src": 24,
    "dev": 0,
    "evidence": [
     "scripts/approval-flow-test.mjs:488",
     "scripts/approval-flow-test.mjs:504",
     "scripts/cdp-shot.mjs:7",
     "scripts/cdp-shot.mjs:55",
-    "scripts/gen-whale-svg.mjs:3"
+    "scripts/db-test.mjs:8"
    ]
   },
   "dyn_import": {
@@ -84,13 +85,13 @@
   }
  },
  "has_apply": false,
- "files_scanned": 47,
+ "files_scanned": 53,
  "has_skill_md": false,
  "type": "other",
  "flags": [
   {
    "id": "exec",
-   "evidence": "×10 src, e.g. scripts/check-privacy.mjs:15, scripts/check-privacy.mjs:15"
+   "evidence": "×16 src, e.g. scripts/check-privacy.mjs:15, scripts/check-privacy.mjs:15"
   },
   {
    "id": "base64_decode",
@@ -98,7 +99,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. scripts/proxy-log.mjs:10, src/main/gateway.ts:132"
+   "evidence": "×2 src, e.g. scripts/proxy-log.mjs:10, src/main/gateway.ts:133"
   },
   {
    "id": "token_env",

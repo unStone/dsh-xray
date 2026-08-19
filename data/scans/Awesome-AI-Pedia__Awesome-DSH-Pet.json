@@ -2,8 +2,9 @@
  "repo": "Awesome-AI-Pedia/Awesome-DSH-Pet",
  "stars": 1,
  "description": "deepseek harness Pet 包含噜噜 总裁等宠物，并可快速添加自定义宠物",
- "pushed_at": "2026-08-17T10:47:48Z",
+ "pushed_at": "2026-08-19T02:51:39Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -14,7 +15,9 @@
  },
  "pkg_name": "awesome-dsh-pet",
  "deps": [
-  "schemastery"
+  "schemastery",
+  "@tauri-apps/api",
+  "@tauri-apps/plugin-autostart"
  ],
  "install_scripts": {},
  "injects": [
@@ -52,9 +55,10 @@
    ]
   },
   "eval": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
+    "desktop/src/main.mjs:19",
     "scripts/gates/verify-config-sync.mjs:24"
    ]
   },
@@ -88,7 +92,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 60,
+ "files_scanned": 63,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -102,7 +106,7 @@
   },
   {
    "id": "eval",
-   "evidence": "×1 src, e.g. scripts/gates/verify-config-sync.mjs:24"
+   "evidence": "×2 src, e.g. desktop/src/main.mjs:19, scripts/gates/verify-config-sync.mjs:24"
   },
   {
    "id": "base64_decode",

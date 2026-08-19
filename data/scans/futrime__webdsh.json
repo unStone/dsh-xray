@@ -1,12 +1,20 @@
 {
  "repo": "futrime/webdsh",
- "stars": 6,
- "description": "Running DeepSeek Harness on web",
- "pushed_at": "2026-08-18T08:20:27Z",
+ "stars": 9,
+ "description": "Browser-only build of DeepSeek Harness",
+ "pushed_at": "2026-08-19T02:35:24Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
   }
  },
  "pkg_name": "deepseek-web-harness",
@@ -223,9 +231,13 @@
  ],
  "tool_regs": 3,
  "domains": {
+  "opencode.ai": 1,
+  "api.github.com": 3,
+  "codeload.github.com": 2,
+  "api.openai.com": 4,
   "user.github.io": 1,
-  "codeload.github.com": 1,
-  "cors.isomorphic-git.org": 1
+  "proxy.cors.sh": 1,
+  "cors.eu.org": 1
  },
  "env": {
   "CORDIS_SHARED": 1,
@@ -238,9 +250,9 @@
    "evidence": [
     "vite.config.ts:20",
     "vite.config.ts:20",
-    "scripts/e2e.ts:297",
-    "scripts/e2e.ts:298",
-    "scripts/e2e.ts:305"
+    "scripts/e2e.ts:599",
+    "scripts/e2e.ts:600",
+    "scripts/e2e.ts:607"
    ]
   },
   "eval": {
@@ -272,26 +284,26 @@
    ]
   },
   "fs_write": {
-   "src": 135,
+   "src": 136,
    "dev": 1,
    "evidence": [
-    "scripts/assemble.ts:19",
-    "scripts/assemble.ts:19",
-    "scripts/assemble.ts:111",
-    "scripts/assemble.ts:117",
-    "scripts/assemble.ts:120"
+    "scripts/assemble.ts:20",
+    "scripts/assemble.ts:20",
+    "scripts/assemble.ts:112",
+    "scripts/assemble.ts:118",
+    "scripts/assemble.ts:121"
    ]
   },
   "dyn_import": {
    "src": 1,
    "dev": 0,
    "evidence": [
-    "src/main.ts:123"
+    "src/main.ts:128"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 126,
+ "files_scanned": 131,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

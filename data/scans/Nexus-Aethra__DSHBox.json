@@ -1,41 +1,51 @@
 {
  "repo": "Nexus-Aethra/DSHBox",
- "stars": 22,
+ "stars": 23,
  "description": "Manage DeepSeek Harness locally: run multiple DSH versions in isolated containers, open the UI in an embedded WebView, import plugins/skills with one click, share extension bundles, and let a queued t",
- "pushed_at": "2026-08-17T19:31:31Z",
+ "pushed_at": "2026-08-18T21:07:19Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
  "pkg_name": "dshbox",
  "deps": [
   "@tauri-apps/api",
   "@tauri-apps/plugin-dialog",
   "react",
-  "react-dom"
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
- "injects": [],
+ "injects": [
+  "systemPrompt"
+ ],
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "gh-proxy.com": 1,
+  "gh-proxy.com": 3,
   "registry.example.com": 1,
   "registry.npmmirror.com": 1,
   "mirrors.cloud.tencent.com": 1,
   "repo.huaweicloud.com": 1
  },
  "env": {
-  "DSH_BOX_RUNTIME_TARGET": 2
+  "DSH_BOX_RUNTIME_TARGET": 3,
+  "DSHBOX_BIN": 2
  },
  "behaviors": {
   "exec": {
-   "src": 9,
+   "src": 16,
    "dev": 0,
    "evidence": [
+    "scripts/build-plugin.mjs:4",
+    "scripts/build-plugin.mjs:4",
+    "scripts/build-plugin.mjs:34",
     "scripts/bundle-windows.mjs:1",
-    "scripts/bundle-windows.mjs:1",
-    "scripts/bundle-windows.mjs:15",
-    "scripts/prepare-runtime.mjs:2",
-    "scripts/prepare-runtime.mjs:2"
+    "scripts/bundle-windows.mjs:1"
    ]
   },
   "eval": {
@@ -54,9 +64,15 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 7,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/build-plugin.mjs:1",
+    "scripts/build-plugin.mjs:1",
+    "scripts/build-plugin.mjs:38",
+    "scripts/build-plugin.mjs:122",
+    "scripts/install-desktop-entry.mjs:20"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -64,15 +80,23 @@
    "evidence": []
   }
  },
- "has_apply": false,
- "files_scanned": 19,
- "has_skill_md": false,
- "type": "other",
+ "has_apply": true,
+ "files_scanned": 37,
+ "has_skill_md": true,
+ "type": "plugin",
  "flags": [
   {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
    "id": "exec",
-   "evidence": "×9 src, e.g. scripts/bundle-windows.mjs:1, scripts/bundle-windows.mjs:1"
+   "evidence": "×16 src, e.g. scripts/build-plugin.mjs:4, scripts/build-plugin.mjs:4"
   }
  ],
- "level": 2
+ "level": 3
 }

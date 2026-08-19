@@ -1,9 +1,10 @@
 {
  "repo": "ysr666/dsh-vision-router",
- "stars": 704,
+ "stars": 770,
  "description": "Eyes for text-only DeepSeek Harness agents: built-in free vision chain (no key) + pixel-level vision tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots). One-command ",
- "pushed_at": "2026-08-18T09:08:31Z",
+ "pushed_at": "2026-08-19T03:00:08Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "platform": "web",
@@ -41,6 +42,7 @@
  "hooks": [
   "agent/pre-step",
   "agent/request",
+  "connection/reset",
   "llm/adapters-updated",
   "settings/document-updated",
   "settings/updated"
@@ -52,17 +54,21 @@
   "api.github.com": 1
  },
  "env": {
-  "OPENCODE_API_KEY": 1
+  "OPENCODE_API_KEY": 1,
+  "STRESS_IMAGE_WIDTH": 1,
+  "STRESS_IMAGE_HEIGHT": 1,
+  "STRESS_MAX_DELTA_MIB": 1
  },
  "behaviors": {
   "exec": {
-   "src": 4,
+   "src": 7,
    "dev": 5,
    "evidence": [
     "index.js:28",
     "lib/file-logger.js:4",
     "lib/local-vision-stabilizer.js:1",
-    "lib/self-update.js:1"
+    "lib/self-update.js:1",
+    "lib/tesseract-exec-compat.js:8"
    ]
   },
   "eval": {
@@ -72,23 +78,23 @@
   },
   "base64_decode": {
    "src": 0,
-   "dev": 2,
+   "dev": 3,
    "evidence": []
   },
   "net_server": {
    "src": 0,
-   "dev": 6,
+   "dev": 8,
    "evidence": []
   },
   "fs_write": {
    "src": 13,
-   "dev": 35,
+   "dev": 44,
    "evidence": [
-    "index.js:5594",
-    "index.js:6330",
-    "index.js:6420",
-    "index.js:6422",
-    "lib/doctor.js:1"
+    "lib/doctor.js:1",
+    "lib/doctor.js:37",
+    "lib/doctor.js:146",
+    "lib/file-logger.js:1",
+    "lib/file-logger.js:80"
    ]
   },
   "dyn_import": {
@@ -98,7 +104,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 49,
+ "files_scanned": 79,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -108,7 +114,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×4 src, e.g. index.js:28, lib/file-logger.js:4"
+   "evidence": "×7 src, e.g. index.js:28, lib/file-logger.js:4"
   },
   {
    "id": "token_env",

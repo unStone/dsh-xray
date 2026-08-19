@@ -1,9 +1,10 @@
 {
  "repo": "Vast-Unhurried/dsh-toolkit",
  "stars": 1,
- "description": "DeepSeek Harness 实用工具箱：便签、API 余额与费用、删除会话（monorepo）",
- "pushed_at": "2026-08-16T13:27:40Z",
+ "description": "DeepSeek Harness 实用工具箱：便签、API 余额与费用、删除会话、第三方模型推理等级",
+ "pushed_at": "2026-08-18T14:06:55Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -21,6 +22,10 @@
   "@deepseek-ai/dsh-host-webserver",
   "@deepseek-ai/dsh-credentials",
   "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-session-persistence",
   "@deepseek-ai/dsh-workspace",
@@ -30,19 +35,26 @@
  "install_scripts": {},
  "injects": [
   "agents",
+  "apiProxy",
+  "connection",
+  "llm",
+  "remote",
   "sessionPersistence",
   "sessions",
+  "settings",
   "slots",
   "webServer",
   "workspaceRegistry"
  ],
- "hooks": [],
+ "hooks": [
+  "session/event"
+ ],
  "tool_regs": 0,
  "domains": {
   "api.deepseek.com": 2
  },
  "env": {
-  "DSH_HOME": 1
+  "DSH_HOME": 2
  },
  "behaviors": {
   "exec": {
@@ -66,10 +78,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 1,
+   "src": 5,
    "dev": 0,
    "evidence": [
-    "packages/dsh-note/lib/api.js:66"
+    "packages/dsh-api-balance/lib/api.js:28",
+    "packages/dsh-api-balance/lib/api.js:28",
+    "packages/dsh-api-balance/lib/api.js:464",
+    "packages/dsh-api-balance/lib/api.js:467",
+    "packages/dsh-note/lib/api.js:70"
    ]
   },
   "dyn_import": {
@@ -79,13 +95,17 @@
   }
  },
  "has_apply": true,
- "files_scanned": 11,
+ "files_scanned": 13,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
   }
  ],
  "level": 2

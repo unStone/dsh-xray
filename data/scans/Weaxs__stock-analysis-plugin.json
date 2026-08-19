@@ -1,0 +1,89 @@
+{
+ "repo": "Weaxs/stock-analysis-plugin",
+ "stars": 11,
+ "description": "Stock analysis extension for Pi Agent — lightweight market data tools + strategy skills",
+ "pushed_at": "2026-08-18T11:46:54Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@weaxs/stock-analysis-plugin",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-skill",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "postinstall": "node scripts/setup-python.mjs"
+ },
+ "injects": [
+  "skills",
+  "tools"
+ ],
+ "hooks": [
+  "tools/result"
+ ],
+ "tool_regs": 126,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 8,
+   "dev": 7,
+   "evidence": [
+    "dsh/index.ts:2",
+    "dsh/index.ts:16",
+    "openclaw/index.ts:2",
+    "openclaw/index.ts:9",
+    "scripts/setup-python.mjs:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 5,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 19,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: node scripts/setup-python.mjs"
+  },
+  {
+   "id": "exec",
+   "evidence": "×8 src, e.g. dsh/index.ts:2, dsh/index.ts:16"
+  }
+ ],
+ "level": 3
+}

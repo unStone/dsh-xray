@@ -1,9 +1,10 @@
 {
  "repo": "zhu1090093659/dsh-web-ui",
- "stars": 4339,
+ "stars": 4626,
  "description": "Plugin and skin collection for DeepSeek Harness (DSH) Web UI - task board, git graph, right-side panel, remote mobile UI, pet, live token stats, and skin center.",
- "pushed_at": "2026-08-18T06:46:50Z",
+ "pushed_at": "2026-08-19T02:48:46Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -29,6 +30,8 @@
   "schemastery",
   "react",
   "react-dom",
+  "yaml",
+  "react",
   "cloudflared",
   "clsx",
   "qrcode.react",
@@ -65,6 +68,7 @@
   "schemastery",
   "react",
   "react",
+  "lightningcss",
   "schemastery",
   "react"
  ],
@@ -105,38 +109,39 @@
  ],
  "tool_regs": 10,
  "domains": {
+  "schemas.linxin666.org": 15,
+  "api.github.com": 1,
   "xxx.trycloudflare.com": 4,
   "foo.trycloudflare.com": 1,
   "example.trycloudflare.com": 1,
   "api.example.com": 1,
-  "www.deepseek.com": 4,
-  "qt.gtimg.cn": 3,
-  "api.binance.com": 3,
-  "data-api.binance.vision": 3,
-  "api.frankfurter.dev": 3,
-  "api.frankfurter.app": 3,
-  "www.bing.com": 1,
-  "bellard.org": 1
+  "bellard.org": 1,
+  "qt.gtimg.cn": 1,
+  "api.binance.com": 1,
+  "data-api.binance.vision": 1,
+  "api.frankfurter.dev": 1,
+  "api.frankfurter.app": 1
  },
  "env": {
+  "GITHUB_REPOSITORY": 1,
+  "GITHUB_TOKEN": 1,
   "DSH_HOME": 1,
   "DSH_AGENTS_HOME": 1,
   "VISION_API_KEY": 1,
-  "DSH_SKINS_DIR": 2,
   "DSH_SKIN_PROFILE": 2,
   "DSH_PROFILE": 2,
   "SystemRoot": 2
  },
  "behaviors": {
   "exec": {
-   "src": 33,
-   "dev": 17,
+   "src": 60,
+   "dev": 35,
    "evidence": [
-    "packages/dsh-remote-web-ui/src/update.ts:14",
-    "packages/dsh-remote-web-ui/src/update.ts:428",
-    "packages/dsh-task-board/scripts/dsh-task-board.js:26",
-    "packages/dsh-task-board/scripts/dsh-task-board.js:26",
-    "packages/dsh-task-board/scripts/dsh-task-board.js:58"
+    "scripts/dsh-skin-migrate-v2.mjs:43",
+    "scripts/dsh-skin-migrate-v2.mjs:43",
+    "scripts/dsh-skin-migrate-v2.mjs:141",
+    "scripts/pr-review.mjs:53",
+    "scripts/pr-review.mjs:53"
    ]
   },
   "eval": {
@@ -146,10 +151,10 @@
   },
   "base64_decode": {
    "src": 2,
-   "dev": 1,
+   "dev": 4,
    "evidence": [
-    "packages/dsh-tool-describe-image/src/media.ts:48",
-    "packages/dsh-aionui-panel/src/client/preview/content.tsx:434"
+    "scripts/dsh-skin-migrate-v2.mjs:227",
+    "packages/dsh-tool-describe-image/src/media.ts:48"
    ]
   },
   "net_server": {
@@ -160,24 +165,27 @@
    ]
   },
   "fs_write": {
-   "src": 57,
-   "dev": 268,
+   "src": 81,
+   "dev": 293,
    "evidence": [
-    "packages/dsh-skins/build.mjs:92",
-    "packages/dsh-skins/build.mjs:125",
-    "packages/dsh-skins/build.mjs:137",
-    "packages/dsh-liangshen/src/sync.ts:18",
-    "packages/dsh-liangshen/src/sync.ts:79"
+    "scripts/aggregate.mjs:45",
+    "scripts/aggregate.mjs:368",
+    "scripts/aggregate.mjs:371",
+    "scripts/dsh-skin-migrate-v2.mjs:50",
+    "scripts/dsh-skin-migrate-v2.mjs:1061"
    ]
   },
   "dyn_import": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "scripts/dsh-skin-migrate-v2.mjs:80",
+    "scripts/dsh-skin-migrate-v2.mjs:90"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 555,
+ "files_scanned": 571,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -199,11 +207,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×33 src, e.g. packages/dsh-remote-web-ui/src/update.ts:14, packages/dsh-remote-web-ui/src/update.ts:428"
+   "evidence": "×60 src, e.g. scripts/dsh-skin-migrate-v2.mjs:43, scripts/dsh-skin-migrate-v2.mjs:43"
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. packages/dsh-tool-describe-image/src/media.ts:48, packages/dsh-aionui-panel/src/client/preview/content.tsx:434"
+   "evidence": "×2 src, e.g. scripts/dsh-skin-migrate-v2.mjs:227, packages/dsh-tool-describe-image/src/media.ts:48"
   },
   {
    "id": "net_server",
@@ -211,7 +219,7 @@
   },
   {
    "id": "token_env",
-   "evidence": "VISION_API_KEY"
+   "evidence": "GITHUB_TOKEN, VISION_API_KEY"
   }
  ],
  "level": 3

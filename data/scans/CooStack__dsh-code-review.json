@@ -1,9 +1,10 @@
 {
  "repo": "CooStack/dsh-code-review",
- "stars": 1,
+ "stars": 5,
  "description": "Codex-style code review sidebar and safe per-turn undo plugin for DeepSeek Harness",
- "pushed_at": "2026-08-16T10:14:26Z",
+ "pushed_at": "2026-08-19T02:48:42Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,28 +12,25 @@
   "client": {
    "inject": [
     "@deepseek-ai/dsh-client-runtime",
-    "@deepseek-ai/dsh-client-ui-conversation",
-    "@deepseek-ai/dsh-client-ui-settings",
     "@deepseek-ai/dsh-client-ui-settings-plugins",
-    "@deepseek-ai/dsh-client-ui-theme"
+    "@deepseek-ai/dsh-client-ui-primitives"
    ],
    "platform": "web"
   }
  },
  "pkg_name": "dsh-code-review",
  "deps": [
+  "@deepseek-ai/schemastery",
   "@shikijs/langs",
   "shiki"
  ],
  "install_scripts": {},
  "injects": [
   "agents",
-  "conversationEvents",
   "fs",
-  "layout",
   "sandboxPolicy",
+  "settings",
   "slots",
-  "theme",
   "webServer"
  ],
  "hooks": [
@@ -72,7 +70,7 @@
    "src": 1,
    "dev": 1,
    "evidence": [
-    "lib/index.js:489"
+    "lib/index.js:599"
    ]
   },
   "dyn_import": {
@@ -82,7 +80,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 10,
+ "files_scanned": 11,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

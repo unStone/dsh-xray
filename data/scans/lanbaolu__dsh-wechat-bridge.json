@@ -1,0 +1,134 @@
+{
+ "repo": "lanbaolu/dsh-wechat-bridge",
+ "stars": 0,
+ "description": "DeepSeek Harness (DSH) 微信桥接插件：三端通用，host 工具 + Web 管理面板",
+ "pushed_at": "2026-08-18T10:56:55Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@lanbaolu/dsh-wechat-bridge",
+ "deps": [
+  "qrcode",
+  "qrcode-terminal",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "slots",
+  "tools"
+ ],
+ "hooks": [
+  "session/event"
+ ],
+ "tool_regs": 16,
+ "domains": {
+  "novac2c.cdn.weixin.qq.com": 1,
+  "ilinkai.weixin.qq.com": 4
+ },
+ "env": {
+  "DSH_HOME": 3,
+  "DSH_BRIDGE_DATA_DIR": 1,
+  "DISPLAY": 1,
+  "WAYLAND_DISPLAY": 1,
+  "DSH_BRIDGE_API_BASE": 1,
+  "DSH_BRIDGE_API_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:14",
+    "src/index.ts:845",
+    "src/bridge/main.ts:3",
+    "src/bridge/main.ts:3",
+    "src/bridge/main.ts:159"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/bridge/wechat/cdn.ts:38"
+   ]
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:1347"
+   ]
+  },
+  "fs_write": {
+   "src": 26,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:15",
+    "src/index.ts:15",
+    "src/index.ts:15",
+    "src/index.ts:113",
+    "src/index.ts:150"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 25,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. src/index.ts:14, src/index.ts:845"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/bridge/wechat/cdn.ts:38"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. src/index.ts:1347"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_BRIDGE_API_TOKEN"
+  }
+ ],
+ "level": 3
+}

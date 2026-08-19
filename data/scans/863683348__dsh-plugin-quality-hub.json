@@ -2,16 +2,19 @@
  "repo": "863683348/dsh-plugin-quality-hub",
  "stars": 0,
  "description": "Independent ratings and security signals for the DSH plugin ecosystem - which plugins are actually worth installing?",
- "pushed_at": "2026-08-18T09:22:18Z",
+ "pushed_at": "2026-08-18T17:58:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-plugin-quality-hub",
  "deps": [
   "@prisma/client",
   "@radix-ui/react-slot",
   "@upstash/redis",
+  "@waffo/waffo-node",
   "class-variance-authority",
   "clsx",
+  "jose",
   "lucide-react",
   "next",
   "next-intl",
@@ -22,35 +25,52 @@
  "install_scripts": {},
  "injects": [],
  "hooks": [],
- "tool_regs": 0,
+ "tool_regs": 6,
  "domains": {
   "www.googletagmanager.com": 2,
   "api.github.com": 2,
   "api.npmjs.org": 2,
-  "dshquality.com": 17,
+  "dshquality.com": 28,
   "news.ycombinator.com": 1,
   "www.reddit.com": 1,
+  "accounts.google.com": 1,
+  "oauth2.googleapis.com": 1,
+  "www.googleapis.com": 1,
   "www.prisma.io": 1,
   "api.buttondown.email": 1,
-  "schema.org": 3
+  "schema.org": 4
  },
  "env": {
   "DSH_HOME": 1,
   "USERPROFILE": 1,
-  "NEXT_PUBLIC_SITE_URL": 18,
+  "NEXT_PUBLIC_SITE_URL": 29,
   "NEXT_PUBLIC_GA_ID": 1,
   "VERCEL_ENV": 1,
+  "AUTH_SECRET": 1,
   "KV_REST_API_URL": 1,
   "KV_REST_API_TOKEN": 1,
   "GITHUB_TOKEN": 3,
+  "GOOGLE_CLIENT_ID": 3,
+  "GOOGLE_CLIENT_SECRET": 2,
   "BUTTONDOWN_API_KEY": 1,
+  "WAFFO_API_KEY": 2,
+  "WAFFO_PRIVATE_KEY": 2,
+  "WAFFO_PUBLIC_KEY": 2,
+  "WAFFO_MERCHANT_ID": 2,
+  "WAFFO_ENV": 1,
   "CRON_SECRET": 1
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 6,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "git-status.js:2",
+    "git-status.js:2",
+    "git-status.js:8",
+    "migrate-deploy.js:2",
+    "migrate-deploy.js:2"
+   ]
   },
   "eval": {
    "src": 0,
@@ -71,14 +91,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 22,
+   "src": 26,
    "dev": 0,
    "evidence": [
-    "scripts/build-site.mjs:5",
-    "scripts/build-site.mjs:156",
-    "scripts/build-site.mjs:174",
-    "scripts/build-site.mjs:175",
-    "scripts/build-site.mjs:176"
+    "git-status.js:21",
+    "migrate-deploy.js:35",
+    "probe.js:45",
+    "probe.js:48",
+    "scripts/build-site.mjs:5"
    ]
   },
   "dyn_import": {
@@ -89,18 +109,26 @@
    ]
   }
  },
- "has_apply": false,
- "files_scanned": 94,
+ "has_apply": true,
+ "files_scanned": 138,
  "has_skill_md": false,
- "type": "other",
+ "type": "plugin",
  "flags": [
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. git-status.js:2, git-status.js:2"
+  },
   {
    "id": "base64_decode",
    "evidence": "×2 src, e.g. app/src/lib/fetch-github.ts:185, app/src/lib/fetch-github.ts:233"
   },
   {
    "id": "token_env",
-   "evidence": "BUTTONDOWN_API_KEY, CRON_SECRET, GITHUB_TOKEN, KV_REST_API_TOKEN"
+   "evidence": "AUTH_SECRET, BUTTONDOWN_API_KEY, CRON_SECRET, GITHUB_TOKEN, GOOGLE_CLIENT_SECRET, KV_REST_API_TOKEN"
+  },
+  {
+   "id": "no_manifest",
+   "evidence": "uses 0 services, 6 tool regs, no manifest"
   }
  ],
  "level": 2

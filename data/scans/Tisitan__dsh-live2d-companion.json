@@ -1,9 +1,10 @@
 {
  "repo": "Tisitan/dsh-live2d-companion",
- "stars": 4,
+ "stars": 5,
  "description": "Live2D 监控面板・看板娘桌宠 for DeepSeek Harness",
- "pushed_at": "2026-08-18T07:47:35Z",
+ "pushed_at": "2026-08-18T17:21:28Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -13,6 +14,11 @@
  "deps": [],
  "install_scripts": {},
  "injects": [
+  "agentDefaultModel",
+  "agentLoop",
+  "agentPresets",
+  "llm",
+  "settings",
   "webServer"
  ],
  "hooks": [
@@ -40,13 +46,13 @@
  },
  "behaviors": {
   "exec": {
-   "src": 8,
+   "src": 9,
    "dev": 0,
    "evidence": [
     "index.js:2",
-    "index.js:870",
-    "index.js:882",
-    "pet/cdp-probe.mjs:2",
+    "index.js:1262",
+    "index.js:1272",
+    "index.js:1294",
     "pet/cdp-probe.mjs:2"
    ]
   },
@@ -71,32 +77,33 @@
    "dev": 0,
    "evidence": [
     "pet/standalone-server.mjs:30",
-    "standalone/server.cjs:302",
-    "standalone/server.cjs:572"
+    "standalone/server.cjs:331",
+    "standalone/server.cjs:672"
    ]
   },
   "fs_write": {
-   "src": 23,
+   "src": 22,
    "dev": 0,
    "evidence": [
     "index.js:1",
     "index.js:1",
-    "index.js:505",
-    "index.js:557",
-    "index.js:579"
+    "index.js:534",
+    "index.js:587",
+    "index.js:609"
    ]
   },
   "dyn_import": {
-   "src": 2,
+   "src": 3,
    "dev": 0,
    "evidence": [
-    "public/boot.js:131",
-    "standalone/test.cjs:122"
+    "public/boot.js:141",
+    "standalone/server.cjs:155",
+    "standalone/test.cjs:142"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 26,
+ "files_scanned": 30,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -106,7 +113,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×8 src, e.g. index.js:2, index.js:870"
+   "evidence": "×9 src, e.g. index.js:2, index.js:1262"
   },
   {
    "id": "eval",
@@ -118,7 +125,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×3 src, e.g. pet/standalone-server.mjs:30, standalone/server.cjs:302"
+   "evidence": "×3 src, e.g. pet/standalone-server.mjs:30, standalone/server.cjs:331"
   }
  ],
  "level": 3

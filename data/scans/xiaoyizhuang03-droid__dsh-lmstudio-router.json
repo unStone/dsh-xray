@@ -1,0 +1,84 @@
+{
+ "repo": "xiaoyizhuang03-droid/dsh-lmstudio-router",
+ "stars": 0,
+ "description": "Local LM Studio model router for the dsh web GUI: routes token-expensive bulk tasks (text work, compaction, session titles) to a local LM Studio model over its OpenAI-compatible /v1 endpoint, auto-lau",
+ "pushed_at": "2026-08-18T15:46:34Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-lmstudio-router",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "systemPrompt"
+ ],
+ "hooks": [
+  "agent/request",
+  "llm/stream"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "LOCALAPPDATA": 1,
+  "ProgramFiles": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:342",
+    "lib/index.js:345"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 3,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:342, lib/index.js:345"
+  }
+ ],
+ "level": 3
+}

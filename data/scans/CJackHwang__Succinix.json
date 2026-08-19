@@ -2,16 +2,20 @@
  "repo": "CJackHwang/Succinix",
  "stars": 5,
  "description": "Succinix — browser-native Linux (real Node + Unix userland inside WebContainer)",
- "pushed_at": "2026-08-15T10:28:44Z",
+ "pushed_at": "2026-08-19T01:40:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "succinix",
  "deps": [
   "@fontsource/jetbrains-mono",
   "@lifo-sh/core",
+  "@ruby/head-wasm-wasi",
+  "@ruby/wasm-wasi",
   "@webcontainer/api",
   "@xterm/addon-fit",
   "@xterm/xterm",
+  "isomorphic-git",
   "@succinix/engine",
   "@webcontainer/api",
   "@deepseek-ai/cordis",
@@ -35,62 +39,64 @@
  "tool_regs": 0,
  "domains": {
   "cdn.jsdelivr.net": 1,
-  "r.jina.ai": 1
+  "r.jina.ai": 2
  },
  "env": {
   "CHROME_PATH": 1,
+  "SUCCINIX_DIAGNOSTICS_DIR": 1,
   "TEST_VAR": 1
  },
  "behaviors": {
   "exec": {
-   "src": 67,
-   "dev": 33,
+   "src": 83,
+   "dev": 55,
    "evidence": [
+    "scripts/bench-gate.mjs:4",
+    "scripts/bench-gate.mjs:59",
     "scripts/bench.mjs:10",
-    "scripts/bench.mjs:182",
-    "scripts/build-engine-package.mjs:11",
-    "scripts/build-engine-package.mjs:11",
-    "scripts/build-engine-package.mjs:46"
+    "scripts/bench.mjs:325",
+    "scripts/build-engine-package.mjs:11"
    ]
   },
   "eval": {
-   "src": 30,
+   "src": 33,
    "dev": 0,
    "evidence": [
-    "scripts/instance-demo.mjs:98",
-    "scripts/instance-demo.mjs:99",
-    "scripts/instance-demo.mjs:114",
-    "scripts/instance-demo.mjs:115",
-    "scripts/instance-demo.mjs:116"
+    "scripts/instance-demo.mjs:101",
+    "scripts/instance-demo.mjs:102",
+    "scripts/instance-demo.mjs:117",
+    "scripts/instance-demo.mjs:118",
+    "scripts/instance-demo.mjs:119"
    ]
   },
   "base64_decode": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "scripts/lang-verify.mjs:226"
+    "scripts/lang-verify.mjs:226",
+    "scripts/lib/chrome.mjs:228"
    ]
   },
   "net_server": {
-   "src": 12,
-   "dev": 4,
+   "src": 14,
+   "dev": 8,
    "evidence": [
     "scripts/instance-routing.mjs:138",
     "scripts/instance-routing.mjs:138",
     "scripts/instance-routing.mjs:143",
     "scripts/instance-routing.mjs:143",
-    "scripts/scenarios/smoke.mjs:14"
+    "scripts/soak-gate.mjs:253"
    ]
   },
   "fs_write": {
-   "src": 78,
-   "dev": 72,
+   "src": 134,
+   "dev": 172,
    "evidence": [
-    "scripts/bench.mjs:123",
+    "scripts/bench-gate.mjs:5",
+    "scripts/bench-gate.mjs:277",
+    "scripts/bench.mjs:154",
     "scripts/build-engine-package.mjs:12",
-    "scripts/build-engine-package.mjs:12",
-    "scripts/build-engine-package.mjs:32",
-    "scripts/build-engine-package.mjs:56"
+    "scripts/build-engine-package.mjs:12"
    ]
   },
   "dyn_import": {
@@ -100,25 +106,25 @@
   }
  },
  "has_apply": true,
- "files_scanned": 230,
+ "files_scanned": 315,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "exec",
-   "evidence": "×67 src, e.g. scripts/bench.mjs:10, scripts/bench.mjs:182"
+   "evidence": "×83 src, e.g. scripts/bench-gate.mjs:4, scripts/bench-gate.mjs:59"
   },
   {
    "id": "eval",
-   "evidence": "×30 src, e.g. scripts/instance-demo.mjs:98, scripts/instance-demo.mjs:99"
+   "evidence": "×33 src, e.g. scripts/instance-demo.mjs:101, scripts/instance-demo.mjs:102"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. scripts/lang-verify.mjs:226"
+   "evidence": "×2 src, e.g. scripts/lang-verify.mjs:226, scripts/lib/chrome.mjs:228"
   },
   {
    "id": "net_server",
-   "evidence": "×12 src, e.g. scripts/instance-routing.mjs:138, scripts/instance-routing.mjs:138"
+   "evidence": "×14 src, e.g. scripts/instance-routing.mjs:138, scripts/instance-routing.mjs:138"
   },
   {
    "id": "no_manifest",

@@ -1,9 +1,10 @@
 {
  "repo": "openma-ai/deepseek-harness-tui",
- "stars": 38,
- "description": "Self-Improvement TUI Plugin of DeepSeek Harness. dsh-tui",
- "pushed_at": "2026-08-18T08:21:17Z",
+ "stars": 41,
+ "description": "Self-Improvement TUI Plugin of DeepSeek Harness. Everything Here Is Also A Plugin. dsh-tui",
+ "pushed_at": "2026-08-19T01:54:54Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -12,13 +13,20 @@
  "pkg_name": "@openma/deepseek-harness-tui",
  "deps": [
   "@deepseek-ai/cordis",
-  "@openma/deepseek-harness-acp"
+  "@openma/deepseek-harness-acp",
+  "@paper-design/shaders-react",
+  "lucide-react",
+  "react",
+  "react-dom"
  ],
  "install_scripts": {},
  "injects": [
   "acpClient",
+  "acpClientEvents",
   "acpServer",
   "acpSessionConfig",
+  "acpSessionPlan",
+  "acpSessionStats",
   "agentPresets",
   "appExit",
   "cmdlineArgs",
@@ -40,7 +48,9 @@
  "domains": {},
  "env": {
   "DSH_TUI_READELF_BIN": 1,
+  "DSH_TUI_RELEASE_ROOT": 2,
   "DSH_TUI_CONTAINER_BIN": 1,
+  "DSH_TUI_SMOKE_PLATFORM": 1,
   "DSH_TUI_BIN": 6,
   "DSH_TUI_AGENT": 2,
   "DSH_HOME": 1,
@@ -48,21 +58,21 @@
  },
  "behaviors": {
   "exec": {
-   "src": 22,
-   "dev": 39,
+   "src": 27,
+   "dev": 44,
    "evidence": [
     "scripts/check-static-elf.mjs:3",
     "scripts/check-static-elf.mjs:3",
     "scripts/check-static-elf.mjs:12",
-    "scripts/smoke-old-linux.mjs:3",
-    "scripts/smoke-old-linux.mjs:3"
+    "scripts/release.mjs:11",
+    "scripts/release.mjs:11"
    ]
   },
   "eval": {
    "src": 1,
    "dev": 0,
    "evidence": [
-    "npm/lib/client-run.js:42"
+    "npm/lib/client-run.js:44"
    ]
   },
   "base64_decode": {
@@ -79,21 +89,24 @@
    ]
   },
   "fs_write": {
-   "src": 2,
-   "dev": 52,
+   "src": 5,
+   "dev": 59,
    "evidence": [
     "scripts/profile-smoke-tui.mjs:12",
-    "scripts/profile-smoke-tui.mjs:19"
+    "scripts/profile-smoke-tui.mjs:19",
+    "scripts/release.mjs:12",
+    "scripts/release.mjs:78",
+    "scripts/release.mjs:79"
    ]
   },
   "dyn_import": {
    "src": 0,
-   "dev": 25,
+   "dev": 32,
    "evidence": []
   }
  },
  "has_apply": true,
- "files_scanned": 54,
+ "files_scanned": 81,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -107,11 +120,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×22 src, e.g. scripts/check-static-elf.mjs:3, scripts/check-static-elf.mjs:3"
+   "evidence": "×27 src, e.g. scripts/check-static-elf.mjs:3, scripts/check-static-elf.mjs:3"
   },
   {
    "id": "eval",
-   "evidence": "×1 src, e.g. npm/lib/client-run.js:42"
+   "evidence": "×1 src, e.g. npm/lib/client-run.js:44"
   },
   {
    "id": "net_server",

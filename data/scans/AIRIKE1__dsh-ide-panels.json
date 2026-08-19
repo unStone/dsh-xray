@@ -1,0 +1,103 @@
+{
+ "repo": "AIRIKE1/dsh-ide-panels",
+ "stars": 1,
+ "description": "DSH 客户端布局插件：仿 VS Code 的 IDE 外壳——中间标签工具区/右侧栏/底部面板，真实 PowerShell 终端 + 本地代码变更对比 + Git 源码管理 + SSH/WSL 远程",
+ "pushed_at": "2026-08-18T17:14:17Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-commands"
+   ],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-ide-panels",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "layout",
+  "loader",
+  "locale",
+  "remote",
+  "sessions",
+  "settingsScope",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "deepseek-ai.github.io": 1
+ },
+ "env": {
+  "USERPROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 3,
+   "evidence": [
+    "lib/index.js:19",
+    "lib/index.js:675",
+    "lib/index.js:875"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:16",
+    "lib/index.js:16",
+    "lib/index.js:16",
+    "lib/index.js:71",
+    "lib/index.js:183"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. lib/index.js:19, lib/index.js:675"
+  }
+ ],
+ "level": 3
+}

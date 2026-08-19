@@ -1,0 +1,129 @@
+{
+ "repo": "shenyan-008/dsh-visual-aid",
+ "stars": 6,
+ "description": "dsh visual aid plugin: lets text-only main models handle images via a vision model",
+ "pushed_at": "2026-08-19T02:01:29Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "@sy008/dsh-visual-aid-bundle",
+ "deps": [
+  "@sy008/dsh-client-ui-visual-aid",
+  "@sy008/dsh-visual-aid",
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-attachment",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-timeout",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "invariants",
+  "llm",
+  "locale",
+  "sessions",
+  "slots",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "llm/adapters-updated",
+  "llm/stream",
+  "session/created",
+  "session/disposed",
+  "session/event"
+ ],
+ "tool_regs": 18,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "visual-aid/lib/index.js:249"
+   ]
+  },
+  "base64_decode": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "visual-aid/lib/index.js:67",
+    "visual-aid/lib/index.js:68",
+    "visual-aid/lib/index.js:1223",
+    "visual-aid/src/index.ts:269",
+    "visual-aid/lib/types/index.js:240"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 18,
+   "dev": 0,
+   "evidence": [
+    "visual-aid/lib/index.js:10",
+    "visual-aid/lib/index.js:10",
+    "visual-aid/lib/index.js:1153",
+    "visual-aid/lib/index.js:1154",
+    "visual-aid/lib/index.js:1627"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 41,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. visual-aid/lib/index.js:249"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×5 src, e.g. visual-aid/lib/index.js:67, visual-aid/lib/index.js:68"
+  }
+ ],
+ "level": 3
+}

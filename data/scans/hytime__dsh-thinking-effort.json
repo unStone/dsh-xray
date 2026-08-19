@@ -1,9 +1,10 @@
 {
  "repo": "hytime/dsh-thinking-effort",
  "stars": 3,
- "description": "",
- "pushed_at": "2026-08-18T09:15:45Z",
+ "description": "Configurable reasoning levels for hand-declared DSH llm-pi-ai models, with bilingual settings and subagent defaults.",
+ "pushed_at": "2026-08-18T16:09:48Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,6 +20,7 @@
  "install_scripts": {},
  "injects": [
   "connection",
+  "locale",
   "settings",
   "slots",
   "timer"
@@ -40,7 +42,7 @@
   },
   "eval": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   },
   "base64_decode": {
@@ -54,9 +56,11 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
+   "src": 4,
    "dev": 0,
    "evidence": [
+    "scripts/build-client.mjs:1",
+    "scripts/build-client.mjs:29",
     "src/host.mjs:11",
     "src/host.mjs:22"
    ]
@@ -68,7 +72,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 3,
+ "files_scanned": 5,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

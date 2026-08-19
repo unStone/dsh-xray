@@ -2,8 +2,9 @@
  "repo": "Blank-not-black/dsh-remote-plugin",
  "stars": 1,
  "description": "DSH Remote 插件独立包：DSH 原生侧边栏入口 + 右侧抽屉管理页；内置网关随 DSH 自动启停",
- "pushed_at": "2026-08-18T07:05:52Z",
+ "pushed_at": "2026-08-18T18:55:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -20,6 +21,8 @@
  "deps": [],
  "install_scripts": {},
  "injects": [
+  "agents",
+  "commands",
   "slots",
   "webServer"
  ],
@@ -83,7 +86,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "gateway.cjs:1544"
+    "gateway.cjs:1672"
    ]
   },
   "fs_write": {
@@ -94,7 +97,7 @@
     "gateway-stats.cjs:208",
     "gateway.cjs:150",
     "gateway.cjs:164",
-    "gateway.cjs:194"
+    "gateway.cjs:203"
    ]
   },
   "dyn_import": {
@@ -118,7 +121,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. gateway.cjs:1544"
+   "evidence": "×1 src, e.g. gateway.cjs:1672"
   },
   {
    "id": "token_env",

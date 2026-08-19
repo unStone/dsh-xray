@@ -2,8 +2,9 @@
  "repo": "UNLINEARITY/dsh-code",
  "stars": 27,
  "description": " Claude-Code-style TUI bundle for DeepSeek Harness. 充分结合 DSH 的核心机制和高级特性与Codex CLI 、Claude Code 等主流交互机制，打造的 DSH-Code. （注：支持DSH 特殊模式，插件系统，模型管理，子代理会话，Deepseek 官方 API 特殊动画）",
- "pushed_at": "2026-08-18T03:03:43Z",
+ "pushed_at": "2026-08-18T15:57:52Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,6 +12,7 @@
  },
  "pkg_name": "dsh-code",
  "deps": [
+  "@deepseek-ai/dsh-web-fetch-http",
   "@deepseek-ai/schemastery",
   "chalk",
   "commander",
@@ -18,6 +20,7 @@
   "react",
   "@deepseek-ai/cordis",
   "@deepseek-ai/cordis-plugin-loader",
+  "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-agent-default-model",
   "@deepseek-ai/dsh-cmdline",
@@ -65,10 +68,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 1,
+   "src": 8,
    "dev": 0,
    "evidence": [
-    "bin/deepseek.mjs:3"
+    "bin/deepseek.mjs:3",
+    "bin/deepseek.mjs:3",
+    "bin/deepseek.mjs:97",
+    "bin/deepseek.mjs:114",
+    "bin/deepseek.mjs:156"
    ]
   },
   "eval": {
@@ -88,7 +95,7 @@
   },
   "fs_write": {
    "src": 2,
-   "dev": 10,
+   "dev": 11,
    "evidence": [
     "scripts/gen-whale-glyph.ts:13",
     "scripts/gen-whale-glyph.ts:249"
@@ -101,7 +108,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 76,
+ "files_scanned": 84,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -111,7 +118,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×1 src, e.g. bin/deepseek.mjs:3"
+   "evidence": "×8 src, e.g. bin/deepseek.mjs:3, bin/deepseek.mjs:3"
   }
  ],
  "level": 3

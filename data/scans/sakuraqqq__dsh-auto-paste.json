@@ -1,0 +1,83 @@
+{
+ "repo": "sakuraqqq/dsh-auto-paste",
+ "stars": 0,
+ "description": "A DeepSeek Harness plugin that auto-saves large pasted text as attachment files",
+ "pushed_at": "2026-08-18T10:57:57Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "sessions",
+    "connection"
+   ]
+  }
+ },
+ "pkg_name": "dsh-auto-paste",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
+  "zod",
+  "@deepseek-ai/cordis"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "sessions",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "dist/index.js:59",
+    "src/index.ts:78"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

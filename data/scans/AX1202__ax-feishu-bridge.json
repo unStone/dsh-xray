@@ -1,9 +1,10 @@
 {
  "repo": "AX1202/ax-feishu-bridge",
- "stars": 31,
+ "stars": 32,
  "description": "飞书/Lark 机器人桥接，同时支持 Pi 和 DeepSeek Harness（DSH）双平台，随时随地远程与你的编程助手对话",
- "pushed_at": "2026-08-17T13:38:13Z",
+ "pushed_at": "2026-08-18T16:58:15Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,6 +12,7 @@
  },
  "pkg_name": "ax-feishu-bridge",
  "deps": [
+  "@deepseek-ai/dsh-attachment-local",
   "@larksuiteoapi/node-sdk",
   "qrcode-terminal",
   "@earendil-works/pi-coding-agent",
@@ -41,7 +43,7 @@
   "open.feishu.cn": 1
  },
  "env": {
-  "DSH_HOME": 2,
+  "DSH_HOME": 3,
   "FEISHU_EXT_DEV": 1,
   "PI_FEISHU_DAEMON": 2,
   "PI_BIN": 1,
@@ -67,9 +69,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "src/adapters/harness/HarnessConversationRuntime.ts:177"
+   ]
   },
   "net_server": {
    "src": 1,
@@ -80,7 +84,7 @@
   },
   "fs_write": {
    "src": 23,
-   "dev": 30,
+   "dev": 33,
    "evidence": [
     "src/feishu/config.ts:1",
     "src/feishu/config.ts:1",
@@ -107,6 +111,10 @@
   {
    "id": "exec",
    "evidence": "×7 src, e.g. src/adapters/pi/index.ts:2, src/adapters/pi/index.ts:2"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/adapters/harness/HarnessConversationRuntime.ts:177"
   },
   {
    "id": "net_server",

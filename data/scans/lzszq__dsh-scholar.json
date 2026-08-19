@@ -2,8 +2,9 @@
  "repo": "lzszq/dsh-scholar",
  "stars": 24,
  "description": "dsh-scholar",
- "pushed_at": "2026-08-17T15:31:37Z",
+ "pushed_at": "2026-08-18T17:49:53Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -26,6 +27,7 @@
   "@dsh-scholar/research-kernel",
   "@dsh-scholar/research-schemas",
   "@dsh-scholar/scholar-connectors",
+  "diff",
   "zod",
   "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery",
@@ -75,7 +77,7 @@
   "connection/reset",
   "tools/pre-execute"
  ],
- "tool_regs": 40,
+ "tool_regs": 37,
  "domains": {
   "mineru.net": 7,
   "dsh-scholar.dev": 1,
@@ -96,14 +98,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 23,
+   "src": 21,
    "dev": 25,
    "evidence": [
     "scripts/verify-docs.mjs:183",
     "scripts/verify-docs.mjs:183",
     "scripts/verify-docs.mjs:184",
-    "src/plugin/sidecar.ts:19",
-    "src/plugin/sidecar.ts:471"
+    "packages/research-kernel/src/kernel.ts:6999",
+    "packages/research-kernel/src/pty-local.ts:45"
    ]
   },
   "eval": {
@@ -115,8 +117,8 @@
    "src": 6,
    "dev": 7,
    "evidence": [
-    "packages/research-client/src/index.ts:504",
-    "packages/research-kernel/src/server.ts:2179",
+    "packages/research-client/src/index.ts:505",
+    "packages/research-kernel/src/server.ts:2190",
     "packages/research-schemas/src/execution-target.ts:259",
     "workers/runner-gateway/src/remote-agent.ts:937",
     "workers/runner-gateway/src/remote-fleet-server.ts:654"
@@ -128,14 +130,14 @@
    "evidence": [
     "src/plugin/chat-agent-service.ts:93",
     "src/plugin/chat-agent-service.ts:131",
-    "packages/research-kernel/src/server.ts:3551",
+    "packages/research-kernel/src/server.ts:3562",
     "workers/runner-gateway/src/fleet-cli.ts:131",
     "workers/runner-gateway/src/remote-fleet-server.ts:1121"
    ]
   },
   "fs_write": {
-   "src": 91,
-   "dev": 165,
+   "src": 82,
+   "dev": 161,
    "evidence": [
     "scripts/generate-config-artifacts.mjs:16",
     "scripts/generate-config-artifacts.mjs:26",
@@ -151,7 +153,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 279,
+ "files_scanned": 284,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -165,11 +167,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×23 src, e.g. scripts/verify-docs.mjs:183, scripts/verify-docs.mjs:183"
+   "evidence": "×21 src, e.g. scripts/verify-docs.mjs:183, scripts/verify-docs.mjs:183"
   },
   {
    "id": "base64_decode",
-   "evidence": "×6 src, e.g. packages/research-client/src/index.ts:504, packages/research-kernel/src/server.ts:2179"
+   "evidence": "×6 src, e.g. packages/research-client/src/index.ts:505, packages/research-kernel/src/server.ts:2190"
   },
   {
    "id": "net_server",

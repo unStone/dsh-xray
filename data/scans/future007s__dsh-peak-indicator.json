@@ -2,8 +2,9 @@
  "repo": "future007s/dsh-peak-indicator",
  "stars": 0,
  "description": "功能：会话头部显示一个徽标指示当前收费档期——  ⚡ 高峰（红色）：当前按原价计费 🌙 闲时 · 半价（绿色）：当前按半价计费 悬停显示：当前北京时间、时段说明、距离下次切换的倒计时；每 30 秒自动刷新",
- "pushed_at": "2026-08-18T04:03:03Z",
+ "pushed_at": "2026-08-18T12:39:57Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -22,6 +23,7 @@
  "pkg_name": "dsh-peak-indicator",
  "deps": [
   "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
   "@deepseek-ai/dsh-client-locale",
   "@deepseek-ai/dsh-client-runtime",
   "@deepseek-ai/dsh-client-ui-conversation",
@@ -33,12 +35,18 @@
  ],
  "install_scripts": {},
  "injects": [
+  "loader",
   "locale",
   "modelDirectories",
   "sessionProjections",
-  "slots"
+  "settings",
+  "settingsScope",
+  "slots",
+  "tokenMeter"
  ],
- "hooks": [],
+ "hooks": [
+  "agent/pre-step"
+ ],
  "tool_regs": 0,
  "domains": {},
  "env": {},

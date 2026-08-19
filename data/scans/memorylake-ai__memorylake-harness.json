@@ -2,8 +2,9 @@
  "repo": "memorylake-ai/memorylake-harness",
  "stars": 2,
  "description": "MemoryLake Harness",
- "pushed_at": "2026-08-17T09:15:11Z",
+ "pushed_at": "2026-08-18T11:17:37Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -16,7 +17,8 @@
   "@deepseek-ai/dsh-skill",
   "@deepseek-ai/dsh-subprocess",
   "@deepseek-ai/dsh-system-prompt",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "@opencode-ai/plugin"
  ],
  "install_scripts": {
   "prepare": "tsc -p tsconfig.json"
@@ -31,18 +33,19 @@
  "hooks": [],
  "tool_regs": 6,
  "domains": {
-  "api.github.com": 1,
+  "api.github.com": 2,
   "app.memorylake.cn": 1
  },
  "env": {
-  "MEMORYLAKE_PLUGIN_DATA": 1
+  "MEMORYLAKE_PLUGIN_DATA": 2
  },
  "behaviors": {
   "exec": {
-   "src": 1,
+   "src": 2,
    "dev": 3,
    "evidence": [
-    "dsh-plugin/src/cli-runner.ts:86"
+    "dsh-plugin/src/cli-runner.ts:86",
+    "opencode-plugin/src/cli.ts:24"
    ]
   },
   "eval": {
@@ -56,16 +59,21 @@
    "evidence": []
   },
   "net_server": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 2,
+   "dev": 1,
+   "evidence": [
+    "opencode-plugin/src/index.ts:121",
+    "opencode-plugin/src/index.ts:222"
+   ]
   },
   "fs_write": {
-   "src": 2,
-   "dev": 10,
+   "src": 4,
+   "dev": 21,
    "evidence": [
     "dsh-plugin/src/tools.ts:23",
-    "dsh-plugin/src/tools.ts:209"
+    "dsh-plugin/src/tools.ts:209",
+    "opencode-plugin/src/config.ts:17",
+    "opencode-plugin/src/config.ts:113"
    ]
   },
   "dyn_import": {
@@ -75,7 +83,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 16,
+ "files_scanned": 33,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -93,7 +101,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×1 src, e.g. dsh-plugin/src/cli-runner.ts:86"
+   "evidence": "×2 src, e.g. dsh-plugin/src/cli-runner.ts:86, opencode-plugin/src/cli.ts:24"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. opencode-plugin/src/index.ts:121, opencode-plugin/src/index.ts:222"
   }
  ],
  "level": 3

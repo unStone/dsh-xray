@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-observe",
  "stars": 0,
  "description": "OpenTelemetry and Langfuse observability exporter for DeepSeek Harness: turn/step/tool/LLM spans, token and cost metrics, sanitized prompt/completion capture, async batching, bounded offline buffering",
- "pushed_at": "2026-08-18T00:17:41Z",
+ "pushed_at": "2026-08-18T15:05:48Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,13 +16,13 @@
   "typescript",
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-storage",
-  "@deepseek-ai/dsh-storage-json",
   "@deepseek-ai/dsh-storage-domain",
-  "@deepseek-ai/dsh-typert-protocol"
+  "@deepseek-ai/dsh-storage-json",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -43,11 +44,11 @@
  "behaviors": {
   "exec": {
    "src": 11,
-   "dev": 0,
+   "dev": 4,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:21",
+    "scripts/prepare.mjs:22",
     "scripts/release.mjs:28",
     "scripts/release.mjs:28"
    ]
@@ -64,17 +65,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 4,
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 0,
+   "src": 6,
+   "dev": 8,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/release.mjs:29",
     "scripts/release.mjs:71",
-    "scripts/release.mjs:85",
-    "scripts/release.mjs:96"
+    "scripts/release.mjs:85"
    ]
   },
   "dyn_import": {
@@ -87,7 +89,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 40,
+ "files_scanned": 45,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-lsp-actions",
  "stars": 5,
  "description": "LSP action surface for DeepSeek Harness: diagnostics, formatting, completion, code actions, symbols, signature help, inlay hints, and rename tools over language servers",
- "pushed_at": "2026-08-18T00:27:28Z",
+ "pushed_at": "2026-08-18T15:05:31Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -27,7 +28,7 @@
   "dsh-lsp-actions"
  ],
  "install_scripts": {
-  "prepare": "tsc --noEmitOnError"
+  "prepare": "tsc --noEmitOnError && node scripts/fix-dts.mjs"
  },
  "injects": [
   "fs",
@@ -44,14 +45,14 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 9,
-   "dev": 7,
+   "src": 12,
+   "dev": 11,
    "evidence": [
+    "scripts/verify-artifacts.mjs:5",
+    "scripts/verify-artifacts.mjs:5",
+    "scripts/verify-artifacts.mjs:22",
     "src/client.ts:102",
-    "src/connection.ts:71",
-    "src/servers.ts:27",
-    "verify/smoke-editor-backend.mjs:18",
-    "verify/smoke-editor-backend.mjs:18"
+    "src/connection.ts:71"
    ]
   },
   "eval": {
@@ -70,27 +71,29 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
-   "dev": 31,
+   "src": 4,
+   "dev": 39,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "verify/smoke-editor-backend.mjs:148",
     "verify/smoke-editor-backend.mjs:157"
    ]
   },
   "dyn_import": {
-   "src": 7,
+   "src": 8,
    "dev": 0,
    "evidence": [
+    "scripts/verify-artifacts.mjs:25",
     "verify/smoke-editor-backend.mjs:36",
     "verify/smoke-editor-backend.mjs:37",
     "verify/smoke-editor-backend.mjs:38",
-    "verify/smoke-editor-backend.mjs:39",
-    "verify/smoke-editor-backend.mjs:40"
+    "verify/smoke-editor-backend.mjs:39"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 51,
+ "files_scanned": 58,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -104,7 +107,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×9 src, e.g. src/client.ts:102, src/connection.ts:71"
+   "evidence": "×12 src, e.g. scripts/verify-artifacts.mjs:5, scripts/verify-artifacts.mjs:5"
   }
  ],
  "level": 3

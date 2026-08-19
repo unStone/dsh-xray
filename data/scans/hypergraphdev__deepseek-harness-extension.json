@@ -2,8 +2,9 @@
  "repo": "hypergraphdev/deepseek-harness-extension",
  "stars": 0,
  "description": "DeepSeek Harness browser-extension edition: side panel with page-context awareness, vision-bridge multimodal image reading, and voice input",
- "pushed_at": "2026-08-16T09:56:10Z",
+ "pushed_at": "2026-08-18T17:02:55Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -328,8 +329,10 @@
   "@deepseek-ai/cordis",
   "@agentclientprotocol/sdk",
   "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-invariants",
+  "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-user-approval",
   "@deepseek-ai/cordis",
@@ -1547,6 +1550,7 @@
   "@modelcontextprotocol/sdk",
   "@deepseek-ai/schemastery",
   "zod",
+  "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-invariants",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-subprocess",
@@ -2288,9 +2292,10 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 1,
+   "src": 2,
    "dev": 4,
    "evidence": [
+    "packages/acp/acp/src/content.ts:55",
     "packages/client/runtime/src/client/sessions/session.ts:286"
    ]
   },
@@ -2331,7 +2336,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. packages/client/runtime/src/client/sessions/session.ts:286"
+   "evidence": "×2 src, e.g. packages/acp/acp/src/content.ts:55, packages/client/runtime/src/client/sessions/session.ts:286"
   }
  ],
  "level": 2

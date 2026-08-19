@@ -1,28 +1,23 @@
 {
  "repo": "ccch713/deepddw",
- "stars": 7,
+ "stars": 6,
  "description": "Memory & Knowledge Base for DeepSeek Harness — reachable from any device on your LAN",
- "pushed_at": "2026-08-17T16:29:01Z",
+ "pushed_at": "2026-08-19T02:11:40Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
   },
   "client": {
    "platform": "web",
-   "inject": [
-    "@deepseek-ai/dsh-client-runtime"
-   ]
+   "inject": []
   }
  },
- "pkg_name": "@deepddw/dsh-teams-panel",
- "deps": [
-  "@koishijs/client",
-  "@deepseek-ai/dsh"
- ],
+ "pkg_name": "@deepddw/ddw-teams-panel",
+ "deps": [],
  "install_scripts": {},
  "injects": [
-  "http",
   "locale",
   "slots"
  ],
@@ -30,8 +25,12 @@
   "ready"
  ],
  "tool_regs": 0,
- "domains": {},
- "env": {},
+ "domains": {
+  "ddw.ai-hub.com": 1
+ },
+ "env": {
+  "DDW_GATEWAY_URL": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -65,7 +64,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 4,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

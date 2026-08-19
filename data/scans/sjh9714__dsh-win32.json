@@ -2,8 +2,9 @@
  "repo": "sjh9714/dsh-win32",
  "stars": 11,
  "description": "在 Windows 上把 DSH 用起来。一行装好极简模式的持久 shell，沙箱内也能用 | Get DSH working on Windows: persistent shell for Minimal mode, sandbox included",
- "pushed_at": "2026-08-18T06:43:39Z",
+ "pushed_at": "2026-08-18T15:35:23Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -18,7 +19,9 @@
   "@deepseek-ai/dsh-subprocess-local",
   "playwright"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
@@ -55,7 +58,7 @@
     "bin/cli.mjs:8",
     "bin/cli.mjs:33",
     "bin/cli.mjs:64",
-    "bin/cli.mjs:276"
+    "bin/cli.mjs:301"
    ]
   },
   "eval": {
@@ -79,8 +82,8 @@
    "evidence": [
     "bin/cli.mjs:9",
     "bin/cli.mjs:9",
-    "bin/cli.mjs:330",
-    "bin/cli.mjs:354",
+    "bin/cli.mjs:355",
+    "bin/cli.mjs:379",
     "scripts/pwsh-sandbox-probe.mjs:31"
    ]
   },

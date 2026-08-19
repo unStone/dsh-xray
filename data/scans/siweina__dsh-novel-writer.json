@@ -2,8 +2,9 @@
  "repo": "siweina/dsh-novel-writer",
  "stars": 2,
  "description": "DSH / DeepSeek Harness 小说写作助手插件：章节库管理、句式模式分析（九类句式/情感曲线/风格指纹）、风格自检、伏笔登记、批量导入、续写辅助。Novel writing assistant plugin for DeepSeek Harness: chapter library, sentence pattern analysis, style check, plot trac",
- "pushed_at": "2026-08-17T06:56:53Z",
+ "pushed_at": "2026-08-18T17:51:14Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,6 +20,8 @@
  },
  "pkg_name": "dsh-novel-writer",
  "deps": [
+  "@huggingface/tokenizers",
+  "onnxruntime-web",
   "react"
  ],
  "install_scripts": {},
@@ -29,7 +32,7 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 13,
+ "tool_regs": 14,
  "domains": {},
  "env": {
   "DSH_HOME": 3
@@ -58,14 +61,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 10,
+   "src": 11,
    "dev": 7,
    "evidence": [
+    "lib/embedding.js:214",
     "lib/index.js:25",
-    "lib/index.js:723",
-    "lib/index.js:1177",
-    "lib/index.js:1396",
-    "lib/index.js:1405"
+    "lib/index.js:918",
+    "lib/index.js:1426",
+    "lib/index.js:1715"
    ]
   },
   "dyn_import": {
@@ -75,7 +78,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 6,
+ "files_scanned": 7,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [

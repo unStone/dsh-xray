@@ -1,0 +1,97 @@
+{
+ "repo": "liugu2023/dsh-knowledge-sync",
+ "stars": 0,
+ "description": "",
+ "pushed_at": "2026-08-19T01:50:05Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
+ "pkg_name": "dsh-knowledge-sync",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown --config tsdown.prepare.config.ts && tsdown --config tsdown.client.config.ts"
+ },
+ "injects": [
+  "agents",
+  "knowledge",
+  "locale",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [
+  "agent/created",
+  "session/event"
+ ],
+ "tool_regs": 6,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "src/index.ts:299"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

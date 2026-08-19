@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-output-styles",
  "stars": 3,
  "description": "Claude Code outputStyles for DeepSeek Harness - session-scoped, durable, runtime-switchable model output styles (/style command, output_style storage domain, systemPrompt injection)",
- "pushed_at": "2026-08-18T00:27:33Z",
+ "pushed_at": "2026-08-18T15:41:47Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -26,11 +27,11 @@
   "yaml",
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-settings",
   "@deepseek-ai/dsh-storage-domain",
-  "@deepseek-ai/dsh-settings"
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -56,12 +57,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 3,
-   "dev": 0,
+   "src": 7,
+   "dev": 4,
    "evidence": [
     "scripts/prepare.mjs:5",
     "scripts/prepare.mjs:5",
-    "scripts/prepare.mjs:27"
+    "scripts/prepare.mjs:27",
+    "scripts/prepare.mjs:39",
+    "scripts/verify-artifacts.mjs:6"
    ]
   },
   "eval": {
@@ -80,21 +83,27 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
-   "dev": 7,
+   "src": 4,
+   "dev": 14,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/prepare.mjs:1",
     "scripts/prepare.mjs:20"
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-artifacts.mjs:31",
+    "scripts/verify-artifacts.mjs:37",
+    "scripts/verify-artifacts.mjs:43"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 28,
+ "files_scanned": 34,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -108,7 +117,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. scripts/prepare.mjs:5, scripts/prepare.mjs:5"
+   "evidence": "×7 src, e.g. scripts/prepare.mjs:5, scripts/prepare.mjs:5"
   }
  ],
  "level": 3

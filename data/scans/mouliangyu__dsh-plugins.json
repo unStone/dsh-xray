@@ -2,8 +2,9 @@
  "repo": "mouliangyu/dsh-plugins",
  "stars": 1,
  "description": "Community plugins for DeepSeek Harness",
- "pushed_at": "2026-08-18T09:08:14Z",
+ "pushed_at": "2026-08-19T02:32:31Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -28,6 +29,7 @@
   "@deepseek-ai/dsh-sdk-protocol",
   "ssh-config",
   "ws",
+  "dsh-session-control",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-app-boot",
@@ -64,11 +66,13 @@
  "install_scripts": {},
  "injects": [
   "agents",
+  "apiProxy",
   "authorityRegistry",
   "invariants",
   "locale",
   "sessionPersistence",
   "sessionQuery",
+  "sessionRelay",
   "settings",
   "slots",
   "tools",
@@ -76,7 +80,7 @@
   "workspaceRegistry"
  ],
  "hooks": [],
- "tool_regs": 20,
+ "tool_regs": 22,
  "domains": {},
  "env": {},
  "behaviors": {
@@ -84,10 +88,10 @@
    "src": 5,
    "dev": 1,
    "evidence": [
-    "packages/remote/lib/index.js:1",
-    "packages/remote/lib/index.js:487",
+    "packages/remote/lib/index.js:2",
+    "packages/remote/lib/index.js:650",
     "packages/remote/src/local.ts:3",
-    "packages/remote/src/local.ts:328",
+    "packages/remote/src/local.ts:386",
     "packages/remote/src/transparent.ts:3"
    ]
   },
@@ -95,25 +99,25 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "packages/remote/lib/client.js:395",
-    "packages/session-control/lib/index.js:238"
+    "packages/remote/lib/client.js:396",
+    "packages/session-control/lib/index.js:239"
    ]
   },
   "base64_decode": {
    "src": 4,
    "dev": 0,
    "evidence": [
-    "packages/remote/lib/client.js:1564",
-    "packages/remote/lib/client.js:1615",
-    "packages/session-control/lib/index.js:57",
-    "packages/session-control/lib/index.js:58"
+    "packages/remote/lib/client.js:1565",
+    "packages/remote/lib/client.js:1616",
+    "packages/session-control/lib/index.js:58",
+    "packages/session-control/lib/index.js:59"
    ]
   },
   "net_server": {
    "src": 2,
    "dev": 2,
    "evidence": [
-    "packages/remote/lib/index.js:83",
+    "packages/remote/lib/index.js:183",
     "packages/remote/src/transparent.ts:30"
    ]
   },
@@ -129,7 +133,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 43,
+ "files_scanned": 59,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -138,20 +142,24 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "api_intercept",
+   "evidence": "apiProxy, webServer"
+  },
+  {
    "id": "exec",
-   "evidence": "×5 src, e.g. packages/remote/lib/index.js:1, packages/remote/lib/index.js:487"
+   "evidence": "×5 src, e.g. packages/remote/lib/index.js:2, packages/remote/lib/index.js:650"
   },
   {
    "id": "eval",
-   "evidence": "×2 src, e.g. packages/remote/lib/client.js:395, packages/session-control/lib/index.js:238"
+   "evidence": "×2 src, e.g. packages/remote/lib/client.js:396, packages/session-control/lib/index.js:239"
   },
   {
    "id": "base64_decode",
-   "evidence": "×4 src, e.g. packages/remote/lib/client.js:1564, packages/remote/lib/client.js:1615"
+   "evidence": "×4 src, e.g. packages/remote/lib/client.js:1565, packages/remote/lib/client.js:1616"
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. packages/remote/lib/index.js:83, packages/remote/src/transparent.ts:30"
+   "evidence": "×2 src, e.g. packages/remote/lib/index.js:183, packages/remote/src/transparent.ts:30"
   }
  ],
  "level": 3

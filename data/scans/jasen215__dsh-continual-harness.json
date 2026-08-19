@@ -1,9 +1,10 @@
 {
  "repo": "jasen215/dsh-continual-harness",
- "stars": 3,
+ "stars": 4,
  "description": "DeepSeek Harness plugin for continual self-evolution: persistent memory, periodic review-and-refine, cross-session shared knowledge, and automatic rollback — a plan→validate→apply→rollback loop driven",
- "pushed_at": "2026-08-18T03:28:12Z",
+ "pushed_at": "2026-08-19T03:00:45Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -56,14 +57,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 8,
-   "dev": 15,
+   "src": 12,
+   "dev": 22,
    "evidence": [
-    "src/skills.ts:10",
-    "src/skills.ts:10",
-    "src/skills.ts:85",
-    "src/skills.ts:93",
-    "src/storage.ts:8"
+    "src/audit.ts:9",
+    "src/audit.ts:39",
+    "src/logfile.ts:10",
+    "src/logfile.ts:70",
+    "src/skills.ts:10"
    ]
   },
   "dyn_import": {
@@ -73,7 +74,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 23,
+ "files_scanned": 30,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

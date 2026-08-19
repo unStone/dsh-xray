@@ -2,8 +2,9 @@
  "repo": "jlu-lujing/dsh-kit",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-17T08:56:54Z",
+ "pushed_at": "2026-08-18T17:26:25Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "platform": "web",
@@ -68,13 +69,14 @@
   "USERPROFILE": 2,
   "GITHUB_TOKEN": 1,
   "DSH_DESKTOP_NO_AUTOSTART": 2,
+  "DSH_DESKTOP_REMOTE_DEBUG": 1,
   "DSH_DESKTOP_FEED_URL": 1,
   "DSH_DESKTOP_PROBE_PORT": 1,
   "DSH_DESKTOP_SKIP_FAMILY": 1
  },
  "behaviors": {
   "exec": {
-   "src": 56,
+   "src": 61,
    "dev": 6,
    "evidence": [
     "scripts/dev-host-watch.ts:21",
@@ -90,9 +92,13 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/dsh-kit-lan-auth/src/store.ts:97",
+    "packages/dsh-kit-lan-auth/src/store.ts:98",
+    "packages/dsh-kit-lan-auth/src/store.ts:109"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -100,14 +106,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 46,
-   "dev": 9,
+   "src": 48,
+   "dev": 15,
    "evidence": [
     "apps/dsh-runtime/scripts/build.mjs:22",
     "apps/dsh-runtime/scripts/build.mjs:22",
     "apps/dsh-runtime/scripts/build.mjs:56",
-    "apps/dsh-runtime/scripts/build.mjs:135",
-    "apps/dsh-runtime/scripts/build.mjs:136"
+    "apps/dsh-runtime/scripts/build.mjs:183",
+    "apps/dsh-runtime/scripts/build.mjs:184"
    ]
   },
   "dyn_import": {
@@ -117,7 +123,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 74,
+ "files_scanned": 77,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -135,7 +141,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×56 src, e.g. scripts/dev-host-watch.ts:21, scripts/dev-host-watch.ts:78"
+   "evidence": "×61 src, e.g. scripts/dev-host-watch.ts:21, scripts/dev-host-watch.ts:78"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×3 src, e.g. packages/dsh-kit-lan-auth/src/store.ts:97, packages/dsh-kit-lan-auth/src/store.ts:98"
   },
   {
    "id": "token_env",

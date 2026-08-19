@@ -2,13 +2,10 @@
  "repo": "nefevcore/dsh-adt",
  "stars": 0,
  "description": "ABAP Development Tools (ADT) plugin for DeepSeek Harness",
- "pushed_at": "2026-08-18T07:18:42Z",
+ "pushed_at": "2026-08-19T01:16:28Z",
  "status": "ok",
- "manifest": {
-  "bundle": {
-   "patch": "./cordis.patch.yml"
-  }
- },
+ "first_seen": "2026-08-19",
+ "manifest": null,
  "pkg_name": "dsh-abap-adt",
  "deps": [
   "@nefevcore/abap-adt-protocol",
@@ -16,7 +13,9 @@
   "@nefevcore/abap-adt-mock",
   "@nefevcore/abap-adt-protocol",
   "@abaplint/core",
+  "yaml",
   "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/schemastery",
   "@mcp-abap-adt/interfaces",
@@ -124,13 +123,9 @@
  "type": "plugin",
  "flags": [
   {
-   "id": "runtime_patch",
-   "evidence": "./cordis.patch.yml"
-  },
-  {
    "id": "install_script",
    "evidence": "postinstall: npm run inst_dep_sharedapi && npm run inst_dep_object &&npm run inst_dep_abapfs && cd server && npm i && cd ../client && npm i"
   }
  ],
- "level": 3
+ "level": 2
 }

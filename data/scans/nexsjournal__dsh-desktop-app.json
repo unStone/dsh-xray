@@ -2,8 +2,9 @@
  "repo": "nexsjournal/dsh-desktop-app",
  "stars": 1,
  "description": "Includes image recognition and generation functions.",
- "pushed_at": "2026-08-17T16:13:10Z",
+ "pushed_at": "2026-08-18T13:04:50Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -101,7 +102,8 @@
  ],
  "tool_regs": 17,
  "domains": {
-  "registry.npmmirror.com": 1,
+  "registry.npmmirror.com": 2,
+  "api.github.com": 1,
   "api.replicate.com": 2,
   "queue.fal.run": 2,
   "api.example.com": 1,
@@ -109,19 +111,24 @@
   "api.openai.com": 1
  },
  "env": {
+  "GITHUB_REPOSITORY": 1,
+  "GITHUB_TOKEN": 1,
+  "GH_TOKEN": 1,
+  "GITHUB_REF_TYPE": 1,
+  "GITHUB_REF_NAME": 2,
   "DSH_DESKTOP_NODE_EXECUTABLE": 2,
   "DSH_HOME": 9
  },
  "behaviors": {
   "exec": {
-   "src": 20,
+   "src": 23,
    "dev": 0,
    "evidence": [
     "scripts/fetch-host.mjs:16",
     "scripts/fetch-host.mjs:16",
     "scripts/fetch-host.mjs:57",
-    "scripts/fetch-pnpm.mjs:16",
-    "scripts/fetch-pnpm.mjs:16"
+    "scripts/fetch-plugin-deps.mjs:25",
+    "scripts/fetch-plugin-deps.mjs:25"
    ]
   },
   "eval": {
@@ -143,14 +150,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 32,
+   "src": 47,
    "dev": 0,
    "evidence": [
     "scripts/after-pack.cjs:35",
     "scripts/fetch-host.mjs:13",
     "scripts/fetch-host.mjs:53",
-    "scripts/fetch-pnpm.mjs:13",
-    "scripts/fetch-pnpm.mjs:38"
+    "scripts/fetch-plugin-deps.mjs:22",
+    "scripts/fetch-plugin-deps.mjs:22"
    ]
   },
   "dyn_import": {
@@ -160,7 +167,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 89,
+ "files_scanned": 91,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -170,11 +177,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×20 src, e.g. scripts/fetch-host.mjs:16, scripts/fetch-host.mjs:16"
+   "evidence": "×23 src, e.g. scripts/fetch-host.mjs:16, scripts/fetch-host.mjs:16"
   },
   {
    "id": "base64_decode",
    "evidence": "×2 src, e.g. vendor/plugins/dsh-imagegen-plugin/lib/index.js:784, vendor/plugins/dsh-better-sidebar/src/client/editor-load.ts:39"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
   }
  ],
  "level": 3

@@ -1,9 +1,10 @@
 {
  "repo": "pzc2004/dsh-frostfin",
- "stars": 2,
+ "stars": 4,
  "description": "月芒霜鳍鲸——让 Kimi Code 本人直接驱动 DeepSeek Harness 会话的 loop 插件。DSH 的壳，Kimi 的脑，ACP 直连，无中间层。 Moonglow Frostfin — Kimi Code itself as the agent loop of DeepSeek Harness. ACP-bridged, no middleman: DSH's shell, K",
- "pushed_at": "2026-08-18T06:07:14Z",
+ "pushed_at": "2026-08-18T18:58:54Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -24,7 +25,9 @@
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-llm"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "prepare": "tsc -p tsconfig.json && node scripts/build-client.mjs"
+ },
  "injects": [
   "agents",
   "sessions",
@@ -35,22 +38,26 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "api.deepseek.com": 1
+  "api.deepseek.com": 1,
+  "code.kimi.com": 1
  },
  "env": {
+  "FROSTFIN_HOST": 3,
+  "FROSTFIN_SID": 1,
+  "FROSTFIN_TITLE": 1,
   "KIMI_CODE_HOME": 2,
   "DSH_HOME": 1
  },
  "behaviors": {
   "exec": {
-   "src": 6,
-   "dev": 1,
+   "src": 13,
+   "dev": 14,
    "evidence": [
     "scripts/probe-session-load.mjs:4",
     "scripts/probe-session-load.mjs:33",
-    "src/acp-process.ts:163",
-    "src/factory.ts:198",
-    "src/index.ts:104"
+    "scripts/spike-tmux-acp.mjs:11",
+    "scripts/spike-tmux-acp.mjs:11",
+    "scripts/spike-tmux-acp.mjs:16"
    ]
   },
   "eval": {
@@ -69,14 +76,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 11,
-   "dev": 4,
+   "src": 13,
+   "dev": 15,
    "evidence": [
+    "scripts/spike-tmux-acp.mjs:12",
+    "scripts/spike-tmux-acp.mjs:52",
     "src/config-sync.ts:18",
     "src/config-sync.ts:141",
-    "src/config-sync.ts:211",
-    "src/kimi-route.ts:20",
-    "src/kimi-route.ts:111"
+    "src/config-sync.ts:211"
    ]
   },
   "dyn_import": {
@@ -89,7 +96,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 44,
+ "files_scanned": 55,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -103,7 +110,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×6 src, e.g. scripts/probe-session-load.mjs:4, scripts/probe-session-load.mjs:33"
+   "evidence": "×13 src, e.g. scripts/probe-session-load.mjs:4, scripts/probe-session-load.mjs:33"
   }
  ],
  "level": 3

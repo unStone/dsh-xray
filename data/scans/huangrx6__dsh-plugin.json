@@ -2,8 +2,9 @@
  "repo": "huangrx6/dsh-plugin",
  "stars": 1,
  "description": "DeepSeek Harness (DSH) 插件合集：Skill 管理（导入/详情/多格式文件预览）、MCP 服务器管理（补丁层读写/测试连接/工具明细）、布局设置",
- "pushed_at": "2026-08-18T06:28:32Z",
+ "pushed_at": "2026-08-19T03:07:15Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -28,6 +29,14 @@
   "@deepseek-ai/dsh-client-ui-primitives",
   "@deepseek-ai/dsh-client-ui-settings",
   "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "react",
+  "react-dom",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-client-connection",
   "@deepseek-ai/dsh-client-locale",
@@ -135,14 +144,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 10,
+   "src": 11,
    "dev": 18,
    "evidence": [
     "dsh-archive-manager/scripts/wrap-client.mjs:18",
+    "dsh-launcher/scripts/wrap-client.mjs:41",
     "dsh-layout/scripts/wrap-client.mjs:18",
     "dsh-layout/src/index.ts:45",
-    "dsh-mcp-manager/scripts/wrap-client.mjs:18",
-    "dsh-mcp-manager/src/patch-file.ts:51"
+    "dsh-mcp-manager/scripts/wrap-client.mjs:18"
    ]
   },
   "dyn_import": {
@@ -152,7 +161,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 121,
+ "files_scanned": 153,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

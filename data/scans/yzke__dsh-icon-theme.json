@@ -2,8 +2,9 @@
  "repo": "yzke/dsh-icon-theme",
  "stars": 0,
  "description": "Auto-detected, user-customizable icons for DeepSeek Harness settings and sidebar",
- "pushed_at": "2026-08-17T01:49:45Z",
+ "pushed_at": "2026-08-18T13:57:51Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -12,7 +13,6 @@
    "inject": [
     "@deepseek-ai/dsh-client-runtime",
     "@deepseek-ai/dsh-client-ui-slots",
-    "@deepseek-ai/dsh-client-ui-settings",
     "@deepseek-ai/dsh-client-locale"
    ],
    "platform": "web"
@@ -24,12 +24,13 @@
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-client-locale",
   "@deepseek-ai/dsh-client-runtime",
-  "@deepseek-ai/dsh-client-ui-settings",
   "@deepseek-ai/dsh-client-ui-slots",
   "@deepseek-ai/dsh-settings",
   "react"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "prepare": "npm run build"
+ },
  "injects": [
   "locale",
   "slots",

@@ -1,9 +1,10 @@
 {
  "repo": "amplifthq/oh-my-dsh",
- "stars": 3,
+ "stars": 6,
  "description": "A curated distribution of DeepSeek Harness. Overlay, not a fork.",
- "pushed_at": "2026-08-18T06:19:23Z",
+ "pushed_at": "2026-08-18T10:35:45Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./bundles/omd.cordis.yml"
@@ -84,20 +85,21 @@
   "agent/pre-step",
   "agent/status",
   "approval/request",
+  "tools/post-execute",
   "tools/pre-execute"
  ],
- "tool_regs": 24,
+ "tool_regs": 31,
  "domains": {
   "amplifthq.github.io": 1
  },
  "env": {
   "OMD_NODE_VERSION": 2,
-  "DSH_HOME": 6,
+  "DSH_HOME": 9,
   "OMD_PYTHON": 1
  },
  "behaviors": {
   "exec": {
-   "src": 17,
+   "src": 19,
    "dev": 23,
    "evidence": [
     "scripts/build-portable-distribution.mjs:21",
@@ -125,8 +127,8 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 44,
-   "dev": 117,
+   "src": 56,
+   "dev": 122,
    "evidence": [
     "bin/distribution-state.js:8",
     "bin/distribution-state.js:10",
@@ -136,13 +138,15 @@
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 1,
-   "evidence": []
+   "evidence": [
+    "packages/harness-eval/src/interpret.ts:80"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 70,
+ "files_scanned": 90,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -164,7 +168,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×17 src, e.g. scripts/build-portable-distribution.mjs:21, scripts/build-portable-distribution.mjs:21"
+   "evidence": "×19 src, e.g. scripts/build-portable-distribution.mjs:21, scripts/build-portable-distribution.mjs:21"
   },
   {
    "id": "eval",

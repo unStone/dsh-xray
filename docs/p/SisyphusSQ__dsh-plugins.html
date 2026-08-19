@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SisyphusSQ/dsh-plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands.">
+<meta name="description" content="SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/SisyphusSQ__dsh-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SisyphusSQ/dsh-plugins — dsh plugin capability card">
-<meta property="og:description" content="SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands.">
+<meta property="og:description" content="SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/SisyphusSQ__dsh-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "SisyphusSQ/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands.", "codeRepository": "https://github.com/SisyphusSQ/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/SisyphusSQ__dsh-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "SisyphusSQ/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, starts a network server.", "codeRepository": "https://github.com/SisyphusSQ/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/SisyphusSQ__dsh-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,10 +47,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/SisyphusSQ/dsh-plugins" rel="nofollow ugc">SisyphusSQ/dsh-plugins source on GitHub</a>
      · <a href="../registry.html#SisyphusSQ__dsh-plugins">this plugin in the registry</a></p>
-  <p>SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy, approval</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 src, e.g. packages/dsh-agent-plugins/src/store.ts:19, packages/dsh-worktree-workspaces/src/git.ts:1</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>apiProxy</span> <span>approval</span> <span>commandUi</span> <span>commands</span> <span>connection</span> <span>conversationEvents</span> <span>inputTriggers</span> <span>locale</span> <span>remote</span> <span>sessionQuery</span> <span>sessionReferenceResolver</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>tools</span> <span>typert</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>connection/reset</span></p>
+  <p>SisyphusSQ/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, starts a network server.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy, approval</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 src, e.g. packages/dsh-agent-plugins/src/store.ts:19, packages/dsh-openai-codex-oauth/src/open-url.ts:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 src, e.g. packages/dsh-openai-codex-oauth/src/runtime.ts:84</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>apiProxy</span> <span>approval</span> <span>commandUi</span> <span>commands</span> <span>connection</span> <span>conversation</span> <span>conversationEvents</span> <span>credentials</span> <span>inputTriggers</span> <span>locale</span> <span>modelDirectories</span> <span>remote</span> <span>sessionQuery</span> <span>sessionReferenceResolver</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>tools</span> <span>typert</span> <span>userQuestions</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request</span> <span>connection/reset</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>agent-plugins.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>

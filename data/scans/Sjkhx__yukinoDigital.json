@@ -1,0 +1,99 @@
+{
+ "repo": "Sjkhx/yukinoDigital",
+ "stars": 2,
+ "description": "",
+ "pushed_at": "2026-08-18T16:42:48Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "yukino-dsh",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "sessions",
+  "slots"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "www.live2d.com": 4,
+  "www.opensource.org": 4,
+  "www.pixijs.com": 8,
+  "react.dev": 6
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 12,
+   "dev": 0,
+   "evidence": [
+    "yukino/web/live2d/runtime/pixi.min.js:8",
+    "yukino/web/live2d/runtime/pixi.min.js:8",
+    "yukino/web/live2d/runtime/pixi.min.js:8",
+    "yukino/春物角色 live2d-win/一色 live2d win 版/网页文件/runtime/pixi.min.js:8",
+    "yukino/春物角色 live2d-win/一色 live2d win 版/网页文件/runtime/pixi.min.js:8"
+   ]
+  },
+  "base64_decode": {
+   "src": 13,
+   "dev": 0,
+   "evidence": [
+    "yukino/web/assistant.js:100",
+    "yukino/web/live2d/runtime/live2dcubismcore.min.js:9",
+    "yukino/web/live2d/runtime/live2dcubismcore.min.js:9",
+    "yukino/web/live2d/runtime/live2dcubismcore.min.js:9",
+    "yukino/春物角色 live2d-win/一色 live2d win 版/网页文件/runtime/live2dcubismcore.min.js:9"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 20,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×12 src, e.g. yukino/web/live2d/runtime/pixi.min.js:8, yukino/web/live2d/runtime/pixi.min.js:8"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×13 src, e.g. yukino/web/assistant.js:100, yukino/web/live2d/runtime/live2dcubismcore.min.js:9"
+  }
+ ],
+ "level": 3
+}

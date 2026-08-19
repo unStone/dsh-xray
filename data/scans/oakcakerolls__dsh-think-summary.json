@@ -1,9 +1,10 @@
 {
  "repo": "oakcakerolls/dsh-think-summary",
- "stars": 0,
- "description": "Deepseek Harness中为长思考链实时分段并实时总结，让你实时知道模型当前在想什么",
- "pushed_at": "2026-08-17T20:35:08Z",
+ "stars": 1,
+ "description": "Deepseek Harness 为长思考链实时分段并实时总结，让你知道模型当前正在想什么",
+ "pushed_at": "2026-08-18T18:24:40Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -39,9 +40,14 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 4,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/watch-all.mjs:9",
+    "scripts/watch-all.mjs:16",
+    "scripts/watch-client.mjs:8",
+    "scripts/watch-client.mjs:25"
+   ]
   },
   "eval": {
    "src": 0,
@@ -75,14 +81,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 29,
+ "files_scanned": 31,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/watch-all.mjs:9, scripts/watch-all.mjs:16"
   }
  ],
- "level": 2
+ "level": 3
 }

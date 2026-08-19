@@ -1,9 +1,10 @@
 {
  "repo": "Noob-stupid/dsh-plugin-hub",
- "stars": 49,
+ "stars": 53,
  "description": "DeepSeek Harness (DSH) 插件管理面板：一键启用/停用插件 + GitHub dsh-plugin 插件市场，带插件详情与一键安装 | Plugin manager & marketplace for DeepSeek Harness",
- "pushed_at": "2026-08-18T08:11:18Z",
+ "pushed_at": "2026-08-19T02:13:31Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -29,26 +30,28 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "gitee.com": 8,
-  "api.github.com": 6,
-  "ghproxy.net": 5,
+  "gitee.com": 10,
+  "api.github.com": 8,
+  "ghproxy.net": 9,
   "ghfast.top": 3,
   "mirror.ghproxy.com": 2,
-  "registry.npmmirror.com": 7
+  "registry.npmmirror.com": 7,
+  "cdn.jsdelivr.net": 3
  },
  "env": {
+  "DSH_HOME": 4,
   "ComSpec": 2,
-  "DSH_HOME": 2,
   "USERPROFILE": 2,
   "NODE_CACHE": 1,
   "LOCALAPPDATA": 1
  },
  "behaviors": {
   "exec": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "lib/index.js:17"
+    "lib/index.js:17",
+    "scripts/build-index.cjs:15"
    ]
   },
   "eval": {
@@ -60,7 +63,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "lib/index.js:1031"
+    "lib/index.js:1155"
    ]
   },
   "net_server": {
@@ -69,26 +72,28 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 16,
+   "src": 36,
    "dev": 0,
    "evidence": [
     "test-harness.mjs:15",
+    "test-skill-toggle.mjs:17",
     "lib/index.js:16",
-    "lib/index.js:129",
-    "lib/index.js:288",
-    "lib/index.js:301"
+    "lib/index.js:16",
+    "lib/index.js:131"
    ]
   },
   "dyn_import": {
-   "src": 1,
+   "src": 3,
    "dev": 0,
    "evidence": [
-    "test-harness.mjs:9"
+    "test-harness.mjs:9",
+    "test-skill-toggle.mjs:20",
+    "test-suite-install.mjs:8"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 4,
+ "files_scanned": 7,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -98,11 +103,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×1 src, e.g. lib/index.js:17"
+   "evidence": "×2 src, e.g. lib/index.js:17, scripts/build-index.cjs:15"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. lib/index.js:1031"
+   "evidence": "×1 src, e.g. lib/index.js:1155"
   }
  ],
  "level": 3

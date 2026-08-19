@@ -1,0 +1,99 @@
+{
+ "repo": "Leshm0321/dsh-plugin-local-agent-bridge",
+ "stars": 0,
+ "description": "Drive the Claude Code and Codex installations already on your machine from the DeepSeek Harness browser UI.",
+ "pushed_at": "2026-08-19T01:59:20Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-gateway",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-local-agent-bridge",
+ "deps": [
+  "@anthropic-ai/claude-agent-sdk",
+  "@deepseek-ai/schemastery",
+  "ajv",
+  "semver",
+  "zod",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-include",
+  "@deepseek-ai/dsh-api-gateway",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-sdk-protocol",
+  "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/dsh-workspace",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "platform.openai.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 600,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

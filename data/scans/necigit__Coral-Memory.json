@@ -1,9 +1,10 @@
 {
  "repo": "necigit/Coral-Memory",
  "stars": 0,
- "description": "Heat-aware memory layer for LLM agents: three-tier hot/warm/cold storage, fusion retrieval (vector cosine + keyword Jaccard + time decay), heat-based eviction with an LLM-distill hook, hot-reload conf",
- "pushed_at": "2026-08-17T14:53:37Z",
+ "description": "面向 LLM Agent 的持久化记忆层：三级热/温/冷存储、融合检索、热度淘汰、配置热加载。作为 DeepSeek Harness 插件分发。| Heat-aware memory layer for LLM agents: three-tier hot/warm/cold storage, fusion retrieval, heat-based eviction, hot-reload co",
+ "pushed_at": "2026-08-18T18:26:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -18,7 +19,7 @@
    "platform": "web"
   }
  },
- "pkg_name": "@dsh-external/dsh-client-coral",
+ "pkg_name": "coral-memory",
  "deps": [],
  "install_scripts": {},
  "injects": [
@@ -29,7 +30,7 @@
  "domains": {},
  "env": {
   "DSH_CORAL_DATA_DIR": 2,
-  "DSH_HOME": 1,
+  "DSH_HOME": 2,
   "DSH_CORAL_PYTHON": 1,
   "VIRTUAL_ENV": 1,
   "DSH_CORAL_AUTO_INSTALL": 2
@@ -58,9 +59,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "webui/lib/setup.mjs:18",
+    "webui/lib/setup.mjs:108"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -69,7 +73,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 3,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

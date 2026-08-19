@@ -1,9 +1,10 @@
 {
  "repo": "jing-hy/picturereader",
- "stars": 14,
+ "stars": 22,
  "description": "DSH plugin: pixel-to-text image reading for text-only models. image_scan/image_ocr/image_sample tools + image-reading skill (34-image trained methodology). Pure local, optional PaddleOCR.",
- "pushed_at": "2026-08-18T08:06:30Z",
+ "pushed_at": "2026-08-18T10:43:37Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -21,18 +22,28 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 4,
+ "tool_regs": 5,
  "domains": {
   "registry.npmmirror.com": 1,
   "pypi.tuna.tsinghua.edu.cn": 1
  },
  "env": {
   "DSH_PADDLE_PYTHON": 1,
-  "DSH_PADDLE_CACHE": 1
+  "DSH_PADDLE_CACHE": 1,
+  "SEE_BASE": 1,
+  "SEE_MODEL": 1,
+  "SEE_SERVER_EXE": 1,
+  "SEE_SERVER_MODEL": 1,
+  "SEE_SERVER_MMPROJ": 1,
+  "SEE_SERVER_PORT": 1,
+  "SEE_SERVER_NGL": 1,
+  "SEE_SERVER_CTX": 1,
+  "SEE_API_KEY": 1,
+  "GGML_CUDA_NO_PINNED": 1
  },
  "behaviors": {
   "exec": {
-   "src": 9,
+   "src": 11,
    "dev": 3,
    "evidence": [
     "scripts/setup-ocr.mjs:16",
@@ -67,15 +78,16 @@
    ]
   },
   "dyn_import": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "src/tool.js:39"
+    "src/tool.js:39",
+    "src/vision-analyze.js:40"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 11,
+ "files_scanned": 14,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -85,7 +97,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×9 src, e.g. scripts/setup-ocr.mjs:16, scripts/setup-ocr.mjs:16"
+   "evidence": "×11 src, e.g. scripts/setup-ocr.mjs:16, scripts/setup-ocr.mjs:16"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SEE_API_KEY"
   }
  ],
  "level": 3

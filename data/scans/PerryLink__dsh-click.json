@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-click",
  "stars": 0,
  "description": "Cross-platform native desktop control for DeepSeek Harness (Windows first): screen_shot, screen_read, click/type/scroll/key, app_list/app_launch - approval-gated, never stealing foreground focus",
- "pushed_at": "2026-08-18T00:17:06Z",
+ "pushed_at": "2026-08-18T17:02:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -14,14 +15,14 @@
   "tsdown",
   "typescript",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-attachment",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-subprocess",
   "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/dsh-user-approval"
+  "@deepseek-ai/dsh-user-approval",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -38,11 +39,11 @@
  "behaviors": {
   "exec": {
    "src": 11,
-   "dev": 1,
+   "dev": 7,
    "evidence": [
     "scripts/prepare.mjs:6",
     "scripts/prepare.mjs:6",
-    "scripts/prepare.mjs:22",
+    "scripts/prepare.mjs:23",
     "scripts/release.mjs:27",
     "scripts/release.mjs:27"
    ]
@@ -56,7 +57,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "src/tools.ts:233"
+    "src/tools.ts:234"
    ]
   },
   "net_server": {
@@ -65,14 +66,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
-   "dev": 0,
+   "src": 8,
+   "dev": 7,
    "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
     "scripts/prepare.mjs:7",
-    "scripts/prepare.mjs:28",
-    "scripts/release.mjs:28",
-    "scripts/release.mjs:70",
-    "scripts/release.mjs:84"
+    "scripts/prepare.mjs:29",
+    "scripts/release.mjs:28"
    ]
   },
   "dyn_import": {
@@ -84,7 +85,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 29,
+ "files_scanned": 35,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -98,7 +99,7 @@
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. src/tools.ts:233"
+   "evidence": "×1 src, e.g. src/tools.ts:234"
   }
  ],
  "level": 3

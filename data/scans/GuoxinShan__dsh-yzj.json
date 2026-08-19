@@ -2,8 +2,9 @@
  "repo": "GuoxinShan/dsh-yzj",
  "stars": 0,
  "description": "云之家 (Yunzhijia) plugin bundle for DeepSeek Harness: yzj-cli bridge, 41 model-facing tools, floating workspace panel with drag/@ reference chips",
- "pushed_at": "2026-08-18T09:18:23Z",
+ "pushed_at": "2026-08-19T01:59:48Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,7 +16,8 @@
     "@deepseek-ai/dsh-client-connection",
     "@deepseek-ai/dsh-client-ui-layout",
     "@deepseek-ai/dsh-client-ui-conversation",
-    "@deepseek-ai/dsh-client-ui-input-trigger"
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-tool"
    ]
   }
  },
@@ -104,6 +106,7 @@
  ],
  "hooks": [
   "agent/error",
+  "agent/pre-step",
   "agent/status",
   "approval/request",
   "connection/reset",
@@ -112,28 +115,28 @@
   "tools/result",
   "yzj/ask-pending"
  ],
- "tool_regs": 224,
+ "tool_regs": 240,
  "domains": {
-  "www.yunzhijia.com": 14
+  "www.yunzhijia.com": 16
  },
  "env": {
   "DSH_VERIFY_BASE": 6,
-  "YZJ_E2E_GROUP": 2,
-  "DSH_GUI": 2,
-  "E2E_HEADED": 2,
+  "DSH_GUI": 10,
+  "YZJ_E2E_GROUP": 6,
+  "E2E_HEADED": 7,
   "DSH_HOME": 6,
   "YZJ_SEND_MSG_URL": 2
  },
  "behaviors": {
   "exec": {
-   "src": 30,
+   "src": 38,
    "dev": 0,
    "evidence": [
+    ".acceptance/verify-advance-loop.mjs:10",
+    ".acceptance/verify-advance-loop.mjs:10",
+    ".acceptance/verify-advance-loop.mjs:32",
     ".acceptance/verify-send.mjs:10",
-    ".acceptance/verify-todo-browser.mjs:95",
-    ".acceptance/verify-todo-confirm-e2e.mjs:11",
-    ".acceptance/verify-todo-team.mjs:9",
-    "lib/bridge.mjs:1"
+    ".acceptance/verify-summon-window.mjs:11"
    ]
   },
   "eval": {
@@ -146,8 +149,8 @@
    "dev": 0,
    "evidence": [
     ".acceptance/verify-send.mjs:21",
-    "lib/ui-yzj.mjs:1591",
-    "packages/ui-yzj/src/index.ts:322"
+    "lib/ui-yzj.mjs:2914",
+    "packages/ui-yzj/src/index.ts:447"
    ]
   },
   "net_server": {
@@ -158,14 +161,14 @@
    ]
   },
   "fs_write": {
-   "src": 48,
-   "dev": 32,
+   "src": 50,
+   "dev": 36,
    "evidence": [
     ".acceptance/verify-send.mjs:11",
     ".acceptance/verify-send.mjs:21",
     ".acceptance/verify-send.mjs:22",
-    "lib/memory-yzj.mjs:1",
-    "lib/memory-yzj.mjs:1"
+    ".acceptance/verify-summon-window.mjs:7",
+    ".acceptance/verify-summon-window.mjs:33"
    ]
   },
   "dyn_import": {
@@ -177,8 +180,8 @@
   }
  },
  "has_apply": true,
- "files_scanned": 194,
- "has_skill_md": false,
+ "files_scanned": 224,
+ "has_skill_md": true,
  "type": "plugin",
  "flags": [
   {
@@ -191,11 +194,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×30 src, e.g. .acceptance/verify-send.mjs:10, .acceptance/verify-todo-browser.mjs:95"
+   "evidence": "×38 src, e.g. .acceptance/verify-advance-loop.mjs:10, .acceptance/verify-advance-loop.mjs:10"
   },
   {
    "id": "base64_decode",
-   "evidence": "×3 src, e.g. .acceptance/verify-send.mjs:21, lib/ui-yzj.mjs:1591"
+   "evidence": "×3 src, e.g. .acceptance/verify-send.mjs:21, lib/ui-yzj.mjs:2914"
   },
   {
    "id": "net_server",

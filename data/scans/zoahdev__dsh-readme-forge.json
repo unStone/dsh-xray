@@ -1,0 +1,89 @@
+{
+ "repo": "zoahdev/dsh-readme-forge",
+ "stars": 0,
+ "description": "Generate README.md for DeepSeek Harness (dsh) plugin repositories from package.json + cordis.patch.yml + source layout — deterministic, zero runtime deps, read-only by default. CLI + agent-callable re",
+ "pushed_at": "2026-08-18T22:31:03Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-readme-forge",
+ "deps": [
+  "@deepseek-ai/schemastery",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 2,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "scripts/integration-test.mjs:12",
+    "scripts/integration-test.mjs:12",
+    "scripts/integration-test.mjs:24",
+    "scripts/integration-test.mjs:26"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 9,
+   "evidence": [
+    "scripts/integration-test.mjs:8",
+    "scripts/integration-test.mjs:8",
+    "scripts/integration-test.mjs:31",
+    "scripts/integration-test.mjs:35",
+    "scripts/integration-test.mjs:43"
+   ]
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/integration-test.mjs:60"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. scripts/integration-test.mjs:12, scripts/integration-test.mjs:12"
+  }
+ ],
+ "level": 3
+}

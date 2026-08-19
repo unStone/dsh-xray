@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-github",
  "stars": 3,
  "description": "Official-grade GitHub CI for DeepSeek Harness: composite action.yml, PR review bot with idempotent inline comments and a status-check gate, plus PR/issues tools with every write gated by human approva",
- "pushed_at": "2026-08-18T00:56:06Z",
+ "pushed_at": "2026-08-18T15:05:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,7 +34,7 @@
  ],
  "tool_regs": 52,
  "domains": {
-  "api.github.com": 2
+  "api.github.com": 3
  },
  "env": {
   "DSH_GITHUB_CI_DRIVER": 2,
@@ -42,6 +43,7 @@
   "INPUT_OUTPUT_DIR": 1,
   "INPUT_BLOCKING": 1,
   "GITHUB_OUTPUT": 3,
+  "TIMEOUT_MS": 1,
   "DEEPSEEK_API_KEY": 2,
   "DSH_GITHUB_TOKEN": 1,
   "GITHUB_TOKEN": 1,
@@ -49,7 +51,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 10,
+   "src": 14,
    "dev": 3,
    "evidence": [
     "lib/credential.js:12",
@@ -78,7 +80,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 23,
+   "src": 25,
    "dev": 6,
    "evidence": [
     "scripts/action-patch.mjs:12",
@@ -89,13 +91,15 @@
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-artifacts.mjs:26"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 74,
+ "files_scanned": 81,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -109,7 +113,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×10 src, e.g. lib/credential.js:12, lib/git.js:8"
+   "evidence": "×14 src, e.g. lib/credential.js:12, lib/git.js:8"
   },
   {
    "id": "base64_decode",

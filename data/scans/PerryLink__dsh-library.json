@@ -1,9 +1,10 @@
 {
  "repo": "PerryLink/dsh-library",
- "stars": 0,
+ "stars": 1,
  "description": "Local document knowledge base for DeepSeek Harness: library_add/remove/list, hybrid semantic+keyword library_search with diversity re-ranking, relevance filtering and lost-in-the-middle avoidance, cit",
- "pushed_at": "2026-08-18T00:17:22Z",
+ "pushed_at": "2026-08-18T15:05:22Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -15,15 +16,15 @@
   "typescript",
   "zod",
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-fs",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-storage",
-  "@deepseek-ai/dsh-storage-json",
   "@deepseek-ai/dsh-storage-domain",
+  "@deepseek-ai/dsh-storage-json",
   "@deepseek-ai/dsh-subprocess",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
   "prepare": "node scripts/prepare.mjs"
@@ -39,14 +40,14 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 7,
-   "dev": 0,
+   "src": 9,
+   "dev": 4,
    "evidence": [
     "scripts/prepare.mjs:4",
     "scripts/prepare.mjs:4",
     "scripts/prepare.mjs:10",
-    "scripts/verify-artifacts.mjs:5",
-    "scripts/verify-artifacts.mjs:5"
+    "scripts/prepare.mjs:20",
+    "scripts/prepare.mjs:22"
    ]
   },
   "eval": {
@@ -65,9 +66,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
-   "dev": 4,
-   "evidence": []
+   "src": 2,
+   "dev": 17,
+   "evidence": [
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31"
+   ]
   },
   "dyn_import": {
    "src": 1,
@@ -78,7 +82,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 23,
+ "files_scanned": 31,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -88,7 +92,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×7 src, e.g. scripts/prepare.mjs:4, scripts/prepare.mjs:4"
+   "evidence": "×9 src, e.g. scripts/prepare.mjs:4, scripts/prepare.mjs:4"
   }
  ],
  "level": 3

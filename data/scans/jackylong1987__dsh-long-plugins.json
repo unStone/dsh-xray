@@ -2,8 +2,9 @@
  "repo": "jackylong1987/dsh-long-plugins",
  "stars": 0,
  "description": "DeepSeek Harness (DSH) web plugin: upload manager, workspace output files with preview/edit/maximize, skill docs browser, and account balance.",
- "pushed_at": "2026-08-18T00:02:40Z",
+ "pushed_at": "2026-08-19T03:01:07Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -17,18 +18,23 @@
     "@deepseek-ai/dsh-client-ui-settings",
     "@deepseek-ai/dsh-client-ui-theme",
     "@deepseek-ai/dsh-client-ui-conversation",
-    "@deepseek-ai/dsh-client-ui-input-trigger"
+    "@deepseek-ai/dsh-client-ui-input-trigger",
+    "@deepseek-ai/dsh-client-ui-layout"
    ],
    "platform": "web"
   }
  },
  "pkg_name": "dsh-long-plugins",
- "deps": [],
+ "deps": [
+  "mammoth",
+  "exceljs"
+ ],
  "install_scripts": {},
  "injects": [
   "conversation",
   "credentials",
   "inputTriggers",
+  "layout",
   "locale",
   "sessions",
   "slots",
@@ -68,8 +74,8 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "lib/index.js:663",
-    "lib/index.js:825"
+    "lib/index.js:832",
+    "lib/index.js:994"
    ]
   },
   "dyn_import": {

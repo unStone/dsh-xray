@@ -2,9 +2,14 @@
  "repo": "jcs130/dsh-minecraft-agent",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-18T08:47:54Z",
+ "pushed_at": "2026-08-19T02:48:59Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
  "pkg_name": "dsh-minecraft-agent",
  "deps": [
   "better-sqlite3",
@@ -14,11 +19,16 @@
   "playwright-core",
   "prismarine-viewer",
   "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis-plugin-timer",
+  "@deepseek-ai/dsh-system-prompt",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/schemastery"
  ],
- "install_scripts": {},
+ "install_scripts": {
+  "prepare": "node scripts/build.mjs"
+ },
  "injects": [
+  "mcAdapt",
   "mcIdentity",
   "mcMemory",
   "mcMemos",
@@ -33,22 +43,42 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 64,
+ "tool_regs": 92,
  "domains": {},
  "env": {
   "DSH_ROOT": 2,
-  "MC_MEMOS_URL": 1,
+  "MC_MEMOS_URL": 2,
+  "MC_USERNAME": 5,
+  "MC_HOST": 2,
+  "MC_PORT": 2,
+  "MC_PANEL_PORT": 2,
+  "MC_VIEWER_PORT": 4,
   "DATA_DIR": 1,
-  "MC_USERNAME": 1,
   "MC_PERSONA": 1,
   "MC_BACKSTORY": 1,
   "MC_AGENT_NAME": 1,
   "MC_EPITHET": 1,
-  "MC_EYES_FOV": 1,
-  "MC_EYES_VIEW": 1,
-  "MC_EYES_SHOT": 1,
-  "CHROME_PATH": 1,
-  "MC_VIEWER_PORT": 1
+  "MC_EYES_FOV": 2,
+  "MC_EYES_VIEW": 2,
+  "CHROME_PATH": 2,
+  "MC_EYES_SHOT": 2,
+  "RUN_MS": 1,
+  "MC_GOD_NAME": 2,
+  "MC_VIEWER": 1,
+  "MC_MEMOS": 1,
+  "MC_EVOLVE": 1,
+  "MC_LLM_URL": 1,
+  "MC_LLM_KEY": 1,
+  "MC_LLM_MODEL": 2,
+  "MC_DIARY": 1,
+  "MC_ADAPT": 1,
+  "MC_PANEL_HOST": 1,
+  "MC_DATA_DIR": 1,
+  "MC_LLM_BASE_URL": 1,
+  "MC_LLM_API_KEY": 1,
+  "MC_REASONING_EFFORT": 1,
+  "QWENPAW_CONSOLE_URL": 1,
+  "QWENPAW_DEFECT_AGENT": 1
  },
  "behaviors": {
   "exec": {
@@ -73,15 +103,16 @@
    "evidence": []
   },
   "net_server": {
-   "src": 2,
+   "src": 3,
    "dev": 0,
    "evidence": [
     "cli/mc-join.mjs:175",
-    "src/mc-panel.ts:246"
+    "lib/bootstrap.mjs:4744",
+    "src/mc-panel.ts:299"
    ]
   },
   "fs_write": {
-   "src": 41,
+   "src": 72,
    "dev": 0,
    "evidence": [
     "deploy.mjs:15",
@@ -92,30 +123,35 @@
    ]
   },
   "dyn_import": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
+    "lib/bootstrap.mjs:1726",
     "src/mc-bot.ts:173"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 34,
+ "files_scanned": 39,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
   {
    "id": "exec",
    "evidence": "×11 src, e.g. deploy.mjs:14, deploy.mjs:14"
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. cli/mc-join.mjs:175, src/mc-panel.ts:246"
+   "evidence": "×3 src, e.g. cli/mc-join.mjs:175, lib/bootstrap.mjs:4744"
   },
   {
-   "id": "no_manifest",
-   "evidence": "uses 12 services, 64 tool regs, no manifest"
+   "id": "token_env",
+   "evidence": "MC_LLM_API_KEY, MC_LLM_KEY"
   }
  ],
- "level": 2
+ "level": 3
 }

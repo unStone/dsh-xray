@@ -1,9 +1,10 @@
 {
  "repo": "PerryLink/dsh-auto-review",
- "stars": 31,
+ "stars": 39,
  "description": "Second-model AI auto-review for DeepSeek Harness approval requests: a read-only reviewer subagent returns structured allow/deny verdicts with reasons, fail-closed by default, fully auditable from the ",
- "pushed_at": "2026-08-18T00:28:02Z",
+ "pushed_at": "2026-08-18T15:04:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -83,11 +84,11 @@
  "behaviors": {
   "exec": {
    "src": 7,
-   "dev": 0,
+   "dev": 3,
    "evidence": [
     "scripts/prepare.mjs:7",
     "scripts/prepare.mjs:7",
-    "scripts/prepare.mjs:23",
+    "scripts/prepare.mjs:24",
     "scripts/smoke-package.mjs:11",
     "scripts/smoke-package.mjs:11"
    ]
@@ -110,14 +111,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 14,
-   "dev": 2,
+   "src": 16,
+   "dev": 10,
    "evidence": [
     "scripts/build-omdsh-submission.mjs:4",
     "scripts/build-omdsh-submission.mjs:56",
-    "scripts/prepare.mjs:8",
-    "scripts/prepare.mjs:29",
-    "scripts/smoke-package.mjs:8"
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31",
+    "scripts/prepare.mjs:8"
    ]
   },
   "dyn_import": {
@@ -127,7 +128,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 47,
+ "files_scanned": 55,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

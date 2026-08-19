@@ -48,11 +48,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/IvanWu2015/dsh-connect" rel="nofollow ugc">IvanWu2015/dsh-connect source on GitHub</a>
      · <a href="../registry.html#IvanWu2015__dsh-connect">this plugin in the registry</a></p>
   <p>IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FEISHU_APP_SECRET</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DINGTALK_WEBHOOK_SECRET, FEISHU_APP_SECRET, TELEGRAM_BOT_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>connect</span> <span>sessions</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>FEISHU_APP_ID</span> <span>FEISHU_APP_SECRET</span> <span>DSH_HOME</span> <span>USERPROFILE</span> <span>DSH_CONNECT_STATE_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>oapi.dingtalk.com</span> <span>api.telegram.org</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DINGTALK_WEBHOOK_SECRET</span> <span>FEISHU_APP_ID</span> <span>FEISHU_APP_SECRET</span> <span>TELEGRAM_BOT_TOKEN</span> <span>DINGTALK_WEBHOOK_URL</span> <span>DSH_HOME</span> <span>USERPROFILE</span> <span>DSH_CONNECT_STATE_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

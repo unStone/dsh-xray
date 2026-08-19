@@ -2,8 +2,9 @@
  "repo": "zhujunpeng12/dsh-memory-system",
  "stars": 8,
  "description": "Local-first persistent memory infrastructure for DeepSeek Harness: hot bootstrap, Chinese-BM25 cold recall, lease-lock transactional writes, read-only governance",
- "pushed_at": "2026-08-15T08:05:45Z",
+ "pushed_at": "2026-08-18T16:24:03Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -12,37 +13,60 @@
  "pkg_name": "@zhujunpeng12/dsh-memory-system",
  "deps": [
   "@zhujunpeng12/dsh-memory-system",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-subagent",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery",
+  "react"
  ],
  "install_scripts": {},
  "injects": [
+  "agents",
+  "conversationEvents",
+  "llm",
+  "sessions",
+  "slots",
+  "subagents",
+  "systemPrompt",
   "tools"
  ],
  "hooks": [
   "agent/created",
   "agent/disposed",
   "dispose",
+  "internal/service",
   "session/disposed",
   "session/event",
   "tools/pre-execute"
  ],
- "tool_regs": 7,
+ "tool_regs": 27,
  "domains": {},
  "env": {
   "PYTHON": 1,
   "MEMORY_VAULT": 1,
-  "DSH_HOME": 3,
+  "DSH_HOME": 4,
   "MEMORY_GUARD_CHECK": 1
  },
  "behaviors": {
   "exec": {
-   "src": 4,
+   "src": 5,
    "dev": 3,
    "evidence": [
     "index.js:16",
     "index.js:58",
     "plugins/evidence-ledger/index.js:16",
-    "plugins/evidence-ledger/index.js:203"
+    "plugins/evidence-ledger/index.js:226",
+    "plugins/agent-teams/src/index.ts:115"
    ]
   },
   "eval": {
@@ -61,7 +85,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
+   "src": 9,
    "dev": 0,
    "evidence": [
     "index.js:17",
@@ -78,7 +102,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 4,
+ "files_scanned": 21,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -87,12 +111,16 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, tools/pre-execute"
+  },
+  {
    "id": "tool_gate",
    "evidence": "hook: tools/pre-execute"
   },
   {
    "id": "exec",
-   "evidence": "×4 src, e.g. index.js:16, index.js:58"
+   "evidence": "×5 src, e.g. index.js:16, index.js:58"
   }
  ],
  "level": 3

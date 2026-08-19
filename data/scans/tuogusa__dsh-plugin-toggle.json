@@ -1,9 +1,10 @@
 {
  "repo": "tuogusa/dsh-plugin-toggle",
  "stars": 1,
- "description": "DeepSeek Harness 插件开关/删除管理器（host + client 一体包）",
- "pushed_at": "2026-08-15T14:50:48Z",
+ "description": "DeepSeek Harness 插件开关/删除/版本更新管理器（host + client 一体包）",
+ "pushed_at": "2026-08-19T02:16:23Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -37,9 +38,11 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/index.js:15"
+   ]
   },
   "eval": {
    "src": 0,
@@ -57,14 +60,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 6,
-   "dev": 0,
+   "src": 8,
+   "dev": 22,
    "evidence": [
     "lib/index.js:14",
-    "lib/index.js:248",
-    "lib/index.js:327",
-    "lib/index.js:338",
-    "lib/index.js:396"
+    "lib/index.js:490",
+    "lib/index.js:726",
+    "lib/index.js:737",
+    "lib/index.js:818"
    ]
   },
   "dyn_import": {
@@ -74,14 +77,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 3,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. lib/index.js:15"
   }
  ],
- "level": 2
+ "level": 3
 }

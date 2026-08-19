@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-session-pin",
  "stars": 2,
  "description": "Pin sessions and workspaces to the top of the DeepSeek Harness sidebar with per-pin row colors - a dual-face (host + client) dsh plugin.",
- "pushed_at": "2026-08-18T00:27:45Z",
+ "pushed_at": "2026-08-18T15:41:53Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -44,9 +45,13 @@
  },
  "behaviors": {
   "exec": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "scripts/verify-artifacts.mjs:5",
+    "scripts/verify-artifacts.mjs:5",
+    "scripts/verify-artifacts.mjs:19"
+   ]
   },
   "eval": {
    "src": 0,
@@ -65,27 +70,33 @@
   },
   "fs_write": {
    "src": 2,
-   "dev": 0,
+   "dev": 7,
    "evidence": [
     "scripts/verify-live.mjs:22",
-    "scripts/verify-live.mjs:250"
+    "scripts/verify-live.mjs:258"
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-artifacts.mjs:23"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 23,
+ "files_scanned": 29,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/verify-artifacts.mjs:5, scripts/verify-artifacts.mjs:5"
   }
  ],
- "level": 2
+ "level": 3
 }

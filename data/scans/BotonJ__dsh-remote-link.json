@@ -2,8 +2,9 @@
  "repo": "BotonJ/dsh-remote-link",
  "stars": 3,
  "description": "Authenticated remote gateway for DeepSeek Harness: QR/HMAC pairing, cookie sessions, mDNS, fork_session tool. Zero-dep plugin.",
- "pushed_at": "2026-08-18T04:32:36Z",
+ "pushed_at": "2026-08-18T23:02:36Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -16,7 +17,7 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 12,
+ "tool_regs": 13,
  "domains": {
   "xxx.trycloudflare.com": 1,
   "www.d-project.com": 2,
@@ -36,7 +37,7 @@
   },
   "eval": {
    "src": 0,
-   "dev": 1,
+   "dev": 2,
    "evidence": []
   },
   "base64_decode": {
@@ -48,14 +49,14 @@
   },
   "net_server": {
    "src": 1,
-   "dev": 6,
+   "dev": 25,
    "evidence": [
-    "src/gateway.js:297"
+    "src/gateway.js:323"
    ]
   },
   "fs_write": {
-   "src": 5,
-   "dev": 2,
+   "src": 6,
+   "dev": 4,
    "evidence": [
     "scripts/vision-decode.mjs:8",
     "scripts/vision-decode.mjs:64",
@@ -71,7 +72,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 42,
+ "files_scanned": 48,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -89,7 +90,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. src/gateway.js:297"
+   "evidence": "×1 src, e.g. src/gateway.js:323"
   }
  ],
  "level": 3

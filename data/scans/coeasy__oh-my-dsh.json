@@ -1,0 +1,125 @@
+{
+ "repo": "coeasy/oh-my-dsh",
+ "stars": 0,
+ "description": "DeepSeek Harness 非官方封装客户端",
+ "pushed_at": "2026-08-19T00:47:06Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "my-dsh",
+ "deps": [
+  "@dsh/client-runtime",
+  "qrcode",
+  "@dsh/client-runtime"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.github.com": 3
+ },
+ "env": {
+  "DSH_ENGINE_CHANNEL": 2,
+  "DSH_CLIENTS": 1,
+  "DSH_ENGINE_REF": 3,
+  "DSH_FETCH_ENGINE_FORCE": 3,
+  "DSH_SKIP_ENGINE_BUILD": 1,
+  "DSH_INSTALL": 1,
+  "DSH_PACK_FORCE_HARNESS": 1,
+  "DSH_READY_FILE": 3,
+  "DSH_WORKSPACE_CWD": 2,
+  "GITHUB_TOKEN": 1,
+  "GH_TOKEN": 1,
+  "DSH_INSTALL_DESKTOP": 1,
+  "DSH_PACK_SKIP_INSTALLER": 1,
+  "DSH_ELECTRON_TARGETS": 1,
+  "DSH_PAYLOAD_FORCE": 1,
+  "DSH_STAGE_FORCE": 1,
+  "DSH_STAGE_MATERIALIZE": 2,
+  "PORTABLE_EXECUTABLE_DIR": 1,
+  "DSH_GITHUB_REPO": 2,
+  "DSH_ENGINE_UPDATE_URL": 1,
+  "DSH_CRASH_SUBMIT_URL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 69,
+   "dev": 3,
+   "evidence": [
+    "scripts/build-clients.mjs:13",
+    "scripts/build-clients.mjs:13",
+    "scripts/build-clients.mjs:27",
+    "scripts/build-clients.mjs:41",
+    "scripts/build-engine.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 1,
+   "dev": 2,
+   "evidence": [
+    "apps/desktop/src/mobile/lan-mobile-bridge.ts:78"
+   ]
+  },
+  "fs_write": {
+   "src": 52,
+   "dev": 60,
+   "evidence": [
+    "scripts/build-clients.mjs:12",
+    "scripts/build-clients.mjs:85",
+    "scripts/checksum-release.mjs:6",
+    "scripts/checksum-release.mjs:36",
+    "scripts/fake-dsh.mjs:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/electron-after-pack.cjs:18",
+    "scripts/electron-after-pack.cjs:22"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 120,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×69 src, e.g. scripts/build-clients.mjs:13, scripts/build-clients.mjs:13"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×1 src, e.g. apps/desktop/src/mobile/lan-mobile-bridge.ts:78"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GH_TOKEN, GITHUB_TOKEN"
+  }
+ ],
+ "level": 3
+}

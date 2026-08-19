@@ -1,9 +1,10 @@
 {
  "repo": "bruc3van/dsh-desktop",
- "stars": 56,
+ "stars": 60,
  "description": "让 Agent 安全常驻桌面的独立 dsh 客户端：官方 Web UI 原封不动，长任务常驻托盘，精选插件先审查、再安装。Independent dsh desktop client: the official Web UI untouched, long tasks alive in the tray, curated plugins reviewed before install.",
- "pushed_at": "2026-08-18T09:11:47Z",
+ "pushed_at": "2026-08-18T14:40:32Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-desktop",
  "deps": [
@@ -23,10 +24,11 @@
  "env": {
   "ProgramFiles": 1,
   "LOCALAPPDATA": 1,
+  "ELECTRON_RUN_AS_NODE": 3,
   "DSH_DESKTOP_FIXTURE_MARKER": 2,
   "ComSpec": 2,
-  "ELECTRON_RUN_AS_NODE": 2,
   "DSH_DESKTOP_RUNTIME_ENTRY": 1,
+  "DSH_DESKTOP_PNPM_ENTRY": 1,
   "PORT": 1,
   "DSH_DESKTOP_FIXTURE_SCREENSHOT": 2,
   "DEEPSEEK_API_KEY": 1,
@@ -40,7 +42,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 56,
+   "src": 69,
    "dev": 0,
    "evidence": [
     "scripts/check-auto-fallback.mjs:11",
@@ -72,7 +74,7 @@
    ]
   },
   "fs_write": {
-   "src": 138,
+   "src": 148,
    "dev": 0,
    "evidence": [
     "scripts/audit.mjs:14",
@@ -83,7 +85,7 @@
    ]
   },
   "dyn_import": {
-   "src": 12,
+   "src": 13,
    "dev": 0,
    "evidence": [
     "scripts/check-bundled-plugin.mjs:46",
@@ -95,13 +97,13 @@
   }
  },
  "has_apply": false,
- "files_scanned": 40,
+ "files_scanned": 44,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "exec",
-   "evidence": "×56 src, e.g. scripts/check-auto-fallback.mjs:11, scripts/check-auto-fallback.mjs:11"
+   "evidence": "×69 src, e.g. scripts/check-auto-fallback.mjs:11, scripts/check-auto-fallback.mjs:11"
   },
   {
    "id": "net_server",

@@ -1,0 +1,99 @@
+{
+ "repo": "charlzyx/dshwork",
+ "stars": 0,
+ "description": "dsh-plugin.work in DeepSeek Harness — Pick By Human, one-click install",
+ "pushed_at": "2026-08-19T02:37:18Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dshwork-monorepo",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-schema-form",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "locale",
+  "settings",
+  "slots"
+ ],
+ "hooks": [
+  "dispose"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "dsh-plugin.work": 3
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "packages/dshwork/src/routes.ts:1",
+    "packages/dshwork/src/routes.ts:78"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. packages/dshwork/src/routes.ts:1, packages/dshwork/src/routes.ts:78"
+  }
+ ],
+ "level": 3
+}

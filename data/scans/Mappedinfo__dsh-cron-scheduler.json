@@ -1,0 +1,117 @@
+{
+ "repo": "Mappedinfo/dsh-cron-scheduler",
+ "stars": 0,
+ "description": "DSH 系统级 cron 定时任务插件:规则存为 Cron 表达式,由用户 crontab 在进程外执行 headless 任务,Web 端管理规则与运行结果",
+ "pushed_at": "2026-08-18T11:21:49Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-conversation"
+   ]
+  }
+ },
+ "pkg_name": "@mappedinfo/dsh-cron-scheduler",
+ "deps": [
+  "cron-parser",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-workspace"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/build.mjs"
+ },
+ "injects": [
+  "agents",
+  "connection",
+  "locale",
+  "sessions",
+  "slots",
+  "timer",
+  "tools",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/disposed"
+ ],
+ "tool_regs": 8,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 5,
+  "DSH_BIN": 5
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/dev-test.mjs:8",
+    "src/deploy.ts:6",
+    "src/deploy.ts:115",
+    "src/deploy.ts:298",
+    "src/dsh-resolve.ts:12"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 10,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:94",
+    "scripts/dev-test.mjs:51",
+    "scripts/dev-test.mjs:102",
+    "scripts/dev-test.mjs:109",
+    "scripts/dev-test.mjs:178"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 22,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/dev-test.mjs:8, src/deploy.ts:6"
+  }
+ ],
+ "level": 3
+}

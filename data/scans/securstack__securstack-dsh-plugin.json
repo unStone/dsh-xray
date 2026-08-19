@@ -2,8 +2,9 @@
  "repo": "securstack/securstack-dsh-plugin",
  "stars": 3,
  "description": "SecurStack adapter for DeepSeek Harness: run repository security scans, policy gates, doctor diagnostics, and JSON CLI results from safe AI-agent tools.",
- "pushed_at": "2026-08-13T21:29:47Z",
+ "pushed_at": "2026-08-19T00:09:29Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,14 +20,16 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 6,
+ "tool_regs": 12,
  "domains": {},
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 2,
+   "src": 4,
    "dev": 0,
    "evidence": [
+    "dist/index.mjs:2",
+    "dist/index.mjs:7",
     "src/index.ts:4",
     "src/index.ts:18"
    ]
@@ -58,7 +61,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 3,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -68,7 +71,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. src/index.ts:4, src/index.ts:18"
+   "evidence": "×4 src, e.g. dist/index.mjs:2, dist/index.mjs:7"
   }
  ],
  "level": 3

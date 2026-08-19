@@ -2,8 +2,9 @@
  "repo": "lovezi0/dsh-memory-palace",
  "stars": 2,
  "description": "把 WorkBuddy 的文件式记忆系统移植进 [DeepSeek Harness](https://www.deepseek.com/harness/) —— 为 Harness 提供**跨会话持久化、人类可直接编辑的 Markdown 记忆**。",
- "pushed_at": "2026-08-17T17:20:02Z",
+ "pushed_at": "2026-08-18T13:18:07Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -23,17 +24,21 @@
  "deps": [
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-settings",
   "@deepseek-ai/dsh-tools",
   "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
  "injects": [
+  "connection",
+  "llm",
   "locale",
-  "settingsScope",
   "slots",
   "systemPrompt",
-  "tools"
+  "tools",
+  "webRuntime",
+  "webServer"
  ],
  "hooks": [
   "session/event",
@@ -66,14 +71,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 12,
+   "src": 14,
    "dev": 0,
    "evidence": [
-    "test-load.mjs:298",
-    "test-load.mjs:412",
-    "lib/index.js:316",
-    "lib/index.js:377",
-    "lib/index.js:457"
+    "test-load.mjs:342",
+    "test-load.mjs:456",
+    "lib/index.js:524",
+    "lib/index.js:585",
+    "lib/index.js:670"
    ]
   },
   "dyn_import": {
@@ -93,7 +98,7 @@
   },
   {
    "id": "prompt_surface",
-   "evidence": "systemPrompt, tools/pre-execute"
+   "evidence": "systemPrompt, webServer, tools/pre-execute"
   },
   {
    "id": "tool_gate",

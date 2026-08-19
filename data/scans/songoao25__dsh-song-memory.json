@@ -2,9 +2,13 @@
  "repo": "songoao25/dsh-song-memory",
  "stars": 1,
  "description": "A native-feeling, cross-tool memory plugin for DeepSeek Harness.",
- "pushed_at": "2026-08-17T14:27:41Z",
+ "pushed_at": "2026-08-18T13:21:31Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "platform": "web",
    "inject": [
@@ -17,13 +21,18 @@
   "react"
  ],
  "install_scripts": {},
- "injects": [],
+ "injects": [
+  "slots"
+ ],
  "hooks": [
-  "agent/inbox/inserted"
+  "agent/inbox/inserted",
+  "session/event"
  ],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "SONG_MEMORY_ORGANIZE_TIMEOUT_MS": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -46,12 +55,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 3,
+   "src": 17,
    "dev": 0,
    "evidence": [
-    "src/host.js:29",
-    "src/host.js:38",
-    "src/host.js:48"
+    "src/host.js:26",
+    "src/host.js:283",
+    "src/host.js:288",
+    "src/host.js:324",
+    "src/host.js:333"
    ]
   },
   "dyn_import": {
@@ -61,9 +72,14 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 6,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 0
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

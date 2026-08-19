@@ -1,0 +1,76 @@
+{
+ "repo": "bufeibufei/dsh-openai-codex",
+ "stars": 0,
+ "description": "ChatGPT OAuth model provider plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-19T02:48:55Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-openai-codex",
+ "deps": [
+  "@earendil-works/pi-ai",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-llm-pi-ai"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "llm"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "chatgpt.com": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/store.js:115",
+    "src/store.js:141"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 10,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

@@ -2,13 +2,15 @@
  "repo": "sb1733831438-maker/DSH-closerAI",
  "stars": 4,
  "description": "CloserAI - a local-first, model-agnostic, permission-transparent desktop AI workbench built on DeepSeek Harness.",
- "pushed_at": "2026-08-14T07:00:39Z",
+ "pushed_at": "2026-08-18T18:21:29Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "closerai",
  "deps": [
   "@closerai/mock-provider",
   "@closerai/supervisor",
+  "@deepseek-ai/cordis-plugin-group",
   "@deepseek-ai/dsh",
   "js-yaml"
  ],
@@ -20,12 +22,13 @@
   "api.deepseek.com": 3
  },
  "env": {
+  "CLOSERAI_RUNTIME_NODE_MODULES": 1,
   "PORT": 2
  },
  "behaviors": {
   "exec": {
    "src": 2,
-   "dev": 0,
+   "dev": 4,
    "evidence": [
     "packages/supervisor/src/supervisor.ts:2",
     "packages/supervisor/src/supervisor.ts:178"
@@ -51,14 +54,14 @@
    ]
   },
   "fs_write": {
-   "src": 8,
-   "dev": 10,
+   "src": 14,
+   "dev": 34,
    "evidence": [
+    "apps/desktop/src/main/capabilities.ts:1",
+    "apps/desktop/src/main/capabilities.ts:46",
     "apps/desktop/src/main/dsh-settings.ts:1",
     "apps/desktop/src/main/dsh-settings.ts:27",
-    "apps/desktop/src/main/mode-store.ts:1",
-    "apps/desktop/src/main/mode-store.ts:36",
-    "apps/desktop/src/main/provider-store.ts:1"
+    "apps/desktop/src/main/ipc.ts:294"
    ]
   },
   "dyn_import": {
@@ -68,7 +71,7 @@
   }
  },
  "has_apply": false,
- "files_scanned": 47,
+ "files_scanned": 62,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

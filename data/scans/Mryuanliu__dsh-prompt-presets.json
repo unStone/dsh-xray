@@ -1,0 +1,84 @@
+{
+ "repo": "Mryuanliu/dsh-prompt-presets",
+ "stars": 0,
+ "description": "DeepSeek Harness prompt presets help you quickly fill in the prompt in English with one click.",
+ "pushed_at": "2026-08-18T15:32:57Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-prompt-presets",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [
+  "agent/error",
+  "agent/status"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_TOOLBOX_DATA_DIR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bundle/host.js:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "bundle/host.js:92"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 2,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. bundle/host.js:9"
+  }
+ ],
+ "level": 3
+}

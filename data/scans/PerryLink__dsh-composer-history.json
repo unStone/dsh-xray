@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-composer-history",
  "stars": 6,
  "description": "Terminal-style input history for the DeepSeek Harness web composer: edge-first arrows with exact draft/caret restore, browser-local persisted history, Ctrl+R reverse search, workspace recall - and sli",
- "pushed_at": "2026-08-18T00:27:15Z",
+ "pushed_at": "2026-08-18T15:04:49Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -36,7 +37,7 @@
  "behaviors": {
   "exec": {
    "src": 0,
-   "dev": 0,
+   "dev": 3,
    "evidence": []
   },
   "eval": {
@@ -55,11 +56,13 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
-   "dev": 0,
+   "src": 4,
+   "dev": 6,
    "evidence": [
     "scripts/clean.mjs:2",
-    "scripts/clean.mjs:4"
+    "scripts/clean.mjs:4",
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31"
    ]
   },
   "dyn_import": {
@@ -69,7 +72,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 43,
+ "files_scanned": 46,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

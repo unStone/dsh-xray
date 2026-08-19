@@ -1,0 +1,173 @@
+{
+ "repo": "NexusClawHQ/nexusclaw-agent-governance",
+ "stars": 1,
+ "description": "The deny-by-default governance kernel for AI agents — permissions, L0–L4 guardrails, human approvals and an immutable audit chain as an Apache-2.0, framework-neutral library. Gate LangGraph / CrewAI /",
+ "pushed_at": "2026-08-18T22:28:40Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "agent-governance-monorepo",
+ "deps": [
+  "@apollo/server",
+  "@as-integrations/express5",
+  "@nestjs/apollo",
+  "@nestjs/common",
+  "@nestjs/config",
+  "@nestjs/core",
+  "@nestjs/event-emitter",
+  "@nestjs/graphql",
+  "@nestjs/jwt",
+  "@nestjs/platform-express",
+  "@nestjs/typeorm",
+  "@nexusclaw/shared",
+  "@opentelemetry/api",
+  "ajv",
+  "bcryptjs",
+  "bullmq",
+  "express",
+  "graphql",
+  "graphql-scalars",
+  "js-yaml",
+  "pg",
+  "reflect-metadata",
+  "rxjs",
+  "typeorm",
+  "uuid",
+  "zod",
+  "react",
+  "react-dom",
+  "ajv",
+  "@agent-governance/contracts",
+  "uuid",
+  "typeorm",
+  "@agent-governance/contracts",
+  "uuid",
+  "typeorm",
+  "@agent-governance/approval",
+  "@agent-governance/audit-chain",
+  "@agent-governance/contracts",
+  "@agent-governance/guardrail",
+  "@agent-governance/outbox",
+  "@agent-governance/permission",
+  "typeorm",
+  "uuid",
+  "typeorm",
+  "uuid",
+  "zod",
+  "typeorm",
+  "@agent-governance/approval",
+  "@agent-governance/audit-chain",
+  "@agent-governance/contracts",
+  "@agent-governance/executor",
+  "@agent-governance/guardrail",
+  "@agent-governance/outbox",
+  "@agent-governance/permission",
+  "@electric-sql/pglite",
+  "@electric-sql/pglite-socket",
+  "@modelcontextprotocol/sdk",
+  "express",
+  "typeorm"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "approval/request"
+ ],
+ "tool_regs": 2,
+ "domains": {
+  "nexusclaw.cn": 1,
+  "api.deepseek.com": 1,
+  "www.apache.org": 1
+ },
+ "env": {
+  "COMMUNITY_PROXY_TARGET": 1,
+  "GOVERNANCE_SIDECAR_URL": 1,
+  "GOVERNANCE_POLL_MS": 1,
+  "GOVERNANCE_TIMEOUT_MS": 1,
+  "GOVERNANCE_FAIL_CLOSED": 1,
+  "SIDECAR_PGHOST": 3,
+  "SIDECAR_PGPORT": 3,
+  "SIDECAR_PGUSER": 3,
+  "SIDECAR_PGPASSWORD": 3,
+  "SIDECAR_PGDATABASE": 2,
+  "SIDECAR_PORT": 2,
+  "SIDECAR_STORAGE": 2,
+  "SIDECAR_STORAGE_LOCAL_DIR": 1,
+  "SIDECAR_GATE_ALLOWED_TOOLS": 2,
+  "SIDECAR_LISTEN_HOST": 1,
+  "COMMUNITY_SOURCE_URL": 1,
+  "PORT": 1,
+  "COMMUNITY_DASHBOARD_DIST": 1,
+  "SIDECAR_MCP_DEMO": 2,
+  "SIDECAR_OTLP_ENDPOINT": 3,
+  "SIDECAR_MCP_UPSTREAMS": 1,
+  "SIDECAR_MCP_EXPOSE_DENIED": 1,
+  "PLAYGROUND_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "governance/packages/sidecar/scripts/mcp-smoke.ts:12",
+    "governance/packages/sidecar/scripts/mcp-smoke.ts:31"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 7,
+   "evidence": [
+    "governance/packages/sidecar/scripts/verify.ts:39",
+    "governance/packages/sidecar/src/mcp/gateway.ts:40",
+    "governance/packages/sidecar/src/mcp/gateway.ts:181"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 278,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. governance/packages/sidecar/scripts/mcp-smoke.ts:12, governance/packages/sidecar/scripts/mcp-smoke.ts:31"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. governance/packages/sidecar/scripts/verify.ts:39, governance/packages/sidecar/src/mcp/gateway.ts:40"
+  },
+  {
+   "id": "token_env",
+   "evidence": "SIDECAR_PGPASSWORD"
+  }
+ ],
+ "level": 3
+}

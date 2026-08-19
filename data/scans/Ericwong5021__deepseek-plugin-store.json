@@ -1,9 +1,10 @@
 {
  "repo": "Ericwong5021/deepseek-plugin-store",
- "stars": 21,
+ "stars": 22,
  "description": "DeepSeek Harness 独立社区插件商店：发现、安装并提交经过验证的插件、工具与扩展。 | Independent community plugin directory.",
- "pushed_at": "2026-08-18T09:01:44Z",
+ "pushed_at": "2026-08-19T02:14:14Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -39,10 +40,10 @@
  "domains": {
   "deepseekplugin.store": 5,
   "api.deepseek.com": 1,
-  "api.github.com": 13,
+  "api.github.com": 18,
   "schema.org": 2,
   "www.sitemaps.org": 1,
-  "codex.talktodo.cn": 1,
+  "codex.talktodo.cn": 2,
   "awesome-dsh-plugin.com": 5,
   "awesome.re": 2,
   "linux.do": 1
@@ -50,29 +51,43 @@
  "env": {
   "DSH_HOME": 2,
   "DEEPSEEK_API_KEY": 1,
-  "GITHUB_TOKEN": 6,
+  "GITHUB_TOKEN": 10,
   "AI_BASE_URL": 1,
   "AI_MODEL": 1,
   "AI_QUALITY_LIMIT": 1,
-  "LLM_CLASSIFIER_API_KEY": 1,
-  "LLM_CLASSIFIER_BASE_URL": 1,
-  "LLM_CLASSIFIER_MODEL": 1,
+  "LLM_CLASSIFIER_API_KEY": 2,
+  "LLM_CLASSIFIER_BASE_URL": 2,
+  "LLM_CLASSIFIER_MODEL": 2,
   "LLM_CLASSIFIER_LIMIT": 1,
+  "LLM_CLASSIFIER_CONCURRENCY": 1,
   "LLM_CLASSIFIER_PLUGIN": 1,
   "LLM_CLASSIFIER_FORCE": 1,
+  "GOVERNANCE_SHADOW_MODE": 1,
+  "LLM_CLASSIFIER_PAUSED_UNTIL": 1,
+  "GITHUB_OUTPUT": 4,
   "DISCOVERY_VERIFY_LIMIT": 1,
+  "DISCOVERY_MODE": 1,
   "SITE_ROOT": 1,
-  "GITHUB_EVENT_PATH": 1,
-  "GITHUB_OUTPUT": 1
+  "GITHUB_EVENT_PATH": 4,
+  "RUNNER_TEMP": 3,
+  "GITHUB_RUN_ID": 1,
+  "REGISTRY_SOURCE_ONLY": 3,
+  "GITHUB_BASE_SHA": 1,
+  "GITHUB_HEAD_SHA": 1,
+  "GOVERNANCE_PR_NUMBER": 1,
+  "GITHUB_REPOSITORY": 1,
+  "GITHUB_HEAD_REF": 1
  },
  "behaviors": {
   "exec": {
-   "src": 3,
+   "src": 9,
    "dev": 0,
    "evidence": [
     "lib/index.js:36",
     "scripts/monitor-upstream.mjs:5",
-    "lib/types/index.js:40"
+    "lib/types/index.js:40",
+    "scripts/governance/pr-gate.mjs:3",
+    "scripts/governance/pr-gate.mjs:3"
    ]
   },
   "eval": {
@@ -81,9 +96,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/governance/pr-review.mjs:34"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -91,7 +108,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 19,
+   "src": 23,
    "dev": 0,
    "evidence": [
     "scripts/analyze-quality.mjs:232",
@@ -108,7 +125,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 24,
+ "files_scanned": 35,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -122,7 +139,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. lib/index.js:36, scripts/monitor-upstream.mjs:5"
+   "evidence": "×9 src, e.g. lib/index.js:36, scripts/monitor-upstream.mjs:5"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. scripts/governance/pr-review.mjs:34"
   },
   {
    "id": "token_env",

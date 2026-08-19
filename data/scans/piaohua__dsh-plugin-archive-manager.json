@@ -1,0 +1,91 @@
+{
+ "repo": "piaohua/dsh-plugin-archive-manager",
+ "stars": 0,
+ "description": "DSH Web plugin: bring archived sessions back — see them in the workspace, filter by archived/not, unarchive with one click.让归档会话可见、可筛选、可恢复——工作区原位查看已归档会话、按已归档/未归档筛选、一键取消归档。",
+ "pushed_at": "2026-08-18T14:58:07Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-plugin-archive-manager",
+ "deps": [
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-workspace"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "slots",
+  "webServer",
+  "workspaceRegistry",
+  "workspaces"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke.mjs:59"
+   ]
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/build.mjs:6",
+    "scripts/build.mjs:47"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 7,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. scripts/smoke.mjs:59"
+  }
+ ],
+ "level": 3
+}

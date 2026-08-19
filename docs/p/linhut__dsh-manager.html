@@ -43,15 +43,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>linhut/dsh-manager</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">⚡ DeepSeek Harness 桌面管理工具 — 一键安装、插件市场、版本管理 | 官网: https://dsh.linhut.cn/ | 镜像: GitCode/AtomGit</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">DeepSeek Harness 桌面管理工具，一站式掌控 Harness 运行环境：一键安装、版本管理、插件市场（管理）、Manager 设置、LLM 提供商可视化配置、settings.yaml 安全编辑、Agent 预设与系统数据管理，开箱即用。</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/linhut/dsh-manager" rel="nofollow ugc">linhut/dsh-manager source on GitHub</a>
      · <a href="../registry.html#linhut__dsh-manager">this plugin in the registry</a></p>
   <p>linhut/dsh-manager is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: echo &#x27;Skipping electron-builder install-app-deps&#x27;</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×59 src, e.g. electron/ipc-handlers.js:79, electron/ipc-handlers.js:132</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. packages/marketplace/src/github-api.js:293, packages/marketplace/src/github-api.js:347</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: echo &#x27;Skipping electron-builder install-app-deps&#x27;</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×67 src, e.g. electron/ipc-handlers.js:79, electron/ipc-handlers.js:143</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 src, e.g. packages/marketplace/src/github-api.js:331, packages/marketplace/src/github-api.js:385</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>registry.npmmirror.com</span> <span>www.npmjs.com</span> <span>gallery.dsh-market.com</span> <span>mirrors.cloud.tencent.com</span> <span>repo.huaweicloud.com</span> <span>www.linhut.cn</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>git-scm.com</span> <span>registry.npmmirror.com</span> <span>gh-proxy.com</span> <span>www.npmjs.com</span> <span>github.akams.cn</span> <span>gallery.dsh-market.com</span> <span>mirrors.cloud.tencent.com</span> <span>repo.huaweicloud.com</span> <span>www.linhut.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>GITHUB_TOKEN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

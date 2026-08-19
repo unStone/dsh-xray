@@ -2,9 +2,13 @@
  "repo": "HZ-JasonLin/dsh-todolist",
  "stars": 0,
  "description": "Independent todo board plugin for DeepSeek Harness: list/today/calendar/week/project views, AI tools (todolist / todolist_suggest), standalone Today sidebar fallback",
- "pushed_at": "2026-08-18T01:49:49Z",
+ "pushed_at": "2026-08-18T22:55:09Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "inject": [
     "@deepseek-ai/dsh-client-runtime"
@@ -70,6 +74,10 @@
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
   {
    "id": "prompt_surface",
    "evidence": "systemPrompt, webServer"

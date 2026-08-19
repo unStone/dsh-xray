@@ -1,0 +1,95 @@
+{
+ "repo": "skymecode/dsh-bgm",
+ "stars": 1,
+ "description": "DSH plugin — turn your AI conversation into a rhythm game. Start your bgm!",
+ "pushed_at": "2026-08-18T17:55:07Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-commands"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-bgm",
+ "deps": [
+  "@deepseek-ai/dsh-client-ui-commands",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_BGM_MACOS_UNIVERSAL": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-native.mjs:2",
+    "scripts/build-native.mjs:2",
+    "scripts/build-native.mjs:11",
+    "src/host/helper-manager.ts:1",
+    "src/host/helper-manager.ts:149"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-native.mjs:1",
+    "scripts/build-native.mjs:44",
+    "scripts/build-native.mjs:45"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. scripts/build-native.mjs:2, scripts/build-native.mjs:2"
+  }
+ ],
+ "level": 3
+}

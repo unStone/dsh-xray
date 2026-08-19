@@ -1,0 +1,91 @@
+{
+ "repo": "nonmean/dsh-audio-input",
+ "stars": 0,
+ "description": "DSH web plugin: macOS native speech-to-text composer input (Apple Speech framework, remote helper)",
+ "pushed_at": "2026-08-18T20:05:47Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [],
+   "immediately": true,
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-audio-input",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "DSH_AUDIO_SPEECH_BIN": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 6,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:1",
+    "lib/index.js:288",
+    "scripts/smoke-host.mjs:15",
+    "scripts/smoke-host.mjs:224",
+    "src/index.ts:32"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-host.mjs:186",
+    "scripts/smoke-host.mjs:222"
+   ]
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 12,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:1, lib/index.js:288"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke-host.mjs:186, scripts/smoke-host.mjs:222"
+  }
+ ],
+ "level": 3
+}

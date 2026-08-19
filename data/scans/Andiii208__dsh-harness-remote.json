@@ -1,0 +1,157 @@
+{
+ "repo": "Andiii208/dsh-harness-remote",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T17:19:42Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-locale"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-remote",
+ "deps": [
+  "qrcode",
+  "qrcode-terminal",
+  "@deepseek-ai/cordis",
+  "@dsh-remote/protocol",
+  "@dsh-remote/capture",
+  "ws",
+  "@dsh-remote/protocol",
+  "ws",
+  "@dsh-remote/protocol",
+  "@expo-google-fonts/jetbrains-mono",
+  "@expo-google-fonts/space-grotesk",
+  "@shopify/flash-list",
+  "expo",
+  "expo-background-task",
+  "expo-build-properties",
+  "expo-camera",
+  "expo-clipboard",
+  "expo-constants",
+  "expo-font",
+  "expo-haptics",
+  "expo-linking",
+  "expo-network",
+  "expo-notifications",
+  "expo-router",
+  "expo-secure-store",
+  "expo-splash-screen",
+  "expo-status-bar",
+  "expo-system-ui",
+  "expo-task-manager",
+  "react",
+  "react-dom",
+  "react-native",
+  "react-native-gesture-handler",
+  "react-native-reanimated",
+  "react-native-safe-area-context",
+  "react-native-screens",
+  "react-native-svg",
+  "react-native-web",
+  "react-native-worklets"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "xxx.trycloudflare.com": 5,
+  "exp.host": 2,
+  "api.github.com": 1
+ },
+ "env": {
+  "DSH_REMOTE_CLIENT_ID": 1,
+  "DSH_API_URL": 1,
+  "DSH_WEB_URL": 1,
+  "DSH_HOME": 2,
+  "CLOUDFLARED_PATH": 1,
+  "RELAY_CREDENTIAL_SECRET": 1,
+  "EXPO_ACCESS_TOKEN": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 2,
+   "evidence": [
+    "harness-plugin/src/remote-access.ts:10",
+    "harness-plugin/src/tunnel.ts:13",
+    "harness-plugin/src/tunnel.ts:113"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "packages/protocol/src/relay-crypto.ts:183"
+   ]
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    ".shots/serve-r1.cjs:8",
+    "mock-harness/src/index.ts:50",
+    "relay/src/server.ts:532"
+   ]
+  },
+  "fs_write": {
+   "src": 3,
+   "dev": 5,
+   "evidence": [
+    "harness-plugin/client/build.mjs:44",
+    "harness-plugin/src/tunnel.ts:107",
+    "tools/capture/src/record.ts:148"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 204,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. harness-plugin/src/remote-access.ts:10, harness-plugin/src/tunnel.ts:13"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. packages/protocol/src/relay-crypto.ts:183"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. .shots/serve-r1.cjs:8, mock-harness/src/index.ts:50"
+  },
+  {
+   "id": "token_env",
+   "evidence": "EXPO_ACCESS_TOKEN, RELAY_CREDENTIAL_SECRET"
+  }
+ ],
+ "level": 3
+}

@@ -43,14 +43,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>lhwwxy/dsh-agentic-router</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">监听每次模型请求，按任务类型与复杂度把请求路由到最合适的模型档位；四个专家并行推荐、EXP3 元选择器决定听谁的；每回合按质量代理信号（工具失败、模型重试、延迟）计算奖励并回传，路由策略随使用越学越准。全部决策与奖励落盘，可审计、可重放。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/lhwwxy/dsh-agentic-router" rel="nofollow ugc">lhwwxy/dsh-agentic-router source on GitHub</a>
      · <a href="../registry.html#lhwwxy__dsh-agentic-router">this plugin in the registry</a></p>
   <p>lhwwxy/dsh-agentic-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/pre-step</span> <span>agent/request</span> <span>agent/request-error</span> <span>agent/turn-stopping</span> <span>llm/stream</span> <span>tools/result</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>agent/request-error</span> <span>agent/turn-stopping</span> <span>llm/stream</span> <span>tools/result</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>AGENTIC_ROUTER_HOME</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>

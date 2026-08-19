@@ -2,8 +2,9 @@
  "repo": "xingyingyuzhui/dsh-agent-identity",
  "stars": 0,
  "description": "Claw identity files for DeepSeek Harness. 把 SOUL / AGENTS 等人设打进提示词。",
- "pushed_at": "2026-08-18T07:39:53Z",
+ "pushed_at": "2026-08-19T02:42:13Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,7 +20,9 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {},
- "env": {},
+ "env": {
+  "DSH_HOME": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -43,13 +46,13 @@
   },
   "fs_write": {
    "src": 5,
-   "dev": 5,
+   "dev": 7,
    "evidence": [
-    "host.js:145",
+    "host.js:175",
     "identity-memory.mjs:1",
-    "identity-memory.mjs:84",
-    "identity-memory.mjs:84",
-    "identity-memory.mjs:84"
+    "identity-memory.mjs:85",
+    "identity-memory.mjs:85",
+    "identity-memory.mjs:85"
    ]
   },
   "dyn_import": {

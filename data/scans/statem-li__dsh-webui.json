@@ -1,0 +1,187 @@
+{
+ "repo": "statem-li/dsh-webui",
+ "stars": 0,
+ "description": "webui：右上角「对话/轨迹」图块视图切换 + 会话消息导航（消息弹窗、右侧消息横条）",
+ "pushed_at": "2026-08-18T20:56:42Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-conversation",
+    "@deepseek-ai/dsh-client-ui-primitives",
+    "@deepseek-ai/dsh-client-ui-tool",
+    "@deepseek-ai/dsh-client-ui-attachment",
+    "@deepseek-ai/dsh-client-ui-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-schema-form"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@dsh-external/dsh-webui",
+ "deps": [
+  "@shikijs/langs",
+  "@shikijs/themes",
+  "katex",
+  "markstream-react",
+  "mermaid",
+  "shiki",
+  "stream-markdown",
+  "dsh-usage-skill",
+  "cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-conversation",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-ui-tool",
+  "@deepseek-ai/dsh-client-ui-attachment",
+  "@deepseek-ai/dsh-client-ui-locale",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-web",
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/dsh-launch-environment",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-schema-form",
+  "@deepseek-ai/schemastery",
+  "react",
+  "react-dom"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "conversationEvents",
+  "credentials",
+  "fs",
+  "llm",
+  "locale",
+  "remote",
+  "sandboxPolicy",
+  "sessionPersistence",
+  "sessions",
+  "settings",
+  "settingsScope",
+  "shell",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "web",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "agent/pre-step",
+  "llm/stream",
+  "session/event",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 92,
+ "domains": {
+  "api.anysearch.com": 5,
+  "lucide.dev": 1,
+  "api.deepseek.com": 1
+ },
+ "env": {
+  "DSH_HOME": 12,
+  "CHROME_PATH": 3,
+  "USERPROFILE": 3,
+  "DSH_WEB_SEARCH_PROVIDER": 1,
+  "DSH_WEB_FETCH_PROVIDER": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 16,
+   "dev": 1,
+   "evidence": [
+    "lib/index.js:4",
+    "lib/index.js:7272",
+    "lib/index.js:7636",
+    "lib/index.js:8536",
+    "lib/task-done-sound.js:12"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:285"
+   ]
+  },
+  "base64_decode": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:73",
+    "lib/index.js:74",
+    "lib/index.js:9397",
+    "lib/index.js:9448",
+    "lib/vision.js:181"
+   ]
+  },
+  "net_server": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:8508",
+    "lib/browser/chrome.js:35",
+    "src/browser/chrome.ts:39"
+   ]
+  },
+  "fs_write": {
+   "src": 62,
+   "dev": 1,
+   "evidence": [
+    "lib/file-explorer.js:184",
+    "lib/file-explorer.js:228",
+    "lib/index.js:3",
+    "lib/index.js:3",
+    "lib/index.js:7241"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 144,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer, tools/pre-execute"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×16 src, e.g. lib/index.js:4, lib/index.js:7272"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.js:285"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×9 src, e.g. lib/index.js:73, lib/index.js:74"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×3 src, e.g. lib/index.js:8508, lib/browser/chrome.js:35"
+  }
+ ],
+ "level": 3
+}

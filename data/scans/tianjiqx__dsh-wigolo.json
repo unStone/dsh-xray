@@ -1,0 +1,115 @@
+{
+ "repo": "tianjiqx/dsh-wigolo",
+ "stars": 1,
+ "description": "DSH 联网搜索私有化方案，代理 web_search/web_fetch 至 Wigolo，覆盖搜索/抓取/提取/深度研究/缓存/监控全链路，数据不出域，零查询成本。  Wigolo-powered DSH search plugin — self-hosted search/crawl/extract/research/cache/watch pipeline, fully replaces ",
+ "pushed_at": "2026-08-18T17:53:48Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@tianjiqx/dsh-wigolo",
+ "deps": [
+  "schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "locale",
+  "sessions",
+  "settings",
+  "slots",
+  "systemPrompt",
+  "tools",
+  "web",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 19,
+ "domains": {
+  "knockoutez.github.io": 6
+ },
+ "env": {
+  "WIGOLO_TOKEN": 6
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "lib/index.mjs:3670"
+   ]
+  },
+  "base64_decode": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.mjs:70",
+    "lib/index.mjs:71"
+   ]
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 2,
+   "evidence": [
+    "lib/index.mjs:3",
+    "lib/index.mjs:2528",
+    "lib/index.mjs:2593",
+    "lib/index.mjs:2884",
+    "src/cordis-managed.ts:8"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 51,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. lib/index.mjs:3670"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. lib/index.mjs:70, lib/index.mjs:71"
+  },
+  {
+   "id": "token_env",
+   "evidence": "WIGOLO_TOKEN"
+  }
+ ],
+ "level": 3
+}

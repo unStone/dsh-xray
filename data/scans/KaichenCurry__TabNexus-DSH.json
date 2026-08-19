@@ -2,8 +2,9 @@
  "repo": "KaichenCurry/TabNexus-DSH",
  "stars": 1,
  "description": "TabNexus for DSH：零 Chrome 依赖的浏览器任务上下文插件（dsh-plugin 生态）。任务文档、AI 整理、全局工作区，装完即用。",
- "pushed_at": "2026-08-15T08:51:09Z",
+ "pushed_at": "2026-08-19T02:15:35Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,22 +20,17 @@
  "deps": [
   "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-client-runtime",
+  "react"
  ],
  "install_scripts": {},
  "injects": [
-  "tools"
+  "slots"
  ],
  "hooks": [],
- "tool_regs": 8,
- "domains": {
-  "www.deepseek.com": 1,
-  "a.example.com": 1,
-  "b.example.com": 1
- },
- "env": {
-  "DSH_HOME": 2
- },
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
  "behaviors": {
   "exec": {
    "src": 0,
@@ -57,19 +53,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "lib/index.js:90",
-    "src/index.ts:115"
-   ]
+   "evidence": []
   },
   "dyn_import": {
-   "src": 1,
+   "src": 0,
    "dev": 0,
-   "evidence": [
-    "scripts/verify.mjs:22"
-   ]
+   "evidence": []
   }
  },
  "has_apply": true,

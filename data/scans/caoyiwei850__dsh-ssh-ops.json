@@ -1,22 +1,17 @@
 {
  "repo": "caoyiwei850/dsh-ssh-ops",
- "stars": 2,
+ "stars": 4,
  "description": "DeepSeek Harness SSH 运维插件：主对话驱动 SSH，带高危命令保护与右侧终端。",
- "pushed_at": "2026-08-17T16:06:48Z",
+ "pushed_at": "2026-08-18T12:53:05Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
   },
   "client": {
    "inject": [
-    "@deepseek-ai/dsh-client-connection",
-    "@deepseek-ai/dsh-client-runtime",
-    "@deepseek-ai/dsh-api-remotes",
-    "@deepseek-ai/dsh-client-locale",
-    "@deepseek-ai/dsh-client-ui-slots",
-    "@deepseek-ai/dsh-client-ui-conversation",
-    "@deepseek-ai/dsh-client-ui-settings"
+    "@deepseek-ai/dsh-client-runtime"
    ],
    "platform": "web"
   }
@@ -28,12 +23,7 @@
   "mysql2",
   "pg",
   "redis",
-  "mongodb",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-typert-protocol",
-  "@deepseek-ai/dsh-tools",
-  "@deepseek-ai/dsh-credentials",
-  "@deepseek-ai/dsh-storage-domain"
+  "mongodb"
  ],
  "install_scripts": {},
  "injects": [
@@ -71,26 +61,26 @@
     "lib/index.js:1271",
     "lib/index.js:2629",
     "lib/index.js:2686",
-    "lib/index.js:15045",
-    "lib/index.js:16214"
+    "lib/index.js:15064",
+    "lib/index.js:16233"
    ]
   },
   "net_server": {
    "src": 6,
    "dev": 0,
    "evidence": [
-    "lib/index.js:14654",
-    "lib/index.js:14667",
-    "lib/index.js:16305",
-    "src/db-ops.js:86",
-    "src/db-ops.js:96"
+    "lib/index.js:14673",
+    "lib/index.js:14686",
+    "lib/index.js:16324",
+    "src/db-ops.js:121",
+    "src/db-ops.js:131"
    ]
   },
   "fs_write": {
    "src": 13,
    "dev": 0,
    "evidence": [
-    "lib/index.js:16216",
+    "lib/index.js:16235",
     "scripts/build-client.mjs:8",
     "scripts/build-client.mjs:8",
     "scripts/build-client.mjs:39",
@@ -122,7 +112,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×6 src, e.g. lib/index.js:14654, lib/index.js:14667"
+   "evidence": "×6 src, e.g. lib/index.js:14673, lib/index.js:14686"
   }
  ],
  "level": 3

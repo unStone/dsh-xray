@@ -2,8 +2,9 @@
  "repo": "zp-home/dsh-recommend",
  "stars": 18,
  "description": "DSH 插件生态透明排行与推荐：每日自动抓取 dsh-plugin 话题 + 公开评分模型 + 排行/推荐插件与静态站",
- "pushed_at": "2026-08-18T07:05:11Z",
+ "pushed_at": "2026-08-19T02:33:05Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -44,18 +45,22 @@
   "utteranc.es": 1
  },
  "env": {
-  "GITHUB_TOKEN": 3
+  "GITHUB_TOKEN": 3,
+  "GITHUB_OUTPUT": 1,
+  "DEEPSEEK_API_KEY": 1,
+  "GITHUB_SHA": 1,
+  "GITHUB_REPOSITORY": 1
  },
  "behaviors": {
   "exec": {
-   "src": 5,
+   "src": 8,
    "dev": 0,
    "evidence": [
+    "scripts/smoke.mjs:216",
+    "scripts/static-security.mjs:53",
+    "scripts/static-security.mjs:58",
     "scripts/sync.mjs:17",
-    "lib/host/web.mjs:3",
-    "lib/host/web.mjs:536",
-    "src/host/web.ts:18",
-    "src/host/web.ts:473"
+    "lib/host/web.mjs:4"
    ]
   },
   "eval": {
@@ -67,7 +72,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "scripts/scan.mjs:80"
+    "scripts/scan.mjs:128"
    ]
   },
   "net_server": {
@@ -76,13 +81,13 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 27,
+   "src": 45,
    "dev": 0,
    "evidence": [
-    "scripts/badge.mjs:60",
-    "scripts/badge.mjs:70",
-    "scripts/badge.mjs:79",
-    "scripts/badge.mjs:87",
+    "scripts/badge.mjs:64",
+    "scripts/badge.mjs:74",
+    "scripts/badge.mjs:83",
+    "scripts/badge.mjs:91",
     "scripts/curate.mjs:53"
    ]
   },
@@ -93,7 +98,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 23,
+ "files_scanned": 28,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -103,15 +108,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×5 src, e.g. scripts/sync.mjs:17, lib/host/web.mjs:3"
+   "evidence": "×8 src, e.g. scripts/smoke.mjs:216, scripts/static-security.mjs:53"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. scripts/scan.mjs:80"
+   "evidence": "×1 src, e.g. scripts/scan.mjs:128"
   },
   {
    "id": "token_env",
-   "evidence": "GITHUB_TOKEN"
+   "evidence": "DEEPSEEK_API_KEY, GITHUB_TOKEN"
   }
  ],
  "level": 3

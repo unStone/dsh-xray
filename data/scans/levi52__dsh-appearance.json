@@ -1,9 +1,10 @@
 {
  "repo": "levi52/dsh-appearance",
- "stars": 1,
- "description": "DeepSeek Harness Web UI 的外观设置插件，一键个性化你的 Web UI",
- "pushed_at": "2026-08-15T10:26:13Z",
+ "stars": 2,
+ "description": "DeepSeek Harness Web UI 的外观设置插件，一键个性化你的 Web UI【NPM】",
+ "pushed_at": "2026-08-18T14:48:07Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -26,8 +27,7 @@
   "react"
  ],
  "install_scripts": {
-  "prepare": "node build.mjs",
-  "postinstall": "node scripts/fix-whitelist.mjs"
+  "prepare": "node build.mjs"
  },
  "injects": [
   "connection",
@@ -43,9 +43,7 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
-  "DSH_HOME": 3,
-  "DSH_WHITELIST_FILE": 1,
-  "npm_lifecycle_event": 1,
+  "DSH_HOME": 2,
   "APPDATA": 2,
   "DSH": 2,
   "DSH_CLI": 2
@@ -55,11 +53,11 @@
    "src": 12,
    "dev": 0,
    "evidence": [
-    "scripts/install.mjs:23",
-    "scripts/install.mjs:23",
-    "scripts/install.mjs:57",
-    "scripts/install.mjs:72",
-    "scripts/install.mjs:78"
+    "scripts/install.mjs:26",
+    "scripts/install.mjs:26",
+    "scripts/install.mjs:59",
+    "scripts/install.mjs:74",
+    "scripts/install.mjs:80"
    ]
   },
   "eval": {
@@ -81,7 +79,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 14,
+   "src": 11,
    "dev": 0,
    "evidence": [
     "build.mjs:19",
@@ -98,7 +96,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 8,
+ "files_scanned": 7,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -107,12 +105,8 @@
    "evidence": "./cordis.patch.yml"
   },
   {
-   "id": "install_script",
-   "evidence": "postinstall: node scripts/fix-whitelist.mjs"
-  },
-  {
    "id": "exec",
-   "evidence": "×12 src, e.g. scripts/install.mjs:23, scripts/install.mjs:23"
+   "evidence": "×12 src, e.g. scripts/install.mjs:26, scripts/install.mjs:26"
   },
   {
    "id": "base64_decode",

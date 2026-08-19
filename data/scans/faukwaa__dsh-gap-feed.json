@@ -1,0 +1,84 @@
+{
+ "repo": "faukwaa/dsh-gap-feed",
+ "stars": 0,
+ "description": "dsh plugin: during long agent thinking, posts a hot-news or reminder message directly into the conversation stream.",
+ "pushed_at": "2026-08-19T02:58:54Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-gap-feed",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-typert-protocol",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/request"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.toutiao.com": 1,
+  "api.github.com": 1,
+  "api.bilibili.com": 1,
+  "www.bilibili.com": 2
+ },
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 7,
+   "evidence": [
+    "src/index.ts:7",
+    "src/index.ts:28",
+    "src/reminders.ts:2",
+    "src/reminders.ts:64"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 17,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

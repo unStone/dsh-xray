@@ -1,0 +1,102 @@
+{
+ "repo": "WilliamShi666/dsh-multiple-chat-panels",
+ "stars": 0,
+ "description": "DeepSeek Harness 多对话面板：并排查看并与多个 Agent 会话同时交互。",
+ "pushed_at": "2026-08-18T17:23:07Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-layout",
+    "@deepseek-ai/dsh-client-ui-model-selection",
+    "@deepseek-ai/dsh-client-ui-sidebar",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-ui-primitives"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "multiple-chat-panels",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-model-selection",
+  "@deepseek-ai/dsh-client-ui-sidebar",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-permission-presets",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "layout",
+  "modelDirectories",
+  "remote",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:8",
+    "src/index.ts:8"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 13,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/index.js:8, src/index.ts:8"
+  }
+ ],
+ "level": 3
+}

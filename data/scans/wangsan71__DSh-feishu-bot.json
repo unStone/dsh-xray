@@ -1,0 +1,128 @@
+{
+ "repo": "wangsan71/DSh-feishu-bot",
+ "stars": 0,
+ "description": "给飞书和Lark的一个机器人组件，可以连接本地的dsh",
+ "pushed_at": "2026-08-18T20:38:18Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "@areoneplayer/dsh-feishu-bot",
+ "deps": [
+  "@larksuiteoapi/node-sdk",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-agent-default-model",
+  "@deepseek-ai/dsh-fs",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/dsh-workspace",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "tsdown"
+ },
+ "injects": [
+  "agentDefaultModel",
+  "agents",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "tools",
+  "userQuestions",
+  "webServer",
+  "workspaceRegistry"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {
+  "open.larksuite.com": 3,
+  "open.feishu.cn": 3,
+  "api.qrserver.com": 1
+ },
+ "env": {
+  "FEISHU_APP_ID": 1,
+  "FEISHU_APP_SECRET": 1,
+  "FEISHU_FORWARD_URL": 1,
+  "FEISHU_DOMAIN": 1,
+  "DSH_HOME": 2,
+  "DSH_PROFILE": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:347"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/index.ts:183",
+    "src/index.ts:200"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/index.ts:347"
+  },
+  {
+   "id": "token_env",
+   "evidence": "FEISHU_APP_SECRET"
+  }
+ ],
+ "level": 3
+}

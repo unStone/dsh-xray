@@ -1,9 +1,10 @@
 {
  "repo": "a735624258/dsh-skill-picker",
- "stars": 13,
+ "stars": 17,
  "description": "DSH 实现 workbuddy 同款选择 skill 功能 | WorkBuddy-style skill picker for DeepSeek Harness: pick a skill in the composer, insert the official /skill-name gesture, and DSH loads it with your message.",
- "pushed_at": "2026-08-16T05:07:36Z",
+ "pushed_at": "2026-08-19T00:23:02Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,17 +20,18 @@
  "pkg_name": "dsh-skill-picker",
  "deps": [
   "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
   "@deepseek-ai/dsh-host-webserver",
   "@deepseek-ai/dsh-skill",
   "@deepseek-ai/dsh-system-prompt",
-  "@deepseek-ai/dsh-client-runtime",
-  "@deepseek-ai/dsh-client-locale",
-  "@deepseek-ai/dsh-client-ui-slots",
   "react"
  ],
  "install_scripts": {},
  "injects": [
   "connection",
+  "inputTriggers",
   "sessions",
   "slots",
   "systemPrompt",

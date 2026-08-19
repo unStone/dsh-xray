@@ -1,0 +1,97 @@
+{
+ "repo": "oppnc/dsh-kernel-mesh",
+ "stars": 0,
+ "description": "Harness-kernel mesh for DeepSeek Harness: kimi/grok/codex/minimax model routes (L1), distilled subagent recipes (L2) and kernel_run/kernel_status/kernel_switch tools.",
+ "pushed_at": "2026-08-17T06:44:53Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-kernel-mesh",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "llm",
+  "subagents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/request"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "api.kimi.com": 4,
+  "cli-chat-proxy.grok.com": 3,
+  "api.minimaxi.com": 2,
+  "auth.kimi.com": 1,
+  "ollama.com": 1
+ },
+ "env": {
+  "USERPROFILE": 2,
+  "WSL_DISTRO_NAME": 1,
+  "SystemRoot": 3,
+  "DSH_HOME": 2,
+  "HTTPS_PROXY": 1,
+  "https_proxy": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:14",
+    "lib/index.js:169",
+    "lib/index.js:341",
+    "lib/search-backends.js:10",
+    "lib/search-backends.js:36"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 4,
+   "evidence": [
+    "lib/index.js:156",
+    "lib/index.js:226"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×5 src, e.g. lib/index.js:14, lib/index.js:169"
+  }
+ ],
+ "level": 3
+}

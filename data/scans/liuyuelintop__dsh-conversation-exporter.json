@@ -2,8 +2,9 @@
  "repo": "liuyuelintop/dsh-conversation-exporter",
  "stars": 0,
  "description": "Export DeepSeek Harness conversations as clean, human-readable Markdown.",
- "pushed_at": "2026-08-17T04:32:21Z",
+ "pushed_at": "2026-08-19T00:57:49Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -47,9 +48,11 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "src/lib/production.js:174"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -71,7 +74,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 15,
+ "files_scanned": 17,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -82,6 +85,10 @@
   {
    "id": "exec",
    "evidence": "×6 src, e.g. scripts/check-syntax.js:6, scripts/check-syntax.js:6"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/lib/production.js:174"
   }
  ],
  "level": 3

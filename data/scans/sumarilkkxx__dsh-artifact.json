@@ -1,9 +1,10 @@
 {
  "repo": "sumarilkkxx/dsh-artifact",
- "stars": 0,
+ "stars": 1,
  "description": "Inline ECharts rendering plugin for DeepSeek Harness",
- "pushed_at": "2026-08-18T04:09:29Z",
+ "pushed_at": "2026-08-18T14:47:40Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -25,7 +26,10 @@
  "hooks": [],
  "tool_regs": 2,
  "domains": {
-  "www.apache.org": 1
+  "www.mapbox.com": 1,
+  "osm.org": 1,
+  "carto.com": 1,
+  "maptalks.org": 1
  },
  "env": {},
  "behaviors": {
@@ -35,17 +39,18 @@
    "evidence": []
   },
   "eval": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
-    "assets/echarts.min.js:45"
+    "assets/echarts-gl.min.js:1",
+    "assets/echarts-gl.min.js:1"
    ]
   },
   "base64_decode": {
    "src": 1,
    "dev": 0,
    "evidence": [
-    "assets/echarts.min.js:45"
+    "client.js:488"
    ]
   },
   "net_server": {
@@ -65,7 +70,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 5,
+ "files_scanned": 4,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -79,11 +84,11 @@
   },
   {
    "id": "eval",
-   "evidence": "×1 src, e.g. assets/echarts.min.js:45"
+   "evidence": "×2 src, e.g. assets/echarts-gl.min.js:1, assets/echarts-gl.min.js:1"
   },
   {
    "id": "base64_decode",
-   "evidence": "×1 src, e.g. assets/echarts.min.js:45"
+   "evidence": "×1 src, e.g. client.js:488"
   }
  ],
  "level": 3

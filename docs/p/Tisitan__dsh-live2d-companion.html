@@ -44,12 +44,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Live2D 监控面板・看板娘桌宠 for DeepSeek Harness</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/Tisitan/dsh-live2d-companion" rel="nofollow ugc">Tisitan/dsh-live2d-companion source on GitHub</a>
      · <a href="../registry.html#Tisitan__dsh-live2d-companion">this plugin in the registry</a></p>
   <p>Tisitan/dsh-live2d-companion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 src, e.g. index.js:2, index.js:870</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 src, e.g. public/vendor/pixi.min.js:302, public/vendor/pixi.min.js:307</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. pet/cdp-probe.mjs:35</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 src, e.g. pet/standalone-server.mjs:30, standalone/server.cjs:302</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 src, e.g. index.js:2, index.js:1262</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 src, e.g. public/vendor/pixi.min.js:302, public/vendor/pixi.min.js:307</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. pet/cdp-probe.mjs:35</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 src, e.g. pet/standalone-server.mjs:30, standalone/server.cjs:331</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentLoop</span> <span>agentPresets</span> <span>llm</span> <span>settings</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>enter</span> <span>session/disposed</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>www.opensource.org</span> <span>mths.be</span> <span>pixijs.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>L2D_ADAPTER_FILE</span> <span>L2D_MODEL</span> <span>USERPROFILE</span> <span>APPDATA</span> <span>L2D_DEBUG</span> <span>L2D_SOFT</span> <span>DSH_HOME</span> <span>L2D_URL</span> <span>L2D_SMOKE_TEST</span> <span>L2D_RENDER_TEST</span></p>

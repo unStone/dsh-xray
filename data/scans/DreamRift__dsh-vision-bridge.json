@@ -1,0 +1,97 @@
+{
+ "repo": "DreamRift/dsh-vision-bridge",
+ "stars": 0,
+ "description": "DeepSeek Harness 多模态视觉桥（dsh-vision-bridge）：贴图经 llm/stream 自动转 VL 文字描述（解决 UNSUPPORTED_CONTENT）+ view_image/ocr_image 主动视觉工具 + 原生多模态路由自动跳过（rc.7）；零依赖。Vision bridge for text-only DeepSeek models.",
+ "pushed_at": "2026-08-18T12:38:08Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-vision-bridge",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "connection",
+  "settingsScope",
+  "slots"
+ ],
+ "hooks": [
+  "llm/stream",
+  "settings/updated"
+ ],
+ "tool_regs": 3,
+ "domains": {
+  "dashscope.aliyuncs.com": 3
+ },
+ "env": {
+  "DSH_API_PROXY_INDEX": 1,
+  "APPDATA": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 0,
+   "evidence": [
+    "scripts/patch-api-proxy-image-admission.mjs:34",
+    "scripts/patch-api-proxy-image-admission.mjs:34",
+    "scripts/patch-api-proxy-image-admission.mjs:118"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 4,
+   "evidence": [
+    "scripts/patch-api-proxy-image-admission.mjs:32",
+    "scripts/patch-api-proxy-image-admission.mjs:32",
+    "scripts/patch-api-proxy-image-admission.mjs:116",
+    "scripts/patch-api-proxy-image-admission.mjs:126",
+    "scripts/patch-api-proxy-image-admission.mjs:180"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 27,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/patch-api-proxy-image-admission.mjs:34, scripts/patch-api-proxy-image-admission.mjs:34"
+  }
+ ],
+ "level": 3
+}

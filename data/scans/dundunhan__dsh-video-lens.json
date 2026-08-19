@@ -1,0 +1,78 @@
+{
+ "repo": "dundunhan/dsh-video-lens",
+ "stars": 1,
+ "description": "",
+ "pushed_at": "2026-08-18T17:39:33Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-video-lens",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 6,
+ "domains": {
+  "api.siliconflow.cn": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "src/frames.js:6",
+    "src/probe.js:2"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 9,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/frames.js:6, src/probe.js:2"
+  }
+ ],
+ "level": 3
+}

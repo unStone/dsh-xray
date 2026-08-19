@@ -1,0 +1,87 @@
+{
+ "repo": "kazma258/dsh-usage-card",
+ "stars": 0,
+ "description": "DSH web sidebar usage card: 7d/30d tokens, spend, and remaining DeepSeek balance",
+ "pushed_at": "2026-08-18T18:02:09Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-sidebar"
+   ]
+  }
+ },
+ "pkg_name": "dsh-usage-card",
+ "deps": [
+  "@deepseek-ai/dsh-credentials",
+  "@deepseek-ai/schemastery"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "credentials",
+  "locale",
+  "sessions",
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "credentials/updated",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "platform.deepseek.com": 4,
+  "api.deepseek.com": 2
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 4,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

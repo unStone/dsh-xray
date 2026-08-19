@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-doublecheck",
  "stars": 4,
  "description": "Double-check before you ship: grill the requirements, test the implementation, prove the delivery. An engineering-discipline bundle for DeepSeek Harness.",
- "pushed_at": "2026-08-18T00:27:20Z",
+ "pushed_at": "2026-08-18T15:04:58Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -24,7 +25,7 @@
   "@deepseek-ai/schemastery"
  ],
  "install_scripts": {
-  "prepare": "tsc --noEmitOnError"
+  "prepare": "tsc --noEmitOnError && node scripts/fix-dts.mjs"
  },
  "injects": [
   "commands",
@@ -49,9 +50,13 @@
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "scripts/verify-artifacts.mjs:7",
+    "scripts/verify-artifacts.mjs:7",
+    "scripts/verify-artifacts.mjs:29"
+   ]
   },
   "eval": {
    "src": 0,
@@ -69,23 +74,26 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 1,
+   "src": 3,
    "dev": 0,
    "evidence": [
-    "scripts/extract-fixture.mjs:56"
+    "scripts/extract-fixture.mjs:56",
+    "scripts/fix-dts.mjs:7",
+    "scripts/fix-dts.mjs:31"
    ]
   },
   "dyn_import": {
-   "src": 2,
+   "src": 3,
    "dev": 0,
    "evidence": [
     "scripts/decode-session.mjs:19",
-    "scripts/extract-fixture.mjs:19"
+    "scripts/extract-fixture.mjs:19",
+    "scripts/verify-artifacts.mjs:37"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 76,
+ "files_scanned": 82,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -96,7 +104,11 @@
   {
    "id": "tool_gate",
    "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/verify-artifacts.mjs:7, scripts/verify-artifacts.mjs:7"
   }
  ],
- "level": 2
+ "level": 3
 }

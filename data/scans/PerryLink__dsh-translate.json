@@ -2,8 +2,9 @@
  "repo": "PerryLink/dsh-translate",
  "stars": 0,
  "description": "Vendor parameter translation and deterministic JSON repair for DeepSeek Harness: /translate maps temperature/top_p/max_tokens/stop/system across 11 vendors, and the post-execute repair layer (plus fix",
- "pushed_at": "2026-08-18T00:18:13Z",
+ "pushed_at": "2026-08-18T15:06:34Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -12,10 +13,10 @@
  "pkg_name": "dsh-translate",
  "deps": [
   "@deepseek-ai/cordis",
-  "@deepseek-ai/schemastery",
   "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-session",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
  "injects": [
@@ -31,7 +32,7 @@
  "behaviors": {
   "exec": {
    "src": 3,
-   "dev": 0,
+   "dev": 3,
    "evidence": [
     "scripts/verify-artifacts.mjs:26",
     "scripts/verify-artifacts.mjs:26",
@@ -55,7 +56,7 @@
   },
   "fs_write": {
    "src": 0,
-   "dev": 0,
+   "dev": 8,
    "evidence": []
   },
   "dyn_import": {
@@ -70,7 +71,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 13,
+ "files_scanned": 17,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

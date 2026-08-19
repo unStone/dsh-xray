@@ -2,8 +2,9 @@
  "repo": "Tiee7/EzDSH",
  "stars": 1,
  "description": "Easy Way to the DeepSeek‑Harness.",
- "pushed_at": "2026-08-18T08:44:03Z",
+ "pushed_at": "2026-08-19T02:17:52Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "inject": [
@@ -42,6 +43,7 @@
   "react",
   "react-dom",
   "yaml",
+  "@larksuiteoapi/node-sdk",
   "react",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-client-connection",
@@ -65,6 +67,7 @@
  "domains": {
   "api.example.com": 2,
   "hub.ezdsh.com": 3,
+  "qyapi.weixin.qq.com": 2,
   "api.deepseek.com": 1,
   "api.openai.com": 1,
   "api.anthropic.com": 1,
@@ -105,23 +108,26 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 1,
+   "dev": 3,
+   "evidence": [
+    "plugins/channel-wecom/src/index.js:78"
+   ]
   },
   "net_server": {
-   "src": 4,
+   "src": 5,
    "dev": 0,
    "evidence": [
     "scripts/verify-runtime-bundle.mjs:71",
     "scripts/verify-runtime-bundle.mjs:74",
+    "plugins/channel-wecom/src/index.js:233",
     "src/main/runtime/runtime-manager.ts:342",
     "src/main/runtime/runtime-manager.ts:345"
    ]
   },
   "fs_write": {
-   "src": 16,
-   "dev": 22,
+   "src": 17,
+   "dev": 34,
    "evidence": [
     "scripts/rewrite-update-metadata.mjs:1",
     "scripts/rewrite-update-metadata.mjs:24",
@@ -131,13 +137,15 @@
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 1,
-   "evidence": []
+   "evidence": [
+    "src/main/channel-bridge/adapter-loader.ts:163"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 98,
+ "files_scanned": 113,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -150,8 +158,12 @@
    "evidence": "×13 src, e.g. scripts/stage-dsh-runtime.mjs:2, scripts/stage-dsh-runtime.mjs:2"
   },
   {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. plugins/channel-wecom/src/index.js:78"
+  },
+  {
    "id": "net_server",
-   "evidence": "×4 src, e.g. scripts/verify-runtime-bundle.mjs:71, scripts/verify-runtime-bundle.mjs:74"
+   "evidence": "×5 src, e.g. scripts/verify-runtime-bundle.mjs:71, scripts/verify-runtime-bundle.mjs:74"
   }
  ],
  "level": 2

@@ -1,0 +1,144 @@
+{
+ "repo": "ma-pony/deepspider",
+ "stars": 18,
+ "description": "AI 原生智能爬虫与 JavaScript 逆向工程平台，基于 DSH、Patchright/CDP 与独立语义运行时，从浏览器证据恢复参数生成逻辑并交付可验证 Solver。",
+ "pushed_at": "2026-08-19T02:49:04Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./dsh/cordis.patch.yml"
+  }
+ },
+ "pkg_name": "deepspider",
+ "deps": [
+  "@deepseek-ai/dsh",
+  "@deepseek-ai/dsh-host-apiproxy",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-tools",
+  "@modelcontextprotocol/sdk",
+  "acorn",
+  "cycletls",
+  "patchright",
+  "sdenv",
+  "zod"
+ ],
+ "install_scripts": {
+  "postinstall": "patchright install chromium",
+  "prepare": "husky"
+ },
+ "injects": [
+  "agentPresets",
+  "agents",
+  "apiProxy",
+  "commands",
+  "deepSpiderRuntimeManager",
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [
+  "agent/disposed",
+  "session/event"
+ ],
+ "tool_regs": 4,
+ "domains": {
+  "httpbin.org": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 22,
+   "dev": 17,
+   "evidence": [
+    "scripts/run-unit-tests.mjs:1",
+    "scripts/run-unit-tests.mjs:1",
+    "scripts/run-unit-tests.mjs:18",
+    "scripts/smoke-packed-cli.mjs:6",
+    "scripts/smoke-packed-cli.mjs:6"
+   ]
+  },
+  "eval": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/browser/probe/HookRuntime.js:565"
+   ]
+  },
+  "base64_decode": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/browser/interceptors/NetworkInterceptor.js:224"
+   ]
+  },
+  "net_server": {
+   "src": 2,
+   "dev": 11,
+   "evidence": [
+    "scripts/smoke-packed-cli.mjs:30",
+    "scripts/smoke-packed-cli.mjs:50"
+   ]
+  },
+  "fs_write": {
+   "src": 13,
+   "dev": 53,
+   "evidence": [
+    "scripts/smoke-packed-cli.mjs:236",
+    "src/dsh/preset-plugin.js:15",
+    "src/recovery/solver.js:135",
+    "src/recovery/solver.js:154",
+    "src/store/SessionArtifactStore.js:285"
+   ]
+  },
+  "dyn_import": {
+   "src": 5,
+   "dev": 0,
+   "evidence": [
+    "scripts/smoke-packed-cli.mjs:65",
+    "scripts/smoke-packed-cli.mjs:68",
+    "scripts/smoke-packed-cli.mjs:71",
+    "scripts/smoke-packed-cli.mjs:74",
+    "scripts/smoke-packed-cli.mjs:203"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 91,
+ "has_skill_md": true,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./dsh/cordis.patch.yml"
+  },
+  {
+   "id": "install_script",
+   "evidence": "postinstall: patchright install chromium"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "apiProxy, systemPrompt"
+  },
+  {
+   "id": "api_intercept",
+   "evidence": "apiProxy, systemPrompt"
+  },
+  {
+   "id": "exec",
+   "evidence": "×22 src, e.g. scripts/run-unit-tests.mjs:1, scripts/run-unit-tests.mjs:1"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. src/browser/probe/HookRuntime.js:565"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×1 src, e.g. src/browser/interceptors/NetworkInterceptor.js:224"
+  },
+  {
+   "id": "net_server",
+   "evidence": "×2 src, e.g. scripts/smoke-packed-cli.mjs:30, scripts/smoke-packed-cli.mjs:50"
+  }
+ ],
+ "level": 3
+}

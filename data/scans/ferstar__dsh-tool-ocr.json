@@ -2,9 +2,20 @@
  "repo": "ferstar/dsh-tool-ocr",
  "stars": 3,
  "description": "本地 OCR 插件：让纯文本生成 LLM 也能读懂图片 | Local OCR plugin: give text-only generative LLMs the ability to read images",
- "pushed_at": "2026-08-18T08:21:14Z",
+ "pushed_at": "2026-08-18T13:40:30Z",
  "status": "ok",
- "manifest": null,
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-ui-settings"
+   ]
+  }
+ },
  "pkg_name": "dsh-tool-ocr",
  "deps": [
   "@deepseek-ai/cordis",
@@ -14,10 +25,23 @@
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-subprocess",
   "@deepseek-ai/dsh-system-prompt",
-  "@deepseek-ai/dsh-tools"
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-settings",
+  "react",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-settings-plugins",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-client-connection"
  ],
  "install_scripts": {},
  "injects": [
+  "connection",
+  "locale",
+  "settingsScope",
+  "slots",
   "subprocess",
   "systemPrompt",
   "tools"
@@ -33,13 +57,13 @@
    "evidence": [
     "src/engine.ts:63",
     "src/engine.ts:237",
-    "src/index.ts:77",
-    "src/index.ts:129"
+    "src/index.ts:85",
+    "src/index.ts:146"
    ]
   },
   "eval": {
    "src": 0,
-   "dev": 0,
+   "dev": 1,
    "evidence": []
   },
   "base64_decode": {
@@ -59,7 +83,7 @@
    "dev": 2,
    "evidence": [
     "src/engine.ts:271",
-    "src/index.ts:267"
+    "src/index.ts:301"
    ]
   },
   "dyn_import": {
@@ -69,7 +93,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 8,
+ "files_scanned": 18,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -88,10 +112,6 @@
   {
    "id": "base64_decode",
    "evidence": "×1 src, e.g. src/engine.ts:13"
-  },
-  {
-   "id": "no_manifest",
-   "evidence": "uses 3 services, 2 tool regs, no manifest"
   }
  ],
  "level": 3

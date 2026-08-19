@@ -2,8 +2,9 @@
  "repo": "welsione/dsh-mcp-manager",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-18T09:19:05Z",
+ "pushed_at": "2026-08-18T14:29:21Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -30,7 +31,9 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
-  "DSH_MCP_MANAGER_APPLY_LOG": 1
+  "DSH_MCP_MANAGER_APPLY_LOG": 1,
+  "DSH_MCP_MANAGER_HOME": 1,
+  "APPDATA": 1
  },
  "behaviors": {
   "exec": {
@@ -50,17 +53,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 2,
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 4,
+   "src": 5,
+   "dev": 7,
    "evidence": [
     "lib/index.js:29",
     "lib/index.js:29",
-    "lib/index.js:55",
-    "lib/index.js:80"
+    "lib/index.js:61",
+    "lib/index.js:86",
+    "lib/index.js:565"
    ]
   },
   "dyn_import": {

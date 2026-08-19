@@ -1,0 +1,93 @@
+{
+ "repo": "boomzikazita/dsh-memory",
+ "stars": 0,
+ "description": "DSH memory plugin: RRF multi-lane recall / confirm-based writes / Fernet vault / session harvest",
+ "pushed_at": "2026-08-18T14:23:13Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-memory",
+ "deps": [
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-llm"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "agents",
+  "tools"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "tools/pre-execute",
+  "turn/end"
+ ],
+ "tool_regs": 20,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "index.js:15",
+    "index.js:15",
+    "index.js:85",
+    "index.js:300"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 9,
+   "dev": 0,
+   "evidence": [
+    "index.js:13",
+    "index.js:13",
+    "index.js:13",
+    "index.js:95",
+    "index.js:106"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. index.js:15, index.js:15"
+  }
+ ],
+ "level": 3
+}

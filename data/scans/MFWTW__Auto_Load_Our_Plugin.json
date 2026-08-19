@@ -1,0 +1,78 @@
+{
+ "repo": "MFWTW/Auto_Load_Our_Plugin",
+ "stars": 0,
+ "description": "加载我们本地自己写的插件",
+ "pushed_at": "2026-08-18T19:27:44Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-workflow-loader",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "commands",
+  "fs",
+  "slots",
+  "tools",
+  "webServer",
+  "workflowRegistry"
+ ],
+ "hooks": [
+  "agent/pre-step",
+  "session/created"
+ ],
+ "tool_regs": 3,
+ "domains": {},
+ "env": {
+  "DSH_HOME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "dsh-workflow-loader/lib/index.js:103"
+   ]
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 5,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
+}

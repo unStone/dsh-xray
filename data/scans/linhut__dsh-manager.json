@@ -1,9 +1,10 @@
 {
  "repo": "linhut/dsh-manager",
- "stars": 0,
- "description": "⚡ DeepSeek Harness 桌面管理工具 — 一键安装、插件市场、版本管理 | 官网: https://dsh.linhut.cn/ | 镜像: GitCode/AtomGit",
- "pushed_at": "2026-08-18T08:40:38Z",
+ "stars": 1,
+ "description": "DeepSeek Harness 桌面管理工具，一站式掌控 Harness 运行环境：一键安装、版本管理、插件市场（管理）、Manager 设置、LLM 提供商可视化配置、settings.yaml 安全编辑、Agent 预设与系统数据管理，开箱即用。",
+ "pushed_at": "2026-08-18T17:36:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-manager",
  "deps": [
@@ -21,13 +22,17 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "api.github.com": 3,
+  "api.github.com": 6,
+  "git-scm.com": 3,
   "registry.npmmirror.com": 2,
+  "gh-proxy.com": 2,
+  "github.akams.cn": 1,
   "www.npmjs.com": 2,
   "gallery.dsh-market.com": 1,
   "mirrors.cloud.tencent.com": 1,
   "repo.huaweicloud.com": 1,
-  "www.linhut.cn": 1
+  "www.linhut.cn": 1,
+  "api.openai.com": 1
  },
  "env": {
   "DSH_HOME": 2,
@@ -35,14 +40,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 59,
+   "src": 67,
    "dev": 0,
    "evidence": [
     "electron/ipc-handlers.js:79",
-    "electron/ipc-handlers.js:132",
-    "electron/ipc-handlers.js:132",
-    "electron/ipc-handlers.js:134",
-    "electron/ipc-handlers.js:149"
+    "electron/ipc-handlers.js:143",
+    "electron/ipc-handlers.js:143",
+    "electron/ipc-handlers.js:145",
+    "electron/ipc-handlers.js:160"
    ]
   },
   "eval": {
@@ -54,8 +59,8 @@
    "src": 2,
    "dev": 0,
    "evidence": [
-    "packages/marketplace/src/github-api.js:293",
-    "packages/marketplace/src/github-api.js:347"
+    "packages/marketplace/src/github-api.js:331",
+    "packages/marketplace/src/github-api.js:385"
    ]
   },
   "net_server": {
@@ -64,12 +69,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 18,
+   "src": 25,
    "dev": 0,
    "evidence": [
     "electron/main.js:11",
     "packages/core/src/config.js:7",
-    "packages/core/src/config.js:60",
+    "packages/core/src/config.js:61",
     "packages/core/src/data-manager.js:8",
     "packages/core/src/data-manager.js:87"
    ]
@@ -81,7 +86,7 @@
   }
  },
  "has_apply": false,
- "files_scanned": 22,
+ "files_scanned": 24,
  "has_skill_md": false,
  "type": "other",
  "flags": [
@@ -91,11 +96,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×59 src, e.g. electron/ipc-handlers.js:79, electron/ipc-handlers.js:132"
+   "evidence": "×67 src, e.g. electron/ipc-handlers.js:79, electron/ipc-handlers.js:143"
   },
   {
    "id": "base64_decode",
-   "evidence": "×2 src, e.g. packages/marketplace/src/github-api.js:293, packages/marketplace/src/github-api.js:347"
+   "evidence": "×2 src, e.g. packages/marketplace/src/github-api.js:331, packages/marketplace/src/github-api.js:385"
   },
   {
    "id": "token_env",

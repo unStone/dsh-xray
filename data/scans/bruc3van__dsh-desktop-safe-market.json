@@ -1,9 +1,10 @@
 {
  "repo": "bruc3van/dsh-desktop-safe-market",
- "stars": 6,
- "description": "唯一主打安全，提倡先审查再安装的 DSH 市场，深度扫描 5 分钟，放心使用每一天。",
- "pushed_at": "2026-08-18T06:29:08Z",
+ "stars": 7,
+ "description": "唯一主打安全，提倡先审查再安装的DeepSeek Harness市场。深度扫描 5 分钟，放心使用每一天。",
+ "pushed_at": "2026-08-18T14:11:49Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -66,16 +67,19 @@
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/plugin.js:22372",
+    "lib/plugin.js:22716"
+   ]
   },
   "eval": {
    "src": 2,
    "dev": 0,
    "evidence": [
     "lib/index.js:236",
-    "lib/plugin.js:23111"
+    "lib/plugin.js:23274"
    ]
   },
   "base64_decode": {
@@ -98,7 +102,7 @@
    "src": 1,
    "dev": 0,
    "evidence": [
-    "lib/plugin.js:22414"
+    "lib/plugin.js:22416"
    ]
   },
   "dyn_import": {
@@ -117,8 +121,12 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "exec",
+   "evidence": "×2 src, e.g. lib/plugin.js:22372, lib/plugin.js:22716"
+  },
+  {
    "id": "eval",
-   "evidence": "×2 src, e.g. lib/index.js:236, lib/plugin.js:23111"
+   "evidence": "×2 src, e.g. lib/index.js:236, lib/plugin.js:23274"
   },
   {
    "id": "base64_decode",

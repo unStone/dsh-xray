@@ -1,0 +1,102 @@
+{
+ "repo": "Raybbish/dsh-poker-plugin",
+ "stars": 0,
+ "description": "Unofficial local multiplayer Texas Hold'em plugin for the DSH Web UI, with optional server-side AI players.",
+ "pushed_at": "2026-08-18T16:25:58Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [],
+   "immediately": true
+  }
+ },
+ "pkg_name": "dsh-poker",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-storage-domain",
+  "ws",
+  "zod"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "slots",
+  "storageDomain",
+  "timer",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "api.deepseek.com": 2
+ },
+ "env": {
+  "DEEPSEEK_API_KEY": 2
+ },
+ "behaviors": {
+  "exec": {
+   "src": 3,
+   "dev": 4,
+   "evidence": [
+    "scripts/build.mjs:6",
+    "scripts/build.mjs:6",
+    "scripts/build.mjs:16"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 6,
+   "dev": 5,
+   "evidence": [
+    "scripts/build.mjs:7",
+    "scripts/build.mjs:7",
+    "scripts/build.mjs:19",
+    "scripts/build.mjs:20",
+    "scripts/build.mjs:57"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 73,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. scripts/build.mjs:6, scripts/build.mjs:6"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DEEPSEEK_API_KEY"
+  }
+ ],
+ "level": 3
+}

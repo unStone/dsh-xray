@@ -1,0 +1,121 @@
+{
+ "repo": "liqiming-whu/dsh-environment-context",
+ "stars": 0,
+ "description": "Real-time environment context plugin for DeepSeek Harness",
+ "pushed_at": "2026-08-18T14:05:55Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots",
+    "@deepseek-ai/dsh-client-web-react"
+   ]
+  }
+ },
+ "pkg_name": "dsh-environment-context",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-api-remotes",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-client-web-react",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-subprocess",
+  "@deepseek-ai/schemastery",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "pnpm run build"
+ },
+ "injects": [
+  "connection",
+  "remote",
+  "settingsScope",
+  "slots",
+  "subprocess",
+  "systemPrompt",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 0,
+ "domains": {
+  "geocoding-api.open-meteo.com": 1,
+  "nominatim.openstreetmap.org": 1,
+  "api.bigdatacloud.net": 1,
+  "photon.komoot.io": 1,
+  "api.open-meteo.com": 1,
+  "api.met.no": 1,
+  "wttr.in": 1
+ },
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 1,
+   "dev": 0,
+   "evidence": [
+    "src/system.ts:9"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "subprocess, systemPrompt, webServer"
+  },
+  {
+   "id": "subprocess_service",
+   "evidence": "inject: subprocess"
+  },
+  {
+   "id": "exec",
+   "evidence": "×1 src, e.g. src/system.ts:9"
+  }
+ ],
+ "level": 3
+}

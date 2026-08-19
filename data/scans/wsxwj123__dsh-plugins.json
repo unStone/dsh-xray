@@ -2,8 +2,9 @@
  "repo": "wsxwj123/dsh-plugins",
  "stars": 7,
  "description": "Independent plugins for DeepSeek Harness, organized as isolated packages in one monorepo.",
- "pushed_at": "2026-08-17T23:40:46Z",
+ "pushed_at": "2026-08-19T02:26:21Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -11,34 +12,26 @@
   "client": {
    "platform": "web",
    "inject": [
-    "@deepseek-ai/dsh-client-runtime",
-    "@deepseek-ai/dsh-client-ui-slots",
-    "@deepseek-ai/dsh-client-ui-primitives"
+    "@deepseek-ai/dsh-client-ui-theme",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-slots"
    ]
   }
  },
  "pkg_name": "dsh-plugins",
  "deps": [
   "@deepseek-ai/cordis",
-  "react",
-  "react-dom",
-  "@deepseek-ai/cordis",
-  "react",
-  "react-dom",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-client-ui-settings",
-  "@deepseek-ai/dsh-client-ui-slots",
-  "react",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/dsh-client-ui-settings",
-  "@deepseek-ai/dsh-client-ui-slots",
-  "react",
-  "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-client-ui-theme",
   "@deepseek-ai/dsh-client-ui-settings",
   "@deepseek-ai/dsh-client-ui-slots",
   "react",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/cordis",
+  "react",
+  "react-dom",
   "react",
   "react-dom",
   "@deepseek-ai/cordis"
@@ -72,7 +65,7 @@
  "behaviors": {
   "exec": {
    "src": 11,
-   "dev": 4,
+   "dev": 9,
    "evidence": [
     "packages/dsh-composer-tools/build.mjs:8",
     "packages/dsh-composer-tools/build.mjs:8",
@@ -82,14 +75,14 @@
    ]
   },
   "eval": {
-   "src": 8,
-   "dev": 8,
+   "src": 9,
+   "dev": 9,
    "evidence": [
-    "packages/skin-gallery/src/custom-skin.js:98",
-    "packages/skin-gallery/src/custom-skin.js:98",
-    "packages/skin-gallery/src/skin-engine.js:48",
-    "packages/skin-gallery/src/skin-engine.js:48",
-    "packages/skin-runtime/src/custom-skin.js:98"
+    "packages/dsh-appearance-gallery/build.mjs:149",
+    "packages/dsh-appearance-gallery/lib/client.js:333",
+    "packages/dsh-appearance-gallery/lib/client.js:333",
+    "packages/dsh-appearance-gallery/lib/client.js:744",
+    "packages/dsh-appearance-gallery/lib/client.js:744"
    ]
   },
   "base64_decode": {
@@ -103,24 +96,24 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 9,
+   "src": 8,
    "dev": 117,
    "evidence": [
-    "packages/skin-gallery/build.mjs:68",
-    "packages/skin-runtime/build.mjs:68",
-    "packages/theme-gallery/build.mjs:23",
+    "packages/dsh-appearance-gallery/build.mjs:182",
+    "packages/dsh-appearance-gallery/build.mjs:183",
     "packages/dsh-composer-tools/src/handler.ts:200",
-    "packages/dsh-composer-tools/src/handler.ts:211"
+    "packages/dsh-composer-tools/src/handler.ts:211",
+    "packages/dsh-session-manager/src/trash.ts:58"
    ]
   },
   "dyn_import": {
    "src": 0,
-   "dev": 16,
+   "dev": 17,
    "evidence": []
   }
  },
  "has_apply": true,
- "files_scanned": 200,
+ "files_scanned": 190,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -134,7 +127,7 @@
   },
   {
    "id": "eval",
-   "evidence": "×8 src, e.g. packages/skin-gallery/src/custom-skin.js:98, packages/skin-gallery/src/custom-skin.js:98"
+   "evidence": "×9 src, e.g. packages/dsh-appearance-gallery/build.mjs:149, packages/dsh-appearance-gallery/lib/client.js:333"
   }
  ],
  "level": 3

@@ -2,14 +2,16 @@
  "repo": "kirkchinese/CiteCiter",
  "stars": 3,
  "description": "Selection-scoped explanation sidebar for DeepSeek Harness conversations",
- "pushed_at": "2026-08-17T17:19:41Z",
+ "pushed_at": "2026-08-18T15:29:34Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
   },
   "client": {
    "inject": [
+    "@deepseek-ai/dsh-api-gateway",
     "@deepseek-ai/dsh-client-runtime",
     "@deepseek-ai/dsh-client-ui-layout",
     "@deepseek-ai/dsh-client-ui-slots",
@@ -21,25 +23,45 @@
  "pkg_name": "citeciter-workspace",
  "deps": [
   "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-api-gateway",
   "@deepseek-ai/dsh-client-runtime",
   "@deepseek-ai/dsh-client-ui-layout",
+  "@deepseek-ai/dsh-client-ui-primitives",
   "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-commands",
+  "@deepseek-ai/dsh-permission-presets",
+  "@deepseek-ai/dsh-sandbox-policy",
+  "@deepseek-ai/dsh-session",
+  "@deepseek-ai/dsh-session-projection",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-typert-protocol",
   "react",
-  "@deepseek-ai/dsh-client-ui-primitives"
+  "zod"
  ],
  "install_scripts": {},
  "injects": [
+  "agents",
   "connection",
   "cordisInspect",
   "layout",
+  "remote",
   "sessions",
   "slots",
   "workspaces"
  ],
- "hooks": [],
+ "hooks": [
+  "agent/created",
+  "agent/disposed",
+  "session/event",
+  "system-prompt/assemble"
+ ],
  "tool_regs": 0,
  "domains": {},
  "env": {
+  "DSH_SESSION_ID": 1,
+  "DSH_WEB_URL": 1,
   "PLAYWRIGHT_PATH": 2
  },
  "behaviors": {
@@ -53,14 +75,19 @@
    ]
   },
   "eval": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/citeciter/lib/client.js:151"
+   ]
   },
   "base64_decode": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/citeciter/lib/client.js:1319",
+    "packages/citeciter/lib/client.js:1370"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -68,12 +95,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 3,
+   "src": 8,
    "dev": 0,
    "evidence": [
-    "packages/citeciter/dev/hmr-smoke.mjs:13",
-    "packages/citeciter/dev/seed-smoke-session.mjs:125",
-    "packages/citeciter/dev/seed-smoke-session.mjs:127"
+    "experiments/model-input-layering/capture-run.mjs:239",
+    "experiments/model-input-layering/capture-run.mjs:240",
+    "experiments/model-input-layering/capture-run.mjs:241",
+    "experiments/model-input-layering/capture-run.mjs:242",
+    "packages/citeciter/dev/hmr-smoke.mjs:13"
    ]
   },
   "dyn_import": {
@@ -81,12 +110,12 @@
    "dev": 0,
    "evidence": [
     "packages/citeciter/dev/hmr-smoke.mjs:4",
-    "packages/citeciter/dev/smoke.mjs:17"
+    "packages/citeciter/dev/smoke.mjs:5"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 61,
+ "files_scanned": 100,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -95,8 +124,20 @@
    "evidence": "./cordis.patch.yml"
   },
   {
+   "id": "prompt_surface",
+   "evidence": "system-prompt/assemble"
+  },
+  {
    "id": "exec",
    "evidence": "×3 src, e.g. packages/citeciter/dev/watch.mjs:1, packages/citeciter/dev/watch.mjs:5"
+  },
+  {
+   "id": "eval",
+   "evidence": "×1 src, e.g. packages/citeciter/lib/client.js:151"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. packages/citeciter/lib/client.js:1319, packages/citeciter/lib/client.js:1370"
   }
  ],
  "level": 3

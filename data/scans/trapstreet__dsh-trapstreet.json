@@ -2,8 +2,9 @@
  "repo": "trapstreet/dsh-trapstreet",
  "stars": 1,
  "description": "Check which DeepSeek Harness plugins actually loaded, and look up public evaluation boards on trapstreet.run",
- "pushed_at": "2026-08-17T20:27:42Z",
+ "pushed_at": "2026-08-18T21:04:08Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -20,19 +21,27 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 4,
+ "tool_regs": 6,
  "domains": {
   "trapstreet.run": 1
  },
  "env": {
   "TRAPSTREET_BASE_URL": 1,
-  "TRAPSTREET_CALL_LOG": 2
+  "TRAPSTREET_DIRECTORY_URL": 1,
+  "TRAPSTREET_CALL_LOG": 2,
+  "TRAPSTREET_DSH_VERSION": 1
  },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 6,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/index.js:10",
+    "lib/index.js:10",
+    "lib/index.js:239",
+    "lib/run.js:13",
+    "lib/run.js:80"
+   ]
   },
   "eval": {
    "src": 0,
@@ -50,11 +59,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 2,
+   "src": 5,
    "dev": 0,
    "evidence": [
-    "lib/index.js:120",
-    "lib/index.js:121"
+    "lib/index.js:182",
+    "lib/index.js:183",
+    "lib/run.js:14",
+    "lib/run.js:66",
+    "lib/run.js:75"
    ]
   },
   "dyn_import": {
@@ -64,14 +76,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 3,
+ "files_scanned": 5,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×6 src, e.g. lib/index.js:10, lib/index.js:10"
   }
  ],
- "level": 2
+ "level": 3
 }

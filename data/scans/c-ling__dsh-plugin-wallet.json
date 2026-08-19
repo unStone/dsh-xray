@@ -2,8 +2,9 @@
  "repo": "c-ling/dsh-plugin-wallet",
  "stars": 1,
  "description": "DeepSeek Harness 钱包插件：查看 DeepSeek 官方 API 余额，并在会话维度估算 token 消费金额。",
- "pushed_at": "2026-08-17T11:14:18Z",
+ "pushed_at": "2026-08-18T16:39:19Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "client": {
    "platform": "web",
@@ -12,7 +13,10 @@
   }
  },
  "pkg_name": "dsh-plugin-wallet",
- "deps": [],
+ "deps": [
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
+ ],
  "install_scripts": {},
  "injects": [
   "credentials",
@@ -29,10 +33,11 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "platform.deepseek.com": 1,
-  "api.deepseek.com": 2
+  "api.deepseek.com": 5,
+  "platform.deepseek.com": 1
  },
  "env": {
+  "DSH_HOME": 1,
   "DEEPSEEK_BASE_URL": 3
  },
  "behaviors": {
@@ -57,9 +62,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 2,
+   "dev": 2,
+   "evidence": [
+    "lib/index.js:39",
+    "lib/index.js:148"
+   ]
   },
   "dyn_import": {
    "src": 0,

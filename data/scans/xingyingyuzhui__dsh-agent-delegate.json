@@ -2,8 +2,9 @@
  "repo": "xingyingyuzhui/dsh-agent-delegate",
  "stars": 0,
  "description": "Delegation broker for DeepSeek Harness. 委派深度、角色、worktree。",
- "pushed_at": "2026-08-18T07:40:28Z",
+ "pushed_at": "2026-08-18T15:14:15Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -18,23 +19,26 @@
   "tools"
  ],
  "hooks": [
+  "agent/session-start",
   "subagent/end",
   "tools/execute",
   "tools/pre-execute"
  ],
- "tool_regs": 0,
+ "tool_regs": 2,
  "domains": {},
  "env": {
   "DSH_HOME": 1
  },
  "behaviors": {
   "exec": {
-   "src": 3,
-   "dev": 26,
+   "src": 6,
+   "dev": 43,
    "evidence": [
+    "delegate-deliver.mjs:3",
+    "delegate-deliver.mjs:3",
+    "delegate-deliver.mjs:18",
     "delegate-worktree.mjs:3",
-    "delegate-worktree.mjs:3",
-    "delegate-worktree.mjs:10"
+    "delegate-worktree.mjs:3"
    ]
   },
   "eval": {
@@ -53,14 +57,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 8,
-   "dev": 5,
+   "src": 12,
+   "dev": 16,
    "evidence": [
-    "delegate-store.mjs:1",
-    "delegate-store.mjs:1",
-    "delegate-store.mjs:94",
-    "delegate-store.mjs:102",
-    "delegate-store.mjs:112"
+    "delegate-deliver.mjs:1",
+    "delegate-deliver.mjs:72",
+    "delegate-store.mjs:2",
+    "delegate-store.mjs:2",
+    "delegate-store.mjs:99"
    ]
   },
   "dyn_import": {
@@ -70,7 +74,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 20,
+ "files_scanned": 22,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -84,7 +88,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×3 src, e.g. delegate-worktree.mjs:3, delegate-worktree.mjs:3"
+   "evidence": "×6 src, e.g. delegate-deliver.mjs:3, delegate-deliver.mjs:3"
   }
  ],
  "level": 3

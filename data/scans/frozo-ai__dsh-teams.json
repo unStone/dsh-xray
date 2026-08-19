@@ -2,8 +2,9 @@
  "repo": "frozo-ai/dsh-teams",
  "stars": 0,
  "description": "Team access for the DeepSeek Harness (dsh) web UI — login wall + HTTP/WebSocket reverse proxy. Zero dependencies.",
- "pushed_at": "2026-08-17T15:58:56Z",
+ "pushed_at": "2026-08-18T12:48:54Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-teams",
  "deps": [],
@@ -11,13 +12,23 @@
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
+ "domains": {
+  "accounts.google.com": 1,
+  "your.host": 1
+ },
  "env": {
   "DSH_TEAMS_HOME": 1,
   "DSH_TEAMS_PORT": 1,
   "DSH_TEAMS_HOST": 1,
   "DSH_UPSTREAM_PORT": 1,
-  "DSH_UPSTREAM_HOST": 1
+  "DSH_UPSTREAM_HOST": 1,
+  "DSH_TEAMS_OIDC_ISSUER": 3,
+  "DSH_TEAMS_OIDC_CLIENT_ID": 1,
+  "DSH_TEAMS_OIDC_CLIENT_SECRET": 1,
+  "DSH_TEAMS_OIDC_REDIRECT_URI": 1,
+  "DSH_TEAMS_OIDC_ALLOWED_DOMAINS": 1,
+  "DSH_TEAMS_OIDC_ALLOWED_EMAILS": 1,
+  "DSH_TEAMS_OIDC_LABEL": 1
  },
  "behaviors": {
   "exec": {
@@ -37,9 +48,9 @@
   },
   "net_server": {
    "src": 1,
-   "dev": 2,
+   "dev": 6,
    "evidence": [
-    "src/server.mjs:41"
+    "src/server.mjs:59"
    ]
   },
   "fs_write": {
@@ -59,13 +70,17 @@
   }
  },
  "has_apply": false,
- "files_scanned": 4,
+ "files_scanned": 6,
  "has_skill_md": false,
  "type": "other",
  "flags": [
   {
    "id": "net_server",
-   "evidence": "×1 src, e.g. src/server.mjs:41"
+   "evidence": "×1 src, e.g. src/server.mjs:59"
+  },
+  {
+   "id": "token_env",
+   "evidence": "DSH_TEAMS_OIDC_CLIENT_SECRET"
   }
  ],
  "level": 2

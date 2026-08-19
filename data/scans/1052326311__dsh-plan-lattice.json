@@ -1,9 +1,10 @@
 {
  "repo": "1052326311/dsh-plan-lattice",
- "stars": 1,
+ "stars": 2,
  "description": "Execution-time drift firewall for long-running DeepSeek Harness agents. Real-Harness tests: unsafe stale mutations 12/12 native -> 0/12; valid controls 7/7 both; post-SIGKILL unsafe continuation 2/2 -",
- "pushed_at": "2026-08-18T04:42:51Z",
+ "pushed_at": "2026-08-19T02:40:21Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -14,6 +15,12 @@
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/dsh-user-questions",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-agent",
+  "@deepseek-ai/dsh-compaction",
+  "@deepseek-ai/dsh-llm",
+  "@deepseek-ai/dsh-session",
   "@deepseek-ai/dsh-user-questions",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-agent",
@@ -44,27 +51,27 @@
  ],
  "tool_regs": 72,
  "domains": {
-  "api.deepseek.com": 2,
+  "api.deepseek.com": 3,
   "api.github.com": 7,
   "data.gharchive.org": 1
  },
  "env": {
   "DSH_HOME": 1,
-  "PLAN_LATTICE_PILOT_HOST_RUNTIME": 2,
+  "PLAN_LATTICE_PILOT_HOST_RUNTIME": 3,
   "PLAN_LATTICE_PILOT_PLUGIN_PACKAGE": 1,
-  "PLAN_LATTICE_PILOT_OUTPUT": 2,
-  "DEEPSEEK_API_KEY": 6,
-  "DEEPSEEK_BASE_URL": 6,
-  "PLAN_LATTICE_CREDENTIAL_PROXY": 4,
+  "PLAN_LATTICE_PILOT_OUTPUT": 3,
+  "DEEPSEEK_API_KEY": 8,
+  "DEEPSEEK_BASE_URL": 8,
+  "PLAN_LATTICE_CREDENTIAL_PROXY": 5,
   "PLAN_LATTICE_PILOT_RUNTIME": 1,
-  "PLAN_LATTICE_PILOT_CANDIDATE_COMMIT": 1,
-  "PLAN_LATTICE_PILOT_HOST_RUNTIME_SHA256": 1,
+  "PLAN_LATTICE_PILOT_CANDIDATE_COMMIT": 2,
+  "PLAN_LATTICE_PILOT_HOST_RUNTIME_SHA256": 2,
   "PLAN_LATTICE_ICAE_DOCKER_HOST": 3,
   "ICAE_EVAL_ROOT": 4,
   "PLAN_LATTICE_PILOT_PYTHON": 1,
-  "PLAN_LATTICE_PILOT_ARTIFACTS_ROOT": 1,
-  "PLAN_LATTICE_PILOT_ARMS": 1,
-  "PLAN_LATTICE_ORACLE_MODEL_PROXY_TOKEN": 5,
+  "PLAN_LATTICE_PILOT_ARTIFACTS_ROOT": 2,
+  "PLAN_LATTICE_PILOT_ARMS": 2,
+  "PLAN_LATTICE_ORACLE_MODEL_PROXY_TOKEN": 6,
   "PLAN_LATTICE_ICAE_PILOT_RUNTIME": 1,
   "DEEPSEEK_HARNESS_ROOT": 3,
   "HARBOR_ROOT": 3,
@@ -90,18 +97,21 @@
   "PLAN_LATTICE_V14_RUNTIME_ARTIFACT_ROOT": 1,
   "PLAN_LATTICE_V13_ARCHIVE_CACHE": 1,
   "ROUTER_RUNTIME_COMMIT": 1,
-  "DSH_PLAN_LATTICE_EVAL_SESSION_ID": 3,
+  "DSH_PLAN_LATTICE_EVAL_SESSION_ID": 4,
   "DSH_PLAN_LATTICE_SESSION_ROOT": 2,
-  "DSH_PLAN_LATTICE_ICAE_CONTAINER_ID": 2,
-  "PYTHONPATH": 1,
-  "DSH_PLAN_LATTICE_ORACLE_AUDIT_PATH": 1,
-  "DSH_PLAN_LATTICE_ORACLE_POLICY": 2,
-  "DSH_PLAN_LATTICE_ORACLE_URL": 2
+  "DSH_PLAN_LATTICE_ICAE_CONTAINER_ID": 4,
+  "DSH_PLAN_LATTICE_ORACLE_AUDIT_PATH": 2,
+  "DSH_PLAN_LATTICE_ORACLE_POLICY": 4,
+  "DSH_PLAN_LATTICE_EVAL_RECOVERY_EPOCH": 1,
+  "DSH_PLAN_LATTICE_EVAL_STAGE_JSON": 1,
+  "DSH_PLAN_LATTICE_EVAL_STAGE_INDEX": 1,
+  "DSH_PLAN_LATTICE_ORACLE_URL": 4,
+  "PYTHONPATH": 1
  },
  "behaviors": {
   "exec": {
-   "src": 187,
-   "dev": 71,
+   "src": 203,
+   "dev": 77,
    "evidence": [
     "demo/crash-continuity-benchmark.mjs:4",
     "demo/crash-continuity-benchmark.mjs:46",
@@ -116,7 +126,7 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 12,
+   "src": 15,
    "dev": 2,
    "evidence": [
     "eval/v0.4/run.mjs:120",
@@ -127,16 +137,19 @@
    ]
   },
   "net_server": {
-   "src": 2,
-   "dev": 9,
+   "src": 6,
+   "dev": 12,
    "evidence": [
-    "eval/v0.4/driver/model-proxy.mjs:114",
-    "eval/v0.4/driver/model-proxy.mjs:315"
+    "eval/long-system/driver/model-proxy.mjs:115",
+    "eval/long-system/driver/model-proxy.mjs:321",
+    "eval/pilots/driver/budget-proxy.mjs:85",
+    "eval/pilots/driver/budget-proxy.mjs:156",
+    "eval/v0.4/driver/model-proxy.mjs:114"
    ]
   },
   "fs_write": {
-   "src": 193,
-   "dev": 195,
+   "src": 206,
+   "dev": 202,
    "evidence": [
     "demo/crash-continuity-benchmark.mjs:180",
     "demo/crash-continuity-benchmark.mjs:181",
@@ -146,7 +159,7 @@
    ]
   },
   "dyn_import": {
-   "src": 17,
+   "src": 19,
    "dev": 81,
    "evidence": [
     "scripts/train-router-model.mjs:18",
@@ -158,7 +171,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 275,
+ "files_scanned": 298,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -168,15 +181,15 @@
   },
   {
    "id": "exec",
-   "evidence": "×187 src, e.g. demo/crash-continuity-benchmark.mjs:4, demo/crash-continuity-benchmark.mjs:46"
+   "evidence": "×203 src, e.g. demo/crash-continuity-benchmark.mjs:4, demo/crash-continuity-benchmark.mjs:46"
   },
   {
    "id": "base64_decode",
-   "evidence": "×12 src, e.g. eval/v0.4/run.mjs:120, prospective/model-rc4-study/attempt-persistence.mjs:414"
+   "evidence": "×15 src, e.g. eval/v0.4/run.mjs:120, prospective/model-rc4-study/attempt-persistence.mjs:414"
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. eval/v0.4/driver/model-proxy.mjs:114, eval/v0.4/driver/model-proxy.mjs:315"
+   "evidence": "×6 src, e.g. eval/long-system/driver/model-proxy.mjs:115, eval/long-system/driver/model-proxy.mjs:321"
   },
   {
    "id": "token_env",

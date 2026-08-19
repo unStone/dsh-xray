@@ -2,8 +2,9 @@
  "repo": "tuanmaoOVO/dsh-memory-manager",
  "stars": 2,
  "description": "dsh的记忆管理",
- "pushed_at": "2026-08-15T04:58:41Z",
+ "pushed_at": "2026-08-19T02:22:00Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -19,6 +20,7 @@
  },
  "pkg_name": "@dsh-external/dsh-memory-manager",
  "deps": [
+  "schemastery",
   "@deepseek-ai/dsh-agent",
   "@deepseek-ai/dsh-client-runtime",
   "@deepseek-ai/dsh-client-ui-settings",
@@ -31,8 +33,7 @@
   "@deepseek-ai/dsh-system-prompt",
   "@deepseek-ai/dsh-tools",
   "cordis",
-  "react",
-  "schemastery"
+  "react"
  ],
  "install_scripts": {},
  "injects": [
@@ -46,7 +47,9 @@
  ],
  "tool_regs": 6,
  "domains": {},
- "env": {},
+ "env": {
+  "DSH_HOME": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -73,10 +76,10 @@
    "dev": 0,
    "evidence": [
     "lib/index.js:7",
-    "lib/index.js:15",
     "lib/index.js:18",
     "lib/index.js:21",
-    "lib/index.js:117"
+    "lib/index.js:24",
+    "lib/index.js:120"
    ]
   },
   "dyn_import": {

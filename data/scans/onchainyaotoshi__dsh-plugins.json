@@ -2,8 +2,9 @@
  "repo": "onchainyaotoshi/dsh-plugins",
  "stars": 0,
  "description": "Monorepo plugin DeepSeek Harness: dsh-file-explorer — panel file tree + viewer workspace di Web UI",
- "pushed_at": "2026-08-17T12:59:45Z",
+ "pushed_at": "2026-08-18T21:34:48Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -17,6 +18,9 @@
  },
  "pkg_name": "dsh-plugins",
  "deps": [
+  "react",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
   "react",
   "@deepseek-ai/cordis",
   "@deepseek-ai/dsh-fs",
@@ -62,9 +66,13 @@
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:20",
+    "packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:20",
+    "packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:57"
+   ]
   },
   "eval": {
    "src": 0,
@@ -82,9 +90,12 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:21",
+    "packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:95"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -93,14 +104,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 13,
+ "files_scanned": 17,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×3 src, e.g. packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:20, packages/dsh-copy-link-sesi/scripts/apply-patch.mjs:20"
   }
  ],
- "level": 2
+ "level": 3
 }

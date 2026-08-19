@@ -1,10 +1,14 @@
 {
  "repo": "X-C1811/dsh-web-search-plugin",
- "stars": 1,
+ "stars": 2,
  "description": "Tavily web-search provider for DeepSeek Harness (ctx.web). Keyless or API-key modes with a configurable UI card; provider framework designed to be extended to more search APIs.",
- "pushed_at": "2026-08-18T08:36:42Z",
+ "pushed_at": "2026-08-18T15:02:17Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
   "client": {
    "platform": "web",
    "inject": [
@@ -19,6 +23,7 @@
  },
  "pkg_name": "dsh-web-search-plugin",
  "deps": [
+  "undici",
   "@deepseek-ai/dsh-web",
   "@deepseek-ai/dsh-credentials",
   "@deepseek-ai/dsh-settings",
@@ -38,9 +43,13 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "api.tavily.com": 2
+  "api.search.brave.com": 1,
+  "api.deepseek.com": 1,
+  "api.tavily.com": 1
  },
- "env": {},
+ "env": {
+  "DSH_HOME": 1
+ },
  "behaviors": {
   "exec": {
    "src": 0,
@@ -63,9 +72,11 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "lib/usage.js:341"
+   ]
   },
   "dyn_import": {
    "src": 0,
@@ -74,9 +85,14 @@
   }
  },
  "has_apply": true,
- "files_scanned": 2,
+ "files_scanned": 7,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

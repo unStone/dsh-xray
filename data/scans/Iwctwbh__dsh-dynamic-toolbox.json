@@ -2,8 +2,9 @@
  "repo": "Iwctwbh/dsh-dynamic-toolbox",
  "stars": 3,
  "description": "Dynamic Cordis plugin toolbox for DeepSeek Harness — 1 framework + 28 tools, hot-reload from disk.",
- "pushed_at": "2026-08-17T15:37:00Z",
+ "pushed_at": "2026-08-19T01:01:55Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": null,
  "pkg_name": "dsh-toolbox-bootstrap",
  "deps": [],
@@ -33,6 +34,9 @@
   "your-team.atlassian.net": 2
  },
  "env": {
+  "DSH_INSTALL_ROOT": 2,
+  "PREFIX": 2,
+  "ProgramFiles": 2,
   "GEN_REQ": 1,
   "HTTP_REQ": 1,
   "JIRA_BASE_URL": 3,
@@ -47,7 +51,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 39,
+   "src": 41,
    "dev": 0,
    "evidence": [
     "make-payloads.mjs:73",
@@ -58,14 +62,14 @@
    ]
   },
   "eval": {
-   "src": 23,
+   "src": 26,
    "dev": 0,
    "evidence": [
     "loader.js:15",
     "make-payloads.mjs:174",
     "make-payloads.mjs:186",
     "make-payloads.mjs:195",
-    "make-payloads.mjs:208"
+    "make-payloads.mjs:245"
    ]
   },
   "base64_decode": {
@@ -85,20 +89,24 @@
    "dev": 0,
    "evidence": [
     "make-payloads.mjs:10",
-    "make-payloads.mjs:260",
-    "make-payloads.mjs:273",
-    "make-payloads.mjs:277",
+    "make-payloads.mjs:301",
+    "make-payloads.mjs:314",
+    "make-payloads.mjs:318",
     "smoke.mjs:5"
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 3,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "smoke/sim-rc7-composition.cjs:65",
+    "smoke/sim-rc7-composition.cjs:66",
+    "smoke/sim-rc7-composition.cjs:67"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 43,
+ "files_scanned": 48,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -112,11 +120,11 @@
   },
   {
    "id": "exec",
-   "evidence": "×39 src, e.g. make-payloads.mjs:73, smoke.mjs:4"
+   "evidence": "×41 src, e.g. make-payloads.mjs:73, smoke.mjs:4"
   },
   {
    "id": "eval",
-   "evidence": "×23 src, e.g. loader.js:15, make-payloads.mjs:174"
+   "evidence": "×26 src, e.g. loader.js:15, make-payloads.mjs:174"
   },
   {
    "id": "base64_decode",

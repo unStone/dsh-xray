@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>StarPivotNet/dsh-plugins-public — capability card (C3) · dsh-xray</title>
-<meta name="description" content="StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
+<meta name="description" content="StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/StarPivotNet__dsh-plugins-public.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="StarPivotNet/dsh-plugins-public — dsh plugin capability card">
-<meta property="og:description" content="StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/StarPivotNet__dsh-plugins-public.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins-public", "identifier": "StarPivotNet/dsh-plugins-public", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/StarPivotNet/dsh-plugins-public", "url": "https://unstone.github.io/dsh-xray/p/StarPivotNet__dsh-plugins-public.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins-public", "identifier": "StarPivotNet/dsh-plugins-public", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/StarPivotNet/dsh-plugins-public", "url": "https://unstone.github.io/dsh-xray/p/StarPivotNet__dsh-plugins-public.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,11 +47,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/StarPivotNet/dsh-plugins-public" rel="nofollow ugc">StarPivotNet/dsh-plugins-public source on GitHub</a>
      · <a href="../registry.html#StarPivotNet__dsh-plugins-public">this plugin in the registry</a></p>
-  <p>StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 src, e.g. packages/better-sidebar/src/agent-pty.ts:111, packages/better-sidebar/src/agent-pty.ts:219</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. packages/better-sidebar/src/client/editor-load.ts:39</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>commandUi</span> <span>connection</span> <span>invariants</span> <span>loader</span> <span>locale</span> <span>modules</span> <span>profile</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>tools</span> <span>webRuntime</span> <span>webServer</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
-  
+  <p>StarPivotNet/dsh-plugins-public is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×32 src, e.g. packages/agent-teams/lib/index.js:64, packages/agent-teams/lib/report-issue.js:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 src, e.g. packages/better-sidebar/src/client/editor-load.ts:39</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commandUi</span> <span>connection</span> <span>conversationEvents</span> <span>invariants</span> <span>llm</span> <span>loader</span> <span>locale</span> <span>modules</span> <span>profile</span> <span>remote</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span> <span>webRuntime</span> <span>webServer</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>internal/service</span> <span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_MARKETPLACE_REBOOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

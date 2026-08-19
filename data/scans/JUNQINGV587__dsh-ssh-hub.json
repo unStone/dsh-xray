@@ -2,8 +2,9 @@
  "repo": "JUNQINGV587/dsh-ssh-hub",
  "stars": 0,
  "description": "Multi-server SSH terminal panel for DeepSeek Harness Web GUI — multiple SSH terminals in a bottom panel",
- "pushed_at": "2026-08-18T06:51:50Z",
+ "pushed_at": "2026-08-18T15:00:00Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -22,7 +23,9 @@
   "@xterm/addon-web-links",
   "@xterm/xterm",
   "ssh2",
-  "ws"
+  "ws",
+  "@deepseek-ai/dsh-settings",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
  "injects": [
@@ -58,7 +61,7 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 2,
+   "dev": 4,
    "evidence": []
   },
   "fs_write": {
@@ -66,7 +69,7 @@
    "dev": 2,
    "evidence": [
     "build.mjs:15",
-    "build.mjs:96",
+    "build.mjs:146",
     "lib/index.js:14",
     "lib/index.js:65",
     "src/host/store.ts:15"
@@ -79,7 +82,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 10,
+ "files_scanned": 13,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

@@ -1,9 +1,10 @@
 {
  "repo": "lusblead/dsh-Kingdom",
- "stars": 1,
- "description": "独立 dsh 插件：安装后在 DSH 会话中初始化/接入本地王国（Phase 1+2 FROZEN，Claim != Fact 治理闭环）",
- "pushed_at": "2026-08-18T09:19:43Z",
+ "stars": 6,
+ "description": "在 DSH 中建立属于你的 Agent 王国——让 Agent 拥有角色、权限、领地与治理秩序，并通过事实验证机制与权威账本，让每一次执行、声明与裁决都可核验、可追溯。",
+ "pushed_at": "2026-08-18T14:58:25Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -14,7 +15,7 @@
   "@deepseek-ai/dsh-commands",
   "@deepseek-ai/dsh-llm",
   "@deepseek-ai/dsh-tools",
-  "cordis",
+  "@deepseek-ai/cordis",
   "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
@@ -23,9 +24,10 @@
   "tools"
  ],
  "hooks": [],
- "tool_regs": 30,
+ "tool_regs": 36,
  "domains": {},
  "env": {
+  "P3_SMOKE_PORT": 1,
   "DSH_HOME": 1
  },
  "behaviors": {
@@ -53,7 +55,7 @@
   },
   "fs_write": {
    "src": 7,
-   "dev": 0,
+   "dev": 3,
    "evidence": [
     "scripts/hotplug-audit.mjs:9",
     "scripts/hotplug-audit.mjs:34",
@@ -75,7 +77,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 17,
+ "files_scanned": 23,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [

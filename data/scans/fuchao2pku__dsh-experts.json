@@ -1,0 +1,97 @@
+{
+ "repo": "fuchao2pku/dsh-experts",
+ "stars": 0,
+ "description": "DSH Expert Marketplace — browse & install community experts/expert groups from the Web UI Settings. Out-of-tree DSH plugin.",
+ "pushed_at": "2026-08-18T15:26:01Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "platform": "web",
+   "inject": [
+    "@deepseek-ai/dsh-client-connection",
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-client-locale",
+    "@deepseek-ai/dsh-client-ui-settings",
+    "@deepseek-ai/dsh-client-ui-theme"
+   ]
+  }
+ },
+ "pkg_name": "dsh-experts",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-connection",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-locale",
+  "@deepseek-ai/dsh-client-ui-settings",
+  "@deepseek-ai/dsh-client-ui-theme",
+  "@deepseek-ai/dsh-client-ui-primitives",
+  "@deepseek-ai/dsh-host-webserver",
+  "@deepseek-ai/dsh-system-prompt",
+  "@deepseek-ai/dsh-tools",
+  "react"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools",
+  "webServer"
+ ],
+ "hooks": [],
+ "tool_regs": 5,
+ "domains": {},
+ "env": {},
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/host.js:16",
+    "src/host.js:188"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 1,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 8,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt, webServer"
+  }
+ ],
+ "level": 2
+}

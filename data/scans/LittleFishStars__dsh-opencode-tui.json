@@ -2,8 +2,9 @@
  "repo": "LittleFishStars/dsh-opencode-tui",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-18T09:17:06Z",
+ "pushed_at": "2026-08-18T14:55:58Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -123,8 +124,8 @@
   "swagger.io": 2
  },
  "env": {
-  "DSH_HOME": 10,
-  "DSH_OPENCODE_SESSION_ROOT": 4,
+  "DSH_HOME": 16,
+  "DSH_OPENCODE_SESSION_ROOT": 14,
   "DSH_OC_DEBUG": 2,
   "DSH_BRIDGE": 2,
   "DSH_OPENCODE_TUI_SERVER_PORT": 4,
@@ -172,14 +173,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 29,
+   "src": 33,
    "dev": 0,
    "evidence": [
+    "lib/oc-server.js:350",
+    "lib/oc-server.js:407",
     "lib/plugin.js:13",
-    "lib/plugin.js:258",
-    "src/oc-server.ts:19",
-    "src/plugin.ts:13",
-    "src/plugin.ts:301"
+    "lib/plugin.js:262",
+    "src/oc-server.ts:19"
    ]
   },
   "eval": {
@@ -202,20 +203,20 @@
    "src": 3,
    "dev": 0,
    "evidence": [
-    "lib/oc-server.js:76",
-    "src/oc-server.ts:120",
+    "lib/oc-server.js:81",
+    "src/oc-server.ts:125",
     "scripts/tools/record-server.cjs:90"
    ]
   },
   "fs_write": {
-   "src": 17,
+   "src": 21,
    "dev": 0,
    "evidence": [
     "lib/logging.js:4",
     "lib/logging.js:14",
     "lib/plugin.js:14",
-    "lib/plugin.js:123",
-    "src/logging.ts:4"
+    "lib/plugin.js:127",
+    "lib/title-cache.js:11"
    ]
   },
   "dyn_import": {
@@ -237,7 +238,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×29 src, e.g. lib/plugin.js:13, lib/plugin.js:258"
+   "evidence": "×33 src, e.g. lib/oc-server.js:350, lib/oc-server.js:407"
   },
   {
    "id": "eval",
@@ -249,7 +250,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×3 src, e.g. lib/oc-server.js:76, src/oc-server.ts:120"
+   "evidence": "×3 src, e.g. lib/oc-server.js:81, src/oc-server.ts:125"
   },
   {
    "id": "token_env",

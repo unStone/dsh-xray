@@ -1,9 +1,10 @@
 {
  "repo": "JUANWANG-BUAA/dsh-full-remote",
  "stars": 15,
- "description": "DeepSeek Harness plugin for remote access: a token-gated reverse proxy keeps settings, credentials, and file access working over public tunnels and on other devices instead of returning 403. Per-devic",
- "pushed_at": "2026-08-18T04:15:05Z",
+ "description": "Auditable, token-gated DeepSeek Harness remote gateway: mobile QR access, per-device sessions, Host/Origin rewrite, settings/credentials/directory support.",
+ "pushed_at": "2026-08-18T11:33:16Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -38,18 +39,22 @@
  "tool_regs": 0,
  "domains": {},
  "env": {
-  "HARNESS_DIR": 1,
+  "HARNESS_DIR": 2,
+  "PATH_DELIMITER": 1,
+  "EXTRA_PATCHES": 1,
+  "DSH_FULL_REMOTE_USE_NATIVE_PICKER": 1,
   "PORT": 1,
-  "DSH_HOME": 3
+  "PACK_PLUGIN": 1,
+  "DSH_HOME": 4
  },
  "behaviors": {
   "exec": {
    "src": 9,
    "dev": 3,
    "evidence": [
-    "scripts/bootstrap.mjs:15",
-    "scripts/bootstrap.mjs:15",
-    "scripts/bootstrap.mjs:29",
+    "scripts/bootstrap.mjs:10",
+    "scripts/bootstrap.mjs:10",
+    "scripts/bootstrap.mjs:24",
     "scripts/capture-screenshots.ts:7",
     "scripts/capture-screenshots.ts:231"
    ]
@@ -68,16 +73,17 @@
    ]
   },
   "net_server": {
-   "src": 2,
-   "dev": 33,
+   "src": 3,
+   "dev": 35,
    "evidence": [
+    "scripts/browser-smoke.mjs:16",
     "scripts/capture-screenshots.ts:215",
-    "src/proxy.ts:727"
+    "src/proxy.ts:640"
    ]
   },
   "fs_write": {
-   "src": 10,
-   "dev": 11,
+   "src": 11,
+   "dev": 14,
    "evidence": [
     "scripts/capture-screenshots.ts:155",
     "scripts/capture-screenshots.ts:163",
@@ -87,15 +93,16 @@
    ]
   },
   "dyn_import": {
-   "src": 1,
+   "src": 2,
    "dev": 0,
    "evidence": [
+    "scripts/browser-smoke.mjs:14",
     "scripts/capture-screenshots.ts:209"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 46,
+ "files_scanned": 53,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -105,7 +112,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×9 src, e.g. scripts/bootstrap.mjs:15, scripts/bootstrap.mjs:15"
+   "evidence": "×9 src, e.g. scripts/bootstrap.mjs:10, scripts/bootstrap.mjs:10"
   },
   {
    "id": "base64_decode",
@@ -113,7 +120,7 @@
   },
   {
    "id": "net_server",
-   "evidence": "×2 src, e.g. scripts/capture-screenshots.ts:215, src/proxy.ts:727"
+   "evidence": "×3 src, e.g. scripts/browser-smoke.mjs:16, scripts/capture-screenshots.ts:215"
   }
  ],
  "level": 3

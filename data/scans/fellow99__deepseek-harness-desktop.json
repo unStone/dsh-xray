@@ -1,0 +1,95 @@
+{
+ "repo": "fellow99/deepseek-harness-desktop",
+ "stars": 1,
+ "description": "An Electron-based desktop wrapper for deepseek-harness.",
+ "pushed_at": "2026-08-19T01:55:06Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "profile": {
+   "bundles": [
+    "@deepseek-ai/dsh-base",
+    "@deepseek-ai/dsh-web-app"
+   ]
+  }
+ },
+ "pkg_name": "deepseek-harness-desktop",
+ "deps": [
+  "electron-squirrel-startup"
+ ],
+ "install_scripts": {},
+ "injects": [],
+ "hooks": [
+  "agent/error",
+  "agent/status",
+  "session/event"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "www.electronforge.io": 1
+ },
+ "env": {
+  "npm_config_confirm_modules_purge": 1,
+  "COREPACK_ENABLE_DOWNLOAD_PROMPT": 1,
+  "DSH_HOME": 3,
+  "DSH_DISABLE_HMR": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-dsh.mjs:8",
+    "scripts/build-dsh.mjs:8",
+    "scripts/build-dsh.mjs:27",
+    "scripts/build-dsh.mjs:33",
+    "scripts/collect-dsh.mjs:13"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 7,
+   "dev": 0,
+   "evidence": [
+    "scripts/build-dsh.mjs:9",
+    "scripts/build-dsh.mjs:50",
+    "scripts/collect-dsh.mjs:14",
+    "scripts/collect-dsh.mjs:48",
+    "scripts/collect-dsh.mjs:172"
+   ]
+  },
+  "dyn_import": {
+   "src": 2,
+   "dev": 0,
+   "evidence": [
+    "src/main/host.ts:191",
+    "src/main/host.ts:192"
+   ]
+  }
+ },
+ "has_apply": false,
+ "files_scanned": 16,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "exec",
+   "evidence": "×7 src, e.g. scripts/build-dsh.mjs:8, scripts/build-dsh.mjs:8"
+  }
+ ],
+ "level": 2
+}

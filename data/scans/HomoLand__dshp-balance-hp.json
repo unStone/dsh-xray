@@ -2,14 +2,26 @@
  "repo": "HomoLand/dshp-balance-hp",
  "stars": 0,
  "description": "",
- "pushed_at": "2026-08-15T20:28:01Z",
+ "pushed_at": "2026-08-18T17:03:10Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
-  "type": "plugin",
-  "kind": "web-client"
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime",
+    "@deepseek-ai/dsh-api-remotes",
+    "@deepseek-ai/dsh-client-connection"
+   ],
+   "platform": "web"
+  }
  },
  "pkg_name": "dshp-balance-hp",
- "deps": [],
+ "deps": [
+  "@deepseek-ai/dsh-typert-protocol"
+ ],
  "install_scripts": {},
  "injects": [
   "timer"
@@ -17,7 +29,7 @@
  "hooks": [],
  "tool_regs": 0,
  "domains": {
-  "api.deepseek.com": 2
+  "api.deepseek.com": 3
  },
  "env": {},
  "behaviors": {
@@ -53,9 +65,14 @@
   }
  },
  "has_apply": true,
- "files_scanned": 5,
+ "files_scanned": 7,
  "has_skill_md": false,
  "type": "plugin",
- "flags": [],
- "level": 1
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  }
+ ],
+ "level": 2
 }

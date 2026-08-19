@@ -1,9 +1,10 @@
 {
  "repo": "Js2Hou/dsh-mcp-manager",
- "stars": 5,
+ "stars": 6,
  "description": "用于 DeepSeek Harness 的 MCP 可视化管理插件：在「设置 → MCP」中查看已安装/启用的 MCP 服务器，支持增删、启用/停用，并实时查看连接状态。",
- "pushed_at": "2026-08-17T07:19:53Z",
+ "pushed_at": "2026-08-18T14:29:38Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -33,8 +34,12 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
- "env": {},
+ "domains": {
+  "api.github.com": 2
+ },
+ "env": {
+  "GITHUB_TOKEN": 4
+ },
  "behaviors": {
   "exec": {
    "src": 3,
@@ -61,7 +66,7 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 10,
+   "src": 12,
    "dev": 0,
    "evidence": [
     "lib/index.js:9",
@@ -78,7 +83,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 17,
+ "files_scanned": 18,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -89,6 +94,10 @@
   {
    "id": "exec",
    "evidence": "×3 src, e.g. scripts/build.mjs:20, scripts/build.mjs:20"
+  },
+  {
+   "id": "token_env",
+   "evidence": "GITHUB_TOKEN"
   }
  ],
  "level": 3

@@ -1,15 +1,12 @@
 {
  "repo": "nexu-io/open-design",
- "stars": 88631,
+ "stars": 88965,
  "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, sli",
- "pushed_at": "2026-08-18T09:11:48Z",
+ "pushed_at": "2026-08-19T03:00:10Z",
  "status": "ok",
- "manifest": {
-  "bundle": {
-   "patch": "./cordis.patch.yml"
-  }
- },
- "pkg_name": "open-design",
+ "first_seen": "2026-08-19",
+ "manifest": null,
+ "pkg_name": "@open-design/daemon",
  "deps": [
   "@babel/parser",
   "@modelcontextprotocol/sdk",
@@ -94,57 +91,9 @@
   "react",
   "react-dom",
   "shiki",
-  "three",
-  "@open-design/contracts",
-  "react",
-  "@open-design/release",
-  "zod",
-  "jszip",
-  "@open-design/platform",
-  "@deepseek-ai/dsh-cmdline",
-  "commander",
-  "@deepseek-ai/cordis",
-  "@deepseek-ai/cordis-plugin-loader",
-  "@deepseek-ai/dsh-agent",
-  "@deepseek-ai/dsh-agent-default-model",
-  "@deepseek-ai/dsh-invariants",
-  "@deepseek-ai/dsh-llm",
-  "@deepseek-ai/dsh-session",
-  "@open-design/release",
-  "@open-design/release",
-  "@open-design/sidecar-proto",
-  "zod",
-  "@open-design/contracts",
-  "zod",
-  "zod",
-  "@open-design/release",
-  "@open-design/platform",
-  "@open-design/sidecar",
-  "@open-design/sidecar-proto",
-  "cac",
-  "@electron/notarize",
-  "@electron/rebuild",
-  "@open-design/launcher-proto",
-  "@open-design/platform",
-  "@open-design/release",
-  "@open-design/sidecar",
-  "@open-design/sidecar-proto",
-  "cac",
-  "electron-builder",
-  "resedit",
-  "@open-design/launcher-proto",
-  "@open-design/release",
-  "cac",
-  "yaml",
-  "@open-design/release",
-  "cac",
-  "react",
-  "react-dom",
-  "remotion"
+  "three"
  ],
- "install_scripts": {
-  "postinstall": "node ./scripts/postinstall.mjs"
- },
+ "install_scripts": {},
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
@@ -270,6 +219,11 @@
   "VELA_LINK_URL": 1,
   "VELA_PROFILE": 1,
   "VELA_VERIFY_TIMEOUT_MS": 1,
+  "Path": 1,
+  "PATHEXT": 3,
+  "OD_BROWSER_EXECUTABLE_PATH": 1,
+  "PROGRAMFILES": 1,
+  "LOCALAPPDATA": 1,
   "OD_PROJECT_ID": 3,
   "OD_TOOL_TOKEN": 7,
   "INIT_CWD": 1,
@@ -308,7 +262,7 @@
   "OD_LEGACY_DATA_DIR": 1,
   "OD_WORKSPACE_AUTHORITY_CACHE_MODE": 1,
   "OD_CODEX_DISABLE_PLUGINS": 2,
-  "OD_WORKSPACE_CONTEXT_SOURCE": 5,
+  "OD_WORKSPACE_CONTEXT_SOURCE": 4,
   "OD_CRITIQUE_ROLLOUT_PHASE": 1,
   "OD_CRITIQUE_ENABLED": 1,
   "OD_BUNDLED_ATOM_PROMPTS": 1,
@@ -341,7 +295,6 @@
   "OD_CHAT_RUN_SHUTDOWN_GRACE_MS": 2,
   "OD_ACP_STAGE_TIMEOUT_MS": 1,
   "OD_AGENT_HOME": 1,
-  "PATHEXT": 2,
   "OD_RESOURCE_ROOT": 2,
   "OD_AGENT_PROFILES_CONFIG": 1,
   "OD_CHAT_RUN_CANCEL_FORCE_WAIT_MS": 1,
@@ -353,14 +306,14 @@
  },
  "behaviors": {
   "exec": {
-   "src": 74,
-   "dev": 18,
+   "src": 76,
+   "dev": 22,
    "evidence": [
     "apps/daemon/scripts/verify-amr-real-vela.mjs:23",
     "apps/daemon/scripts/verify-amr-real-vela.mjs:49",
     "apps/daemon/src/agent-companion-setup.ts:2",
-    "apps/daemon/src/cli.ts:2324",
-    "apps/daemon/src/cli.ts:2326"
+    "apps/daemon/src/browser-sessions.ts:1",
+    "apps/daemon/src/browser-sessions.ts:113"
    ]
   },
   "eval": {
@@ -381,14 +334,14 @@
   },
   "net_server": {
    "src": 1,
-   "dev": 2,
+   "dev": 0,
    "evidence": [
     "apps/daemon/src/integrations/xai-oauth-server.ts:180"
    ]
   },
   "fs_write": {
-   "src": 250,
-   "dev": 41,
+   "src": 253,
+   "dev": 24,
    "evidence": [
     "apps/daemon/src/agent-companion-setup.ts:109",
     "apps/daemon/src/agent-companion-setup.ts:159",
@@ -404,27 +357,19 @@
     "apps/daemon/bin/od.mjs:16",
     "apps/daemon/scripts/verify-amr-real-vela.mjs:29",
     "apps/daemon/src/cli.ts:788",
-    "apps/daemon/src/server.ts:5966",
-    "apps/daemon/src/server.ts:11805"
+    "apps/daemon/src/server.ts:6020",
+    "apps/daemon/src/server.ts:11790"
    ]
   }
  },
  "has_apply": false,
  "files_scanned": 598,
  "has_skill_md": true,
- "type": "plugin",
+ "type": "skill",
  "flags": [
   {
-   "id": "runtime_patch",
-   "evidence": "./cordis.patch.yml"
-  },
-  {
-   "id": "install_script",
-   "evidence": "postinstall: node ./scripts/postinstall.mjs"
-  },
-  {
    "id": "exec",
-   "evidence": "×74 src, e.g. apps/daemon/scripts/verify-amr-real-vela.mjs:23, apps/daemon/scripts/verify-amr-real-vela.mjs:49"
+   "evidence": "×76 src, e.g. apps/daemon/scripts/verify-amr-real-vela.mjs:23, apps/daemon/scripts/verify-amr-real-vela.mjs:49"
   },
   {
    "id": "base64_decode",
@@ -439,5 +384,5 @@
    "evidence": "AIHUBMIX_API_KEY, ANTHROPIC_API_KEY, AZURE_API_KEY, AZURE_OPENAI_API_KEY, GEMINI_API_KEY, GOOGLE_API_KEY"
   }
  ],
- "level": 3
+ "level": 2
 }

@@ -1,30 +1,48 @@
 {
  "repo": "beijingwahw/dsh-computer-use-plugin",
  "stars": 0,
- "description": "Vision-only desktop automation agent plugin for DeepSeek Harness (DSH): SoM grounding, sliding-window context, Planner-Actor, four safety guards",
- "pushed_at": "2026-08-18T06:30:31Z",
+ "description": "Vision-only desktop automation agent plugin for DeepSeek Harness (DSH) | 纯视觉桌面自动化 Agent 插件：SoM grounding · Planner-Actor · effect verification · skill library",
+ "pushed_at": "2026-08-19T02:37:59Z",
  "status": "ok",
- "manifest": null,
- "pkg_name": "computer-use-vision-plugin",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-computer-use-plugin",
  "deps": [
-  "@nut-tree/nut-js",
+  "@nut-tree-fork/nut-js",
   "screenshot-desktop",
   "sharp",
-  "tesseract.js"
+  "tesseract.js",
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-tools",
+  "@deepseek-ai/schemastery"
  ],
  "install_scripts": {},
  "injects": [
   "tools"
  ],
- "hooks": [],
- "tool_regs": 24,
+ "hooks": [
+  "llm/pre-request",
+  "tools/post-execute",
+  "tools/pre-execute"
+ ],
+ "tool_regs": 120,
  "domains": {},
  "env": {},
  "behaviors": {
   "exec": {
-   "src": 0,
-   "dev": 0,
-   "evidence": []
+   "src": 20,
+   "dev": 10,
+   "evidence": [
+    "dist/doctorRules.js:60",
+    "dist/doctorRules.js:60",
+    "dist/doctorRules.js:157",
+    "dist/doctorRules.js:158",
+    "dist/environmentShaper.js:12"
+   ]
   },
   "eval": {
    "src": 0,
@@ -32,9 +50,12 @@
    "evidence": []
   },
   "base64_decode": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "dist/contextManager.js:223",
+    "src/contextManager.ts:245"
+   ]
   },
   "net_server": {
    "src": 0,
@@ -42,13 +63,14 @@
    "evidence": []
   },
   "fs_write": {
-   "src": 4,
-   "dev": 0,
+   "src": 48,
+   "dev": 17,
    "evidence": [
-    "src/journal.ts:5",
-    "src/journal.ts:63",
-    "src/skillLibrary.ts:8",
-    "src/skillLibrary.ts:73"
+    "dist/checkpoint.js:10",
+    "dist/checkpoint.js:10",
+    "dist/checkpoint.js:73",
+    "dist/checkpoint.js:79",
+    "dist/doctorRules.js:77"
    ]
   },
   "dyn_import": {
@@ -58,14 +80,26 @@
   }
  },
  "has_apply": true,
- "files_scanned": 43,
+ "files_scanned": 195,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
-   "id": "no_manifest",
-   "evidence": "uses 1 services, 24 tool regs, no manifest"
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "tool_gate",
+   "evidence": "hook: tools/pre-execute"
+  },
+  {
+   "id": "exec",
+   "evidence": "×20 src, e.g. dist/doctorRules.js:60, dist/doctorRules.js:60"
+  },
+  {
+   "id": "base64_decode",
+   "evidence": "×2 src, e.g. dist/contextManager.js:223, src/contextManager.ts:245"
   }
  ],
- "level": 1
+ "level": 3
 }

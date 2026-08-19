@@ -1,38 +1,43 @@
 {
  "repo": "xs-java2ai/niulai-pet",
- "stars": 0,
+ "stars": 1,
  "description": "牛来A股桌宠 (Electron + DSH bundle)",
- "pushed_at": "2026-08-18T07:24:20Z",
+ "pushed_at": "2026-08-18T14:42:58Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
   }
  },
  "pkg_name": "niulai-pet",
- "deps": [
-  "electron"
- ],
+ "deps": [],
  "install_scripts": {},
  "injects": [],
  "hooks": [],
  "tool_regs": 0,
  "domains": {
+  "npmmirror.com": 2,
   "push2.eastmoney.com": 1,
   "quote.eastmoney.com": 1,
   "qt.gtimg.cn": 1,
   "finance.qq.com": 1
  },
  "env": {
+  "ELECTRON_MIRROR": 1,
+  "ELECTRON_BUILDER_BINARIES_MIRROR": 1,
   "APPDATA": 1
  },
  "behaviors": {
   "exec": {
-   "src": 2,
+   "src": 6,
    "dev": 0,
    "evidence": [
-    "src/pet/index.js:10",
-    "src/pet/index.js:41"
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:5",
+    "scripts/build.mjs:17",
+    "scripts/build.mjs:18",
+    "src/pet/index.js:10"
    ]
   },
   "eval": {
@@ -55,7 +60,7 @@
    "dev": 0,
    "evidence": [
     "src/main.js:10",
-    "src/main.js:234"
+    "src/main.js:239"
    ]
   },
   "dyn_import": {
@@ -65,7 +70,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 6,
+ "files_scanned": 7,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
@@ -75,7 +80,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. src/pet/index.js:10, src/pet/index.js:41"
+   "evidence": "×6 src, e.g. scripts/build.mjs:5, scripts/build.mjs:5"
   }
  ],
  "level": 3

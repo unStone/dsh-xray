@@ -2,8 +2,9 @@
  "repo": "Mshir0/context-graph-deepseek-harness",
  "stars": 0,
  "description": "Context Graph 是 DeepSeek Harness 的上下文管理插件，可扫描代码、构建语义图谱，并按任务精准注入上下文。",
- "pushed_at": "2026-08-17T10:55:13Z",
+ "pushed_at": "2026-08-18T16:12:36Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -36,18 +37,19 @@
   "agent/session-start",
   "llm/stream"
  ],
- "tool_regs": 25,
+ "tool_regs": 29,
  "domains": {},
  "env": {
   "DEPENDENCY_SKILL_PYTHON": 2
  },
  "behaviors": {
   "exec": {
-   "src": 2,
+   "src": 3,
    "dev": 0,
    "evidence": [
     "src/core.js:1",
-    "src/dependency-skill.js:1"
+    "src/dependency-skill.js:1",
+    "src/document-pdf.js:1"
    ]
   },
   "eval": {
@@ -67,11 +69,11 @@
   },
   "fs_write": {
    "src": 4,
-   "dev": 104,
+   "dev": 108,
    "evidence": [
-    "src/core.js:108",
-    "src/core.js:370",
+    "src/core.js:120",
     "src/core.js:382",
+    "src/core.js:394",
     "src/implementation-index.js:278"
    ]
   },
@@ -82,7 +84,7 @@
   }
  },
  "has_apply": true,
- "files_scanned": 30,
+ "files_scanned": 32,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -96,7 +98,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×2 src, e.g. src/core.js:1, src/dependency-skill.js:1"
+   "evidence": "×3 src, e.g. src/core.js:1, src/dependency-skill.js:1"
   }
  ],
  "level": 3

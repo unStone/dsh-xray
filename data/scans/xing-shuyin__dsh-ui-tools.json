@@ -1,0 +1,102 @@
+{
+ "repo": "xing-shuyin/dsh-ui-tools",
+ "stars": 0,
+ "description": "DeepSeek Harness (dsh) web 开发者工具面板 —— 文件浏览 / 多终端 / Git / 后台任务",
+ "pushed_at": "2026-08-19T01:38:36Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web"
+  }
+ },
+ "pkg_name": "dsh-ui-tools",
+ "deps": [
+  "node-pty"
+ ],
+ "install_scripts": {},
+ "injects": [
+  "inlineMarkers",
+  "sessions",
+  "slots",
+  "workspaces"
+ ],
+ "hooks": [
+  "agent/created",
+  "agent/pre-step",
+  "session/event",
+  "tools/execute"
+ ],
+ "tool_regs": 0,
+ "domains": {
+  "bellard.org": 2
+ },
+ "env": {
+  "PI_WEB_SHELL": 1,
+  "ProgramFiles": 1,
+  "COMSPEC": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh/background-servers.js:19",
+    "dsh/background-servers.js:91",
+    "dsh/index.js:25",
+    "dsh/index.js:488"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "dsh/index.js:223",
+    "dsh/index.js:273",
+    "dsh/index.js:1033",
+    "scripts/build-client.mjs:48"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 26,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. dsh/background-servers.js:19, dsh/background-servers.js:91"
+  }
+ ],
+ "level": 3
+}

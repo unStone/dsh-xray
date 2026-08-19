@@ -1,0 +1,78 @@
+{
+ "repo": "173787247/dsh-wsl-net",
+ "stars": 0,
+ "description": "DeepSeek Harness Tool: Diagnose WSL/Windows Proxy, Node 24 fetch, and DeepSeek/npm reachability.",
+ "pushed_at": "2026-08-19T01:04:40Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  }
+ },
+ "pkg_name": "dsh-wsl-net",
+ "deps": [],
+ "install_scripts": {},
+ "injects": [
+  "systemPrompt",
+  "tools"
+ ],
+ "hooks": [],
+ "tool_regs": 1,
+ "domains": {
+  "api.deepseek.com": 1,
+  "registry.npmmirror.com": 1
+ },
+ "env": {
+  "NODE_USE_ENV_PROXY": 1,
+  "npm_config_registry": 1,
+  "WSL_DISTRO_NAME": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 1,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "prompt_surface",
+   "evidence": "systemPrompt"
+  }
+ ],
+ "level": 2
+}

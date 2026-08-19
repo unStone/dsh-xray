@@ -2,8 +2,9 @@
  "repo": "youzhoujiMrLiu/dsh-ui-wallpaper",
  "stars": 1,
  "description": "Wallpaper Engine–style wallpaper for the DeepSeek Harness web GUI: custom images, GIFs, and videos as your app background｜仿 Wallpaper Engine 的壁纸插件，支持图片 / GIF / 视频自定义背景",
- "pushed_at": "2026-08-16T08:07:12Z",
+ "pushed_at": "2026-08-18T15:34:07Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -48,13 +49,20 @@
  ],
  "hooks": [],
  "tool_regs": 0,
- "domains": {},
- "env": {},
+ "domains": {
+  "www.gyan.dev": 1
+ },
+ "env": {
+  "FFMPEG_PATH": 4
+ },
  "behaviors": {
   "exec": {
-   "src": 0,
+   "src": 2,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    "src/host/we.ts:15",
+    "src/host/we.ts:796"
+   ]
   },
   "eval": {
    "src": 0,
@@ -68,14 +76,18 @@
   },
   "net_server": {
    "src": 0,
-   "dev": 0,
+   "dev": 2,
    "evidence": []
   },
   "fs_write": {
-   "src": 1,
-   "dev": 2,
+   "src": 5,
+   "dev": 12,
    "evidence": [
-    "src/host/routes.ts:95"
+    "src/host/media.ts:48",
+    "src/host/we.ts:136",
+    "src/host/we.ts:151",
+    "src/host/we.ts:767",
+    "src/host/we.ts:909"
    ]
   },
   "dyn_import": {
@@ -85,14 +97,18 @@
   }
  },
  "has_apply": true,
- "files_scanned": 29,
+ "files_scanned": 38,
  "has_skill_md": false,
  "type": "plugin",
  "flags": [
   {
    "id": "runtime_patch",
    "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×2 src, e.g. src/host/we.ts:15, src/host/we.ts:796"
   }
  ],
- "level": 2
+ "level": 3
 }

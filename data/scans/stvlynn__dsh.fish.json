@@ -2,8 +2,9 @@
  "repo": "stvlynn/dsh.fish",
  "stars": 0,
  "description": "Discover and install DeepSeek Harness plugins, skills, MCP servers, agent presets, bundles, and profiles.",
- "pushed_at": "2026-08-18T05:19:05Z",
+ "pushed_at": "2026-08-19T02:47:42Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -13,6 +14,10 @@
  "deps": [
   "@better-auth/core",
   "@better-auth/drizzle-adapter",
+  "@modelcontextprotocol/client",
+  "@modelcontextprotocol/sdk",
+  "@modelcontextprotocol/server",
+  "agents",
   "better-auth",
   "better-auth-cloudflare",
   "drizzle-orm",
@@ -53,6 +58,7 @@
   "fonts.gstatic.com": 1,
   "opengraph.githubassets.com": 1,
   "www.npmjs.com": 1,
+  "opencode.ai": 1,
   "api.github.com": 3,
   "api.npmjs.org": 1,
   "www.sitemaps.org": 2,
@@ -67,7 +73,7 @@
  "behaviors": {
   "exec": {
    "src": 1,
-   "dev": 5,
+   "dev": 9,
    "evidence": [
     "packages/dsh-plugin-hub/src/installer.ts:1"
    ]
@@ -91,7 +97,7 @@
   },
   "fs_write": {
    "src": 7,
-   "dev": 5,
+   "dev": 21,
    "evidence": [
     "frontend/scripts/build-og-image.mjs:221",
     "packages/dsh-cli/src/init.ts:47",
@@ -101,13 +107,15 @@
    ]
   },
   "dyn_import": {
-   "src": 0,
+   "src": 1,
    "dev": 0,
-   "evidence": []
+   "evidence": [
+    ".claude/skills/kill-ai-slop/scripts/scan.mjs:293"
+   ]
   }
  },
  "has_apply": true,
- "files_scanned": 232,
+ "files_scanned": 262,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [

@@ -1,0 +1,98 @@
+{
+ "repo": "Weilv-D/wallpaper-engine-dsh",
+ "stars": 0,
+ "description": "DSH plugin bundle: live Wallpaper Engine backgrounds for the DSH web GUI - video/web wallpapers, static scene previews, rotation lists, search, resource monitor, bilingual UI",
+ "pushed_at": "2026-08-19T01:57:10Z",
+ "status": "ok",
+ "first_seen": "2026-08-19",
+ "manifest": {
+  "bundle": {
+   "patch": "./cordis.patch.yml"
+  },
+  "client": {
+   "inject": [
+    "@deepseek-ai/dsh-client-runtime"
+   ],
+   "platform": "web",
+   "immediately": true
+  }
+ },
+ "pkg_name": "wallpaper-engine-dsh",
+ "deps": [
+  "@deepseek-ai/cordis",
+  "@deepseek-ai/dsh-client-runtime",
+  "@deepseek-ai/dsh-client-ui-slots",
+  "@deepseek-ai/dsh-host-webserver",
+  "react"
+ ],
+ "install_scripts": {
+  "prepare": "node scripts/prepare.mjs"
+ },
+ "injects": [
+  "slots",
+  "webServer"
+ ],
+ "hooks": [
+  "locale/change"
+ ],
+ "tool_regs": 0,
+ "domains": {},
+ "env": {
+  "SystemRoot": 1
+ },
+ "behaviors": {
+  "exec": {
+   "src": 4,
+   "dev": 0,
+   "evidence": [
+    "lib/index.js:49",
+    "scripts/prepare.mjs:14",
+    "scripts/prepare.mjs:14",
+    "scripts/prepare.mjs:21"
+   ]
+  },
+  "eval": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "base64_decode": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  },
+  "net_server": {
+   "src": 0,
+   "dev": 2,
+   "evidence": []
+  },
+  "fs_write": {
+   "src": 2,
+   "dev": 42,
+   "evidence": [
+    "scripts/build-client.mjs:25",
+    "scripts/build-client.mjs:74"
+   ]
+  },
+  "dyn_import": {
+   "src": 0,
+   "dev": 0,
+   "evidence": []
+  }
+ },
+ "has_apply": true,
+ "files_scanned": 11,
+ "has_skill_md": false,
+ "type": "plugin",
+ "flags": [
+  {
+   "id": "runtime_patch",
+   "evidence": "./cordis.patch.yml"
+  },
+  {
+   "id": "exec",
+   "evidence": "×4 src, e.g. lib/index.js:49, scripts/prepare.mjs:14"
+  }
+ ],
+ "level": 3
+}

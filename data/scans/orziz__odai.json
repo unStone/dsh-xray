@@ -1,9 +1,10 @@
 {
  "repo": "orziz/odai",
- "stars": 85,
+ "stars": 89,
  "description": "AI agent 通用任务治理框架：对齐目标与事实，规划和调度能力，守住授权与风险边界，治理任务执行到真实验收与交付。Governance framework for evidence-driven planning, orchestration, and verified delivery.",
- "pushed_at": "2026-08-17T13:13:17Z",
+ "pushed_at": "2026-08-18T19:00:55Z",
  "status": "ok",
+ "first_seen": "2026-08-19",
  "manifest": {
   "bundle": {
    "patch": "./cordis.patch.yml"
@@ -29,13 +30,14 @@
   "agent/created",
   "agent/pre-step",
   "agent/request",
+  "agent/request-error",
   "agent/turn-stopping",
   "llm/stream",
   "session/event",
   "system-prompt/assemble",
   "tools/result"
  ],
- "tool_regs": 7,
+ "tool_regs": 12,
  "domains": {
   "cdn.jsdelivr.net": 4,
   "api.deepseek.com": 4,
@@ -93,7 +95,7 @@
  },
  "behaviors": {
   "exec": {
-   "src": 104,
+   "src": 106,
    "dev": 12,
    "evidence": [
     "scripts-temp-c20/odai-canary-harness.mjs:3",
@@ -123,14 +125,14 @@
    "evidence": [
     "scripts/dsh-canary-runner.mjs:682",
     "scripts/dsh-canary-runner.mjs:684",
-    "scripts/verify-dsh-coexistence.mjs:63",
-    "scripts/verify-dsh-coexistence.mjs:65",
-    "dsh/agent/scripts/verify-agent-load.mjs:98"
+    "scripts/verify-dsh-coexistence.mjs:64",
+    "scripts/verify-dsh-coexistence.mjs:66",
+    "dsh/agent/scripts/verify-agent-load.mjs:109"
    ]
   },
   "fs_write": {
-   "src": 224,
-   "dev": 248,
+   "src": 230,
+   "dev": 264,
    "evidence": [
     "scripts-temp-c20/odai-canary-harness.mjs:5",
     "scripts-temp-c20/odai-canary-harness.mjs:5",
@@ -140,19 +142,19 @@
    ]
   },
   "dyn_import": {
-   "src": 9,
+   "src": 7,
    "dev": 0,
    "evidence": [
-    "scripts/validate-odai-skill.mjs:610",
-    "scripts/validate-odai-skill.mjs:698",
-    "dsh/agent/src/installer.mjs:242",
+    "scripts/validate-odai-skill.mjs:685",
+    "scripts/validate-odai-skill.mjs:773",
+    "dsh/agent/src/installer.mjs:295",
     "dsh/plugin/bin/odai-dsh-plugin.mjs:31",
     "dsh/plugin/scripts/live-compaction-cache-smoke.mjs:246"
    ]
   }
  },
  "has_apply": true,
- "files_scanned": 179,
+ "files_scanned": 196,
  "has_skill_md": true,
  "type": "plugin",
  "flags": [
@@ -166,7 +168,7 @@
   },
   {
    "id": "exec",
-   "evidence": "×104 src, e.g. scripts-temp-c20/odai-canary-harness.mjs:3, scripts-temp-c20/odai-canary-harness.mjs:3"
+   "evidence": "×106 src, e.g. scripts-temp-c20/odai-canary-harness.mjs:3, scripts-temp-c20/odai-canary-harness.mjs:3"
   },
   {
    "id": "base64_decode",
