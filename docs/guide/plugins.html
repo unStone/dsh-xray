@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How dsh Plugins Actually Work · dsh-xray</title>
+<meta name="description" content="How dsh plugins work: the context object, injected services, waterfall hooks, the append-only session log, and why plugin installation has no permission model.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/guide/plugins.html">
+<link rel="alternate" hreflang="en" href="https://unstone.github.io/dsh-xray/guide/plugins.html?lang=en">
+<link rel="alternate" hreflang="zh" href="https://unstone.github.io/dsh-xray/guide/plugins.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://unstone.github.io/dsh-xray/guide/plugins.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How dsh Plugins Actually Work">
+<meta property="og:description" content="How dsh plugins work: the context object, injected services, waterfall hooks, the append-only session log, and why plugin installation has no permission model.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/guide/plugins.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" href="https://unstone.github.io/dsh-xray/feed.xml" title="dsh-xray">
+<link rel="stylesheet" href="../style.css">
+<style>
+.md { max-width: 760px; margin: 0 auto; }
+.md h1 { font-size: 32px; letter-spacing: -0.8px; margin: 28px 0 8px; line-height: 1.2; }
+.md h2 { font-size: 22px; letter-spacing: -0.4px; margin: 38px 0 10px; padding-top: 18px; border-top: 1px solid var(--border); }
+.md h3 { font-size: 17px; margin: 24px 0 6px; }
+.md p { margin: 12px 0; }
+.md ul { margin: 12px 0; padding-left: 22px; }
+.md li { margin: 5px 0; }
+.md blockquote { margin: 20px 0; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+.md blockquote p { margin: 0; font-size: 16.5px; font-weight: 600; }
+.md table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+.md th, .md td { border: 1px solid var(--border); padding: 7px 11px; text-align: left; vertical-align: top; }
+.md th { background: var(--chip-bg); font-weight: 600; }
+.md pre { background: var(--code-bg); border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 14px 0; }
+.md pre code { background: none; padding: 0; font-size: 12.5px; line-height: 1.5; }
+.md hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+.md em { color: var(--muted); }
+.md .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html" data-i18n="nav.registry">Registry</a>
+    <a href="../report.html" data-i18n="nav.report">Report</a>
+    <a href="../levels.html" data-i18n="nav.levels">Levels</a>
+    <a href="../guide/plugins.html" data-i18n="nav.guide">How it works</a>
+    <a href="../guide/changelog.html" data-i18n="nav.changelog">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray" data-i18n="nav.github">GitHub</a>
+  </div>
+  <div class="chips" id="langSwitch"></div>
+</nav>
+<article class="md" id="md">
+<h1>How dsh Plugins Actually Work</h1>
+<p><strong>The background you need to read a capability card</strong></p>
+<p><em><a href="plugins.html?lang=zh">中文版</a> · Written for people new to DeepSeek Harness</em></p>
+<hr>
+<h2>The one-sentence version</h2>
+<p>dsh is built on the principle that everything is a plugin. It sits on the Cordis framework: plugins register services and listen for events on a shared <strong>context object, <code>ctx</code></strong> — and dsh's own core features (sessions, tools, LLM adapters) are written as plugins through that same mechanism.</p>
+<p>Which means: <strong>there is no privilege gap between a plugin and the core</strong>. A third-party plugin you install uses exactly the interfaces the official modules use.</p>
+<hr>
+<h2>What a plugin looks like</h2>
+<p>The smallest plugin is a module exporting <code>apply</code>:</p>
+<pre><code>export const name = 'my-plugin'
+export const inject = ['tools', 'sessions']   // services I depend on
+
+export function apply(ctx: Context) {
+  ctx.tools.register(/* ... */)
+  ctx.on('session/event', (e) =&gt; { /* ... */ })
+}</code></pre>
+<p>Three things worth noting:</p>
+<div class="table-wrap"><table><tr><th>Element</th><th>What it does</th><th>Commonly mistaken for</th></tr><tr><td><code>inject</code></td><td>Declares service dependencies, drives load order</td><td>❌ a permission request</td></tr><tr><td><code>ctx.xxx</code></td><td>Retrieves a service by key, no import needed</td><td>—</td></tr><tr><td><code>ctx.on(...)</code></td><td>Attaches a hook — to observe, or to rewrite</td><td>—</td></tr></table></div>
+<p><code>inject</code> is the most important point here: it resolves <em>what loads first</em>, **not <em>what you may do</em>**. Once loaded, a plugin holds every service it declared, with no runtime boundary enforcing anything.</p>
+<hr>
+<h2>What lives on <code>ctx</code></h2>
+<p>Services occupy stable namespace keys, and plugins discover each other by key. Some common ones:</p>
+<div class="table-wrap"><table><tr><th>Service</th><th>Capability</th></tr><tr><td><code>ctx.tools</code></td><td>Register tools, intervene in the execution pipeline</td></tr><tr><td><code>ctx.llm</code></td><td>Model adapters, streaming</td></tr><tr><td><code>ctx.sessions</code></td><td>The session log</td></tr><tr><td><code>ctx.systemPrompt</code></td><td>System prompt assembly</td></tr><tr><td><code>ctx.apiProxy</code></td><td>The API request proxy layer</td></tr><tr><td><code>ctx.subprocess</code></td><td>Spawning subprocesses</td></tr><tr><td><code>ctx.approval</code></td><td>Asking the user to confirm</td></tr><tr><td><code>ctx.sandbox</code></td><td>Sandbox backends (e.g. <code>dsh-bash-sandbox</code>)</td></tr></table></div>
+<p>The last four are why we mark certain plugins as carrying "powerful capability": they correspond to rewriting what the model sees, sitting between you and the model, and running system commands.</p>
+<hr>
+<h2>What happens during one exchange</h2>
+<pre><code>turn/start → agent/pre-step → step/start → llm/stream → tool/call* → step/end → turn/end</code></pre>
+<p>A <strong>step</strong> is one model request plus the tools it calls; a <strong>turn</strong> contains zero or more steps.</p>
+<p>Events dispatch in four modes, and the difference matters:</p>
+<div class="table-wrap"><table><tr><th>Mode</th><th>Behaviour</th><th>What a plugin can do</th></tr><tr><td><code>emit</code></td><td>Fire-and-forget</td><td>Observe only</td></tr><tr><td><code>parallel</code></td><td>Concurrent, awaited</td><td>Observe + async side effects</td></tr><tr><td><code>serial</code></td><td>Sequential, returns values</td><td>Influence the result</td></tr><tr><td><code>waterfall</code></td><td>Middleware chain, wraps values</td><td><strong>Rewrite the data itself</strong></td></tr></table></div>
+<p><code>waterfall</code> is why a plugin can rewrite rather than merely watch. A plugin hooked onto <code>system-prompt/assemble</code> can rewrite the prompt before it reaches the model — and nothing in the conversation you see on screen changes.</p>
+<hr>
+<h2>The session log: everything the model sees</h2>
+<p>dsh holds one hard invariant: <strong>what the model sees is logged</strong>.</p>
+<p>The session log is append-only, and <code>deriveMessages()</code> projects the model's history from it. To feed the model anything extra, you must append a record — there is no path around it.</p>
+<p>It is a clean design: it keeps "what did the model actually see" permanently auditable. And it is exactly why hooks like <code>system-prompt/assemble</code> deserve attention — they are among the few places that shape model input outside that projection.</p>
+<hr>
+<h2>Permissions: where things actually stand</h2>
+<p>dsh <strong>does</strong> have a runtime approval mechanism at the tool level:</p>
+<pre><code>ctx.on('tools/pre-execute', () =&gt; ({ kind: 'ask', reason: '...' }))
+// or { kind: 'deny', reason: '...' }</code></pre>
+<p>A plugin can hold up a tool call for user confirmation, or refuse it outright. Together with <code>ctx.approval</code> and <code>ctx.sandbox</code>, the guardrails around tool execution are real.</p>
+<p><strong>Plugin installation has no equivalent.</strong></p>
+<p>When you install a plugin:</p>
+<ul><li>no manifest field describes the capabilities it will use</li><li>there is no permission prompt at install time</li><li>there is no runtime enforcement of a capability boundary</li><li><code>manifest.bundle.patch</code> even lets it patch dsh itself (<code>cordis.patch.yml</code>)</li></ul>
+<p>So "the plugin exceeded its permissions" does not apply — there are none to exceed. Tool calls are carefully gated, while the step that grants a plugin all of this happens silently.</p>
+<hr>
+<h2>What a capability card does about it</h2>
+<p>dsh-xray statically scans each plugin's shipped code and lists the above: which services it takes, which hooks it attaches, whether it patches the runtime, which environment variables it reads, whether it runs anything at install time — each with a file and line number.</p>
+<p>That is not a substitute for a permission model. It just puts the information on the table until there is one.</p>
+<ul><li><a href="../levels.html">Capability levels C0–C3, explained visually</a></li><li><a href="../report.html">The report: the dsh plugin ecosystem has no permission model</a></li><li><a href="../registry.html">Plugin registry</a></li></ul>
+<p><em>Written from dsh's own documentation (architecture, cordis-primer, capability-seams, extension-cookbook) and from scan results. Spotted an error? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a>.</em></p>
+</article>
+<footer>
+  <span data-i18n="foot.oss"></span> <a href="https://github.com/unStone/dsh-xray/issues" data-i18n="foot.issue"></a>
+</footer>
+</div>
+
+<script src="../i18n.js"></script>
+<script src="../mdview.js"></script>
+<script>
+xray.applyStatic();
+xray.mountSwitcher(document.getElementById('langSwitch'));
+// English prose ships in the HTML for crawlers; other locales load on demand.
+mdview.swapLocale('../', 'guide/how-dsh-plugins-work');
+</script>
+</body>
+</html>

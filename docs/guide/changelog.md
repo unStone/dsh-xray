@@ -1,6 +1,6 @@
 # Changelog
 
-*[中文版](?doc=changelog&lang=zh) · Scan results refresh daily; this page records changes to method and product*
+*[中文版](changelog.html?lang=zh) · Scan results refresh daily; this page records changes to method and product*
 
 ---
 
@@ -30,8 +30,8 @@ That bug briefly invalidated a key example in the report: we had written "declar
 ### Content
 
 - The report, *The dsh Plugin Ecosystem Has No Permission Model* (English and Chinese). Figures are injected from scan data by `render_report.py`, so the text tracks the daily scan instead of going stale.
-- [Capability levels C0–C3, explained visually](levels.html)
-- [How dsh plugins actually work](?doc=plugins)
+- [Capability levels C0–C3, explained visually](../levels.html)
+- [How dsh plugins actually work](plugins.html)
 - Landing page, registry and report in English, Chinese and Japanese
 - Embeddable capability badges for plugin authors
 

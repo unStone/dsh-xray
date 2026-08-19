@@ -24,6 +24,7 @@ jobs:
           # stay cheap. Downloads go to codeload, not the API quota.
           cd scanner && python pipeline.py all 24 3500
           python render_report.py
+          python render_docs.py
           python render_pages.py
       - name: commit results
         run: |

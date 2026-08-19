@@ -30,8 +30,8 @@ GitHub 搜索接口单次查询最多返回 1000 条,而 `dsh-plugin` 标签下�
 ### 内容
 
 - 生态报告《dsh 插件生态还没有权限模型》(中英双语),数字由 `render_report.py` 从扫描数据注入,随每日扫描自动更新,不会过期
-- [能力等级 C0–C3 图解](levels.html)
-- [dsh 插件机制说明](?doc=plugins)
+- [能力等级 C0–C3 图解](../levels.html)
+- [dsh 插件机制说明](plugins.html)
 - 官网 / 注册表 / 报告三页,英中日三语
 - 插件作者可嵌入的能力徽章
 

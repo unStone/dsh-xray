@@ -2,7 +2,7 @@
 
 **读懂能力卡片所需的全部背景知识**
 
-*[English](?doc=plugins&lang=en) · 面向刚接触 DeepSeek Harness 的人*
+*[English](plugins.html?lang=en) · 面向刚接触 DeepSeek Harness 的人*
 
 ---
 
@@ -120,8 +120,8 @@ dsh-xray 静态扫描每个插件的发布代码,把上面这些东西列出来:
 
 这不能替代权限模型,只是在还没有权限模型的这段时间里,把信息摆到台面上。
 
-- [能力等级 C0–C3 图解](levels.html)
-- [生态报告:dsh 插件生态还没有权限模型](?doc=report)
-- [插件注册表](registry.html)
+- [能力等级 C0–C3 图解](../levels.html)
+- [生态报告:dsh 插件生态还没有权限模型](../report.html)
+- [插件注册表](../registry.html)
 
 *本文依据 dsh 官方文档(architecture、cordis-primer、capability-seams、extension-cookbook)与实际扫描结果写成。发现错误请[提 issue](https://github.com/unStone/dsh-xray/issues)。*

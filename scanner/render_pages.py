@@ -352,22 +352,33 @@ def main():
     write_feed(plugins, DOCS / 'feed.xml', today)
     write_llms_txt(DOCS / 'llms.txt', plugins, collections, today)
 
-    urls = ['', 'registry.html', 'report.html', 'levels.html',
-            'report.html?doc=plugins', 'report.html?doc=changelog'] + [f'c/{c}.html' for c in collections]
-    entries = ''.join(
-        f'<url><loc>{SITE}/{u}</loc><lastmod>{today}</lastmod>'
-        f'<changefreq>daily</changefreq><priority>1.0</priority></url>' for u in urls)
-    entries += ''.join(
-        f'<url><loc>{SITE}/p/{p["repo"].replace("/", "__")}.html</loc>'
-        f'<lastmod>{today}</lastmod><changefreq>weekly</changefreq>'
-        f'<priority>0.6</priority></url>' for p in plugins)
+    # A sitemap index with per-section children: 7k URLs in one file is past the
+    # point where that is good practice, and fresh filenames also get re-fetched
+    # rather than inheriting a stuck status on the old one.
+    pages = ['', 'registry.html', 'report.html', 'levels.html',
+             'guide/plugins.html', 'guide/changelog.html'] + [f'c/{c}.html' for c in collections]
+
+    def urlset(entries, freq, prio):
+        body = ''.join(
+            f'<url><loc>{SITE}/{u}</loc><lastmod>{today}</lastmod>'
+            f'<changefreq>{freq}</changefreq><priority>{prio}</priority></url>' for u in entries)
+        return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                f'{body}</urlset>')
+
+    (DOCS / 'sitemap-pages.xml').write_text(urlset(pages, 'daily', '1.0'))
+    (DOCS / 'sitemap-plugins.xml').write_text(urlset(
+        [f'p/{p["repo"].replace("/", "__")}.html' for p in plugins], 'weekly', '0.6'))
     (DOCS / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        f'{entries}</urlset>')
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        f'<sitemap><loc>{SITE}/sitemap-pages.xml</loc><lastmod>{today}</lastmod></sitemap>'
+        f'<sitemap><loc>{SITE}/sitemap-plugins.xml</loc><lastmod>{today}</lastmod></sitemap>'
+        '</sitemapindex>')
+    urls = pages + [1] * len(plugins)
     (DOCS / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
     print(f'{len(plugins)} plugin pages, {len(collections)} collections, feed + llms.txt, '
-          f'sitemap ({len(urls) + len(plugins)} urls)')
+          f'sitemap index ({len(pages)} pages + {len(plugins)} plugins)')
 
 
 if __name__ == '__main__':

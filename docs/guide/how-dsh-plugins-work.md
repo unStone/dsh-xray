@@ -2,7 +2,7 @@
 
 **The background you need to read a capability card**
 
-*[中文版](?doc=plugins&lang=zh) · Written for people new to DeepSeek Harness*
+*[中文版](plugins.html?lang=zh) · Written for people new to DeepSeek Harness*
 
 ---
 
@@ -120,8 +120,8 @@ dsh-xray statically scans each plugin's shipped code and lists the above: which 
 
 That is not a substitute for a permission model. It just puts the information on the table until there is one.
 
-- [Capability levels C0–C3, explained visually](levels.html)
-- [The report: the dsh plugin ecosystem has no permission model](?doc=report)
-- [Plugin registry](registry.html)
+- [Capability levels C0–C3, explained visually](../levels.html)
+- [The report: the dsh plugin ecosystem has no permission model](../report.html)
+- [Plugin registry](../registry.html)
 
 *Written from dsh's own documentation (architecture, cordis-primer, capability-seams, extension-cookbook) and from scan results. Spotted an error? [Open an issue](https://github.com/unStone/dsh-xray/issues).*

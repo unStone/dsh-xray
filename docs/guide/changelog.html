@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog · dsh-xray</title>
+<meta name="description" content="What changed in dsh-xray and why — method and product changes. Scan results refresh daily on their own.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/guide/changelog.html">
+<link rel="alternate" hreflang="en" href="https://unstone.github.io/dsh-xray/guide/changelog.html?lang=en">
+<link rel="alternate" hreflang="zh" href="https://unstone.github.io/dsh-xray/guide/changelog.html?lang=zh">
+<link rel="alternate" hreflang="x-default" href="https://unstone.github.io/dsh-xray/guide/changelog.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Changelog">
+<meta property="og:description" content="What changed in dsh-xray and why — method and product changes. Scan results refresh daily on their own.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/guide/changelog.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" href="https://unstone.github.io/dsh-xray/feed.xml" title="dsh-xray">
+<link rel="stylesheet" href="../style.css">
+<style>
+.md { max-width: 760px; margin: 0 auto; }
+.md h1 { font-size: 32px; letter-spacing: -0.8px; margin: 28px 0 8px; line-height: 1.2; }
+.md h2 { font-size: 22px; letter-spacing: -0.4px; margin: 38px 0 10px; padding-top: 18px; border-top: 1px solid var(--border); }
+.md h3 { font-size: 17px; margin: 24px 0 6px; }
+.md p { margin: 12px 0; }
+.md ul { margin: 12px 0; padding-left: 22px; }
+.md li { margin: 5px 0; }
+.md blockquote { margin: 20px 0; padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+.md blockquote p { margin: 0; font-size: 16.5px; font-weight: 600; }
+.md table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+.md th, .md td { border: 1px solid var(--border); padding: 7px 11px; text-align: left; vertical-align: top; }
+.md th { background: var(--chip-bg); font-weight: 600; }
+.md pre { background: var(--code-bg); border-radius: 8px; padding: 12px 14px; overflow-x: auto; margin: 14px 0; }
+.md pre code { background: none; padding: 0; font-size: 12.5px; line-height: 1.5; }
+.md hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+.md em { color: var(--muted); }
+.md .table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html" data-i18n="nav.registry">Registry</a>
+    <a href="../report.html" data-i18n="nav.report">Report</a>
+    <a href="../levels.html" data-i18n="nav.levels">Levels</a>
+    <a href="../guide/plugins.html" data-i18n="nav.guide">How it works</a>
+    <a href="../guide/changelog.html" data-i18n="nav.changelog">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray" data-i18n="nav.github">GitHub</a>
+  </div>
+  <div class="chips" id="langSwitch"></div>
+</nav>
+<article class="md" id="md">
+<h1>Changelog</h1>
+<p><em><a href="changelog.html?lang=zh">中文版</a> · Scan results refresh daily; this page records changes to method and product</em></p>
+<hr>
+<h2>2026-08-18 · First release</h2>
+<h3>Full ecosystem coverage</h3>
+<p>GitHub search returns at most 1000 results per query, and the <code>dsh-plugin</code> topic holds 7,000+ repositories. Discovery now partitions adaptively — <strong>by star bucket, then by recursively halved creation-date windows</strong> — and enumerates 6,942 repositories (forks and archives excluded).</p>
+<p>Downloads moved from the REST API to codeload. Public tarballs need no auth there and do not consume the hourly quota, which a 7,000-repository sweep would otherwise exhaust against CI's 1,000/hour limit.</p>
+<p>Scanning is incremental: a repository whose <code>pushed_at</code> is unchanged and whose last scan succeeded reuses its cached card, and each run has a fetch budget. After the first full sweep, routine rescans are cheap.</p>
+<h3>Two fixes that affected the findings</h3>
+<p><strong>Streaming extraction.</strong> A repository-size cap was dropping whole repositories — including a 249MB one containing 555 code files. Switching to streaming extraction (<code>mode='r|gz'</code>) with a decompressed-byte budget took skips from 43 down to 19, and the remainder are genuinely code-free repositories.</p>
+<p><strong>Deterministic manifest selection.</strong> A 600-file cap could truncate <code>package.json</code> files, so which manifest we reported from a monorepo depended on tar ordering — two scans of the same repository could disagree. <code>package.json</code> files are now exempt from the cap, and the shallowest path wins.</p>
+<p>That bug briefly invalidated a key example in the report: we had written "declares empty vs. uses 17 services", where the "empty" came from a truncated read of a sub-package manifest. The passage has been rewritten to a checkable version.</p>
+<h3>Honesty of reporting</h3>
+<ul><li>Download failures and "repository contains no scannable code" shared one error message, which recorded unreached repositories as code-free and overstated coverage. They are now distinct.</li><li><code>data.json</code> publishes a <code>discovered</code> count, so the site reports "M scanned of N repositories in the ecosystem" rather than treating "however many cards we hold" as the denominator.</li></ul>
+<h3>Content</h3>
+<ul><li>The report, <em>The dsh Plugin Ecosystem Has No Permission Model</em> (English and Chinese). Figures are injected from scan data by <code>render_report.py</code>, so the text tracks the daily scan instead of going stale.</li><li><a href="../levels.html">Capability levels C0–C3, explained visually</a></li><li><a href="plugins.html">How dsh plugins actually work</a></li><li>Landing page, registry and report in English, Chinese and Japanese</li><li>Embeddable capability badges for plugin authors</li></ul>
+<hr>
+<h2>Planned</h2>
+<ul><li>Remaining coverage of the zero-star tail (the daily run converges on its own)</li><li>A <code>cordis.patch.yml</code> runtime-patch audit view</li><li>A daily diff feed: what changed in the capability surface of plugins you use</li><li>An install-gate plugin: block or ask on C2+ installs</li><li>Multi-harness support (Abu-Cowork, Claude Code plugin formats)</li></ul>
+<hr>
+<p><em>False positives and corrections: <a href="https://github.com/unStone/dsh-xray/issues">open an issue</a>. Rules are fixed in public and rescans run daily.</em></p>
+</article>
+<footer>
+  <span data-i18n="foot.oss"></span> <a href="https://github.com/unStone/dsh-xray/issues" data-i18n="foot.issue"></a>
+</footer>
+</div>
+
+<script src="../i18n.js"></script>
+<script src="../mdview.js"></script>
+<script>
+xray.applyStatic();
+xray.mountSwitcher(document.getElementById('langSwitch'));
+// English prose ships in the HTML for crawlers; other locales load on demand.
+mdview.swapLocale('../', 'guide/changelog');
+</script>
+</body>
+</html>
