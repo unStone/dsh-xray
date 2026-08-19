@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  issues: write
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -14,6 +15,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      # The per-repo cards drive incremental scanning. Keeping them in the cache
+      # rather than in git stops a 35MB tree from being rewritten every day; a
+      # cache miss just means one slower full sweep.
+      - uses: actions/cache@v4
+        with:
+          path: data/scans
+          key: scans-${{ github.run_id }}
+          restore-keys: scans-
+      - name: rule tests
+        run: cd scanner && python test_scan_core.py
       - name: discover + scan
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,7 +41,7 @@ jobs:
         run: |
           git config user.name 'dsh-xray-bot'
           git config user.email 'bot@dsh-xray'
-          git add data docs
+          git add docs
           if git diff --cached --quiet; then
             echo "nothing changed"; exit 0
           fi
@@ -47,3 +58,18 @@ jobs:
           done
           echo "push failed after 3 attempts - conflicting changes need a human"
           exit 1
+
+      - name: report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Without this a broken scan just leaves the site on stale data quietly.
+          existing=$(gh issue list --label scan-failure --state open --limit 1 --json number --jq '.[0].number')
+          body="The scheduled scan failed: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          The site is serving the previous scan until this is fixed."
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "Scheduled scan failed" --label scan-failure --body "$body"
+          fi

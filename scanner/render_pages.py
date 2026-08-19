@@ -13,6 +13,7 @@ import datetime
 import html
 import json
 import pathlib
+import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
@@ -275,11 +276,61 @@ def write_collections(plugins, out_dir):
     return [s for s, _, _, _ in COLLECTIONS]
 
 
-def write_feed(plugins, path, today):
-    """Atom feed of plugins that entered the ecosystem most recently."""
+def diff_against(plugins, previous):
+    """What changed since the last published scan.
+
+    A registry you check once is a directory; a registry that tells you what
+    moved is worth coming back to. Levels changing on a plugin you already
+    installed is the case that actually matters.
+    """
+    before = {p['repo']: p for p in previous}
+    added, changed = [], []
+    for p in plugins:
+        old = before.get(p['repo'])
+        if old is None:
+            if p['level'] >= 0:
+                added.append(p)
+            continue
+        if old.get('level') != p.get('level') and p['level'] >= 0 and old.get('level', -1) >= 0:
+            changed.append((p, old['level']))
+        else:
+            oldf = {f['id'] for f in old.get('flags') or []}
+            newf = {f['id'] for f in p.get('flags') or []}
+            gained = newf - oldf
+            if gained & {'runtime_patch', 'prompt_surface', 'api_intercept',
+                         'subprocess_service', 'token_env', 'install_script'}:
+                changed.append((p, None))
+    added.sort(key=lambda p: -p['stars'])
+    changed.sort(key=lambda t: -t[0]['stars'])
+    return added, changed
+
+
+def write_feed(plugins, path, today, previous=None):
+    """Atom feed: newly scanned plugins, and capability changes on existing ones."""
+    entries = ''
+    if previous:
+        added, changed = diff_against(plugins, previous)
+        if changed:
+            rows = ''.join(
+                f'&lt;li&gt;{esc(p["repo"])}: '
+                + (f'C{old} → C{p["level"]}' if old is not None else 'gained capability flags')
+                + '&lt;/li&gt;' for p, old in changed[:40])
+            entries += (
+                f'<entry><title>{len(changed)} plugin(s) changed capability on {today}</title>'
+                f'<link href="{SITE}/registry.html"/>'
+                f'<id>{SITE}/changes/{today}</id><updated>{today}T00:00:00Z</updated>'
+                f'<summary type="html">&lt;ul&gt;{rows}&lt;/ul&gt;</summary></entry>')
+        if added:
+            rows = ''.join(f'&lt;li&gt;{esc(p["repo"])} — C{p["level"]}&lt;/li&gt;' for p in added[:40])
+            entries += (
+                f'<entry><title>{len(added)} plugin(s) newly scanned on {today}</title>'
+                f'<link href="{SITE}/registry.html"/>'
+                f'<id>{SITE}/added/{today}</id><updated>{today}T00:00:00Z</updated>'
+                f'<summary type="html">&lt;ul&gt;{rows}&lt;/ul&gt;</summary></entry>')
+
     fresh = sorted([p for p in plugins if p.get('first_seen')],
-                   key=lambda p: (p['first_seen'], p['stars']), reverse=True)[:50]
-    entries = ''.join(
+                   key=lambda p: (p['first_seen'], p['stars']), reverse=True)[:40]
+    entries += ''.join(
         f'<entry><title>{esc(p["repo"])} — C{p["level"]}</title>'
         f'<link href="{SITE}/p/{p["repo"].replace("/", "__")}.html"/>'
         f'<id>{SITE}/p/{p["repo"].replace("/", "__")}.html</id>'
@@ -333,6 +384,13 @@ def write_llms_txt(path, plugins, collections, today):
 def main():
     data = json.loads((DOCS / 'data.json').read_text())
     plugins = data['plugins']
+    # The committed copy from the previous run is what "changed" is measured against.
+    try:
+        previous = json.loads(subprocess.run(
+            ['git', 'show', 'HEAD:docs/data.json'], cwd=ROOT,
+            capture_output=True, text=True, check=True).stdout)['plugins']
+    except Exception:
+        previous = None
     OUT.mkdir(parents=True, exist_ok=True)
 
     keep = set()
@@ -349,7 +407,7 @@ def main():
     coll_dir = DOCS / 'c'
     coll_dir.mkdir(parents=True, exist_ok=True)
     collections = write_collections(plugins, coll_dir)
-    write_feed(plugins, DOCS / 'feed.xml', today)
+    write_feed(plugins, DOCS / 'feed.xml', today, previous)
     write_llms_txt(DOCS / 'llms.txt', plugins, collections, today)
 
     # A sitemap index with per-section children: 7k URLs in one file is past the

@@ -14,6 +14,23 @@ CODE_EXT = ('.ts', '.tsx', '.js', '.mjs', '.cjs', '.vue', '.svelte')
 DEV_DIR_RE = re.compile(
     r"(^|/)(tests?|__tests__|e2e|spec|specs|fixtures?|mocks?|examples?|docs?|website|\.github)(/|$)")
 DEV_FILE_RE = re.compile(r"\.(test|spec|stories)\.[a-z]+$|\.d\.ts$")
+# Build output and vendored trees carry inlined dependencies. Flagging a plugin
+# for eval() that its bundler pulled in from schemastery — an official dsh
+# package — attributes someone else's code to its author.
+VENDOR_DIR_RE = re.compile(r"(^|/)(lib|dist|build|vendor|bundle|out|_output)(/|$)")
+
+LINE_COMMENT_RE = re.compile(r"(?<![:\w])//[^\n]*")
+BLOCK_COMMENT_RE = re.compile(r"/\*.*?\*/", re.S)
+
+
+def strip_comments(text):
+    """Blank out comments, preserving newlines so reported line numbers hold.
+
+    A mention of child_process in a doc comment is not a call to it.
+    """
+    def blank(m):
+        return re.sub(r"[^\n]", " ", m.group(0))
+    return LINE_COMMENT_RE.sub(blank, BLOCK_COMMENT_RE.sub(blank, text))
 
 URL_RE = re.compile(r"https?://([a-zA-Z0-9][a-zA-Z0-9.-]*\.[a-zA-Z]{2,})")
 INJECT_RE = re.compile(r"(?:export\s+const\s+inject|['\"]?inject['\"]?)\s*[:=]\s*(\[[^\]]{0,400}\])", re.S)
@@ -43,7 +60,11 @@ BENIGN_ENV = {'NODE_ENV', 'HOME', 'PATH', 'TZ', 'USER', 'SHELL', 'TERM', 'CI', '
 
 
 def zone_of(path):
-    return 'dev' if (DEV_DIR_RE.search(path) or DEV_FILE_RE.search(path)) else 'src'
+    if DEV_DIR_RE.search(path) or DEV_FILE_RE.search(path):
+        return 'dev'
+    if VENDOR_DIR_RE.search(path):
+        return 'vendor'
+    return 'src'
 
 
 def _line(text, pos):
@@ -56,7 +77,8 @@ def scan_files(files):
         'manifest': None, 'pkg_name': None, 'deps': [], 'install_scripts': {},
         'injects': set(), 'hooks': set(), 'tool_regs': 0,
         'domains': {}, 'env': {},
-        'behaviors': {k: {'src': 0, 'dev': 0, 'evidence': []} for k in BEHAVIOR_RES},
+        'behaviors': {k: {'src': 0, 'dev': 0, 'vendor': 0, 'evidence': [],
+                          'vendor_evidence': []} for k in BEHAVIOR_RES},
         'has_apply': False, 'files_scanned': 0, 'has_skill_md': False,
     }
 
@@ -87,6 +109,7 @@ def scan_files(files):
 
         card['files_scanned'] += 1
         zone = zone_of(path)
+        text = strip_comments(text)
         if APPLY_RE.search(text):
             card['has_apply'] = True
         for m in INJECT_RE.finditer(text):
@@ -95,7 +118,7 @@ def scan_files(files):
         for m in HOOK_RE.finditer(text):
             card['hooks'].add(m.group(1))
         card['tool_regs'] += len(TOOL_RE.findall(text))
-        if zone == 'src':
+        if zone != 'dev':
             for m in URL_RE.finditer(text):
                 d = m.group(1).lower()
                 if d not in BENIGN_DOMAINS and not d.endswith(('.example', '.test', '.local', '.internal', '.invalid')):
@@ -110,6 +133,8 @@ def scan_files(files):
                 b[zone] += 1
                 if zone == 'src' and len(b['evidence']) < 5:
                     b['evidence'].append(f"{path}:{_line(text, m.start())}")
+                elif zone == 'vendor' and len(b['vendor_evidence']) < 3:
+                    b['vendor_evidence'].append(f"{path}:{_line(text, m.start())}")
 
     return finalize(card)
 
@@ -145,11 +170,17 @@ def finalize(card):
         flag('subprocess_service', 'inject: subprocess')
     if 'tools/pre-execute' in pw_hook:
         flag('tool_gate', 'hook: tools/pre-execute')
-    for key, label in (('exec', 'exec'), ('eval', 'eval'), ('base64_decode', 'base64'),
-                       ('net_server', 'net_server')):
+    bundled_only = []
+    for key in ('exec', 'eval', 'base64_decode', 'net_server'):
         b = card['behaviors'][key]
         if b['src']:
-            flag(key, f"×{b['src']} src, e.g. {', '.join(b['evidence'][:2])}")
+            flag(key, f"×{b['src']} in authored code, e.g. {', '.join(b['evidence'][:2])}")
+        elif b['vendor']:
+            # Present, but in bundled output — reported without counting toward
+            # the level, since it is not the author's code.
+            bundled_only.append(key)
+            flag(f'{key}_bundled',
+                 f"×{b['vendor']} in build output only, e.g. {', '.join(b['vendor_evidence'][:2])}")
     token_env = sorted(v for v in card['env'] if TOKEN_ENV_RE.search(v))
     if token_env:
         flag('token_env', ', '.join(token_env[:6]))
