@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fishsb/dsh-prompt-enhancer — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.">
+<meta name="description" content="Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Fishsb__dsh-prompt-enhancer.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fishsb/dsh-prompt-enhancer — dsh plugin capability card">
-<meta property="og:description" content="Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.">
+<meta property="og:description" content="Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Fishsb__dsh-prompt-enhancer.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-prompt-enhancer", "identifier": "Fishsb/dsh-prompt-enhancer", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.", "codeRepository": "https://github.com/Fishsb/dsh-prompt-enhancer", "url": "https://unstone.github.io/dsh-xray/p/Fishsb__dsh-prompt-enhancer.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-prompt-enhancer", "identifier": "Fishsb/dsh-prompt-enhancer", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/Fishsb/dsh-prompt-enhancer", "url": "https://unstone.github.io/dsh-xray/p/Fishsb__dsh-prompt-enhancer.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,12 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/Fishsb/dsh-prompt-enhancer" rel="nofollow ugc">Fishsb/dsh-prompt-enhancer source on GitHub</a>
      · <a href="../registry.html#Fishsb__dsh-prompt-enhancer">this plugin in the registry</a></p>
-  <p>Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×25 in build output only, e.g. lib/index.cjs:24, lib/index.cjs:24</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/build-client.mjs:128</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/shortcut-icon.cjs:10</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. lib/updater-host.cjs:455, lib/updater-host.cjs:623</td></tr></tbody></table>
+  <p>Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. scripts/asr-deploy.mjs:9, scripts/asr-deploy.mjs:9</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/build-client.mjs:146</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. plugin-client.js:3833</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×4 in build output only, e.g. lib/asr-worker.cjs:135, lib/asr-worker.cjs:174</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>timer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>schemas.microsoft.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>windir</span> <span>USERPROFILE</span> <span>PORT</span> <span>TEMP</span> <span>DSH_HOME</span> <span>DSH_ENHANCER_EXECUTOR_ROOT</span> <span>LOCALAPPDATA</span> <span>DSH_EXECUTOR_PORT</span> <span>DSH_DSH_BIN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.webrtc-experiment.com</span> <span>unpkg.com</span> <span>api.github.com</span> <span>huggingface.co</span> <span>dashscope.aliyuncs.com</span> <span>schemas.microsoft.com</span> <span>nssm.cc</span> <span>ghproxy.net</span> <span>gh-proxy.com</span> <span>ghfast.top</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>DSH_HOME</span> <span>SystemRoot</span> <span>windir</span> <span>TEMP</span> <span>PORT</span> <span>LOCALAPPDATA</span> <span>DSH_RUNTIME_DIR</span> <span>DSH_ASR_MODEL</span> <span>DSH_ASR_MODEL_TYPE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>memorax-ai/dsh-harmony — capability card (C3) · dsh-xray</title>
-<meta name="description" content="memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands.">
+<meta name="description" content="memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/memorax-ai__dsh-harmony.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="memorax-ai/dsh-harmony — dsh plugin capability card">
-<meta property="og:description" content="memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands.">
+<meta property="og:description" content="memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/memorax-ai__dsh-harmony.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-harmony", "identifier": "memorax-ai/dsh-harmony", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands.", "codeRepository": "https://github.com/memorax-ai/dsh-harmony", "url": "https://unstone.github.io/dsh-xray/p/memorax-ai__dsh-harmony.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-harmony", "identifier": "memorax-ai/dsh-harmony", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, starts a network server.", "codeRepository": "https://github.com/memorax-ai/dsh-harmony", "url": "https://unstone.github.io/dsh-xray/p/memorax-ai__dsh-harmony.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,10 +47,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/memorax-ai/dsh-harmony" rel="nofollow ugc">memorax-ai/dsh-harmony source on GitHub</a>
      · <a href="../registry.html#memorax-ai__dsh-harmony">this plugin in the registry</a></p>
-  <p>memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./harmony.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node -e &quot;if (process.env.npm_config_global === &#x27;true&#x27;) import(&#x27;./scripts/postinstall.cjs&#x27;)&quot;</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/installer.ts:1, src/installer.ts:43</td></tr></tbody></table>
+  <p>memorax-ai/dsh-harmony is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, starts a network server.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./harmony.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node -e &quot;if (process.env.npm_config_global === &#x27;true&#x27;) import(&#x27;./scripts/postinstall.cjs&#x27;)&quot;</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/installer.ts:1, src/installer.ts:43</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/plugin.ts:409, src/plugin.ts:461</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>appExit</span> <span>harmony</span> <span>locale</span> <span>slots</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>internal/plugin</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>internal/plugin</span> <span>loader/config-update</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HARMONY_ACTIVE</span> <span>DSH_HARMONY_IGNORE_ONCE</span> <span>DSH_HARMONY_DSH_ENTRY</span> <span>ComSpec</span> <span>DSH_DESKTOP</span> <span>DSH_HARMONY_REACT_TRACE</span></p>
   <h2>How to read this</h2>

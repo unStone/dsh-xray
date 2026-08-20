@@ -48,11 +48,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/zzhzz/dsh-ask-peer" rel="nofollow ugc">zzhzz/dsh-ask-peer source on GitHub</a>
      · <a href="../registry.html#zzhzz__dsh-ask-peer">this plugin in the registry</a></p>
   <p>zzhzz/dsh-ask-peer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/mock-llm.mjs:128, src/server.ts:98</td></tr></tbody></table>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/mock-llm.mjs:131, src/server.ts:119</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>conversationEvents</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>MOCK_PORT</span> <span>MOCK_ROLE</span> <span>MOCK_ANSWER</span> <span>MOCK_ASK_PEERS</span> <span>MOCK_ASK_QUESTION</span> <span>MOCK_ATTEMPT_WRITE</span> <span>MOCK_ASK_LOOP</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MOCK_PORT</span> <span>MOCK_ROLE</span> <span>MOCK_ANSWER</span> <span>MOCK_ASK_PEERS</span> <span>MOCK_RECOMMEND_PEER</span> <span>MOCK_RECOMMEND_TOPIC</span> <span>MOCK_ASKER_PAUSE_MS</span> <span>MOCK_ASK_QUESTION</span> <span>MOCK_ATTEMPT_WRITE</span> <span>MOCK_ASK_LOOP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

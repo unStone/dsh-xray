@@ -48,11 +48,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/EIGHTfs/dsh-git-push" rel="nofollow ugc">EIGHTfs/dsh-git-push source on GitHub</a>
      · <a href="../registry.html#EIGHTfs__dsh-git-push">this plugin in the registry</a></p>
   <p>EIGHTfs/dsh-git-push is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. test-apply.mjs:6, test-apply.mjs:6</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MY_TOKEN</td></tr></tbody></table>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. test-apply.mjs:6, test-apply.mjs:6</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MY_TOKEN</td></tr></tbody></table>
   
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>MY_TOKEN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>MY_TOKEN</span> <span>DSH_PORT</span> <span>TEST_DSH_PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

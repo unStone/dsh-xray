@@ -48,11 +48,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/FlashingChen/dsh-desktop-hub" rel="nofollow ugc">FlashingChen/dsh-desktop-hub source on GitHub</a>
      · <a href="../registry.html#FlashingChen__dsh-desktop-hub">this plugin in the registry</a></p>
   <p>FlashingChen/dsh-desktop-hub is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. scripts/build-preload.mjs:2, scripts/build-preload.mjs:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>clawhub.ai</span> <span>api.github.com</span> <span>cdn.jsdelivr.net</span> <span>mcp.example.com</span> <span>gcore.jsdelivr.net</span> <span>skillsmp.com</span> <span>registry.modelcontextprotocol.io</span> <span>fastly.jsdelivr.net</span> <span>codeload.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_BUNDLED_SKILL_DIR</span> <span>DSH_HOME</span> <span>GITHUB_TOKEN</span> <span>RUNTIME_TARGET</span> <span>TRIM_RUNTIME</span> <span>DSH_BIN</span> <span>VAR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>clawhub.ai</span> <span>api.github.com</span> <span>cdn.jsdelivr.net</span> <span>mcp.example.com</span> <span>gcore.jsdelivr.net</span> <span>skillsmp.com</span> <span>registry.modelcontextprotocol.io</span> <span>fastly.jsdelivr.net</span> <span>codeload.github.com</span> <span>feedback.flashingchen.xyz</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_BUNDLED_SKILL_DIR</span> <span>DSH_HOME</span> <span>GITHUB_TOKEN</span> <span>RUNTIME_TARGET</span> <span>TRIM_RUNTIME</span> <span>DSH_BIN</span> <span>VAR</span> <span>DSH_FEEDBACK_ENDPOINT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

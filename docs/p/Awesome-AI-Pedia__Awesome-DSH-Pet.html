@@ -48,6 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Awesome-AI-Pedia/Awesome-DSH-Pet" rel="nofollow ugc">Awesome-AI-Pedia/Awesome-DSH-Pet source on GitHub</a>
      · <a href="../registry.html#Awesome-AI-Pedia__Awesome-DSH-Pet">this plugin in the registry</a></p>
   <p>Awesome-AI-Pedia/Awesome-DSH-Pet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64_decode_bundled.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/build-client.mjs:7, scripts/build-client.mjs:7</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/gates/verify-config-sync.mjs:24</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.mjs:722</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>jobs</span> <span>sessions</span> <span>settings</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/request-error</span> <span>agent/session-start</span> <span>session/event</span></p>

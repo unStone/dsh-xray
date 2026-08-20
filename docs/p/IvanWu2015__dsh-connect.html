@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IvanWu2015/dsh-connect — capability card (C2) · dsh-xray</title>
-<meta name="description" content="IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.">
+<meta name="description" content="IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/IvanWu2015__dsh-connect.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IvanWu2015/dsh-connect — dsh plugin capability card">
-<meta property="og:description" content="IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.">
+<meta property="og:description" content="IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/IvanWu2015__dsh-connect.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-connect", "identifier": "IvanWu2015/dsh-connect", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/IvanWu2015/dsh-connect", "url": "https://unstone.github.io/dsh-xray/p/IvanWu2015__dsh-connect.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-connect", "identifier": "IvanWu2015/dsh-connect", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/IvanWu2015/dsh-connect", "url": "https://unstone.github.io/dsh-xray/p/IvanWu2015__dsh-connect.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,8 +47,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/IvanWu2015/dsh-connect" rel="nofollow ugc">IvanWu2015/dsh-connect source on GitHub</a>
      · <a href="../registry.html#IvanWu2015__dsh-connect">this plugin in the registry</a></p>
-  <p>IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DINGTALK_WEBHOOK_SECRET, FEISHU_APP_SECRET, TELEGRAM_BOT_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <p>IvanWu2015/dsh-connect is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars, ships no manifest.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. packages/connect-feishu/src/adapter.ts:487</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DINGTALK_WEBHOOK_SECRET, FEISHU_APP_SECRET, TELEGRAM_BOT_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>connect</span> <span>sessions</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.telegram.org</span></p>

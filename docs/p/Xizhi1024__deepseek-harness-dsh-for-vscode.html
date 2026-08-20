@@ -48,8 +48,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Xizhi1024/deepseek-harness-dsh-for-vscode" rel="nofollow ugc">Xizhi1024/deepseek-harness-dsh-for-vscode source on GitHub</a>
      · <a href="../registry.html#Xizhi1024__deepseek-harness-dsh-for-vscode">this plugin in the registry</a></p>
   <p>Xizhi1024/deepseek-harness-dsh-for-vscode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can intercept API traffic, executes system commands, starts a network server.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/check-package-contents.js:4, scripts/check-package-contents.js:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/textDocumentBridge.js:85, src/textDocumentBridge.js:134</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>apiProxy</span> <span>conversation</span> <span>sessions</span></p>
+  <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/check-package-contents.js:4, scripts/check-package-contents.js:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/textDocumentBridge.js:85, src/textDocumentBridge.js:134</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>apiProxy</span> <span>conversation</span> <span>llm</span> <span>sessions</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>playwright.dev</span></p>
   

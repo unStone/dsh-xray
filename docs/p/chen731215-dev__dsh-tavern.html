@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>chen731215-dev/dsh-tavern — capability card (C2) · dsh-xray</title>
-<meta name="description" content="chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, base64_decode_bundled, ships no manifest.">
+<meta name="description" content="chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, base64_decode_bundled.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/chen731215-dev__dsh-tavern.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chen731215-dev/dsh-tavern — dsh plugin capability card">
-<meta property="og:description" content="chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, base64_decode_bundled, ships no manifest.">
+<meta property="og:description" content="chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, base64_decode_bundled.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/chen731215-dev__dsh-tavern.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tavern", "identifier": "chen731215-dev/dsh-tavern", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, base64_decode_bundled, ships no manifest.", "codeRepository": "https://github.com/chen731215-dev/dsh-tavern", "url": "https://unstone.github.io/dsh-xray/p/chen731215-dev__dsh-tavern.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tavern", "identifier": "chen731215-dev/dsh-tavern", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, base64_decode_bundled.", "codeRepository": "https://github.com/chen731215-dev/dsh-tavern", "url": "https://unstone.github.io/dsh-xray/p/chen731215-dev__dsh-tavern.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,16 +43,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>chen731215-dev/dsh-tavern</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH 酒馆插件：DeepSeek Harness 原生管理面板（多角色卡/多世界书/可切换预设），入口在「设置 → 通用设置 → 酒馆管理（原生）」。使用/安装：dsh plugin --profile web add dsh-tavern</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">DSH 原生酒馆管理面板，入口：设置 → 通用设置 → 酒馆管理（原生）。多角色卡/多世界书/多预设，会话级预设隔离；世界书智能关键词注入省 60-70% 上下文；记忆总结 + 角色关系网；剧情选项一键发送；创作/扮演双模式；NSFW 成人模式。免费非商用（CC BY-NC-SA 4.0）。安装：dsh plugin --profile web add dsh-tavern</p>
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/chen731215-dev/dsh-tavern" rel="nofollow ugc">chen731215-dev/dsh-tavern source on GitHub</a>
      · <a href="../registry.html#chen731215-dev__dsh-tavern">this plugin in the registry</a></p>
-  <p>chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, base64_decode_bundled, ships no manifest.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:1173</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.manager.bundle.js:70</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <p>chen731215-dev/dsh-tavern is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, base64_decode_bundled.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:2020</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.manager.bundle.js:70</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>runtime</span> <span>slots</span> <span>systemPrompt</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span> <span>api.deepseek.com</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_CWD</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

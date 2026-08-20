@@ -48,6 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wumu1111111/dsh-agnes-omni" rel="nofollow ugc">wumu1111111/dsh-agnes-omni source on GitHub</a>
      · <a href="../registry.html#wumu1111111__dsh-agnes-omni">this plugin in the registry</a></p>
   <p>wumu1111111/dsh-agnes-omni is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, decodes base64 payloads.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. index.js:63, index.js:102</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. bridge.js:99</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>credentials</span> <span>fs</span> <span>llm</span> <span>subprocess</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>

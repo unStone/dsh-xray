@@ -44,10 +44,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness Desktop App: a local AI desktop workspace for DSH Sessions, projects, files, web research, plugins, and Office artifacts.</p>
-  <p class="lede">★ 100+ ·
+  <p class="lede">★ 500+ ·
      <a href="https://github.com/vibeinging/deepseek-harness-desktop-app" rel="nofollow ugc">vibeinging/deepseek-harness-desktop-app source on GitHub</a>
      · <a href="../registry.html#vibeinging__deepseek-harness-desktop-app">this plugin in the registry</a></p>
   <p>vibeinging/deepseek-harness-desktop-app is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, gates tool execution.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patch-package</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>webServer, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×44 in authored code, e.g. electron/artifact-context-menu.js:3, electron/main.js:16</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×13 in authored code, e.g. electron/main.js:681, electron/main.js:1419</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×24 in authored code, e.g. eval/browser-workspace-ui-smoke.mjs:14, eval/browser-workspace-ui-smoke.mjs:26</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>theme</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>system-prompt/assemble</span> <span>theme/change</span> <span>tools/pre-execute</span></p>

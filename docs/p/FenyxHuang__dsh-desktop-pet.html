@@ -48,6 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/FenyxHuang/dsh-desktop-pet" rel="nofollow ugc">FenyxHuang/dsh-desktop-pet source on GitHub</a>
      · <a href="../registry.html#FenyxHuang__dsh-desktop-pet">this plugin in the registry</a></p>
   <p>FenyxHuang/dsh-desktop-pet is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, eval_bundled, base64_decode_bundled.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:148</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/client.js:1313, lib/client.js:1364</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>credentials</span> <span>invariants</span> <span>locale</span> <span>petStatus</span> <span>remote</span> <span>sessions</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/status</span> <span>tools/pre-execute</span> <span>tools/result</span></p>

@@ -48,11 +48,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/leaveimagination/dsh-qwen-voice" rel="nofollow ugc">leaveimagination/dsh-qwen-voice source on GitHub</a>
      · <a href="../registry.html#leaveimagination__dsh-qwen-voice">this plugin in the registry</a></p>
   <p>leaveimagination/dsh-qwen-voice is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/setup.mjs:4, scripts/setup.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/client/audio.ts:29</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>slots</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>slots</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_URL</span> <span>QWEN_COORDINATOR_BINDING_PATH</span> <span>DSH_PROFILE</span> <span>AGENT_PROTOCOL</span> <span>ACP_COMMAND</span> <span>ACP_ARGS</span> <span>ACP_LABEL</span> <span>ACP_WORKSPACE</span> <span>QWEN_AUDIO_AGENT_ALLOWED_ORIGINS</span> <span>QWEN_AUDIO_AGENT_TASK_MAX_CONCURRENT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>QWEN_COORDINATOR_BINDING_PATH</span> <span>DSH_WEB_URL</span> <span>QWAUDIO_CONFIG_DIR</span> <span>DSH_PROFILE</span> <span>QWEN_AUDIO_AGENT_ALLOWED_ORIGINS</span> <span>AGENT_PROTOCOL</span> <span>ACP_COMMAND</span> <span>ACP_ARGS</span> <span>ACP_LABEL</span> <span>ACP_WORKSPACE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

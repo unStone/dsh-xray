@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>khaosnie/dsh-cli — capability card (C2) · dsh-xray</title>
+<meta name="description" content="khaosnie/dsh-cli is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/khaosnie__dsh-cli.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="khaosnie/dsh-cli — dsh plugin capability card">
+<meta property="og:description" content="khaosnie/dsh-cli is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/khaosnie__dsh-cli.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cli", "identifier": "khaosnie/dsh-cli", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "khaosnie/dsh-cli is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.", "codeRepository": "https://github.com/khaosnie/dsh-cli", "url": "https://unstone.github.io/dsh-xray/p/khaosnie__dsh-cli.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>khaosnie/dsh-cli</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">DeepSeek Harness 终端交互 profile</p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/khaosnie/dsh-cli" rel="nofollow ugc">khaosnie/dsh-cli source on GitHub</a>
+     · <a href="../registry.html#khaosnie__dsh-cli">this plugin in the registry</a></p>
+  <p>khaosnie/dsh-cli is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. tui-runner.mjs:910, tui-runner.mjs:926</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 6 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>cmdlineArgs</span> <span>credentials</span> <span>llm</span> <span>sessions</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>llm/adapters-updated</span> <span>session/event</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>NO_COLOR</span> <span>DSH_TUI_EXIT_TIMEOUT_MS</span> <span>DSH_TUI_STREAM_CHUNK_CHARS</span> <span>DSH_TUI_STREAM_CHUNK_DELAY_MS</span> <span>DSH_TUI_VERBOSE_TOOLS</span> <span>DSH_NO_BANNER</span> <span>DSH_TUI_TRANSCRIPT_LINES</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

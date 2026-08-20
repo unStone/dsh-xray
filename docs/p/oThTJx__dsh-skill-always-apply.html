@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>oThTJx/dsh-skill-always-apply — capability card (C2) · dsh-xray</title>
-<meta name="description" content="oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/oThTJx__dsh-skill-always-apply.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="oThTJx/dsh-skill-always-apply — dsh plugin capability card">
-<meta property="og:description" content="oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/oThTJx__dsh-skill-always-apply.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-skill-always-apply", "identifier": "oThTJx/dsh-skill-always-apply", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/oThTJx/dsh-skill-always-apply", "url": "https://unstone.github.io/dsh-xray/p/oThTJx__dsh-skill-always-apply.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-skill-always-apply", "identifier": "oThTJx/dsh-skill-always-apply", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.", "codeRepository": "https://github.com/oThTJx/dsh-skill-always-apply", "url": "https://unstone.github.io/dsh-xray/p/oThTJx__dsh-skill-always-apply.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,10 +47,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/oThTJx/dsh-skill-always-apply" rel="nofollow ugc">oThTJx/dsh-skill-always-apply source on GitHub</a>
      · <a href="../registry.html#oThTJx__dsh-skill-always-apply">this plugin in the registry</a></p>
-  <p>oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <p>oThTJx/dsh-skill-always-apply is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>skills</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/status</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/status</span> <span>skills/change</span> <span>system-prompt/assemble</span></p>
   
   
   <h2>How to read this</h2>

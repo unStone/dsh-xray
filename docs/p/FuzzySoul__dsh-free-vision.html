@@ -43,12 +43,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>FuzzySoul/dsh-free-vision</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Vision bridge plugin for DeepSeek Harness (dsh): image understanding for text-only models via luma-mcp, free Qwen3-VL-Flash by default.</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">为DSH（DeepSeek Harness）量身打造的视觉插件，现已支持agent调用图片显示/Vision plugin for DSH(DeepSeek Harness),support Proactive Image Display.</p>
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/FuzzySoul/dsh-free-vision" rel="nofollow ugc">FuzzySoul/dsh-free-vision source on GitHub</a>
      · <a href="../registry.html#FuzzySoul__dsh-free-vision">this plugin in the registry</a></p>
   <p>FuzzySoul/dsh-free-vision is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, decodes base64 payloads.</p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/patch-luma.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/release.mjs:6, scripts/release.mjs:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. dsh/index.js:1006</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr></tbody></table>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/patch-luma.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/release.mjs:6, scripts/release.mjs:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. dsh/index.js:1040, dsh/index.js:1435</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>conversation</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>open.bigmodel.cn</span> <span>dashscope.aliyuncs.com</span> <span>ark.cn-beijing.volces.com</span> <span>api.siliconflow.cn</span> <span>api.hunyuan.cloud.tencent.com</span> <span>bailian.console.aliyun.com</span> <span>console.volcengine.com</span> <span>cloud.siliconflow.cn</span> <span>cloud.tencent.com</span> <span>your-proxy.example.com</span></p>
