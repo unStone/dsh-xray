@@ -92,7 +92,8 @@ function render() {
     return `<div class="row" data-repo="${esc(p.repo)}">
       <div class="row-head" onclick="this.parentNode.classList.toggle('open')">
         <div><div class="name"><a href="https://github.com/${esc(p.repo)}" target="_blank" rel="nofollow ugc noopener" onclick="event.stopPropagation()">${esc(p.repo)}</a></div>
-        <div class="desc">${esc(p.description)}</div></div>
+        <div class="desc">${esc(p.description)}</div>
+        ${p.type && p.type !== 'plugin' ? `<div class="notplug">${t('reg.type.' + p.type)}</div>` : ''}</div>
         <div class="stars">★ ${p.stars >= 1000 ? (p.stars / 1000).toFixed(1) + 'k' : p.stars}</div>
         <div class="lvl ${lvCls}">${lvTxt}</div>
         <div class="flags">${(p.flags || []).map(flagChip).join('')}</div>

@@ -80,6 +80,7 @@ def scan_files(files):
         'behaviors': {k: {'src': 0, 'dev': 0, 'vendor': 0, 'evidence': [],
                           'vendor_evidence': []} for k in BEHAVIOR_RES},
         'has_apply': False, 'files_scanned': 0, 'has_skill_md': False,
+        'has_bundle': False, 'has_client': False,
     }
 
     # Shallowest paths first: in a monorepo the plugin's own root package.json
@@ -99,8 +100,15 @@ def scan_files(files):
                 if k in ('preinstall', 'postinstall', 'install', 'prepare'):
                     card['install_scripts'][k] = str(v)[:200]
             for key in ('manifest', 'dsh'):
-                if card['manifest'] is None and isinstance(data.get(key), dict):
-                    card['manifest'] = data[key]
+                m = data.get(key)
+                if not isinstance(m, dict):
+                    continue
+                if card['manifest'] is None:
+                    card['manifest'] = m
+                if isinstance(m.get('bundle'), dict):
+                    card['has_bundle'] = True
+                if isinstance(m.get('client'), dict):
+                    card['has_client'] = True
             continue
         if base.upper() == 'SKILL.MD':
             card['has_skill_md'] = True
@@ -139,15 +147,30 @@ def scan_files(files):
     return finalize(card)
 
 
+def classify(card):
+    """How a repository actually connects to dsh.
+
+    Carrying the `dsh-plugin` topic says nothing on its own — anyone can add a
+    topic. What makes a repository installable via `dsh plugin add` is a
+    `dsh.bundle` manifest; declaring only `dsh.client` does not.
+    """
+    if card.get('has_bundle'):
+        return 'plugin'
+    if card.get('has_client'):
+        return 'client-only'
+    if card.get('has_skill_md'):
+        return 'skill'
+    if any(str(d).startswith('@deepseek-ai/') or d == 'cordis' for d in (card.get('deps') or [])):
+        return 'library'
+    if card.get('has_apply') and (card.get('hooks') or card.get('tool_regs')):
+        return 'code-only'
+    return 'unrelated'
+
+
 def finalize(card):
     card['injects'] = sorted(card['injects'])
     card['hooks'] = sorted(card['hooks'])
-    is_plugin = bool(
-        card['manifest'] is not None
-        or any(d.startswith('@deepseek-ai/') or d == 'cordis' for d in card['deps'])
-        or (card['has_apply'] and (card['hooks'] or card['tool_regs'] or card['injects']))
-    )
-    card['type'] = 'plugin' if is_plugin else ('skill' if card['has_skill_md'] else 'other')
+    card['type'] = classify(card)
 
     flags = []
 
@@ -184,7 +207,7 @@ def finalize(card):
     token_env = sorted(v for v in card['env'] if TOKEN_ENV_RE.search(v))
     if token_env:
         flag('token_env', ', '.join(token_env[:6]))
-    if is_plugin and card['manifest'] is None and (card['injects'] or card['tool_regs']):
+    if card['type'] in ('code-only', 'library') and (card['injects'] or card['tool_regs']):
         flag('no_manifest', f"uses {len(card['injects'])} services, {card['tool_regs']} tool regs, no manifest")
 
     ids = {f['id'] for f in flags}

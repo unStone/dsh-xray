@@ -81,6 +81,28 @@ def test_tests_do_not_inflate():
     check('dev/eval', 'eval' in ids, False)
 
 
+def test_topic_alone_does_not_make_a_plugin():
+    """Anyone can add a topic; dsh.bundle is what makes a repo installable."""
+    check('type/bundle-is-a-plugin',
+          card({'package.json': MANIFEST, 'src/i.ts': 'x'})['type'], 'plugin')
+    check('type/client-only-is-not',
+          card({'package.json': '{"name":"p","dsh":{"client":{"platform":"web"}}}'})['type'],
+          'client-only')
+    check('type/skill',
+          card({'SKILL.md': '# a skill'})['type'], 'skill')
+    check('type/library',
+          card({'package.json': '{"name":"p","dependencies":{"@deepseek-ai/dsh-tools":"1"}}'})['type'],
+          'library')
+    check('type/unrelated',
+          card({'package.json': '{"name":"p"}', 'src/i.ts': 'console.log(1)'})['type'], 'unrelated')
+
+
+def test_bundle_in_a_subpackage_still_counts():
+    c = card({'package.json': '{"name":"root"}',
+              'packages/p/package.json': '{"name":"p","dsh":{"bundle":{"patch":"./x.yml"}}}'})
+    check('type/monorepo-subpackage', c['type'], 'plugin')
+
+
 def test_levels():
     plain = card({'package.json': '{"name":"p","dependencies":{"@deepseek-ai/dsh-tools":"1"}}',
                   'src/index.ts': 'export function apply(ctx) {}'})

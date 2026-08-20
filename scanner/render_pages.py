@@ -42,6 +42,10 @@ LEVEL_DESC = {
 }
 LEVEL_COLOR = {3: '#dc2626', 2: '#d97706', 1: '#65a30d', 0: '#16a34a'}
 
+# Carrying the topic is not the same as being installable, and the card
+# should say which one this is.
+TYPE_TEXT = {'plugin': 'Installable plugin — declares a dsh.bundle manifest', 'client-only': 'Not installable — declares only dsh.client, which dsh plugin add cannot install', 'skill': 'A skill, not an installable plugin — ships SKILL.md with no plugin manifest', 'library': 'Not a plugin — depends on dsh packages but declares no plugin manifest', 'code-only': 'Not installable — has plugin code but no manifest to install it by', 'unrelated': 'No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh'}
+
 
 def esc(s):
     return html.escape(str(s or ''), quote=True)
@@ -160,6 +164,7 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
      <a href="https://github.com/{esc(repo)}" rel="nofollow ugc">{esc(repo)} source on GitHub</a>
      · <a href="../registry.html#{esc(slug)}">this plugin in the registry</a></p>
   <p>{esc(summary)}</p>
+  <p class="lede"><b>{esc(TYPE_TEXT.get(p.get('type'), ''))}</b></p>
   {flags_table}
   {chips(p.get('injects') or [], 'Services it injects')}
   {chips(p.get('hooks') or [], 'Hooks it attaches')}
@@ -200,6 +205,9 @@ COLLECTIONS = [
     ('install-scripts', 'dsh plugins that run code at install time',
      'Plugins with preinstall, install or postinstall scripts: code that runs before you have used the plugin once.',
      lambda p: any(f['id'] == 'install_script' for f in p['flags'])),
+    ('not-installable', 'Repositories carrying the dsh-plugin topic that are not installable plugins',
+     'Adding a GitHub topic takes a click; being installable takes a dsh.bundle manifest. These repositories carry the topic without one — some are skills or libraries, others show no connection to dsh at all.',
+     lambda p: p.get('type') in ('client-only', 'library', 'code-only', 'unrelated')),
     ('minimal-surface', 'dsh plugins with no notable capability surface',
      'Plugins rated C0: no powerful capability and no sensitive behaviour detected in shipped code.',
      lambda p: p['level'] == 0),
