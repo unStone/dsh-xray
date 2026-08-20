@@ -56,72 +56,72 @@
 
 <div class="hero">
   <h1 data-i18n="hero.title">X-ray for agent plugins</h1>
-  <p class="sub" data-i18n="hero.sub"></p>
+  <p class="sub" data-i18n="hero.sub">Every DeepSeek Harness plugin gets a capability card: what it declares vs. what its code actually does — with file:line evidence.</p>
   <div class="ctas">
     <a class="btn pri" href="registry.html" data-i18n="hero.cta1">Browse the registry</a>
     <a class="btn sec" href="#badge" data-i18n="hero.cta2">Get your badge</a>
   </div>
   <p class="stat" id="liveStat"></p>
-  <div class="banner"><span data-i18n="report.banner"></span> <a id="reportCta" href="report.html" data-i18n="report.read">Read the report →</a></div>
+  <div class="banner"><span data-i18n="report.banner">New — <b>The dsh Plugin Ecosystem Has No Permission Model</b>: a capability survey of the most-installed plugins.</span> <a id="reportCta" href="report.html" data-i18n="report.read">Read the report →</a></div>
 </div>
 
 <section id="primer">
-  <h2 data-i18n="primer.title"></h2>
+  <h2 data-i18n="primer.title">First, what is any of this?</h2>
   <div class="cards">
-    <div class="card"><h3 data-i18n="p1.t"></h3><p data-i18n="p1.b"></p></div>
-    <div class="card"><h3 data-i18n="p2.t"></h3><p data-i18n="p2.b"></p></div>
-    <div class="card"><h3 data-i18n="p3.t"></h3><p data-i18n="p3.b"></p></div>
+    <div class="card"><h3 data-i18n="p1.t">DeepSeek Harness (dsh)</h3><p data-i18n="p1.b">An open-source AI agent runtime built on the principle that everything is a plugin. Its plugin ecosystem went from roughly 200 repositories to over 7,000 in about 30 days.</p></div>
+    <div class="card"><h3 data-i18n="p2.t">A plugin there</h3><p data-i18n="p2.b">Arbitrary code running inside your agent, using the same interfaces the core itself uses. There is no privilege gap between a third-party plugin and dsh internals.</p></div>
+    <div class="card"><h3 data-i18n="p3.t">Why capability matters</h3><p data-i18n="p3.b">No manifest field describes what a plugin can do, and installing one asks you nothing. The information exists only in the code — so we read the code.</p></div>
   </div>
   <p style="margin-top:14px"><a href="guide/plugins.html" data-i18n="primer.more">Read the full primer on how dsh plugins work →</a></p>
 </section>
 
 <section>
-  <h2 data-i18n="why.title"></h2>
-  <p class="lead" data-i18n="why.p"></p>
+  <h2 data-i18n="why.title">Plugins run inside your agent. Know what they can do.</h2>
+  <p class="lead" data-i18n="why.p">The dsh-plugin ecosystem grew from ~200 to 7,000+ repositories in 30 days. A plugin is arbitrary code inside your agent runtime — and today nothing surfaces its real capability surface before you install it.</p>
   <div class="cards">
-    <div class="card"><div class="n">01</div><h3 data-i18n="card1.t"></h3><p data-i18n="card1.b"></p></div>
-    <div class="card"><div class="n">02</div><h3 data-i18n="card2.t"></h3><p data-i18n="card2.b"></p></div>
-    <div class="card"><div class="n">03</div><h3 data-i18n="card3.t"></h3><p data-i18n="card3.b"></p></div>
+    <div class="card"><div class="n">01</div><h3 data-i18n="card1.t">Rewrite your system prompt</h3><p data-i18n="card1.b">A plugin hooking system-prompt/assemble silently shapes every instruction your model sees.</p></div>
+    <div class="card"><div class="n">02</div><h3 data-i18n="card2.t">Intercept APIs, read credentials</h3><p data-i18n="card2.b">apiProxy and api/gate sit between you and the model; some plugins read GITHUB_TOKEN-class environment variables.</p></div>
+    <div class="card"><div class="n">03</div><h3 data-i18n="card3.t">Patch the runtime itself</h3><p data-i18n="card3.b">manifest.bundle.patch lets a plugin modify dsh core behavior — the deepest supply-chain surface there is.</p></div>
   </div>
 </section>
 
 <section>
-  <h2 data-i18n="how.title"></h2>
+  <h2 data-i18n="how.title">How it works</h2>
   <div class="cards">
-    <div class="card"><div class="n">1</div><h3 data-i18n="how.s1t"></h3><p data-i18n="how.s1b"></p></div>
-    <div class="card"><div class="n">2</div><h3 data-i18n="how.s2t"></h3><p data-i18n="how.s2b"></p></div>
-    <div class="card"><div class="n">3</div><h3 data-i18n="how.s3t"></h3><p data-i18n="how.s3b"></p></div>
+    <div class="card"><div class="n">1</div><h3 data-i18n="how.s1t">Discover</h3><p data-i18n="how.s1b">Every repo under the dsh-plugin topic, rescanned daily.</p></div>
+    <div class="card"><div class="n">2</div><h3 data-i18n="how.s2t">Scan</h3><p data-i18n="how.s2b">Static analysis of shipped code: injected services, hooks, runtime patches, exec/eval, outbound domains, credential-like env reads. Nothing is executed.</p></div>
+    <div class="card"><div class="n">3</div><h3 data-i18n="how.s3t">Publish</h3><p data-i18n="how.s3b">A capability card per plugin with file:line evidence, a C0–C3 level, and an embeddable badge.</p></div>
   </div>
 </section>
 
 <section>
-  <h2 data-i18n="levels.title"></h2>
-  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c0)">C0</span><p data-i18n="levels.l0"></p></div>
-  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c1)">C1</span><p data-i18n="levels.l1"></p></div>
-  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c2)">C2</span><p data-i18n="levels.l2"></p></div>
-  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c3)">C3</span><p data-i18n="levels.l3"></p></div>
-  <p class="note" data-i18n="levels.note"></p>
+  <h2 data-i18n="levels.title">Capability levels</h2>
+  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c0)">C0</span><p data-i18n="levels.l0">No notable capability surface.</p></div>
+  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c1)">C1</span><p data-i18n="levels.l1">Ordinary: registers tools/services, calls external domains.</p></div>
+  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c2)">C2</span><p data-i18n="levels.l2">Powerful: prompt surface, API interception, subprocess, exec, credential reads or install scripts.</p></div>
+  <div class="lvl-row"><span class="lvl-tag" style="background:var(--c3)">C3</span><p data-i18n="levels.l3">Powerful capabilities combined with sensitive behavior.</p></div>
+  <p class="note" data-i18n="levels.note">Levels measure capability surface and transparency — not maliciousness. A C3 plugin can be perfectly legitimate; you just deserve to know before it touches your agent.</p>
 </section>
 
 <section id="check">
-  <h2 data-i18n="check.title"></h2>
+  <h2 data-i18n="check.title">Check a plugin in 30 seconds</h2>
   <div class="cards">
-    <div class="card"><div class="n">1</div><h3 data-i18n="c1.t"></h3><p data-i18n="c1.b"></p></div>
-    <div class="card"><div class="n">2</div><h3 data-i18n="c2.t"></h3><p data-i18n="c2.b"></p></div>
-    <div class="card"><div class="n">3</div><h3 data-i18n="c3.t"></h3><p data-i18n="c3.b"></p></div>
+    <div class="card"><div class="n">1</div><h3 data-i18n="c1.t">Search it</h3><p data-i18n="c1.b">Type the plugin name or author into the registry.</p></div>
+    <div class="card"><div class="n">2</div><h3 data-i18n="c2.t">Read the level and flags</h3><p data-i18n="c2.b">C0–C3 tells you how much surface it has; the chips tell you which kind.</p></div>
+    <div class="card"><div class="n">3</div><h3 data-i18n="c3.t">Open the evidence</h3><p data-i18n="c3.b">Every flag cites a file and line. Disagree with one? The source is one click away.</p></div>
   </div>
 </section>
 
 <section id="plugin">
-  <h2 data-i18n="plug.title"></h2>
-  <p class="lead" data-i18n="plug.b"></p>
+  <h2 data-i18n="plug.title">Use it inside dsh</h2>
+  <p class="lead" data-i18n="plug.b">The companion plugin answers the same question in the agent, while you are deciding whether to install something.</p>
   <code class="snippet">dsh plugin add https://github.com/unStone/dsh-xray-plugin/releases/download/v0.1.0/dsh-xray-plugin-0.1.0.tgz</code>
   <p style="margin-top:14px"><a class="btn sec" href="https://github.com/unStone/dsh-xray-plugin" data-i18n="plug.cta">Get the plugin</a></p>
 </section>
 
 <section id="collections">
-  <h2 data-i18n="coll.title"></h2>
-  <p class="lead" data-i18n="coll.b"></p>
+  <h2 data-i18n="coll.title">Browse by capability</h2>
+  <p class="lead" data-i18n="coll.b">Every plugin that can do a particular thing, in one list.</p>
   <p class="coll-links">
     <a href="c/runtime-patch.html">patch the runtime</a>
     <a href="c/prompt-surface.html">rewrite the system prompt</a>
@@ -134,49 +134,49 @@
 </section>
 
 <section id="faq">
-  <h2 data-i18n="faq.title"></h2>
+  <h2 data-i18n="faq.title">Questions people actually ask</h2>
   <div class="faq">
-    <details><summary data-i18n="f1.q"></summary><p data-i18n="f1.a"></p></details>
-    <details><summary data-i18n="f2.q"></summary><p data-i18n="f2.a"></p></details>
-    <details><summary data-i18n="f3.q"></summary><p data-i18n="f3.a"></p></details>
-    <details><summary data-i18n="f4.q"></summary><p data-i18n="f4.a"></p></details>
-    <details><summary data-i18n="f5.q"></summary><p data-i18n="f5.a"></p></details>
-    <details><summary data-i18n="f6.q"></summary><p data-i18n="f6.a"></p></details>
+    <details><summary data-i18n="f1.q">Does C3 mean I should not install it?</summary><p data-i18n="f1.a">No. C3 means broad capability plus sensitive behavior — which is exactly what a desktop shell or a design tool legitimately needs. It means you should know, not that you should refuse.</p></details>
+    <details><summary data-i18n="f2.q">Is this malware detection?</summary><p data-i18n="f2.a">No. This is static capability analysis; it cannot establish intent, and we did not look for malice. A determined bad actor evades a static scanner easily. The gap we address is that nobody knows what ordinary plugins do.</p></details>
+    <details><summary data-i18n="f3.q">A flag on my plugin looks wrong. What now?</summary><p data-i18n="f3.a">Open an issue. Every flag cites the file and line it came from, so disputes are checkable. Rules get fixed in public and the next daily scan picks up the correction.</p></details>
+    <details><summary data-i18n="f4.q">How current is the data?</summary><p data-i18n="f4.a">A scheduled run rescans the ecosystem daily. Repositories that have not changed reuse their previous card, so new and updated plugins are what actually get re-read.</p></details>
+    <details><summary data-i18n="f5.q">Can I run the scanner myself?</summary><p data-i18n="f5.a">Yes — it is Apache-2.0 Python with no service dependency. Clone the repository and run discovery and the pipeline against your own list.</p></details>
+    <details><summary data-i18n="f6.q">Only dsh?</summary><p data-i18n="f6.a">For now. The capability model is not dsh-specific, and support for other plugin formats such as Abu-Cowork and Claude Code is on the roadmap.</p></details>
   </div>
 </section>
 
 <section id="ecosystem">
-  <h2 data-i18n="eco.title"></h2>
-  <p class="lead" data-i18n="eco.b"></p>
+  <h2 data-i18n="eco.title">The rest of the ecosystem</h2>
+  <p class="lead" data-i18n="eco.b">dsh-xray only reads plugins. These are the projects it reads about.</p>
   <div class="cards">
     <a class="card link-card" href="https://github.com/deepseek-ai/deepseek-harness">
-      <h3>DeepSeek Harness <span class="star">156k★</span></h3><p data-i18n="eco.dsh"></p></a>
+      <h3>DeepSeek Harness <span class="star">156k★</span></h3><p data-i18n="eco.dsh">The agent runtime itself — everything is a plugin.</p></a>
     <a class="card link-card" href="https://github.com/cordiverse/cordis">
-      <h3>Cordis <span class="star">5.9k★</span></h3><p data-i18n="eco.cordis"></p></a>
+      <h3>Cordis <span class="star">5.9k★</span></h3><p data-i18n="eco.cordis">The plugin framework dsh is built on: contexts, services, typed events.</p></a>
     <a class="card link-card" href="https://github.com/awesome-dsh-plugin/awesome-dsh-plugin">
-      <h3>awesome-dsh-plugin <span class="star">8.2k★</span></h3><p data-i18n="eco.awesome"></p></a>
+      <h3>awesome-dsh-plugin <span class="star">8.2k★</span></h3><p data-i18n="eco.awesome">The community-curated list of dsh plugins.</p></a>
     <a class="card link-card" href="https://github.com/Noob-stupid/dsh-plugin-hub">
-      <h3>dsh-plugin-hub <span class="star">50★</span></h3><p data-i18n="eco.hub"></p></a>
+      <h3>dsh-plugin-hub <span class="star">50★</span></h3><p data-i18n="eco.hub">A plugin manager panel: enable, disable and install from within dsh.</p></a>
     <a class="card link-card" href="https://github.com/PM-Shawn/Abu-Cowork">
-      <h3>Abu-Cowork <span class="star">333★</span></h3><p data-i18n="eco.abu"></p></a>
+      <h3>Abu-Cowork <span class="star">333★</span></h3><p data-i18n="eco.abu">A local-first open-source agent desktop app, with dsh integration in progress.</p></a>
   </div>
 </section>
 
 <section id="badge">
-  <h2 data-i18n="badge.title"></h2>
-  <p class="lead" data-i18n="badge.b"></p>
+  <h2 data-i18n="badge.title">Nothing to hide? Show it.</h2>
+  <p class="lead" data-i18n="badge.b">Plugin authors: embed your capability badge. Users click through to the full evidence card.</p>
   <div class="badge-demo"><span class="l">dsh-xray</span><span class="r">C2 · 4 flags</span></div>
   <code class="snippet">[![dsh-xray](https://img.shields.io/endpoint?url=https%3A%2F%2Funstone.github.io%2Fdsh-xray%2Fbadge%2F&lt;owner&gt;__&lt;repo&gt;.json)](https://unstone.github.io/dsh-xray/registry.html#&lt;owner&gt;__&lt;repo&gt;)</code>
 </section>
 
 <section>
-  <h2 data-i18n="teams.title"></h2>
-  <p class="lead" data-i18n="teams.b"></p>
+  <h2 data-i18n="teams.title">For teams</h2>
+  <p class="lead" data-i18n="teams.b">Coming next: full-ecosystem coverage with daily diffs, a runtime-patch audit view, an install-gate plugin that blocks or asks on C2+ installs, multi-harness support (Abu-Cowork, Claude Code), and a private registry with org policy for enterprises.</p>
   <p style="margin-top:14px"><a class="btn sec" href="https://github.com/unStone/dsh-xray#roadmap" data-i18n="teams.cta">Follow the roadmap</a></p>
 </section>
 
 <footer>
-  <span data-i18n="foot.oss"></span> <a href="https://github.com/unStone/dsh-xray/issues" data-i18n="foot.issue">open an issue</a>
+  <span data-i18n="foot.oss">Apache-2.0 · static analysis only · false positives:</span> <a href="https://github.com/unStone/dsh-xray/issues" data-i18n="foot.issue">open an issue</a>
 </footer>
 </div>
 
