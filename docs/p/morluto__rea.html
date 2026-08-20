@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>morluto/rea — capability card (C2) · dsh-xray</title>
-<meta name="description" content="morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/morluto__rea.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="morluto/rea — dsh plugin capability card">
-<meta property="og:description" content="morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/morluto__rea.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "rea", "identifier": "morluto/rea", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/morluto/rea", "url": "https://unstone.github.io/dsh-xray/p/morluto__rea.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "rea", "identifier": "morluto/rea", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/morluto/rea", "url": "https://unstone.github.io/dsh-xray/p/morluto__rea.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 100+ ·
      <a href="https://github.com/morluto/rea" rel="nofollow ugc">morluto/rea source on GitHub</a>
      · <a href="../registry.html#morluto__rea">this plugin in the registry</a></p>
-  <p>morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
-  <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×44 in authored code, e.g. scripts/build-conformance-fixtures.mjs:1, scripts/electron-active-hook-boundaries.cjs:356</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/browser/CdpCaptureEventHelpers.ts:101, src/browser/CdpCaptureStorageFingerprints.ts:503</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/application/CommandShimReplay.ts:75, src/application/CommandShimReplay.ts:178</td></tr></tbody></table>
+  <p>morluto/rea is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. scripts/build-conformance-fixtures.mjs:1, scripts/electron-active-hook-boundaries.cjs:356</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.hopperapp.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>JAVA_HOME</span> <span>HOPPER_LAUNCHER_PATH</span> <span>REA_ILSPY_CMD_PATH</span> <span>npm_execpath</span> <span>REA_VERIFY_SERVER_COMMAND</span> <span>REA_VERIFY_SERVER_ARGS_JSON</span> <span>GHIDRA_INSTALL_DIR</span> <span>REA_READINESS_REPORT_PATH</span> <span>REA_LOG_LEVEL</span> <span>REA_PROCESS_RUN_ID</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>REA_PROCESS_RUN_ID</span> <span>REA_CONFORMANCE_BUILD</span> <span>CC</span> <span>npm_execpath</span> <span>HUSKY</span> <span>REA_PACKAGE_VERSION</span> <span>REA_AGENT_EVAL_TIMEOUT_MS</span> <span>REA_CODEX_CLI</span> <span>REA_AGENT_EVAL_MODEL</span> <span>REA_AGENT_EVAL_SCENARIOS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

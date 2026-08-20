@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kaiwu/sparkles — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta name="description" content="kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kaiwu__sparkles.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kaiwu/sparkles — dsh plugin capability card">
-<meta property="og:description" content="kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta property="og:description" content="kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kaiwu__sparkles.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sparkles", "identifier": "kaiwu/sparkles", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/kaiwu/sparkles", "url": "https://unstone.github.io/dsh-xray/p/kaiwu__sparkles.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sparkles", "identifier": "kaiwu/sparkles", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/kaiwu/sparkles", "url": "https://unstone.github.io/dsh-xray/p/kaiwu__sparkles.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/kaiwu/sparkles" rel="nofollow ugc">kaiwu/sparkles source on GitHub</a>
      · <a href="../registry.html#kaiwu__sparkles">this plugin in the registry</a></p>
-  <p>kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
+  <p>kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars, ships no manifest.</p>
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/dsh-npm-package.js:117, scripts/dsh-verify.js:11</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. finance/finance_archive/src/archive_ffi.mjs:25, finance/finance_capco/src/finance_capco/pdf_text_ffi.mjs:33</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, FRED_API_KEY, OPENFIGI_API_KEY, TUSHARE_TOKEN, TWELVE_DATA_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 7 services, 102 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. finance/finance_archive/src/archive_ffi.mjs:25, finance/finance_capco/src/finance_capco/pdf_text_ffi.mjs:33</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, FRED_API_KEY, OPENFIGI_API_KEY, TUSHARE_TOKEN, TWELVE_DATA_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 7 services, 8 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>sessionProjections</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/session-start</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>webapi.futunn.com</span> <span>data.alpaca.markets</span> <span>www.npmjs.com</span> <span>sparkles.extensio.cn</span> <span>static.cninfo.com.cn</span> <span>www.csrc.gov.cn</span> <span>www1.hkexnews.hk</span> <span>www.sfc.hk</span> <span>api.stlouisfed.org</span> <span>paper-api.alpaca.markets</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>AGENT_CONTACT</span> <span>TUSHARE_TOKEN</span> <span>ALPACA_API_KEY_ID</span> <span>ALPACA_API_SECRET_KEY</span> <span>FRED_API_KEY</span> <span>DSH_SPARKLES_DSH_COMMAND</span> <span>PI_SPARKLES_PI_COMMAND</span> <span>PI_SOURCE_DIR</span> <span>PI_SPARKLES_TEST_JOBS</span> <span>TWELVE_DATA_API_KEY</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>AGENT_CONTACT</span> <span>TUSHARE_TOKEN</span> <span>ALPACA_API_KEY_ID</span> <span>ALPACA_API_SECRET_KEY</span> <span>TWELVE_DATA_API_KEY</span> <span>OPENFIGI_API_KEY</span> <span>FRED_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

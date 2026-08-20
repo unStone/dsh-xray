@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/ghost616/module_agent_deepseek" rel="nofollow ugc">ghost616/module_agent_deepseek source on GitHub</a>
      · <a href="../registry.html#ghost616__module_agent_deepseek">this plugin in the registry</a></p>
   <p>ghost616/module_agent_deepseek is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, gates tool execution, exec_bundled, ships no manifest.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. src/lib/testing.ts:2, src/lib/testing.ts:3</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 6 services, 52 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>sessions</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/session-start</span> <span>agent/status</span> <span>subagent/start</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>openma-ai/open-managed-agents — capability card (C2) · dsh-xray</title>
-<meta name="description" content="openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<meta name="description" content="openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/openma-ai__open-managed-agents.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openma-ai/open-managed-agents — dsh plugin capability card">
-<meta property="og:description" content="openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/openma-ai__open-managed-agents.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "open-managed-agents", "identifier": "openma-ai/open-managed-agents", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/openma-ai/open-managed-agents", "url": "https://unstone.github.io/dsh-xray/p/openma-ai__open-managed-agents.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "open-managed-agents", "identifier": "openma-ai/open-managed-agents", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/openma-ai/open-managed-agents", "url": "https://unstone.github.io/dsh-xray/p/openma-ai__open-managed-agents.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 100+ ·
      <a href="https://github.com/openma-ai/open-managed-agents" rel="nofollow ugc">openma-ai/open-managed-agents source on GitHub</a>
      · <a href="../registry.html#openma-ai__open-managed-agents">this plugin in the registry</a></p>
-  <p>openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
+  <p>openma-ai/open-managed-agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. packages/acp-runtime/src/registry.ts:38, packages/acp-runtime/src/registry.ts:38</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×7 in authored code, e.g. packages/cli/src/index.ts:513, apps/agent/src/runtime/session-do.ts:2557</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. packages/cli/src/index.ts:476, packages/cli/src/index.ts:2147</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, AUTH_COOKIE_DOMAIN, AUTH_DATABASE_PATH, AUTH_DISABLED, AUTH_REQUIRE_EMAIL_VERIFY, BETTER_AUTH_SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. apps/agent/src/runtime/session-do.ts:2557, apps/main/src/routes/dreams.ts:256</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, AUTH_COOKIE_DOMAIN, AUTH_DATABASE_PATH, AUTH_DISABLED, AUTH_REQUIRE_EMAIL_VERIFY, BETTER_AUTH_SECRET</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>openma.dev</span> <span>mcp.slack.com</span> <span>schema.org</span> <span>api.slack.com</span> <span>mcp.notion.com</span> <span>open.feishu.cn</span> <span>mcp.linear.app</span> <span>mcp.amplitude.com</span> <span>mcp.asana.com</span> <span>api.githubcopilot.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>AUTH_REQUIRE_EMAIL_VERIFY</span> <span>DATABASE_URL</span> <span>GOOGLE_CLIENT_ID</span> <span>GOOGLE_CLIENT_SECRET</span> <span>AUTH_COOKIE_DOMAIN</span> <span>FILES_S3_ENDPOINT</span> <span>FILES_S3_BUCKET</span> <span>OMA_TENANT_ID</span> <span>OMA_BASE_URL</span> <span>OMA_PROFILE</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>mcp.slack.com</span> <span>schema.org</span> <span>mcp.notion.com</span> <span>api.slack.com</span> <span>mcp.linear.app</span> <span>openma.dev</span> <span>challenges.cloudflare.com</span> <span>cli.github.com</span> <span>mcp.amplitude.com</span> <span>mcp.asana.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>AUTH_REQUIRE_EMAIL_VERIFY</span> <span>GOOGLE_CLIENT_ID</span> <span>GOOGLE_CLIENT_SECRET</span> <span>AUTH_COOKIE_DOMAIN</span> <span>FILES_S3_ENDPOINT</span> <span>FILES_S3_BUCKET</span> <span>DATABASE_URL</span> <span>DATABASE_PATH</span> <span>BETTER_AUTH_SECRET</span> <span>PUBLIC_BASE_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

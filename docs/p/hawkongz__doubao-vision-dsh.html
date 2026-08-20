@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/hawkongz/doubao-vision-dsh" rel="nofollow ugc">hawkongz/doubao-vision-dsh source on GitHub</a>
      · <a href="../registry.html#hawkongz__doubao-vision-dsh">this plugin in the registry</a></p>
   <p>hawkongz/doubao-vision-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, executes system commands, decodes base64 payloads.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. doubao-vision.mjs:22</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. doubao-vision.mjs:492</td></tr></tbody></table>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/claimed</span> <span>agent/pre-step</span> <span>llm/adapters-updated</span> <span>system-prompt/assemble</span> <span>tools/pre-execute</span></p>

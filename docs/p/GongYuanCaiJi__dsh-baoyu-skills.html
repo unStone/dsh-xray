@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GongYuanCaiJi/dsh-baoyu-skills — capability card (C3) · dsh-xray</title>
-<meta name="description" content="GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/GongYuanCaiJi__dsh-baoyu-skills.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GongYuanCaiJi/dsh-baoyu-skills — dsh plugin capability card">
-<meta property="og:description" content="GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/GongYuanCaiJi__dsh-baoyu-skills.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-baoyu-skills", "identifier": "GongYuanCaiJi/dsh-baoyu-skills", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/GongYuanCaiJi/dsh-baoyu-skills", "url": "https://unstone.github.io/dsh-xray/p/GongYuanCaiJi__dsh-baoyu-skills.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-baoyu-skills", "identifier": "GongYuanCaiJi/dsh-baoyu-skills", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/GongYuanCaiJi/dsh-baoyu-skills", "url": "https://unstone.github.io/dsh-xray/p/GongYuanCaiJi__dsh-baoyu-skills.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/GongYuanCaiJi/dsh-baoyu-skills" rel="nofollow ugc">GongYuanCaiJi/dsh-baoyu-skills source on GitHub</a>
      · <a href="../registry.html#GongYuanCaiJi__dsh-baoyu-skills">this plugin in the registry</a></p>
-  <p>GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
+  <p>GongYuanCaiJi/dsh-baoyu-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×141 in authored code, e.g. scripts/build-shared-package.mjs:3, scripts/build-shared-package.mjs:3</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. packages/baoyu-md/src/html-builder.ts:9, packages/baoyu-md/src/themes.ts:8</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×14 in authored code, e.g. packages/baoyu-chrome-cdp/src/mermaid.ts:471, skills/baoyu-post-to-wechat/scripts/wechat-article.ts:98</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. packages/baoyu-chrome-cdp/src/index.ts:101, packages/baoyu-chrome-cdp/src/index.ts:104</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AGNES_API_KEY, ARK_API_KEY, AZURE_OPENAI_API_KEY, BIGMODEL_API_KEY, DASHSCOPE_API_KEY, GEMINI_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. packages/baoyu-chrome-cdp/src/index.ts:1, packages/baoyu-chrome-cdp/src/index.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. packages/baoyu-chrome-cdp/src/mermaid.ts:471, packages/baoyu-fetch/src/browser/network-journal.ts:203</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. packages/baoyu-chrome-cdp/src/index.ts:101, packages/baoyu-chrome-cdp/src/index.ts:104</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>x.com</span> <span>gemini.google.com</span> <span>www.youtube.com</span> <span>twitter.com</span> <span>api.weixin.qq.com</span> <span>i.ytimg.com</span> <span>abs.twimg.com</span> <span>mp.weixin.qq.com</span> <span>www.google.com</span> <span>accounts.google.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>APPDATA</span> <span>LOCALAPPDATA</span> <span>XDG_DATA_HOME</span> <span>WSL_DISTRO_NAME</span> <span>XDG_CONFIG_HOME</span> <span>GEMINI_WEB_CHROME_PROFILE_DIR</span> <span>GEMINI_WEB_LOGIN</span> <span>X_USER_AGENT</span> <span>X_BEARER_TOKEN</span> <span>BAOYU_CHROME_PROFILE_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>x.com</span> <span>twitter.com</span> <span>www.youtube.com</span> <span>defuddle.md</span> <span>news.ycombinator.com</span> <span>i.ytimg.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>APPDATA</span> <span>XDG_DATA_HOME</span> <span>WSL_DISTRO_NAME</span> <span>CODEX_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

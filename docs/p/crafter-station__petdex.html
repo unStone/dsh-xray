@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>crafter-station/petdex — capability card (C3) · dsh-xray</title>
-<meta name="description" content="crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/crafter-station__petdex.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="crafter-station/petdex — dsh plugin capability card">
-<meta property="og:description" content="crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/crafter-station__petdex.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "petdex", "identifier": "crafter-station/petdex", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/crafter-station/petdex", "url": "https://unstone.github.io/dsh-xray/p/crafter-station__petdex.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "petdex", "identifier": "crafter-station/petdex", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/crafter-station/petdex", "url": "https://unstone.github.io/dsh-xray/p/crafter-station__petdex.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 3.9k ·
      <a href="https://github.com/crafter-station/petdex" rel="nofollow ugc">crafter-station/petdex source on GitHub</a>
      · <a href="../registry.html#crafter-station__petdex">this plugin in the registry</a></p>
-  <p>crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  <p>crafter-station/petdex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×38 in authored code, e.g. scripts/auto-tag.ts:16, scripts/auto-tag.ts:76</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/generate-announcement-banner.ts:61, scripts/generate-discord-icon.ts:48</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. packages/discord-bot/src/bot.ts:61, packages/petdex-cli/scripts/oauth-authorize-smoke.mjs:54</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AI_API_KEY, ALIYUN_OSS_ACCESS_KEY_ID, ALIYUN_OSS_ACCESS_KEY_SECRET, APPLE_API_KEY, APPLE_API_KEY_ID, CLERK_SECRET_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. packages/petdex-cli/src/telemetry.ts:20, packages/petdex-cli/src/telemetry.ts:233</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. packages/discord-bot/src/bot.ts:61, packages/petdex-cli/scripts/oauth-authorize-smoke.mjs:54</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DISCORD_TOKEN, PETDEX_MOCK_AUTH, PETDEX_WEBHOOK_SECRET</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/created</span> <span>session/disposed</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>petdex.dev</span> <span>schema.org</span> <span>x.com</span> <span>pub-94495283df974cfea5e98d6a9e3fa462.r2.dev</span> <span>clerk.petdex.dev</span> <span>api.github.com</span> <span>challenges.cloudflare.com</span> <span>accounts.petdex.dev</span> <span>api.clerk.com</span> <span>admin.petdex.dev</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DATABASE_URL</span> <span>RESEND_API_KEY</span> <span>NEXT_PUBLIC_DISCORD_INVITE_URL</span> <span>RESEND_FROM</span> <span>R2_PUBLIC_BASE</span> <span>OPENAI_API_KEY</span> <span>NATIVE_CLI</span> <span>NATIVE_SDK_PATH</span> <span>PETDEX_REVIEW_DB</span> <span>UPSTASH_REDIS_REST_TOKEN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>petdex.dev</span> <span>clerk.petdex.dev</span> <span>challenges.cloudflare.com</span> <span>accounts.petdex.dev</span> <span>va.vercel-scripts.com</span> <span>vercel.live</span> <span>img.clerk.com</span> <span>images.clerk.dev</span> <span>avatars.githubusercontent.com</span> <span>pbs.twimg.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>R2_PUBLIC_BASE</span> <span>PETDEX_TELEMETRY</span> <span>DATABASE_URL</span> <span>DISCORD_TOKEN</span> <span>PETDEX_API_BASE</span> <span>HERDR_BIN_PATH</span> <span>PETDEX_MOCK</span> <span>PETDEX_MOCK_AUTH</span> <span>PORT</span> <span>DISCORD_CLIENT_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

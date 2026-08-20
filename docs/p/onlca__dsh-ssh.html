@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/onlca/dsh-ssh" rel="nofollow ugc">onlca/dsh-ssh source on GitHub</a>
      · <a href="../registry.html#onlca__dsh-ssh">this plugin in the registry</a></p>
   <p>onlca/dsh-ssh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands, ships no manifest.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>sandbox, subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. packages/dsh-ssh/src/cli.ts:7, packages/dsh-ssh/src/cli.ts:7</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 6 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span></p>

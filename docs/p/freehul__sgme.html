@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#freehul__sgme">this plugin in the registry</a></p>
   <p>freehul/sgme is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, eval_bundled, base64_decode_bundled.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./adapters/dsh/sgme-bridge/cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. adapters/dsh/sgme-bridge/lib/index.js:1405</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. adapters/dsh/sgme-bridge/lib/index.js:1224, adapters/dsh/sgme-bridge/lib/index.js:1225</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. adapters/dsh/sgme-bridge/lib/index.js:1405</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. adapters/dsh/sgme-bridge/lib/index.js:1224, adapters/dsh/sgme-bridge/lib/index.js:1225</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>session/event</span> <span>turn/start</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.xxx.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SGME_PROJECT_HINT</span> <span>DSH_HOME</span> <span>SGME_HTTP_URL</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>SGME_PROJECT_HINT</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

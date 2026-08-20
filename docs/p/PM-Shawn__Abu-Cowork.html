@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PM-Shawn/Abu-Cowork — capability card (C2) · dsh-xray</title>
-<meta name="description" content="PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.">
+<meta name="description" content="PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/PM-Shawn__Abu-Cowork.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PM-Shawn/Abu-Cowork — dsh plugin capability card">
-<meta property="og:description" content="PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/PM-Shawn__Abu-Cowork.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Abu-Cowork", "identifier": "PM-Shawn/Abu-Cowork", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/PM-Shawn/Abu-Cowork", "url": "https://unstone.github.io/dsh-xray/p/PM-Shawn__Abu-Cowork.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Abu-Cowork", "identifier": "PM-Shawn/Abu-Cowork", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, starts a network server.", "codeRepository": "https://github.com/PM-Shawn/Abu-Cowork", "url": "https://unstone.github.io/dsh-xray/p/PM-Shawn__Abu-Cowork.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 100+ ·
      <a href="https://github.com/PM-Shawn/Abu-Cowork" rel="nofollow ugc">PM-Shawn/Abu-Cowork source on GitHub</a>
      · <a href="../registry.html#PM-Shawn__Abu-Cowork">this plugin in the registry</a></p>
-  <p>PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.</p>
+  <p>PM-Shawn/Abu-Cowork is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, starts a network server.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×97 in authored code, e.g. electron/chromeBridgeHost.cjs:11, electron/chromeBridgeHost.cjs:11</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×6 in authored code, e.g. public/pdf.worker.min.mjs:25, public/pdf.worker.min.mjs:28</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×9 in authored code, e.g. electron/secretStore.cjs:173, electron/tauriSecretsReader.cjs:85</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×18 in authored code, e.g. electron/browserAutomationHost.cjs:114, electron/browserAutomationHost.cjs:139</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ABU_BROWSER_RUNTIME_TOKEN, CSC_KEYCHAIN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. abu-chrome-extension/src/background/index.ts:489</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. abu-browser-bridge/src/wsServer.ts:60</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.xfa.org</span> <span>ns.adobe.com</span> <span>ex.com</span> <span>queued.example.com</span> <span>live.example.com</span> <span>evil.example.com</span> <span>cdn.jsdelivr.net</span> <span>models.dev</span> <span>abu-agent.oss-cn-beijing.aliyuncs.com</span> <span>evil.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>ABU_UPDATER_FEED_URL</span> <span>LOCALAPPDATA</span> <span>XDG_CACHE_HOME</span> <span>ABU_BUILD_TARGET</span> <span>Path</span> <span>ABU_F3_VERIFY_TEST</span> <span>USERNAME</span> <span>ABU_MIGRATE_FROM_TAURI</span> <span>ABU_E2E_MIGRATION_DIAGNOSTICS_PATH</span></p>
+  
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
