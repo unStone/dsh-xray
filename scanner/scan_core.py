@@ -39,8 +39,18 @@ TOOL_RE = re.compile(r"ctx\.tools\.register|defineTool\s*\(|registerTool\b")
 ENV_RE = re.compile(r"process\.env\.([A-Za-z_][A-Za-z_0-9]*)")
 APPLY_RE = re.compile(r"export\s+(?:function|const)\s+apply\b|\bapply\s*\(\s*ctx\b")
 
+CHILD_PROCESS_IMPORT_RE = (
+    r"(?:\bfrom\s*['\"](?:node:)?child_process['\"]"
+    r"|\b(?:import|require)\s*\(\s*['\"](?:node:)?child_process['\"]\s*\)"
+    r"|\bimport\s*['\"](?:node:)?child_process['\"])"
+)
+
 BEHAVIOR_RES = {
-    'exec': re.compile(r"child_process|execSync|spawnSync|execFileSync|\bexeca\b|\bspawn\s*\("),
+    # A diagnostic may match the literal stack frame
+    # `node:internal/child_process` without importing or executing anything.
+    # Count module imports and execution calls, not an arbitrary occurrence of
+    # the module name inside a string or regular expression.
+    'exec': re.compile(CHILD_PROCESS_IMPORT_RE + r"|execSync|spawnSync|execFileSync|\bexeca\b|\bspawn\s*\("),
     'eval': re.compile(r"\beval\s*\(|new\s+Function\s*\("),
     'base64_decode': re.compile(r"\batob\s*\(|Buffer\.from\s*\([^)]{1,120}['\"]base64['\"]"),
     'net_server': re.compile(r"createServer\s*\(|\.listen\s*\(\s*\d"),
@@ -88,6 +98,11 @@ def scan_files(files):
     for path, text in sorted(files.items(), key=lambda kv: (kv[0].count('/'), kv[0])):
         base = path.rsplit('/', 1)[-1]
         if base == 'package.json':
+            # Test fixtures, examples, and docs may carry deliberately valid or
+            # invalid plugin manifests. They are evidence about development,
+            # not the repository's installable runtime surface.
+            if zone_of(path) == 'dev':
+                continue
             try:
                 data = json.loads(text)
             except Exception:
@@ -118,14 +133,15 @@ def scan_files(files):
         card['files_scanned'] += 1
         zone = zone_of(path)
         text = strip_comments(text)
-        if APPLY_RE.search(text):
-            card['has_apply'] = True
-        for m in INJECT_RE.finditer(text):
-            for name in re.findall(r"['\"]([a-zA-Z][a-zA-Z0-9_-]{1,40})['\"]", m.group(1)):
-                card['injects'].add(name)
-        for m in HOOK_RE.finditer(text):
-            card['hooks'].add(m.group(1))
-        card['tool_regs'] += len(TOOL_RE.findall(text))
+        if zone != 'dev':
+            if APPLY_RE.search(text):
+                card['has_apply'] = True
+            for m in INJECT_RE.finditer(text):
+                for name in re.findall(r"['\"]([a-zA-Z][a-zA-Z0-9_-]{1,40})['\"]", m.group(1)):
+                    card['injects'].add(name)
+            for m in HOOK_RE.finditer(text):
+                card['hooks'].add(m.group(1))
+            card['tool_regs'] += len(TOOL_RE.findall(text))
         if zone != 'dev':
             for m in URL_RE.finditer(text):
                 d = m.group(1).lower()

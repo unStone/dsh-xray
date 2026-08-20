@@ -46,6 +46,24 @@ export function apply(ctx) { execSync("ls") }
     check('real/exec', 'exec' in ids, True)
 
 
+def test_child_process_import_counts():
+    c = card({'package.json': MANIFEST,
+              'src/index.ts': 'import cp from "node:child_process"'})
+    ids = {f['id'] for f in c['flags']}
+    check('import/exec', 'exec' in ids, True)
+
+
+def test_diagnostic_child_process_literal_does_not_count():
+    """A stack-frame marker is evidence text, not process execution."""
+    c = card({'package.json': MANIFEST, 'src/classifier.ts': r'''
+const marker = /node:internal\/child_process/
+export function matches(text) { return marker.test(text) }
+'''})
+    ids = {f['id'] for f in c['flags']}
+    check('literal/not-exec', 'exec' in ids, False)
+    check('literal/not-c3', c['level'], 2)
+
+
 def test_line_numbers_survive_comment_stripping():
     c = card({'package.json': MANIFEST, 'src/index.ts': '\n'.join([
         '/* a', 'multi-line', 'comment */', 'const x = 1', 'execSync("ls")'])})
@@ -101,6 +119,30 @@ def test_bundle_in_a_subpackage_still_counts():
     c = card({'package.json': '{"name":"root"}',
               'packages/p/package.json': '{"name":"p","dsh":{"bundle":{"patch":"./x.yml"}}}'})
     check('type/monorepo-subpackage', c['type'], 'plugin')
+
+
+def test_fixture_manifest_does_not_make_a_cli_a_plugin():
+    c = card({
+        'package.json': '{"name":"external-cli"}',
+        'test/fixtures/plugin/package.json': MANIFEST,
+        'test/fixtures/plugin/cordis.patch.yml': '- insert: []',
+    })
+    check('type/fixture-not-plugin', c['type'], 'unrelated')
+    check('manifest/fixture-ignored', c['manifest'], None)
+    check('manifest/root-name', c['pkg_name'], 'external-cli')
+
+
+def test_fixture_source_does_not_make_a_cli_code_only():
+    c = card({
+        'package.json': '{"name":"external-cli"}',
+        'test/fixtures/plugin/src/index.ts': '''
+export const inject = ["subprocess"]
+export function apply(ctx) { ctx.tools.register({}) }
+''',
+    })
+    check('type/fixture-source-ignored', c['type'], 'unrelated')
+    check('surface/fixture-inject-ignored', c['injects'], [])
+    check('surface/fixture-tool-ignored', c['tool_regs'], 0)
 
 
 def test_levels():
