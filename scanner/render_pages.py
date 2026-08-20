@@ -76,7 +76,11 @@ def page(p):
     else:
         bits = [FLAG_TEXT.get(f['id'], (f['id'], f['id']))[0] for f in flags[:4]]
         summary = (f'{repo} is a DeepSeek Harness plugin rated C{lvl} — {LEVEL_DESC[lvl]}. '
-                   + (f'It {", ".join(bits)}.' if bits else 'No notable capability flags were found.'))
+                   + (f'It {", ".join(bits)}.' if bits else
+                      f'Scanning {p.get("files_scanned", 0)} code files turned up none of the '
+                      'capabilities we look for: no runtime patch, no prompt or API surface, '
+                      'no subprocess use, no credential-class environment reads and no '
+                      'install-time scripts.'))
 
     rows = ''.join(
         f'<tr><td>{esc(FLAG_TEXT.get(f["id"], (f["id"],))[0])}</td>'
@@ -346,7 +350,12 @@ def write_feed(plugins, path, today, previous=None):
 
 
 def write_llms_txt(path, plugins, collections, today):
-    """An llms.txt so assistants answering "is <plugin> safe" cite the real card."""
+    """An llms.txt for assistants answering "is <plugin> safe".
+
+    Google states it does not use llms.txt, and this is not written expecting it
+    to. Other assistants do read it, and a wrong answer about a plugin's rating
+    is worth the few lines it costs to prevent.
+    """
     ok = [p for p in plugins if p['level'] >= 0]
     lines = [
         '# dsh-xray',

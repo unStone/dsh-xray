@@ -1,6 +1,6 @@
 # 更新日志
 
-*[English](?doc=changelog&lang=en) · 扫描结果每日自动刷新,本页只记录方法与产品的变化*
+*[English](changelog.html?lang=en) · 扫描结果每日自动刷新,本页只记录方法与产品的变化*
 
 ---
 
