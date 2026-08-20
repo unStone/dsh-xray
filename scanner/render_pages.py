@@ -430,7 +430,7 @@ def main():
     # A sitemap index with per-section children: 7k URLs in one file is past the
     # point where that is good practice, and fresh filenames also get re-fetched
     # rather than inheriting a stuck status on the old one.
-    pages = ['', 'registry.html', 'report.html', 'levels.html',
+    pages = ['', 'registry.html', 'report.html', 'levels.html', 'levels-diagram.html',
              'guide/plugins.html', 'guide/changelog.html'] + [f'c/{c}.html' for c in collections]
 
     def urlset(entries, freq, prio):
