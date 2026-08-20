@@ -39,6 +39,23 @@ def levels_block(zh=False):
     return head + rows + tail
 
 
+def types_block(zh=False):
+    c = Counter(p.get('type') for p in OK)
+    inst = c.get('plugin', 0)
+    labels = ({'plugin': '可安装插件(声明了 dsh.bundle)', 'client-only': '只有 dsh.client,装不上',
+               'unrelated': '未发现任何 dsh 接入迹象', 'skill': 'skill,不是可安装插件',
+               'library': '仅依赖 dsh 的包,无插件 manifest', 'code-only': '有插件代码但没有 manifest'} if zh else
+              {'plugin': 'Installable plugin (declares dsh.bundle)', 'client-only': 'Declares only dsh.client — not installable',
+               'unrelated': 'No dsh integration found', 'skill': 'A skill, not an installable plugin',
+               'library': 'Depends on dsh packages, no plugin manifest', 'code-only': 'Plugin code with no manifest to install it by'})
+    head = ('| 类型 | 数量 | 占比 |\n|---|---|---|\n' if zh else '| Kind | Count | Share |\n|---|---|---|\n')
+    rows = ''.join(f'| {labels.get(k, k)} | {v} | {pct(v)} |\n'
+                   for k, v in c.most_common() if k)
+    tail = (f'\n**{pct(N - inst)} 的仓库挂着 `dsh-plugin` 标签,却不是可安装的插件。**\n' if zh else
+            f'\n**{pct(N - inst)} of repositories carrying the `dsh-plugin` topic are not installable plugins.**\n')
+    return head + rows + tail
+
+
 def patch_block(zh=False):
     n = len(has('runtime_patch'))
     ex = sorted(has('runtime_patch'), key=lambda p: -p['stars'])[:5]
@@ -74,7 +91,7 @@ def footer(zh=False):
 
 def render(path, zh):
     text = path.read_text()
-    for marker, fn in (('STATS_LEVELS', levels_block), ('STATS_PATCH', patch_block),
+    for marker, fn in (('STATS_TYPES', types_block), ('STATS_LEVELS', levels_block), ('STATS_PATCH', patch_block),
                        ('STATS_TOKEN', token_block), ('FOOTER', footer)):
         text = re.sub(rf'<!--{marker}-->.*?<!--/{marker}-->',
                       lambda _: f'<!--{marker}-->\n{fn(zh)}<!--/{marker}-->', text, flags=re.S)
