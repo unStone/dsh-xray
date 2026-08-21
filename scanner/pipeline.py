@@ -152,14 +152,20 @@ def main(limit=None, workers=8, budget=None):
     results, todo = [], []
     for r in repos:
         cached = load_cached(r['full_name'].replace('/', '__'))
-        # Re-fetch when we have no card, when the repo moved on, or when a
-        # previous run failed -- a transient failure should not be permanent.
+        # Re-fetch when we have no card, when the repo moved on, when a
+        # previous run failed -- a transient failure should not be permanent --
+        # or when the card was collected under an older raw-field schema, which
+        # a re-derive below could not repair.
         fresh = (cached and cached.get('pushed_at') == r['pushed_at']
-                 and cached.get('status') == 'ok')
+                 and cached.get('status') == 'ok'
+                 and cached.get('collect') == scan_core.COLLECT_VERSION)
         if fresh:
             cached['stars'] = r['stars']          # stars drift without a push
             cached['description'] = r['description']
-            results.append(cached)
+            # The card caches what was collected, not what it means: re-derive
+            # type/flags/level so a rule change reaches unchanged repositories
+            # on the next run instead of being trapped inside the cache.
+            results.append(scan_core.finalize(cached))
         else:
             todo.append(r)
 
@@ -179,6 +185,8 @@ def main(limit=None, workers=8, budget=None):
         for r in todo[budget:]:
             stale = load_cached(r['full_name'].replace('/', '__')) or published.get(r['full_name'])
             if stale:
+                if stale.get('status') == 'ok' and stale.get('collect') == scan_core.COLLECT_VERSION:
+                    stale = scan_core.finalize(stale)
                 results.append(stale)
         todo = todo[:budget]
     print(f'{len(results)} cached, {len(todo)} to fetch'

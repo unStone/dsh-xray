@@ -33,6 +33,13 @@ FLAG_TEXT = {
     'token_env': ('reads credential-class env vars', '读取凭证类环境变量'),
     'install_script': ('runs code at install time', '安装期执行代码'),
     'no_manifest': ('ships no manifest', '没有 manifest'),
+    'exec_ref': ('mentions child_process without importing it', '提及 child_process 但未引入'),
+    'dev_surface': ('powerful capability in test/example code only', '强能力仅见于测试/示例代码'),
+    'dev_manifest': ('installable-looking manifest in fixtures only', '安装清单仅存在于测试夹具'),
+    'exec_bundled': ('command execution in build output only', '仅构建产物中含命令执行'),
+    'eval_bundled': ('eval in build output only', '仅构建产物中含 eval'),
+    'base64_decode_bundled': ('base64 decoding in build output only', '仅构建产物中含 base64 解码'),
+    'net_server_bundled': ('network server in build output only', '仅构建产物中含网络服务'),
 }
 LEVEL_DESC = {
     3: 'powerful capability combined with sensitive behavior',
@@ -151,6 +158,8 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -255,8 +264,12 @@ main th {{ background: var(--chip-bg); }}
 <nav class="nav">
   <a class="brand" href="../">dsh-<span>xray</span></a>
   <div class="links">
-    <a href="../registry.html">Registry</a><a href="../report.html">Report</a>
-    <a href="../levels.html">Levels</a><a href="https://github.com/unStone/dsh-xray">GitHub</a>
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
 <main>

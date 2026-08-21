@@ -39,8 +39,23 @@ TOOL_RE = re.compile(r"ctx\.tools\.register|defineTool\s*\(|registerTool\b")
 ENV_RE = re.compile(r"process\.env\.([A-Za-z_][A-Za-z_0-9]*)")
 APPLY_RE = re.compile(r"export\s+(?:function|const)\s+apply\b|\bapply\s*\(\s*ctx\b")
 
+# Raw-field schema version. finalize() stamps it on every card; the pipeline
+# refuses to reuse a cached card collected under a different version, because
+# fields added or split since then cannot be reconstructed without a rescan.
+COLLECT_VERSION = 2
+
+# A diagnostic may carry the literal `node:internal/child_process` in a string
+# or regex without ever importing the module. Execution needs an import-shaped
+# reference or a call; a bare mention is reported separately as `exec_ref`.
+CP_IMPORT = (
+    r"(?:\bfrom\s*['\"](?:node:)?child_process['\"]"
+    r"|\b(?:import|require)\s*\(\s*['\"](?:node:)?child_process['\"]\s*\)"
+    r"|\bimport\s*['\"](?:node:)?child_process['\"])"
+)
+CP_REF_RE = re.compile(r"child_process")
+
 BEHAVIOR_RES = {
-    'exec': re.compile(r"child_process|execSync|spawnSync|execFileSync|\bexeca\b|\bspawn\s*\("),
+    'exec': re.compile(CP_IMPORT + r"|execSync|spawnSync|execFileSync|\bexeca\b|\bspawn\s*\("),
     'eval': re.compile(r"\beval\s*\(|new\s+Function\s*\("),
     'base64_decode': re.compile(r"\batob\s*\(|Buffer\.from\s*\([^)]{1,120}['\"]base64['\"]"),
     'net_server': re.compile(r"createServer\s*\(|\.listen\s*\(\s*\d"),
@@ -81,6 +96,13 @@ def scan_files(files):
                           'vendor_evidence': []} for k in BEHAVIOR_RES},
         'has_apply': False, 'files_scanned': 0, 'has_skill_md': False,
         'has_bundle': False, 'has_client': False,
+        'cp_refs': 0, 'cp_ref_evidence': [],
+        # Capability surface found in test/example/docs trees. Tracked apart
+        # from the runtime surface: it never classifies the repo or raises the
+        # level, but hiding real code in a directory named examples/ must stay
+        # visible on the card, so it is reported instead of skipped.
+        'dev_injects': set(), 'dev_hooks': set(), 'dev_tool_regs': 0,
+        'dev_has_apply': False, 'dev_manifests': [],
     }
 
     # Shallowest paths first: in a monorepo the plugin's own root package.json
@@ -91,6 +113,17 @@ def scan_files(files):
             try:
                 data = json.loads(text)
             except Exception:
+                continue
+            if zone_of(path) == 'dev':
+                # A fixture or example manifest is evidence about development,
+                # not the installable surface: it must not classify the repo,
+                # feed deps, or flag install scripts. Recorded so the card can
+                # still say "an installable-looking manifest sits in test/".
+                m = next((data.get(k) for k in ('manifest', 'dsh')
+                          if isinstance(data.get(k), dict)), None)
+                if m is not None and len(card['dev_manifests']) < 5:
+                    card['dev_manifests'].append(
+                        {'path': path, 'bundle': isinstance(m.get('bundle'), dict)})
                 continue
             if card['pkg_name'] is None:
                 card['pkg_name'] = data.get('name')
@@ -118,14 +151,34 @@ def scan_files(files):
         card['files_scanned'] += 1
         zone = zone_of(path)
         text = strip_comments(text)
-        if APPLY_RE.search(text):
-            card['has_apply'] = True
-        for m in INJECT_RE.finditer(text):
-            for name in re.findall(r"['\"]([a-zA-Z][a-zA-Z0-9_-]{1,40})['\"]", m.group(1)):
-                card['injects'].add(name)
-        for m in HOOK_RE.finditer(text):
-            card['hooks'].add(m.group(1))
-        card['tool_regs'] += len(TOOL_RE.findall(text))
+        if zone == 'dev':
+            if APPLY_RE.search(text):
+                card['dev_has_apply'] = True
+            for m in INJECT_RE.finditer(text):
+                for name in re.findall(r"['\"]([a-zA-Z][a-zA-Z0-9_-]{1,40})['\"]", m.group(1)):
+                    card['dev_injects'].add(name)
+            for m in HOOK_RE.finditer(text):
+                card['dev_hooks'].add(m.group(1))
+            card['dev_tool_regs'] += len(TOOL_RE.findall(text))
+        else:
+            if APPLY_RE.search(text):
+                card['has_apply'] = True
+            for m in INJECT_RE.finditer(text):
+                for name in re.findall(r"['\"]([a-zA-Z][a-zA-Z0-9_-]{1,40})['\"]", m.group(1)):
+                    card['injects'].add(name)
+            for m in HOOK_RE.finditer(text):
+                card['hooks'].add(m.group(1))
+            card['tool_regs'] += len(TOOL_RE.findall(text))
+        if zone == 'src' and CP_REF_RE.search(text):
+            # Mentions of child_process that the exec pattern did not claim:
+            # string constants, regexes over stack traces — or an indirect
+            # `require(name)` where only the string sits in the file.
+            spans = [m.span() for m in BEHAVIOR_RES['exec'].finditer(text)]
+            for m in CP_REF_RE.finditer(text):
+                if not any(s <= m.start() < e for s, e in spans):
+                    card['cp_refs'] += 1
+                    if len(card['cp_ref_evidence']) < 3:
+                        card['cp_ref_evidence'].append(f"{path}:{_line(text, m.start())}")
         if zone != 'dev':
             for m in URL_RE.finditer(text):
                 d = m.group(1).lower()
@@ -168,8 +221,16 @@ def classify(card):
 
 
 def finalize(card):
+    """Derive type, flags and level from the collected raw fields.
+
+    Idempotent over a JSON round-trip: the pipeline re-runs it on cached cards
+    so a rule change reaches unchanged repositories on the next scan instead of
+    being trapped inside the cache.
+    """
     card['injects'] = sorted(card['injects'])
     card['hooks'] = sorted(card['hooks'])
+    card['dev_injects'] = sorted(card.get('dev_injects', []))
+    card['dev_hooks'] = sorted(card.get('dev_hooks', []))
     card['type'] = classify(card)
 
     flags = []
@@ -204,11 +265,29 @@ def finalize(card):
             bundled_only.append(key)
             flag(f'{key}_bundled',
                  f"×{b['vendor']} in build output only, e.g. {', '.join(b['vendor_evidence'][:2])}")
+    if card.get('cp_refs') and not card['behaviors']['exec']['src']:
+        # Transparency for what the tightened exec pattern no longer counts:
+        # the string is in the file, the import is not. Not in the risky set.
+        flag('exec_ref',
+             f"mentions child_process ×{card['cp_refs']} without importing it, "
+             f"e.g. {', '.join(card['cp_ref_evidence'][:2])}")
     token_env = sorted(v for v in card['env'] if TOKEN_ENV_RE.search(v))
     if token_env:
         flag('token_env', ', '.join(token_env[:6]))
     if card['type'] in ('code-only', 'library') and (card['injects'] or card['tool_regs']):
         flag('no_manifest', f"uses {len(card['injects'])} services, {card['tool_regs']} tool regs, no manifest")
+    # Dev-zone findings never count toward the level, but they stay on the
+    # card: a powerful service wired up only under examples/ is exactly the
+    # kind of thing a reader should get to see and dispute.
+    src_pw = set(pw_srv) | set(pw_hook)
+    dev_pw = sorted(((set(card.get('dev_injects', [])) & POWERFUL_SERVICES)
+                     | (set(card.get('dev_hooks', [])) & POWERFUL_HOOKS)) - src_pw)
+    if dev_pw:
+        flag('dev_surface', 'in test/example code only: ' + ', '.join(dev_pw))
+    fixture_bundles = [d['path'] for d in card.get('dev_manifests', []) if d.get('bundle')]
+    if fixture_bundles and card['type'] != 'plugin':
+        flag('dev_manifest',
+             'installable-looking manifest in fixtures only: ' + ', '.join(fixture_bundles[:3]))
 
     ids = {f['id'] for f in flags}
     powerful = ids & {'runtime_patch', 'prompt_surface', 'api_intercept', 'subprocess_service'}
@@ -224,4 +303,5 @@ def finalize(card):
 
     card['flags'] = flags
     card['level'] = level
+    card['collect'] = COLLECT_VERSION
     return card

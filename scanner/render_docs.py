@@ -106,6 +106,8 @@ def md_to_html(src):
 
 def shell(slug, title, desc, body, depth):
     up = '../' * depth
+    home = up or './'                      # depth 0 must not render href=""
+    cur = lambda s: ' aria-current="page"' if s == slug else ''
     canonical = f'{SITE}/{PAGES[slug][1]}'
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -149,13 +151,13 @@ def shell(slug, title, desc, body, depth):
 <body>
 <div class="wrap">
 <nav class="nav">
-  <a class="brand" href="{up}">dsh-<span>xray</span></a>
+  <a class="brand" href="{home}">dsh-<span>xray</span></a>
   <div class="links">
     <a href="{up}registry.html" data-i18n="nav.registry">Registry</a>
-    <a href="{up}report.html" data-i18n="nav.report">Report</a>
+    <a href="{up}report.html"{cur('report')} data-i18n="nav.report">Report</a>
     <a href="{up}levels.html" data-i18n="nav.levels">Levels</a>
-    <a href="{up}guide/plugins.html" data-i18n="nav.guide">How it works</a>
-    <a href="{up}guide/changelog.html" data-i18n="nav.changelog">Changelog</a>
+    <a href="{up}guide/plugins.html"{cur('plugins')} data-i18n="nav.guide">How it works</a>
+    <a href="{up}guide/changelog.html"{cur('changelog')} data-i18n="nav.changelog">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray" data-i18n="nav.github">GitHub</a>
   </div>
   <div class="chips" id="langSwitch"></div>
