@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#kingguuu8-svg__dsh-pi-compatible">this plugin in the registry</a></p>
   <p>kingguuu8-svg/dsh-pi-compatible is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. pi-core-search.mjs:47, pi-search.mjs:65</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>jobs</span> <span>shell</span> <span>subagents</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span> <span>web</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. pi-core-binaries.mjs:91, pi-core-search.mjs:54</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>subagents</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span> <span>web</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ProgramFiles</span> <span>DSH_HOME</span> <span>PI_COMPAT_OFFLINE</span> <span>PI_OFFLINE</span> <span>SystemRoot</span> <span>PI_COMPAT_BASH_PATH</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

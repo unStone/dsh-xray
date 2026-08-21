@@ -44,16 +44,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">DeepSeek Harness Local svpts —— 常驻托盘桌面壳（看门狗 + 注入式 UI + 局域网确认鉴权）</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/thisissevenpoints/DeepSeek-Harness-Local-svpts" rel="nofollow ugc">thisissevenpoints/DeepSeek-Harness-Local-svpts source on GitHub</a>
      · <a href="../registry.html#thisissevenpoints__DeepSeek-Harness-Local-svpts">this plugin in the registry</a></p>
   <p>thisissevenpoints/DeepSeek-Harness-Local-svpts is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. desktop/main.cjs:24, desktop/main.cjs:24</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. desktop/main.cjs:711</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. desktop/main.cjs:26, desktop/main.cjs:26</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. desktop/main.cjs:742</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_DESKTOP_TEST_MIGRATE_TO</span> <span>DSH_DESKTOP_TEST_ZIP</span> <span>DSH_REPO_DIR</span> <span>DSH_HOME</span> <span>SystemRoot</span> <span>DSH_DESKTOP_SMOKE</span> <span>DSH_DESKTOP_AUTOQUIT</span> <span>DSH_DESKTOP_USERDATA</span> <span>DSH_DESKTOP_LAN_AUTOAPPROVE</span> <span>DSH_DESKTOP_CLOSEWIN</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_DESKTOP_TEST_MIGRATE_TO</span> <span>DSH_DESKTOP_TEST_ZIP</span> <span>DSH_DESKTOP_AUTOCLICKRESTART</span> <span>DSH_REPO_DIR</span> <span>DSH_HOME</span> <span>SystemRoot</span> <span>DSH_DESKTOP_SMOKE</span> <span>DSH_DESKTOP_AUTOQUIT</span> <span>DSH_DESKTOP_USERDATA</span> <span>DSH_DESKTOP_LAN_AUTOAPPROVE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -44,16 +44,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">ACKS DeepSeek Harness 插件库 — AI Agent / Creative / Knowledge / Service 四类插件合集</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/shynloc/acks-dsh-plugins" rel="nofollow ugc">shynloc/acks-dsh-plugins source on GitHub</a>
      · <a href="../registry.html#shynloc__acks-dsh-plugins">this plugin in the registry</a></p>
   <p>shynloc/acks-dsh-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64_decode_bundled.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. creative/dsh-imagegen/lib/index.js:219</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>connection</span> <span>credentials</span> <span>skills</span> <span>slots</span> <span>tools</span></p>
-  
-  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>api.xiaomimimo.com</span> <span>token-plan-cn.xiaomimimo.com</span> <span>token-plan-sgp.xiaomimimo.com</span> <span>token-plan-ams.xiaomimimo.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>MIMO_VISION_WORKSPACE_ROOT</span> <span>IMAGEGEN_WORKSPACE_ROOT</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. creative/dsh-imagegen/lib/index.js:219, creative/dsh-xai-imagine/lib/index.js:113</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>connection</span> <span>credentials</span> <span>loader</span> <span>locale</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>storage</span> <span>theme</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>api.xiaomimimo.com</span> <span>api.x.ai</span> <span>token-plan-cn.xiaomimimo.com</span> <span>token-plan-sgp.xiaomimimo.com</span> <span>token-plan-ams.xiaomimimo.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_VIDEO_WORKSPACE_ROOT</span> <span>DSH_VIDEO_STORE_DIR</span> <span>MIMO_VISION_WORKSPACE_ROOT</span> <span>IMAGEGEN_WORKSPACE_ROOT</span> <span>XAI_IMAGINE_WORKSPACE_ROOT</span> <span>DSH_PUBLIC_URL</span> <span>DSH_WEB_URL</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

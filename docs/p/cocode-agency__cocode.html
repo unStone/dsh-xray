@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cocode-agency/cocode — capability card (C3) · dsh-xray</title>
-<meta name="description" content="cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta name="description" content="cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/cocode-agency__cocode.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cocode-agency/cocode — dsh plugin capability card">
-<meta property="og:description" content="cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/cocode-agency__cocode.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "cocode", "identifier": "cocode-agency/cocode", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/cocode-agency/cocode", "url": "https://unstone.github.io/dsh-xray/p/cocode-agency__cocode.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "cocode", "identifier": "cocode-agency/cocode", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/cocode-agency/cocode", "url": "https://unstone.github.io/dsh-xray/p/cocode-agency__cocode.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 50+ ·
      <a href="https://github.com/cocode-agency/cocode" rel="nofollow ugc">cocode-agency/cocode source on GitHub</a>
      · <a href="../registry.html#cocode-agency__cocode">this plugin in the registry</a></p>
-  <p>cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  <p>cocode-agency/cocode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/harden-electron-default-app.mjs</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. cocode-gui/forge.config.ts:2, cocode-gui/forge.config.ts:232</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. cocode-gui/packages/client/runtime/src/client/sessions/session.ts:293</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/harden-electron-default-app.mjs</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. cocode-gui/packages/client/runtime/src/client/sessions/session.ts:293</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CSC_KEYCHAIN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>clientModules</span> <span>commandUi</span> <span>connection</span> <span>conversation</span> <span>conversationEvents</span> <span>conversationViews</span> <span>inputTriggers</span> <span>invariants</span> <span>layout</span> <span>loader</span> <span>locale</span> <span>modules</span> <span>remote</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>systemPrompt</span> <span>theme</span> <span>typert</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span> <span>internal/dispatch</span> <span>internal/plugin</span> <span>internal/status</span> <span>locale/change</span> <span>slash/input-begin-command</span> <span>slash/input-consume-token</span> <span>slash/input-insert-reference</span> <span>slash/input-insert-text</span> <span>theme/change</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>www.deepseek.com</span> <span>artifacts.electronjs.org</span> <span>docs.deepseek.com</span> <span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>FORGE_OUT_DIR</span> <span>RELEASE_PLATFORM</span> <span>RELEASE_ARCH</span> <span>RELEASE_REQUIRE_SIGNING</span> <span>WINDOWS_ICON_PATH</span> <span>MACOS_ICON_PATH</span> <span>ELECTRON_APP_ID</span> <span>RELEASE_COPYRIGHT</span> <span>RELEASE_REQUIRE_NATIVE_ARCH_MATCH</span> <span>COCODE_RUNTIME_ARTIFACT_ROOT</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.deepseek.com</span> <span>docs.deepseek.com</span> <span>api.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CSC_KEYCHAIN</span> <span>RELEASE_OUTPUT_DIR</span> <span>ELECTRON_APP_ID</span> <span>RELEASE_COPYRIGHT</span> <span>MACOS_ICON_PATH</span> <span>WINDOWS_ICON_PATH</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

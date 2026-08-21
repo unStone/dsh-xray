@@ -43,16 +43,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>wenbin-wb/dsh-bridge</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Multi-channel remote access for DeepSeek Harness: LAN QR code, Cloudflare tunnel, custom tunnel, and a WeChat Bot with workspaces, persistent sessions, media, and approvals. Scan a QR code and keep wo</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">DeepSeek Harness 多通道远程访问插件 | 手机扫码秒连本地 AI、微信/QQ 直接对话、流式输出、按钮交互、多工作区切换、会话持久化 | 无需公网服务器，支持局域网直连、Cloudflare 隧道、自建隧道 | QQ Bot  + 微信 ClawBot</p>
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/wenbin-wb/dsh-bridge" rel="nofollow ugc">wenbin-wb/dsh-bridge source on GitHub</a>
      · <a href="../registry.html#wenbin-wb__dsh-bridge">this plugin in the registry</a></p>
   <p>wenbin-wb/dsh-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, exec_bundled, base64_decode_bundled, net_server_bundled.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/cloudflared-manager.mjs:3, lib/cloudflared-manager.mjs:158</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/tunnel-client.mjs:156, lib/tunnel-client.mjs:222</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:143</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/cloudflared-manager.mjs:3, lib/cloudflared-manager.mjs:158</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/tunnel-client.mjs:155, lib/tunnel-client.mjs:221</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:144</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>connection</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaceRegistry</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>mock/status</span> <span>session/event</span> <span>wechat/message</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>novac2c.cdn.weixin.qq.com</span> <span>ilinkai.weixin.qq.com</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>mock/status</span> <span>qq/interaction</span> <span>qq/message</span> <span>session/event</span> <span>wechat/message</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>bot.q.qq.com</span> <span>novac2c.cdn.weixin.qq.com</span> <span>bots.qq.com</span> <span>api.bot.qq.com</span> <span>ilinkai.weixin.qq.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

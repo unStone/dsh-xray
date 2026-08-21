@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#MichengAI__dsh-codex-desktop">this plugin in the registry</a></p>
   <p>MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/prepare-runtime.ts:1, scripts/prepare-runtime.ts:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/dsh-process.ts:37, src/dsh-process.ts:82</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. scripts/prepare-runtime.ts:1, scripts/prepare-runtime.ts:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/dsh-process.ts:52, src/dsh-process.ts:107</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_RUNTIME_ROOT</span> <span>DSH_NODE_EXECUTABLE</span> <span>npm_execpath</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>npm_execpath</span> <span>ComSpec</span> <span>DSH_NODE_EXECUTABLE</span> <span>DSH_PNPM_ENTRY</span> <span>DSH_PNPM_STORE_DIR</span> <span>DSH_HOME</span> <span>DSH_BUNDLED_PLUGIN_STORE</span> <span>DSH_RUNTIME_ROOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

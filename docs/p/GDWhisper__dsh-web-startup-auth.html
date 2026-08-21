@@ -44,13 +44,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DSH（DeepSeek Harness）远程 Web 启动 + 用户名/密码认证插件。 |  DeepSeek Harness Remote‑Web‑Launch Plugin with Username/Password Auth</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/GDWhisper/dsh-web-startup-auth" rel="nofollow ugc">GDWhisper/dsh-web-startup-auth source on GitHub</a>
      · <a href="../registry.html#GDWhisper__dsh-web-startup-auth">this plugin in the registry</a></p>
   <p>GDWhisper/dsh-web-startup-auth is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/startup.ts:18, src/startup.ts:18</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_WEB_AUTH_FILE</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>cmdlineArgs</span> <span>slots</span> <span>webServer</span> <span>webStartup</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>cmdlineArgs</span> <span>connection</span> <span>settingsScope</span> <span>slots</span> <span>webServer</span> <span>webStartup</span></p>
   
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_AUTH_FILE</span></p>

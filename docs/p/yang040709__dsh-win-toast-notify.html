@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/yang040709/dsh-win-toast-notify" rel="nofollow ugc">yang040709/dsh-win-toast-notify source on GitHub</a>
      · <a href="../registry.html#yang040709__dsh-win-toast-notify">this plugin in the registry</a></p>
   <p>yang040709/dsh-win-toast-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, ships no manifest.</p>
-  <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. host.js:162, win-task-notify.mjs:174</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessionTitle</span> <span>subprocess</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/error</span> <span>agent/status</span> <span>agent/turn-stopping</span> <span>tools/result</span></p>

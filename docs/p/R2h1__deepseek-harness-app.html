@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>R2h1/deepseek-harness-app — capability card (C2) · dsh-xray</title>
-<meta name="description" content="R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta name="description" content="R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/R2h1__deepseek-harness-app.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R2h1/deepseek-harness-app — dsh plugin capability card">
-<meta property="og:description" content="R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta property="og:description" content="R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/R2h1__deepseek-harness-app.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-app", "identifier": "R2h1/deepseek-harness-app", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/R2h1/deepseek-harness-app", "url": "https://unstone.github.io/dsh-xray/p/R2h1__deepseek-harness-app.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-app", "identifier": "R2h1/deepseek-harness-app", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/R2h1/deepseek-harness-app", "url": "https://unstone.github.io/dsh-xray/p/R2h1__deepseek-harness-app.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -44,16 +44,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">DeepSeek Harness 桌面端 —— 自包含的 ElectroBun 外壳，内置可自动更新的 dsh 引擎，附带 Windows 图形化安装程序</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/R2h1/deepseek-harness-app" rel="nofollow ugc">R2h1/deepseek-harness-app source on GitHub</a>
      · <a href="../registry.html#R2h1__deepseek-harness-app">this plugin in the registry</a></p>
-  <p>R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p>R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. scripts/build-installer.mjs:16, scripts/build-installer.mjs:16</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. scripts/build-installer.mjs:16, scripts/build-installer.mjs:16</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSHP_NSIS_MAKENSIS</span> <span>DSHP_RCEDIT</span> <span>DSH_DESKTOP_NODE</span> <span>DSH_DESKTOP_DEV_BACKEND</span> <span>DSH_DESKTOP_BACKEND_DIR</span> <span>DSH_DESKTOP_USER_DATA</span> <span>LOCALAPPDATA</span> <span>DSH_DESKTOP_REGISTRY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>uploads.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GH_TOKEN</span> <span>GITHUB_TOKEN</span> <span>DSHP_NSIS_MAKENSIS</span> <span>DSHP_RCEDIT</span> <span>DSH_DESKTOP_GITHUB_HOST</span> <span>DSH_DESKTOP_NODE</span> <span>DSH_DESKTOP_DEV_BACKEND</span> <span>DSH_DESKTOP_BACKEND_DIR</span> <span>DSH_DESKTOP_USER_DATA</span> <span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

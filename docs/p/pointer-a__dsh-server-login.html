@@ -44,12 +44,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">面向公网的多租户 DSH 托管平台 —— 部署到一台公网服务器后，多个用户注册并经管理员审核，各自获得一套相互隔离的 deepseek-harness（DSH）环境，随时通过域名安全访问。</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/pointer-a/dsh-server-login" rel="nofollow ugc">pointer-a/dsh-server-login source on GitHub</a>
      · <a href="../registry.html#pointer-a__dsh-server-login">this plugin in the registry</a></p>
   <p>pointer-a/dsh-server-login is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/fake-setpriv.mjs:4, scripts/fake-setpriv.mjs:12</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/crypto.ts:32, src/crypto.ts:33</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/fake-dsh.mjs:38, src/supervisor/spawn.ts:41</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_SERVER_LOGIN_ADMIN_PASSWORD, DSH_SERVER_LOGIN_COOKIE_DOMAIN, DSH_SERVER_LOGIN_SECRET, DSH_SERVER_LOGIN_SECURE_COOKIES</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/fake-setpriv.mjs:4, scripts/fake-setpriv.mjs:12</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/crypto.ts:32, src/crypto.ts:33</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/fake-dsh.mjs:38, src/supervisor/spawn.ts:41</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_SERVER_LOGIN_ADMIN_PASSWORD, DSH_SERVER_LOGIN_COOKIE_DOMAIN, DSH_SERVER_LOGIN_SECRET, DSH_SERVER_LOGIN_SECURE_COOKIES</td></tr></tbody></table>
   
   
   

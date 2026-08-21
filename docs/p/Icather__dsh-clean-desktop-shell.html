@@ -43,17 +43,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Icather/dsh-clean-desktop-shell</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness 的纯净桌面壳（DSH 插件形态）：复用现有 web profile，托盘/单实例/开机自启，零视觉改造。Clean desktop shell for DeepSeek Harness as a DSH plugin — reuses your web profile, tray/single-instance/auto-launch, zero visual c</p>
+  <p class="lede">DeepSeek Harness 的纯净桌面壳（DSH 插件形态）：复用现有 web profile，托盘管理后端，窗口离线自动重连，零视觉改造。Clean desktop shell for DeepSeek Harness as a DSH plugin — reuses your web profile, tray-managed backend, offline auto-reconnec</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Icather/dsh-clean-desktop-shell" rel="nofollow ugc">Icather/dsh-clean-desktop-shell source on GitHub</a>
      · <a href="../registry.html#Icather__dsh-clean-desktop-shell">this plugin in the registry</a></p>
   <p>Icather/dsh-clean-desktop-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. electron/service.js:12, electron/service.js:82</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. electron/service.js:12, electron/service.js:111</td></tr></tbody></table>
   
-  <h2>Hooks it attaches</h2><p class="kv"><span>ready</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span></p>
+  
+  <h2>Outbound domains</h2><p class="kv"><span>npmmirror.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>DSH_HOME</span> <span>DSH_SHELL_AUTO_LAUNCH</span> <span>DSH_SHELL_ELECTRON_DIR</span> <span>APPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MonshinYu/dsh-desktop — capability card (C2) · dsh-xray</title>
-<meta name="description" content="MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
+<meta name="description" content="MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/MonshinYu__dsh-desktop.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MonshinYu/dsh-desktop — dsh plugin capability card">
-<meta property="og:description" content="MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
+<meta property="og:description" content="MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/MonshinYu__dsh-desktop.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "MonshinYu/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.", "codeRepository": "https://github.com/MonshinYu/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/MonshinYu__dsh-desktop.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "MonshinYu/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/MonshinYu/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/MonshinYu__dsh-desktop.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/MonshinYu/dsh-desktop" rel="nofollow ugc">MonshinYu/dsh-desktop source on GitHub</a>
      · <a href="../registry.html#MonshinYu__dsh-desktop">this plugin in the registry</a></p>
-  <p>MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
-  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. electron/dsh-server.ts:3, electron/dsh-server.ts:154</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. electron/dsh-server.ts:33</td></tr></tbody></table>
+  <p>MonshinYu/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. scripts/clone_runtime_build_lib.ts:14</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>APP_ROOT</span> <span>VITE_PUBLIC</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>TAURI_DEV_HOST</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

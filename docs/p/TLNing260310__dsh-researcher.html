@@ -43,17 +43,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>TLNing260310/dsh-researcher</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Restores understanding when AI&#x27;s reasonable-looking changes drift the architecture: read-only build-shaping agent preset for DeepSeek Harness (Research -&gt; Plan -&gt; Code upstream)</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">Read-only Project Intelligence Layer for DeepSeek Harness · 基于证据的只读项目认知层 — prevents AI coding agents from making locally correct changes that gradually break the whole project</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/TLNing260310/dsh-researcher" rel="nofollow ugc">TLNing260310/dsh-researcher source on GitHub</a>
      · <a href="../registry.html#TLNing260310__dsh-researcher">this plugin in the registry</a></p>
   <p>TLNing260310/dsh-researcher is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. researcher/plugins/git-read/index.js:29</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>sandboxPolicy</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. bin/install.js:15, bin/install.js:15</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>approval</span> <span>sandboxPolicy</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span></p>
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DO_NOT_TRACK</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

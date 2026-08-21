@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>chenmzh/dsh-codex-reasoning-router — capability card (C2) · dsh-xray</title>
-<meta name="description" content="chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, ships no manifest.">
+<meta name="description" content="chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/chenmzh__dsh-codex-reasoning-router.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chenmzh/dsh-codex-reasoning-router — dsh plugin capability card">
-<meta property="og:description" content="chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, ships no manifest.">
+<meta property="og:description" content="chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/chenmzh__dsh-codex-reasoning-router.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-reasoning-router", "identifier": "chenmzh/dsh-codex-reasoning-router", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, ships no manifest.", "codeRepository": "https://github.com/chenmzh/dsh-codex-reasoning-router", "url": "https://unstone.github.io/dsh-xray/p/chenmzh__dsh-codex-reasoning-router.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-reasoning-router", "identifier": "chenmzh/dsh-codex-reasoning-router", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.", "codeRepository": "https://github.com/chenmzh/dsh-codex-reasoning-router", "url": "https://unstone.github.io/dsh-xray/p/chenmzh__dsh-codex-reasoning-router.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,11 +47,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/chenmzh/dsh-codex-reasoning-router" rel="nofollow ugc">chenmzh/dsh-codex-reasoning-router source on GitHub</a>
      · <a href="../registry.html#chenmzh__dsh-codex-reasoning-router">this plugin in the registry</a></p>
-  <p>chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, ships no manifest.</p>
-  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 4 tool regs, no manifest</td></tr></tbody></table>
+  <p>chenmzh/dsh-codex-reasoning-router is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>openAICodex</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>llm/stream</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>llm/stream</span> <span>session/event</span></p>
   
   
   <h2>How to read this</h2>

@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/zdjmrq/dsh-careful-full-access" rel="nofollow ugc">zdjmrq/dsh-careful-full-access source on GitHub</a>
      · <a href="../registry.html#zdjmrq__dsh-careful-full-access">this plugin in the registry</a></p>
   <p>zdjmrq/dsh-careful-full-access is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, ships no manifest.</p>
-  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/analyzer.ts:13, src/analyzer.ts:79</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 7 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>

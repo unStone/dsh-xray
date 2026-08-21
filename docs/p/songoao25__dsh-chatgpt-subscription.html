@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#songoao25__dsh-chatgpt-subscription">this plugin in the registry</a></p>
   <p>songoao25/dsh-chatgpt-subscription is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/host.js:312</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_CHATGPT_AUTH, DSH_CHATGPT_OAUTH_PORT, DSH_CHATGPT_OAUTH_TIMEOUT_MS</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/host.js:333</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_CHATGPT_AUTH, DSH_CHATGPT_OAUTH_PORT, DSH_CHATGPT_OAUTH_TIMEOUT_MS</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>settings</span> <span>shell</span> <span>slots</span> <span>timer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>auth.openai.com</span> <span>api.openai.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_CHATGPT_OAUTH_TIMEOUT_MS</span> <span>DSH_CHATGPT_DATA_DIR</span> <span>DSH_CHATGPT_BIND_FILE</span> <span>DSH_CHATGPT_AUTH</span> <span>DSH_CHATGPT_OAUTH_PORT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_CHATGPT_OAUTH_TIMEOUT_MS</span> <span>DSH_CHATGPT_DATA_DIR</span> <span>DSH_CHATGPT_BIND_FILE</span> <span>DSH_CHATGPT_DEFAULT_MODEL</span> <span>DSH_CHATGPT_AUTH</span> <span>DSH_CHATGPT_OAUTH_PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

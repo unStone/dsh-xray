@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>juntaoding/Flowboard — capability card (C3) · dsh-xray</title>
-<meta name="description" content="juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta name="description" content="juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/juntaoding__Flowboard.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="juntaoding/Flowboard — dsh plugin capability card">
-<meta property="og:description" content="juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta property="og:description" content="juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/juntaoding__Flowboard.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Flowboard", "identifier": "juntaoding/Flowboard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/juntaoding/Flowboard", "url": "https://unstone.github.io/dsh-xray/p/juntaoding__Flowboard.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Flowboard", "identifier": "juntaoding/Flowboard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/juntaoding/Flowboard", "url": "https://unstone.github.io/dsh-xray/p/juntaoding__Flowboard.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,13 +47,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/juntaoding/Flowboard" rel="nofollow ugc">juntaoding/Flowboard source on GitHub</a>
      · <a href="../registry.html#juntaoding__Flowboard">this plugin in the registry</a></p>
-  <p>juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
+  <p>juntaoding/Flowboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. packages/server/src/worker.ts:2, packages/server/src/worker.ts:23</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/dsh-service/src/index.ts:111</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FLOWBOARD_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. scripts/dev.mjs:2, scripts/dev.mjs:22</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/reload-dynamic.mjs:23, scripts/reload-dynamic.mjs:29</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/dsh-service/src/index.ts:111</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FLOWBOARD_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>remote</span> <span>shell</span> <span>slots</span> <span>systemPrompt</span> <span>timer</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/turn-stopping</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>FLOWBOARD_DB</span> <span>FLOWBOARD_PUBLIC_URL</span> <span>FLOWBOARD_HOST</span> <span>FLOWBOARD_PORT</span> <span>FLOWBOARD_TOKEN</span> <span>FLOWBOARD_UPLOAD_DIR</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FLOWBOARD_TOKEN</span> <span>FLOWBOARD_DB</span> <span>FLOWBOARD_PUBLIC_URL</span> <span>FLOWBOARD_DEV_DSH_HOME</span> <span>FLOWBOARD_API_BASE</span> <span>FLOWBOARD_HOST</span> <span>FLOWBOARD_PORT</span> <span>FLOWBOARD_UPLOAD_DIR</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

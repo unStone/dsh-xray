@@ -48,7 +48,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/CH3SH-LC/dsh-auto" rel="nofollow ugc">CH3SH-LC/dsh-auto source on GitHub</a>
      · <a href="../registry.html#CH3SH-LC__dsh-auto">this plugin in the registry</a></p>
   <p>CH3SH-LC/dsh-auto is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, gates tool execution, ships no manifest.</p>
-  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>approval, systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>approval</span> <span>invariants</span> <span>llm</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>tools/pre-execute</span> <span>tools/result</span></p>

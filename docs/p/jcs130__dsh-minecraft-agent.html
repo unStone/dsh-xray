@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jcs130/dsh-minecraft-agent — capability card (C3) · dsh-xray</title>
-<meta name="description" content="jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
+<meta name="description" content="jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/jcs130__dsh-minecraft-agent.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jcs130/dsh-minecraft-agent — dsh plugin capability card">
-<meta property="og:description" content="jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/jcs130__dsh-minecraft-agent.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-minecraft-agent", "identifier": "jcs130/dsh-minecraft-agent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/jcs130/dsh-minecraft-agent", "url": "https://unstone.github.io/dsh-xray/p/jcs130__dsh-minecraft-agent.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-minecraft-agent", "identifier": "jcs130/dsh-minecraft-agent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/jcs130/dsh-minecraft-agent", "url": "https://unstone.github.io/dsh-xray/p/jcs130__dsh-minecraft-agent.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -47,10 +47,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/jcs130/dsh-minecraft-agent" rel="nofollow ugc">jcs130/dsh-minecraft-agent source on GitHub</a>
      · <a href="../registry.html#jcs130__dsh-minecraft-agent">this plugin in the registry</a></p>
-  <p>jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
+  <p>jcs130/dsh-minecraft-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. deploy.mjs:14, deploy.mjs:14</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. cli/mc-join.mjs:175, src/mc-panel.ts:334</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MC_LLM_API_KEY, MC_LLM_KEY, QWEN_LOCAL_API_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>mcAdapt</span> <span>mcIdentity</span> <span>mcMemory</span> <span>mcMemos</span> <span>mcMystic</span> <span>mcTransmigrators</span> <span>mcVillage</span> <span>mcWiki</span> <span>mcbot</span> <span>timer</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. deploy.mjs:14, deploy.mjs:14</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/mc-session.ts:580</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. cli/mc-join.mjs:175, src/mc-panel.ts:389</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MC_LLM_API_KEY, MC_LLM_KEY, QWEN_LOCAL_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>mcAdapt</span> <span>mcIdentity</span> <span>mcMemory</span> <span>mcMemos</span> <span>mcMystic</span> <span>mcTransmigrators</span> <span>mcVillage</span> <span>mcWiki</span> <span>mcbot</span> <span>slots</span> <span>timer</span> <span>tools</span></p>
   
   
   <h2>Environment variables it reads</h2><p class="kv"><span>MC_USERNAME</span> <span>MC_VIEWER_PORT</span> <span>MC_EYES_FOV</span> <span>MC_EYES_VIEW</span> <span>CHROME_PATH</span> <span>MC_LLM_MODEL</span> <span>MC_MEMOS_URL</span> <span>MC_HOST</span> <span>MC_PORT</span> <span>MC_PANEL_PORT</span></p>
