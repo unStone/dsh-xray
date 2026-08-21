@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coprexist/AIsChat — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, eval_bundled.">
+<meta name="description" content="Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, eval in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Coprexist__AIsChat.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coprexist/AIsChat — dsh plugin capability card">
-<meta property="og:description" content="Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, eval_bundled.">
+<meta property="og:description" content="Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, eval in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Coprexist__AIsChat.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AIsChat", "identifier": "Coprexist/AIsChat", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, eval_bundled.", "codeRepository": "https://github.com/Coprexist/AIsChat", "url": "https://unstone.github.io/dsh-xray/p/Coprexist__AIsChat.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "AIsChat", "identifier": "Coprexist/AIsChat", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, eval in build output only.", "codeRepository": "https://github.com/Coprexist/AIsChat", "url": "https://unstone.github.io/dsh-xray/p/Coprexist__AIsChat.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Coprexist/AIsChat" rel="nofollow ugc">Coprexist/AIsChat source on GitHub</a>
      · <a href="../registry.html#Coprexist__AIsChat">this plugin in the registry</a></p>
-  <p>Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, exec_bundled, eval_bundled.</p>
+  <p>Coprexist/AIsChat is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, eval in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×51 in build output only, e.g. dsh-aischat/dist/assets/cytoscape.esm-DTSO7Bv0.js:4, dsh-aischat/dist/assets/cytoscape.esm-DTSO7Bv0.js:4</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×8 in build output only, e.g. dsh-aischat/dist/assets/index-BRJvFS57.js:12, dsh-aischat/dist/assets/index-BRJvFS57.js:53</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. frontend/src/components/MermaidBlock.tsx:27, frontend/src/demo/demoSetup.ts:84</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. dsh-aischat/scripts/smoke.mjs:11, dsh-aischat/scripts/smoke.mjs:59</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×51 in build output only, e.g. dsh-aischat/dist/assets/cytoscape.esm-DTSO7Bv0.js:4, dsh-aischat/dist/assets/cytoscape.esm-DTSO7Bv0.js:4</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×8 in build output only, e.g. dsh-aischat/dist/assets/index-BRJvFS57.js:12, dsh-aischat/dist/assets/index-BRJvFS57.js:53</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. frontend/src/components/MermaidBlock.tsx:27, frontend/src/demo/demoSetup.ts:84</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. dsh-aischat/scripts/smoke.mjs:11, dsh-aischat/scripts/smoke.mjs:59</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span> <span>workspaces</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>chevrotain.io</span> <span>goo.gl</span> <span>schemas.openxmlformats.org</span> <span>purl.oclc.org</span> <span>aischat.datongai.top</span> <span>ip-api.com</span> <span>fb.me</span> <span>stuk.github.io</span> <span>schemas.microsoft.com</span></p>

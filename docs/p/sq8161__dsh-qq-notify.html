@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sq8161/dsh-qq-notify — capability card (C3) · dsh-xray</title>
-<meta name="description" content="sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, decodes base64 payloads.">
+<meta name="description" content="sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sq8161__dsh-qq-notify.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sq8161/dsh-qq-notify — dsh plugin capability card">
-<meta property="og:description" content="sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, decodes base64 payloads.">
+<meta property="og:description" content="sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sq8161__dsh-qq-notify.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-qq-notify", "identifier": "sq8161/dsh-qq-notify", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, decodes base64 payloads.", "codeRepository": "https://github.com/sq8161/dsh-qq-notify", "url": "https://unstone.github.io/dsh-xray/p/sq8161__dsh-qq-notify.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-qq-notify", "identifier": "sq8161/dsh-qq-notify", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, decodes base64 payloads.", "codeRepository": "https://github.com/sq8161/dsh-qq-notify", "url": "https://unstone.github.io/dsh-xray/p/sq8161__dsh-qq-notify.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/sq8161/dsh-qq-notify" rel="nofollow ugc">sq8161/dsh-qq-notify source on GitHub</a>
      · <a href="../registry.html#sq8161__dsh-qq-notify">this plugin in the registry</a></p>
-  <p>sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled, decodes base64 payloads.</p>
+  <p>sq8161/dsh-qq-notify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:399, lib/index.js:434</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. aesgcm.js:206, test-aesgcm-driver.js:11</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:399, lib/index.js:434</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. aesgcm.js:206, test-aesgcm-driver.js:11</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>credentials</span> <span>sandboxPolicy</span> <span>sessionTitle</span> <span>slots</span> <span>subprocess</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/turn-stopping</span> <span>dispose</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>q.qq.com</span> <span>bots.qq.com</span> <span>api.sgroup.qq.com</span></p>

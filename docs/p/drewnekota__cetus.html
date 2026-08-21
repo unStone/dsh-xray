@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,7 +51,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#drewnekota__cetus">this plugin in the registry</a></p>
   <p>drewnekota/cetus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. evals/general-benchmark/run.mjs:6, evals/general-benchmark/run.mjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/components/devtest/test-hook.tsx:87</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/components/workspace/workspace-panel.tsx:1457</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. dsh-bridge/lib/index.js:169</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, DSH_COMPANION_BRIDGE_TOKEN, DSH_VISION_API_KEY, EXA_API_KEY, GEMINI_API_KEY, TAVILY_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. evals/general-benchmark/run.mjs:6, evals/general-benchmark/run.mjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/components/devtest/test-hook.tsx:87</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/components/workspace/workspace-panel.tsx:1457</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. dsh-bridge/lib/index.js:169</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, DSH_COMPANION_BRIDGE_TOKEN, DSH_VISION_API_KEY, EXA_API_KEY, GEMINI_API_KEY, TAVILY_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.tavily.com</span> <span>open.bigmodel.cn</span> <span>api.deepseek.com</span> <span>generativelanguage.googleapis.com</span> <span>api.exa.ai</span> <span>ark.cn-beijing.volces.com</span> <span>dashscope.aliyuncs.com</span> <span>api.moonshot.cn</span> <span>agentskills.io</span></p>

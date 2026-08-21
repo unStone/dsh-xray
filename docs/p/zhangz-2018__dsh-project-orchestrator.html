@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zhangz-2018/dsh-project-orchestrator — capability card (C2) · dsh-xray</title>
-<meta name="description" content="zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta name="description" content="zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zhangz-2018__dsh-project-orchestrator.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zhangz-2018/dsh-project-orchestrator — dsh plugin capability card">
-<meta property="og:description" content="zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zhangz-2018__dsh-project-orchestrator.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-project-orchestrator", "identifier": "zhangz-2018/dsh-project-orchestrator", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/zhangz-2018/dsh-project-orchestrator", "url": "https://unstone.github.io/dsh-xray/p/zhangz-2018__dsh-project-orchestrator.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-project-orchestrator", "identifier": "zhangz-2018/dsh-project-orchestrator", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/zhangz-2018/dsh-project-orchestrator", "url": "https://unstone.github.io/dsh-xray/p/zhangz-2018__dsh-project-orchestrator.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/zhangz-2018/dsh-project-orchestrator" rel="nofollow ugc">zhangz-2018/dsh-project-orchestrator source on GitHub</a>
      · <a href="../registry.html#zhangz-2018__dsh-project-orchestrator">this plugin in the registry</a></p>
-  <p>zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
+  <p>zhangz-2018/dsh-project-orchestrator is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/build.mjs:1, scripts/build.mjs:1</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>tools</span> <span>webServer</span> <span>workspaces</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/build.mjs:1, scripts/build.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/service.ts:2634</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>attachments</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>tools</span> <span>webServer</span> <span>workspaces</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROJECT_ORCHESTRATOR_URL</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>DSH_PROJECT_ORCHESTRATOR_REPOSITORY_ROOT</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>honghudavy-star/DSH_plugins_4U — capability card (C3) · dsh-xray</title>
-<meta name="description" content="honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.">
+<meta name="description" content="honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/honghudavy-star__DSH_plugins_4U.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="honghudavy-star/DSH_plugins_4U — dsh plugin capability card">
-<meta property="og:description" content="honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.">
+<meta property="og:description" content="honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/honghudavy-star__DSH_plugins_4U.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH_plugins_4U", "identifier": "honghudavy-star/DSH_plugins_4U", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.", "codeRepository": "https://github.com/honghudavy-star/DSH_plugins_4U", "url": "https://unstone.github.io/dsh-xray/p/honghudavy-star__DSH_plugins_4U.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH_plugins_4U", "identifier": "honghudavy-star/DSH_plugins_4U", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.", "codeRepository": "https://github.com/honghudavy-star/DSH_plugins_4U", "url": "https://unstone.github.io/dsh-xray/p/honghudavy-star__DSH_plugins_4U.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/honghudavy-star/DSH_plugins_4U" rel="nofollow ugc">honghudavy-star/DSH_plugins_4U source on GitHub</a>
      · <a href="../registry.html#honghudavy-star__DSH_plugins_4U">this plugin in the registry</a></p>
-  <p>honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.</p>
+  <p>honghudavy-star/DSH_plugins_4U is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. packages/wallpaper/wallpaper.mjs:6, packages/wallpaper/wallpaper.mjs:6</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. packages/vision/luma-mcp/build/image-processor.js:67</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. packages/wechat/index.mjs:28, packages/wechat/src/dsh-wechat-bridge.mjs:331</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CUSTOM_API_KEY, CUSTOM_AUTH_HEADER, CUSTOM_AUTH_HEADER_VALUE, DASHSCOPE_API_KEY, HUNYUAN_API_KEY, MAX_TOKENS</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. packages/wallpaper/wallpaper.mjs:6, packages/wallpaper/wallpaper.mjs:6</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. packages/vision/luma-mcp/build/image-processor.js:67</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. packages/wechat/index.mjs:28, packages/wechat/src/dsh-wechat-bridge.mjs:331</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CUSTOM_API_KEY, CUSTOM_AUTH_HEADER, CUSTOM_AUTH_HEADER_VALUE, DASHSCOPE_API_KEY, HUNYUAN_API_KEY, MAX_TOKENS</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>conversation</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.hunyuan.cloud.tencent.com</span> <span>dashscope.aliyuncs.com</span> <span>api.siliconflow.cn</span> <span>ark.cn-beijing.volces.com</span> <span>open.bigmodel.cn</span></p>

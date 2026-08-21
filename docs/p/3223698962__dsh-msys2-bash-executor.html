@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>3223698962/dsh-msys2-bash-executor — capability card (C2) · dsh-xray</title>
-<meta name="description" content="3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled.">
+<meta name="description" content="3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/3223698962__dsh-msys2-bash-executor.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3223698962/dsh-msys2-bash-executor — dsh plugin capability card">
-<meta property="og:description" content="3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled.">
+<meta property="og:description" content="3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/3223698962__dsh-msys2-bash-executor.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-msys2-bash-executor", "identifier": "3223698962/dsh-msys2-bash-executor", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled.", "codeRepository": "https://github.com/3223698962/dsh-msys2-bash-executor", "url": "https://unstone.github.io/dsh-xray/p/3223698962__dsh-msys2-bash-executor.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-msys2-bash-executor", "identifier": "3223698962/dsh-msys2-bash-executor", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.", "codeRepository": "https://github.com/3223698962/dsh-msys2-bash-executor", "url": "https://unstone.github.io/dsh-xray/p/3223698962__dsh-msys2-bash-executor.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/3223698962/dsh-msys2-bash-executor" rel="nofollow ugc">3223698962/dsh-msys2-bash-executor source on GitHub</a>
      · <a href="../registry.html#3223698962__dsh-msys2-bash-executor">this plugin in the registry</a></p>
-  <p>3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, exec_bundled.</p>
+  <p>3223698962/dsh-msys2-bash-executor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/bash-executor.js:212, lib/bash-executor.js:231</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/bash-executor.js:212, lib/bash-executor.js:231</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>connection</span> <span>locale</span> <span>remote</span> <span>settings</span> <span>slots</span> <span>subprocess</span> <span>tools</span> <span>typert</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span></p>
   

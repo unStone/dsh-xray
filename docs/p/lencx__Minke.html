@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>lencx/Minke — capability card (C3) · dsh-xray</title>
-<meta name="description" content="lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.">
+<meta name="description" content="lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/lencx__Minke.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lencx/Minke — dsh plugin capability card">
-<meta property="og:description" content="lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.">
+<meta property="og:description" content="lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/lencx__Minke.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Minke", "identifier": "lencx/Minke", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/lencx/Minke", "url": "https://unstone.github.io/dsh-xray/p/lencx__Minke.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Minke", "identifier": "lencx/Minke", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.", "codeRepository": "https://github.com/lencx/Minke", "url": "https://unstone.github.io/dsh-xray/p/lencx__Minke.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 100+ ·
      <a href="https://github.com/lencx/Minke" rel="nofollow ugc">lencx/Minke source on GitHub</a>
      · <a href="../registry.html#lencx__Minke">this plugin in the registry</a></p>
-  <p>lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
+  <p>lencx/Minke is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×31 in authored code, e.g. desktop/main/harness-runtime.ts:1, desktop/main/harness-runtime.ts:130</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>layout</span> <span>llm</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>subprocess</span> <span>theme</span> <span>workspaces</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×43 in authored code, e.g. desktop/main/harness-runtime.ts:1, desktop/main/harness-runtime.ts:132</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. packages/remote-access/src/cloudflare.ts:324, packages/remote-access/src/tailscale.ts:645</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>credentials</span> <span>layout</span> <span>llm</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>subprocess</span> <span>theme</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>locale/change</span> <span>theme/change</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>www.google.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>ComSpec</span> <span>APPIMAGETOOL_PATH</span> <span>DSH_FORGE_WORKER</span> <span>SystemRoot</span> <span>npm_execpath</span> <span>ELECTRON_RUN_AS_NODE</span> <span>COMSPEC</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>ComSpec</span> <span>ProgramFiles</span> <span>APPIMAGETOOL_PATH</span> <span>DSH_FORGE_WORKER</span> <span>SystemRoot</span> <span>COMSPEC</span> <span>npm_execpath</span> <span>ELECTRON_RUN_AS_NODE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

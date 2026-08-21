@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Xs1KVerOA__dsh-plugin">this plugin in the registry</a></p>
   <p>Xs1KVerOA/dsh-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. dsh-security/audit-tools.js:1, dsh-security/audit-tools.js:70</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. resource-center-plugin/client.js:1387, resource-center-plugin/client.js:1432</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. resource-center-plugin/service-manager-host.js:415</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>approval</span> <span>connection</span> <span>credentials</span> <span>dshSecurity</span> <span>fs</span> <span>inputTriggers</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sandboxPolicy</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>storage</span> <span>storageDomain</span> <span>timer</span> <span>tools</span> <span>webRuntime</span> <span>webServer</span> <span>workspaces</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. dsh-security/audit-tools.js:1, dsh-security/audit-tools.js:70</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. resource-center-plugin/client.js:1389, resource-center-plugin/client.js:1434</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. resource-center-plugin/service-manager-host.js:416</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_RESOURCE_CENTER_MINIO_ACCESS_KEY, DSH_RESOURCE_CENTER_MINIO_SECRET_KEY, DSH_RESOURCE_CENTER_MINIO_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>approval</span> <span>connection</span> <span>credentials</span> <span>dshAuth</span> <span>dshSecurity</span> <span>fs</span> <span>inputTriggers</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sandboxPolicy</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>storage</span> <span>storageDomain</span> <span>timer</span> <span>tools</span> <span>webRuntime</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>session/created</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>minio.example.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_CORE_ROOT</span> <span>DSH_E2E_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_CORE_ROOT</span> <span>DSH_E2E_URL</span> <span>DSH_DEX_USER_ROOT</span> <span>DSH_RESOURCE_CENTER_MINIO_ENDPOINT</span> <span>DSH_RESOURCE_CENTER_MINIO_ACCESS_KEY</span> <span>DSH_RESOURCE_CENTER_MINIO_SECRET_KEY</span> <span>DSH_RESOURCE_CENTER_MINIO_REGION</span> <span>DSH_RESOURCE_CENTER_MINIO_BUCKET</span> <span>DSH_RESOURCE_CENTER_MINIO_TOKEN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

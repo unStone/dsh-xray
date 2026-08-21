@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,7 +51,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#liangyou09__lyshell">this plugin in the registry</a></p>
   <p>liangyou09/lyshell is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/postinstall.cjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×33 in authored code, e.g. scripts/postinstall.cjs:14, scripts/postinstall.cjs:14</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/main/file/exec.ts:1411, src/main/file/exec.ts:1588</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/main/file/download-worker.ts:341, src/main/file/upload-worker.ts:363</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LYSHELL_MCP_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/postinstall.cjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×32 in authored code, e.g. scripts/postinstall.cjs:14, scripts/postinstall.cjs:14</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/main/file/exec.ts:1411, src/main/file/exec.ts:1588</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/main/file/download-worker.ts:341, src/main/file/upload-worker.ts:363</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LYSHELL_MCP_TOKEN</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>electronjs.org</span> <span>api.deepseek.com</span></p>

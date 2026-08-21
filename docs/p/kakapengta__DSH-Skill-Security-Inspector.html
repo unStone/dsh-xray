@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kakapengta/DSH-Skill-Security-Inspector — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<title>kakapengta/DSH-Skill-Security-Inspector — capability card (C2) · dsh-xray</title>
+<meta name="description" content="kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, mentions child_process without importing it.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kakapengta__DSH-Skill-Security-Inspector.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kakapengta/DSH-Skill-Security-Inspector — dsh plugin capability card">
-<meta property="og:description" content="kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, mentions child_process without importing it.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kakapengta__DSH-Skill-Security-Inspector.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Skill-Security-Inspector", "identifier": "kakapengta/DSH-Skill-Security-Inspector", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/kakapengta/DSH-Skill-Security-Inspector", "url": "https://unstone.github.io/dsh-xray/p/kakapengta__DSH-Skill-Security-Inspector.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Skill-Security-Inspector", "identifier": "kakapengta/DSH-Skill-Security-Inspector", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, mentions child_process without importing it.", "codeRepository": "https://github.com/kakapengta/DSH-Skill-Security-Inspector", "url": "https://unstone.github.io/dsh-xray/p/kakapengta__DSH-Skill-Security-Inspector.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,21 +35,23 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
 <main>
   <div class="plugin-head">
     <h1>kakapengta/DSH-Skill-Security-Inspector</h1>
-    <span class="lvl-pill">C3</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">一个可直接链接到 DeepSeek Harness（DSH）Web profile 的独立安全检查插件。在安装或使用不受信任的 Skill 前，先执行浏览器本地粗检，再由用户决定是否调用 DSH 已配置的大模型进行结构化复核。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/kakapengta/DSH-Skill-Security-Inspector" rel="nofollow ugc">kakapengta/DSH-Skill-Security-Inspector source on GitHub</a>
      · <a href="../registry.html#kakapengta__DSH-Skill-Security-Inspector">this plugin in the registry</a></p>
-  <p>kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>kakapengta/DSH-Skill-Security-Inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, mentions child_process without importing it.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/scanner.ts:39</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>mentions child_process without importing it</td><td><code>exec_ref</code></td><td>mentions child_process ×1 without importing it, e.g. src/scanner.ts:39</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>invariants</span> <span>llm</span> <span>locale</span> <span>slots</span> <span>webServer</span></p>
   
   

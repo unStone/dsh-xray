@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,7 +51,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#0326__dsh-plugin-market">this plugin in the registry</a></p>
   <p>0326/dsh-plugin-market is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/worker/scanner/security.ts:23, src/worker/scanner/security.ts:23</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/worker/github/client.ts:89</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CLOUDFLARE_API_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/worker/scanner/security.ts:23, src/worker/scanner/security.ts:23</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/worker/github/client.ts:89</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CLOUDFLARE_API_TOKEN</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>dsh-plugin.market</span> <span>api.github.com</span> <span>api.cloudflare.com</span> <span>schema.org</span> <span>www.sitemaps.org</span></p>

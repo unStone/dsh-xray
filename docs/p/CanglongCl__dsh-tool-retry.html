@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -51,7 +53,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×48 in authored code, e.g. scripts/build-fixtures.ts:37, scripts/build-fixtures.ts:37</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. scripts/eval-web.ts:219</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>fs</span> <span>llm</span> <span>sessions</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span> <span>fs/observed</span> <span>session/disposed</span> <span>tools/post-execute</span> <span>tools/result</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/disposed</span> <span>tools/post-execute</span> <span>tools/result</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_HARNESS</span> <span>DSH_EVAL_ARCHIVE_DIR</span> <span>DEEPSEEK_API_KEY</span> <span>GITHUB_REF</span> <span>GITHUB_REPOSITORY</span> <span>DSH_WEB_PORT</span> <span>DSH_WEB_HOST</span> <span>DSH_EVAL_REPEATS</span> <span>DSH_EVAL_CONCURRENCY</span></p>
   <h2>How to read this</h2>

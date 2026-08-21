@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>chentao4183/dsh-voice-suite — capability card (C3) · dsh-xray</title>
-<meta name="description" content="chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, reads credential-class env vars.">
+<meta name="description" content="chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/chentao4183__dsh-voice-suite.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chentao4183/dsh-voice-suite — dsh plugin capability card">
-<meta property="og:description" content="chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, reads credential-class env vars.">
+<meta property="og:description" content="chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/chentao4183__dsh-voice-suite.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-voice-suite", "identifier": "chentao4183/dsh-voice-suite", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, reads credential-class env vars.", "codeRepository": "https://github.com/chentao4183/dsh-voice-suite", "url": "https://unstone.github.io/dsh-xray/p/chentao4183__dsh-voice-suite.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-voice-suite", "identifier": "chentao4183/dsh-voice-suite", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, reads credential-class env vars.", "codeRepository": "https://github.com/chentao4183/dsh-voice-suite", "url": "https://unstone.github.io/dsh-xray/p/chentao4183__dsh-voice-suite.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/chentao4183/dsh-voice-suite" rel="nofollow ugc">chentao4183/dsh-voice-suite source on GitHub</a>
      · <a href="../registry.html#chentao4183__dsh-voice-suite">this plugin in the registry</a></p>
-  <p>chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, reads credential-class env vars.</p>
+  <p>chentao4183/dsh-voice-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:40</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SPEECH_DASHSCOPE_API_KEY, SPEECH_VOLCENGINE_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:40</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SPEECH_DASHSCOPE_API_KEY, SPEECH_VOLCENGINE_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span> <span>openspeech.bytedance.com</span></p>

@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,10 +51,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#chuspeeism__dashi-taskboard">this plugin in the registry</a></p>
   <p>chuspeeism/dashi-taskboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×53 in authored code, e.g. scripts/codex-injector.mjs:3, scripts/codex-injector.mjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×9 in authored code, e.g. scripts/codex-injector.mjs:1926, scripts/verify-updater-signature.mjs:18</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scripts/verify-packaged-taskctl.mjs:52, scripts/verify-packaged-taskctl.mjs:55</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CODEX_TASKBOARD_INSTANCE_SECRET, CODEX_TASKBOARD_INSTANCE_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×52 in authored code, e.g. scripts/codex-injector.mjs:3, scripts/codex-injector.mjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×9 in authored code, e.g. scripts/codex-injector.mjs:1926, scripts/verify-updater-signature.mjs:18</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scripts/verify-packaged-taskctl.mjs:52, scripts/verify-packaged-taskctl.mjs:55</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CODEX_TASKBOARD_INSTANCE_SECRET, CODEX_TASKBOARD_INSTANCE_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>developers.openai.com</span> <span>p1-hera.feishucdn.com</span> <span>git-scm.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>developers.openai.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>CODEX_TASKBOARD_RUNTIME_FILE</span> <span>CODEX_TASKBOARD_LISTEN_FD</span> <span>CODEX_TASKBOARD_DATA_DIR</span> <span>CODEX_TASKBOARD_INSTANCE_TOKEN</span> <span>CODEX_TASKBOARD_INSTANCE_SECRET</span> <span>CODEX_TASKBOARD_VERSION</span> <span>CODEX_TASKBOARD_CODEX_PROFILE</span> <span>CODEX_TASKBOARD_CODEX_SOURCE_PROFILE</span> <span>CODEX_EXECUTABLE</span> <span>CODEX_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

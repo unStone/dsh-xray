@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>omdsh-dev/dsh-mygo — capability card (C3) · dsh-xray</title>
-<meta name="description" content="omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<title>omdsh-dev/dsh-mygo — capability card (C2) · dsh-xray</title>
+<meta name="description" content="omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, powerful capability in test/example code only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-mygo.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="omdsh-dev/dsh-mygo — dsh plugin capability card">
-<meta property="og:description" content="omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, powerful capability in test/example code only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-mygo.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mygo", "identifier": "omdsh-dev/dsh-mygo", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/omdsh-dev/dsh-mygo", "url": "https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-mygo.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mygo", "identifier": "omdsh-dev/dsh-mygo", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, powerful capability in test/example code only.", "codeRepository": "https://github.com/omdsh-dev/dsh-mygo", "url": "https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-mygo.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,23 +35,25 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
 <main>
   <div class="plugin-head">
     <h1>omdsh-dev/dsh-mygo</h1>
-    <span class="lvl-pill">C3</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede"></p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/omdsh-dev/dsh-mygo" rel="nofollow ugc">omdsh-dev/dsh-mygo source on GitHub</a>
      · <a href="../registry.html#omdsh-dev__dsh-mygo">this plugin in the registry</a></p>
-  <p>omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
+  <p>omdsh-dev/dsh-mygo is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, powerful capability in test/example code only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/publish-mygo.mjs:11, scripts/publish-mygo.mjs:11</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. packages/cordis/mygo/src/service.ts:769</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/cordis/mygo/src/package/lockfile.ts:112</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>absent</span> <span>anything</span> <span>httpServer</span> <span>invariants</span> <span>missing</span> <span>pluginManager</span> <span>present</span> <span>sessionPersistence</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>storage</span> <span>storageDomain</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/settled</span> <span>agent/status</span> <span>connection/reset</span> <span>internal/plugin</span> <span>llm/stream</span> <span>pi-ext/from-plugin</span> <span>pi-ext/secret</span> <span>session/created</span> <span>session/disposed</span> <span>session/event</span> <span>system-prompt/change</span> <span>test/emit</span> <span>test/parallel</span> <span>test/serial</span> <span>test/waterfall</span> <span>tools/change</span> <span>tools/execute</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/publish-mygo.mjs:11, scripts/publish-mygo.mjs:11</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. packages/cordis/mygo/src/service.ts:769</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/cordis/mygo/src/package/lockfile.ts:112</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in test/example code only: systemPrompt</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>httpServer</span> <span>invariants</span> <span>pluginManager</span> <span>settings</span> <span>slots</span> <span>storage</span> <span>storageDomain</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>tools/execute</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_CHECKOUT</span> <span>DSH_RDB_POSTGRES</span> <span>DSH_PROFILE</span> <span>DSH_BIN</span> <span>DSH_INSTALL_DIR</span></p>
   <h2>How to read this</h2>

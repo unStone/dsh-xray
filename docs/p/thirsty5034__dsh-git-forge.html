@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>thirsty5034/dsh-git-forge — capability card (C2) · dsh-xray</title>
-<meta name="description" content="thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, exec_bundled.">
+<meta name="description" content="thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/thirsty5034__dsh-git-forge.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="thirsty5034/dsh-git-forge — dsh plugin capability card">
-<meta property="og:description" content="thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, exec_bundled.">
+<meta property="og:description" content="thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/thirsty5034__dsh-git-forge.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-git-forge", "identifier": "thirsty5034/dsh-git-forge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, exec_bundled.", "codeRepository": "https://github.com/thirsty5034/dsh-git-forge", "url": "https://unstone.github.io/dsh-xray/p/thirsty5034__dsh-git-forge.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-git-forge", "identifier": "thirsty5034/dsh-git-forge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.", "codeRepository": "https://github.com/thirsty5034/dsh-git-forge", "url": "https://unstone.github.io/dsh-xray/p/thirsty5034__dsh-git-forge.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/thirsty5034/dsh-git-forge" rel="nofollow ugc">thirsty5034/dsh-git-forge source on GitHub</a>
      · <a href="../registry.html#thirsty5034__dsh-git-forge">this plugin in the registry</a></p>
-  <p>thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, exec_bundled.</p>
+  <p>thirsty5034/dsh-git-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/shared/remote-resolve.js:5, lib/shared/remote-resolve.js:5</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/shared/remote-resolve.js:5, lib/shared/remote-resolve.js:5</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>betterSidebar</span> <span>locale</span> <span>sessions</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>gitea.example.com</span> <span>api.github.com</span> <span>gitea.mi.pp00.top</span> <span>gitee.com</span> <span>gitea.company</span> <span>api.bitbucket.org</span></p>

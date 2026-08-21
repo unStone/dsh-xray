@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -48,7 +50,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/titxue/dsh-desktop" rel="nofollow ugc">titxue/dsh-desktop source on GitHub</a>
      · <a href="../registry.html#titxue__dsh-desktop">this plugin in the registry</a></p>
   <p>titxue/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars, ships no manifest.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. bootstrap/install-deps.mjs:4, bootstrap/install-deps.mjs:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. plugins/desktop-host/src/bridge.ts:65</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_DESKTOP_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   

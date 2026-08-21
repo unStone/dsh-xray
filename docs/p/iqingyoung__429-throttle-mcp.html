@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>iqingyoung/429-throttle-mcp — capability card (C2) · dsh-xray</title>
-<meta name="description" content="iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
+<meta name="description" content="iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/iqingyoung__429-throttle-mcp.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iqingyoung/429-throttle-mcp — dsh plugin capability card">
-<meta property="og:description" content="iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
+<meta property="og:description" content="iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/iqingyoung__429-throttle-mcp.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "429-throttle-mcp", "identifier": "iqingyoung/429-throttle-mcp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.", "codeRepository": "https://github.com/iqingyoung/429-throttle-mcp", "url": "https://unstone.github.io/dsh-xray/p/iqingyoung__429-throttle-mcp.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "429-throttle-mcp", "identifier": "iqingyoung/429-throttle-mcp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/iqingyoung/429-throttle-mcp", "url": "https://unstone.github.io/dsh-xray/p/iqingyoung__429-throttle-mcp.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -43,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>iqingyoung/429-throttle-mcp</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">带速率限制的 MCP 代理 — 模型通过此 MCP 调用外部 API，自动控制每分钟调用次数和 Token 用量，不再被 429 拒绝</p>
+  <p class="lede">带限流 MCP 代理 + Agent 操作员技能,告别免费 API 的 HTTP 429;自动控速、口语调参、长任务复盘 | Rate-limited MCP proxy + agent operator skill — no more HTTP 429 on free LLM APIs.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/iqingyoung/429-throttle-mcp" rel="nofollow ugc">iqingyoung/429-throttle-mcp source on GitHub</a>
      · <a href="../registry.html#iqingyoung__429-throttle-mcp">this plugin in the registry</a></p>
-  <p>iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.</p>
-  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MAX_TOKENS</td></tr></tbody></table>
-  
+  <p>iqingyoung/429-throttle-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, ships no manifest.</p>
+  <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MAX_TOKENS</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 10 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   
   <h2>Environment variables it reads</h2><p class="kv"><span>MAX_CALLS</span> <span>MAX_TOKENS</span></p>

@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -50,7 +52,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>liguobao/deepseek-harness-remote is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. packages/crypto/src/index.ts:58, packages/crypto/src/index.ts:60</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>slots</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>workspaces</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dsh.r2049.cn</span> <span>remote.example.com</span> <span>www.npmjs.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>EXPO_PUBLIC_DSH_REMOTE_SERVER</span></p>

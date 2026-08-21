@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,7 +51,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#whyihaveyou__dsh-suite">this plugin in the registry</a></p>
   <p>whyihaveyou/dsh-suite is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×55 in authored code, e.g. bot/digest.mjs:18, bot/digest.mjs:18</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, GH_TOKEN, GITHUB_TOKEN, X_ACCESS_SECRET, X_ACCESS_TOKEN, X_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×52 in authored code, e.g. bot/digest.mjs:18, bot/digest.mjs:18</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, GH_TOKEN, GITHUB_TOKEN, X_ACCESS_SECRET, X_ACCESS_TOKEN, X_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>tools/change</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>www.npmjs.com</span> <span>whyihaveyou.github.io</span> <span>awesome-dsh-plugin.com</span> <span>opengraph.githubassets.com</span> <span>api.github.com</span> <span>api.deepseek.com</span> <span>api.x.com</span> <span>api.npmjs.org</span> <span>dsh-docs.com</span> <span>deepseekdocs.com</span></p>

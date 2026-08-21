@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>gtaifu/dsh-wechat-bridge — capability card (C2) · dsh-xray</title>
-<meta name="description" content="gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It exec_bundled, starts a network server, reads credential-class env vars.">
+<meta name="description" content="gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/gtaifu__dsh-wechat-bridge.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gtaifu/dsh-wechat-bridge — dsh plugin capability card">
-<meta property="og:description" content="gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It exec_bundled, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/gtaifu__dsh-wechat-bridge.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-wechat-bridge", "identifier": "gtaifu/dsh-wechat-bridge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It exec_bundled, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/gtaifu/dsh-wechat-bridge", "url": "https://unstone.github.io/dsh-xray/p/gtaifu__dsh-wechat-bridge.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-wechat-bridge", "identifier": "gtaifu/dsh-wechat-bridge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/gtaifu/dsh-wechat-bridge", "url": "https://unstone.github.io/dsh-xray/p/gtaifu__dsh-wechat-bridge.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/gtaifu/dsh-wechat-bridge" rel="nofollow ugc">gtaifu/dsh-wechat-bridge source on GitHub</a>
      · <a href="../registry.html#gtaifu__dsh-wechat-bridge">this plugin in the registry</a></p>
-  <p>gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It exec_bundled, starts a network server, reads credential-class env vars.</p>
-  <p class="lede"><b></b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/core.mjs:7, lib/core.mjs:161</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. bridge.mjs:178, test-mock-ilink.mjs:141</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BRIDGE_TOKEN, DSH_WXBOT_AUTH_FILE</td></tr></tbody></table>
+  <p>gtaifu/dsh-wechat-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, starts a network server, reads credential-class env vars.</p>
+  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/core.mjs:7, lib/core.mjs:161</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. bridge.mjs:178, test-mock-ilink.mjs:141</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BRIDGE_TOKEN, DSH_WXBOT_AUTH_FILE</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>ilinkai.weixin.qq.com</span> <span>novac2c.cdn.weixin.qq.com</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nienieai/dsh-chime-alerts — capability card (C3) · dsh-xray</title>
-<meta name="description" content="nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.">
+<meta name="description" content="nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/nienieai__dsh-chime-alerts.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nienieai/dsh-chime-alerts — dsh plugin capability card">
-<meta property="og:description" content="nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.">
+<meta property="og:description" content="nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/nienieai__dsh-chime-alerts.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-chime-alerts", "identifier": "nienieai/dsh-chime-alerts", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.", "codeRepository": "https://github.com/nienieai/dsh-chime-alerts", "url": "https://unstone.github.io/dsh-xray/p/nienieai__dsh-chime-alerts.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-chime-alerts", "identifier": "nienieai/dsh-chime-alerts", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function, base64 decoding in build output only.", "codeRepository": "https://github.com/nienieai/dsh-chime-alerts", "url": "https://unstone.github.io/dsh-xray/p/nienieai__dsh-chime-alerts.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/nienieai/dsh-chime-alerts" rel="nofollow ugc">nienieai/dsh-chime-alerts source on GitHub</a>
      · <a href="../registry.html#nienieai__dsh-chime-alerts">this plugin in the registry</a></p>
-  <p>nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, exec_bundled, uses eval / new Function, base64_decode_bundled.</p>
+  <p>nienieai/dsh-chime-alerts is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. lib/host.js:83, lib/host.js:354</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. tools/syntax-check.mjs:13, tools/test-client.mjs:86</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:167</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/host.js:85, lib/host.js:194</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. tools/syntax-check.mjs:13, tools/test-client.mjs:87</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:183</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>timer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span> <span>session/event</span> <span>tools/execute</span></p>
   

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Devin-AXIS/deepseek-design — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval_bundled, base64_decode_bundled.">
+<meta name="description" content="Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Devin-AXIS__deepseek-design.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Devin-AXIS/deepseek-design — dsh plugin capability card">
-<meta property="og:description" content="Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval_bundled, base64_decode_bundled.">
+<meta property="og:description" content="Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Devin-AXIS__deepseek-design.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-design", "identifier": "Devin-AXIS/deepseek-design", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval_bundled, base64_decode_bundled.", "codeRepository": "https://github.com/Devin-AXIS/deepseek-design", "url": "https://unstone.github.io/dsh-xray/p/Devin-AXIS__deepseek-design.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-design", "identifier": "Devin-AXIS/deepseek-design", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/Devin-AXIS/deepseek-design", "url": "https://unstone.github.io/dsh-xray/p/Devin-AXIS__deepseek-design.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 100+ ·
      <a href="https://github.com/Devin-AXIS/deepseek-design" rel="nofollow ugc">Devin-AXIS/deepseek-design source on GitHub</a>
      · <a href="../registry.html#Devin-AXIS__deepseek-design">this plugin in the registry</a></p>
-  <p>Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval_bundled, base64_decode_bundled.</p>
+  <p>Devin-AXIS/deepseek-design is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. source/plugins/deepseek-ivideo/stage-hyperframes-runtime.mjs:1, source/plugins/deepseek-ivideo/stage-hyperframes-runtime.mjs:1</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×5 in build output only, e.g. packages/deepseek-idesign/lib/index.js:137, packages/deepseek-ippt/lib/index.js:137</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×14 in build output only, e.g. packages/deepseek-idesign/lib/index.js:1099, packages/deepseek-idesign/lib/index.js:1150</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. source/plugins/deepseek-ivideo/stage-hyperframes-runtime.mjs:1, source/plugins/deepseek-ivideo/stage-hyperframes-runtime.mjs:1</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×5 in build output only, e.g. packages/deepseek-idesign/lib/index.js:137, packages/deepseek-ippt/lib/index.js:137</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×14 in build output only, e.g. packages/deepseek-idesign/lib/index.js:1099, packages/deepseek-idesign/lib/index.js:1150</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>schemas.microsoft.com</span> <span>gsap.com</span> <span>purl.org</span> <span>gitbrent.github.io</span> <span>evilmartians.com</span> <span>www.w3ctech.com</span> <span>cdn.jsdelivr.net</span> <span>cdnjs.cloudflare.com</span> <span>jspdf.default.namespaceuri</span></p>

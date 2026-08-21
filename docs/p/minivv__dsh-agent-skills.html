@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>minivv/dsh-agent-skills — capability card (C3) · dsh-xray</title>
-<meta name="description" content="minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled.">
+<meta name="description" content="minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/minivv__dsh-agent-skills.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="minivv/dsh-agent-skills — dsh plugin capability card">
-<meta property="og:description" content="minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled.">
+<meta property="og:description" content="minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/minivv__dsh-agent-skills.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agent-skills", "identifier": "minivv/dsh-agent-skills", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled.", "codeRepository": "https://github.com/minivv/dsh-agent-skills", "url": "https://unstone.github.io/dsh-xray/p/minivv__dsh-agent-skills.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agent-skills", "identifier": "minivv/dsh-agent-skills", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.", "codeRepository": "https://github.com/minivv/dsh-agent-skills", "url": "https://unstone.github.io/dsh-xray/p/minivv__dsh-agent-skills.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/minivv/dsh-agent-skills" rel="nofollow ugc">minivv/dsh-agent-skills source on GitHub</a>
      · <a href="../registry.html#minivv__dsh-agent-skills">this plugin in the registry</a></p>
-  <p>minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled.</p>
+  <p>minivv/dsh-agent-skills is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. scripts/build.mjs:2, scripts/build.mjs:2</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:2048, lib/client.js:3406</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. scripts/build.mjs:2, scripts/build.mjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:2048, lib/client.js:3406</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>skills</span> <span>slots</span></p>
   
   

@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -43,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>MJorgin/dsh-agent-conductor</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">⚡ DSH 指挥家（动态插件/热更新版）：在会话里派活给 11 种外部 agent CLI（Codex/Claude Code/TraeCode…），cordis_define 秒级安装，不碰 profile。</p>
+  <p class="lede">⚡ DSH 指挥家 / Conductor for DeepSeek Harness — in-session dispatch to 11 external agent CLIs (Codex, Claude Code, TraeCode, OpenCode, Gemini, Cursor, Kimi, Qwen, Copilot, WorkBuddy, Grok). Zero-dep skil</p>
   <p class="lede">★ 5+ ·
      <a href="https://github.com/MJorgin/dsh-agent-conductor" rel="nofollow ugc">MJorgin/dsh-agent-conductor source on GitHub</a>
      · <a href="../registry.html#MJorgin__dsh-agent-conductor">this plugin in the registry</a></p>
   <p>MJorgin/dsh-agent-conductor is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. conductor-dynamic.js:72, index.js:75</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. conductor-dynamic.js:72, index.js:79</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>docs.trae.cn</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>CONDUCTOR_CWD</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

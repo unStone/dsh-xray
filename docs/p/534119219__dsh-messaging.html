@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>534119219/dsh-messaging — capability card (C3) · dsh-xray</title>
-<meta name="description" content="534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, net_server_bundled, reads credential-class env vars.">
+<meta name="description" content="534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, network server in build output only, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/534119219__dsh-messaging.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="534119219/dsh-messaging — dsh plugin capability card">
-<meta property="og:description" content="534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, net_server_bundled, reads credential-class env vars.">
+<meta property="og:description" content="534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, network server in build output only, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/534119219__dsh-messaging.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-messaging", "identifier": "534119219/dsh-messaging", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, net_server_bundled, reads credential-class env vars.", "codeRepository": "https://github.com/534119219/dsh-messaging", "url": "https://unstone.github.io/dsh-xray/p/534119219__dsh-messaging.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-messaging", "identifier": "534119219/dsh-messaging", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, network server in build output only, reads credential-class env vars.", "codeRepository": "https://github.com/534119219/dsh-messaging", "url": "https://unstone.github.io/dsh-xray/p/534119219__dsh-messaging.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/534119219/dsh-messaging" rel="nofollow ugc">534119219/dsh-messaging source on GitHub</a>
      · <a href="../registry.html#534119219__dsh-messaging">this plugin in the registry</a></p>
-  <p>534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64_decode_bundled, net_server_bundled, reads credential-class env vars.</p>
+  <p>534119219/dsh-messaging is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, base64 decoding in build output only, network server in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. packages/messaging-core/lib/qr.js:46, packages/messaging-core/lib/qr.js:47</td></tr><tr><td>net_server_bundled</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. packages/messaging-core/lib/http.js:31</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>A2A_BEARER_TOKEN, BLUEBUBBLES_PASSWORD, DINGTALK_CLIENT_SECRET, DISCORD_BOT_TOKEN, DSH_API_TOKEN, EMAIL_PASSWORD</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. packages/messaging-core/lib/qr.js:46, packages/messaging-core/lib/qr.js:47</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. packages/messaging-core/lib/http.js:31</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>A2A_BEARER_TOKEN, BLUEBUBBLES_PASSWORD, DINGTALK_CLIENT_SECRET, DISCORD_BOT_TOKEN, DSH_API_TOKEN, EMAIL_PASSWORD</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessions</span> <span>settings</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>ilinkai.weixin.qq.com</span> <span>ntfy.sh</span> <span>q.qq.com</span> <span>www.googleapis.com</span> <span>api.telegram.org</span> <span>bot.example.com</span> <span>chat.googleapis.com</span> <span>api.sgroup.qq.com</span> <span>bots.qq.com</span> <span>api.twilio.com</span></p>

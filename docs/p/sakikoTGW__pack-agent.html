@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sakikoTGW/pack-agent — capability card (C3) · dsh-xray</title>
-<meta name="description" content="sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.">
+<meta name="description" content="sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sakikoTGW__pack-agent.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sakikoTGW/pack-agent — dsh plugin capability card">
-<meta property="og:description" content="sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.">
+<meta property="og:description" content="sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sakikoTGW__pack-agent.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pack-agent", "identifier": "sakikoTGW/pack-agent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.", "codeRepository": "https://github.com/sakikoTGW/pack-agent", "url": "https://unstone.github.io/dsh-xray/p/sakikoTGW__pack-agent.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pack-agent", "identifier": "sakikoTGW/pack-agent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.", "codeRepository": "https://github.com/sakikoTGW/pack-agent", "url": "https://unstone.github.io/dsh-xray/p/sakikoTGW__pack-agent.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/sakikoTGW/pack-agent" rel="nofollow ugc">sakikoTGW/pack-agent source on GitHub</a>
      · <a href="../registry.html#sakikoTGW__pack-agent">this plugin in the registry</a></p>
-  <p>sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64_decode_bundled, starts a network server.</p>
+  <p>sakikoTGW/pack-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./agent-pack-dsh/plugin/cordis.root.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×46 in authored code, e.g. bin/agent-pack-mcp.js:5, bin/agent-pack-mcp.js:5</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. agent-pack-dsh/plugin/lib/index.js:3564, agent-pack-dsh/plugin/lib/index.js:3566</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. mcp/server.ts:58, mcp/server.ts:243</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LOG_TOKENS</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./agent-pack-dsh/plugin/cordis.root.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×46 in authored code, e.g. bin/agent-pack-mcp.js:5, bin/agent-pack-mcp.js:5</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. agent-pack-dsh/plugin/lib/index.js:3564, agent-pack-dsh/plugin/lib/index.js:3566</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. mcp/server.ts:58, mcp/server.ts:243</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LOG_TOKENS</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>skills</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>bun.sh</span></p>

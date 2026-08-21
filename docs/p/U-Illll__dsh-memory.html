@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>U-Illll/dsh-memory — capability card (C2) · dsh-xray</title>
-<meta name="description" content="U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, ships no manifest.">
+<meta name="description" content="U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, command execution in build output only, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/U-Illll__dsh-memory.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="U-Illll/dsh-memory — dsh plugin capability card">
-<meta property="og:description" content="U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, ships no manifest.">
+<meta property="og:description" content="U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, command execution in build output only, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/U-Illll__dsh-memory.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-memory", "identifier": "U-Illll/dsh-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, ships no manifest.", "codeRepository": "https://github.com/U-Illll/dsh-memory", "url": "https://unstone.github.io/dsh-xray/p/U-Illll__dsh-memory.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-memory", "identifier": "U-Illll/dsh-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, command execution in build output only, ships no manifest.", "codeRepository": "https://github.com/U-Illll/dsh-memory", "url": "https://unstone.github.io/dsh-xray/p/U-Illll__dsh-memory.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/U-Illll/dsh-memory" rel="nofollow ugc">U-Illll/dsh-memory source on GitHub</a>
      · <a href="../registry.html#U-Illll__dsh-memory">this plugin in the registry</a></p>
-  <p>U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, exec_bundled, ships no manifest.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>exec_bundled</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:7</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 18 tool regs, no manifest</td></tr></tbody></table>
+  <p>U-Illll/dsh-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, command execution in build output only, ships no manifest.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:7</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 18 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   
   

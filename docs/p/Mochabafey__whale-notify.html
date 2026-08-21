@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mochabafey/whale-notify — capability card (C2) · dsh-xray</title>
-<meta name="description" content="Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, starts a network server, ships no manifest.">
+<meta name="description" content="Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only, starts a network server, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Mochabafey__whale-notify.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mochabafey/whale-notify — dsh plugin capability card">
-<meta property="og:description" content="Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, starts a network server, ships no manifest.">
+<meta property="og:description" content="Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only, starts a network server, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Mochabafey__whale-notify.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "whale-notify", "identifier": "Mochabafey/whale-notify", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, starts a network server, ships no manifest.", "codeRepository": "https://github.com/Mochabafey/whale-notify", "url": "https://unstone.github.io/dsh-xray/p/Mochabafey__whale-notify.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "whale-notify", "identifier": "Mochabafey/whale-notify", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only, starts a network server, ships no manifest.", "codeRepository": "https://github.com/Mochabafey/whale-notify", "url": "https://unstone.github.io/dsh-xray/p/Mochabafey__whale-notify.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Mochabafey/whale-notify" rel="nofollow ugc">Mochabafey/whale-notify source on GitHub</a>
      · <a href="../registry.html#Mochabafey__whale-notify">this plugin in the registry</a></p>
-  <p>Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64_decode_bundled, starts a network server, ships no manifest.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. verify-notify.mjs:77, verify-notify.mjs:77</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. plugins/dsh-whale-notify/lib/imap.js:44</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. verify-notify.mjs:70, verify-notify.mjs:161</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 18 tool regs, no manifest</td></tr></tbody></table>
+  <p>Mochabafey/whale-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only, starts a network server, ships no manifest.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. verify-notify.mjs:77, verify-notify.mjs:77</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. plugins/dsh-whale-notify/lib/imap.js:44</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. verify-notify.mjs:70, verify-notify.mjs:161</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 18 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>timer</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>open.feishu.cn</span> <span>sctapi.ftqq.com</span></p>

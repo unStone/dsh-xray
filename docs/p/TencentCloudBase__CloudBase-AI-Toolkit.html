@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#TencentCloudBase__CloudBase-AI-Toolkit">this plugin in the registry</a></p>
   <p>TencentCloudBase/CloudBase-AI-Toolkit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×62 in authored code, e.g. scripts/build-clawhub-publish-artifacts.mjs:6, scripts/build-clawhub-publish-artifacts.mjs:6</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. mcp/src/interactive-server.ts:249, mcp/src/interactive-server.ts:673</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CLAWDHUB_TOKEN, CLOUDBASE_APIKEY, CLOUDBASE_API_KEY, CNB_PASSWORD, CNB_TOKEN, GIT_AUTHOR_EMAIL</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. mcp/scripts/verify-cli-cloud-mode-smoke.mjs:18, mcp/scripts/verify-cli-cloud-mode-smoke.mjs:57</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. mcp/src/interactive-server.ts:249, mcp/src/interactive-server.ts:673</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CLOUDBASE_APIKEY, CLOUDBASE_API_KEY, TCB_AUTH_CLIENT_ID, TCB_AUTH_MODE, TCB_AUTH_OAUTH_CUSTOM, TCB_AUTH_OAUTH_ENDPOINT</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>docs.cloudbase.net</span> <span>buy.cloud.tencent.com</span> <span>static.cloudbase.net</span> <span>cloud.tencent.com</span> <span>tcb.cloud.tencent.com</span> <span>cloudbase.net</span> <span>console.cloud.tencent.com</span> <span>cnb.cool</span> <span>fonts.googleapis.com</span> <span>7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>CLOUDBASE_ENV_ID</span> <span>INTEGRATION_IDE</span> <span>CLOUDBASE_API_KEY</span> <span>WORKSPACE_FOLDER_PATHS</span> <span>VITEST</span> <span>TCB_REGION</span> <span>TCB_SITE</span> <span>CLOUDBASE_SITES_INTENT_DRY_RUN</span> <span>CLOUDBASE_PLUGIN_LIKELY_SKILLS</span> <span>http_proxy</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>docs.cloudbase.net</span> <span>buy.cloud.tencent.com</span> <span>static.cloudbase.net</span> <span>cloud.tencent.com</span> <span>tcb.cloud.tencent.com</span> <span>fonts.googleapis.com</span> <span>7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la</span> <span>servicewechat.com</span> <span>tcb-advanced-a656fc.api.tcloudbasegateway.com</span> <span>otheve.beacon.qq.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CLOUDBASE_ENV_ID</span> <span>INTEGRATION_IDE</span> <span>CLOUDBASE_API_KEY</span> <span>WORKSPACE_FOLDER_PATHS</span> <span>VITEST</span> <span>TCB_REGION</span> <span>TCB_SITE</span> <span>CLOUDBASE_SITES_INTENT_DRY_RUN</span> <span>http_proxy</span> <span>CLOUDBASE_MCP_CLOUD_MODE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

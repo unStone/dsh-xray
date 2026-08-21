@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mike-lee0120/dsh-cost-dashboard — capability card (C2) · dsh-xray</title>
-<meta name="description" content="mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval_bundled, base64_decode_bundled.">
+<meta name="description" content="mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/mike-lee0120__dsh-cost-dashboard.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mike-lee0120/dsh-cost-dashboard — dsh plugin capability card">
-<meta property="og:description" content="mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval_bundled, base64_decode_bundled.">
+<meta property="og:description" content="mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/mike-lee0120__dsh-cost-dashboard.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cost-dashboard", "identifier": "mike-lee0120/dsh-cost-dashboard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval_bundled, base64_decode_bundled.", "codeRepository": "https://github.com/mike-lee0120/dsh-cost-dashboard", "url": "https://unstone.github.io/dsh-xray/p/mike-lee0120__dsh-cost-dashboard.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cost-dashboard", "identifier": "mike-lee0120/dsh-cost-dashboard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/mike-lee0120/dsh-cost-dashboard", "url": "https://unstone.github.io/dsh-xray/p/mike-lee0120__dsh-cost-dashboard.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/mike-lee0120/dsh-cost-dashboard" rel="nofollow ugc">mike-lee0120/dsh-cost-dashboard source on GitHub</a>
      · <a href="../registry.html#mike-lee0120__dsh-cost-dashboard">this plugin in the registry</a></p>
-  <p>mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval_bundled, base64_decode_bundled.</p>
+  <p>mike-lee0120/dsh-cost-dashboard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. vendor/echarts.min.js:45</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. vendor/echarts.min.js:45</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. vendor/echarts.min.js:45</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. vendor/echarts.min.js:45</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>openrouter.ai</span> <span>api.openai.com</span> <span>api.anthropic.com</span></p>

@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -52,7 +54,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×38 in authored code, e.g. scripts/auto-tag.ts:16, scripts/auto-tag.ts:76</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/generate-announcement-banner.ts:61, scripts/generate-discord-icon.ts:48</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. packages/discord-bot/src/bot.ts:61, packages/petdex-cli/scripts/oauth-authorize-smoke.mjs:54</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AI_API_KEY, ALIYUN_OSS_ACCESS_KEY_ID, ALIYUN_OSS_ACCESS_KEY_SECRET, APPLE_API_KEY, APPLE_API_KEY_ID, CLERK_SECRET_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/created</span> <span>session/disposed</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>petdex.dev</span> <span>schema.org</span> <span>x.com</span> <span>pub-94495283df974cfea5e98d6a9e3fa462.r2.dev</span> <span>clerk.petdex.dev</span> <span>api.github.com</span> <span>challenges.cloudflare.com</span> <span>accounts.petdex.dev</span> <span>api.clerk.com</span> <span>admin.petdex.dev</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>petdex.dev</span> <span>schema.org</span> <span>x.com</span> <span>pub-94495283df974cfea5e98d6a9e3fa462.r2.dev</span> <span>clerk.petdex.dev</span> <span>api.github.com</span> <span>challenges.cloudflare.com</span> <span>accounts.petdex.dev</span> <span>api.clerk.com</span> <span>api.cloudflare.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DATABASE_URL</span> <span>RESEND_API_KEY</span> <span>NEXT_PUBLIC_DISCORD_INVITE_URL</span> <span>RESEND_FROM</span> <span>R2_PUBLIC_BASE</span> <span>OPENAI_API_KEY</span> <span>NATIVE_CLI</span> <span>NATIVE_SDK_PATH</span> <span>PETDEX_REVIEW_DB</span> <span>UPSTASH_REDIS_REST_TOKEN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

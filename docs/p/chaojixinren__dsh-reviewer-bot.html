@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>chaojixinren/dsh-reviewer-bot — capability card (C3) · dsh-xray</title>
-<meta name="description" content="chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta name="description" content="chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/chaojixinren__dsh-reviewer-bot.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chaojixinren/dsh-reviewer-bot — dsh plugin capability card">
-<meta property="og:description" content="chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta property="og:description" content="chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/chaojixinren__dsh-reviewer-bot.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-reviewer-bot", "identifier": "chaojixinren/dsh-reviewer-bot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/chaojixinren/dsh-reviewer-bot", "url": "https://unstone.github.io/dsh-xray/p/chaojixinren__dsh-reviewer-bot.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-reviewer-bot", "identifier": "chaojixinren/dsh-reviewer-bot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.", "codeRepository": "https://github.com/chaojixinren/dsh-reviewer-bot", "url": "https://unstone.github.io/dsh-xray/p/chaojixinren__dsh-reviewer-bot.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/chaojixinren/dsh-reviewer-bot" rel="nofollow ugc">chaojixinren/dsh-reviewer-bot source on GitHub</a>
      · <a href="../registry.html#chaojixinren__dsh-reviewer-bot">this plugin in the registry</a></p>
-  <p>chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
+  <p>chaojixinren/dsh-reviewer-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>sandbox, systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/e2e-docker-sandbox.mjs:27, scripts/e2e-docker-sandbox.mjs:27</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/e2e-install-modes.mjs:222, scripts/e2e-install-modes.mjs:224</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, FORGE_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>forges</span> <span>fs</span> <span>remote</span> <span>reviewRules</span> <span>reviewRuntime</span> <span>reviewTools</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>sessions</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span> <span>trustPolicy</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/e2e-docker-sandbox.mjs:27, scripts/e2e-docker-sandbox.mjs:27</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/e2e-install-modes.mjs:222, scripts/e2e-install-modes.mjs:224</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, FORGE_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in test/example code only: systemPrompt</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>forges</span> <span>fs</span> <span>remote</span> <span>reviewRules</span> <span>reviewRuntime</span> <span>reviewTools</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>sessions</span> <span>slots</span> <span>subagents</span> <span>tools</span> <span>trustPolicy</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>gitlab.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>IMAGE</span> <span>GITHUB_OUTPUT</span> <span>DEEPSEEK_API_KEY</span> <span>FORGE_TOKEN</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jianxx/dsh-cc-plugins — capability card (C2) · dsh-xray</title>
-<meta name="description" content="jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution.">
+<meta name="description" content="jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, powerful capability in test/example code only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/jianxx__dsh-cc-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jianxx/dsh-cc-plugins — dsh plugin capability card">
-<meta property="og:description" content="jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution.">
+<meta property="og:description" content="jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, powerful capability in test/example code only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/jianxx__dsh-cc-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cc-plugins", "identifier": "jianxx/dsh-cc-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution.", "codeRepository": "https://github.com/jianxx/dsh-cc-plugins", "url": "https://unstone.github.io/dsh-xray/p/jianxx__dsh-cc-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cc-plugins", "identifier": "jianxx/dsh-cc-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, powerful capability in test/example code only.", "codeRepository": "https://github.com/jianxx/dsh-cc-plugins", "url": "https://unstone.github.io/dsh-xray/p/jianxx__dsh-cc-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/jianxx/dsh-cc-plugins" rel="nofollow ugc">jianxx/dsh-cc-plugins source on GitHub</a>
      · <a href="../registry.html#jianxx__dsh-cc-plugins">this plugin in the registry</a></p>
-  <p>jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution.</p>
+  <p>jianxx/dsh-cc-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, powerful capability in test/example code only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commandUi</span> <span>commands</span> <span>fs</span> <span>invariants</span> <span>jobs</span> <span>sessions</span> <span>settings</span> <span>shell</span> <span>skills</span> <span>subagents</span> <span>systemPrompt</span> <span>tokenMeter</span> <span>toolSearch</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/pre-step</span> <span>agent/session-start</span> <span>agent/status</span> <span>agent/turn-stopping</span> <span>approval/request</span> <span>fs/observed</span> <span>internal/dispatch</span> <span>session/created</span> <span>session/disposed</span> <span>session/event</span> <span>session/flush</span> <span>skills/change</span> <span>subagent/end</span> <span>subagent/start</span> <span>system-prompt/assemble</span> <span>system-prompt/change</span> <span>tools/change</span> <span>tools/code-dispatch-log</span> <span>tools/execute</span> <span>tools/post-execute</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in test/example code only: system-prompt/assemble</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commandUi</span> <span>commands</span> <span>fs</span> <span>invariants</span> <span>jobs</span> <span>sessions</span> <span>settings</span> <span>shell</span> <span>skills</span> <span>subagents</span> <span>systemPrompt</span> <span>tokenMeter</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/pre-step</span> <span>agent/session-start</span> <span>agent/status</span> <span>agent/turn-stopping</span> <span>approval/request</span> <span>fs/observed</span> <span>internal/dispatch</span> <span>session/created</span> <span>session/disposed</span> <span>session/event</span> <span>subagent/end</span> <span>subagent/start</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>SUBAGENT_PASTE_HOOK</span> <span>DSH_COORDINATOR_MODE</span></p>
   <h2>How to read this</h2>

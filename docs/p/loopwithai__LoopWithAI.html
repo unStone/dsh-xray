@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>loopwithai/LoopWithAI — capability card (C3) · dsh-xray</title>
-<meta name="description" content="loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.">
+<meta name="description" content="loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/loopwithai__LoopWithAI.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="loopwithai/LoopWithAI — dsh plugin capability card">
-<meta property="og:description" content="loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.">
+<meta property="og:description" content="loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/loopwithai__LoopWithAI.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "LoopWithAI", "identifier": "loopwithai/LoopWithAI", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.", "codeRepository": "https://github.com/loopwithai/LoopWithAI", "url": "https://unstone.github.io/dsh-xray/p/loopwithai__LoopWithAI.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "LoopWithAI", "identifier": "loopwithai/LoopWithAI", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/loopwithai/LoopWithAI", "url": "https://unstone.github.io/dsh-xray/p/loopwithai__LoopWithAI.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/loopwithai/LoopWithAI" rel="nofollow ugc">loopwithai/LoopWithAI source on GitHub</a>
      · <a href="../registry.html#loopwithai__LoopWithAI">this plugin in the registry</a></p>
-  <p>loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval_bundled, base64_decode_bundled.</p>
-  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. apps/harness-web/scripts/dev.ts:1, apps/harness-web/scripts/dev.ts:35</td></tr><tr><td>eval_bundled</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. vendor/cordis/schemastery/src/index.ts:261, vendor/cordis/loader/src/config/utils.ts:5</td></tr><tr><td>base64_decode_bundled</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. vendor/cordis/cosmokit/src/types.ts:56, vendor/cordis/cosmokit/src/types.ts:57</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. apps/harness-web/scripts/dev.ts:14</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 12 services, 3 tool regs, no manifest</td></tr></tbody></table>
+  <p>loopwithai/LoopWithAI is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, eval in build output only, base64 decoding in build output only.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. apps/harness-web/scripts/dev.ts:1, apps/harness-web/scripts/dev.ts:35</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. vendor/cordis/schemastery/src/index.ts:261, vendor/cordis/loader/src/config/utils.ts:5</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. vendor/cordis/cosmokit/src/types.ts:56, vendor/cordis/cosmokit/src/types.ts:57</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. apps/harness-web/scripts/dev.ts:14</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 12 services, 3 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>invariants</span> <span>llm</span> <span>loader</span> <span>networkProxy</span> <span>sessions</span> <span>settings</span> <span>systemPrompt</span> <span>timer</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span> <span>credentials/updated</span> <span>internal/config</span> <span>internal/dispatch</span> <span>internal/plugin</span> <span>internal/status</span> <span>internal/update</span> <span>llm/adapters-updated</span> <span>llm/stream</span> <span>loader/entry-init</span> <span>loader/partial-dispose</span> <span>loader/patch-context</span> <span>session/created</span> <span>session/disposed</span> <span>session/event</span> <span>session/flush</span> <span>settings/updated</span> <span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>

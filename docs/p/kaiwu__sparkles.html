@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -49,7 +51,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#kaiwu__sparkles">this plugin in the registry</a></p>
   <p>kaiwu/sparkles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/dsh-npm-package.js:117, scripts/dsh-verify.js:11</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. finance/finance_archive/src/archive_ffi.mjs:25, finance/finance_capco/src/finance_capco/pdf_text_ffi.mjs:33</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, FRED_API_KEY, OPENFIGI_API_KEY, TUSHARE_TOKEN, TWELVE_DATA_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 7 services, 102 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/dsh-npm-package.js:117, scripts/dsh-verify.js:11</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. finance/finance_archive/src/archive_ffi.mjs:25, finance/finance_capco/src/finance_capco/pdf_text_ffi.mjs:33</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, FRED_API_KEY, OPENFIGI_API_KEY, TUSHARE_TOKEN, TWELVE_DATA_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 7 services, 11 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>sessionProjections</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/session-start</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>webapi.futunn.com</span> <span>data.alpaca.markets</span> <span>www.npmjs.com</span> <span>sparkles.extensio.cn</span> <span>static.cninfo.com.cn</span> <span>www.csrc.gov.cn</span> <span>www1.hkexnews.hk</span> <span>www.sfc.hk</span> <span>api.stlouisfed.org</span> <span>paper-api.alpaca.markets</span></p>

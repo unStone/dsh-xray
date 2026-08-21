@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Airmetro/dsh-update-checker — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Airmetro__dsh-update-checker.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Airmetro/dsh-update-checker — dsh plugin capability card">
-<meta property="og:description" content="Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Airmetro__dsh-update-checker.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-update-checker", "identifier": "Airmetro/dsh-update-checker", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/Airmetro/dsh-update-checker", "url": "https://unstone.github.io/dsh-xray/p/Airmetro__dsh-update-checker.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-update-checker", "identifier": "Airmetro/dsh-update-checker", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/Airmetro/dsh-update-checker", "url": "https://unstone.github.io/dsh-xray/p/Airmetro__dsh-update-checker.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -35,6 +35,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <a href="../registry.html">Registry</a>
     <a href="../report.html">Report</a>
     <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
     <a href="https://github.com/unStone/dsh-xray">GitHub</a>
   </div>
 </nav>
@@ -47,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/Airmetro/dsh-update-checker" rel="nofollow ugc">Airmetro/dsh-update-checker source on GitHub</a>
      · <a href="../registry.html#Airmetro__dsh-update-checker">this plugin in the registry</a></p>
-  <p>Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>Airmetro/dsh-update-checker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/main-update-worker.mjs:20, scripts/main-update-worker.mjs:80</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/main-update-worker.mjs:20, scripts/main-update-worker.mjs:82</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>codeload.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_UC_PNPM_BIN</span> <span>DSH_UC_UPDATE_ROOT</span> <span>DSH_UC_UPDATE_TARGET</span> <span>DSH_UC_UPDATE_BACKUP</span> <span>DSH_UC_UPDATE_PROGRESS</span> <span>DSH_UC_UPDATE_OPS</span> <span>DSH_UC_UPDATE_DSH_HOME</span> <span>DSH_UC_UPDATE_SELF_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_UC_PNPM_BIN</span> <span>DSH_UC_NPM_GLOBAL_ROOT</span> <span>DSH_DEPLOY_ROOT</span> <span>GH_TOKEN</span> <span>GITHUB_TOKEN</span> <span>DSH_UC_PROFILE_NODE_MODULES</span> <span>DSH_UC_NODE_EXE</span> <span>DSH_UC_UPDATE_ROOT</span> <span>DSH_UC_UPDATE_TARGET</span> <span>DSH_UC_UPDATE_BACKUP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
