@@ -15,11 +15,11 @@ English · [简体中文](README.zh.md)
 
 Site available in English / 简体中文 / 日本語
 
-> **89%** of scanned plugins carry a powerful capability surface · **76%** patch the dsh runtime itself · **6,800** plugins scanned, refreshed daily
+> **90%** of scanned plugins carry a powerful capability surface · **80%** patch the dsh runtime itself · **9,476** plugins scanned, refreshed daily
 
 ## Why
 
-The `dsh-plugin` ecosystem went from ~200 to **7,000+ repos in 30 days**. Plugins run arbitrary code inside your agent runtime: they can rewrite your system prompt (`system-prompt/assemble`), intercept every API call (`api/gate`), spawn subprocesses, read `GITHUB_TOKEN` from your env, and even **patch the runtime itself** (`manifest.bundle.patch`). Today nothing surfaces any of that before you install.
+The `dsh-plugin` ecosystem went from ~200 to **9,700+ repos in little over a month**. Plugins run arbitrary code inside your agent runtime: they can rewrite your system prompt (`system-prompt/assemble`), intercept every API call (`api/gate`), spawn subprocesses, read `GITHUB_TOKEN` from your env, and even **patch the runtime itself** (`manifest.bundle.patch`). Today nothing surfaces any of that before you install.
 
 dsh-xray statically scans every plugin in the ecosystem and publishes a **capability card**:
 
@@ -34,7 +34,7 @@ Every flag carries **file:line evidence**. Levels **C0–C3** measure capability
 
 ## Features
 
-- **Whole-ecosystem coverage** — every repository under the `dsh-plugin` topic (7,000+), rescanned daily.
+- **Whole-ecosystem coverage** — every repository under the `dsh-plugin` topic (9,700+), rescanned daily.
 - **Capability cards** — injected services, attached hooks, runtime patches, outbound domains, credential-class env reads and install-time scripts, each with `file:line` evidence.
 - **C0–C3 levels** — a compact read on how much surface a plugin has, and whether it combines powerful capability with sensitive behavior.
 - **Shipped vs. test code** — risk flags fire only on shipped code, so a fixture in `tests/` never inflates a rating.
@@ -94,7 +94,7 @@ Outputs: `data/scans/*.json` (full cards), `docs/data.json` (site data), `docs/b
 
 ## Roadmap
 
-- [x] Full-ecosystem coverage — 7,060 repositories, rescanned daily
+- [x] Full-ecosystem coverage — 9,736 repositories, rescanned daily
 - [ ] Daily diff feed: what changed in the capability surface of plugins you use
 - [ ] `cordis.patch.yml` runtime-patch audit view
 - [x] Companion plugin: look plugins up from inside dsh
