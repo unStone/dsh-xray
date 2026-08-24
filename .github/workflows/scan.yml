@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 300
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       # The per-repo cards drive incremental scanning. Keeping them in the cache
       # rather than in git stops a 35MB tree from being rewritten every day; a
       # cache miss just means one slower full sweep.
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: data/scans
           key: scans-${{ github.run_id }}
@@ -33,7 +33,9 @@ jobs:
           # all repos, 24 workers, generous per-run fetch cap: unchanged repos
           # reuse cached cards, so daily runs converge to full coverage and then
           # stay cheap. Downloads go to codeload, not the API quota.
-          cd scanner && python pipeline.py all 24 8000
+          # The cap sits above the discovered count so a cold cache still lands a
+          # full sweep -- 8000 fetches ran in 30 of the 300 minutes allowed.
+          cd scanner && python pipeline.py all 24 12000
           python render_report.py
           python render_docs.py
           python render_i18n_defaults.py
