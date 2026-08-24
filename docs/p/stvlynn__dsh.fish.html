@@ -46,13 +46,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Discover and install DeepSeek Harness plugins, skills, MCP servers, agent presets, bundles, and profiles.</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 0 ·
      <a href="https://github.com/stvlynn/dsh.fish" rel="nofollow ugc">stvlynn/dsh.fish source on GitHub</a>
      · <a href="../registry.html#stvlynn__dsh.fish">this plugin in the registry</a></p>
   <p>stvlynn/dsh.fish is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. packages/dsh-plugin-hub/src/installer.ts:1</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. frontend/src/shared/lib/og/og-image.ts:82</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, INDEXNOW_KEY, REMOTION_GOOGLE_MAPS_API_KEY, REMOTION_MAPTILER_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. frontend/scripts/deploy-production.mjs:1, frontend/scripts/deploy-production.mjs:20</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. frontend/src/shared/lib/og/og-image.ts:82</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, INDEXNOW_KEY, REMOTION_GOOGLE_MAPS_API_KEY, REMOTION_MAPTILER_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.maptiler.com</span> <span>dsh.fish</span> <span>api.devin.ai</span> <span>api.github.com</span> <span>fonts.googleapis.com</span> <span>www.sitemaps.org</span> <span>cesium.com</span> <span>cloud.maptiler.com</span> <span>developers.google.com</span> <span>www.maptiler.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>REMOTION_MAPTILER_KEY</span> <span>REMOTION_GOOGLE_MAPS_API_KEY</span> <span>ADA_PROBE_REPO</span> <span>LIVE_ADA_PROBE</span> <span>DEEPSEEK_API_KEY</span> <span>CHROMIUM_EXECUTABLE_PATH</span> <span>PUBLIC_BASE_URL</span> <span>INDEXNOW_KEY</span></p>

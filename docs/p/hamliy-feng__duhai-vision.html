@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#hamliy-feng__duhai-vision">this plugin in the registry</a></p>
   <p>hamliy-feng/duhai-vision is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. dsh/index.js:1, dsh/index.js:61</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, QWEN_API_KEY, VLM_API_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. dsh/index.js:1, dsh/index.js:66</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, QWEN_API_KEY, VLM_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>llm</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DUHAI_VISION_PYTHON</span> <span>VLM_API_KEY</span> <span>QWEN_API_KEY</span> <span>DASHSCOPE_API_KEY</span> <span>VLM_MODEL</span> <span>QWEN_MODEL</span> <span>VLM_BASE_URL</span> <span>QWEN_BASE_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DUHAI_VISION_PYTHON</span> <span>VLM_API_KEY</span> <span>QWEN_API_KEY</span> <span>DASHSCOPE_API_KEY</span> <span>VLM_MODEL</span> <span>QWEN_MODEL</span> <span>VLM_BASE_URL</span> <span>QWEN_BASE_URL</span> <span>DUHAI_VISION_ATTACHMENT_DIR</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>tafcear/kimi-tide — capability card (C2) · dsh-xray</title>
-<meta name="description" content="tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
+<meta name="description" content="tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/tafcear__kimi-tide.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tafcear/kimi-tide — dsh plugin capability card">
-<meta property="og:description" content="tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
+<meta property="og:description" content="tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/tafcear__kimi-tide.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "kimi-tide", "identifier": "tafcear/kimi-tide", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.", "codeRepository": "https://github.com/tafcear/kimi-tide", "url": "https://unstone.github.io/dsh-xray/p/tafcear__kimi-tide.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "kimi-tide", "identifier": "tafcear/kimi-tide", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/tafcear/kimi-tide", "url": "https://unstone.github.io/dsh-xray/p/tafcear__kimi-tide.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>tafcear/kimi-tide</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">🌊 kimi-tide（月汐）— DSH 模型路由插件：预设+规则驱动，每步自动在 Kimi 与 DeepSeek 间选路；图像护栏 + 配额面板 + 决策可观测 · preset+rule model router for DeepSeek Harness</p>
+  <p class="lede">🌊 kimi-tide（月汐）— DSH 逐步模型路由器：预设 + 规则 + @指令，任意已接入的模型都按你的想法选路；图像转述流 / 图像护栏 / Kimi 配额面板 / 决策可观测 · provider-agnostic per-step model router for DeepSeek Harness</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/tafcear/kimi-tide" rel="nofollow ugc">tafcear/kimi-tide source on GitHub</a>
      · <a href="../registry.html#tafcear__kimi-tide">this plugin in the registry</a></p>
-  <p>tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
+  <p>tafcear/kimi-tide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×9 in build output only, e.g. vendor/dsh-kimi-bridge/scripts/test.mjs:10, vendor/dsh-kimi-bridge/scripts/test.mjs:10</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>llm</span> <span>remote</span> <span>sessionProjections</span> <span>slots</span> <span>timer</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/image-admission</span> <span>agent/pre-step</span> <span>agent/request</span> <span>llm/adapters-updated</span> <span>session/disposed</span> <span>telemetry/record</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>llm</span> <span>remote</span> <span>sessionProjections</span> <span>slots</span> <span>timer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/image-admission</span> <span>agent/pre-step</span> <span>agent/request</span> <span>llm/adapters-updated</span> <span>llm/stream</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.kimi.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>KIMI_CODE_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

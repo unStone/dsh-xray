@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZTCNO0NE/dsh-loom — capability card (C2) · dsh-xray</title>
-<meta name="description" content="ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest.">
+<meta name="description" content="ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest, installable-looking manifest in fixtures only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ZTCNO0NE__dsh-loom.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZTCNO0NE/dsh-loom — dsh plugin capability card">
-<meta property="og:description" content="ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest.">
+<meta property="og:description" content="ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest, installable-looking manifest in fixtures only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ZTCNO0NE__dsh-loom.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-loom", "identifier": "ZTCNO0NE/dsh-loom", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/ZTCNO0NE/dsh-loom", "url": "https://unstone.github.io/dsh-xray/p/ZTCNO0NE__dsh-loom.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-loom", "identifier": "ZTCNO0NE/dsh-loom", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest, installable-looking manifest in fixtures only.", "codeRepository": "https://github.com/ZTCNO0NE/dsh-loom", "url": "https://unstone.github.io/dsh-xray/p/ZTCNO0NE__dsh-loom.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/ZTCNO0NE/dsh-loom" rel="nofollow ugc">ZTCNO0NE/dsh-loom source on GitHub</a>
      · <a href="../registry.html#ZTCNO0NE__dsh-loom">this plugin in the registry</a></p>
-  <p>ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest.</p>
+  <p>ZTCNO0NE/dsh-loom is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, ships no manifest, installable-looking manifest in fixtures only.</p>
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. bin/dsh-loom.mjs:8, bin/dsh-loom.mjs:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, DSH_META_API_KEY, LOOM_TERRA_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 28 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. bin/dsh-loom.mjs:8, bin/dsh-loom.mjs:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, DSH_META_API_KEY, LOOM_TERRA_API_KEY</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 28 tool regs, no manifest</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: fixtures/plugin-evolution/audit/package.json, fixtures/plugin-evolution/cost/package.json, fixtures/plugin-evolution/notify/package.json</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>credentials</span> <span>loader</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.nwafu-ai.cn</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_META_VALIDATE_ROOT</span> <span>DSH_ROOT</span> <span>DSH_COMMAND</span> <span>DSH_LOOM_RUNTIME_ROOT</span> <span>PYTHON</span> <span>DSH_META_BASE_URL</span> <span>DEEPSEEK_BASE_URL</span> <span>DSH_META_API_KEY</span> <span>DEEPSEEK_API_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_META_VALIDATE_ROOT</span> <span>DSH_ROOT</span> <span>DSH_PNPM_COMMAND</span> <span>DSH_COMMAND</span> <span>npm_execpath</span> <span>DSH_LOOM_RUNTIME_ROOT</span> <span>PYTHON</span> <span>DSH_META_BASE_URL</span> <span>DEEPSEEK_BASE_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

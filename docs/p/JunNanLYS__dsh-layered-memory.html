@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">让 DeepSeek Harness 拥有长期记忆：对话自动蒸馏为事实/场景/画像三层记忆，每步自动召回注入——让 AI 基于证据说话，零操作无感使用 | Long-term memory for DeepSeek Harness: conversations auto-distilled into facts, scenes &amp; persona, recalled before every st</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/JunNanLYS/dsh-layered-memory" rel="nofollow ugc">JunNanLYS/dsh-layered-memory source on GitHub</a>
      · <a href="../registry.html#JunNanLYS__dsh-layered-memory">this plugin in the registry</a></p>
   <p>JunNanLYS/dsh-layered-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. bench/harness/run.mjs:19, bench/harness/run.mjs:19</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. bench/harness/dsh-bench-runner/src/index.js:344, bench/harness/dsh-bench-runner/src/index.js:385</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. bench/harness/panel.mjs:15, bench/harness/panel.mjs:379</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. bench/harness/panel.mjs:360, bench/harness/dsh-bench-runner/src/index.js:884</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>connection</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>internal/service</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>NO_PROXY</span> <span>ALL_PROXY</span> <span>HTTPS_PROXY</span> <span>no_proxy</span> <span>https_proxy</span> <span>all_proxy</span> <span>HTTP_PROXY</span> <span>http_proxy</span> <span>DSH_BENCH_DATA_DIR</span> <span>DSH_BENCH_DISTILL_TIMEOUT_MS</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>internal/service</span> <span>llm/adapters-updated</span> <span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span> <span>proxy.corp</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>NO_PROXY</span> <span>ALL_PROXY</span> <span>HTTPS_PROXY</span> <span>DSH_BENCH_DISTILL_TIMEOUT_MS</span> <span>DSH_BENCH_GW_PATCH</span> <span>no_proxy</span> <span>https_proxy</span> <span>all_proxy</span> <span>HTTP_PROXY</span> <span>http_proxy</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>UNLINEARITY/dsh-code</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"> Claude-Code-style TUI bundle for DeepSeek Harness. 充分结合 DSH 的核心机制和高级特性与Codex CLI 、Claude Code 等主流交互机制，打造的 DSH-Code. （注：支持DSH 特殊模式，插件系统，模型管理，子代理管理，切换模型特殊动画）</p>
+  <p class="lede"> Claude-Code-style TUI bundle for DeepSeek Harness. 充分结合 DSH 的核心机制和高级特性与Codex CLI 、Claude Code 等主流交互机制，打造的 DSH-Code. （对齐DSH官方上游最新版本！持续更新中！支持DSH 特殊模式，插件系统，模型管理，子代理管理，切换模型特殊动画）</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/UNLINEARITY/dsh-code" rel="nofollow ugc">UNLINEARITY/dsh-code source on GitHub</a>
      · <a href="../registry.html#UNLINEARITY__dsh-code">this plugin in the registry</a></p>
   <p>UNLINEARITY/dsh-code is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. bin/deepseek.mjs:3, bin/deepseek.mjs:3</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. bin/deepseek.mjs:3, bin/deepseek.mjs:3</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>cmdlineArgs</span> <span>invariants</span> <span>sessions</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/request</span> <span>approval/request</span> <span>commands/change</span> <span>session/event</span> <span>skills/change</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/request</span> <span>approval/request</span> <span>authorization/settled</span> <span>commands/change</span> <span>credentials/record-updated</span> <span>session/event</span> <span>skills/change</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>APPDATA</span> <span>npm_config_prefix</span> <span>PREFIX</span> <span>DSH_SETTLED_ROWS</span></p>
   <h2>How to read this</h2>

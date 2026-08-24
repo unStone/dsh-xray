@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#flizzywine__dsh-tavern">this plugin in the registry</a></p>
   <p>flizzywine/dsh-tavern is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. bin/dsh-tavern.mjs:3, bin/dsh-tavern.mjs:3</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. tavern-plugin/lib/index.js:238, tavern-plugin/lib/domain/file-resources.js:67</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. bin/dsh-tavern.mjs:3, bin/dsh-tavern.mjs:3</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. tavern-plugin/lib/index.js:277, tavern-plugin/lib/domain/file-resources.js:68</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>betterSidebar</span> <span>connection</span> <span>layout</span> <span>sessions</span> <span>slots</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/turn-stopping</span> <span>session/event</span> <span>system-prompt/assemble</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TAVERN_BIN_DIR</span> <span>DSH_HOME</span> <span>PNPM_HOME</span> <span>LOCALAPPDATA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TAVERN_BIN_DIR</span> <span>DSH_HOME</span> <span>PNPM_HOME</span> <span>LOCALAPPDATA</span> <span>DSH_TAVERN_LEGACY_DATA</span> <span>DSH_TAVERN_RUNTIME_HOST</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A3Boy/dsh-web-tools — capability card (C3) · dsh-xray</title>
-<meta name="description" content="A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/A3Boy__dsh-web-tools.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A3Boy/dsh-web-tools — dsh plugin capability card">
-<meta property="og:description" content="A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/A3Boy__dsh-web-tools.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-web-tools", "identifier": "A3Boy/dsh-web-tools", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/A3Boy/dsh-web-tools", "url": "https://unstone.github.io/dsh-xray/p/A3Boy__dsh-web-tools.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-web-tools", "identifier": "A3Boy/dsh-web-tools", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/A3Boy/dsh-web-tools", "url": "https://unstone.github.io/dsh-xray/p/A3Boy__dsh-web-tools.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Multi-provider Web Search &amp; Fetch for DeepSeek Harness — Tavily, Exa, Firecrawl, Brave, You.com, Jina &amp; SearXNG with fallback and native settings UI.</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/A3Boy/dsh-web-tools" rel="nofollow ugc">A3Boy/dsh-web-tools source on GitHub</a>
      · <a href="../registry.html#A3Boy__dsh-web-tools">this plugin in the registry</a></p>
-  <p>A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>A3Boy/dsh-web-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/host/fetch-proxy.ts:26, src/host/fetch-proxy.ts:26</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. debug-page.mjs:2, debug-page.mjs:44</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×24 in authored code, e.g. debug-page.mjs:35, debug-page.mjs:63</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×9 in authored code, e.g. shot-interactive.mjs:122, shot-interactive.mjs:146</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>credentials</span> <span>locale</span> <span>settings</span> <span>slots</span> <span>web</span> <span>webRuntime</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/pre-step</span> <span>agent/turn-stopping</span> <span>tools/result</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.tavily.com</span> <span>api.exa.ai</span> <span>api.firecrawl.dev</span> <span>api.parallel.ai</span> <span>api.you.com</span> <span>api.search.brave.com</span> <span>s.jina.ai</span> <span>r.jina.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>NO_PROXY</span> <span>no_proxy</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>x.com</span> <span>api.search.brave.com</span> <span>creator.xiaohongshu.com</span> <span>api.tavily.com</span> <span>www.xiaohongshu.com</span> <span>api.exa.ai</span> <span>api.firecrawl.dev</span> <span>api.parallel.ai</span> <span>ydc-index.io</span> <span>dashboard.exa.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>TEMP</span> <span>NO_PROXY</span> <span>no_proxy</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

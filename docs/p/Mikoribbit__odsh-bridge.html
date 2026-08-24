@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">A bridge that connects Openclaw and DeepSeek Harness</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/Mikoribbit/odsh-bridge" rel="nofollow ugc">Mikoribbit/odsh-bridge source on GitHub</a>
      · <a href="../registry.html#Mikoribbit__odsh-bridge">this plugin in the registry</a></p>
   <p>Mikoribbit/odsh-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. config/odsh-bridge.ts:12, config/odsh-bridge.ts:44</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OC_KEYS, OC_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. config/odsh-bridge.ts:12, config/odsh-bridge.ts:44</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CUA_SSH_KEY, OC_KEYS, OC_TOKEN</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DISCORD_CHANNEL_ID</span> <span>OC_SEND_SCRIPT</span> <span>OC_ENV_FILE</span> <span>OC_HOST</span> <span>OC_PORT</span> <span>OC_TOKEN</span> <span>BRIDGE_PATH</span> <span>OC_KEYS</span> <span>OC_ORIGIN</span> <span>OC_CONNECT_TIMEOUT_MS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>BRIDGE_PATH</span> <span>OC_ENV_FILE</span> <span>BRIDGE_ALLOW_ABS_PATHS</span> <span>BRIDGE_ALLOW_REQUESTERS</span> <span>DISCORD_CHANNEL_ID</span> <span>OC_SEND_SCRIPT</span> <span>OC_NODE_SCRIPT</span> <span>OC_HOST</span> <span>OC_PORT</span> <span>OC_TOKEN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kanchengw/dsh-mindseye — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.">
+<meta name="description" content="kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kanchengw__dsh-mindseye.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kanchengw/dsh-mindseye — dsh plugin capability card">
-<meta property="og:description" content="kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.">
+<meta property="og:description" content="kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kanchengw__dsh-mindseye.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mindseye", "identifier": "kanchengw/dsh-mindseye", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.", "codeRepository": "https://github.com/kanchengw/dsh-mindseye", "url": "https://unstone.github.io/dsh-xray/p/kanchengw__dsh-mindseye.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mindseye", "identifier": "kanchengw/dsh-mindseye", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/kanchengw/dsh-mindseye", "url": "https://unstone.github.io/dsh-xray/p/kanchengw__dsh-mindseye.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>kanchengw/dsh-mindseye</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Plug-in vision for text-only models on DSH, with native interaction for image understanding and generation, layered evidence memory and cache, and intent-driven VLM router.</p>
+  <p class="lede">Plug-in vision for text-only models on DSH, with native interaction for image understanding and generation, layered evidence memory and cache, and GUI automation.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/kanchengw/dsh-mindseye" rel="nofollow ugc">kanchengw/dsh-mindseye source on GitHub</a>
      · <a href="../registry.html#kanchengw__dsh-mindseye">this plugin in the registry</a></p>
-  <p>kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
+  <p>kanchengw/dsh-mindseye is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/image-generation.ts:164</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>sessions</span> <span>slots</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/gui/browser.ts:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/image-generation.ts:164</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>userQuestions</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>PROGRAMFILES</span> <span>DSH_HOME</span> <span>CHROME_PATH</span> <span>EDGE_PATH</span> <span>PUPPETEER_EXECUTABLE_PATH</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

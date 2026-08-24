@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Fishsb/dsh-prompt-enhancer</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness (DSH) 插件：✨ 提示词一键增强 + 🔁 DSH 服务异常一键重启</p>
+  <p class="lede">DeepSeek Harness (DSH) 插件：✨ 提示词一键增强 + 💬 语音识别（说完自动停·云端/本地双引擎）· 附 🔁 服务异常一键重启</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/Fishsb/dsh-prompt-enhancer" rel="nofollow ugc">Fishsb/dsh-prompt-enhancer source on GitHub</a>
      · <a href="../registry.html#Fishsb__dsh-prompt-enhancer">this plugin in the registry</a></p>
   <p>Fishsb/dsh-prompt-enhancer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. scripts/asr-deploy.mjs:9, scripts/asr-deploy.mjs:9</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/build-client.mjs:146</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. plugin-client.js:3847</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×4 in build output only, e.g. lib/asr-worker.cjs:135, lib/asr-worker.cjs:174</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. scripts/asr-deploy.mjs:9, scripts/asr-deploy.mjs:9</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/build-client.mjs:146</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. plugin-client.js:3963</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×4 in build output only, e.g. lib/asr-worker.cjs:138, lib/asr-worker.cjs:177</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>timer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.webrtc-experiment.com</span> <span>unpkg.com</span> <span>api.github.com</span> <span>huggingface.co</span> <span>dashscope.aliyuncs.com</span> <span>schemas.microsoft.com</span> <span>nssm.cc</span> <span>ghproxy.net</span> <span>gh-proxy.com</span> <span>ghfast.top</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>DSH_HOME</span> <span>SystemRoot</span> <span>windir</span> <span>TEMP</span> <span>PORT</span> <span>LOCALAPPDATA</span> <span>DSH_RUNTIME_DIR</span> <span>DSH_ASR_MODEL</span> <span>DSH_ASR_MODEL_TYPE</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>www.webrtc-experiment.com</span> <span>unpkg.com</span> <span>huggingface.co</span> <span>uploads.github.com</span> <span>dashscope.aliyuncs.com</span> <span>schemas.microsoft.com</span> <span>nssm.cc</span> <span>ghproxy.net</span> <span>gh-proxy.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>DSH_HOME</span> <span>SystemRoot</span> <span>windir</span> <span>TEMP</span> <span>PORT</span> <span>npm_execpath</span> <span>NPM_CLI</span> <span>LOCALAPPDATA</span> <span>DSH_INSTALL_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

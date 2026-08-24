@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#HarcoChen__dsh-vsc-integration">this plugin in the registry</a></p>
   <p>HarcoChen/dsh-vsc-integration is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/changeReviewStore.ts:2, src/contextStore.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/chatView.ts:303, src/chatView.ts:3260</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. scripts/release.mjs:4, scripts/release.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/chatView.ts:455, src/chatView.ts:3589</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>cnb.cool</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>PATHEXT</span> <span>HTTPS_PROXY</span> <span>https_proxy</span> <span>HTTP_PROXY</span> <span>http_proxy</span> <span>NO_PROXY</span> <span>no_proxy</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>registry.npmmirror.com</span> <span>cnb.cool</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PATHEXT</span> <span>npm_config_registry</span> <span>NPM_CONFIG_REGISTRY</span> <span>HTTPS_PROXY</span> <span>https_proxy</span> <span>HTTP_PROXY</span> <span>http_proxy</span> <span>NO_PROXY</span> <span>no_proxy</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

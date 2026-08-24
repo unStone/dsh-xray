@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Karbo123/DSH-EvoResearch — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta name="description" content="Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Karbo123__DSH-EvoResearch.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Karbo123/DSH-EvoResearch — dsh plugin capability card">
-<meta property="og:description" content="Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Karbo123__DSH-EvoResearch.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-EvoResearch", "identifier": "Karbo123/DSH-EvoResearch", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/Karbo123/DSH-EvoResearch", "url": "https://unstone.github.io/dsh-xray/p/Karbo123__DSH-EvoResearch.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-EvoResearch", "identifier": "Karbo123/DSH-EvoResearch", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/Karbo123/DSH-EvoResearch", "url": "https://unstone.github.io/dsh-xray/p/Karbo123__DSH-EvoResearch.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/Karbo123/DSH-EvoResearch" rel="nofollow ugc">Karbo123/DSH-EvoResearch source on GitHub</a>
      · <a href="../registry.html#Karbo123__DSH-EvoResearch">this plugin in the registry</a></p>
-  <p>Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
+  <p>Karbo123/DSH-EvoResearch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×234 in authored code, e.g. scripts/accept-live-chatgraph.mjs:3, scripts/accept-live-chatgraph.mjs:13</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×359 in authored code, e.g. scripts/verify-a11y.mjs:57, scripts/verify-a11y.mjs:73</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×69 in authored code, e.g. scripts/accept-live-chatgraph.mjs:70, scripts/accept-mouse.mjs:53</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>EVORESEARCH_TELEGRAM_TOKEN, NEW_API_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×239 in authored code, e.g. scripts/accept-live-chatgraph.mjs:3, scripts/accept-live-chatgraph.mjs:13</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×359 in authored code, e.g. scripts/verify-a11y.mjs:57, scripts/verify-a11y.mjs:73</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×69 in authored code, e.g. scripts/accept-live-chatgraph.mjs:70, scripts/accept-mouse.mjs:53</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>EVORESEARCH_TELEGRAM_TOKEN, NEW_API_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>connection</span> <span>conversationEvents</span> <span>conversationViews</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>system-prompt/assemble</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>system-prompt/assemble</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>astral.sh</span> <span>api.telegram.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>NEW_API_API_KEY</span> <span>LOCALAPPDATA</span> <span>EVORESEARCH_PORT_FILE</span> <span>EVORESEARCH_DATA_ROOT</span> <span>EVORESEARCH_APP_PORT</span> <span>CORDIS_SHARED</span> <span>EVORESearch_PORT</span> <span>SystemDrive</span> <span>EVORESEARCH_DATA_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>NEW_API_API_KEY</span> <span>LOCALAPPDATA</span> <span>EVORESEARCH_PORT_FILE</span> <span>EVORESEARCH_DATA_ROOT</span> <span>EVORESEARCH_APP_PORT</span> <span>CORDIS_SHARED</span> <span>EVORESearch_PORT</span> <span>SystemDrive</span> <span>SystemRoot</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

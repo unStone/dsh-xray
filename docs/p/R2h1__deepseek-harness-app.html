@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#R2h1__deepseek-harness-app">this plugin in the registry</a></p>
   <p>R2h1/deepseek-harness-app is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. scripts/build-installer.mjs:16, scripts/build-installer.mjs:16</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. scripts/build-installer.mjs:16, scripts/build-installer.mjs:16</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>uploads.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GH_TOKEN</span> <span>GITHUB_TOKEN</span> <span>DSHP_NSIS_MAKENSIS</span> <span>DSHP_RCEDIT</span> <span>DSH_DESKTOP_GITHUB_HOST</span> <span>DSH_DESKTOP_NODE</span> <span>DSH_DESKTOP_DEV_BACKEND</span> <span>DSH_DESKTOP_BACKEND_DIR</span> <span>DSH_DESKTOP_USER_DATA</span> <span>LOCALAPPDATA</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>uploads.github.com</span> <span>ghproxy.net</span> <span>gh.ddlc.top</span> <span>gh-proxy.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GH_TOKEN</span> <span>GITHUB_TOKEN</span> <span>DSHP_NSIS_MAKENSIS</span> <span>DSHP_RCEDIT</span> <span>DSH_DESKTOP_GITHUB_HOST</span> <span>DSH_DESKTOP_NODE</span> <span>DSH_DESKTOP_DEV_BACKEND</span> <span>DSH_DESKTOP_BACKEND_DIR</span> <span>APPDATA</span> <span>DSH_DESKTOP_USER_DATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

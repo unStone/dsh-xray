@@ -45,12 +45,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>maskshell/solidforge-dsh</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">让测试绿了不等于你做对了 — 双轴收敛纪律 (spec-gaming orthogonal axis) 的 DeepSeek Harness 原生实现 | Two-axis convergence discipline for coding agents</p>
+  <p class="lede">让 DSH Coding 流程更具有确定性！以 DSH 预设与全局插件（任意会话皆可使用）两种形式交付。收敛 → 规范化 → 实现：并行 TDD 双环收敛门禁、对抗式跨源评审、对源逐条引用核查、先行技术碰撞检索——每道门控均提供诚实记录，绝不静默转绿</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/maskshell/solidforge-dsh" rel="nofollow ugc">maskshell/solidforge-dsh source on GitHub</a>
      · <a href="../registry.html#maskshell__solidforge-dsh">this plugin in the registry</a></p>
   <p>maskshell/solidforge-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, gates tool execution, executes system commands.</p>
-  <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
+  <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, tools/pre-execute</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. plugins/hetero-review.host.js:70, plugins/loop-gates.host.js:62</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>subprocess</span> <span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>

@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness plugin for Garmin Connect — AI-powered fitness data access</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/Likenttt/garmin-connect-plugin-for-dsh" rel="nofollow ugc">Likenttt/garmin-connect-plugin-for-dsh source on GitHub</a>
      · <a href="../registry.html#Likenttt__garmin-connect-plugin-for-dsh">this plugin in the registry</a></p>
   <p>Likenttt/garmin-connect-plugin-for-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DOTENV_KEY, GARMIN_PASSWORD, GARMIN_SESSION_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DOTENV_KEY, GARMIN_PASSWORD, GARMIN_SESSION_TOKEN, GARMIN_SESSION_TOKEN_FILE</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>GARMIN_USERNAME</span> <span>GARMIN_PASSWORD</span> <span>GARMIN_REGION</span> <span>GARMIN_SESSION_TOKEN</span> <span>GARMIN_LOG_LEVEL</span> <span>GARMIN_ACTIVITY_DETAIL</span> <span>DOTENV_KEY</span> <span>GARMIN_INTEGRATION_VERBOSE</span> <span>GARMIN_CACHE_TTL</span> <span>GARMIN_REQUEST_TIMEOUT_MS</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>thegarth.s3.amazonaws.com</span> <span>connectapi.garmin.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GARMIN_USERNAME</span> <span>GARMIN_PASSWORD</span> <span>GARMIN_REGION</span> <span>GARMIN_SESSION_TOKEN</span> <span>GARMIN_SESSION_TOKEN_FILE</span> <span>GARMIN_LOG_LEVEL</span> <span>GARMIN_ACTIVITY_DETAIL</span> <span>GARMIN_FIT_DOWNLOAD_DIR</span> <span>DOTENV_KEY</span> <span>GARMIN_INTEGRATION_VERBOSE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

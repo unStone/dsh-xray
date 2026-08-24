@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jingzhao-l/iterate-plugin — capability card (C3) · dsh-xray</title>
-<meta name="description" content="jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.">
+<meta name="description" content="jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/jingzhao-l__iterate-plugin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jingzhao-l/iterate-plugin — dsh plugin capability card">
-<meta property="og:description" content="jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.">
+<meta property="og:description" content="jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/jingzhao-l__iterate-plugin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "iterate-plugin", "identifier": "jingzhao-l/iterate-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.", "codeRepository": "https://github.com/jingzhao-l/iterate-plugin", "url": "https://unstone.github.io/dsh-xray/p/jingzhao-l__iterate-plugin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "iterate-plugin", "identifier": "jingzhao-l/iterate-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/jingzhao-l/iterate-plugin", "url": "https://unstone.github.io/dsh-xray/p/jingzhao-l__iterate-plugin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>jingzhao-l/iterate-plugin</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness (dsh) 插件：把 iterate 技能落成自治闭环代码迭代 — 多轮并行审查、确定性去重收敛、原子修复+验证自停、meta-review 一致性审计、dry-run 只读审查。由 iterate-skill 主仓库统一维护。</p>
+  <p class="lede">DeepSeek Harness (dsh) plugin that turns the iterate skill into an autonomous closed-loop code iteration — parallel reviews, deterministic dedup convergence, atomic fix + verify auto-stop, meta-review</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/jingzhao-l/iterate-plugin" rel="nofollow ugc">jingzhao-l/iterate-plugin source on GitHub</a>
      · <a href="../registry.html#jingzhao-l__iterate-plugin">this plugin in the registry</a></p>
-  <p>jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
+  <p>jingzhao-l/iterate-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/git-scope.ts:24, src/tools/validate.ts:1</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/git-scope.ts:24, src/tools/validate.ts:1</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>systemPrompt</span> <span>theme</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SESSION_JSONL</span></p>
   <h2>How to read this</h2>

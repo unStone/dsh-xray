@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>necigit/Coral-Memory — capability card (C3) · dsh-xray</title>
-<meta name="description" content="necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/necigit__Coral-Memory.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="necigit/Coral-Memory — dsh plugin capability card">
-<meta property="og:description" content="necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/necigit__Coral-Memory.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Coral-Memory", "identifier": "necigit/Coral-Memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/necigit/Coral-Memory", "url": "https://unstone.github.io/dsh-xray/p/necigit__Coral-Memory.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Coral-Memory", "identifier": "necigit/Coral-Memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/necigit/Coral-Memory", "url": "https://unstone.github.io/dsh-xray/p/necigit__Coral-Memory.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/necigit/Coral-Memory" rel="nofollow ugc">necigit/Coral-Memory source on GitHub</a>
      · <a href="../registry.html#necigit__Coral-Memory">this plugin in the registry</a></p>
-  <p>necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>necigit/Coral-Memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. profile_tier.mjs:32, profile_tier.mjs:32</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. profile_tier.mjs:32, profile_tier.mjs:32</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. plugins/coral-board/lib/client.js:349, plugins/ui-balance/lib/client.js:321</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×4 in build output only, e.g. plugins/coral-board/lib/client.js:1514, plugins/coral-board/lib/client.js:1565</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>remote</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_COST_LEDGER</span> <span>DSH_COST_ALERT_HITRATE</span> <span>DSH_COST_ALERT_OUTPUT_RATIO</span> <span>DSH_CORAL_DATA_DIR</span> <span>DSH_CORAL_AUTO_INSTALL</span> <span>DSH_CORAL_CONFIG</span> <span>DSH_COST_PROBE</span> <span>DSH_PRESET_YML</span> <span>DSH_COST_PROJCACHE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>CORAL_THREADS_PATH</span> <span>DSH_COST_LEDGER</span> <span>DSH_COST_ALERT_HITRATE</span> <span>DSH_COST_ALERT_OUTPUT_RATIO</span> <span>DSH_CORAL_DATA_DIR</span> <span>DSH_CORAL_AUTO_INSTALL</span> <span>DSH_CORAL_CONFIG</span> <span>DSH_COST_PROBE</span> <span>DSH_PRESET_YML</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

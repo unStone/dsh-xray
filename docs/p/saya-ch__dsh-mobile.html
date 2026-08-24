@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>saya-ch/dsh-mobile — capability card (C3) · dsh-xray</title>
-<meta name="description" content="saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
+<meta name="description" content="saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/saya-ch__dsh-mobile.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="saya-ch/dsh-mobile — dsh plugin capability card">
-<meta property="og:description" content="saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/saya-ch__dsh-mobile.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mobile", "identifier": "saya-ch/dsh-mobile", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/saya-ch/dsh-mobile", "url": "https://unstone.github.io/dsh-xray/p/saya-ch__dsh-mobile.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mobile", "identifier": "saya-ch/dsh-mobile", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/saya-ch/dsh-mobile", "url": "https://unstone.github.io/dsh-xray/p/saya-ch__dsh-mobile.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>saya-ch/dsh-mobile</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness 移动端适配与安全局域网访问插件，支持 Android App 和手机浏览器。</p>
-  <p class="lede">★ 50+ ·
+  <p class="lede">DeepSeek Harness 移动端适配与安全访问插件，支持局域网、远程连接、Android App 和手机浏览器。</p>
+  <p class="lede">★ 100+ ·
      <a href="https://github.com/saya-ch/dsh-mobile" rel="nofollow ugc">saya-ch/dsh-mobile source on GitHub</a>
      · <a href="../registry.html#saya-ch__dsh-mobile">this plugin in the registry</a></p>
-  <p>saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
+  <p>saya-ch/dsh-mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/cli.ts:2, src/managed-setup.ts:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. src/client.ts:282, src/gateway.ts:852</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/build-funnel-host.mjs:1, src/cli.ts:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. src/client.ts:699, src/gateway.ts:972</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/cpolar.ts:65, src/cpolar.ts:68</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SOURCE_ROOT</span> <span>GITHUB_REF_NAME</span> <span>DSH_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>tailscale.com</span> <span>www.cpolar.com</span> <span>dashboard.cpolar.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GO_BINARY</span> <span>DSH_SOURCE_ROOT</span> <span>GITHUB_REF_NAME</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

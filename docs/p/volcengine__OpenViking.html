@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>volcengine/OpenViking — capability card (C2) · dsh-xray</title>
-<meta name="description" content="volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta name="description" content="volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, reads credential-class env vars, powerful capability in test/example code only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/volcengine__OpenViking.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="volcengine/OpenViking — dsh plugin capability card">
-<meta property="og:description" content="volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, reads credential-class env vars, powerful capability in test/example code only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/volcengine__OpenViking.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OpenViking", "identifier": "volcengine/OpenViking", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/volcengine/OpenViking", "url": "https://unstone.github.io/dsh-xray/p/volcengine__OpenViking.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "OpenViking", "identifier": "volcengine/OpenViking", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, reads credential-class env vars, powerful capability in test/example code only.", "codeRepository": "https://github.com/volcengine/OpenViking", "url": "https://unstone.github.io/dsh-xray/p/volcengine__OpenViking.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,15 +46,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.</p>
-  <p class="lede">★ 31k+ ·
+  <p class="lede">★ 32k+ ·
      <a href="https://github.com/volcengine/OpenViking" rel="nofollow ugc">volcengine/OpenViking source on GitHub</a>
      · <a href="../registry.html#volcengine__OpenViking">this plugin in the registry</a></p>
-  <p>volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
+  <p>volcengine/OpenViking is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, reads credential-class env vars, powerful capability in test/example code only.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. bot/vikingbot/sandbox/backends/srt-wrapper.mjs:202, bot/vikingbot/sandbox/backends/srt-wrapper.mjs:357</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_DIR, BRIDGE_TOKEN, OPENVIKING_API_KEY, OPENVIKING_BEARER_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node bin/postinstall.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. npm/cli/bin/ov.mjs:2, npm/cli/bin/ov.mjs:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_DIR, BRIDGE_TOKEN, OPENVIKING_API_KEY, OPENVIKING_BEARER_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in test/example code only: tools/pre-execute</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: examples/dsh-memory-plugin/package.json</td></tr></tbody></table>
   
   
-  
+  <h2>Outbound domains</h2><p class="kv"><span>docs.openviking.ai</span> <span>example.feishu.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>OPENVIKING_URL</span> <span>OPENVIKING_BASE_URL</span> <span>OPENVIKING_BEARER_TOKEN</span> <span>OPENVIKING_API_KEY</span> <span>OPENVIKING_ACCOUNT</span> <span>OPENVIKING_USER</span> <span>OPENVIKING_PEER_ID</span> <span>OPENVIKING_TIMEOUT_MS</span> <span>OPENVIKING_DEBUG_LOG</span> <span>BRIDGE_PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

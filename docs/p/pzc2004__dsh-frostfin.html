@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pzc2004/dsh-frostfin — capability card (C3) · dsh-xray</title>
-<meta name="description" content="pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.">
+<meta name="description" content="pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/pzc2004__dsh-frostfin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pzc2004/dsh-frostfin — dsh plugin capability card">
-<meta property="og:description" content="pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.">
+<meta property="og:description" content="pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/pzc2004__dsh-frostfin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-frostfin", "identifier": "pzc2004/dsh-frostfin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/pzc2004/dsh-frostfin", "url": "https://unstone.github.io/dsh-xray/p/pzc2004__dsh-frostfin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-frostfin", "identifier": "pzc2004/dsh-frostfin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/pzc2004/dsh-frostfin", "url": "https://unstone.github.io/dsh-xray/p/pzc2004__dsh-frostfin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/pzc2004/dsh-frostfin" rel="nofollow ugc">pzc2004/dsh-frostfin source on GitHub</a>
      · <a href="../registry.html#pzc2004__dsh-frostfin">this plugin in the registry</a></p>
-  <p>pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
+  <p>pzc2004/dsh-frostfin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/probe-session-load.mjs:4, scripts/probe-session-load.mjs:33</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/probe-session-load.mjs:4, scripts/probe-session-load.mjs:33</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>KIMI_CODING_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessions</span> <span>slots</span> <span>subprocess</span> <span>svc</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>code.kimi.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>FROSTFIN_HOST</span> <span>KIMI_CODE_HOME</span> <span>FROSTFIN_SID</span> <span>FROSTFIN_TITLE</span> <span>DSH_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.kimi.com</span> <span>code.kimi.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FROSTFIN_HOST</span> <span>KIMI_CODE_HOME</span> <span>FROSTFIN_SID</span> <span>FROSTFIN_TITLE</span> <span>KIMI_CODING_API_KEY</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

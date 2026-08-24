@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>summer1238/dsh-remote-web-gateway</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">手机远程 DeepSeek Harness：扫码即可继续使用电脑上的 DSH，无需远程桌面 / SSH / 公网 IP，支持一次性配对、独立设备授权与随时撤销。</p>
-  <p class="lede">★ 10+ ·
+  <p class="lede">手机平板远程 DeepSeek Harness：扫码即可继续使用电脑上的 DSH，无需远程桌面 / SSH / 公网 IP，支持一次性配对、Github授权加密登录，独立设备授权与随时撤销，实现远程连接很简单，但安全才是我们所想要的。</p>
+  <p class="lede">★ 100+ ·
      <a href="https://github.com/summer1238/dsh-remote-web-gateway" rel="nofollow ugc">summer1238/dsh-remote-web-gateway source on GitHub</a>
      · <a href="../registry.html#summer1238__dsh-remote-web-gateway">this plugin in the registry</a></p>
   <p>summer1238/dsh-remote-web-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/proxy-resolver.ts:24, src/quick-tunnel.ts:1</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. plugin/scripts/verify-client-boundary.mjs:140</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/gateway.ts:177, src/gateway.ts:265</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. src/proxy-resolver.ts:24, src/quick-tunnel.ts:1</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. plugin/scripts/verify-client-boundary.mjs:140</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/gateway.ts:177, src/gateway.ts:265</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>gh.ddlc.top</span> <span>gh-proxy.com</span></p>

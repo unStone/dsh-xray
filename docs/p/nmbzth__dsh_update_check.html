@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>nmbzth/dsh_update_check</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">dsh_update_check是一个dsh插件，能自动检查dsharness官方上游仓库比对差异并提示更新。Dynamic Cordis plugin for DeepSeek Harness update checking.</p>
+  <p class="lede">dsh_update_check是一个dsh插件，能自动检查dsh官方上游仓库比对差异，并提示更新。由于预览版的更新常具破坏性，可能不兼容旧文件导致出错，所以不提供安装功能...... Dynamic Cordis plugin for DeepSeek Harness update checking.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/nmbzth/dsh_update_check" rel="nofollow ugc">nmbzth/dsh_update_check source on GitHub</a>
      · <a href="../registry.html#nmbzth__dsh_update_check">this plugin in the registry</a></p>
   <p>nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. plugin/lib/index.js:182, plugin/lib/index.js:309</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/check-src.js:30, scripts/check-src.js:60</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. plugin/lib/index.js:181, plugin/lib/index.js:296</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/check-src.js:30, scripts/check-src.js:54</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

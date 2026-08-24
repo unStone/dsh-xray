@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>NokorinNishikino/kidai-plugin-market-hub</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">KPM&#x27;H 纪代插件市场（Hub）：侧边栏一键启动的独立全屏市场页，支持多源目录（GitHub/npm/awesome）、一键安装、已装管理与卸载、孤儿插件扫描、通用安全防线（审计/入口校验/运行时兼容/自动修补）。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/NokorinNishikino/kidai-plugin-market-hub" rel="nofollow ugc">NokorinNishikino/kidai-plugin-market-hub source on GitHub</a>
      · <a href="../registry.html#NokorinNishikino__kidai-plugin-market-hub">this plugin in the registry</a></p>
   <p>NokorinNishikino/kidai-plugin-market-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. lib/index.js:2, lib/index.js:491</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×8 in authored code, e.g. scripts/render-test-hub.mjs:54, scripts/render-test-hub.mjs:116</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. lib/index.js:2, lib/index.js:491</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×8 in authored code, e.g. scripts/render-test-hub.mjs:53, scripts/render-test-hub.mjs:115</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>loader</span> <span>locale</span> <span>remote</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>codeload.github.com</span> <span>api.github.com</span> <span>ghproxy.net</span> <span>ghfast.top</span> <span>www.npmjs.com</span> <span>registry.npmmirror.com</span> <span>cdn.jsdelivr.net</span> <span>gh-proxy.com</span> <span>api.example.com</span></p>
