@@ -8,6 +8,7 @@ Run: python test_scan_core.py
 """
 import sys
 
+import pipeline
 import scan_core
 
 FAILURES = []
@@ -240,6 +241,21 @@ export function apply(ctx) { ctx.on("system-prompt/assemble", () => {}) }
     ids = {f['id'] for f in c['flags']}
     check('powerful/prompt', 'prompt_surface' in ids, True)
     check('powerful/api', 'api_intercept' in ids, True)
+
+
+def test_summarize_survives_a_republished_entry():
+    """A budget-deferred repo falls back to its entry in the published
+
+    data.json, which summarize has already reduced once. Summarizing it a
+    second time must not crash the run after a full sweep has been fetched.
+    """
+    fresh = {'repo': 'o/p', 'domains': {'a.com': 1, 'b.com': 9}, 'env': {'X': 2}, 'flags': []}
+    once = pipeline.summarize(fresh)
+    check('summarize/ranked', once['domains'], ['b.com', 'a.com'])
+    twice = pipeline.summarize(once)
+    check('summarize/idempotent', twice['domains'], once['domains'])
+    check('summarize/env-idempotent', twice['env'], once['env'])
+    check('summarize/missing-key', pipeline.summarize({'flags': []})['domains'], [])
 
 
 if __name__ == '__main__':

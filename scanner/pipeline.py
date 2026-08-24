@@ -106,12 +106,21 @@ def scan_repo(repo, first_seen=None):
     return out
 
 
+def top_counted(counts):
+    # A card holds {value: count}. An entry recovered from an already published
+    # data.json has been through summarize once, so it is a ranked list and the
+    # counts are gone -- take it as it stands rather than re-ranking nothing.
+    counts = counts or {}
+    return (sorted(counts, key=counts.get, reverse=True)
+            if isinstance(counts, dict) else list(counts))[:10]
+
+
 def summarize(card):
     return {k: card.get(k) for k in (
         'repo', 'stars', 'description', 'type', 'level', 'status', 'flags', 'injects', 'hooks',
         'tool_regs', 'files_scanned', 'pushed_at', 'first_seen')} | {
-        'domains': sorted(card.get('domains', {}), key=card.get('domains', {}).get, reverse=True)[:10],
-        'env': sorted(card.get('env', {}), key=card.get('env', {}).get, reverse=True)[:10],
+        'domains': top_counted(card.get('domains')),
+        'env': top_counted(card.get('env')),
         'has_patch': any(f['id'] == 'runtime_patch' for f in card.get('flags', [])),
     }
 
