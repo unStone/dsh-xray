@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Deeptop, a lightweight native desktop client for DeepSeek Harness.</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/Sparrived/DSH-Deeptop" rel="nofollow ugc">Sparrived/DSH-Deeptop source on GitHub</a>
      · <a href="../registry.html#Sparrived__DSH-Deeptop">this plugin in the registry</a></p>
   <p>Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×30 in authored code, e.g. deeptop-bridge/skill-installer.mjs:4, scripts/build-dev.mjs:5</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/App.tsx:3403, src/app/ui-model.ts:116</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×35 in authored code, e.g. deeptop-bridge/network-proxy.mjs:5, deeptop-bridge/skill-installer.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/App.tsx:3709, src/app/ui-model.ts:116</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>apiProxy</span> <span>llm</span> <span>messageAnnotations</span> <span>pluginInventory</span> <span>sessionPersistence</span> <span>sessions</span> <span>storageDomain</span> <span>tools</span> <span>typertGateway</span> <span>workspaceRegistry</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>codeload.github.com</span> <span>models.dev</span> <span>api.example.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_SERVER_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>DEEPTOP_DSH_RUNTIME_ROOT</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_SERVER_URL</span> <span>CARGO_TARGET_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

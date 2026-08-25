@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>wackyju2-beep/dsh-better — capability card (C2) · dsh-xray</title>
-<meta name="description" content="wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/wackyju2-beep__dsh-better.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wackyju2-beep/dsh-better — dsh plugin capability card">
-<meta property="og:description" content="wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/wackyju2-beep__dsh-better.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-better", "identifier": "wackyju2-beep/dsh-better", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/wackyju2-beep/dsh-better", "url": "https://unstone.github.io/dsh-xray/p/wackyju2-beep__dsh-better.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-better", "identifier": "wackyju2-beep/dsh-better", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.", "codeRepository": "https://github.com/wackyju2-beep/dsh-better", "url": "https://unstone.github.io/dsh-xray/p/wackyju2-beep__dsh-better.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">更好的 DSH | Unofficial dsh plugin: archived sessions &amp; task notifications / 已归档会话管理 · 任务系统通知</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/wackyju2-beep/dsh-better" rel="nofollow ugc">wackyju2-beep/dsh-better source on GitHub</a>
      · <a href="../registry.html#wackyju2-beep__dsh-better">this plugin in the registry</a></p>
-  <p>wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>wackyju2-beep/dsh-better is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/index.js:53, lib/index.js:779</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>webServer</span></p>
   
-  
-  
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>DSH_BETTER_REPO_ROOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

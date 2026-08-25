@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>stas130286-blip/dsh-brainagent — capability card (C3) · dsh-xray</title>
-<meta name="description" content="stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
+<meta name="description" content="stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/stas130286-blip__dsh-brainagent.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stas130286-blip/dsh-brainagent — dsh plugin capability card">
-<meta property="og:description" content="stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
+<meta property="og:description" content="stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/stas130286-blip__dsh-brainagent.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-brainagent", "identifier": "stas130286-blip/dsh-brainagent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.", "codeRepository": "https://github.com/stas130286-blip/dsh-brainagent", "url": "https://unstone.github.io/dsh-xray/p/stas130286-blip__dsh-brainagent.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-brainagent", "identifier": "stas130286-blip/dsh-brainagent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, gates tool execution, executes system commands.", "codeRepository": "https://github.com/stas130286-blip/dsh-brainagent", "url": "https://unstone.github.io/dsh-xray/p/stas130286-blip__dsh-brainagent.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>stas130286-blip/dsh-brainagent</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">BrainAgent - brain-inspired cognitive plugin for DeepSeek Harness (dsh): memory, emotions, learning, autonomy, self-regulation. 571 tests. Free noncommercial use.</p>
+  <p class="lede">BrainAgent — brain-inspired plugin for DeepSeek Harness (dsh): a pipeline of heuristic filters, statistical memory stores and context injections; reward-ledger + UCB1 bandit learning loop (RL-lite). 6</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/stas130286-blip/dsh-brainagent" rel="nofollow ugc">stas130286-blip/dsh-brainagent source on GitHub</a>
      · <a href="../registry.html#stas130286-blip__dsh-brainagent">this plugin in the registry</a></p>
-  <p>stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.</p>
+  <p>stas130286-blip/dsh-brainagent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, OPENROUTER_API_KEY, PERPLEXITY_API_KEY, TAVILY_API_KEY, XAI_API_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>llm</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request</span> <span>session/event</span> <span>tools/pre-execute</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node host-patches/postinstall.cjs</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. host-patches/postinstall.cjs:12, host-patches/postinstall.cjs:12</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, OPENROUTER_API_KEY, PERPLEXITY_API_KEY, TAVILY_API_KEY, XAI_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>goals</span> <span>llm</span> <span>sessions</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>agent/status</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>openrouter.ai</span> <span>generativelanguage.googleapis.com</span> <span>api.anthropic.com</span> <span>api.deepseek.com</span> <span>api.groq.com</span> <span>api.search.brave.com</span> <span>api.tavily.com</span> <span>api.x.ai</span> <span>api.perplexity.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>BRAVE_API_KEY</span> <span>TAVILY_API_KEY</span> <span>PERPLEXITY_API_KEY</span> <span>OPENROUTER_API_KEY</span> <span>XAI_API_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_GOAL_ROUND_MIN_IDLE_MS</span> <span>BRAVE_API_KEY</span> <span>TAVILY_API_KEY</span> <span>PERPLEXITY_API_KEY</span> <span>OPENROUTER_API_KEY</span> <span>XAI_API_KEY</span> <span>BRAINAGENT_REMINDER_CHECK_MS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

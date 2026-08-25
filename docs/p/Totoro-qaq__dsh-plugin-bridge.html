@@ -52,7 +52,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>Totoro-qaq/dsh-plugin-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/package-smoke.mjs:6, scripts/package-smoke.mjs:6</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRIDGE_TOKEN_BUDGET</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>apiProxy</span> <span>commands</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>apiProxy</span> <span>commands</span> <span>remote</span> <span>sessions</span> <span>slots</span></p>
   
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_API</span> <span>DSH_SESSION_ID</span> <span>TZ_NAME</span> <span>BRIDGE_E2E_ACK</span> <span>BRIDGE_SOURCE_SESSION</span> <span>BRIDGE_VISION_MODEL</span> <span>BRIDGE_CAP_WORKER</span> <span>BRIDGE_CAP_TARGET</span> <span>BRIDGE_TIER</span> <span>BRIDGE_TO</span></p>
