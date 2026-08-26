@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ang-XWBWZ/Pwiki — capability card (C2) · dsh-xray</title>
-<meta name="description" content="ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta name="description" content="ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ang-XWBWZ__Pwiki.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ang-XWBWZ/Pwiki — dsh plugin capability card">
-<meta property="og:description" content="ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ang-XWBWZ__Pwiki.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pwiki", "identifier": "ang-XWBWZ/Pwiki", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/ang-XWBWZ/Pwiki", "url": "https://unstone.github.io/dsh-xray/p/ang-XWBWZ__Pwiki.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pwiki", "identifier": "ang-XWBWZ/Pwiki", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/ang-XWBWZ/Pwiki", "url": "https://unstone.github.io/dsh-xray/p/ang-XWBWZ__Pwiki.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/ang-XWBWZ/Pwiki" rel="nofollow ugc">ang-XWBWZ/Pwiki source on GitHub</a>
      · <a href="../registry.html#ang-XWBWZ__Pwiki">this plugin in the registry</a></p>
-  <p>ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
+  <p>ang-XWBWZ/Pwiki is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. cli/src/index.ts:4, cli/src/index.ts:4</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, LLM_API_KEY, OPENAI_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. cli/src/index.ts:4, cli/src/index.ts:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. api/src/server.ts:32, webpage/src/server.ts:42</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, LLM_API_KEY, OPENAI_API_KEY</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.openai.com</span> <span>hf-mirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>OPENAI_API_KEY</span> <span>DEEPSEEK_API_KEY</span> <span>LLM_API_KEY</span> <span>WIKI_HOME</span> <span>LLM_API_BASE</span> <span>LLM_MODEL</span> <span>LLM_JSON_MODE</span> <span>LLM_THINKING_PARAM</span> <span>WIKI_MODELS_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>WIKI_HOME</span> <span>USERPROFILE</span> <span>OPENAI_API_KEY</span> <span>DEEPSEEK_API_KEY</span> <span>LLM_API_KEY</span> <span>PWIKI_HOST</span> <span>PWIKI_PORT</span> <span>LLM_API_BASE</span> <span>LLM_MODEL</span> <span>LLM_JSON_MODE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

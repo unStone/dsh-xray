@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>enoughpower/dsh-harmony — capability card (C2) · dsh-xray</title>
-<meta name="description" content="enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars.">
+<meta name="description" content="enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/enoughpower__dsh-harmony.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="enoughpower/dsh-harmony — dsh plugin capability card">
-<meta property="og:description" content="enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/enoughpower__dsh-harmony.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-harmony", "identifier": "enoughpower/dsh-harmony", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/enoughpower/dsh-harmony", "url": "https://unstone.github.io/dsh-xray/p/enoughpower__dsh-harmony.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-harmony", "identifier": "enoughpower/dsh-harmony", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/enoughpower/dsh-harmony", "url": "https://unstone.github.io/dsh-xray/p/enoughpower__dsh-harmony.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/enoughpower/dsh-harmony" rel="nofollow ugc">enoughpower/dsh-harmony source on GitHub</a>
      · <a href="../registry.html#enoughpower__dsh-harmony">this plugin in the registry</a></p>
-  <p>enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server, reads credential-class env vars.</p>
+  <p>enoughpower/dsh-harmony is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. tools/push-notify/push-notify.js:267, tools/push-notify/push-notify.js:296</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>PUSH_APP_SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/sign-local.mjs:5, scripts/sign-local.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. tools/push-notify/push-notify.js:272, tools/push-notify/push-notify.js:301</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>PUSH_APP_SECRET, PUSH_KEY_FILE</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>oauth-login.cloud.huawei.com</span> <span>push-api.cloud.huawei.com</span> <span>api.chuckfang.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>PUSH_APP_ID</span> <span>PUSH_APP_SECRET</span> <span>SENDER</span> <span>TEST_NICK</span> <span>DSH_BASE</span> <span>DSH_PIN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>oauth-login.cloud.huawei.com</span> <span>push-api.cloud.huawei.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PUSH_KEY_FILE</span> <span>JBR</span> <span>JAR</span> <span>HDC</span> <span>PUSH_APP_ID</span> <span>PUSH_APP_SECRET</span> <span>DSH_BASE</span> <span>DSH_PIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

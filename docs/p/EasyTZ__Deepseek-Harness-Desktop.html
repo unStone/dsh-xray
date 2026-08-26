@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#EasyTZ__Deepseek-Harness-Desktop">this plugin in the registry</a></p>
   <p>EasyTZ/Deepseek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/install-plugin.mjs:14, scripts/install-plugin.mjs:14</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/main/dsh-service.js:16, src/main/dsh-service.js:19</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>webServer</span></p>
-  
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_INSTALL_DIR</span> <span>DSH_NODE_EXE</span> <span>APPDATA</span> <span>DSH_BIN_JS</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. src/main/dsh-service.js:3, src/main/dsh-service.js:88</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/shared/net.js:14, src/shared/net.js:17</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>shell</span> <span>slots</span> <span>theme</span> <span>webServer</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>api.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_INSTALL_DIR</span> <span>DSH_BIN_JS</span> <span>DSH_PNPM_DIR</span> <span>DSH_NODE_EXE</span> <span>APPDATA</span> <span>ComSpec</span> <span>PATHEXT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

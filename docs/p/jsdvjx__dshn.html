@@ -46,7 +46,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness Network — public forwarding for a local dsh web UI over *.ds.hn: a dsh plugin + self-hosted WSS relay behind Cloudflare, with optional end-to-end encryption.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/jsdvjx/dshn" rel="nofollow ugc">jsdvjx/dshn source on GitHub</a>
      · <a href="../registry.html#jsdvjx__dshn">this plugin in the registry</a></p>
   <p>jsdvjx/dshn is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
@@ -54,7 +54,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scratchpad/cdp-e2e-gate.mjs:9, scratchpad/cdp-e2e-gate.mjs:36</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scratchpad/e2e-multidevice.mjs:35, scratchpad/e2e-multidevice.mjs:41</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>api.cloudflare.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSHN_DEBUG</span> <span>DSHN_JAR</span> <span>DSH_HOME</span> <span>DSHN_DEVICE_NAME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

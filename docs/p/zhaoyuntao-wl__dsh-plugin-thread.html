@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness plugin - Thread session memory adapter (dsh-thread)</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/zhaoyuntao-wl/dsh-plugin-thread" rel="nofollow ugc">zhaoyuntao-wl/dsh-plugin-thread source on GitHub</a>
      · <a href="../registry.html#zhaoyuntao-wl__dsh-plugin-thread">this plugin in the registry</a></p>
   <p>zhaoyuntao-wl/dsh-plugin-thread is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>THREAD_AUTO_COMPACT_TOKENS</td></tr></tbody></table>
-  
+  <h2>Services it injects</h2><p class="kv"><span>compaction</span> <span>tools</span> <span>userQuestions</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>session/disposed</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>THREAD_B0_PROBE</span> <span>THREAD_AUTO_COMPACT</span> <span>THREAD_AUTO_COMPACT_TOKENS</span> <span>THREAD_CANDIDATE_TTL_DAYS</span> <span>THREAD_B0_FIXTURE</span> <span>THREAD_B0_COMPACT</span> <span>THREAD_B0_FOLLOWUP</span> <span>THREAD_B0_DELTA_DRILL</span> <span>THREAD_CWD</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>THREAD_B0_PROBE</span> <span>THREAD_AUTO_COMPACT</span> <span>THREAD_AUTO_COMPACT_TOKENS</span> <span>THREAD_CANDIDATE_TTL_DAYS</span> <span>THREAD_CONFIRM_DECISIONS</span> <span>THREAD_B0_FIXTURE</span> <span>THREAD_B0_COMPACT</span> <span>THREAD_B0_FOLLOWUP</span> <span>THREAD_B0_DELTA_DRILL</span> <span>THREAD_B0_AUTOC_REGION</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

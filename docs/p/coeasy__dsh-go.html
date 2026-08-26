@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>coeasy/dsh-go — capability card (C2) · dsh-xray</title>
-<meta name="description" content="coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta name="description" content="coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/coeasy__dsh-go.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="coeasy/dsh-go — dsh plugin capability card">
-<meta property="og:description" content="coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/coeasy__dsh-go.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-go", "identifier": "coeasy/dsh-go", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/coeasy/dsh-go", "url": "https://unstone.github.io/dsh-xray/p/coeasy__dsh-go.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-go", "identifier": "coeasy/dsh-go", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/coeasy/dsh-go", "url": "https://unstone.github.io/dsh-xray/p/coeasy__dsh-go.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">DeepSeek Harness 插件市场导航站</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/coeasy/dsh-go" rel="nofollow ugc">coeasy/dsh-go source on GitHub</a>
      · <a href="../registry.html#coeasy__dsh-go">this plugin in the registry</a></p>
-  <p>coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
+  <p>coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. runtime/installer.mjs:4, runtime/verifier.mjs:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. runtime/client-bridge.mjs:4, runtime/client-host.mjs:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. runtime/secret-store.mjs:47, runtime/secret-store.mjs:48</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. runtime/client-host.mjs:136</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BRIDGE_TOKEN_FILE, DSH_SECRET_VALUE, GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>dsh-go.pages.dev</span> <span>api.github.com</span> <span>get.dsh.dev</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>SYNC_MODE</span> <span>DSH_PLUGIN_HOME</span> <span>REGISTRY_SEARCH_DELAY</span> <span>SYNC_CONCURRENCY</span> <span>PUBLIC_SITE_URL</span> <span>PUBLIC_BASE_PATH</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dsh-go.pages.dev</span> <span>api.github.com</span> <span>coeasy.github.io</span> <span>get.dsh.dev</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>DSH_PERMISSION_APPROVED</span> <span>DSH_REGISTRY</span> <span>LOCALAPPDATA</span> <span>SYNC_MODE</span> <span>DSH_REGISTRY_CACHE</span> <span>DSH_REGISTRY_URL</span> <span>DSH_BRIDGE_TOKEN_FILE</span> <span>DSH_BRIDGE_ALLOWED_ORIGINS</span> <span>DSH_BRIDGE_PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

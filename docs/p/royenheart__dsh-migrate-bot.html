@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>royenheart/dsh-migrate-bot — capability card (C2) · dsh-xray</title>
+<meta name="description" content="royenheart/dsh-migrate-bot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, installable-looking manifest in fixtures only.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/royenheart__dsh-migrate-bot.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="royenheart/dsh-migrate-bot — dsh plugin capability card">
+<meta property="og:description" content="royenheart/dsh-migrate-bot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, installable-looking manifest in fixtures only.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/royenheart__dsh-migrate-bot.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-migrate-bot", "identifier": "royenheart/dsh-migrate-bot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "royenheart/dsh-migrate-bot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, installable-looking manifest in fixtures only.", "codeRepository": "https://github.com/royenheart/dsh-migrate-bot", "url": "https://unstone.github.io/dsh-xray/p/royenheart__dsh-migrate-bot.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>royenheart/dsh-migrate-bot</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">Automatically migrate dsh plugins to the new version.</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/royenheart/dsh-migrate-bot" rel="nofollow ugc">royenheart/dsh-migrate-bot source on GitHub</a>
+     · <a href="../registry.html#royenheart__dsh-migrate-bot">this plugin in the registry</a></p>
+  <p>royenheart/dsh-migrate-bot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, installable-looking manifest in fixtures only.</p>
+  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. src/agents/dsh.ts:1, src/agents/dsh.ts:57</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: fixtures/plugins/official-overlap-markdown/package.json, fixtures/plugins/slot-key-break/package.json, fixtures/plugins/typecheck-ok/package.json</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>sessions</span></p>
+  
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MIGRATE_MODEL</span> <span>DSH_MIGRATE_APP_ROOT</span> <span>DSH_MIGRATE_HOME</span> <span>DSH_HOME</span> <span>DSH_MIGRATE_STATUS_INTERVAL_MS</span> <span>GITHUB_ACTIONS</span> <span>DSH_MIGRATE_PROVIDER</span> <span>DSH_MIGRATE_MODE</span> <span>DSH_MIGRATE_USAGE_SO_FAR</span> <span>DSH_MIGRATE_USAGE_LIMIT</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

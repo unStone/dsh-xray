@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">VAP - Verifiable Agent Protocol: a tested trust machine for agent-to-agent messages (zero third-party dependencies, 217 tests, full experiment ledger)</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/Wang-Lin-Chang/dsh-vap" rel="nofollow ugc">Wang-Lin-Chang/dsh-vap source on GitHub</a>
      · <a href="../registry.html#Wang-Lin-Chang__dsh-vap">this plugin in the registry</a></p>
   <p>Wang-Lin-Chang/dsh-vap is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. console-adapter.mjs:20, console-adapter.mjs:20</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×15 in authored code, e.g. key-store.mjs:88, vap-core.mjs:113</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×8 in authored code, e.g. vap-transport.mjs:492, bin/vap-node.mjs:107</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. console-adapter.mjs:20, console-adapter.mjs:20</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×21 in authored code, e.g. key-store.mjs:73, key-store.mjs:74</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×10 in authored code, e.g. vap-transport.mjs:569, bin/vap-node.mjs:107</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>VAP_LOG_FILE</span> <span>VAP_LOG_LEVEL</span> <span>SystemRoot</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>VAP_LOG_FILE</span> <span>VAP_LOG_LEVEL</span> <span>SystemRoot</span> <span>VAP_MONITOR_SKIP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

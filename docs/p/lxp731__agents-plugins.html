@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Pi extension: desktop notification + chime when a reply finishes, with configurable duration threshold</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/lxp731/agents-plugins" rel="nofollow ugc">lxp731/agents-plugins source on GitHub</a>
      · <a href="../registry.html#lxp731__agents-plugins">this plugin in the registry</a></p>
   <p>lxp731/agents-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. dsh-service-control/bin/dshctl.js:9, dsh-service-control/bin/dshctl.js:9</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. edge-tts-for-openclaw/src/index.ts:4, edge-tts-for-openclaw/src/index.ts:4</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>cliCommand</span> <span>cmdlineArgs</span> <span>connection</span> <span>locale</span> <span>remote</span> <span>slots</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>DISPLAY</span> <span>WAYLAND_DISPLAY</span> <span>DSH_HOME</span> <span>XDG_CONFIG_HOME</span> <span>DSH_PROFILE</span> <span>USERPROFILE</span> <span>PI_NO_NOTIFY</span> <span>PI_NOTIFY_THRESHOLD</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>WAYLAND_DISPLAY</span> <span>DISPLAY</span> <span>HTTP_PROXY</span> <span>HTTPS_PROXY</span> <span>http_proxy</span> <span>https_proxy</span> <span>NO_PROXY</span> <span>no_proxy</span> <span>XDG_RUNTIME_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

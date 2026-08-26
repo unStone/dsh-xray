@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Intelligent memory system for DSH - Track user preferences, tool usage, and project context to provide personalized recommendations</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/ly028716/dsh-memory-plugin" rel="nofollow ugc">ly028716/dsh-memory-plugin source on GitHub</a>
      · <a href="../registry.html#ly028716__dsh-memory-plugin">this plugin in the registry</a></p>
   <p>ly028716/dsh-memory-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×29 in authored code, e.g. import-data.js:82, quick-start.js:7</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>remote</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>tools/result</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>tools/result</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>npm_execpath</span> <span>DSH_PINNED_REPOSITORY</span> <span>DSH_BIN</span> <span>DSH_PACKAGE_ROOT</span> <span>APPDATA</span> <span>PREFIX</span> <span>DSH_PINNED_COMMIT</span> <span>DSH_E2E_REQUIRED</span> <span>DSH_E2E_BOOT_MS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>npm_execpath</span> <span>DSH_TEST_REGISTRY</span> <span>DSH_PINNED_REPOSITORY</span> <span>DSH_BIN</span> <span>DSH_PACKAGE_ROOT</span> <span>APPDATA</span> <span>PREFIX</span> <span>DSH_PINNED_COMMIT</span> <span>DSH_E2E_REQUIRED</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
