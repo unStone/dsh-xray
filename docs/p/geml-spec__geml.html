@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>geml-spec/geml — capability card (C3) · dsh-xray</title>
-<meta name="description" content="geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta name="description" content="geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/geml-spec__geml.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="geml-spec/geml — dsh plugin capability card">
-<meta property="og:description" content="geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta property="og:description" content="geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/geml-spec__geml.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "geml", "identifier": "geml-spec/geml", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/geml-spec/geml", "url": "https://unstone.github.io/dsh-xray/p/geml-spec__geml.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "geml", "identifier": "geml-spec/geml", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/geml-spec/geml", "url": "https://unstone.github.io/dsh-xray/p/geml-spec__geml.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/geml-spec/geml" rel="nofollow ugc">geml-spec/geml source on GitHub</a>
      · <a href="../registry.html#geml-spec__geml">this plugin in the registry</a></p>
-  <p>geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  <p>geml-spec/geml is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×45 in authored code, e.g. .claude/hooks/geml-autocommit.mjs:13, .claude/hooks/geml-autocommit.mjs:13</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. geml-parser/codemap/serve.mjs:370</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×63 in authored code, e.g. integrations/test-all.mjs:22, integrations/test-all.mjs:73</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. geml-parser/codemap/serve.mjs:370</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LOGSEQ_API_SERVER_TOKEN</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>cdn.jsdelivr.net</span> <span>docs.joern.io</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GEML_TRUST_STORE</span> <span>GEML_OUT</span> <span>CLAUDE_PROJECT_DIR</span> <span>GEML_JOERN</span> <span>GEML_GRAPH_DIR</span> <span>XDG_CONFIG_HOME</span> <span>GEML_WATCH_QUIET_MS</span> <span>GEML_WATCH_TREE</span> <span>GEML_SRC</span> <span>SOURCE_DATE_EPOCH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOGSEQ_CLI_DIR</span> <span>GEML_TRUST_STORE</span> <span>GEML_OUT</span> <span>CLAUDE_PROJECT_DIR</span> <span>GEML_JOERN</span> <span>GEML_GRAPH_DIR</span> <span>XDG_CONFIG_HOME</span> <span>GEML_WATCH_QUIET_MS</span> <span>GEML_WATCH_TREE</span> <span>GEML_SRC</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

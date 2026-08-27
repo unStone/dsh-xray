@@ -50,12 +50,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/harness-home/harness-ai-desktop" rel="nofollow ugc">harness-home/harness-ai-desktop source on GitHub</a>
      · <a href="../registry.html#harness-home__harness-ai-desktop">this plugin in the registry</a></p>
   <p>harness-home/harness-ai-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, starts a network server.</p>
-  <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/install-electron.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. scripts/install-electron.mjs:4, scripts/install-electron.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/main/account/service.ts:110, src/main/harness/fold-real.e2e.ts:57</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/main/harness/port.ts:10</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSKEY, HARNESS_E2E_PASSWORD</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>theme</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>npmmirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>ELECTRON_RENDERER_URL</span> <span>DSKEY</span> <span>CDP_PORT</span> <span>HARNESS_SYNC_DENYLIST</span> <span>HARNESS_BASE</span> <span>ELECTRON_MIRROR</span> <span>HARNESS_SYNC_DROP_CHUNKS</span> <span>HARNESS_SERVER_URL</span> <span>HARNESS_UPDATE_AUTO</span> <span>HARNESS_UPDATE_FEED_URL</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>npmmirror.com</span> <span>api.harnessai.io</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ELECTRON_RENDERER_URL</span> <span>DSKEY</span> <span>CDP_PORT</span> <span>HARNESS_SYNC_DENYLIST</span> <span>HARNESS_BASE</span> <span>ELECTRON_MIRROR</span> <span>HARNESS_SYNC_DROP_CHUNKS</span> <span>HARNESS_UPDATE_AUTO</span> <span>HARNESS_UPDATE_FEED_URL</span> <span>HARNESS_SERVER_BASE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

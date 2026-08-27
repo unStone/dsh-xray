@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#bluelightgit__dsh-remote-access">this plugin in the registry</a></p>
   <p>bluelightgit/dsh-remote-access is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. gen-cert.js:6, gen-cert.js:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. client/client.js:438</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. api-gateway.js:293</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. gen-cert.js:6, gen-cert.js:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. basic-auth.js:97, cloudflare-access.js:30</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. api-gateway.js:369, cloudflare-ingress.js:330</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>settingsScope</span> <span>slots</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>tailscale.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_LAN_IP</span> <span>DSH_CERT_DIR</span> <span>OPENSSL_BIN</span> <span>TAILSCALE_BIN</span> <span>DSH_HOSTNAME</span> <span>DSH_PROFILE_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dsh.example.com</span> <span>dsh-alt.example.com</span> <span>tailscale.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span> <span>DSH_LAN_IP</span> <span>DSH_CERT_DIR</span> <span>OPENSSL_BIN</span> <span>OPENSSL_HOME</span> <span>ProgramFiles</span> <span>LOCALAPPDATA</span> <span>ChocolateyInstall</span> <span>TAILSCALE_BIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

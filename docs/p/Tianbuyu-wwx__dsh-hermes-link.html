@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tianbuyu-wwx/dsh-hermes-link — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta name="description" content="Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Tianbuyu-wwx__dsh-hermes-link.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tianbuyu-wwx/dsh-hermes-link — dsh plugin capability card">
-<meta property="og:description" content="Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Tianbuyu-wwx__dsh-hermes-link.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-hermes-link", "identifier": "Tianbuyu-wwx/dsh-hermes-link", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/Tianbuyu-wwx/dsh-hermes-link", "url": "https://unstone.github.io/dsh-xray/p/Tianbuyu-wwx__dsh-hermes-link.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-hermes-link", "identifier": "Tianbuyu-wwx/dsh-hermes-link", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/Tianbuyu-wwx/dsh-hermes-link", "url": "https://unstone.github.io/dsh-xray/p/Tianbuyu-wwx__dsh-hermes-link.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Tianbuyu-wwx/dsh-hermes-link" rel="nofollow ugc">Tianbuyu-wwx/dsh-hermes-link source on GitHub</a>
      · <a href="../registry.html#Tianbuyu-wwx__dsh-hermes-link">this plugin in the registry</a></p>
-  <p>Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  <p>Tianbuyu-wwx/dsh-hermes-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/smoke-test.mjs:9, scripts/smoke-test.mjs:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>HERMES_LINK_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/smoke-test.mjs:9, scripts/smoke-test.mjs:9</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/test-e2e-integration.mjs:151, scripts/test-e2e-integration.mjs:168</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>HERMES_LINK_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessionPersistence</span> <span>sessionTitle</span> <span>sessions</span> <span>skills</span> <span>subagents</span> <span>tokenMeter</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/session-start</span> <span>dispose</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/session-start</span> <span>dispose</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>LOCALAPPDATA</span> <span>HERMES_HOME</span> <span>HERMES_LINK_TRUST_LEGACY</span> <span>HERMES_LINK_TOKEN</span> <span>DSH_PROFILE</span> <span>USERPROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>HERMES_HOME</span> <span>LOCALAPPDATA</span> <span>HERMES_LINK_TRUST_LEGACY</span> <span>HERMES_LINK_TOKEN</span> <span>USERPROFILE</span> <span>DSH_PROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

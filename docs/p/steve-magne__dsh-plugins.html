@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>steve-magne/dsh-plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands.">
+<meta name="description" content="steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/steve-magne__dsh-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="steve-magne/dsh-plugins — dsh plugin capability card">
-<meta property="og:description" content="steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands.">
+<meta property="og:description" content="steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/steve-magne__dsh-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "steve-magne/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/steve-magne/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/steve-magne__dsh-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "steve-magne/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/steve-magne/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/steve-magne__dsh-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/steve-magne/dsh-plugins" rel="nofollow ugc">steve-magne/dsh-plugins source on GitHub</a>
      · <a href="../registry.html#steve-magne__dsh-plugins">this plugin in the registry</a></p>
-  <p>steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands.</p>
+  <p>steve-magne/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/marketplace-guard.mjs:232, scripts/marketplace-guard.mjs:284</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, webServer, system-prompt/assemble</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/marketplace-guard.mjs:232, scripts/marketplace-guard.mjs:284</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>subprocess</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/inserted</span> <span>agent/session-start</span> <span>dispose</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/claimed</span> <span>agent/session-start</span> <span>dispose</span> <span>system-prompt/assemble</span></p>
   
   
   <h2>How to read this</h2>

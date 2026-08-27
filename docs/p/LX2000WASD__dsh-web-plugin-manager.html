@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#LX2000WASD__dsh-web-plugin-manager">this plugin in the registry</a></p>
   <p>LX2000WASD/dsh-web-plugin-manager is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. src/index.ts:30, src/index.ts:30</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/index.ts:3367</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. src/index.ts:30, src/index.ts:30</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/index.ts:3393</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>cdn.jsdelivr.net</span> <span>www.dsh.so</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>comspec</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>NVM_DIR</span> <span>LC_ALL</span> <span>LC_MESSAGES</span> <span>TERMINAL</span> <span>DSH_PLUGIN_MANAGER_TRUSTED_HOSTS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>comspec</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>NVM_DIR</span> <span>LC_ALL</span> <span>LC_MESSAGES</span> <span>TERMINAL</span> <span>NO_PROXY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

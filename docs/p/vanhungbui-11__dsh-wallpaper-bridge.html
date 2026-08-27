@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#vanhungbui-11__dsh-wallpaper-bridge">this plugin in the registry</a></p>
   <p>vanhungbui-11/dsh-wallpaper-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, ships no manifest.</p>
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×36 in authored code, e.g. native-scene-bridge.js:7, native-scene-bridge.js:7</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×9 in authored code, e.g. dsh/check-client.js:7, dsh/check-client.js:112</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 3 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×39 in authored code, e.g. native-scene-bridge.js:7, native-scene-bridge.js:7</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×11 in authored code, e.g. dsh/check-client.js:7, dsh/check-client.js:53</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 3 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>dynamicCordisRunner</span> <span>timer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>FFMPEG</span> <span>USERPROFILE</span> <span>STEAM_ROOT</span> <span>WE_INSTALL_DIR</span> <span>WE_BITNESS</span> <span>USERNAME</span> <span>SystemRoot</span> <span>DSH_CHECK_FULL_INSTALL</span> <span>DSH_HOME</span> <span>LOCALAPPDATA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FFMPEG</span> <span>SystemRoot</span> <span>USERPROFILE</span> <span>STEAM_ROOT</span> <span>WE_INSTALL_DIR</span> <span>WE_BITNESS</span> <span>USERNAME</span> <span>DSH_CHECK_FULL_INSTALL</span> <span>DSH_HOME</span> <span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

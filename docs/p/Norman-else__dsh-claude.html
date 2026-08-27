@@ -51,10 +51,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Norman-else__dsh-claude">this plugin in the registry</a></p>
   <p>Norman-else/dsh-claude is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. scripts/publish.mjs:4, scripts/publish.mjs:4</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. scripts/publish.mjs:4, scripts/publish.mjs:4</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>approval</span> <span>attachments</span> <span>commands</span> <span>connection</span> <span>conversation</span> <span>conversationEvents</span> <span>inputTriggers</span> <span>llm</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>subprocess</span> <span>tools</span> <span>userQuestions</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/request</span> <span>agent/status</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>your-team.atlassian.net</span> <span>id.atlassian.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>DSH_CLAUDE_CODE_EXECUTABLE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

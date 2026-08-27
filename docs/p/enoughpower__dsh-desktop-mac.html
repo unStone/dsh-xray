@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>enoughpower/dsh-desktop-mac — capability card (C2) · dsh-xray</title>
-<meta name="description" content="enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only.">
+<meta name="description" content="enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only, network server in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/enoughpower__dsh-desktop-mac.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="enoughpower/dsh-desktop-mac — dsh plugin capability card">
-<meta property="og:description" content="enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only.">
+<meta property="og:description" content="enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only, network server in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/enoughpower__dsh-desktop-mac.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop-mac", "identifier": "enoughpower/dsh-desktop-mac", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/enoughpower/dsh-desktop-mac", "url": "https://unstone.github.io/dsh-xray/p/enoughpower__dsh-desktop-mac.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop-mac", "identifier": "enoughpower/dsh-desktop-mac", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only, network server in build output only.", "codeRepository": "https://github.com/enoughpower/dsh-desktop-mac", "url": "https://unstone.github.io/dsh-xray/p/enoughpower__dsh-desktop-mac.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/enoughpower/dsh-desktop-mac" rel="nofollow ugc">enoughpower/dsh-desktop-mac source on GitHub</a>
      · <a href="../registry.html#enoughpower__dsh-desktop-mac">this plugin in the registry</a></p>
-  <p>enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only.</p>
+  <p>enoughpower/dsh-desktop-mac is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only, network server in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. launcher.mjs:14, launcher.mjs:110</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:271</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. plugins/dsh-skills/lib/client.js:447, plugins/dsh-skills/lib/index.mjs:985</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>loader</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. launcher.mjs:14, launcher.mjs:110</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. plugins/@opendsh/dsh-plugin-setting-mcp/lib/client.js:271</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. plugins/dsh-skills/lib/client.js:447, plugins/dsh-skills/lib/index.mjs:985</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. plugins/dsh-pocket/lib/proxy.mjs:324</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>llm</span> <span>loader</span> <span>locale</span> <span>remote</span> <span>sessionLogDownload</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request</span> <span>connection/reset</span> <span>llm/adapters-updated</span> <span>llm/stream</span> <span>settings/document-updated</span> <span>settings/updated</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span> <span>ai.google.dev</span> <span>oai.endpoints.kepler.ai.cloud.ovh.net</span> <span>open.bigmodel.cn</span> <span>api.z.ai</span> <span>www.minimaxi.com</span> <span>www.upstage.ai</span> <span>paiban.md</span> <span>api.anthropic.com</span> <span>www.minimax.io</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span> <span>XDG_CONFIG_HOME</span> <span>LOG</span> <span>DEEPSEEK_BASE_URL</span> <span>DSH_UPDATE_TAG</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span> <span>XDG_CONFIG_HOME</span> <span>LOG</span> <span>DEEPSEEK_BASE_URL</span> <span>DSH_POCKET_CLIENT_ID</span> <span>WSL_DISTRO_NAME</span> <span>WSL_INTEROP</span> <span>DSH_UPDATE_TAG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

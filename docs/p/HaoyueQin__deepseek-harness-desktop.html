@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#HaoyueQin__deepseek-harness-desktop">this plugin in the registry</a></p>
   <p>HaoyueQin/deepseek-harness-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/smoke.mjs:11, scripts/smoke.mjs:11</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/verify-titlebar.mjs:55</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. scripts/smoke.mjs:11, scripts/smoke.mjs:11</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/verify-titlebar.mjs:55</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_ICON_SVG</span> <span>XDG_CONFIG_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>DSH_ICON_SVG</span> <span>XDG_CONFIG_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

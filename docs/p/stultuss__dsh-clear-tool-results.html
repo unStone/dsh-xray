@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>stultuss/dsh-clear-tool-results</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness（DSH）host 平面插件：**每个 turn 结束时，把上一轮产生的 `tool/result` 从模型上下文中清除**，并提供聊天命令开关：</p>
+  <p class="lede">DSH 宿主插件：每轮对话结束后，把该轮的原始工具结果归档（tool result）到会话目录（tool-result-logs），并从上下文中清除，减少 Token 消耗；模型可用 read_tool_result_log 工具按轮次或时间自主读取归档数据。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/stultuss/dsh-clear-tool-results" rel="nofollow ugc">stultuss/dsh-clear-tool-results source on GitHub</a>
      · <a href="../registry.html#stultuss__dsh-clear-tool-results">this plugin in the registry</a></p>
   <p>stultuss/dsh-clear-tool-results is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>cordis.patch.yml</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>commands</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>sessionPersistence</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>

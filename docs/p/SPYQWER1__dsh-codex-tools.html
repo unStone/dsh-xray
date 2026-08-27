@@ -52,7 +52,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>SPYQWER1/dsh-codex-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/codex-imagegen.mjs:111</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CODEX_ACCESS_TOKEN, CODEX_REFRESH_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>shell</span> <span>tools</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>sandboxPolicy</span> <span>shell</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>chatgpt.com</span> <span>auth.openai.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>CG_VERBOSE</span> <span>CODEX_ACCESS_TOKEN</span> <span>CODEX_REFRESH_TOKEN</span> <span>CG_PROMPT</span> <span>CG_OUT</span> <span>CG_SIZE</span> <span>CG_FORMAT</span> <span>CG_MODEL</span> <span>CS_VERBOSE</span> <span>CS_QUERY</span></p>

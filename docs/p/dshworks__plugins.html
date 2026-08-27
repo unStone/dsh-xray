@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>dshworks/plugins — capability card (C2) · dsh-xray</title>
-<meta name="description" content="dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
+<meta name="description" content="dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/dshworks__plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dshworks/plugins — dsh plugin capability card">
-<meta property="og:description" content="dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
+<meta property="og:description" content="dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/dshworks__plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "plugins", "identifier": "dshworks/plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.", "codeRepository": "https://github.com/dshworks/plugins", "url": "https://unstone.github.io/dsh-xray/p/dshworks__plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "plugins", "identifier": "dshworks/plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, reads credential-class env vars.", "codeRepository": "https://github.com/dshworks/plugins", "url": "https://unstone.github.io/dsh-xray/p/dshworks__plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/dshworks/plugins" rel="nofollow ugc">dshworks/plugins source on GitHub</a>
      · <a href="../registry.html#dshworks__plugins">this plugin in the registry</a></p>
-  <p>dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.</p>
+  <p>dshworks/plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/measure-seams.mjs:90</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>dsh.works</span> <span>fonts.googleapis.com</span> <span>dshthemes.com</span> <span>api.github.com</span> <span>fonts.gstatic.com</span> <span>www.sitemaps.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>VINEXT_CLOUDFLARE_DEV</span> <span>DATA_SOURCE</span> <span>TOPIC</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>DEV_ASSET_ORIGIN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dsh.works</span> <span>fonts.googleapis.com</span> <span>dshthemes.com</span> <span>api.github.com</span> <span>fonts.gstatic.com</span> <span>opengraph.githubassets.com</span> <span>www.sitemaps.org</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DATA_SOURCE</span> <span>VINEXT_CLOUDFLARE_DEV</span> <span>TOPIC</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>DEV_ASSET_ORIGIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
