@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>fno2010/dsh-web-search-ext — capability card (C2) · dsh-xray</title>
-<meta name="description" content="fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/fno2010__dsh-web-search-ext.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fno2010/dsh-web-search-ext — dsh plugin capability card">
-<meta property="og:description" content="fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/fno2010__dsh-web-search-ext.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-web-search-ext", "identifier": "fno2010/dsh-web-search-ext", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/fno2010/dsh-web-search-ext", "url": "https://unstone.github.io/dsh-xray/p/fno2010__dsh-web-search-ext.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-web-search-ext", "identifier": "fno2010/dsh-web-search-ext", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.", "codeRepository": "https://github.com/fno2010/dsh-web-search-ext", "url": "https://unstone.github.io/dsh-xray/p/fno2010__dsh-web-search-ext.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/fno2010/dsh-web-search-ext" rel="nofollow ugc">fno2010/dsh-web-search-ext source on GitHub</a>
      · <a href="../registry.html#fno2010__dsh-web-search-ext">this plugin in the registry</a></p>
-  <p>fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>fno2010/dsh-web-search-ext is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>remote</span> <span>settingsScope</span> <span>slots</span> <span>web</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>remote</span> <span>settingsScope</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>web</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.exa.ai</span> <span>mcp.exa.ai</span> <span>api.firecrawl.dev</span></p>
   

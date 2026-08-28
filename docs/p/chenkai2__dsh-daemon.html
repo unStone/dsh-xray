@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#chenkai2__dsh-daemon">this plugin in the registry</a></p>
   <p>chenkai2/dsh-daemon is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/index.js:518, lib/index.js:530</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×9 in build output only, e.g. lib/index.js:580, lib/index.js:592</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>fs</span> <span>jobs</span> <span>shell</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>schemas.microsoft.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_DAEMON_CLI_DIR</span> <span>DSH_DAEMON_AUTOREGEN</span> <span>DSH_DAEMON_NO_SYSTEM</span> <span>DSH_DAEMON_TEST_HOOK</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SSH_CONNECTION</span> <span>SSH_TTY</span> <span>DSH_DAEMON_CLI_DIR</span> <span>DSH_DAEMON_AUTOREGEN</span> <span>DSH_DAEMON_NO_SYSTEM</span> <span>DSH_DAEMON_TEST_HOOK</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

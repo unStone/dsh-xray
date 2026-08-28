@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>helibeiqi/dsh-quant-data-mcp — capability card (C2) · dsh-xray</title>
-<meta name="description" content="helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/helibeiqi__dsh-quant-data-mcp.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="helibeiqi/dsh-quant-data-mcp — dsh plugin capability card">
-<meta property="og:description" content="helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/helibeiqi__dsh-quant-data-mcp.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-quant-data-mcp", "identifier": "helibeiqi/dsh-quant-data-mcp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/helibeiqi/dsh-quant-data-mcp", "url": "https://unstone.github.io/dsh-xray/p/helibeiqi__dsh-quant-data-mcp.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-quant-data-mcp", "identifier": "helibeiqi/dsh-quant-data-mcp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.", "codeRepository": "https://github.com/helibeiqi/dsh-quant-data-mcp", "url": "https://unstone.github.io/dsh-xray/p/helibeiqi__dsh-quant-data-mcp.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/helibeiqi/dsh-quant-data-mcp" rel="nofollow ugc">helibeiqi/dsh-quant-data-mcp source on GitHub</a>
      · <a href="../registry.html#helibeiqi__dsh-quant-data-mcp">this plugin in the registry</a></p>
-  <p>helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>helibeiqi/dsh-quant-data-mcp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/quant-mcp-server.mjs:45, lib/quant-mcp-server.mjs:45</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>qt.gtimg.cn</span> <span>push2.eastmoney.com</span> <span>quote.eastmoney.com</span> <span>push2his.eastmoney.com</span> <span>proxy.finance.qq.com</span> <span>datacenter-web.eastmoney.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>QUANT_MCP_LOG</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>QUANT_MCP_LOG</span> <span>AKSHARE_PYTHON</span> <span>AKSHARE_HELPER</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

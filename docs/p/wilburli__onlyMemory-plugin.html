@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#wilburli__onlyMemory-plugin">this plugin in the registry</a></p>
   <p>wilburli/onlyMemory-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/web-server.ts:48</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, OPENAI_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/web-server.ts:48</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, DEEPSEEK_API_KEY, OPENAI_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>after-message</span> <span>before-message</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>dashscope.aliyuncs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SQL_JS_WASM_PATH</span> <span>ONLYMEM_PROJECT</span> <span>ONLYMEM_DATA_DIR</span> <span>ONLYMEM_WEB_PORT</span> <span>USERPROFILE</span> <span>OPENAI_API_KEY</span> <span>OPENAI_BASE_URL</span> <span>DASHSCOPE_API_KEY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>dashscope.aliyuncs.com</span> <span>api.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SQL_JS_WASM_PATH</span> <span>ONLYMEM_PROJECT</span> <span>ONLYMEM_DATA_DIR</span> <span>OPENAI_API_KEY</span> <span>OPENAI_BASE_URL</span> <span>DASHSCOPE_API_KEY</span> <span>ONLYMEM_WEB_PORT</span> <span>USERPROFILE</span> <span>OPENAI_SUMMARIZE_MODEL</span> <span>DASHSCOPE_SUMMARIZE_MODEL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

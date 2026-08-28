@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>TOBYCAI/dsh-sessions-manager</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH 会话管理面板插件：归档/恢复/彻底删除/跨工作区移动，带工作区标签、会话日期、批量多选与每条会话详情统计（磁盘/工具/文件/血统）。A Session Manager plugin for DeepSeek Harness: archive/restore/delete/move sessions, workspace tags, batch actions &amp; per-session d</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">DSH 会话管理插件：设置面板 + 侧边栏双入口，归档/恢复/跨工作区拖拽/软删进回收站；回收站可恢复·批量清空·7/30/90 天自动清理，带全文搜索与每会话详情（磁盘/工具/血统）。Session Manager plugin for DeepSeek Harness: archive/restore/cross-workspace drag-move/soft-delete to trash</p>
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/TOBYCAI/dsh-sessions-manager" rel="nofollow ugc">TOBYCAI/dsh-sessions-manager source on GitHub</a>
      · <a href="../registry.html#TOBYCAI__dsh-sessions-manager">this plugin in the registry</a></p>
   <p>TOBYCAI/dsh-sessions-manager is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>sessionPersistence</span> <span>sessionQuery</span> <span>slots</span> <span>storageDomain</span> <span>webServer</span> <span>workspaceRegistry</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   
-  
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SESSIONS_MANAGER_TRASH_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

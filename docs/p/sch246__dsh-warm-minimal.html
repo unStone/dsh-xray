@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sch246/dsh-warm-minimal — capability card (C3) · dsh-xray</title>
-<meta name="description" content="sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sch246__dsh-warm-minimal.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sch246/dsh-warm-minimal — dsh plugin capability card">
-<meta property="og:description" content="sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sch246__dsh-warm-minimal.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-warm-minimal", "identifier": "sch246/dsh-warm-minimal", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/sch246/dsh-warm-minimal", "url": "https://unstone.github.io/dsh-xray/p/sch246__dsh-warm-minimal.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-warm-minimal", "identifier": "sch246/dsh-warm-minimal", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.", "codeRepository": "https://github.com/sch246/dsh-warm-minimal", "url": "https://unstone.github.io/dsh-xray/p/sch246__dsh-warm-minimal.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>sch246/dsh-warm-minimal</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 温暖极简模式：会话创建即写入一条高质量首轮轨迹（we/let&#x27;s 风格），真实输入从第二轮开始，AGENTS.md 与技能目录自然注入</p>
+  <p class="lede">DSH 温暖极简模式：模仿官方 minimal 的首轮两工具形态引导 deepseek-v4-pro 进入 we need 思维链；bootstrap 后第二轮再放行其余工具。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/sch246/dsh-warm-minimal" rel="nofollow ugc">sch246/dsh-warm-minimal source on GitHub</a>
      · <a href="../registry.html#sch246__dsh-warm-minimal">this plugin in the registry</a></p>
-  <p>sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>sch246/dsh-warm-minimal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. tools/mine-first-rounds.mjs:22, tools/mine-first-rounds.mjs:22</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. tools/mine-first-rounds.mjs:22, tools/mine-first-rounds.mjs:22</td></tr></tbody></table>
   
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>system-prompt/assemble</span></p>
   
   
   <h2>How to read this</h2>

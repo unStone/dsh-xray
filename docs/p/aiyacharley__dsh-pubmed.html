@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>aiyacharley/dsh-pubmed — capability card (C2) · dsh-xray</title>
-<meta name="description" content="aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only.">
+<title>aiyacharley/dsh-pubmed — capability card (C3) · dsh-xray</title>
+<meta name="description" content="aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/aiyacharley__dsh-pubmed.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="aiyacharley/dsh-pubmed — dsh plugin capability card">
-<meta property="og:description" content="aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only.">
+<meta property="og:description" content="aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/aiyacharley__dsh-pubmed.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-pubmed", "identifier": "aiyacharley/dsh-pubmed", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only.", "codeRepository": "https://github.com/aiyacharley/dsh-pubmed", "url": "https://unstone.github.io/dsh-xray/p/aiyacharley__dsh-pubmed.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-pubmed", "identifier": "aiyacharley/dsh-pubmed", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, reads credential-class env vars.", "codeRepository": "https://github.com/aiyacharley/dsh-pubmed", "url": "https://unstone.github.io/dsh-xray/p/aiyacharley__dsh-pubmed.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>aiyacharley/dsh-pubmed</h1>
-    <span class="lvl-pill">C2</span>
+    <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">把 pubmed-mcp-server 的核心能力 移植成 DSH 原生模型工具：搜索、文章元数据、全文、引用格式化、MeSH、ID 转换等 11 个工具， 直接对接 NCBI E-utilities 与 Europe PMC REST，无需额外的 MCP 客户端配置。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/aiyacharley/dsh-pubmed" rel="nofollow ugc">aiyacharley/dsh-pubmed source on GitHub</a>
      · <a href="../registry.html#aiyacharley__dsh-pubmed">this plugin in the registry</a></p>
-  <p>aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only.</p>
+  <p>aiyacharley/dsh-pubmed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/dynamic-wrapper.js:22</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. lib/dynamic-wrapper.js:16, lib/index.js:48</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/dynamic-wrapper.js:22</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. lib/dynamic-wrapper.js:16, lib/index.js:139</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>NCBI_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>timer</span> <span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>doi.org</span> <span>eutils.ncbi.nlm.nih.gov</span> <span>www.ebi.ac.uk</span> <span>pubmed.ncbi.nlm.nih.gov</span> <span>pmc.ncbi.nlm.nih.gov</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>www.ncbi.nlm.nih.gov</span> <span>doi.org</span> <span>eutils.ncbi.nlm.nih.gov</span> <span>www.ebi.ac.uk</span> <span>pubmed.ncbi.nlm.nih.gov</span> <span>pmc.ncbi.nlm.nih.gov</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>AUTO_GRAPH</span> <span>PUBTATOR</span> <span>HTTPS_PROXY</span> <span>HTTP_PROXY</span> <span>https_proxy</span> <span>http_proxy</span> <span>DSH_HOME</span> <span>NCBI_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

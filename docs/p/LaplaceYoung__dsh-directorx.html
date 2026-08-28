@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LaplaceYoung/dsh-directorx — capability card (C3) · dsh-xray</title>
-<meta name="description" content="LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta name="description" content="LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/LaplaceYoung__dsh-directorx.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaplaceYoung/dsh-directorx — dsh plugin capability card">
-<meta property="og:description" content="LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/LaplaceYoung__dsh-directorx.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-directorx", "identifier": "LaplaceYoung/dsh-directorx", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/LaplaceYoung/dsh-directorx", "url": "https://unstone.github.io/dsh-xray/p/LaplaceYoung__dsh-directorx.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-directorx", "identifier": "LaplaceYoung/dsh-directorx", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/LaplaceYoung/dsh-directorx", "url": "https://unstone.github.io/dsh-xray/p/LaplaceYoung__dsh-directorx.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/LaplaceYoung/dsh-directorx" rel="nofollow ugc">LaplaceYoung/dsh-directorx source on GitHub</a>
      · <a href="../registry.html#LaplaceYoung__dsh-directorx">this plugin in the registry</a></p>
-  <p>LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  <p>LaplaceYoung/dsh-directorx is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×84 in authored code, e.g. scripts/cut-release.mjs:2, scripts/cut-release.mjs:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/support.ts:78, src/providers/audio.ts:81</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>command</span> <span>connection</span> <span>layout</span> <span>llm</span> <span>sessions</span> <span>settings</span> <span>skills</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×107 in authored code, e.g. scripts/cut-release.mjs:2, scripts/cut-release.mjs:2</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. src/director/sandbox/code-model.ts:35, src/director/sandbox/code-model.ts:65</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. src/stage-server.ts:274, src/support.ts:78</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>KIE_API_KEY, KIE_KEY_FILE, MOSSLAND_VIDEO_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>llm</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>skills</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>uiSession</span> <span>workspaces</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.modelverse.cn</span> <span>api.deepseek.com</span> <span>api.openai.com</span> <span>web.dev</span> <span>api-beijing.klingai.com</span> <span>api.klingai.com</span> <span>api.dev.runwayml.com</span> <span>api.example.com</span> <span>fonts.googleapis.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.modelverse.cn</span> <span>api.deepseek.com</span> <span>reactjs.org</span> <span>api.openai.com</span> <span>web.dev</span> <span>www.webmproject.org</span> <span>aomediacodec.github.io</span> <span>radix-ui.com</span> <span>discourse.threejs.org</span> <span>api.kie.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>KIE_API_KEY</span> <span>MOSSLAND_VIDEO_API_KEY</span> <span>DSH_HOME</span> <span>MOSSLAND_VIDEO_BASE_URL</span> <span>KIE_KEY_FILE</span> <span>DIRECTORX_VCAM_PYTHON</span> <span>USERPROFILE</span> <span>LOCALAPPDATA</span> <span>CODEX_CLI_PATH</span> <span>DIRECTOR_STAGE_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

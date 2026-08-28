@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>WizisCool/dsh-ears</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness Voice Input Plugin: Empowers DSH with voice input capabilities, supporting local GPU-accelerated Whisper and mainstream speech-to-text (ASR) API, alongside automated text polishing an</p>
+  <p class="lede">Voice input plugin for DeepSeek Harness (DSH) with text polishing. Supports local GPU Whisper and STT(ASR) API | 一款支持润色整理的 DeepSeek Harness 语音输入插件，为 DSH 提供语音输入能力，支持本地 GPU Whisper 和主流语音识别转写 API</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/WizisCool/dsh-ears" rel="nofollow ugc">WizisCool/dsh-ears source on GitHub</a>
      · <a href="../registry.html#WizisCool__dsh-ears">this plugin in the registry</a></p>
   <p>WizisCool/dsh-ears is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/client/local-whisper-audio.ts:109, src/polish/service.ts:786</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/client/local-whisper-audio.ts:111, src/polish/service.ts:803</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>remote</span> <span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepgram.com</span> <span>api.groq.com</span> <span>asr.tencentcloudapi.com</span> <span>huggingface.co</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepgram.com</span> <span>api.groq.com</span> <span>asr.tencentcloudapi.com</span> <span>huggingface.co</span> <span>token-plan-sgp.xiaomimimo.com</span> <span>token-plan-ams.xiaomimimo.com</span> <span>token-plan-cn.xiaomimimo.com</span> <span>api.xiaomimimo.com</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
