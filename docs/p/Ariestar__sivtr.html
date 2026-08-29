@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ariestar/sivtr — capability card (C2) · dsh-xray</title>
-<meta name="description" content="Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta name="description" content="Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Ariestar__sivtr.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ariestar/sivtr — dsh plugin capability card">
-<meta property="og:description" content="Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta property="og:description" content="Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Ariestar__sivtr.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sivtr", "identifier": "Ariestar/sivtr", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/Ariestar/sivtr", "url": "https://unstone.github.io/dsh-xray/p/Ariestar__sivtr.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sivtr", "identifier": "Ariestar/sivtr", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/Ariestar/sivtr", "url": "https://unstone.github.io/dsh-xray/p/Ariestar__sivtr.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 100+ ·
      <a href="https://github.com/Ariestar/sivtr" rel="nofollow ugc">Ariestar/sivtr source on GitHub</a>
      · <a href="../registry.html#Ariestar__sivtr">this plugin in the registry</a></p>
-  <p>Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p>Ariestar/sivtr is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. editors/vscode/src/extension.ts:1</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. editors/vscode/src/extension.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. share-web/viewer/src/main.ts:107</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. share-web/server/self-host.mjs:62</td></tr></tbody></table>
   
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DATA_DIR</span> <span>DIST_DIR</span> <span>CREATE_ENABLED</span> <span>HOST</span> <span>PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

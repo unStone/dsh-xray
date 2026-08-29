@@ -51,10 +51,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#f25h-233__dsh-cli-switch">this plugin in the registry</a></p>
   <p>f25h-233/dsh-cli-switch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, starts a network server, ships no manifest.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. src/index.ts:42, src/index.ts:49</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/bridge/server-sse.mjs:16, src/bridge/server-sse.mjs:67</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 0 tool regs, no manifest</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>subprocess</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. src/index.ts:93, src/index.ts:104</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/bridge/exec-server.ts:47, src/bridge/exec-server.ts:61</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>subprocess</span> <span>tools</span></p>
   
-  
+  <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TOOLS_JSON</span> <span>APPDATA</span> <span>NPM_CONFIG_PREFIX</span> <span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

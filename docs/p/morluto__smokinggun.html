@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>morluto/smokinggun — capability card (C2) · dsh-xray</title>
-<meta name="description" content="morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/morluto__smokinggun.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="morluto/smokinggun — dsh plugin capability card">
-<meta property="og:description" content="morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/morluto__smokinggun.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "smokinggun", "identifier": "morluto/smokinggun", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/morluto/smokinggun", "url": "https://unstone.github.io/dsh-xray/p/morluto__smokinggun.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "smokinggun", "identifier": "morluto/smokinggun", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.", "codeRepository": "https://github.com/morluto/smokinggun", "url": "https://unstone.github.io/dsh-xray/p/morluto__smokinggun.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/morluto/smokinggun" rel="nofollow ugc">morluto/smokinggun source on GitHub</a>
      · <a href="../registry.html#morluto__smokinggun">this plugin in the registry</a></p>
-  <p>morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
+  <p>morluto/smokinggun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×26 in authored code, e.g. scripts/cli-smoke.mjs:1, scripts/cli-smoke.mjs:689</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/adapters/subprocess.ts:196</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/package-e2e.mjs:224, scripts/package-e2e.mjs:227</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×20 in authored code, e.g. scripts/cli-smoke.mjs:1, scripts/cli-smoke.mjs:754</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/package-e2e.mjs:224, scripts/package-e2e.mjs:227</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>json.schemastore.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SMOKINGGUN_TRACE_PROCESSOR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SMOKINGGUN_TEST_ORIGINAL_TRACE</span> <span>SMOKINGGUN_TRACE_PROCESSOR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

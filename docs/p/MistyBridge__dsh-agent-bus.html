@@ -46,13 +46,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Multi-agent orchestration for DeepSeek Harness: turn isolated sessions into a team that assigns work, reviews output, and runs DAG workflows — durable task ledger, real reviewers, crash-safe recovery.</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/MistyBridge/dsh-agent-bus" rel="nofollow ugc">MistyBridge/dsh-agent-bus source on GitHub</a>
      · <a href="../registry.html#MistyBridge__dsh-agent-bus">this plugin in the registry</a></p>
   <p>MistyBridge/dsh-agent-bus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/write-build-fingerprint.mjs:23, scripts/write-build-fingerprint.mjs:23</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessionTitle</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>systemPrompt</span> <span>tools</span> <span>workspaceRegistry</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>ledger</span> <span>sessionTitle</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>systemPrompt</span> <span>tools</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent-bus/settle</span> <span>agent-bus/task-changed</span> <span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>approval/request</span> <span>internal/service</span> <span>session/event</span> <span>tools/execute</span></p>
   
   

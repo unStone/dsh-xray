@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Max-Null__dsh-plugin-center">this plugin in the registry</a></p>
   <p>Max-Null/dsh-plugin-center is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/update.ts:6, src/update.ts:310</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. verify-globals.cjs:42</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>loader</span> <span>pluginCenter</span> <span>slots</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/update.ts:6, src/update.ts:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. verify-globals.cjs:42</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>loader</span> <span>pluginCenter</span> <span>sessions</span> <span>slots</span> <span>workspaces</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>awesome-dsh-plugin.com</span> <span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>SSID_PENDING_CONSUMER</span> <span>SSID_MCP_NODE</span> <span>SSID_PNPM</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SSID_PENDING_CONSUMER</span> <span>DSH_HOME</span> <span>SSID_MCP_NODE</span> <span>SSID_PNPM</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

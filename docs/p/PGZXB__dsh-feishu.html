@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#PGZXB__dsh-feishu">this plugin in the registry</a></p>
   <p>PGZXB/dsh-feishu is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. scripts/check-conventions.mjs:21, scripts/check-conventions.mjs:21</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FEISHU_APP_SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×27 in authored code, e.g. scripts/check-conventions.mjs:21, scripts/check-conventions.mjs:21</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FEISHU_APP_SECRET</td></tr></tbody></table>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>open.feishu.cn</span> <span>ask.feishu.cn</span> <span>api.github.com</span> <span>accounts.feishu.cn</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_BIN</span> <span>FEISHU_TRANSPORT</span> <span>FEISHU_MOCK_BOT_OPEN_ID</span> <span>FEISHU_MEMORY_ATTACHMENTS</span> <span>FEISHU_DEBUG</span> <span>FEISHU_APP_ID</span> <span>FEISHU_APP_SECRET</span> <span>DSH_HOME</span> <span>FEISHU_ALLOWED_USERS</span> <span>FEISHU_ALLOWED_CHATS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_BIN</span> <span>PORTABLE_OUT_DIR</span> <span>PORTABLE_NODE_MAJOR</span> <span>PORTABLE_DSH_VERSION</span> <span>FEISHU_TRANSPORT</span> <span>FEISHU_MOCK_BOT_OPEN_ID</span> <span>FEISHU_MEMORY_ATTACHMENTS</span> <span>PORTABLE_NODE_CACHE</span> <span>PORTABLE_NODE_TARBALL</span> <span>PORTABLE_NPM_CACHE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
