@@ -6,6 +6,7 @@ run, so the rules that decide a level are pinned by example.
 
 Run: python test_scan_core.py
 """
+import json
 import sys
 
 import pipeline
@@ -182,6 +183,184 @@ def test_dev_surface_does_not_raise_the_level():
     check('dev-surface/not-counted', 'subprocess_service' in ids, False)
     check('dev-surface/reported', 'dev_surface' in ids, True)
     check('dev-surface/level', c['level'], 2)
+
+
+def _pkg(**kw):
+    return json.dumps({'name': 'p', 'dsh': {'bundle': {'patch': './cordis.patch.yml'}}} | kw)
+
+
+EXEC = 'import { execSync } from "node:child_process"\nexecSync("npm pack --dry-run")'
+
+
+def test_unshipped_tooling_is_reported_not_counted():
+    """A pack-check script the package's own `files` allowlist keeps out of the
+    tarball never lands in anyone's runtime. github.com/unStone/dsh-xray/issues/4
+    """
+    c = card({
+        'package.json': _pkg(main='./lib/index.js', files=['lib/index.js', 'README.md'],
+                             scripts={'pack:check': 'node scripts/check-pack.mjs'}),
+        'lib/index.js': 'export function apply(ctx) {}',
+        'scripts/check-pack.mjs': EXEC + '\nprocess.env.ComSpec',
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('tooling/not-exec', 'exec' in ids, False)
+    check('tooling/reported', 'exec_tooling' in ids, True)
+    check('tooling/level', c['level'], 2)
+    check('tooling/env-not-counted', c['env'], {})
+
+
+def test_a_credential_read_in_tooling_is_not_counted_but_stays_visible():
+    c = card({
+        'package.json': _pkg(files=['lib'], scripts={'smoke': 'node scripts/smoke.mjs'}),
+        'lib/index.js': 'export function apply(ctx) {}',
+        'scripts/smoke.mjs': 'process.env.HA_TOKEN; process.env.NODE_ENV',
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('tooling-env/not-counted', 'token_env' in ids, False)
+    check('tooling-env/reported', 'token_env_tooling' in ids, True)
+    check('tooling-env/benign-ignored',
+          'NODE_ENV' in next(f['evidence'] for f in c['flags'] if f['id'] == 'token_env_tooling'),
+          False)
+    check('tooling-env/level', c['level'], 2)
+
+
+def test_bundled_and_tooling_evidence_are_both_reported():
+    """Neither hides the other: the card should say where each finding sits."""
+    c = card({'package.json': _pkg(files=['lib']),
+              'lib/bundle.js': 'execSync("ls")', 'scripts/check.mjs': EXEC})
+    ids = {f['id'] for f in c['flags']}
+    check('both-zones/not-counted', 'exec' in ids, False)
+    check('both-zones/bundled', 'exec_bundled' in ids, True)
+    check('both-zones/tooling', 'exec_tooling' in ids, True)
+
+
+def test_a_shipped_scripts_dir_still_counts():
+    """`scripts/**/*.mjs` includes the direct child `scripts/proxy.mjs` under
+    minimatch, which Python's fnmatch would miss. Ignoring `scripts/` by name
+    would hide a proxy that opens a socket and reads an API key."""
+    c = card({
+        'package.json': _pkg(files=['lib/**/*.js', 'scripts/**/*.mjs']),
+        'scripts/proxy.mjs': EXEC + '\nprocess.env.DASHSCOPE_API_KEY\ncreateServer(h).listen(8080)',
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('shipped-scripts/exec', 'exec' in ids, True)
+    check('shipped-scripts/net', 'net_server' in ids, True)
+    check('shipped-scripts/token', 'token_env' in ids, True)
+    check('shipped-scripts/level', c['level'], 3)
+
+
+def test_typescript_source_is_not_tooling():
+    """`files: ["lib"]` excludes `src/`, but `src/` is what `lib/` was compiled
+    from — and lib/ is already discounted as build output. Demoting both would
+    make a TypeScript plugin's behaviour invisible."""
+    c = card({'package.json': _pkg(files=['lib']), 'src/index.ts': EXEC})
+    ids = {f['id'] for f in c['flags']}
+    check('ts-src/exec', 'exec' in ids, True)
+    check('ts-src/level', c['level'], 3)
+
+
+def test_tooling_needs_an_explicit_allowlist():
+    """No `files` field means .npmignore rules we do not read; assume it ships."""
+    c = card({'package.json': _pkg(), 'scripts/build.mjs': EXEC})
+    check('no-allowlist/exec', 'exec' in {f['id'] for f in c['flags']}, True)
+
+
+def test_install_time_script_disables_the_tooling_zone():
+    """Installing from a git ref runs the checkout, not the packed tarball."""
+    c = card({
+        'package.json': _pkg(files=['lib'], scripts={'postinstall': 'node scripts/x.mjs'}),
+        'scripts/x.mjs': EXEC,
+    })
+    check('lifecycle/exec', 'exec' in {f['id'] for f in c['flags']}, True)
+
+
+def test_entry_points_are_packed_whatever_files_says():
+    c = card({'package.json': _pkg(files=['lib'], bin={'p': './scripts/cli.js'}),
+              'scripts/cli.js': EXEC})
+    check('forced-bin/exec', 'exec' in {f['id'] for f in c['flags']}, True)
+    c = card({'package.json': _pkg(files=['lib'], directories={'bin': 'scripts'}),
+              'scripts/cli.js': EXEC})
+    check('forced-directories-bin/exec', 'exec' in {f['id'] for f in c['flags']}, True)
+
+
+def test_unmodelled_patterns_fail_closed():
+    """A negation reorders the whole walk and extglob is not implemented; when
+    the allowlist cannot be read exactly, nothing is demoted."""
+    for allow in (['lib', '!lib/secret.js'], ['+(lib|src)'], ['lib/{a..z}.js']):
+        c = card({'package.json': _pkg(files=allow), 'scripts/x.mjs': EXEC})
+        check(f'fail-closed/{allow[0]}', 'exec' in {f['id'] for f in c['flags']}, True)
+
+
+def test_brace_and_class_patterns_are_understood():
+    c = card({'package.json': _pkg(files=['lib/**/*.{js,d.ts}', 'scripts/gen-[0-9].mjs']),
+              'scripts/gen-1.mjs': EXEC,
+              'scripts/check.mjs': 'createServer(h).listen(8080)'})
+    ids = {f['id'] for f in c['flags']}
+    check('brace/shipped-counts', 'exec' in ids, True)
+    check('brace/unshipped-does-not', 'net_server' in ids, False)
+    check('brace/unshipped-reported', 'net_server_tooling' in ids, True)
+
+
+def test_the_nearest_manifest_governs_in_a_monorepo():
+    c = card({
+        'package.json': '{"name":"root"}',
+        'packages/p/package.json': _pkg(name='p', files=['lib']),
+        'packages/p/scripts/check.mjs': EXEC,
+    })
+    ids = {f['id'] for f in c['flags']}
+    check('monorepo/not-exec', 'exec' in ids, False)
+    check('monorepo/reported', 'exec_tooling' in ids, True)
+
+
+def test_globstar_matching():
+    """Pinned directly: this translation is what keeps shipped code visible.
+
+    Every expectation here was checked against `npm pack --dry-run --json` on
+    npm 11 with a synthetic tree, so the fixtures track npm rather than a
+    reading of its documentation.
+    """
+    def m(pat, path):
+        return bool(scan_core._pattern_re(pat).match(path))
+    check('glob/globstar-direct-child', m('scripts/**/*.mjs', 'scripts/a.mjs'), True)
+    check('glob/globstar-nested', m('scripts/**/*.mjs', 'scripts/x/y/a.mjs'), True)
+    check('glob/globstar-wrong-ext', m('scripts/**/*.mjs', 'scripts/a.js'), False)
+    check('glob/star-stops-at-slash', m('lib/*.js', 'lib/a/b.js'), False)
+    check('glob/dir-means-subtree', m('docs/', 'docs/a/b.md'), True)
+    check('glob/bare-name-subtree', m('lib', 'lib/a/b.js'), True)
+    check('glob/leading-dot-slash', m('./lib/index.js', 'lib/index.js'), True)
+    check('glob/leading-globstar', m('**/*.d.ts', 'lib/types/a.d.ts'), True)
+    check('glob/no-cross-package', m('lib/**/*.d.ts', 'other/lib/a.d.ts'), False)
+
+
+def test_pack_membership_matches_npm():
+    """A table checked against `npm pack --dry-run --json` on npm 11."""
+    cases = [
+        # (package.json fields, path, npm packs it)
+        ({'files': ['lib/types/**/*.d.ts']}, 'lib/types/client/index.d.ts', True),
+        ({'files': ['lib/types/**/*.d.ts']}, 'lib/types/a.d.ts', True),
+        ({'files': ['scripts/**/*.mjs']}, 'scripts/check-pack.mjs', True),
+        ({'files': ['scripts/**/*.mjs']}, 'scripts/nested/deep.mjs', True),
+        ({'files': ['scripts/**/*.mjs']}, 'scripts/cli.js', False),
+        ({'files': ['scripts/**']}, 'scripts/nested/deep.mjs', True),
+        ({'files': ['lib']}, 'lib/deep/a/b.js', True),
+        ({'files': ['lib']}, 'src/index.ts', False),
+        ({'files': ['lib']}, 'README.md', True),
+        ({'files': ['lib']}, 'LICENSE', True),
+        ({'files': ['lib']}, 'CHANGELOG.md', False),
+        ({'files': ['lib/*.js']}, 'lib/deep/a/b.js', False),
+        ({'files': ['lib/**/*.{js,d.ts}']}, 'lib/deep/a/b.js', True),
+        ({'files': ['scripts/gen-[0-9].mjs']}, 'scripts/gen-1.mjs', True),
+        ({'files': ['scripts/gen-?.mjs']}, 'scripts/gen-1.mjs', True),
+        ({'files': ['**/*.d.ts']}, 'lib/types/client/index.d.ts', True),
+        ({'files': ['./lib/index.js']}, 'lib/index.js', True),
+        ({'files': ['./docs']}, 'docs/a/b.md', True),
+        ({'files': ['lib'], 'main': 'scripts/cli.js'}, 'scripts/cli.js', True),
+        ({'files': ['lib'], 'bin': {'p': './scripts/cli.js'}}, 'scripts/cli.js', True),
+        ({'files': ['lib'], 'directories': {'bin': 'scripts'}}, 'scripts/cli.js', True),
+    ]
+    for fields, path, want in cases:
+        got = scan_core._pack_matcher({'name': 'p'} | fields)(path)
+        check(f'packlist/{fields["files"][0]}/{path}', got, want)
 
 
 def test_finalize_is_idempotent_over_json_round_trip():

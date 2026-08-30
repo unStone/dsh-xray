@@ -19,6 +19,21 @@ DEV_FILE_RE = re.compile(r"\.(test|spec|stories)\.[a-z]+$|\.d\.ts$")
 # package — attributes someone else's code to its author.
 VENDOR_DIR_RE = re.compile(r"(^|/)(lib|dist|build|vendor|bundle|out|_output)(/|$)")
 
+# Development tooling the published package does not contain never runs inside
+# anyone's agent. Demoting it takes two independent proofs, because either one
+# alone gets this wrong: a directory name alone would hide the `scripts/**/*.mjs`
+# a plugin genuinely ships, and package membership alone would hide a TypeScript
+# plugin whose `src/` is excluded from `files` in favour of the `lib/` it
+# compiles into -- which the vendor rule above already declines to count.
+# So a file is tooling only when it sits at a tooling root *and* an explicit
+# `files` allowlist proves the package does not contain it.
+TOOLING_ROOT_RE = re.compile(r"^(scripts?|tools?|tooling|benchmarks?|bench|ci|\.ci)/")
+TOOLING_FILE_RE = re.compile(
+    r"^(?:[\w.-]+\.config"
+    r"|build|esbuild|rollup|vite|vitest|tsup|webpack|gulpfile|gruntfile)\.(?:m?[jt]s|cjs)$", re.I)
+# npm packs these whatever `files` says (verified against npm 11 packlist).
+ALWAYS_PACKED_RE = re.compile(r"^(package\.json|readme|licen[cs]e)(\.[^/]*)?$", re.I)
+
 LINE_COMMENT_RE = re.compile(r"(?<![:\w])//[^\n]*")
 BLOCK_COMMENT_RE = re.compile(r"/\*.*?\*/", re.S)
 
@@ -42,7 +57,7 @@ APPLY_RE = re.compile(r"export\s+(?:function|const)\s+apply\b|\bapply\s*\(\s*ctx
 # Raw-field schema version. finalize() stamps it on every card; the pipeline
 # refuses to reuse a cached card collected under a different version, because
 # fields added or split since then cannot be reconstructed without a rescan.
-COLLECT_VERSION = 2
+COLLECT_VERSION = 3
 
 # A diagnostic may carry the literal `node:internal/child_process` in a string
 # or regex without ever importing the module. Execution needs an import-shaped
@@ -82,6 +97,192 @@ def zone_of(path):
     return 'src'
 
 
+
+def _expand_braces(pat, depth=0):
+    """`a.{js,ts}` -> ['a.js', 'a.ts']. None for syntax we do not model."""
+    i = pat.find('{')
+    if i < 0:
+        return [pat]
+    if depth > 4:
+        return None
+    level = 0
+    end = None
+    for k in range(i, len(pat)):
+        if pat[k] == '{':
+            level += 1
+        elif pat[k] == '}':
+            level -= 1
+            if level == 0:
+                end = k
+                break
+    if end is None or '..' in pat[i + 1:end]:   # unbalanced, or a {1..9} range
+        return None
+    parts, level, cur = [], 0, ''
+    for ch in pat[i + 1:end]:
+        level += (ch == '{') - (ch == '}')
+        if ch == ',' and level == 0:
+            parts.append(cur)
+            cur = ''
+        else:
+            cur += ch
+    parts.append(cur)
+    out = []
+    for part in parts:
+        sub = _expand_braces(pat[:i] + part + pat[end + 1:], depth + 1)
+        if sub is None or len(out) + len(sub) > 64:
+            return None
+        out.extend(sub)
+    return out
+
+
+def _seg_re(seg):
+    """One path segment of a glob -> regex source. `*` never crosses a `/`."""
+    out, i = [], 0
+    while i < len(seg):
+        ch = seg[i]
+        if ch == '*':
+            out.append('[^/]*')
+        elif ch == '?':
+            out.append('[^/]')
+        elif ch == '[':
+            end = seg.find(']', i + 1)
+            if end == -1:
+                return None
+            body = seg[i + 1:end]
+            out.append('[' + ('^' + body[1:] if body.startswith('!') else body) + ']')
+            i = end + 1
+            continue
+        elif ch in '()|':          # extglob: not modelled
+            return None
+        else:
+            out.append(re.escape(ch))
+        i += 1
+    return ''.join(out)
+
+
+def _pattern_re(pat):
+    """One `files` entry -> compiled regex over package-relative paths.
+
+    npm matches these with minimatch, where `**` spans zero or more path
+    segments -- so `scripts/**/*.mjs` includes the direct child
+    `scripts/proxy.mjs`. Python's fnmatch does not, and a translation that
+    misses that would hide execution code a plugin genuinely ships.
+    """
+    if not isinstance(pat, str):
+        return None
+    pat = pat.strip()
+    while pat.startswith('./'):
+        pat = pat[2:]
+    pat = pat.strip('/')
+    if not pat or pat.startswith('!') or pat.startswith('#'):
+        return None            # negation reorders the whole walk: fail closed
+    variants = _expand_braces(pat)
+    if variants is None:
+        return None
+    alts = []
+    for v in variants:
+        segs = [seg for i, seg in enumerate(v.split('/'))
+                if seg != '**' or i == 0 or v.split('/')[i - 1] != '**']
+        body = ''
+        for i, seg in enumerate(segs):
+            last = i == len(segs) - 1
+            if seg == '**':
+                body += '.*' if last else '(?:[^/]+/)*'
+                continue
+            r = _seg_re(seg)
+            if r is None:
+                return None
+            body += r + ('' if last else '/')
+        alts.append(body)
+    # Naming a directory packs everything under it: `docs/` means `docs/**`.
+    return re.compile('^(?:' + '|'.join(alts) + ')(?:/.*)?$')
+
+
+def _pack_matcher(data):
+    """A predicate "the published package contains this package-relative path",
+    or None when membership is not decidable and the caller must assume it does.
+    """
+    allow = data.get('files')
+    if not isinstance(allow, list) or not allow:
+        return None            # no allowlist: .npmignore/default rules apply
+    scripts = data.get('scripts') or {}
+    if any(k in scripts for k in ('preinstall', 'install', 'postinstall', 'prepare')):
+        # Installing from a git ref runs the checkout rather than the packed
+        # tarball, and an install-time script can reach anything in it.
+        return None
+    pats = []
+    for entry in allow:
+        r = _pattern_re(entry)
+        if r is None:
+            return None        # one pattern we cannot model: demote nothing
+        pats.append(r)
+
+    forced = set()
+
+    def collect(v):
+        if isinstance(v, str):
+            forced.add(v.lstrip('./').strip('/'))
+        elif isinstance(v, dict):
+            for x in v.values():
+                collect(x)
+        elif isinstance(v, list):
+            for x in v:
+                collect(x)
+
+    # npm packs `main` and `bin` whatever `files` says. `exports`, `types` and
+    # friends it does not — but a package whose entry point its own allowlist
+    # excludes is misconfigured rather than tooling, so they are read the
+    # generous way: assume it ships, and keep counting it.
+    for key in ('main', 'module', 'types', 'typings', 'browser', 'bin', 'exports', 'unpkg'):
+        collect(data.get(key))
+    dirs = data.get('directories')
+    collect(list(dirs.values()) if isinstance(dirs, dict) else None)
+    forced.discard('')
+
+    def packed(rel):
+        if ALWAYS_PACKED_RE.match(rel):
+            return True
+        if rel in forced or any(rel.startswith(f + '/') for f in forced):
+            return True
+        return any(r.match(rel) for r in pats)
+
+    return packed
+
+
+def pack_rules(files):
+    """{package directory: matcher-or-None} for every manifest in the tree.
+
+    A file is governed by its nearest ancestor package.json, so a monorepo's
+    `packages/x/package.json` decides what `packages/x/scripts/` ships, not the
+    workspace root.
+    """
+    rules = {}
+    for path, text in files.items():
+        if path.rsplit('/', 1)[-1] != 'package.json' or zone_of(path) == 'dev':
+            continue
+        d = path[:-len('package.json')].rstrip('/')
+        try:
+            rules[d] = _pack_matcher(json.loads(text))
+        except Exception:
+            rules[d] = None
+    return rules
+
+
+def zone_of_file(path, rules):
+    """zone_of, plus the `tool` zone that needs the surrounding package."""
+    z = zone_of(path)
+    if z != 'src' or not rules:
+        return z
+    owner = max((d for d in rules if d == '' or path.startswith(d + '/')),
+                key=len, default=None)
+    if owner is None or rules[owner] is None:
+        return z
+    rel = path[len(owner) + 1:] if owner else path
+    if not (TOOLING_ROOT_RE.match(rel) or TOOLING_FILE_RE.match(rel)):
+        return z
+    return z if rules[owner](rel) else 'tool'
+
+
 def _line(text, pos):
     return text.count('\n', 0, pos) + 1
 
@@ -92,18 +293,21 @@ def scan_files(files):
         'manifest': None, 'pkg_name': None, 'deps': [], 'install_scripts': {},
         'injects': set(), 'hooks': set(), 'tool_regs': 0,
         'domains': {}, 'env': {},
-        'behaviors': {k: {'src': 0, 'dev': 0, 'vendor': 0, 'evidence': [],
-                          'vendor_evidence': []} for k in BEHAVIOR_RES},
+        'behaviors': {k: {'src': 0, 'dev': 0, 'vendor': 0, 'tool': 0, 'evidence': [],
+                          'vendor_evidence': [], 'tool_evidence': []} for k in BEHAVIOR_RES},
         'has_apply': False, 'files_scanned': 0, 'has_skill_md': False,
         'has_bundle': False, 'has_client': False,
         'cp_refs': 0, 'cp_ref_evidence': [],
-        # Capability surface found in test/example/docs trees. Tracked apart
-        # from the runtime surface: it never classifies the repo or raises the
-        # level, but hiding real code in a directory named examples/ must stay
-        # visible on the card, so it is reported instead of skipped.
+        'tool_env': {},
+        # Capability surface found in code that does not reach a runtime --
+        # test/example/docs trees, and tooling the package excludes. Tracked
+        # apart from the runtime surface: it never classifies the repo or raises
+        # the level, but hiding real code in a directory named examples/ must
+        # stay visible on the card, so it is reported instead of skipped.
         'dev_injects': set(), 'dev_hooks': set(), 'dev_tool_regs': 0,
         'dev_has_apply': False, 'dev_manifests': [],
     }
+    rules = pack_rules(files)
 
     # Shallowest paths first: in a monorepo the plugin's own root package.json
     # wins, so the reported manifest is deterministic rather than tar-order luck.
@@ -149,9 +353,12 @@ def scan_files(files):
             continue
 
         card['files_scanned'] += 1
-        zone = zone_of(path)
+        zone = zone_of_file(path, rules)
         text = strip_comments(text)
-        if zone == 'dev':
+        # Code that does not reach a user's runtime -- fixtures, examples, and
+        # tooling the package excludes -- is recorded apart from the surface it
+        # would otherwise claim.
+        if zone in ('dev', 'tool'):
             if APPLY_RE.search(text):
                 card['dev_has_apply'] = True
             for m in INJECT_RE.finditer(text):
@@ -179,7 +386,15 @@ def scan_files(files):
                     card['cp_refs'] += 1
                     if len(card['cp_ref_evidence']) < 3:
                         card['cp_ref_evidence'].append(f"{path}:{_line(text, m.start())}")
-        if zone != 'dev':
+        if zone == 'tool':
+            # Domains and env reads here describe a developer's machine, not the
+            # plugin's runtime. Credential-class names stay on the card anyway:
+            # dropping them silently is exactly the kind of thing this project
+            # exists to not do.
+            for m in ENV_RE.finditer(text):
+                if m.group(1) not in BENIGN_ENV:
+                    card['tool_env'][m.group(1)] = card['tool_env'].get(m.group(1), 0) + 1
+        if zone not in ('dev', 'tool'):
             for m in URL_RE.finditer(text):
                 d = m.group(1).lower()
                 if d not in BENIGN_DOMAINS and not d.endswith(('.example', '.test', '.local', '.internal', '.invalid')):
@@ -196,6 +411,8 @@ def scan_files(files):
                     b['evidence'].append(f"{path}:{_line(text, m.start())}")
                 elif zone == 'vendor' and len(b['vendor_evidence']) < 3:
                     b['vendor_evidence'].append(f"{path}:{_line(text, m.start())}")
+                elif zone == 'tool' and len(b['tool_evidence']) < 3:
+                    b['tool_evidence'].append(f"{path}:{_line(text, m.start())}")
 
     return finalize(card)
 
@@ -254,17 +471,23 @@ def finalize(card):
         flag('subprocess_service', 'inject: subprocess')
     if 'tools/pre-execute' in pw_hook:
         flag('tool_gate', 'hook: tools/pre-execute')
-    bundled_only = []
     for key in ('exec', 'eval', 'base64_decode', 'net_server'):
         b = card['behaviors'][key]
         if b['src']:
             flag(key, f"×{b['src']} in authored code, e.g. {', '.join(b['evidence'][:2])}")
-        elif b['vendor']:
+            continue
+        if b['vendor']:
             # Present, but in bundled output — reported without counting toward
             # the level, since it is not the author's code.
-            bundled_only.append(key)
             flag(f'{key}_bundled',
                  f"×{b['vendor']} in build output only, e.g. {', '.join(b['vendor_evidence'][:2])}")
+        if b.get('tool'):
+            # Present, but in a file the package's own `files` allowlist keeps
+            # out of the tarball — stated, and not counted, because installing
+            # the plugin never puts it on disk.
+            flag(f'{key}_tooling',
+                 f"×{b['tool']} in development tooling the package does not ship, "
+                 f"e.g. {', '.join(b.get('tool_evidence', [])[:2])}")
     if card.get('cp_refs') and not card['behaviors']['exec']['src']:
         # Transparency for what the tightened exec pattern no longer counts:
         # the string is in the file, the import is not. Not in the risky set.
@@ -274,6 +497,11 @@ def finalize(card):
     token_env = sorted(v for v in card['env'] if TOKEN_ENV_RE.search(v))
     if token_env:
         flag('token_env', ', '.join(token_env[:6]))
+    tool_token_env = sorted(v for v in (card.get('tool_env') or {})
+                            if TOKEN_ENV_RE.search(v) and v not in card['env'])
+    if tool_token_env:
+        flag('token_env_tooling',
+             'in development tooling the package does not ship: ' + ', '.join(tool_token_env[:6]))
     if card['type'] in ('code-only', 'library') and (card['injects'] or card['tool_regs']):
         flag('no_manifest', f"uses {len(card['injects'])} services, {card['tool_regs']} tool regs, no manifest")
     # Dev-zone findings never count toward the level, but they stay on the
@@ -283,7 +511,7 @@ def finalize(card):
     dev_pw = sorted(((set(card.get('dev_injects', [])) & POWERFUL_SERVICES)
                      | (set(card.get('dev_hooks', [])) & POWERFUL_HOOKS)) - src_pw)
     if dev_pw:
-        flag('dev_surface', 'in test/example code only: ' + ', '.join(dev_pw))
+        flag('dev_surface', 'in code that does not ship: ' + ', '.join(dev_pw))
     fixture_bundles = [d['path'] for d in card.get('dev_manifests', []) if d.get('bundle')]
     if fixture_bundles and card['type'] != 'plugin':
         flag('dev_manifest',

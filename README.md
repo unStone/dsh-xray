@@ -37,7 +37,7 @@ Every flag carries **file:line evidence**. Levels **C0–C3** measure capability
 - **Whole-ecosystem coverage** — every repository under the `dsh-plugin` topic (10,915), rescanned daily.
 - **Capability cards** — injected services, attached hooks, runtime patches, outbound domains, credential-class env reads and install-time scripts, each with `file:line` evidence.
 - **C0–C3 levels** — a compact read on how much surface a plugin has, and whether it combines powerful capability with sensitive behavior.
-- **Shipped vs. test code** — risk flags fire only on shipped code, so a fixture in `tests/` never inflates a rating.
+- **Shipped vs. unshipped code** — risk flags fire only on code that reaches your runtime, so a fixture in `tests/` never inflates a rating, and neither does a build script the package's own `files` allowlist keeps out of the tarball. Both stay on the card as non-counting evidence.
 - **Deterministic manifests** — in a monorepo the plugin's own root manifest wins, so two scans of one repo agree.
 - **Static only** — nothing is executed, downloaded code is streamed and read, never run.
 - **Embeddable badges** — plugin authors can publish their own capability card.

@@ -40,6 +40,16 @@ FLAG_TEXT = {
     'eval_bundled': ('eval in build output only', '仅构建产物中含 eval'),
     'base64_decode_bundled': ('base64 decoding in build output only', '仅构建产物中含 base64 解码'),
     'net_server_bundled': ('network server in build output only', '仅构建产物中含网络服务'),
+    'exec_tooling': ('executes commands in development tooling the package does not ship',
+                     '命令执行仅出现在不随包发布的开发脚本中'),
+    'eval_tooling': ('uses eval in development tooling the package does not ship',
+                     'eval 仅出现在不随包发布的开发脚本中'),
+    'base64_decode_tooling': ('decodes base64 in development tooling the package does not ship',
+                              'base64 解码仅出现在不随包发布的开发脚本中'),
+    'net_server_tooling': ('starts a network server in development tooling the package does not ship',
+                           '起网络服务仅出现在不随包发布的开发脚本中'),
+    'token_env_tooling': ('reads credential-class env vars in development tooling the package does not ship',
+                          '读取凭证类环境变量，仅出现在不随包发布的开发脚本中'),
 }
 LEVEL_DESC = {
     3: 'powerful capability combined with sensitive behavior',
