@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#shaobeichen__dsh-pocket">this plugin in the registry</a></p>
   <p>shaobeichen/dsh-pocket is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, network server in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×12 in build output only, e.g. lib/index.js:13, lib/index.js:193</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/proxy.mjs:383</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×12 in build output only, e.g. lib/index.js:13, lib/index.js:214</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/proxy.mjs:494</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>sessionLogDownload</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>ghproxy.net</span> <span>gh.ddlc.top</span> <span>gh-proxy.com</span> <span>mirrors.tuna.tsinghua.edu.cn</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_POCKET_CLIENT_ID</span> <span>WSL_DISTRO_NAME</span> <span>WSL_INTEROP</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_POCKET_CLOUDFLARED</span> <span>DSH_POCKET_CLIENT_ID</span> <span>WSL_DISTRO_NAME</span> <span>WSL_INTEROP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

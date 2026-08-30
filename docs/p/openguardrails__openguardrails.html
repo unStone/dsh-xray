@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>openguardrails/openguardrails — capability card (C3) · dsh-xray</title>
-<meta name="description" content="openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
+<meta name="description" content="openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/openguardrails__openguardrails.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openguardrails/openguardrails — dsh plugin capability card">
-<meta property="og:description" content="openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
+<meta property="og:description" content="openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/openguardrails__openguardrails.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "openguardrails", "identifier": "openguardrails/openguardrails", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.", "codeRepository": "https://github.com/openguardrails/openguardrails", "url": "https://unstone.github.io/dsh-xray/p/openguardrails__openguardrails.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "openguardrails", "identifier": "openguardrails/openguardrails", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.", "codeRepository": "https://github.com/openguardrails/openguardrails", "url": "https://unstone.github.io/dsh-xray/p/openguardrails__openguardrails.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/openguardrails/openguardrails" rel="nofollow ugc">openguardrails/openguardrails source on GitHub</a>
      · <a href="../registry.html#openguardrails__openguardrails">this plugin in the registry</a></p>
-  <p>openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.</p>
+  <p>openguardrails/openguardrails is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OGR_API_KEY, OGR_ENROLL_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. integrations/agent/claude-code/hooks/ogr-local.mjs:1156, integrations/agent/claude-code/hooks/ogr-local.mjs:1195</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. integrations/agent/claude-code/hooks/ogr-local.mjs:1355, integrations/agent/codex/hooks/ogr-local.mjs:1355</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OGR_API_KEY, OGR_ENROLL_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>llm/stream</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>openguardrails.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>OGR_RUNTIME_URL</span> <span>OGR_API_KEY</span> <span>OGR_AGENT_WORKSPACE</span> <span>OGR_AGENT_USER</span> <span>OGR_TIMEOUT_MS</span> <span>OGR_AGENT_ID</span> <span>OGR_AGENT_TYPE</span> <span>OGR_FAIL_MODE</span> <span>OGR_SERVER</span> <span>OGR_ENROLL_TOKEN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>openguardrails.com</span> <span>api.example.com</span> <span>api.anthropic.com</span> <span>chatgpt.com</span> <span>api.openai.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>OGR_API_KEY</span> <span>OGR_LOCAL_PORT</span> <span>OGR_LOCAL_REDACTION</span> <span>OGR_RUNTIME_URL</span> <span>OGR_AGENT_WORKSPACE</span> <span>OGR_AGENT_USER</span> <span>OGR_TIMEOUT_MS</span> <span>OGR_AGENT_ID</span> <span>OGR_AGENT_TYPE</span> <span>OGR_LOCAL_UPSTREAM</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

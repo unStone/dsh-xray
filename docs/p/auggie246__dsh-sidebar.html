@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>auggie246/dsh-sidebar — capability card (C3) · dsh-xray</title>
-<meta name="description" content="auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function.">
+<meta name="description" content="auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/auggie246__dsh-sidebar.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="auggie246/dsh-sidebar — dsh plugin capability card">
-<meta property="og:description" content="auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/auggie246__dsh-sidebar.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-sidebar", "identifier": "auggie246/dsh-sidebar", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/auggie246/dsh-sidebar", "url": "https://unstone.github.io/dsh-xray/p/auggie246__dsh-sidebar.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-sidebar", "identifier": "auggie246/dsh-sidebar", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, starts a network server.", "codeRepository": "https://github.com/auggie246/dsh-sidebar", "url": "https://unstone.github.io/dsh-xray/p/auggie246__dsh-sidebar.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/auggie246/dsh-sidebar" rel="nofollow ugc">auggie246/dsh-sidebar source on GitHub</a>
      · <a href="../registry.html#auggie246__dsh-sidebar">this plugin in the registry</a></p>
-  <p>auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function.</p>
+  <p>auggie246/dsh-sidebar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, uses eval / new Function, starts a network server.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/test-pty-transport.mjs:8, scripts/test-pty-transport.mjs:8</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/verify-new-session-no-overlap.mjs:34</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/test-pty-transport.mjs:8, scripts/test-pty-transport.mjs:8</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/sync-vendor.mjs:61, scripts/verify-new-session-no-overlap.mjs:34</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/verify-panel-tabs.mjs:30, scripts/verify-panel-tabs.mjs:34</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>remote</span> <span>shell</span> <span>slots</span> <span>subprocess</span> <span>timer</span> <span>typert</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_URL</span> <span>DSH_SIDEBAR_SPEC</span> <span>DSH_ROOT</span> <span>DSH_SIDEBAR_CHROME</span> <span>DSH_SIDEBAR_VIEWPORT</span> <span>DSH_WEB_PROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_URL</span> <span>DSH_SIDEBAR_CHROME</span> <span>DSH_SIDEBAR_SPEC</span> <span>DSH_ROOT</span> <span>DSH_SIDEBAR_VIEWPORT</span> <span>DSH_WEB_PROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

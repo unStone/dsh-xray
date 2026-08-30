@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#kalifun__helmsman">this plugin in the registry</a></p>
   <p>kalifun/helmsman is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, starts a network server, ships no manifest.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. server-ts/src/acp-client.ts:12, server-ts/src/acp-client.ts:68</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. server-ts/src/index.ts:355</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 0 tool regs, no manifest</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/inbox/claimed</span> <span>tools/pre-execute</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. dsh/helmsman-api.js:14, dsh/helmsman-api.js:14</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. server-ts/src/index.ts:355</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 10 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>approval</span> <span>helmsmanBoard</span> <span>helmsmanStorage</span> <span>helmsmanTasks</span> <span>helmsmanWorktree</span> <span>sessionTitle</span> <span>sessions</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/inbox/claimed</span> <span>approval/request</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>HELMSMAN_MODEL_FILE</span> <span>HELMSMAN_PORT</span> <span>HELMSMAN_SESSIONS_ROOT</span> <span>HELMSMAN_DB</span> <span>HELMSMAN_APPROVAL_TIMEOUT_MS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>HELMSMAN_DB</span> <span>HELMSMAN_SESSIONS_ROOT</span> <span>HELMSMAN_MODEL_FILE</span> <span>HELMSMAN_WORKSPACE</span> <span>HELMSMAN_PORT</span> <span>HELMSMAN_APPROVAL_TIMEOUT_MS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

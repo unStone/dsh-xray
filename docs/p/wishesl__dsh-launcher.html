@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>wishesl/dsh-launcher — capability card (C1) · dsh-xray</title>
-<meta name="description" content="wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. Scanning 28 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.">
+<meta name="description" content="wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only, ships no manifest.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/wishesl__dsh-launcher.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wishesl/dsh-launcher — dsh plugin capability card">
-<meta property="og:description" content="wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. Scanning 28 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.">
+<meta property="og:description" content="wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only, ships no manifest.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/wishesl__dsh-launcher.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-launcher", "identifier": "wishesl/dsh-launcher", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. Scanning 28 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.", "codeRepository": "https://github.com/wishesl/dsh-launcher", "url": "https://unstone.github.io/dsh-xray/p/wishesl__dsh-launcher.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-launcher", "identifier": "wishesl/dsh-launcher", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only, ships no manifest.", "codeRepository": "https://github.com/wishesl/dsh-launcher", "url": "https://unstone.github.io/dsh-xray/p/wishesl__dsh-launcher.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/wishesl/dsh-launcher" rel="nofollow ugc">wishesl/dsh-launcher source on GitHub</a>
      · <a href="../registry.html#wishesl__dsh-launcher">this plugin in the registry</a></p>
-  <p>wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. Scanning 28 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.</p>
-  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  
-  
+  <p>wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only, ships no manifest.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. dsh-launcher/embed/dsh-self-mcp/lib/index.js:17, dsh-launcher/embed/dsh-self-mcp/lib/index.js:200</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 1 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>timer</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>www.npmjs.com</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LAUNCHER</span> <span>DSH_WEB_URL</span> <span>DSH_INSTANCE_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

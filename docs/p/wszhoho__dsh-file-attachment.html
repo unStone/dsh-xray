@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>wszhoho/dsh-file-attachment</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">拖拽/粘贴文件（支持多文件）进输入框：图片沿用原有草稿图片流程；文档读取内容存入项目根 .dsh-file-attachment 临时目录并插入 @绝对路径引用</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">拖入 / 粘贴 / 工具栏上传按钮（↑，可多选、移动端支持拍照）为输入框附加文件：图片走既有草稿图片流程（不落盘）；文档全文落盘到会话工作区 .dsh-file-attachment/ 并插入 @绝对路径引用</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/wszhoho/dsh-file-attachment" rel="nofollow ugc">wszhoho/dsh-file-attachment source on GitHub</a>
      · <a href="../registry.html#wszhoho__dsh-file-attachment">this plugin in the registry</a></p>
   <p>wszhoho/dsh-file-attachment is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:88</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>conversation</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:99</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>conversation</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

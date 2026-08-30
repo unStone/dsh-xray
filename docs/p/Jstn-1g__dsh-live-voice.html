@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Jstn-1g/dsh-live-voice</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH Live Voice preview: exact-session consent and one bounded manual Qwen audio turn.</p>
+  <p class="lede">DSH Live Voice preview: consent-bound voice add-on for DeepSeek Harness with exact-Session isolation and one bounded manual audio turn.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Jstn-1g/dsh-live-voice" rel="nofollow ugc">Jstn-1g/dsh-live-voice source on GitHub</a>
      · <a href="../registry.html#Jstn-1g__dsh-live-voice">this plugin in the registry</a></p>
   <p>Jstn-1g/dsh-live-voice is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/check-pack.mjs:1, scripts/check-pack.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/smoke-harness-fake-qwen.mjs:266, src/host/qwen-manual-turn.ts:132</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×8 in authored code, e.g. scripts/smoke-browser-bfcache.mjs:386, scripts/smoke-browser-bfcache.mjs:548</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_VOICE_SMOKE_ALPHA_AUTH</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. scripts/check-generated.mjs:1, scripts/check-generated.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/smoke-harness-fake-qwen.mjs:274, src/host/qwen-manual-turn.ts:132</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×8 in authored code, e.g. scripts/smoke-browser-bfcache.mjs:386, scripts/smoke-browser-bfcache.mjs:548</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_VOICE_SMOKE_ALPHA_AUTH</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>credentials</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/disposed</span> <span>webserver/index-inject</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_VOICE_SMOKE_ALPHA_AUTH</span> <span>DSH_VOICE_SMOKE_BROWSER_BFCACHE</span> <span>ComSpec</span> <span>DSH_VOICE_SMOKE_INSTALL_ONLINE</span> <span>DSH_HARNESS_ROOT</span> <span>npm_execpath</span> <span>DSH_VOICE_FAKE_QWEN_MARKER</span> <span>DSH_VOICE_FAKE_QWEN_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_VOICE_SMOKE_ALPHA_AUTH</span> <span>DSH_HARNESS_ROOT</span> <span>DSH_VOICE_SMOKE_BROWSER_BFCACHE</span> <span>WEBVIEW2_RUNTIME_VERSION</span> <span>DESKTOP_EXE_SHA256</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_RUN_ID</span> <span>ComSpec</span> <span>DSH_LIVE_VOICE_ALLOW_DIRTY_IPC_SMOKE</span> <span>DSH_LIVE_VOICE_DEPENDENCY_PROVENANCE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

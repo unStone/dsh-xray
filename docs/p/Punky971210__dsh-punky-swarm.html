@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Punky971210__dsh-punky-swarm">this plugin in the registry</a></p>
   <p>Punky971210/dsh-punky-swarm is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, network server in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×9 in build output only, e.g. packages/dsh-punky-swarm/lib/state/command-exec.js:27, packages/dsh-punky-swarm/lib/state/command-exec.js:27</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. packages/dsh-punky-swarm/lib/acps/server.js:213</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. packages/dsh-punky-swarm/lib/state/command-exec.js:27, packages/dsh-punky-swarm/lib/state/command-exec.js:27</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. packages/dsh-punky-swarm/lib/acps/server.js:212</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/post-execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>GATE_ENABLED</span> <span>DSH_GIT_BIN</span> <span>GATE_FORBIDDEN_RE</span> <span>GATE_REPO_ROOT</span> <span>GATE_TARGETS_MODE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GATE_ENABLED</span> <span>GATE_FORBIDDEN_RE</span> <span>GATE_REPO_ROOT</span> <span>GATE_TARGETS_MODE</span> <span>DSH_GIT_BIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

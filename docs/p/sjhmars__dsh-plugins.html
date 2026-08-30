@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sjhmars/dsh-plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sjhmars__dsh-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sjhmars/dsh-plugins — dsh plugin capability card">
-<meta property="og:description" content="sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sjhmars__dsh-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "sjhmars/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/sjhmars/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/sjhmars__dsh-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "sjhmars/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/sjhmars/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/sjhmars__dsh-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/sjhmars/dsh-plugins" rel="nofollow ugc">sjhmars/dsh-plugins source on GitHub</a>
      · <a href="../registry.html#sjhmars__dsh-plugins">this plugin in the registry</a></p>
-  <p>sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>sjhmars/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. plugins/editor-launcher/src/index.ts:11, plugins/editor-launcher/src/index.ts:357</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>invariants</span> <span>locale</span> <span>sessions</span> <span>settings</span> <span>slots</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span> <span>approval/request</span> <span>settings/document-updated</span></p>
-  
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. plugins/editor-launcher/src/index.ts:11, plugins/editor-launcher/src/index.ts:357</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. plugins/happy-bridge/src/bytes.ts:24, plugins/happy-bridge/src/bytes.ts:26</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>invariants</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>slots</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/status</span> <span>approval/request</span> <span>commands/change</span> <span>domain/changed</span> <span>llm/adapters-updated</span> <span>session/event</span> <span>settings/document-updated</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.cluster-fluster.com</span> <span>app.happy.engineering</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>PROGRAMFILES</span> <span>LOCALAPPDATA</span> <span>comspec</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

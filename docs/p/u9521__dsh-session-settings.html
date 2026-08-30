@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>u9521/dsh-session-settings — capability card (C3) · dsh-xray</title>
-<meta name="description" content="u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta name="description" content="u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/u9521__dsh-session-settings.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="u9521/dsh-session-settings — dsh plugin capability card">
-<meta property="og:description" content="u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/u9521__dsh-session-settings.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-session-settings", "identifier": "u9521/dsh-session-settings", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/u9521/dsh-session-settings", "url": "https://unstone.github.io/dsh-xray/p/u9521__dsh-session-settings.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-session-settings", "identifier": "u9521/dsh-session-settings", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/u9521/dsh-session-settings", "url": "https://unstone.github.io/dsh-xray/p/u9521__dsh-session-settings.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/u9521/dsh-session-settings" rel="nofollow ugc">u9521/dsh-session-settings source on GitHub</a>
      · <a href="../registry.html#u9521__dsh-session-settings">this plugin in the registry</a></p>
-  <p>u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  <p>u9521/dsh-session-settings is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/build.mjs:16, scripts/build.mjs:16</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>webServer, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. scripts/build.mjs:16, scripts/build.mjs:16</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>skills/change</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/request</span> <span>skills/change</span> <span>system-prompt/assemble</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
