@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>a792883583/dsh-message-gateway — capability card (C3) · dsh-xray</title>
-<meta name="description" content="a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server.">
+<meta name="description" content="a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/a792883583__dsh-message-gateway.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="a792883583/dsh-message-gateway — dsh plugin capability card">
-<meta property="og:description" content="a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/a792883583__dsh-message-gateway.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-message-gateway", "identifier": "a792883583/dsh-message-gateway", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/a792883583/dsh-message-gateway", "url": "https://unstone.github.io/dsh-xray/p/a792883583__dsh-message-gateway.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-message-gateway", "identifier": "a792883583/dsh-message-gateway", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/a792883583/dsh-message-gateway", "url": "https://unstone.github.io/dsh-xray/p/a792883583__dsh-message-gateway.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/a792883583/dsh-message-gateway" rel="nofollow ugc">a792883583/dsh-message-gateway source on GitHub</a>
      · <a href="../registry.html#a792883583__dsh-message-gateway">this plugin in the registry</a></p>
-  <p>a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server.</p>
+  <p>a792883583/dsh-message-gateway is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/index.ts:135, src/host/callback-bridges.ts:64</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/smoke-test.mjs:485, scripts/smoke-test.mjs:486</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/host/wecom-smartsheet.ts:16</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/index.ts:137, src/host/callback-bridges.ts:64</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×6 in development tooling the package does not ship, e.g. scripts/smoke-test.mjs:485, scripts/smoke-test.mjs:486</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>locale</span> <span>sessions</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.day.app</span> <span>qyapi.weixin.qq.com</span> <span>api.weixin.qq.com</span> <span>api.telegram.org</span> <span>oapi.dingtalk.com</span> <span>open.feishu.cn</span> <span>sctapi.ftqq.com</span> <span>graph.facebook.com</span> <span>discord.com</span> <span>api.bot.qq.com</span></p>

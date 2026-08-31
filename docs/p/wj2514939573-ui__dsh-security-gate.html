@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>wj2514939573-ui/dsh-security-gate — capability card (C2) · dsh-xray</title>
-<meta name="description" content="wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, reads credential-class env vars, ships no manifest.">
+<meta name="description" content="wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship, ships no">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/wj2514939573-ui__dsh-security-gate.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wj2514939573-ui/dsh-security-gate — dsh plugin capability card">
-<meta property="og:description" content="wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, reads credential-class env vars, ships no manifest.">
+<meta property="og:description" content="wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship, ships no">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/wj2514939573-ui__dsh-security-gate.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-security-gate", "identifier": "wj2514939573-ui/dsh-security-gate", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, reads credential-class env vars, ships no manifest.", "codeRepository": "https://github.com/wj2514939573-ui/dsh-security-gate", "url": "https://unstone.github.io/dsh-xray/p/wj2514939573-ui__dsh-security-gate.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-security-gate", "identifier": "wj2514939573-ui/dsh-security-gate", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship, ships no manifest.", "codeRepository": "https://github.com/wj2514939573-ui/dsh-security-gate", "url": "https://unstone.github.io/dsh-xray/p/wj2514939573-ui__dsh-security-gate.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/wj2514939573-ui/dsh-security-gate" rel="nofollow ugc">wj2514939573-ui/dsh-security-gate source on GitHub</a>
      · <a href="../registry.html#wj2514939573-ui__dsh-security-gate">this plugin in the registry</a></p>
-  <p>wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, reads credential-class env vars, ships no manifest.</p>
+  <p>wj2514939573-ui/dsh-security-gate is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship, ships no manifest.</p>
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. plugin/host.js:24, plugin/host.js:24</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/extract-source.mjs:25, scripts/extract-source.mjs:26</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 20 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. plugin/host.js:24, plugin/host.js:24</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/extract-source.mjs:25, scripts/extract-source.mjs:26</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN, GITHUB_TOKEN</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 20 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>sandboxPolicy</span> <span>timer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/change</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GH_TOKEN</span></p>
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

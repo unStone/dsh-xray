@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hajimilvdou/dsh-storecloud — capability card (C3) · dsh-xray</title>
-<meta name="description" content="hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, eval in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/hajimilvdou__dsh-storecloud.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hajimilvdou/dsh-storecloud — dsh plugin capability card">
-<meta property="og:description" content="hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, eval in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/hajimilvdou__dsh-storecloud.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-storecloud", "identifier": "hajimilvdou/dsh-storecloud", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/hajimilvdou/dsh-storecloud", "url": "https://unstone.github.io/dsh-xray/p/hajimilvdou__dsh-storecloud.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-storecloud", "identifier": "hajimilvdou/dsh-storecloud", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, eval in build output only.", "codeRepository": "https://github.com/hajimilvdou/dsh-storecloud", "url": "https://unstone.github.io/dsh-xray/p/hajimilvdou__dsh-storecloud.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/hajimilvdou/dsh-storecloud" rel="nofollow ugc">hajimilvdou/dsh-storecloud source on GitHub</a>
      · <a href="../registry.html#hajimilvdou__dsh-storecloud">this plugin in the registry</a></p>
-  <p>hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
+  <p>hajimilvdou/dsh-storecloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, eval in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/build.mjs:9, scripts/build.mjs:9</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/verify-client.mjs:34</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. preview/preview.js:8, preview/preview.js:8</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. http-bridge-test.mjs:32, http-bridge-test.mjs:56</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:277, lib/index.js:285</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/build.mjs:9, scripts/build.mjs:9</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×6 in build output only, e.g. lib/index.js:104, lib/index.js:152</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/verify-client.mjs:34</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. preview/preview.js:8, preview/preview.js:8</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. http-bridge-test.mjs:32, http-bridge-test.mjs:56</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>shell</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>blog.1qwq1.top</span> <span>reactjs.org</span> <span>xxx.com</span></p>

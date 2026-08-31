@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>gehennawu/dsh-service</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH Web 一站式运维面板：安全重启与升级、健康诊断、模型用量与额度查询、会话管理、备份与权限维护、任务通知、技能与子代理模型路由。｜All-in-one operations panel for DSH Web: safe restart &amp; upgrade, health diagnostics, model usage &amp; quota lookup, session management</p>
+  <p class="lede">DSH Web 一站式运维面板：安全重启、健康诊断、模型用量与额度查询、会话管理、备份与权限维护、任务通知、技能与子代理模型路由。｜All-in-one operations panel for DSH Web: safe restart , health diagnostics, model usage &amp; quota lookup, session management, backup &amp; p</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/gehennawu/dsh-service" rel="nofollow ugc">gehennawu/dsh-service source on GitHub</a>
      · <a href="../registry.html#gehennawu__dsh-service">this plugin in the registry</a></p>
   <p>gehennawu/dsh-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. index.js:2257</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. index.js:1328</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. index.js:393, index.js:1864</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. index.js:806, quota-adapters.js:425</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>timer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/request</span> <span>connection/reset</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>open.bigmodel.cn</span> <span>platform.xiaomimimo.com</span> <span>cloudcode-pa.googleapis.com</span> <span>www.npmjs.com</span> <span>www.npmmirror.com</span> <span>opencode.ai</span> <span>api.z.ai</span> <span>openrouter.ai</span> <span>api.moonshot.cn</span> <span>api.siliconflow.cn</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>DSH_AGENTS_HOME</span> <span>DSH_BUNDLED_SKILL_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>platform.xiaomimimo.com</span> <span>platform.stepfun.com</span> <span>www.npmjs.com</span> <span>www.npmmirror.com</span> <span>cloudcode-pa.googleapis.com</span> <span>open.bigmodel.cn</span> <span>chatgpt.com</span> <span>daily-cloudcode-pa.googleapis.com</span> <span>daily-cloudcode-pa.sandbox.googleapis.com</span> <span>opencode.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>SystemRoot</span> <span>DSH_AGENTS_HOME</span> <span>DSH_BUNDLED_SKILL_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

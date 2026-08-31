@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FSMargoo/dsh-at-file — capability card (C3) · dsh-xray</title>
-<meta name="description" content="FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
+<title>FSMargoo/dsh-at-file — capability card (C2) · dsh-xray</title>
+<meta name="description" content="FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/FSMargoo__dsh-at-file.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FSMargoo/dsh-at-file — dsh plugin capability card">
-<meta property="og:description" content="FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
+<meta property="og:description" content="FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/FSMargoo__dsh-at-file.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-at-file", "identifier": "FSMargoo/dsh-at-file", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/FSMargoo/dsh-at-file", "url": "https://unstone.github.io/dsh-xray/p/FSMargoo__dsh-at-file.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-at-file", "identifier": "FSMargoo/dsh-at-file", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/FSMargoo/dsh-at-file", "url": "https://unstone.github.io/dsh-xray/p/FSMargoo__dsh-at-file.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,15 +43,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>FSMargoo/dsh-at-file</h1>
-    <span class="lvl-pill">C3</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Codex-style @file mentions for DeepSeek Harness: search workspace files in the composer and attach their path to prompts.</p>
   <p class="lede">★ 100+ ·
      <a href="https://github.com/FSMargoo/dsh-at-file" rel="nofollow ugc">FSMargoo/dsh-at-file source on GitHub</a>
      · <a href="../registry.html#FSMargoo__dsh-at-file">this plugin in the registry</a></p>
-  <p>FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.</p>
+  <p>FSMargoo/dsh-at-file is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. build.mjs:61, build.mjs:61</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:304</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×8 in build output only, e.g. lib/client.js:1284, lib/client.js:2642</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. build.mjs:61, build.mjs:61</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:304</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×8 in build output only, e.g. lib/client.js:1284, lib/client.js:2642</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>inputTriggers</span> <span>invariants</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>typert</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/pre-step</span> <span>connection/reset</span></p>
   

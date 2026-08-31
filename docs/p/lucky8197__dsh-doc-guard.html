@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>lucky8197/dsh-doc-guard — capability card (C3) · dsh-xray</title>
-<meta name="description" content="lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<title>lucky8197/dsh-doc-guard — capability card (C2) · dsh-xray</title>
+<meta name="description" content="lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/lucky8197__dsh-doc-guard.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lucky8197/dsh-doc-guard — dsh plugin capability card">
-<meta property="og:description" content="lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/lucky8197__dsh-doc-guard.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-doc-guard", "identifier": "lucky8197/dsh-doc-guard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/lucky8197/dsh-doc-guard", "url": "https://unstone.github.io/dsh-xray/p/lucky8197__dsh-doc-guard.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-doc-guard", "identifier": "lucky8197/dsh-doc-guard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/lucky8197/dsh-doc-guard", "url": "https://unstone.github.io/dsh-xray/p/lucky8197__dsh-doc-guard.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>lucky8197/dsh-doc-guard</h1>
-    <span class="lvl-pill">C3</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">DSH 插件：审计仓库的文档-代码一致性——版本号/更新记录表/结构树/模块清单/测试计数/文档间引用漂移检测，按严重度输出修复建议，全程只读。Document-Code Consistency Guard for DeepSeek Harness.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/lucky8197/dsh-doc-guard" rel="nofollow ugc">lucky8197/dsh-doc-guard source on GitHub</a>
      · <a href="../registry.html#lucky8197__dsh-doc-guard">this plugin in the registry</a></p>
-  <p>lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>lucky8197/dsh-doc-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/build-win.mjs:6, scripts/build-win.mjs:6</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×6 in development tooling the package does not ship, e.g. scripts/build-win.mjs:6, scripts/build-win.mjs:6</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span></p>
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

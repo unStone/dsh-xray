@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Hoemr__dsh-better-overleaf">this plugin in the registry</a></p>
   <p>Hoemr/dsh-better-overleaf is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. src/login-cdp.ts:8, src/login-cdp.ts:8</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/login-cdp.ts:140</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/login-cdp.ts:226, src/login-cdp.ts:229</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. src/compile.ts:8, src/compile.ts:25</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/login-cdp.ts:140</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/login-cdp.ts:226, src/login-cdp.ts:229</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>www.overleaf.com</span> <span>git.overleaf.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>PROGRAMFILES</span> <span>LOCALAPPDATA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PROGRAMFILES</span> <span>LOCALAPPDATA</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

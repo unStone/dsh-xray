@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CharlotteN7/dsh-plugin-inspector — capability card (C2) · dsh-xray</title>
-<meta name="description" content="CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars, powerful capability in test/example code only.">
+<meta name="description" content="CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars in development tooling the package does not ship, powerful capability in t">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/CharlotteN7__dsh-plugin-inspector.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CharlotteN7/dsh-plugin-inspector — dsh plugin capability card">
-<meta property="og:description" content="CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars, powerful capability in test/example code only.">
+<meta property="og:description" content="CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars in development tooling the package does not ship, powerful capability in t">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/CharlotteN7__dsh-plugin-inspector.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-inspector", "identifier": "CharlotteN7/dsh-plugin-inspector", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars, powerful capability in test/example code only.", "codeRepository": "https://github.com/CharlotteN7/dsh-plugin-inspector", "url": "https://unstone.github.io/dsh-xray/p/CharlotteN7__dsh-plugin-inspector.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-inspector", "identifier": "CharlotteN7/dsh-plugin-inspector", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars in development tooling the package does not ship, powerful capability in test/example code only.", "codeRepository": "https://github.com/CharlotteN7/dsh-plugin-inspector", "url": "https://unstone.github.io/dsh-xray/p/CharlotteN7__dsh-plugin-inspector.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/CharlotteN7/dsh-plugin-inspector" rel="nofollow ugc">CharlotteN7/dsh-plugin-inspector source on GitHub</a>
      · <a href="../registry.html#CharlotteN7__dsh-plugin-inspector">this plugin in the registry</a></p>
-  <p>CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars, powerful capability in test/example code only.</p>
+  <p>CharlotteN7/dsh-plugin-inspector is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, mentions child_process without importing it, reads credential-class env vars in development tooling the package does not ship, powerful capability in test/example code only.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. src/cordis-yaml.ts:264, src/checks/tier-a.ts:285</td></tr><tr><td>mentions child_process without importing it</td><td><code>exec_ref</code></td><td>mentions child_process ×2 without importing it, e.g. src/knowledge.ts:284, src/checks/tier-b.ts:198</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in test/example code only: system-prompt/assemble</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: tests/fixtures/bad-tag/package.json, tests/fixtures/benign-control/package.json, tests/fixtures/credential-exfil/package.json</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. src/cordis-yaml.ts:264, src/checks/tier-a.ts:285</td></tr><tr><td>mentions child_process without importing it</td><td><code>exec_ref</code></td><td>mentions child_process ×2 without importing it, e.g. src/knowledge.ts:284, src/checks/tier-b.ts:198</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GITHUB_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: system-prompt/assemble</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: tests/fixtures/bad-tag/package.json, tests/fixtures/benign-control/package.json, tests/fixtures/credential-exfil/package.json</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>timer</span> <span>web</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span></p>
+  
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

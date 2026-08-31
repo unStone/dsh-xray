@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zp-home/dsh-recommend — capability card (C3) · dsh-xray</title>
-<meta name="description" content="zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zp-home__dsh-recommend.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zp-home/dsh-recommend — dsh plugin capability card">
-<meta property="og:description" content="zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zp-home__dsh-recommend.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-recommend", "identifier": "zp-home/dsh-recommend", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/zp-home/dsh-recommend", "url": "https://unstone.github.io/dsh-xray/p/zp-home__dsh-recommend.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-recommend", "identifier": "zp-home/dsh-recommend", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 in development tooling the package does not ship.", "codeRepository": "https://github.com/zp-home/dsh-recommend", "url": "https://unstone.github.io/dsh-xray/p/zp-home__dsh-recommend.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/zp-home/dsh-recommend" rel="nofollow ugc">zp-home/dsh-recommend source on GitHub</a>
      · <a href="../registry.html#zp-home__dsh-recommend">this plugin in the registry</a></p>
-  <p>zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
+  <p>zp-home/dsh-recommend is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. scripts/security-campaign.mjs:5, scripts/smoke.mjs:247</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×10 in authored code, e.g. scripts/smoke.mjs:362, scripts/smoke.mjs:369</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/scan.mjs:128</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, GITHUB_TOKEN, SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/host/web.ts:18, src/host/web.ts:481</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×10 in development tooling the package does not ship, e.g. scripts/smoke.mjs:362, scripts/smoke.mjs:369</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/scan.mjs:128</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: DEEPSEEK_API_KEY, GITHUB_TOKEN, SECRET</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.npmjs.org</span> <span>utteranc.es</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>DEEPSEEK_API_KEY</span> <span>GITHUB_OUTPUT</span> <span>PORT</span> <span>SECRET</span> <span>GITHUB_SHA</span> <span>GITHUB_REPOSITORY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>utteranc.es</span></p>
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

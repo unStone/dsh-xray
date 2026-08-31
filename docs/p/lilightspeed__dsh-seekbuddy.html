@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#lilightspeed__dsh-seekbuddy">this plugin in the registry</a></p>
   <p>lilightspeed/dsh-seekbuddy is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, ships no manifest.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/package.mjs:30, scripts/package.mjs:30</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. assets/pet/live2d/core/live2dcubismcore.js:828, assets/pet/live2d/core/live2dcubismcore.js:828</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/main/mcp/bridge.ts:26</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 0 services, 2 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/main/index.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. assets/pet/live2d/core/live2dcubismcore.js:828, assets/pet/live2d/core/live2dcubismcore.js:828</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/main/mcp/bridge.ts:26</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 0 services, 2 tool regs, no manifest</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>ELECTRON_BUILDER_CACHE</span></p>
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>akslcw/dsh-negative-ledger — capability card (C3) · dsh-xray</title>
-<meta name="description" content="akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.">
+<meta name="description" content="akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/akslcw__dsh-negative-ledger.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="akslcw/dsh-negative-ledger — dsh plugin capability card">
-<meta property="og:description" content="akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/akslcw__dsh-negative-ledger.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-negative-ledger", "identifier": "akslcw/dsh-negative-ledger", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/akslcw/dsh-negative-ledger", "url": "https://unstone.github.io/dsh-xray/p/akslcw__dsh-negative-ledger.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-negative-ledger", "identifier": "akslcw/dsh-negative-ledger", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/akslcw/dsh-negative-ledger", "url": "https://unstone.github.io/dsh-xray/p/akslcw__dsh-negative-ledger.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/akslcw/dsh-negative-ledger" rel="nofollow ugc">akslcw/dsh-negative-ledger source on GitHub</a>
      · <a href="../registry.html#akslcw__dsh-negative-ledger">this plugin in the registry</a></p>
-  <p>akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.</p>
+  <p>akslcw/dsh-negative-ledger is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. benchmark/run.ts:15, benchmark/run.ts:15</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. smoke/packed-consumer.mjs:8, smoke/packed-consumer.mjs:8</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: DEEPSEEK_API_KEY</td></tr></tbody></table>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>fs/observed</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_AGENTS_HOME</span> <span>DSH_CHECKOUT</span> <span>DEEPSEEK_API_KEY</span> <span>DSH_BIN</span> <span>NEGLEDGER_STDIO</span> <span>npm_execpath</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_AGENTS_HOME</span> <span>npm_execpath</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

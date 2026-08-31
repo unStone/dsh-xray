@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BillyChen123/qdd — capability card (C3) · dsh-xray</title>
-<meta name="description" content="BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta name="description" content="BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/BillyChen123__qdd.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BillyChen123/qdd — dsh plugin capability card">
-<meta property="og:description" content="BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta property="og:description" content="BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/BillyChen123__qdd.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "qdd", "identifier": "BillyChen123/qdd", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.", "codeRepository": "https://github.com/BillyChen123/qdd", "url": "https://unstone.github.io/dsh-xray/p/BillyChen123__qdd.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "qdd", "identifier": "BillyChen123/qdd", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/BillyChen123/qdd", "url": "https://unstone.github.io/dsh-xray/p/BillyChen123__qdd.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/BillyChen123/qdd" rel="nofollow ugc">BillyChen123/qdd source on GitHub</a>
      · <a href="../registry.html#BillyChen123__qdd">this plugin in the registry</a></p>
-  <p>BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.</p>
+  <p>BillyChen123/qdd is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×29 in authored code, e.g. scripts/beta-baseline-check.mjs:1, scripts/beta-baseline-check.mjs:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scripts/dsh-plugin-lifecycle-smoke.mjs:36, scripts/dsh-plugin-lifecycle-smoke.mjs:39</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>sandboxPolicy</span> <span>shell</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. src/runtime/agent-runner.ts:8, src/runtime/agent-runner.ts:390</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/dsh-plugin-lifecycle-smoke.mjs:36, scripts/dsh-plugin-lifecycle-smoke.mjs:39</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>sandboxPolicy</span> <span>shell</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>eutils.ncbi.nlm.nih.gov</span> <span>api.deepseek.com</span> <span>api.crossref.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ANTHROPIC_BASE_URL</span> <span>ANTHROPIC_AUTH_TOKEN</span> <span>ANTHROPIC_API_KEY</span> <span>CODEX_HOME</span> <span>QDD_DSH_SKIP_BUNDLE_INSTALL</span> <span>QDD_DSH_PROFILE</span> <span>QDD_AUTO_LANG</span> <span>QDD_LANG</span> <span>NO_COLOR</span></p>

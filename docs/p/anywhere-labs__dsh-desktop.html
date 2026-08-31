@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。</p>
-  <p class="lede">★ 21k+ ·
+  <p class="lede">★ 22k+ ·
      <a href="https://github.com/anywhere-labs/dsh-desktop" rel="nofollow ugc">anywhere-labs/dsh-desktop source on GitHub</a>
      · <a href="../registry.html#anywhere-labs__dsh-desktop">this plugin in the registry</a></p>
   <p>anywhere-labs/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×56 in authored code, e.g. scripts/bilingual-docs.mjs:1, scripts/bilingual-docs.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. dsh-plugin-desktop/scripts/release-preflight.ts:56, dsh-plugin-desktop/src/lan-https-certificate.ts:305</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×23 in authored code, e.g. scripts/bilingual-docs.mjs:1, scripts/bilingual-docs.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. dsh-plugin-desktop/src/lan-https-certificate.ts:305, dsh-plugin-desktop/src/lan-https-certificate.ts:312</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>appExit</span> <span>connection</span> <span>desktopPnpmBootstrap</span> <span>desktopProfiles</span> <span>desktopRuntime</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>subprocess</span> <span>theme</span> <span>uiRenderer</span> <span>webRuntime</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>settings/updated</span> <span>theme/change</span> <span>webserver/index-inject</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>electronjs.org</span> <span>plugins.example.org</span> <span>dsh-marketplace.qilewl.net</span> <span>www.dshdesktop.cn</span> <span>api.dshfind.com</span> <span>deepseek1024.com</span> <span>dshfind.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TELEMETRY_DISABLED</span> <span>SystemRoot</span> <span>WINDIR</span> <span>NODE</span> <span>npm_node_execpath</span> <span>npm_config_runtime</span> <span>npm_config_target</span> <span>npm_config_disturl</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>electronjs.org</span> <span>dsh-marketplace.qilewl.net</span> <span>www.dshdesktop.cn</span> <span>api.dshfind.com</span> <span>deepseek1024.com</span> <span>dshfind.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TELEMETRY_DISABLED</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

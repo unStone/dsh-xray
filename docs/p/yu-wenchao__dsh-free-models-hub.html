@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yu-wenchao/dsh-free-models-hub — capability card (C3) · dsh-xray</title>
-<meta name="description" content="yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, starts a network server.">
+<meta name="description" content="yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/yu-wenchao__dsh-free-models-hub.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yu-wenchao/dsh-free-models-hub — dsh plugin capability card">
-<meta property="og:description" content="yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, starts a network server.">
+<meta property="og:description" content="yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/yu-wenchao__dsh-free-models-hub.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-free-models-hub", "identifier": "yu-wenchao/dsh-free-models-hub", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, starts a network server.", "codeRepository": "https://github.com/yu-wenchao/dsh-free-models-hub", "url": "https://unstone.github.io/dsh-xray/p/yu-wenchao__dsh-free-models-hub.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-free-models-hub", "identifier": "yu-wenchao/dsh-free-models-hub", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, starts a network server.", "codeRepository": "https://github.com/yu-wenchao/dsh-free-models-hub", "url": "https://unstone.github.io/dsh-xray/p/yu-wenchao__dsh-free-models-hub.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,12 +46,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">免费模型排行榜 · DeepSeek Harness 社区插件，在 DeepSeek Harness (DSH) Web UI 左侧边栏提供「免费模型榜」：分页浏览（每页 20 条、页码窗口、首页/末页）、 点击标题展开 API 调用地址 / 模型名称 / 【点击这里申请免费密钥key】按钮， 并支持一键配置到 设置 → 模型 → 自定义提供方 —— 用户只需自行粘贴免费 API Key</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/yu-wenchao/dsh-free-models-hub" rel="nofollow ugc">yu-wenchao/dsh-free-models-hub source on GitHub</a>
      · <a href="../registry.html#yu-wenchao__dsh-free-models-hub">this plugin in the registry</a></p>
-  <p>yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, starts a network server.</p>
+  <p>yu-wenchao/dsh-free-models-hub is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/build.mjs:68</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/index.js:276</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/build.mjs:68</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/index.js:276</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>settingsScope</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>blog.4wc.cn</span> <span>blog.gd7.cn</span> <span>web.wuyiyun.cn</span> <span>xxx.com</span> <span>your-domain.com</span> <span>free-api.gd7.cn</span> <span>api.github.com</span></p>

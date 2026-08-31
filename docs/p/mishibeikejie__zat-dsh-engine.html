@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mishibeikejie/zat-dsh-engine — capability card (C3) · dsh-xray</title>
-<meta name="description" content="mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval / new Function.">
+<meta name="description" content="mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/mishibeikejie__zat-dsh-engine.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mishibeikejie/zat-dsh-engine — dsh plugin capability card">
-<meta property="og:description" content="mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/mishibeikejie__zat-dsh-engine.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "zat-dsh-engine", "identifier": "mishibeikejie/zat-dsh-engine", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/mishibeikejie/zat-dsh-engine", "url": "https://unstone.github.io/dsh-xray/p/mishibeikejie__zat-dsh-engine.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "zat-dsh-engine", "identifier": "mishibeikejie/zat-dsh-engine", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/mishibeikejie/zat-dsh-engine", "url": "https://unstone.github.io/dsh-xray/p/mishibeikejie__zat-dsh-engine.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 50+ ·
      <a href="https://github.com/mishibeikejie/zat-dsh-engine" rel="nofollow ugc">mishibeikejie/zat-dsh-engine source on GitHub</a>
      · <a href="../registry.html#mishibeikejie__zat-dsh-engine">this plugin in the registry</a></p>
-  <p>mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval / new Function.</p>
+  <p>mishibeikejie/zat-dsh-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, uses eval in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×48 in authored code, e.g. scripts/audit-all.mjs:7, scripts/audit-all.mjs:7</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/selftest-find-health.mjs:112</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. src/index.ts:20, src/index.ts:177</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/selftest-find-health.mjs:112</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>subprocess</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>www.npmjs.com</span> <span>api.github.com</span> <span>gh-proxy.com</span> <span>ghfast.top</span> <span>x.com</span> <span>hyqibot.github.io</span> <span>skills.sh</span> <span>pypi.org</span> <span>opengraph.githubassets.com</span> <span>deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span> <span>TEMP</span> <span>DSH_PROFILE</span> <span>PNPM_MJS</span> <span>LOCALAPPDATA</span> <span>APPDATA</span> <span>ProgramFiles</span> <span>HTTPS_PROXY</span> <span>https_proxy</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>TEMP</span> <span>PNPM_MJS</span> <span>LOCALAPPDATA</span> <span>APPDATA</span> <span>ProgramFiles</span> <span>DSH_HOME</span> <span>USERPROFILE</span> <span>HTTPS_PROXY</span> <span>https_proxy</span> <span>HTTP_PROXY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>daetz-coder/DSH-Mobile — capability card (C3) · dsh-xray</title>
-<meta name="description" content="daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
+<meta name="description" content="daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, network server in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/daetz-coder__DSH-Mobile.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daetz-coder/DSH-Mobile — dsh plugin capability card">
-<meta property="og:description" content="daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, network server in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/daetz-coder__DSH-Mobile.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Mobile", "identifier": "daetz-coder/DSH-Mobile", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/daetz-coder/DSH-Mobile", "url": "https://unstone.github.io/dsh-xray/p/daetz-coder__DSH-Mobile.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Mobile", "identifier": "daetz-coder/DSH-Mobile", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, network server in build output only.", "codeRepository": "https://github.com/daetz-coder/DSH-Mobile", "url": "https://unstone.github.io/dsh-xray/p/daetz-coder__DSH-Mobile.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/daetz-coder/DSH-Mobile" rel="nofollow ugc">daetz-coder/DSH-Mobile source on GitHub</a>
      · <a href="../registry.html#daetz-coder__DSH-Mobile">this plugin in the registry</a></p>
-  <p>daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
+  <p>daetz-coder/DSH-Mobile is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, network server in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. plugins/dsh-web-mobile/scripts/cdp-probe.mjs:7, plugins/dsh-web-mobile/scripts/cdp-probe.mjs:612</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. plugins/dsh-web-mobile/scripts/cdp-probe.mjs:189, plugins/dsh-web-mobile/scripts/cdp-probe.mjs:191</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_POCKET_COOKIE</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×11 in build output only, e.g. plugins/dsh-pocket/lib/index.js:13, plugins/dsh-pocket/lib/index.js:169</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. plugins/dsh-web-mobile/scripts/cdp-probe.mjs:7, plugins/dsh-web-mobile/scripts/cdp-probe.mjs:612</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. plugins/dsh-pocket/lib/proxy.mjs:285</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. plugins/dsh-web-mobile/scripts/cdp-probe.mjs:189, plugins/dsh-web-mobile/scripts/cdp-probe.mjs:191</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_POCKET_COOKIE</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>sessionLogDownload</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>xxx.trycloudflare.com</span> <span>api.github.com</span> <span>ghproxy.net</span> <span>gh.ddlc.top</span> <span>gh-proxy.com</span> <span>mirrors.tuna.tsinghua.edu.cn</span></p>

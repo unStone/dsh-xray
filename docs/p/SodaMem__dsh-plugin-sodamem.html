@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SodaMem/dsh-plugin-sodamem — capability card (C3) · dsh-xray</title>
-<meta name="description" content="SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta name="description" content="SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/SodaMem__dsh-plugin-sodamem.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SodaMem/dsh-plugin-sodamem — dsh plugin capability card">
-<meta property="og:description" content="SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta property="og:description" content="SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/SodaMem__dsh-plugin-sodamem.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-sodamem", "identifier": "SodaMem/dsh-plugin-sodamem", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.", "codeRepository": "https://github.com/SodaMem/dsh-plugin-sodamem", "url": "https://unstone.github.io/dsh-xray/p/SodaMem__dsh-plugin-sodamem.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-sodamem", "identifier": "SodaMem/dsh-plugin-sodamem", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, starts a network server.", "codeRepository": "https://github.com/SodaMem/dsh-plugin-sodamem", "url": "https://unstone.github.io/dsh-xray/p/SodaMem__dsh-plugin-sodamem.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/SodaMem/dsh-plugin-sodamem" rel="nofollow ugc">SodaMem/dsh-plugin-sodamem source on GitHub</a>
      · <a href="../registry.html#SodaMem__dsh-plugin-sodamem">this plugin in the registry</a></p>
-  <p>SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.</p>
+  <p>SodaMem/dsh-plugin-sodamem is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/measure-cold-start.mjs:40, scripts/measure-cold-start.mjs:40</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. test-integration/servers.ts:17, test-integration/servers.ts:37</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SODAMEM_API_KEY, SODAMEM_TEST_KEY, SODAMEM_TOKEN_BUDGET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. scripts/measure-cold-start.mjs:40, scripts/measure-cold-start.mjs:40</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. test-integration/servers.ts:17, test-integration/servers.ts:37</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SODAMEM_TEST_KEY</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: SODAMEM_API_KEY, SODAMEM_TOKEN_BUDGET</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/inbox/claimed</span> <span>agent/turn-stopping</span> <span>system-prompt/assemble</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>SODAMEM_API_URL</span> <span>SODAMEM_API_KEY</span> <span>SODAMEM_USER_ID</span> <span>SODAMEM_QUERIES</span> <span>SODAMEM_DAEMON_CWD</span> <span>SODAMEM_DATA_ROOT</span> <span>SODAMEM_TOKEN_BUDGET</span> <span>SODAMEM_ITERATIONS</span> <span>SODAMEM_TEST_URL</span> <span>SODAMEM_TEST_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SODAMEM_TEST_URL</span> <span>SODAMEM_TEST_KEY</span> <span>SODAMEM_TEST_USER</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

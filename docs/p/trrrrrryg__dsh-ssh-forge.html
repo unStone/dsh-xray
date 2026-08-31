@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#trrrrrryg__dsh-ssh-forge">this plugin in the registry</a></p>
   <p>trrrrrryg/dsh-ssh-forge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, powerful capability in test/example code only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. scripts/verify-public-release.mjs:1, scripts/verify-remote-subprocess.ts:23</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. src/ssh/host-key.ts:48, src/ssh/host-key.ts:215</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in test/example code only: systemPrompt</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. src/ssh/host-key.ts:1, src/ssh/key-generator.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. src/ssh/host-key.ts:48, src/ssh/host-key.ts:215</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: systemPrompt</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>webServer</span> <span>workspaces</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>docs.cloud.google.com</span> <span>help.aliyun.com</span> <span>cloud.tencent.com</span> <span>support.huaweicloud.com</span> <span>docs.aws.amazon.com</span> <span>learn.microsoft.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

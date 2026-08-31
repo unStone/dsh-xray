@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#weshopai__weshop-skill-package">this plugin in the registry</a></p>
   <p>weshopai/weshop-skill-package is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/auto-update.mjs:2, scripts/auto-update.mjs:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WESHOP_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/auto-update.mjs:2, scripts/auto-update.mjs:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TENCENTCLOUD_SECRET_ID, TENCENTCLOUD_SECRET_KEY, WESHOP_API_KEY</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>www.weshop.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>WESHOP_SKILL_HOME</span> <span>WESHOP_API_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>WESHOP_SKILL_HOME</span> <span>WESHOP_API_KEY</span> <span>WESHOP_COS_BUCKET</span> <span>WESHOP_COS_REGION</span> <span>WESHOP_COS_PREFIX</span> <span>WESHOP_MEDIA_BASE_URL</span> <span>TENCENTCLOUD_SECRET_ID</span> <span>TENCENTCLOUD_SECRET_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

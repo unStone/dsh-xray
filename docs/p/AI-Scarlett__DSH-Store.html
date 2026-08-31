@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI-Scarlett/DSH-Store — capability card (C3) · dsh-xray</title>
-<meta name="description" content="AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
+<meta name="description" content="AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server in development tooling the package does not ship, reads credential-class env vars in development tooling t">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/AI-Scarlett__DSH-Store.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI-Scarlett/DSH-Store — dsh plugin capability card">
-<meta property="og:description" content="AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server in development tooling the package does not ship, reads credential-class env vars in development tooling t">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/AI-Scarlett__DSH-Store.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Store", "identifier": "AI-Scarlett/DSH-Store", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/AI-Scarlett/DSH-Store", "url": "https://unstone.github.io/dsh-xray/p/AI-Scarlett__DSH-Store.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Store", "identifier": "AI-Scarlett/DSH-Store", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/AI-Scarlett/DSH-Store", "url": "https://unstone.github.io/dsh-xray/p/AI-Scarlett__DSH-Store.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/AI-Scarlett/DSH-Store" rel="nofollow ugc">AI-Scarlett/DSH-Store source on GitHub</a>
      · <a href="../registry.html#AI-Scarlett__DSH-Store">this plugin in the registry</a></p>
-  <p>AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
+  <p>AI-Scarlett/DSH-Store is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/sync-catalog-source-metadata.mjs:3, src/dsh.mjs:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. scripts/serve-marketplace.mjs:43</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. src/dsh.mjs:1, src/guardian-daemon.mjs:1</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/serve-marketplace.mjs:43</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>dsh.store</span> <span>ai-scarlett.github.io</span> <span>schema.org</span> <span>dsh-store.cn</span> <span>www.sitemaps.org</span> <span>www.baidu.com</span> <span>beian.miit.gov.cn</span> <span>api.indexnow.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_SHA</span> <span>CATALOG_BASE_COMMIT</span> <span>SOURCE_DATE_EPOCH</span> <span>SITE_ORIGIN</span> <span>ALTERNATE_ORIGIN</span> <span>ICP_NUMBER</span> <span>BAIDU_SITE_VERIFICATION</span> <span>DSH_MARKETPLACE_PORT</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>ai-scarlett.github.io</span> <span>dsh.store</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

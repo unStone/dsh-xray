@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MicroMilo/upstream-radar — capability card (C3) · dsh-xray</title>
-<meta name="description" content="MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/MicroMilo__upstream-radar.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MicroMilo/upstream-radar — dsh plugin capability card">
-<meta property="og:description" content="MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/MicroMilo__upstream-radar.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "upstream-radar", "identifier": "MicroMilo/upstream-radar", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/MicroMilo/upstream-radar", "url": "https://unstone.github.io/dsh-xray/p/MicroMilo__upstream-radar.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "upstream-radar", "identifier": "MicroMilo/upstream-radar", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/MicroMilo/upstream-radar", "url": "https://unstone.github.io/dsh-xray/p/MicroMilo__upstream-radar.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/MicroMilo/upstream-radar" rel="nofollow ugc">MicroMilo/upstream-radar source on GitHub</a>
      · <a href="../registry.html#MicroMilo__upstream-radar">this plugin in the registry</a></p>
-  <p>MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  <p>MicroMilo/upstream-radar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×61 in authored code, e.g. scripts/consumer-smoke.mjs:3, scripts/consumer-smoke.mjs:39</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. src/npm.ts:291, src/npm.ts:343</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. scripts/dsh-headless-showcase.mjs:133, scripts/dsh-headless-showcase.mjs:156</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN, ISSUE_LOCATOR_LLM_API_KEY, NPM_TOKEN, UPSTREAM_RADAR_FEISHU_SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. src/cli.ts:4, src/cli.ts:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. src/npm.ts:291, src/npm.ts:343</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. scripts/dsh-headless-showcase.mjs:133, scripts/dsh-headless-showcase.mjs:156</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN, UPSTREAM_RADAR_FEISHU_SECRET</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: ISSUE_LOCATOR_LLM_API_KEY, NPM_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>open.feishu.cn</span> <span>slsa.dev</span> <span>www.cisa.gov</span> <span>api.osv.dev</span> <span>api.first.org</span> <span>www.first.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GITHUB_OUTPUT</span> <span>GITHUB_STEP_SUMMARY</span> <span>ISSUE_LOCATOR_LLM_API_KEY</span> <span>ISSUE_LOCATOR_LLM_BASE_URL</span> <span>ISSUE_LOCATOR_LLM_MODEL</span> <span>UPSTREAM_RADAR_ISOLATED_RUNNER</span> <span>UPSTREAM_RADAR_FEISHU_SECRET</span> <span>DSH_HOME</span> <span>UPSTREAM_RADAR_CONSUMER_VERSION</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>slsa.dev</span> <span>www.cisa.gov</span> <span>api.osv.dev</span> <span>api.first.org</span> <span>www.first.org</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>UPSTREAM_RADAR_ISOLATED_RUNNER</span> <span>UPSTREAM_RADAR_FEISHU_SECRET</span> <span>DSH_HOME</span> <span>UPSTREAM_RADAR_WEBHOOK_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

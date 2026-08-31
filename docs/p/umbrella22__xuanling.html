@@ -52,7 +52,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>umbrella22/xuanling is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. npm/scripts/benchmark-mcp-catalog.mjs:1, npm/scripts/benchmark-mcp-catalog.mjs:40</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>NPM_BOOTSTRAP_TOKEN</td></tr></tbody></table>
-  
+  <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>NPM_BOOTSTRAP_TOKEN</span> <span>XUANLING_VERSION</span></p>

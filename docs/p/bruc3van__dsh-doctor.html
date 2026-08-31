@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>bruc3van/dsh-doctor — capability card (C0) · dsh-xray</title>
-<meta name="description" content="bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 8 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.">
+<title>bruc3van/dsh-doctor — capability card (C2) · dsh-xray</title>
+<meta name="description" content="bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/bruc3van__dsh-doctor.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bruc3van/dsh-doctor — dsh plugin capability card">
-<meta property="og:description" content="bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 8 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.">
+<meta property="og:description" content="bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/bruc3van__dsh-doctor.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#16a34a; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-doctor", "identifier": "bruc3van/dsh-doctor", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 8 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.", "codeRepository": "https://github.com/bruc3van/dsh-doctor", "url": "https://unstone.github.io/dsh-xray/p/bruc3van__dsh-doctor.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-doctor", "identifier": "bruc3van/dsh-doctor", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/bruc3van/dsh-doctor", "url": "https://unstone.github.io/dsh-xray/p/bruc3van__dsh-doctor.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,15 +43,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>bruc3van/dsh-doctor</h1>
-    <span class="lvl-pill">C0</span>
+    <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH Doctor 面向 DSH 与插件使用者，帮助快速找出导致 DSH 启动异常或升级后不可用的插件，集中说明每个插件的问题、影响与处理方式，并检查常见的 profile 配置和版本漂移。诊断默认完全只读；只有显式使用 --fix、核对并确认精确的修复计划后才会执行，文件修改会先创建备份。</p>
+  <p class="lede">帮助 Agent 诊断和升级 DeepSeek Harness 插件，从 DSH 0.1.1 适配到 0.1.2：识别 API 变化、修改代码、处理语义迁移，并为重新发布做好准备。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/bruc3van/dsh-doctor" rel="nofollow ugc">bruc3van/dsh-doctor source on GitHub</a>
      · <a href="../registry.html#bruc3van__dsh-doctor">this plugin in the registry</a></p>
-  <p>bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 8 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.</p>
-  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  
+  <p>bruc3van/dsh-doctor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/migration-catalog.mjs:4, src/migration-catalog.mjs:4</td></tr></tbody></table>
   
   
   
