@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>lgquan/dsh-voco — capability card (C3) · dsh-xray</title>
-<meta name="description" content="lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.">
+<meta name="description" content="lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/lgquan__dsh-voco.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lgquan/dsh-voco — dsh plugin capability card">
-<meta property="og:description" content="lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.">
+<meta property="og:description" content="lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/lgquan__dsh-voco.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-voco", "identifier": "lgquan/dsh-voco", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.", "codeRepository": "https://github.com/lgquan/dsh-voco", "url": "https://unstone.github.io/dsh-xray/p/lgquan__dsh-voco.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-voco", "identifier": "lgquan/dsh-voco", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.", "codeRepository": "https://github.com/lgquan/dsh-voco", "url": "https://unstone.github.io/dsh-xray/p/lgquan__dsh-voco.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,13 +46,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Persistent voice conversations for DSH with cloud speech recognition, Edge TTS, and background Agent delegation.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/lgquan/dsh-voco" rel="nofollow ugc">lgquan/dsh-voco source on GitHub</a>
      · <a href="../registry.html#lgquan__dsh-voco">this plugin in the registry</a></p>
-  <p>lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.</p>
+  <p>lgquan/dsh-voco is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SILICONFLOW_API_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>conversation</span> <span>conversationEvents</span> <span>invariants</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>voice</span> <span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SILICONFLOW_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>connection</span> <span>conversation</span> <span>conversationEvents</span> <span>invariants</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>voice</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/claimed</span> <span>session/event</span> <span>voice/session-closed</span> <span>voice/session-detached</span> <span>voice/session-event</span> <span>voice/session-opened</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.siliconflow.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>SILICONFLOW_API_KEY</span></p>

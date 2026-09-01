@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LilycleHeart/dsh-liuli-ui-enhance — capability card (C2) · dsh-xray</title>
-<meta name="description" content="LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta name="description" content="LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/LilycleHeart__dsh-liuli-ui-enhance.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LilycleHeart/dsh-liuli-ui-enhance — dsh plugin capability card">
-<meta property="og:description" content="LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta property="og:description" content="LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/LilycleHeart__dsh-liuli-ui-enhance.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-liuli-ui-enhance", "identifier": "LilycleHeart/dsh-liuli-ui-enhance", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/LilycleHeart/dsh-liuli-ui-enhance", "url": "https://unstone.github.io/dsh-xray/p/LilycleHeart__dsh-liuli-ui-enhance.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-liuli-ui-enhance", "identifier": "LilycleHeart/dsh-liuli-ui-enhance", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/LilycleHeart/dsh-liuli-ui-enhance", "url": "https://unstone.github.io/dsh-xray/p/LilycleHeart__dsh-liuli-ui-enhance.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/LilycleHeart/dsh-liuli-ui-enhance" rel="nofollow ugc">LilycleHeart/dsh-liuli-ui-enhance source on GitHub</a>
      · <a href="../registry.html#LilycleHeart__dsh-liuli-ui-enhance">this plugin in the registry</a></p>
-  <p>LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p>LilycleHeart/dsh-liuli-ui-enhance is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. scripts/install-desktop.mjs:24, scripts/install-desktop.mjs:24</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. scripts/install-desktop.mjs:24, scripts/install-desktop.mjs:24</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/browser-ops.ts:230</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/browser-client.mjs:350</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>conversation</span> <span>conversationEvents</span> <span>credentials</span> <span>inputTriggers</span> <span>invariants</span> <span>layout</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>theme</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span> <span>theme/change</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>opencode.ai</span> <span>git-scm.com</span> <span>fonts.googleapis.com</span> <span>cdn-font.hyperos.mi.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>LIULI_BROWSER_BASE</span> <span>DSH_PROFILE_DIR</span> <span>DSH_DESKTOP_DIR</span> <span>LIULI_THEME_DATA_DIR</span> <span>ProgramFiles</span> <span>SystemRoot</span> <span>ComSpec</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>LIULI_INSPECT_PORT</span> <span>LIULI_BROWSER_BASE</span> <span>LIULI_BROWSER_VIA</span> <span>LIULI_DSH_SESSION_ID</span> <span>DSH_PROFILE_DIR</span> <span>DSH_DESKTOP_DIR</span> <span>LIULI_THEME_DATA_DIR</span> <span>ProgramFiles</span> <span>SystemRoot</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>vINyLogY/dsh-bluebubbles — capability card (C3) · dsh-xray</title>
-<meta name="description" content="vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/vINyLogY__dsh-bluebubbles.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vINyLogY/dsh-bluebubbles — dsh plugin capability card">
-<meta property="og:description" content="vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/vINyLogY__dsh-bluebubbles.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bluebubbles", "identifier": "vINyLogY/dsh-bluebubbles", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/vINyLogY/dsh-bluebubbles", "url": "https://unstone.github.io/dsh-xray/p/vINyLogY__dsh-bluebubbles.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bluebubbles", "identifier": "vINyLogY/dsh-bluebubbles", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.", "codeRepository": "https://github.com/vINyLogY/dsh-bluebubbles", "url": "https://unstone.github.io/dsh-xray/p/vINyLogY__dsh-bluebubbles.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/vINyLogY/dsh-bluebubbles" rel="nofollow ugc">vINyLogY/dsh-bluebubbles source on GitHub</a>
      · <a href="../registry.html#vINyLogY__dsh-bluebubbles">this plugin in the registry</a></p>
-  <p>vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BLUEBUBBLES_PASSWORD</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BLUEBUBBLES_PASSWORD</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>fs</span> <span>shell</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>BLUEBUBBLES_BINDINGS</span> <span>BLUEBUBBLES_CONTACTS</span> <span>CRON_JOBS</span> <span>HEARTBEAT_TARGETS</span> <span>HEARTBEAT_INTERVAL</span> <span>BLUEBUBBLES_BASE_URL</span> <span>BLUEBUBBLES_PASSWORD</span> <span>BLUEBUBBLES_RELAY_STATE</span> <span>BLUEBUBBLES_DEBUG</span></p>
   <h2>How to read this</h2>

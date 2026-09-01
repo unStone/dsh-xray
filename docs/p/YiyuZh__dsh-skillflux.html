@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YiyuZh/dsh-skillflux — capability card (C3) · dsh-xray</title>
-<meta name="description" content="YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.">
+<meta name="description" content="YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/YiyuZh__dsh-skillflux.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YiyuZh/dsh-skillflux — dsh plugin capability card">
-<meta property="og:description" content="YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/YiyuZh__dsh-skillflux.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-skillflux", "identifier": "YiyuZh/dsh-skillflux", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/YiyuZh/dsh-skillflux", "url": "https://unstone.github.io/dsh-xray/p/YiyuZh__dsh-skillflux.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-skillflux", "identifier": "YiyuZh/dsh-skillflux", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/YiyuZh/dsh-skillflux", "url": "https://unstone.github.io/dsh-xray/p/YiyuZh__dsh-skillflux.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/YiyuZh/dsh-skillflux" rel="nofollow ugc">YiyuZh/dsh-skillflux source on GitHub</a>
      · <a href="../registry.html#YiyuZh__dsh-skillflux">this plugin in the registry</a></p>
-  <p>YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars.</p>
+  <p>YiyuZh/dsh-skillflux is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/cache.ts:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/cache.ts:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/remote-source.ts:120</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>skills</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>session/disposed</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>codeload.github.com</span> <span>skills.sh</span> <span>api.openai.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>SKILLFLUX_REQUIRE_GITHUB</span> <span>SKILLFLUX_DISCOVERY_QUERY</span> <span>SKILLFLUX_TRUSTED_OWNERS</span> <span>SKILLFLUX_EMBEDDING_ENDPOINT</span> <span>SKILLFLUX_EMBEDDING_MODEL</span> <span>SKILLFLUX_EMBEDDING_PROVIDER</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>SKILLFLUX_REQUIRE_GITHUB</span> <span>SKILLFLUX_DISCOVERY_QUERY</span> <span>SKILLFLUX_TRUSTED_OWNERS</span> <span>SKILLFLUX_BLOCKED_OWNERS</span> <span>SKILLFLUX_TRUST_POLICY</span> <span>SKILLFLUX_EMBEDDING_ENDPOINT</span> <span>SKILLFLUX_EMBEDDING_MODEL</span> <span>SKILLFLUX_EMBEDDING_PROVIDER</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

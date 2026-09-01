@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#gavenma__dsh-autoresearch-preset">this plugin in the registry</a></p>
   <p>gavenma/dsh-autoresearch-preset is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. tools/linear-73dba5793f85.mjs:752, tools/linear-73dba5793f85.mjs:853</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. tools/vendor/pdfjs-dist/legacy/build/pdf.mjs:5412</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. tools/vendor/pdfjs-dist/legacy/build/pdf.mjs:5704, tools/vendor/pdfjs-dist/legacy/build/pdf.mjs:10366</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LINEAR_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. src/linear.mjs:752, src/linear.mjs:853</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. tools/vendor/pdfjs-dist/legacy/build/pdf.mjs:5412</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. tools/vendor/pdfjs-dist/legacy/build/pdf.mjs:5704, tools/vendor/pdfjs-dist/legacy/build/pdf.mjs:10366</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LINEAR_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>web</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.linear.app</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LINEAR_APPROVAL</span> <span>LINEAR_API_KEY</span> <span>LINEAR_ENDPOINT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_LINEAR_APPROVAL</span> <span>LINEAR_API_KEY</span> <span>LINEAR_ENDPOINT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
