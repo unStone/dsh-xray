@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NOirBRight/dsh-usage-monitor — capability card (C2) · dsh-xray</title>
-<meta name="description" content="NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
+<meta name="description" content="NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/NOirBRight__dsh-usage-monitor.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NOirBRight/dsh-usage-monitor — dsh plugin capability card">
-<meta property="og:description" content="NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
+<meta property="og:description" content="NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/NOirBRight__dsh-usage-monitor.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-usage-monitor", "identifier": "NOirBRight/dsh-usage-monitor", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/NOirBRight/dsh-usage-monitor", "url": "https://unstone.github.io/dsh-xray/p/NOirBRight__dsh-usage-monitor.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-usage-monitor", "identifier": "NOirBRight/dsh-usage-monitor", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/NOirBRight/dsh-usage-monitor", "url": "https://unstone.github.io/dsh-xray/p/NOirBRight__dsh-usage-monitor.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/NOirBRight/dsh-usage-monitor" rel="nofollow ugc">NOirBRight/dsh-usage-monitor source on GitHub</a>
      · <a href="../registry.html#NOirBRight__dsh-usage-monitor">this plugin in the registry</a></p>
-  <p>NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
+  <p>NOirBRight/dsh-usage-monitor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/check-pack.mjs:1, scripts/check-pack.mjs:1</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. scripts/lib/archive.mjs:5, scripts/lib/archive.mjs:5</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×9 in development tooling the package does not ship, e.g. scripts/check-build-parity.mjs:12, scripts/check-build-parity.mjs:12</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>slots</span> <span>workspaceRegistry</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>COREPACK_HOME</span> <span>PARITY_CHECK_HEAD</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

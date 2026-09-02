@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TY-ang/dsh-worktree-flow — capability card (C2) · dsh-xray</title>
-<meta name="description" content="TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.">
+<meta name="description" content="TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/TY-ang__dsh-worktree-flow.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TY-ang/dsh-worktree-flow — dsh plugin capability card">
-<meta property="og:description" content="TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.">
+<meta property="og:description" content="TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/TY-ang__dsh-worktree-flow.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-worktree-flow", "identifier": "TY-ang/dsh-worktree-flow", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.", "codeRepository": "https://github.com/TY-ang/dsh-worktree-flow", "url": "https://unstone.github.io/dsh-xray/p/TY-ang__dsh-worktree-flow.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-worktree-flow", "identifier": "TY-ang/dsh-worktree-flow", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/TY-ang/dsh-worktree-flow", "url": "https://unstone.github.io/dsh-xray/p/TY-ang__dsh-worktree-flow.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/TY-ang/dsh-worktree-flow" rel="nofollow ugc">TY-ang/dsh-worktree-flow source on GitHub</a>
      · <a href="../registry.html#TY-ang__dsh-worktree-flow">this plugin in the registry</a></p>
-  <p>TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.</p>
+  <p>TY-ang/dsh-worktree-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/workspace.js:49, lib/workspace.js:70</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/workspace.js:49, lib/workspace.js:70</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/workspace.js:102</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>subprocess</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>dispose</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>SystemRoot</span> <span>windir</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>windir</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

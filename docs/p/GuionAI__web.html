@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/test-release-invariants.mjs:3, scripts/test-release-invariants.mjs:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, CONTEXT7_API_KEY, EXA_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>remote</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>tools</span> <span>web</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>context7.com</span> <span>api.exa.ai</span> <span>api.search.brave.com</span> <span>sourcegraph.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>EXA_API_KEY</span> <span>BRAVE_API_KEY</span> <span>CONTEXT7_API_KEY</span> <span>LOCALAPPDATA</span> <span>XDG_CACHE_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>context7.com</span> <span>api.exa.ai</span> <span>api.search.brave.com</span> <span>codex-bridge.localhost</span> <span>sourcegraph.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>EXA_API_KEY</span> <span>BRAVE_API_KEY</span> <span>CONTEXT7_API_KEY</span> <span>WEB_SEARCH_PROVIDER</span> <span>LOCALAPPDATA</span> <span>XDG_CACHE_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

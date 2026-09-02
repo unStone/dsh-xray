@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>fxylabs/superself — capability card (C3) · dsh-xray</title>
-<meta name="description" content="fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta name="description" content="fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/fxylabs__superself.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fxylabs/superself — dsh plugin capability card">
-<meta property="og:description" content="fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta property="og:description" content="fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/fxylabs__superself.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "superself", "identifier": "fxylabs/superself", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/fxylabs/superself", "url": "https://unstone.github.io/dsh-xray/p/fxylabs__superself.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "superself", "identifier": "fxylabs/superself", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/fxylabs/superself", "url": "https://unstone.github.io/dsh-xray/p/fxylabs__superself.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/fxylabs/superself" rel="nofollow ugc">fxylabs/superself source on GitHub</a>
      · <a href="../registry.html#fxylabs__superself">this plugin in the registry</a></p>
-  <p>fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
+  <p>fxylabs/superself is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. apps/cli/src/credentials.ts:18, apps/cli/src/credentials.ts:18</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. apps/cli/src/plugins.ts:356, apps/cli/src/plugins.ts:930</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>NODE_TLS_REJECT_UNAUTHORIZED</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×32 in authored code, e.g. scripts/pack-install-smoke.mjs:21, scripts/pack-install-smoke.mjs:21</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. apps/cli/src/plugins.ts:356, apps/cli/src/plugins.ts:930</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/pack-install-smoke.mjs:91, scripts/pack-install-smoke.mjs:92</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>NODE_TLS_REJECT_UNAUTHORIZED</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>app.superselfs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>XDG_CONFIG_HOME</span> <span>SUPERSELF_PROFILE</span> <span>SUPERSELF_DEV</span> <span>XDG_STATE_HOME</span> <span>SUPERSELF_API_BASE</span> <span>SUPERSELF_SESSION</span> <span>SUPERSELF_PLUGIN_DEV</span> <span>NO_COLOR</span> <span>SUPERSELF_GIT_TIMEOUT_MS</span> <span>GIT_SSH_COMMAND</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>XDG_CONFIG_HOME</span> <span>SUPERSELF_PROFILE</span> <span>SUPERSELF_API_BASE</span> <span>SUPERSELF_DEV</span> <span>XDG_STATE_HOME</span> <span>SUPERSELF_SESSION</span> <span>SUPERSELF_PLUGIN_DEV</span> <span>NO_COLOR</span> <span>GITHUB_REF_NAME</span> <span>SUPERSELF_GIT_TIMEOUT_MS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>iasiv5/skins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
+<meta name="description" content="iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/iasiv5__skins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iasiv5/skins — dsh plugin capability card">
-<meta property="og:description" content="iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
+<meta property="og:description" content="iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/iasiv5__skins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "skins", "identifier": "iasiv5/skins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/iasiv5/skins", "url": "https://unstone.github.io/dsh-xray/p/iasiv5__skins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "skins", "identifier": "iasiv5/skins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 in development tooling the package does not ship.", "codeRepository": "https://github.com/iasiv5/skins", "url": "https://unstone.github.io/dsh-xray/p/iasiv5__skins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>iasiv5/skins</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">换肤如换季，归真只一键 —— DeepSeek Harness Web 多皮肤切换器：明暗双态、中英双语、SHA 校验自动更新。Hot-swappable brand skins for DeepSeek Harness Web.</p>
+  <p class="lede">一键入戏，一键归真 —— 壁纸 · 标语 · 通透度，即改即存；明暗双态、中英双语，SHA 校验自动更新。Make every skin your own — hot-swappable, fully personalizable skins for DeepSeek Harness Web.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/iasiv5/skins" rel="nofollow ugc">iasiv5/skins source on GitHub</a>
      · <a href="../registry.html#iasiv5__skins">this plugin in the registry</a></p>
-  <p>iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
+  <p>iasiv5/skins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. src/host/restart.js:1, src/host/restart.js:5</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. smoke-test.cjs:77</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. src/host/restart.js:1, src/host/restart.js:5</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. smoke-test.cjs:87</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/rehearse-upgrade-1.0.0.mjs:62</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>slots</span> <span>theme</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

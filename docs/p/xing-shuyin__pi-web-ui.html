@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xing-shuyin/pi-web-ui — capability card (C2) · dsh-xray</title>
+<meta name="description" content="xing-shuyin/pi-web-ui is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/xing-shuyin__pi-web-ui.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xing-shuyin/pi-web-ui — dsh plugin capability card">
+<meta property="og:description" content="xing-shuyin/pi-web-ui is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/xing-shuyin__pi-web-ui.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "pi-web-ui", "identifier": "xing-shuyin/pi-web-ui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "xing-shuyin/pi-web-ui is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/xing-shuyin/pi-web-ui", "url": "https://unstone.github.io/dsh-xray/p/xing-shuyin__pi-web-ui.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>xing-shuyin/pi-web-ui</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">dsh / pi-agent web ui</p>
+  <p class="lede">★ 50+ ·
+     <a href="https://github.com/xing-shuyin/pi-web-ui" rel="nofollow ugc">xing-shuyin/pi-web-ui source on GitHub</a>
+     · <a href="../registry.html#xing-shuyin__pi-web-ui">this plugin in the registry</a></p>
+  <p>xing-shuyin/pi-web-ui is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×69 in authored code, e.g. file-upload-browser-test.mjs:12, file-upload-browser-test.mjs:25</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×7 in authored code, e.g. server/attachments.ts:402, server/files-service.ts:711</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. extensions/webui.ts:46, server/control-socket.ts:70</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>PI_WEB_TOKEN, SSH_AUTH_SOCK</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 7 services, 11 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>attachments</span> <span>goals</span> <span>llm</span> <span>skills</span> <span>tools</span> <span>userQuestions</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>codeload.github.com</span> <span>frippery.org</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PI_WEB_DATA_DIR</span> <span>PI_WEB_DSH_JSONRPC_ENTRY</span> <span>PI_WEB_CWD</span> <span>PORT</span> <span>PI_WEB_PORT</span> <span>PI_WEB_ENGINE</span> <span>PI_WEB_HOST</span> <span>PI_CODING_AGENT_DIR</span> <span>ProgramFiles</span> <span>PI_WEB_DSH_DEBUG</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>
