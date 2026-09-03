@@ -46,15 +46,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Telegram messenger bridge for DeepSeek Harness: sessions, steer, homes, and TTS voice notes</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/GooDAnDReaDY/dsh-messenger-gateway" rel="nofollow ugc">GooDAnDReaDY/dsh-messenger-gateway source on GitHub</a>
      · <a href="../registry.html#GooDAnDReaDY__dsh-messenger-gateway">this plugin in the registry</a></p>
   <p>GooDAnDReaDY/dsh-messenger-gateway is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/tts.js:3, lib/tts.js:54</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/integrations.js:36, lib/messenger-api.js:116</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/tts.js:3, lib/tts.js:72</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/integrations.js:36, lib/messenger-api.js:116</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>attachments</span> <span>loader</span> <span>locale</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.telegram.org</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>discord.com</span> <span>slack.com</span> <span>api.telegram.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#eogee__a4phone">this plugin in the registry</a></p>
   <p>eogee/a4phone is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. src/daemon.mjs:5, src/daemon.mjs:39</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 0 tool regs, no manifest</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. src/daemon.mjs:5, src/daemon.mjs:39</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>sessionPersistence</span> <span>tools</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>tools/execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>ntfy.sh</span> <span>registry.npmmirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>WINDIR</span> <span>A4P_RESUME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>WINDIR</span> <span>A4P_RESUME</span> <span>ZCODE_WINDOWS_APP_INSTALL_DIR</span> <span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

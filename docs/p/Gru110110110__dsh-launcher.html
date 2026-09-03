@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gru110110110/dsh-launcher — capability card (C2) · dsh-xray</title>
+<meta name="description" content="Gru110110110/dsh-launcher is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Gru110110110__dsh-launcher.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gru110110110/dsh-launcher — dsh plugin capability card">
+<meta property="og:description" content="Gru110110110/dsh-launcher is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Gru110110110__dsh-launcher.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-launcher", "identifier": "Gru110110110/dsh-launcher", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Gru110110110/dsh-launcher is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/Gru110110110/dsh-launcher", "url": "https://unstone.github.io/dsh-xray/p/Gru110110110__dsh-launcher.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>Gru110110110/dsh-launcher</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">让 DeepSeek Harness 人人可用的桌面入口——不用 Node、不用命令行，双击即用，还无损跟随每次官方更新。支持MacOs和Windows。DeepSeek Harness, for everyone. No Node.js. No command line. Just double-click and go. Always in step with every official u</p>
+  <p class="lede">★ 5+ ·
+     <a href="https://github.com/Gru110110110/dsh-launcher" rel="nofollow ugc">Gru110110110/dsh-launcher source on GitHub</a>
+     · <a href="../registry.html#Gru110110110__dsh-launcher">this plugin in the registry</a></p>
+  <p>Gru110110110/dsh-launcher is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
+  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/write-release-config.mjs:15</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. crates/dsh-core/bridge/balance-bridge.mjs:224, crates/dsh-core/bridge/pet-bridge.mjs:363</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_DESKTOP_BALANCE_TOKEN, DSH_DESKTOP_PET_TOKEN, TAURI_UPDATER_PUBLIC_KEY</td></tr></tbody></table>
+  
+  
+  <h2>Outbound domains</h2><p class="kv"><span>dsdesktop.com</span> <span>market.dsdesktop.com</span> <span>api.deepseek.com</span> <span>www.npmjs.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_REF_NAME</span> <span>GITHUB_REPOSITORY</span> <span>DSH_DESKTOP_BALANCE_TOKEN</span> <span>TAURI_UPDATER_PUBLIC_KEY</span> <span>DEEPSEEK_BASE_URL</span> <span>DSH_DESKTOP_BALANCE_LISTEN</span> <span>DSH_DESKTOP_PET_LISTEN</span> <span>DSH_DESKTOP_PET_TOKEN</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

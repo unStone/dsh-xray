@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>weekitmo/dsh-notify — capability card (C2) · dsh-xray</title>
-<meta name="description" content="weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.">
+<meta name="description" content="weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/weekitmo__dsh-notify.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="weekitmo/dsh-notify — dsh plugin capability card">
-<meta property="og:description" content="weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.">
+<meta property="og:description" content="weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/weekitmo__dsh-notify.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-notify", "identifier": "weekitmo/dsh-notify", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/weekitmo/dsh-notify", "url": "https://unstone.github.io/dsh-xray/p/weekitmo__dsh-notify.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-notify", "identifier": "weekitmo/dsh-notify", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/weekitmo/dsh-notify", "url": "https://unstone.github.io/dsh-xray/p/weekitmo__dsh-notify.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/weekitmo/dsh-notify" rel="nofollow ugc">weekitmo/dsh-notify source on GitHub</a>
      · <a href="../registry.html#weekitmo__dsh-notify">this plugin in the registry</a></p>
-  <p>weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, base64 decoding in build output only.</p>
+  <p>weekitmo/dsh-notify is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×20 in development tooling the package does not ship, e.g. build.mjs:3, build.mjs:3</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:233</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/index.js:55, lib/index.js:56</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×20 in development tooling the package does not ship, e.g. build.mjs:3, build.mjs:3</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>invariants</span> <span>jobs</span> <span>locale</span> <span>sessionProjections</span> <span>sessionTitle</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/status</span> <span>session/disposed</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>open.dingtalk.com</span> <span>oapi.dingtalk.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>oapi.dingtalk.com</span> <span>open.dingtalk.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

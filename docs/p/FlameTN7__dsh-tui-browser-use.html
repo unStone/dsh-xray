@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlameTN7/dsh-tui-browser-use — capability card (C3) · dsh-xray</title>
+<meta name="description" content="FlameTN7/dsh-tui-browser-use is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, uses eval / new Function.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/FlameTN7__dsh-tui-browser-use.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FlameTN7/dsh-tui-browser-use — dsh plugin capability card">
+<meta property="og:description" content="FlameTN7/dsh-tui-browser-use is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, uses eval / new Function.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/FlameTN7__dsh-tui-browser-use.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tui-browser-use", "identifier": "FlameTN7/dsh-tui-browser-use", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "FlameTN7/dsh-tui-browser-use is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/FlameTN7/dsh-tui-browser-use", "url": "https://unstone.github.io/dsh-xray/p/FlameTN7__dsh-tui-browser-use.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>FlameTN7/dsh-tui-browser-use</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">Browser automation bridge sub-plugin for dsh-tui.                    dsh-tui的浏览器自动化子插件</p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/FlameTN7/dsh-tui-browser-use" rel="nofollow ugc">FlameTN7/dsh-tui-browser-use source on GitHub</a>
+     · <a href="../registry.html#FlameTN7__dsh-tui-browser-use">this plugin in the registry</a></p>
+  <p>FlameTN7/dsh-tui-browser-use is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, uses eval / new Function.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/postinstall.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/driver/playwright-driver.ts:18, src/driver/playwright-driver.ts:18</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/session-start-failure-check.mjs:60</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scripts/iframe-check.mjs:34, scripts/iframe-check.mjs:40</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_CREDENTIALS_FILE, OPENAI_API_KEY</td></tr></tbody></table>
+  
+  
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.openai.com</span> <span>cdn.example.com</span> <span>api.example.com</span> <span>x.com</span> <span>duckduckgo.com</span> <span>gw.example.com</span> <span>ds.example.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_TUI_BROWSER_ALLOW_UNSAFE_URL</span> <span>DSH_TUI_BROWSER_MAX_TILES</span> <span>DSH_TUI_BROWSER_PROXY</span> <span>XDG_CACHE_HOME</span> <span>OPENAI_API_KEY</span> <span>DSH_TUI_BROWSER_MODEL</span> <span>DSH_TUI_BROWSER_PROVIDER</span> <span>DSH_TUI_BROWSER_EXECUTABLE</span> <span>DSH_CREDENTIALS_FILE</span> <span>DSH_TUI_BROWSER_BASE_URL</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

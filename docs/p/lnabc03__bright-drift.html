@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#lnabc03__bright-drift">this plugin in the registry</a></p>
   <p>lnabc03/bright-drift is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. packages/core/src/watcher/git.ts:1</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. packages/claude-code/src/testkit.ts:1, packages/claude-code/src/testkit.ts:1</td></tr></tbody></table>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/session-start</span> <span>agent/turn-stopping</span> <span>fs/observed</span> <span>session/disposed</span> <span>tools/post-execute</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>BRIGHT_DRIFT_HOOKS_DIR</span> <span>BRIGHT_DRIFT_DAEMON_ENTRY</span> <span>DSH_HOME</span> <span>BRIGHT_DRIFT_SWEEP_MS</span> <span>BRIGHT_DRIFT_SESSION_DEAD_MS</span> <span>BRIGHT_DRIFT_IDLE_EXIT_MS</span> <span>BRIGHT_DRIFT_MAILBOX_POLL_MS</span> <span>BRIGHT_DRIFT_SELFTEST</span> <span>CLAUDE_CONFIG_DIR</span> <span>BRIGHT_DRIFT_STATE_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
