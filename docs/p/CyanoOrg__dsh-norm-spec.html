@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CyanoOrg/dsh-norm-spec — capability card (C3) · dsh-xray</title>
-<meta name="description" content="CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta name="description" content="CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/CyanoOrg__dsh-norm-spec.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CyanoOrg/dsh-norm-spec — dsh plugin capability card">
-<meta property="og:description" content="CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta property="og:description" content="CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/CyanoOrg__dsh-norm-spec.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-norm-spec", "identifier": "CyanoOrg/dsh-norm-spec", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/CyanoOrg/dsh-norm-spec", "url": "https://unstone.github.io/dsh-xray/p/CyanoOrg__dsh-norm-spec.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-norm-spec", "identifier": "CyanoOrg/dsh-norm-spec", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.", "codeRepository": "https://github.com/CyanoOrg/dsh-norm-spec", "url": "https://unstone.github.io/dsh-xray/p/CyanoOrg__dsh-norm-spec.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/CyanoOrg/dsh-norm-spec" rel="nofollow ugc">CyanoOrg/dsh-norm-spec source on GitHub</a>
      · <a href="../registry.html#CyanoOrg__dsh-norm-spec">this plugin in the registry</a></p>
-  <p>CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  <p>CyanoOrg/dsh-norm-spec is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×29 in authored code, e.g. scripts/check-candidate-set.mjs:6, scripts/check-candidate-set.mjs:6</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/dsh-e2e-postedit.mjs:38, scripts/dsh-e2e-postedit.mjs:111</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×31 in authored code, e.g. scripts/check-candidate-set.mjs:6, scripts/check-candidate-set.mjs:6</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×8 in authored code, e.g. scripts/dsh-e2e-postedit.mjs:38, scripts/dsh-e2e-postedit.mjs:111</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/session-start</span> <span>tools/post-execute</span> <span>tools/result</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_NORM_BRIDGE</span> <span>DSH_NORM_PAYLOAD</span> <span>BUILD_OUTPUT</span> <span>BUILD_TARGET</span></p>

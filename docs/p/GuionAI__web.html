@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GuionAI/web — capability card (C3) · dsh-xray</title>
-<meta name="description" content="GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta name="description" content="GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/GuionAI__web.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GuionAI/web — dsh plugin capability card">
-<meta property="og:description" content="GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/GuionAI__web.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "web", "identifier": "GuionAI/web", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/GuionAI/web", "url": "https://unstone.github.io/dsh-xray/p/GuionAI__web.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "web", "identifier": "GuionAI/web", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/GuionAI/web", "url": "https://unstone.github.io/dsh-xray/p/GuionAI__web.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/GuionAI/web" rel="nofollow ugc">GuionAI/web source on GitHub</a>
      · <a href="../registry.html#GuionAI__web">this plugin in the registry</a></p>
-  <p>GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  <p>GuionAI/web is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/test-release-invariants.mjs:3, scripts/test-release-invariants.mjs:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, CONTEXT7_API_KEY, DEEPSEEK_API_KEY, EXA_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/test-image-contract.mjs:1, scripts/test-release-invariants.mjs:3</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scripts/test-image-contract.mjs:37, scripts/test-image-contract.mjs:40</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, CONTEXT7_API_KEY, DEEPSEEK_API_KEY, EXA_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>remote</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>tools</span> <span>web</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>context7.com</span> <span>api.exa.ai</span> <span>api.search.brave.com</span> <span>api.deepseek.com</span> <span>codex-bridge.localhost</span> <span>sourcegraph.com</span></p>

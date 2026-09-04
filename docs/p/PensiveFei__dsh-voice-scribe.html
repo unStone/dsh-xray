@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PensiveFei/dsh-voice-scribe — capability card (C2) · dsh-xray</title>
-<meta name="description" content="PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, base64 decoding in build output only.">
+<meta name="description" content="PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/PensiveFei__dsh-voice-scribe.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PensiveFei/dsh-voice-scribe — dsh plugin capability card">
-<meta property="og:description" content="PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, base64 decoding in build output only.">
+<meta property="og:description" content="PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/PensiveFei__dsh-voice-scribe.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-voice-scribe", "identifier": "PensiveFei/dsh-voice-scribe", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, base64 decoding in build output only.", "codeRepository": "https://github.com/PensiveFei/dsh-voice-scribe", "url": "https://unstone.github.io/dsh-xray/p/PensiveFei__dsh-voice-scribe.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-voice-scribe", "identifier": "PensiveFei/dsh-voice-scribe", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64 decoding in build output only.", "codeRepository": "https://github.com/PensiveFei/dsh-voice-scribe", "url": "https://unstone.github.io/dsh-xray/p/PensiveFei__dsh-voice-scribe.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/PensiveFei/dsh-voice-scribe" rel="nofollow ugc">PensiveFei/dsh-voice-scribe source on GitHub</a>
      · <a href="../registry.html#PensiveFei__dsh-voice-scribe">this plugin in the registry</a></p>
-  <p>PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, base64 decoding in build output only.</p>
+  <p>PensiveFei/dsh-voice-scribe is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/lint.cjs:2, scripts/lint.cjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/host-utils.js:486, lib/local-asr.js:309</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/host-utils.js:488, lib/local-asr.js:309</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>slots</span> <span>webRuntime</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.groq.com</span> <span>hf-mirror.com</span> <span>huggingface.co</span></p>

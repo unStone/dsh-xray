@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>22-ai-00/dsh-enhanced — capability card (C3) · dsh-xray</title>
-<meta name="description" content="22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta name="description" content="22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/22-ai-00__dsh-enhanced.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="22-ai-00/dsh-enhanced — dsh plugin capability card">
-<meta property="og:description" content="22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/22-ai-00__dsh-enhanced.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-enhanced", "identifier": "22-ai-00/dsh-enhanced", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/22-ai-00/dsh-enhanced", "url": "https://unstone.github.io/dsh-xray/p/22-ai-00__dsh-enhanced.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-enhanced", "identifier": "22-ai-00/dsh-enhanced", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/22-ai-00/dsh-enhanced", "url": "https://unstone.github.io/dsh-xray/p/22-ai-00__dsh-enhanced.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/22-ai-00/dsh-enhanced" rel="nofollow ugc">22-ai-00/dsh-enhanced source on GitHub</a>
      · <a href="../registry.html#22-ai-00__dsh-enhanced">this plugin in the registry</a></p>
-  <p>22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  <p>22-ai-00/dsh-enhanced is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×49 in authored code, e.g. plugins/coding-subscription-provider/src/auth.ts:1, plugins/coding-subscription-provider/src/codex-catalog.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×27 in authored code, e.g. plugins/plugin-control-plane/bin/dsh-local-release-adapter.js:553, plugins/plugin-control-plane/bin/dsh-local-release-adapter.js:592</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×49 in authored code, e.g. plugins/coding-subscription-provider/src/auth.ts:1, plugins/coding-subscription-provider/src/codex-catalog.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×27 in authored code, e.g. plugins/plugin-control-plane/bin/dsh-local-release-adapter.js:553, plugins/plugin-control-plane/bin/dsh-local-release-adapter.js:592</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>assistantAutomations</span> <span>assistantDelivery</span> <span>assistantEvaluation</span> <span>assistantEvolution</span> <span>assistantHealth</span> <span>assistantPolicy</span> <span>assistantPreferenceLearning</span> <span>llm</span> <span>sessions</span> <span>systemPrompt</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>agent/session-start</span> <span>agent/status</span> <span>approval/request</span> <span>llm/adapters-updated</span> <span>session/created</span> <span>session/event</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>agent/session-start</span> <span>agent/status</span> <span>approval/request</span> <span>llm/adapters-updated</span> <span>session/created</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>chatgpt.com</span> <span>auth.openai.com</span> <span>open.feishu.cn</span> <span>schemas.microsoft.com</span> <span>in-toto.io</span> <span>slsa.dev</span> <span>dsh-enhanced.dev</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>npm_config_user_agent</span> <span>npm_execpath</span> <span>CODEX_HOME</span> <span>XDG_RUNTIME_DIR</span> <span>DBUS_SESSION_BUS_ADDRESS</span></p>
   <h2>How to read this</h2>

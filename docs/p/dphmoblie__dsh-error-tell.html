@@ -52,7 +52,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>dphmoblie/dsh-error-tell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. packages/boot-guard/src/checks.mjs:1, packages/boot-guard/src/checks.mjs:25</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_ERROR_TELL_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>no-such-service-xyz</span> <span>webServer</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>no-such-service-xyz</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/plugin</span> <span>internal/status</span> <span>loader/entry-init</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_ERROR_TELL_MAX_DISABLE</span> <span>DSH_ERROR_TELL_QUIT_AFTER_MS</span> <span>DSH_INSTALL</span> <span>DSH_ERROR_TELL_TOKEN</span> <span>DSH_ERROR_TELL_BATCH_THRESHOLD</span> <span>DSH_ERROR_TELL_ALLOW_PROTECTED</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cyjyyd/dsh-ssh-tui — capability card (C3) · dsh-xray</title>
-<meta name="description" content="cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/cyjyyd__dsh-ssh-tui.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cyjyyd/dsh-ssh-tui — dsh plugin capability card">
-<meta property="og:description" content="cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/cyjyyd__dsh-ssh-tui.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ssh-tui", "identifier": "cyjyyd/dsh-ssh-tui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/cyjyyd/dsh-ssh-tui", "url": "https://unstone.github.io/dsh-xray/p/cyjyyd__dsh-ssh-tui.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ssh-tui", "identifier": "cyjyyd/dsh-ssh-tui", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/cyjyyd/dsh-ssh-tui", "url": "https://unstone.github.io/dsh-xray/p/cyjyyd__dsh-ssh-tui.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>cyjyyd/dsh-ssh-tui</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness enhanced plugin:dsh-tui. you can use Deepseek Harness within Terminal,optimized perfomance in ssh environment</p>
+  <p class="lede">SSH-friendly DeepSeek Harness TUI. Plain ANSI, incremental redraws, no browser.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/cyjyyd/dsh-ssh-tui" rel="nofollow ugc">cyjyyd/dsh-ssh-tui source on GitHub</a>
      · <a href="../registry.html#cyjyyd__dsh-ssh-tui">this plugin in the registry</a></p>
-  <p>cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>cyjyyd/dsh-ssh-tui is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. scripts/capture-readme-frames.mjs:9, scripts/capture-readme-frames.mjs:9</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/capture-readme-frames.mjs:9, scripts/capture-readme-frames.mjs:9</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/display-sock.ts:192</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>cmdlineArgs</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent-loop/config-start-failed</span> <span>agent/created</span> <span>agent/disposed</span> <span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>agent/request</span> <span>agent/status</span> <span>approval/request</span> <span>session/event</span> <span>subagent/end</span> <span>subagent/start</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span> <span>api.deepseek.com</span> <span>auth.x.ai</span> <span>cli-chat-proxy.grok.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>NO_COLOR</span> <span>DSH_TUI_NO_ALT_SCREEN</span> <span>DSH_HOME</span> <span>DSH_TUI_NO_BELL</span> <span>DSH_TUI_NO_RC_HOOK</span> <span>DSH_TUI_NO_UPDATE_CHECK</span> <span>FORCE_COLOR</span> <span>SSH_TTY</span> <span>TTY</span> <span>USERPROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_TUI_NO_ALT_SCREEN</span> <span>NO_COLOR</span> <span>SSH_TTY</span> <span>TTY</span> <span>DSH_TUI_PAINT_MS</span> <span>DSH_TUI_NO_BELL</span> <span>DSH_TUI_NO_RC_HOOK</span> <span>DSH_TUI_NO_UPDATE_CHECK</span> <span>FORCE_COLOR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
