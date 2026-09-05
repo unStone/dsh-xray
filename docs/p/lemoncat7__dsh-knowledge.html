@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>lemoncat7/dsh-knowledge — capability card (C2) · dsh-xray</title>
-<meta name="description" content="lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
+<title>lemoncat7/dsh-knowledge — capability card (C3) · dsh-xray</title>
+<meta name="description" content="lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/lemoncat7__dsh-knowledge.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lemoncat7/dsh-knowledge — dsh plugin capability card">
-<meta property="og:description" content="lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
+<meta property="og:description" content="lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/lemoncat7__dsh-knowledge.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-knowledge", "identifier": "lemoncat7/dsh-knowledge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.", "codeRepository": "https://github.com/lemoncat7/dsh-knowledge", "url": "https://unstone.github.io/dsh-xray/p/lemoncat7__dsh-knowledge.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-knowledge", "identifier": "lemoncat7/dsh-knowledge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.", "codeRepository": "https://github.com/lemoncat7/dsh-knowledge", "url": "https://unstone.github.io/dsh-xray/p/lemoncat7__dsh-knowledge.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>lemoncat7/dsh-knowledge</h1>
-    <span class="lvl-pill">C2</span>
+    <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Installable DeepSeek Harness knowledge base plugin</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/lemoncat7/dsh-knowledge" rel="nofollow ugc">lemoncat7/dsh-knowledge source on GitHub</a>
      · <a href="../registry.html#lemoncat7__dsh-knowledge">this plugin in the registry</a></p>
-  <p>lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.</p>
+  <p>lemoncat7/dsh-knowledge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>slots</span> <span>theme</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/verify-ui.mjs:25, scripts/verify-ui.mjs:33</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>theme</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>prosemirror.net</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>KNOWLEDGE_PLAYWRIGHT_MODULE</span> <span>DSH_BROWSER_STATE</span> <span>KNOWLEDGE_LOCAL_BUNDLE</span> <span>DSH_TEST_URL</span> <span>DSH_TEST_SESSION_TITLE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

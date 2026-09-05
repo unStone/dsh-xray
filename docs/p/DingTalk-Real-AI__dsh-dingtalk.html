@@ -51,9 +51,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#DingTalk-Real-AI__dsh-dingtalk">this plugin in the registry</a></p>
   <p>DingTalk-Real-AI/dsh-dingtalk is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. src/bin.ts:3, src/bin.ts:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DWS_CLIENT_SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×20 in authored code, e.g. src/bin.ts:3, src/bin.ts:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DWS_CLIENT_SECRET</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>credentials</span> <span>llm</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>user-questions/request</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.dingtalk.com</span> <span>oapi.dingtalk.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DINGTALK_INTERACTION_CARD_TEMPLATE_ID</span> <span>DINGTALK_OWNER_STAFF_ID</span> <span>DWS_CLIENT_ID</span> <span>DWS_CLIENT_SECRET</span> <span>DSH_HOME</span> <span>DINGTALK_REGISTRATION_BASE_URL</span> <span>DINGTALK_REGISTRATION_SOURCE</span> <span>DWS_CHANNEL</span></p>
   <h2>How to read this</h2>

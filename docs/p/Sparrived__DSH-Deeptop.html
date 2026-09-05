@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sparrived/DSH-Deeptop — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.">
+<meta name="description" content="Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Sparrived__DSH-Deeptop.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sparrived/DSH-Deeptop — dsh plugin capability card">
-<meta property="og:description" content="Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Sparrived__DSH-Deeptop.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Deeptop", "identifier": "Sparrived/DSH-Deeptop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/Sparrived/DSH-Deeptop", "url": "https://unstone.github.io/dsh-xray/p/Sparrived__DSH-Deeptop.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Deeptop", "identifier": "Sparrived/DSH-Deeptop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/Sparrived/DSH-Deeptop", "url": "https://unstone.github.io/dsh-xray/p/Sparrived__DSH-Deeptop.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/Sparrived/DSH-Deeptop" rel="nofollow ugc">Sparrived/DSH-Deeptop source on GitHub</a>
      · <a href="../registry.html#Sparrived__DSH-Deeptop">this plugin in the registry</a></p>
-  <p>Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.</p>
+  <p>Sparrived/DSH-Deeptop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×35 in authored code, e.g. scripts/build-dev.mjs:5, scripts/build-dev.mjs:5</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/app/ui-model.ts:175</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>apiProxy</span> <span>deeptopUiRegistry</span> <span>llm</span> <span>messageAnnotations</span> <span>pluginInventory</span> <span>sessionPersistence</span> <span>sessions</span> <span>settings</span> <span>storageDomain</span> <span>tools</span> <span>typertGateway</span> <span>workspaceRegistry</span></p>
-  
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×35 in authored code, e.g. scripts/build-dev.mjs:5, scripts/build-dev.mjs:5</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/app/ui-model.ts:175</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>deeptopUiRegistry</span> <span>goals</span> <span>llm</span> <span>messageAnnotations</span> <span>pluginInventory</span> <span>sessionController</span> <span>sessionPersistence</span> <span>sessions</span> <span>settings</span> <span>settingsController</span> <span>storageDomain</span> <span>subagents</span> <span>tools</span> <span>typertGateway</span> <span>workspaceController</span> <span>workspaceRegistry</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>user-questions/request</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>codeload.github.com</span> <span>models.dev</span> <span>api.example.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_SERVER_URL</span> <span>CARGO_TARGET_DIR</span> <span>DEEPTOP_DSH_RUNTIME_ROOT</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span></p>
   <h2>How to read this</h2>

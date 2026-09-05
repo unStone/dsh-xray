@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>morlay/better-session — capability card (C2) · dsh-xray</title>
-<meta name="description" content="morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.">
+<meta name="description" content="morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/morlay__better-session.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="morlay/better-session — dsh plugin capability card">
-<meta property="og:description" content="morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.">
+<meta property="og:description" content="morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/morlay__better-session.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "better-session", "identifier": "morlay/better-session", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.", "codeRepository": "https://github.com/morlay/better-session", "url": "https://unstone.github.io/dsh-xray/p/morlay__better-session.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "better-session", "identifier": "morlay/better-session", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/morlay/better-session", "url": "https://unstone.github.io/dsh-xray/p/morlay__better-session.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/morlay/better-session" rel="nofollow ugc">morlay/better-session source on GitHub</a>
      · <a href="../registry.html#morlay__better-session">this plugin in the registry</a></p>
-  <p>morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.</p>
+  <p>morlay/better-session is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/session-rdb/src/import.ts:213</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. .agents/skills/dsh-side-workspace-plugin-develop/scripts/build.ts:3, .agents/skills/dsh-side-workspace-plugin-develop/scripts/build.ts:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/session-rdb/src/import.ts:213</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>conversation</span> <span>invariants</span> <span>llm</span> <span>sessionBranch</span> <span>sessionPersistence</span> <span>sessions</span> <span>settings</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DEEPSEEK_HARNESS_PATCHES</span> <span>DEEPSEEK_HARNESS_NO_CLEAN</span> <span>DEEPSEEK_HARNESS_STEPS</span> <span>DEEPSEEK_HARNESS_EXCLUDE</span> <span>DEEPSEEK_HARNESS_VERSION</span> <span>DEEPSEEK_HARNESS_REVISION</span> <span>DEEPSEEK_HARNESS_REPO</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

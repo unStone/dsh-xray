@@ -52,7 +52,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>00080000/dsh-project-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/bench-store.mjs:107, scripts/bench-store.mjs:107</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. run-server.mjs:33, run-server.mjs:56</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>tools</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>fs/observed</span> <span>session/event</span></p>
   
   

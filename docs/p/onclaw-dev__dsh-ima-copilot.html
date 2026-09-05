@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>onclaw-dev/dsh-ima-copilot — capability card (C2) · dsh-xray</title>
-<meta name="description" content="onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
+<meta name="description" content="onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/onclaw-dev__dsh-ima-copilot.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="onclaw-dev/dsh-ima-copilot — dsh plugin capability card">
-<meta property="og:description" content="onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
+<meta property="og:description" content="onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/onclaw-dev__dsh-ima-copilot.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ima-copilot", "identifier": "onclaw-dev/dsh-ima-copilot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/onclaw-dev/dsh-ima-copilot", "url": "https://unstone.github.io/dsh-xray/p/onclaw-dev__dsh-ima-copilot.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ima-copilot", "identifier": "onclaw-dev/dsh-ima-copilot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/onclaw-dev/dsh-ima-copilot", "url": "https://unstone.github.io/dsh-xray/p/onclaw-dev__dsh-ima-copilot.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,13 +46,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">腾讯 IMA 是一个非常好的知识库应用，但是他们提供的skill版本针对公开知识库的检索方式只提供了基于文件标题的关键字检索，好一阵无语。为了补足在harness的这种知识库检索能力，基于tencent-ima-copilot-mcp迭代了对应的dsh版本。</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/onclaw-dev/dsh-ima-copilot" rel="nofollow ugc">onclaw-dev/dsh-ima-copilot source on GitHub</a>
      · <a href="../registry.html#onclaw-dev__dsh-ima-copilot">this plugin in the registry</a></p>
-  <p>onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
+  <p>onclaw-dev/dsh-ima-copilot is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/link-harness.mjs:1</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>credentials</span> <span>slots</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>dshLoader</span> <span>dshLoaderUi</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>ima.qq.com</span></p>
   

@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/restart.ts:1, src/restart.ts:52</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/accept-controlled-lifecycle.mjs:101, scripts/accept-controlled-lifecycle.mjs:121</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>loader</span> <span>locale</span> <span>pluginSearch</span> <span>slots</span> <span>tools</span> <span>userQuestions</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>dsh-plugins.tech</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PLUGIN_REGISTRY_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

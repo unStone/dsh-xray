@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#baobaolaodie__flow-comet">this plugin in the registry</a></p>
   <p>baobaolaodie/flow-comet is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×131 in authored code, e.g. scripts/dsh-bridge.mjs:31, scripts/dsh-bridge.mjs:274</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×118 in authored code, e.g. scripts/dsh-bridge.mjs:33, scripts/dsh-bridge.mjs:279</td></tr></tbody></table>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>COMET_RUN_ROOT</span> <span>DSH_HOME</span> <span>FLOW_COMET_PROTOCOL</span> <span>FLOW_COMET_VERIFY_TIMEOUT_MS</span> <span>FLOW_COMET_VERIFY_FORCE_EPERM</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>COMET_RUN_ROOT</span> <span>DSH_HOME</span> <span>FC_PREPARE_ENV</span> <span>FLOW_COMET_FORCE_READLINE</span> <span>CLAUDE_PROJECT_DIR</span> <span>FC_TARGET</span> <span>FLOW_COMET_PROTOCOL</span> <span>FLOW_COMET_VERIFY_TIMEOUT_MS</span> <span>FLOW_COMET_VERIFY_FORCE_EPERM</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

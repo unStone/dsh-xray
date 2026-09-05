@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>zhangliang0115/ai-plugin</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">One command to install any AI agent skill/plugin into every agent — Claude Code, DeepSeek Harness (dsh), Codex, Gemini CLI, Copilot, Cursor. Zero-dependency CLI + cross-agent marketplace.</p>
+  <p class="lede">AI agent skills + MCP hub for DeepSeek Harness (dsh) &amp; Claude Code — one console fronts every MCP server with ~4 meta tools, zero-config hybrid search, cross-agent skill installs. MIT.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/zhangliang0115/ai-plugin" rel="nofollow ugc">zhangliang0115/ai-plugin source on GitHub</a>
      · <a href="../registry.html#zhangliang0115__ai-plugin">this plugin in the registry</a></p>
   <p>zhangliang0115/ai-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/lint.mjs:8, scripts/lint.mjs:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>skills</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/lint.mjs:8, scripts/lint.mjs:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>NO_COLOR</span> <span>AIPX_CONFIG_DIR</span> <span>GITHUB_STEP_SUMMARY</span> <span>XDG_CONFIG_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.githubcopilot.com</span> <span>mcp.supabase.com</span> <span>mcp.example.com</span> <span>api.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>AIPX_CONFIG_DIR</span> <span>NO_COLOR</span> <span>XDG_CONFIG_HOME</span> <span>DEEPSEEK_API_KEY</span> <span>GITHUB_STEP_SUMMARY</span> <span>AIPX_BIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

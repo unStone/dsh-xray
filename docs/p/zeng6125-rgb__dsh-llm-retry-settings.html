@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>zeng6125-rgb/dsh-llm-retry-settings</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH 插件：LLM 自动重试设置卡片——调整重试次数与退避时间实时生效，可勾选额外可重试错误码（默认补入 INVALID_REQUEST：OpenAI thinking 模式 HTTP 400 自动重试）。npm: dsh-llm-retry-settings</p>
+  <p class="lede">DSH 插件：LLM 自动重试设置卡片——重试次数/退避/抖动与 25 个错误码可勾选，回答被输出 token 上限截断时还能自动续写，改完实时生效。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/zeng6125-rgb/dsh-llm-retry-settings" rel="nofollow ugc">zeng6125-rgb/dsh-llm-retry-settings source on GitHub</a>
      · <a href="../registry.html#zeng6125-rgb__dsh-llm-retry-settings">this plugin in the registry</a></p>
   <p>zeng6125-rgb/dsh-llm-retry-settings is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, eval in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:227</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:49, lib/index.js:50</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>settingsScope</span> <span>slots</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/request-error</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:233</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:55, lib/index.js:56</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>slots</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/request-error</span> <span>agent/status</span> <span>session/disposed</span> <span>session/event</span></p>
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#mekos2772__dsh-plugin-mimi">this plugin in the registry</a></p>
   <p>mekos2772/dsh-plugin-mimi is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×8 in build output only, e.g. lib/index.js:13, lib/index.js:157</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. vendor/dsh-computer-use/mcp-server.mjs:155, vendor/dsh-computer-use/lib/tools.js:568</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×8 in build output only, e.g. lib/index.js:13, lib/index.js:189</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. vendor/dsh-computer-use/mcp-server.mjs:155, vendor/dsh-computer-use/lib/tools.js:568</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>MIMI_PET_DIR</span> <span>DSH_HOME</span> <span>LOCALAPPDATA</span> <span>USERPROFILE</span> <span>TEMP</span> <span>CU_SESSION_FILE</span> <span>CU_SCREENSHOT_FILE</span> <span>CU_APPROVAL</span> <span>CU_MAX_DEPTH</span> <span>CU_MAX_NODES</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MIMI_PET_DIR</span> <span>DSH_HOME</span> <span>LOCALAPPDATA</span> <span>USERPROFILE</span> <span>MIMI_DSH_HOST</span> <span>MIMI_DSH_PORT</span> <span>TEMP</span> <span>CU_SESSION_FILE</span> <span>CU_SCREENSHOT_FILE</span> <span>CU_APPROVAL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
