@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>statem-li/dsh-chat-flow</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 思考与工具调用聚合：回合级思考 chip（实时时长/实时文字滚动）+ 工具调用聚合 chip + 共享活动抽屉 + 对话流卡片（步骤卡/总结卡，回合结束后才出现）——自 dsh-webui 移植。零 DSH 源码改动。</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">DSH 对话流增强插件（零 DSH 源码改动，纯插件注入）。回合呈现：思考 chip（实时走秒 + 实时文字滚动）· 工具调用聚合 chip · 对话流卡片（步骤卡/总结卡）· 共享活动抽屉。正文增强：proto-tabs 可交互卡片 · diagram 流程图围栏 · 本地 HTML 内嵌预览（识别正文里的 .html 路径，host 读文件 + 同目录资源，iframe 沙箱隔离，高度自适应，</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/statem-li/dsh-chat-flow" rel="nofollow ugc">statem-li/dsh-chat-flow source on GitHub</a>
      · <a href="../registry.html#statem-li__dsh-chat-flow">this plugin in the registry</a></p>
   <p>statem-li/dsh-chat-flow is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. src/browser/chrome.ts:4, src/browser/chrome.ts:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/shot/index.ts:206</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/browser/chrome.ts:45</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. src/browser/chrome.ts:4, src/browser/chrome.ts:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/shot/index.ts:278</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/browser/chrome.ts:45</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   
   

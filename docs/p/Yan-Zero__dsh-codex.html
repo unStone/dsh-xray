@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Yan-Zero__dsh-codex">this plugin in the registry</a></p>
   <p>Yan-Zero/dsh-codex is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/bin.ts:4, src/bin.ts:34</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/imagegen.ts:194</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/bin.ts:4, src/bin.ts:34</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/imagegen.ts:200</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>llm</span> <span>locale</span> <span>openAICodex</span> <span>sessions</span> <span>slots</span> <span>web</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>tools/change</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>chatgpt.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DISPLAY</span> <span>WAYLAND_DISPLAY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>chatgpt.com</span> <span>auth.openai.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_CODEX_PROXY</span> <span>no_proxy</span> <span>NO_PROXY</span> <span>https_proxy</span> <span>HTTPS_PROXY</span> <span>http_proxy</span> <span>HTTP_PROXY</span> <span>all_proxy</span> <span>ALL_PROXY</span> <span>DISPLAY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

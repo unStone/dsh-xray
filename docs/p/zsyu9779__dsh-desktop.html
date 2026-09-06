@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>zsyu9779/dsh-desktop — capability card (C1) · dsh-xray</title>
-<meta name="description" content="zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only.">
+<title>zsyu9779/dsh-desktop — capability card (C2) · dsh-xray</title>
+<meta name="description" content="zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zsyu9779__dsh-desktop.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zsyu9779/dsh-desktop — dsh plugin capability card">
-<meta property="og:description" content="zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only.">
+<meta property="og:description" content="zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zsyu9779__dsh-desktop.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#65a30d; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "zsyu9779/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only.", "codeRepository": "https://github.com/zsyu9779/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/zsyu9779__dsh-desktop.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "zsyu9779/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, reads credential-class env vars.", "codeRepository": "https://github.com/zsyu9779/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/zsyu9779__dsh-desktop.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>zsyu9779/dsh-desktop</h1>
-    <span class="lvl-pill">C1</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Unofficial cross-platform desktop app for DeepSeek Harness. Native Wails shell for the DSH Web UI on macOS, Windows, and Linux.</p>
   <p class="lede">★ 5+ ·
      <a href="https://github.com/zsyu9779/dsh-desktop" rel="nofollow ugc">zsyu9779/dsh-desktop source on GitHub</a>
      · <a href="../registry.html#zsyu9779__dsh-desktop">this plugin in the registry</a></p>
-  <p>zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only.</p>
+  <p>zsyu9779/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. plugins/diff-review/dist/index.js:4, plugins/file-changes/lib/index.js:1</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. plugins/diff-review/dist/index.js:4, plugins/file-changes/lib/index.js:1</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_ACCOUNT_BRIDGE_SECRET</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>conversationEvents</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>subagents</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>subagent/provider-added</span> <span>subagent/provider-removed</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>react-dnd.github.io</span> <span>redux.js.org</span> <span>reactjs.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOG</span> <span>DSH_WORKSPACE</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>react-dnd.github.io</span> <span>redux.js.org</span> <span>reactjs.org</span> <span>relay.codegoround.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_ACCOUNT_BRIDGE_SECRET</span> <span>LOG</span> <span>DSH_ACCOUNT_SERVER_URL</span> <span>DSH_ACCOUNT_BRIDGE_DIR</span> <span>USERPROFILE</span> <span>DSH_WORKSPACE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NinjaSln-labs/dsh-imgdraw — capability card (C3) · dsh-xray</title>
-<meta name="description" content="NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.">
+<meta name="description" content="NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/NinjaSln-labs__dsh-imgdraw.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NinjaSln-labs/dsh-imgdraw — dsh plugin capability card">
-<meta property="og:description" content="NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.">
+<meta property="og:description" content="NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/NinjaSln-labs__dsh-imgdraw.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-imgdraw", "identifier": "NinjaSln-labs/dsh-imgdraw", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.", "codeRepository": "https://github.com/NinjaSln-labs/dsh-imgdraw", "url": "https://unstone.github.io/dsh-xray/p/NinjaSln-labs__dsh-imgdraw.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-imgdraw", "identifier": "NinjaSln-labs/dsh-imgdraw", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads.", "codeRepository": "https://github.com/NinjaSln-labs/dsh-imgdraw", "url": "https://unstone.github.io/dsh-xray/p/NinjaSln-labs__dsh-imgdraw.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,12 +46,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DeepSeek Harness 文生图插件：draw_image 模型工具 + 输入框生图按钮（异步生成/4 格网格/下载保留删除）+ /imgdraw 路由 + 持久化历史。Text-to-image for DeepSeek Harness.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/NinjaSln-labs/dsh-imgdraw" rel="nofollow ugc">NinjaSln-labs/dsh-imgdraw source on GitHub</a>
      · <a href="../registry.html#NinjaSln-labs__dsh-imgdraw">this plugin in the registry</a></p>
-  <p>NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
+  <p>NinjaSln-labs/dsh-imgdraw is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/generate.ts:218</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×6 in development tooling the package does not ship, e.g. scripts/build.mjs:11, scripts/build.mjs:11</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/generate.ts:218</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.siliconflow.cn</span> <span>dashscope.aliyuncs.com</span> <span>dashscope-intl.aliyuncs.com</span></p>

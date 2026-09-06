@@ -51,9 +51,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#MoriTang__dsh-plugins">this plugin in the registry</a></p>
   <p>MoriTang/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. plugins/codex-enabler/install.mjs:9, plugins/codex-enabler/install.mjs:9</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×9 in build output only, e.g. plugins/cost-balance/lib/index.js:1279, plugins/cost-balance/lib/index.js:2637</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>sessionPersistence</span> <span>sessionProjections</span> <span>slots</span> <span>theme</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>tools/execute</span> <span>tools/result</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. plugins/codex-enabler/install.mjs:9, plugins/codex-enabler/install.mjs:9</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×6 in build output only, e.g. plugins/cost-balance/lib/index.js:1279, plugins/cost-balance/lib/index.js:2637</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>sessionProjections</span> <span>slots</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>tools/execute</span> <span>tools/result</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HARNESS</span></p>
   <h2>How to read this</h2>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>omdsh-dev/dsh-paste-input — capability card (C2) · dsh-xray</title>
-<meta name="description" content="omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta name="description" content="omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-paste-input.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="omdsh-dev/dsh-paste-input — dsh plugin capability card">
-<meta property="og:description" content="omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta property="og:description" content="omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-paste-input.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-paste-input", "identifier": "omdsh-dev/dsh-paste-input", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/omdsh-dev/dsh-paste-input", "url": "https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-paste-input.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-paste-input", "identifier": "omdsh-dev/dsh-paste-input", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only.", "codeRepository": "https://github.com/omdsh-dev/dsh-paste-input", "url": "https://unstone.github.io/dsh-xray/p/omdsh-dev__dsh-paste-input.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/omdsh-dev/dsh-paste-input" rel="nofollow ugc">omdsh-dev/dsh-paste-input source on GitHub</a>
      · <a href="../registry.html#omdsh-dev__dsh-paste-input">this plugin in the registry</a></p>
-  <p>omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p>omdsh-dev/dsh-paste-input is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. sync-mirrors.mjs:14, sync-mirrors.mjs:14</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. sync-mirrors.mjs:14, sync-mirrors.mjs:14</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:47</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>conversation</span> <span>inputTriggers</span> <span>loader</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>data.jsdelivr.com</span></p>

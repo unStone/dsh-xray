@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#THEWOLFWALKER__dsh-notifier">this plugin in the registry</a></p>
   <p>THEWOLFWALKER/dsh-notifier is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/channel-login.mjs:13, scripts/channel-login.mjs:73</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/hook-server.mjs:7, src/admin/server.mjs:305</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/channel-login.mjs:13, scripts/channel-login.mjs:73</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/admin/server.mjs:362, src/inbound/http-callback.mjs:39</td></tr></tbody></table>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>approval/request</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>qyapi.weixin.qq.com</span> <span>wxpusher.zjiecode.com</span> <span>www.pushplus.plus</span> <span>bots.qq.com</span> <span>api.sgroup.qq.com</span> <span>mm.example.com</span> <span>ntfy.sh</span> <span>api.chanify.net</span> <span>api2.pushdeer.com</span> <span>api.telegram.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>PORT</span> <span>OUT</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

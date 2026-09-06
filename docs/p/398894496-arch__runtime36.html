@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#398894496-arch__runtime36">this plugin in the registry</a></p>
   <p>398894496-arch/runtime36 is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./extras/dsh/cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. extras/dsh/lib/route.js:5, extras/dsh/lib/route.js:5</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>KROUTER_KEYS_ENV</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./extras/dsh/cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. extras/dsh/lib/route.js:5, extras/dsh/lib/route.js:5</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>KROUTER_KEYS_ENV</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>KROUTER_ROUTER</span> <span>OBSIDIAN_VAULT</span> <span>KROUTER_VAULT</span> <span>KROUTER_WRITER</span> <span>KROUTER_KEYS_ENV</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>KROUTER_ROUTER</span> <span>OBSIDIAN_VAULT</span> <span>KROUTER_VAULT</span> <span>KROUTER_WRITER</span> <span>KROUTER_KEYS_ENV</span> <span>PYTHON</span> <span>KROUTER_PYTHON</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

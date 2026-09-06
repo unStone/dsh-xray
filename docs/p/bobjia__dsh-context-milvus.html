@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>bobjia/dsh-context-milvus — capability card (C3) · dsh-xray</title>
-<meta name="description" content="bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/bobjia__dsh-context-milvus.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bobjia/dsh-context-milvus — dsh plugin capability card">
-<meta property="og:description" content="bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/bobjia__dsh-context-milvus.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-context-milvus", "identifier": "bobjia/dsh-context-milvus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/bobjia/dsh-context-milvus", "url": "https://unstone.github.io/dsh-xray/p/bobjia__dsh-context-milvus.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-context-milvus", "identifier": "bobjia/dsh-context-milvus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.", "codeRepository": "https://github.com/bobjia/dsh-context-milvus", "url": "https://unstone.github.io/dsh-xray/p/bobjia__dsh-context-milvus.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/bobjia/dsh-context-milvus" rel="nofollow ugc">bobjia/dsh-context-milvus source on GitHub</a>
      · <a href="../registry.html#bobjia__dsh-context-milvus">this plugin in the registry</a></p>
-  <p>bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>bobjia/dsh-context-milvus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>EMBEDDING_API_KEY, MILVUS_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. scripts/eval/agent/lib/run-agent.mjs:1, scripts/eval/agent/lib/run-agent.mjs:6</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>EMBEDDING_API_KEY, JWT_SECRET, MILVUS_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>settingsScope</span> <span>slots</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>MILVUS_EMBEDDING_DIM</span> <span>INDEX_EXTENSIONS</span> <span>INDEX_IGNORE_DIRS</span> <span>INDEX_ROOT</span> <span>IGNORE_PATTERNS</span> <span>BM25_RRF_K</span> <span>MILVUS_ADDRESS</span> <span>MILVUS_TOKEN</span> <span>MILVUS_COLLECTION</span> <span>EMBEDDING_ENDPOINT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MILVUS_ADDRESS</span> <span>MILVUS_TOKEN</span> <span>MILVUS_COLLECTION</span> <span>EMBEDDING_ENDPOINT</span> <span>EMBEDDING_MODEL</span> <span>HYBRID_MODE</span> <span>MILVUS_DIM</span> <span>JWT_SECRET</span> <span>MILVUS_EMBEDDING_DIM</span> <span>INDEX_EXTENSIONS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

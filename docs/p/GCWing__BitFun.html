@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GCWing/BitFun — capability card (C2) · dsh-xray</title>
-<meta name="description" content="GCWing/BitFun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, starts a network server.">
+<title>GCWing/BitFun — capability card (C3) · dsh-xray</title>
+<meta name="description" content="GCWing/BitFun is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/GCWing__BitFun.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCWing/BitFun — dsh plugin capability card">
-<meta property="og:description" content="GCWing/BitFun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="GCWing/BitFun is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/GCWing__BitFun.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "BitFun", "identifier": "GCWing/BitFun", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GCWing/BitFun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/GCWing/BitFun", "url": "https://unstone.github.io/dsh-xray/p/GCWing__BitFun.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "BitFun", "identifier": "GCWing/BitFun", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GCWing/BitFun is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.", "codeRepository": "https://github.com/GCWing/BitFun", "url": "https://unstone.github.io/dsh-xray/p/GCWing__BitFun.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>GCWing/BitFun</h1>
-    <span class="lvl-pill">C2</span>
+    <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">BitFun combines a high-performance agent runtime written in Rust with a polished desktop application. It pairs the depth of a Code Agent with open, general-purpose capabilities for work beyond softwar</p>
+  <p class="lede">OpenBitFun combines a high-performance agent runtime written in Rust with a polished desktop application. It pairs the depth of a Code Agent with open, general-purpose capabilities for work beyond sof</p>
   <p class="lede">★ 2.1k ·
      <a href="https://github.com/GCWing/BitFun" rel="nofollow ugc">GCWing/BitFun source on GitHub</a>
      · <a href="../registry.html#GCWing__BitFun">this plugin in the registry</a></p>
-  <p>GCWing/BitFun is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads, starts a network server.</p>
-  <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: pnpm run copy-assets</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×83 in authored code, e.g. scripts/build-web-parallel.mjs:16, scripts/build-web-parallel.mjs:24</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×14 in authored code, e.g. scripts/write-minisign-public-key.mjs:31, src/apps/extension-host/src/streams.ts:148</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/debug-log-server.mjs:34, scripts/generate-startup-appearance-bootstrap.mjs:25</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BITFUN_SIGNING_PUBKEY, TAURI_SIGNING_PRIVATE_KEY, TAURI_UPDATER_PUBKEY</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/inbox/claimed</span> <span>approval/request</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>openbitfun.com</span> <span>open.bigmodel.cn</span> <span>dashboard.ngrok.com</span> <span>open.feishu.cn</span> <span>models.dev</span> <span>api.github.com</span> <span>opencode.ai</span> <span>reactjs.org</span> <span>relay.example.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>CARGO_TARGET_DIR</span> <span>BITFUN_RELEASE_CHANNEL</span> <span>ComSpec</span> <span>BITFUN_GITHUB_CONFIG_TEST_ROOT</span> <span>FLASHGREP_DAEMON_BIN</span> <span>CARGO_PROFILE_DEV_CODEGEN_UNITS</span> <span>BITFUN_MOBILE_WEB_FORCE_BUILD</span> <span>TAURI_DEV_HOST</span> <span>BITFUN_TARGET_GC_DRY_RUN</span> <span>BITFUN_TARGET_GC</span></p>
+  <p>GCWing/BitFun is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: pnpm run copy-assets</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×114 in authored code, e.g. scripts/audit-frontend-colors.mjs:3, scripts/audit-frontend-colors.mjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/write-minisign-public-key.mjs:31</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/generate-startup-appearance-bootstrap.mjs:55, scripts/mobile-ui-preview.mjs:41</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENBITFUN_SIGNING_PUBKEY, TAURI_SIGNING_PRIVATE_KEY, TAURI_UPDATER_PUBKEY</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/inbox/claimed</span> <span>approval/request</span> <span>dispose</span> <span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>openbitfun.com</span> <span>open.bigmodel.cn</span> <span>api.openbitfun.com</span> <span>models.dev</span> <span>api.github.com</span> <span>opencode.ai</span> <span>api.example.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CARGO_TARGET_DIR</span> <span>OPENBITFUN_RELEASE_CHANNEL</span> <span>ComSpec</span> <span>GITHUB_ACTIONS</span> <span>OPENBITFUN_GITHUB_CONFIG_TEST_ROOT</span> <span>CARGO_PROFILE_DEV_CODEGEN_UNITS</span> <span>OPENBITFUN_MOBILE_WEB_FORCE_BUILD</span> <span>CHROME_PATH</span> <span>OPENBITFUN_SDK_HOST</span> <span>TAURI_DEV_HOST</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

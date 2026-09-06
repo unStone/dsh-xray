@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ijry/DeepSeek-Harness-Desktop-Ultra — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta name="description" content="ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ijry__DeepSeek-Harness-Desktop-Ultra.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ijry/DeepSeek-Harness-Desktop-Ultra — dsh plugin capability card">
-<meta property="og:description" content="ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta property="og:description" content="ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ijry__DeepSeek-Harness-Desktop-Ultra.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DeepSeek-Harness-Desktop-Ultra", "identifier": "ijry/DeepSeek-Harness-Desktop-Ultra", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.", "codeRepository": "https://github.com/ijry/DeepSeek-Harness-Desktop-Ultra", "url": "https://unstone.github.io/dsh-xray/p/ijry__DeepSeek-Harness-Desktop-Ultra.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DeepSeek-Harness-Desktop-Ultra", "identifier": "ijry/DeepSeek-Harness-Desktop-Ultra", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/ijry/DeepSeek-Harness-Desktop-Ultra", "url": "https://unstone.github.io/dsh-xray/p/ijry__DeepSeek-Harness-Desktop-Ultra.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/ijry/DeepSeek-Harness-Desktop-Ultra" rel="nofollow ugc">ijry/DeepSeek-Harness-Desktop-Ultra source on GitHub</a>
      · <a href="../registry.html#ijry__DeepSeek-Harness-Desktop-Ultra">this plugin in the registry</a></p>
-  <p>ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.</p>
+  <p>ijry/DeepSeek-Harness-Desktop-Ultra is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/generate-keys.mjs:16, scripts/generate-keys.mjs:16</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. plugins/dsh-plugin-mobile-bridge/src/host/carriers/listener.js:30</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_KEY_DIR</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. scripts/audit-zh.mjs:11, scripts/audit-zh.mjs:11</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. plugins/dsh-plugin-longread/src/host/routes.js:122, plugins/dsh-plugin-otools-term/src/client/api.js:525</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. plugins/dsh-plugin-otools-dbm/src/host/tunnel.js:142, plugins/dsh-plugin-otools-dbm/src/host/tunnel.js:157</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_KEY_DIR, GIT_PASSWORD, GIT_TOKEN, SSH_AUTH_SOCK</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>xxx.trycloudflare.com</span> <span>getmcode.lingyun.net</span> <span>api.github.com</span> <span>tauri.app</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>TAURI_DEV_HOST</span> <span>DSH_KEY_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>ld246.com</span> <span>xxx.trycloudflare.com</span> <span>unpkg.com</span> <span>getmcode.lingyun.net</span> <span>api.github.com</span> <span>quilljs.com</span> <span>tauri.app</span> <span>cdn.jsdelivr.net</span> <span>vuejs.org</span> <span>www.facebook.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>GIT_PASSWORD</span> <span>GIT_TOKEN</span> <span>GIT_USERNAME</span> <span>DSH_OG_KNOWN_HOSTS</span> <span>SSH_AUTH_SOCK</span> <span>SystemRoot</span> <span>ComSpec</span> <span>TAURI_DEV_HOST</span> <span>DSH_KEY_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

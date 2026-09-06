@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>1MLightyears/dsh-theme-synthwave — capability card (C3) · dsh-xray</title>
-<meta name="description" content="1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/1MLightyears__dsh-theme-synthwave.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1MLightyears/dsh-theme-synthwave — dsh plugin capability card">
-<meta property="og:description" content="1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/1MLightyears__dsh-theme-synthwave.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-theme-synthwave", "identifier": "1MLightyears/dsh-theme-synthwave", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/1MLightyears/dsh-theme-synthwave", "url": "https://unstone.github.io/dsh-xray/p/1MLightyears__dsh-theme-synthwave.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-theme-synthwave", "identifier": "1MLightyears/dsh-theme-synthwave", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, base64 decoding in build output only.", "codeRepository": "https://github.com/1MLightyears/dsh-theme-synthwave", "url": "https://unstone.github.io/dsh-xray/p/1MLightyears__dsh-theme-synthwave.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/1MLightyears/dsh-theme-synthwave" rel="nofollow ugc">1MLightyears/dsh-theme-synthwave source on GitHub</a>
      · <a href="../registry.html#1MLightyears__dsh-theme-synthwave">this plugin in the registry</a></p>
-  <p>1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>1MLightyears/dsh-theme-synthwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/host/system.ts:3, src/host/system.ts:22</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/postinstall.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/host/system.ts:3, src/host/system.ts:22</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:3511</td></tr></tbody></table>
   
   
-  
-  
+  <h2>Outbound domains</h2><p class="kv"><span>mirror.ghproxy.com</span> <span>ghfast.top</span> <span>gh-proxy.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>http_proxy</span> <span>HTTP_PROXY</span> <span>https_proxy</span> <span>HTTPS_PROXY</span> <span>NODE_V8_COVERAGE</span> <span>UNDICI_NO_FG</span> <span>JEST_WORKER_ID</span> <span>no_proxy</span> <span>NO_PROXY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
