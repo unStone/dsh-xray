@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>jonah791/dsh-agent-evolve</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH self-built plugin</p>
+  <p class="lede">跨代自评估进化插件：配置仓库（版本化资源+锚点链）、热重载（.agent-presets 运行时应用/回滚）、子智能体白纸继承配置跑 modeltest 评测、账本（分数/轨迹/失败模式）。受益主体为宿主 agent 本体。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/jonah791/dsh-agent-evolve" rel="nofollow ugc">jonah791/dsh-agent-evolve source on GitHub</a>
      · <a href="../registry.html#jonah791__dsh-agent-evolve">this plugin in the registry</a></p>
   <p>jonah791/dsh-agent-evolve is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.</p>
-  <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
+  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/evaluator.ts:2, src/evaluator.ts:94</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 16 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>subagents</span> <span>tools</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#kirkchinese__CiteCiter">this plugin in the registry</a></p>
   <p>kirkchinese/CiteCiter is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. packages/citeciter/dev/watch.mjs:1, packages/citeciter/dev/watch.mjs:5</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>llm</span> <span>remote</span> <span>sessionQuery</span> <span>sessionTitle</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>subprocess</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. packages/citeciter/dev/run-smoke.mjs:2, packages/citeciter/dev/run-smoke.mjs:20</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>citeciterRuntime</span> <span>llm</span> <span>remote</span> <span>sandboxPolicy</span> <span>sessionQuery</span> <span>sessionTitle</span> <span>sessions</span> <span>settingsScope</span> <span>slots</span> <span>subprocess</span> <span>uiConversation</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>PLAYWRIGHT_PATH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PLAYWRIGHT_PATH</span> <span>DSH_HOME</span> <span>CITECITER_RECORD_SNAPSHOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

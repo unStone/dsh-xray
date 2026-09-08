@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>modusensus/dsh-mneme — capability card (C2) · dsh-xray</title>
-<meta name="description" content="modusensus/dsh-mneme is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
+<title>modusensus/dsh-mneme — capability card (C3) · dsh-xray</title>
+<meta name="description" content="modusensus/dsh-mneme is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/modusensus__dsh-mneme.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="modusensus/dsh-mneme — dsh plugin capability card">
-<meta property="og:description" content="modusensus/dsh-mneme is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.">
+<meta property="og:description" content="modusensus/dsh-mneme is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/modusensus__dsh-mneme.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mneme", "identifier": "modusensus/dsh-mneme", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "modusensus/dsh-mneme is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.", "codeRepository": "https://github.com/modusensus/dsh-mneme", "url": "https://unstone.github.io/dsh-xray/p/modusensus__dsh-mneme.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-mneme", "identifier": "modusensus/dsh-mneme", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "modusensus/dsh-mneme is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/modusensus/dsh-mneme", "url": "https://unstone.github.io/dsh-xray/p/modusensus__dsh-mneme.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>modusensus/dsh-mneme</h1>
-    <span class="lvl-pill">C2</span>
+    <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">🧠 The memory that dreams — self-evolving memory for DeepSeek Harness: your AI remembers across sessions, consolidates in its sleep, forgets what matters less, and grows smarter over time. Fully offlin</p>
+  <p class="lede">🧠 The memory that dreams — cross-session memory plugin for DeepSeek Harness: your AI remembers across sessions, consolidates memories in its sleep (autoDream), and manages everything in an interactive</p>
   <p class="lede">★ 50+ ·
      <a href="https://github.com/modusensus/dsh-mneme" rel="nofollow ugc">modusensus/dsh-mneme source on GitHub</a>
      · <a href="../registry.html#modusensus__dsh-mneme">this plugin in the registry</a></p>
-  <p>modusensus/dsh-mneme is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt.</p>
+  <p>modusensus/dsh-mneme is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh-mneme/cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh-mneme/cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. dsh-mneme/src/api-standalone.js:81</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_MNEME_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>commands</span> <span>llm</span> <span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/disposed</span> <span>session/event</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MNEME_URL</span> <span>DSH_MNEME_TOKEN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
