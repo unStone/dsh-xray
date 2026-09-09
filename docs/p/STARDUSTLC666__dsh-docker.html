@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>STARDUSTLC666/dsh-docker</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness 容器管理插件：docker_ps/images/logs/inspect/exec/manage/health 七工具，官方 subprocess 服务、argv 无 shell 注入、exec 审批门、零运行时依赖。· Containers for DeepSeek Harness agents. 已验证兼容 DeepSeek Harness v0.1.2-al</p>
+  <p class="lede">DeepSeek Harness 容器管理插件：docker_ps/images/logs/inspect/exec/manage/health 七工具，官方 subprocess 服务、argv 无 shell 注入、exec 与破坏性 manage 默认审批、零运行时依赖。· Containers for DeepSeek Harness agents. 已验证兼容 DeepSeek Harn</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/STARDUSTLC666/dsh-docker" rel="nofollow ugc">STARDUSTLC666/dsh-docker source on GitHub</a>
      · <a href="../registry.html#STARDUSTLC666__dsh-docker">this plugin in the registry</a></p>
   <p>STARDUSTLC666/dsh-docker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/exec.ts:49</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/exec.ts:52</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>subprocess</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>tools/pre-execute</span></p>
   

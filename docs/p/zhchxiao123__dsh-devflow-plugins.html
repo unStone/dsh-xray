@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zhchxiao123/dsh-devflow-plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zhchxiao123__dsh-devflow-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zhchxiao123/dsh-devflow-plugins — dsh plugin capability card">
-<meta property="og:description" content="zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zhchxiao123__dsh-devflow-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-devflow-plugins", "identifier": "zhchxiao123/dsh-devflow-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/zhchxiao123/dsh-devflow-plugins", "url": "https://unstone.github.io/dsh-xray/p/zhchxiao123__dsh-devflow-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-devflow-plugins", "identifier": "zhchxiao123/dsh-devflow-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/zhchxiao123/dsh-devflow-plugins", "url": "https://unstone.github.io/dsh-xray/p/zhchxiao123__dsh-devflow-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/zhchxiao123/dsh-devflow-plugins" rel="nofollow ugc">zhchxiao123/dsh-devflow-plugins source on GitHub</a>
      · <a href="../registry.html#zhchxiao123__dsh-devflow-plugins">this plugin in the registry</a></p>
-  <p>zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>zhchxiao123/dsh-devflow-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/preflight.ts:36, scripts/preflight.ts:36</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>devflow</span> <span>invariants</span> <span>locale</span> <span>sessions</span> <span>shell</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>devflow/card-created</span> <span>devflow/stage-changed</span> <span>devflow/transition</span> <span>fs/edit-intent</span> <span>fs/write-intent</span> <span>internal/service</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, webServer</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. scripts/preflight.ts:36, scripts/preflight.ts:36</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>devflow</span> <span>devflowSpec</span> <span>invariants</span> <span>locale</span> <span>sessions</span> <span>shell</span> <span>sidebarRightTabs</span> <span>skills</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/turn-stopping</span> <span>devflow/card-created</span> <span>devflow/stage-changed</span> <span>devflow/transition</span> <span>fs/edit-intent</span> <span>fs/write-intent</span> <span>tools/result</span></p>
   
   
   <h2>How to read this</h2>
