@@ -46,15 +46,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Office document preview, editing, and DOCX generation for DeepSeek Harness, powered by Fylar Office SDK.</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/FylarOpen/dsh-fylar-office-editor" rel="nofollow ugc">FylarOpen/dsh-fylar-office-editor source on GitHub</a>
      · <a href="../registry.html#FylarOpen__dsh-fylar-office-editor">this plugin in the registry</a></p>
   <p>FylarOpen/dsh-fylar-office-editor is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, eval in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×9 in development tooling the package does not ship, e.g. scripts/smoke-dsh-install.mjs:1, scripts/smoke-dsh-install.mjs:1</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×10 in build output only, e.g. vendor/office-sdk/lib/worker/wasm/bootloader.js:10, vendor/office-sdk/lib/worker/wasm/bootloader.js:74</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>conversationEvents</span> <span>fs</span> <span>layout</span> <span>locale</span> <span>sandboxPolicy</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>layout</span> <span>locale</span> <span>sandboxPolicy</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>uiConversation</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>schemas.microsoft.com</span> <span>licenseopen.fylar.ai</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>schemas.microsoft.com</span> <span>openlicense.fylar.ai</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

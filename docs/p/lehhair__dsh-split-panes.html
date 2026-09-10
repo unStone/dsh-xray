@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>lehhair/dsh-split-panes — capability card (C2) · dsh-xray</title>
-<meta name="description" content="lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/lehhair__dsh-split-panes.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lehhair/dsh-split-panes — dsh plugin capability card">
-<meta property="og:description" content="lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/lehhair__dsh-split-panes.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-split-panes", "identifier": "lehhair/dsh-split-panes", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/lehhair/dsh-split-panes", "url": "https://unstone.github.io/dsh-xray/p/lehhair__dsh-split-panes.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-split-panes", "identifier": "lehhair/dsh-split-panes", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/lehhair/dsh-split-panes", "url": "https://unstone.github.io/dsh-xray/p/lehhair__dsh-split-panes.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/lehhair/dsh-split-panes" rel="nofollow ugc">lehhair/dsh-split-panes source on GitHub</a>
      · <a href="../registry.html#lehhair__dsh-split-panes">this plugin in the registry</a></p>
-  <p>lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>lehhair/dsh-split-panes is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×7 in development tooling the package does not ship, e.g. scripts/upgrade-core.mjs:41, scripts/upgrade-core.mjs:41</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>slots</span> <span>uiSession</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>slots/changed</span></p>
   

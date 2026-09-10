@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nmbzth/dsh_update_check — capability card (C2) · dsh-xray</title>
-<meta name="description" content="nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function.">
+<meta name="description" content="nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/nmbzth__dsh_update_check.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nmbzth/dsh_update_check — dsh plugin capability card">
-<meta property="og:description" content="nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function.">
+<meta property="og:description" content="nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/nmbzth__dsh_update_check.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh_update_check", "identifier": "nmbzth/dsh_update_check", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function.", "codeRepository": "https://github.com/nmbzth/dsh_update_check", "url": "https://unstone.github.io/dsh-xray/p/nmbzth__dsh_update_check.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh_update_check", "identifier": "nmbzth/dsh_update_check", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function, base64 decoding in build output only.", "codeRepository": "https://github.com/nmbzth/dsh_update_check", "url": "https://unstone.github.io/dsh-xray/p/nmbzth__dsh_update_check.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>nmbzth/dsh_update_check</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">dsh插件/dsh plugin. CN: 1. dsh启动时自动检查更新，并提示风险性改动内容。由于dsh预览版的更新常具破坏性，为避免兼容性错误，不提供更新安装功能...... EN: 1. Perform an immediate update check upon dsh startup. Automatic update installation is not provided to a</p>
+  <p class="lede">dsh插件/dsh plugin. //CN: 1. dsh启动时自动检查更新，并提示风险性改动内容。由于dsh预览版的更新常具破坏性，为避免兼容性错误，不提供更新安装功能...... //EN: 1. Perform an immediate update check upon dsh startup. Automatic update installation is not provided </p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/nmbzth/dsh_update_check" rel="nofollow ugc">nmbzth/dsh_update_check source on GitHub</a>
      · <a href="../registry.html#nmbzth__dsh_update_check">this plugin in the registry</a></p>
-  <p>nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function.</p>
+  <p>nmbzth/dsh_update_check is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function, base64 decoding in build output only.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. plugin/lib/index.js:181, plugin/lib/index.js:296</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/check-src.js:30, scripts/check-src.js:54</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. plugin/lib/index.js:274, plugin/lib/index.js:366</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/check-src.js:32, scripts/check-src.js:63</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. plugin/lib/index.js:428</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>UPD_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>UPD_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

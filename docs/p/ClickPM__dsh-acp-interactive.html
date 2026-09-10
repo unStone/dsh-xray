@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Editor-facing ACP server for Zed and other ACP clients, composed from published DeepSeek Harness plugins. Community-maintained; not affiliated with DeepSeek.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/ClickPM/dsh-acp-interactive" rel="nofollow ugc">ClickPM/dsh-acp-interactive source on GitHub</a>
      · <a href="../registry.html#ClickPM__dsh-acp-interactive">this plugin in the registry</a></p>
   <p>ClickPM/dsh-acp-interactive is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, ships no manifest.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/test-harness.mjs:5, scripts/test-harness.mjs:35</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/content.ts:48</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 9 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/test-harness.mjs:12, scripts/test-harness.mjs:12</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/content.ts:48</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 9 services, 0 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>invariants</span> <span>llm</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessions</span> <span>skills</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/inbox/claimed</span> <span>approval/request</span> <span>commands/change</span> <span>llm/adapters-updated</span> <span>session/event</span> <span>skills/change</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/disposed</span> <span>agent/error</span> <span>agent/inbox/claimed</span> <span>approval/request</span> <span>commands/change</span> <span>llm/adapters-updated</span> <span>session/event</span> <span>skills/change</span> <span>subagent/end</span> <span>subagent/start</span> <span>tools/execute</span> <span>user-questions/request</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HARNESS_ROOT</span> <span>npm_execpath</span> <span>PACKED_MCP_MARKER</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HARNESS_ROOT</span> <span>DSH_HARNESS_REF</span> <span>npm_execpath</span> <span>PACKED_MCP_MARKER</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

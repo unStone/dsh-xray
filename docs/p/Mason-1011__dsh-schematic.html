@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Mason-1011/dsh-schematic</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Live plugin-topology viewer for DeepSeek Harness — the wiring diagram of mounted plugins, their runtime activity, and a composer-side star map. Pure observer.</p>
+  <p class="lede">Visual control plane for DeepSeek Harness — inspect live plugin wiring, trace runtime activity, and safely compose reusable blueprints.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Mason-1011/dsh-schematic" rel="nofollow ugc">Mason-1011/dsh-schematic source on GitHub</a>
      · <a href="../registry.html#Mason-1011__dsh-schematic">this plugin in the registry</a></p>
   <p>Mason-1011/dsh-schematic is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. tools/scan.mjs:20, tools/scan.mjs:20</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>hmr/config-update-failed</span> <span>internal/get</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SCHEMATIC_JOURNAL</span></p>

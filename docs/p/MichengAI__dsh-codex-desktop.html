@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MichengAI/dsh-codex-desktop — capability card (C2) · dsh-xray</title>
-<meta name="description" content="MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
+<meta name="description" content="MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/MichengAI__dsh-codex-desktop.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MichengAI/dsh-codex-desktop — dsh plugin capability card">
-<meta property="og:description" content="MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
+<meta property="og:description" content="MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/MichengAI__dsh-codex-desktop.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-desktop", "identifier": "MichengAI/dsh-codex-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.", "codeRepository": "https://github.com/MichengAI/dsh-codex-desktop", "url": "https://unstone.github.io/dsh-xray/p/MichengAI__dsh-codex-desktop.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-desktop", "identifier": "MichengAI/dsh-codex-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/MichengAI/dsh-codex-desktop", "url": "https://unstone.github.io/dsh-xray/p/MichengAI__dsh-codex-desktop.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 50+ ·
      <a href="https://github.com/MichengAI/dsh-codex-desktop" rel="nofollow ugc">MichengAI/dsh-codex-desktop source on GitHub</a>
      · <a href="../registry.html#MichengAI__dsh-codex-desktop">this plugin in the registry</a></p>
-  <p>MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
+  <p>MichengAI/dsh-codex-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/prepare-runtime.ts:1, scripts/prepare-runtime.ts:1</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/dsh-process.ts:63, src/dsh-process.ts:118</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. scripts/prepare-runtime.ts:1, scripts/prepare-runtime.ts:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/smoke-pet.mjs:18</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. scripts/smoke-pet.mjs:17, scripts/smoke-pet.mjs:25</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>locale</span> <span>sessions</span> <span>workspaces</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>npm_execpath</span> <span>ComSpec</span> <span>ProgramData</span> <span>DSH_NODE_EXECUTABLE</span> <span>GITHUB_REF_NAME</span> <span>DSH_PNPM_ENTRY</span> <span>DSH_PNPM_STORE_DIR</span> <span>DSH_DESKTOP_WEB_PORT</span> <span>DSH_DESKTOP_SMOKE_READY_FILE</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>npm_execpath</span> <span>ComSpec</span> <span>ProgramData</span> <span>DSH_NODE_EXECUTABLE</span> <span>GITHUB_REF_NAME</span> <span>DSH_PET_SMOKE_DIR</span> <span>DSH_PNPM_ENTRY</span> <span>DSH_PNPM_STORE_DIR</span> <span>DSH_DESKTOP_WEB_PORT</span> <span>DSH_DESKTOP_SMOKE_READY_FILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

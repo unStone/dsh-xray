@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A-G-guy/dsh-plus — capability card (C2) · dsh-xray</title>
-<meta name="description" content="A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.">
+<meta name="description" content="A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/A-G-guy__dsh-plus.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A-G-guy/dsh-plus — dsh plugin capability card">
-<meta property="og:description" content="A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.">
+<meta property="og:description" content="A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/A-G-guy__dsh-plus.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plus", "identifier": "A-G-guy/dsh-plus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.", "codeRepository": "https://github.com/A-G-guy/dsh-plus", "url": "https://unstone.github.io/dsh-xray/p/A-G-guy__dsh-plus.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plus", "identifier": "A-G-guy/dsh-plus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/A-G-guy/dsh-plus", "url": "https://unstone.github.io/dsh-xray/p/A-G-guy__dsh-plus.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/A-G-guy/dsh-plus" rel="nofollow ugc">A-G-guy/dsh-plus source on GitHub</a>
      · <a href="../registry.html#A-G-guy__dsh-plus">this plugin in the registry</a></p>
-  <p>A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.</p>
+  <p>A-G-guy/dsh-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. packages/reload/src/preflight.ts:9, packages/reload/src/scheduler.ts:15</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. packages/reload/src/preflight.ts:9, packages/reload/src/scheduler.ts:15</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/image-studio/src/provider/openai-images.ts:223</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>credentials</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>shellEnv</span> <span>slots</span> <span>subagents</span> <span>tools</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>credentials/reference-updated</span> <span>ready</span> <span>session/disposed</span> <span>session/event</span> <span>tools/pre-execute</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>models.dev</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>models.dev</span> <span>api.openai.com</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
