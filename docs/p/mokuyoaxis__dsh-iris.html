@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#mokuyoaxis__dsh-iris">this plugin in the registry</a></p>
   <p>mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/test.mjs:2, scripts/test.mjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/actions.js:134, lib/actions.js:560</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/test.mjs:2, scripts/test.mjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/actions.js:203, lib/actions.js:624</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>IRIS_TRUSTED_HOSTS</span> <span>IRIS_IMPORT_WORKBENCH_CONFIG</span> <span>DSH_WEB_BASE</span> <span>GITHUB_ACTIONS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_BASE</span> <span>DSH_HOME</span> <span>IRIS_TRUSTED_HOSTS</span> <span>IRIS_IMPORT_WORKBENCH_CONFIG</span> <span>GITHUB_ACTIONS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>rootkiller6788/dsh-launcher</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSHL — DeepSeek Harness 的本地运行与生态管理平台，用于统一管理运行时、实例、模型供应商、插件、MCP、技能与发行环境。</p>
+  <p class="lede">释放 DeepSeek Harness 插件化内核能力，将 Runtime、Provider、Plugin、Skill、MCP 等能力统一编排，让 Harness 真正成为可扩展、可组合、可管理的本地 AI 运行平台。</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/rootkiller6788/dsh-launcher" rel="nofollow ugc">rootkiller6788/dsh-launcher source on GitHub</a>
      · <a href="../registry.html#rootkiller6788__dsh-launcher">this plugin in the registry</a></p>
   <p>rootkiller6788/dsh-launcher is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. tui/host/debug-spawn.mjs:2, tui/host/debug-spawn.mjs:10</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. tui/host/reference/lan-https-certificate.ts:305, tui/host/reference/lan-https-certificate.ts:312</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. tui/host/index.js:186</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. scripts/push-both.mjs:26, scripts/push-both.mjs:26</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. tui/host/reference/lan-https-certificate.ts:305, tui/host/reference/lan-https-certificate.ts:312</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. tui/host/index.js:186</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>desktopPnpmBootstrap</span> <span>desktopProfiles</span> <span>desktopRuntime</span> <span>subprocess</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>pypi.org</span> <span>cdn.jsdelivr.net</span> <span>electronjs.org</span> <span>www.dshdesktop.cn</span> <span>gh-proxy.com</span> <span>ingest.example.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>gitee.com</span> <span>registry.npmmirror.com</span> <span>pypi.org</span> <span>cdn.jsdelivr.net</span> <span>electronjs.org</span> <span>www.dshdesktop.cn</span> <span>gh-proxy.com</span> <span>ingest.example.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>TAURI_ENV_DEBUG</span> <span>AHL_NPM_MIRROR</span> <span>AHL_PYPI_MIRROR</span> <span>TRACE_LOG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
