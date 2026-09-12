@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>vecnode/dsh-vn-plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.">
+<meta name="description" content="vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/vecnode__dsh-vn-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vecnode/dsh-vn-plugins — dsh plugin capability card">
-<meta property="og:description" content="vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.">
+<meta property="og:description" content="vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/vecnode__dsh-vn-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-vn-plugins", "identifier": "vecnode/dsh-vn-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.", "codeRepository": "https://github.com/vecnode/dsh-vn-plugins", "url": "https://unstone.github.io/dsh-xray/p/vecnode__dsh-vn-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-vn-plugins", "identifier": "vecnode/dsh-vn-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/vecnode/dsh-vn-plugins", "url": "https://unstone.github.io/dsh-xray/p/vecnode__dsh-vn-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>vecnode/dsh-vn-plugins</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">🤖 DeepSeek Harness Plugins</p>
+  <p class="lede">🤖 DeepSeek Harness Plugin Pack</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/vecnode/dsh-vn-plugins" rel="nofollow ugc">vecnode/dsh-vn-plugins source on GitHub</a>
      · <a href="../registry.html#vecnode__dsh-vn-plugins">this plugin in the registry</a></p>
-  <p>vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.</p>
+  <p>vecnode/dsh-vn-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. packages/dsh-open-in-app/lib/index.js:33, packages/dsh-open-in-app/lib/index.js:121</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/checks/check-client-bundles.mjs:108</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/checks/check-node-routes.mjs:17, scripts/checks/check-node-routes.mjs:17</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/checks/check-client-bundles.mjs:117</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>remote</span> <span>resources</span> <span>sessions</span> <span>sidebarRightTabs</span> <span>slots</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>LOCALAPPDATA</span> <span>APPDATA</span> <span>DSH_CHECK_LAUNCH</span> <span>LOG</span></p>
   <h2>How to read this</h2>

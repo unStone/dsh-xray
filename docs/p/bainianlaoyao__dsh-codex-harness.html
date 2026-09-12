@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>bainianlaoyao/dsh-codex-harness — capability card (C3) · dsh-xray</title>
-<meta name="description" content="bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/bainianlaoyao__dsh-codex-harness.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bainianlaoyao/dsh-codex-harness — dsh plugin capability card">
-<meta property="og:description" content="bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/bainianlaoyao__dsh-codex-harness.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-harness", "identifier": "bainianlaoyao/dsh-codex-harness", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/bainianlaoyao/dsh-codex-harness", "url": "https://unstone.github.io/dsh-xray/p/bainianlaoyao__dsh-codex-harness.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codex-harness", "identifier": "bainianlaoyao/dsh-codex-harness", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/bainianlaoyao/dsh-codex-harness", "url": "https://unstone.github.io/dsh-xray/p/bainianlaoyao__dsh-codex-harness.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/bainianlaoyao/dsh-codex-harness" rel="nofollow ugc">bainianlaoyao/dsh-codex-harness source on GitHub</a>
      · <a href="../registry.html#bainianlaoyao__dsh-codex-harness">this plugin in the registry</a></p>
-  <p>bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  <p>bainianlaoyao/dsh-codex-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. alignment/replay/replay-all.mjs:19, alignment/replay/replay-all.mjs:19</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. alignment/replay/run-codex.mjs:176, alignment/replay/run-dsh.mjs:75</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. alignment/replay/mock-server.mjs:91</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENAI_API_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>cordisInspect</span> <span>fs</span> <span>llm</span> <span>sessions</span> <span>shell</span> <span>tools</span></p>
-  
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. plugins/typed-subagent-presets.smoke.js:123, plugins/typed-subagent-presets.smoke.js:123</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. alignment/replay/run-codex.mjs:176, alignment/replay/run-dsh.mjs:75</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. alignment/replay/mock-server.mjs:91</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENAI_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>codexAgentTypes</span> <span>cordisInspect</span> <span>fs</span> <span>llm</span> <span>sessionProjections</span> <span>sessions</span> <span>settings</span> <span>shell</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>CODEX_BIN</span> <span>OPENAI_API_KEY</span> <span>REPLAY_MOCK_BASE_URL</span> <span>PORT</span> <span>STEPS</span> <span>LOG</span> <span>REPLAY_BASE_PORT</span> <span>REPLAY_CODEX_HOME</span> <span>REPLAY_PRESET</span></p>
   <h2>How to read this</h2>

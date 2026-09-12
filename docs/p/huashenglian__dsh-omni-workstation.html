@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>huashenglian/dsh-omni-workstation — capability card (unscanned) · dsh-xray</title>
-<meta name="description" content="huashenglian/dsh-omni-workstation has not been scanned yet.">
+<title>huashenglian/dsh-omni-workstation — capability card (C2) · dsh-xray</title>
+<meta name="description" content="huashenglian/dsh-omni-workstation is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/huashenglian__dsh-omni-workstation.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="huashenglian/dsh-omni-workstation — dsh plugin capability card">
-<meta property="og:description" content="huashenglian/dsh-omni-workstation has not been scanned yet.">
+<meta property="og:description" content="huashenglian/dsh-omni-workstation is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/huashenglian__dsh-omni-workstation.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#9ca3af; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-omni-workstation", "identifier": "huashenglian/dsh-omni-workstation", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "huashenglian/dsh-omni-workstation has not been scanned yet.", "codeRepository": "https://github.com/huashenglian/dsh-omni-workstation", "url": "https://unstone.github.io/dsh-xray/p/huashenglian__dsh-omni-workstation.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-omni-workstation", "identifier": "huashenglian/dsh-omni-workstation", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "huashenglian/dsh-omni-workstation is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/huashenglian/dsh-omni-workstation", "url": "https://unstone.github.io/dsh-xray/p/huashenglian__dsh-omni-workstation.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>huashenglian/dsh-omni-workstation</h1>
-    <span class="lvl-pill">unscanned</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">dsh全模态工作站插件，让模型支持视频、图片、语音的输入与输出，支持comfyui图像生成工具调用。Any-to-Any.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/huashenglian/dsh-omni-workstation" rel="nofollow ugc">huashenglian/dsh-omni-workstation source on GitHub</a>
      · <a href="../registry.html#huashenglian__dsh-omni-workstation">this plugin in the registry</a></p>
-  <p>huashenglian/dsh-omni-workstation has not been scanned yet.</p>
-  <p class="lede"><b></b></p>
-  
-  
-  
-  
-  
+  <p>huashenglian/dsh-omni-workstation is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/index.js:25, lib/vision-tools.js:20</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/video-builder.js:23</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×8 in build output only, e.g. lib/index.js:3117, lib/index.js:3328</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>llm</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request</span> <span>llm/adapters-updated</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span> <span>api.minimaxi.com</span> <span>openspeech.bytedance.com</span> <span>api.xiaomimimo.com</span> <span>api.openai.com</span> <span>apihub.agnes-ai.com</span> <span>api.agnes-ai.cn</span> <span>api.minimax.io</span> <span>api.anthropic.com</span> <span>api.ant-ling.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_OMNI_WORKSTATION_CONFIG_DIR</span> <span>OMNI_WORKSTATION_TESSERACT</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

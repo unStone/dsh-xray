@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#wishesl__dsh-launcher">this plugin in the registry</a></p>
   <p>wishesl/dsh-launcher is a DeepSeek Harness plugin rated C1 — ordinary capability surface. It command execution in build output only, ships no manifest.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. dsh-launcher/embed/dsh-self-mcp/lib/index.js:17, dsh-launcher/embed/dsh-self-mcp/lib/index.js:200</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 1 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. dsh-launcher/embed/dsh-self-mcp/lib/index.js:25, dsh-launcher/embed/dsh-self-mcp/lib/index.js:501</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 1 tool regs, no manifest</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>timer</span> <span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.npmjs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LAUNCHER</span> <span>DSH_WEB_URL</span> <span>DSH_INSTANCE_ID</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>wails.localhost</span> <span>www.npmjs.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LAUNCHER</span> <span>DSH_INSTANCE_ID</span> <span>DSH_LAUNCH_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

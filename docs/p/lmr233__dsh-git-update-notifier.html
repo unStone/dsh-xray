@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#lmr233__dsh-git-update-notifier">this plugin in the registry</a></p>
   <p>lmr233/dsh-git-update-notifier is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:26, lib/index.js:307</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:26, lib/index.js:470</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_GIT_UPDATE_NOTIFIER_ROOT</span> <span>DSH_GIT_UPDATE_NOTIFIER_PROXY</span> <span>DSH_GIT_UPDATE_NOTIFIER_CHANNEL</span> <span>DSH_GIT_UPDATE_NOTIFIER_REGISTRY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_GIT_UPDATE_NOTIFIER_ROOT</span> <span>DSH_GIT_UPDATE_NOTIFIER_PROXY</span> <span>DSH_GIT_UPDATE_NOTIFIER_CHANNEL</span> <span>DSH_GIT_UPDATE_NOTIFIER_REGISTRY</span> <span>DSH_GIT_UPDATE_NOTIFIER_GITHUB_API</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

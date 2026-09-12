@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>himovo/movo — capability card (C3) · dsh-xray</title>
-<meta name="description" content="himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, starts a network server, reads credential-class env vars.">
+<meta name="description" content="himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/himovo__movo.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="himovo/movo — dsh plugin capability card">
-<meta property="og:description" content="himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/himovo__movo.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "movo", "identifier": "himovo/movo", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/himovo/movo", "url": "https://unstone.github.io/dsh-xray/p/himovo__movo.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "movo", "identifier": "himovo/movo", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/himovo/movo", "url": "https://unstone.github.io/dsh-xray/p/himovo__movo.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/himovo/movo" rel="nofollow ugc">himovo/movo source on GitHub</a>
      · <a href="../registry.html#himovo__movo">this plugin in the registry</a></p>
-  <p>himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, starts a network server, reads credential-class env vars.</p>
+  <p>himovo/movo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, gates tool execution, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. services/chat-api/dsh/runtime-host/src/runtime-http-server.mjs:22</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_RUNTIME_HOST_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. services/chat-api/dsh/runtime-host/src/skill-bundle-materializer.mjs:36</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. services/chat-api/dsh/runtime-host/src/runtime-http-server.mjs:22</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_RUNTIME_HOST_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span> <span>approval/request</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.example.com</span> <span>mcp.example.com</span> <span>movo.company.com</span> <span>cdn.jsdelivr.net</span> <span>oa.example.com</span> <span>api.openai.com</span> <span>oa.acme.com</span> <span>app.tavily.com</span> <span>serper.dev</span> <span>serpapi.com</span></p>

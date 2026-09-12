@@ -54,7 +54,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node bin/postinstall.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. npm/cli/bin/ov.mjs:2, npm/cli/bin/ov.mjs:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_DIR, BRIDGE_TOKEN, OPENVIKING_API_KEY, OPENVIKING_BEARER_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: examples/dsh-memory-plugin/package.json</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>docs.openviking.ai</span> <span>example.feishu.cn</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>docs.openviking.ai</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>OPENVIKING_URL</span> <span>OPENVIKING_BASE_URL</span> <span>OPENVIKING_BEARER_TOKEN</span> <span>OPENVIKING_API_KEY</span> <span>OPENVIKING_ACCOUNT</span> <span>OPENVIKING_USER</span> <span>OPENVIKING_PEER_ID</span> <span>OPENVIKING_TIMEOUT_MS</span> <span>OPENVIKING_DEBUG_LOG</span> <span>BRIDGE_PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
