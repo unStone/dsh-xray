@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#SuperPaiGu__dsh-desktop">this plugin in the registry</a></p>
   <p>SuperPaiGu/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. index.js:12, index.js:35</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_PERSONAL_ACCESS_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. index.js:12, index.js:35</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_PERSONAL_ACCESS_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commands</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_DESKTOP_REPO</span> <span>DSH_BIN</span> <span>GITHUB_PERSONAL_ACCESS_TOKEN</span> <span>USERPROFILE</span> <span>DSH_DESKTOP_KILL_ATTACHED</span> <span>NODE_BIN</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_DESKTOP_REPO</span> <span>DSH_BIN</span> <span>GITHUB_PERSONAL_ACCESS_TOKEN</span> <span>USERPROFILE</span> <span>DSH_DESKTOP_KILL_ATTACHED</span> <span>NODE_BIN</span> <span>PATHEXT</span> <span>DSH_DESKTOP_TEST_STOP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

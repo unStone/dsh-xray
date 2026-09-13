@@ -51,9 +51,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#qiqiangvae__dsh-newbe-plugins">this plugin in the registry</a></p>
   <p>qiqiangvae/dsh-newbe-plugins is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. packages/dsh-newbe-input-enhancer/scripts/build.mjs:24</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×9 in build output only, e.g. packages/dsh-newbe-my-favorites/lib/client.js:1298, packages/dsh-newbe-my-favorites/lib/client.js:2656</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. packages/dsh-newbe-input-enhancer/scripts/build.mjs:24</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×18 in build output only, e.g. packages/dsh-newbe-ide/lib/client.js:1285, packages/dsh-newbe-ide/lib/client.js:2643</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span> <span>internal/service</span></p>
   
   
   <h2>How to read this</h2>
