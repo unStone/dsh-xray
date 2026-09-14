@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JustGenius-s/DSH-Plugs — capability card (C3) · dsh-xray</title>
-<meta name="description" content="JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/JustGenius-s__DSH-Plugs.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JustGenius-s/DSH-Plugs — dsh plugin capability card">
-<meta property="og:description" content="JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/JustGenius-s__DSH-Plugs.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Plugs", "identifier": "JustGenius-s/DSH-Plugs", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/JustGenius-s/DSH-Plugs", "url": "https://unstone.github.io/dsh-xray/p/JustGenius-s__DSH-Plugs.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Plugs", "identifier": "JustGenius-s/DSH-Plugs", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/JustGenius-s/DSH-Plugs", "url": "https://unstone.github.io/dsh-xray/p/JustGenius-s__DSH-Plugs.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/JustGenius-s/DSH-Plugs" rel="nofollow ugc">JustGenius-s/DSH-Plugs source on GitHub</a>
      · <a href="../registry.html#JustGenius-s__DSH-Plugs">this plugin in the registry</a></p>
-  <p>JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>JustGenius-s/DSH-Plugs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. plugins/dsh-plugin-config/src/process.ts:1, plugins/dsh-plugin-config/src/process.ts:25</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request-error</span> <span>agent/session-start</span> <span>connection/reset</span> <span>session/created</span> <span>session/disposed</span> <span>session/event</span> <span>settings/document-updated</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. plugins/dsh-plugin-config/src/process.ts:1, plugins/dsh-plugin-config/src/process.ts:25</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. plugins/dsh-quick-notes/src/index.ts:278</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>connection</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request</span> <span>agent/request-error</span> <span>agent/session-start</span> <span>connection/reset</span> <span>session/created</span> <span>session/disposed</span> <span>session/event</span> <span>settings/document-updated</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>awesome-dsh-plugin.com</span> <span>api.github.com</span> <span>gist.github.com</span> <span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_DEBUG_URL</span> <span>DSH_DEBUG_SESSION</span> <span>DSH_BIN</span> <span>HISTFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_DEBUG_URL</span> <span>DSH_DEBUG_SESSION</span> <span>DSH_BIN</span> <span>SystemRoot</span> <span>HISTFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

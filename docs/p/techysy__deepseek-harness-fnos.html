@@ -51,10 +51,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#techysy__deepseek-harness-fnos">this plugin in the registry</a></p>
   <p>techysy/deepseek-harness-fnos is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, starts a network server.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. cmd/dashboard.js:17, cmd/dashboard.js:17</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/test_polyfill_header.js:39</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. cmd/dashboard.js:286</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. cmd/dashboard.js:17, cmd/dashboard.js:17</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/test_polyfill_header.js:39</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. cmd/dashboard.js:526</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>gitee.com</span> <span>api.github.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>gitee.com</span> <span>registry.npmmirror.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DATA_DIR</span> <span>DSH_HOME</span> <span>APP_DIR</span> <span>DSH_PORT</span> <span>DASH_PORT</span> <span>CMD_MAIN</span> <span>MANIFEST</span> <span>NODE_BIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
