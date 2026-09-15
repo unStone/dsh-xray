@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#ZPA76__deepseek-pa-dsh-desktop">this plugin in the registry</a></p>
   <p>ZPA76/deepseek-pa-dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. cluster-acp-client.js:5, cluster-acp-client.js:144</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_DESKTOP_HOTKEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. cluster-acp-client.js:5, cluster-acp-client.js:168</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, DSH_DESKTOP_HOTKEY</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>open.bigmodel.cn</span> <span>fe-static.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>LOCALAPPDATA</span> <span>DSH_DESKTOP_HARNESS_DIR</span> <span>DPA_CLUSTER_RUNTIME</span> <span>ComSpec</span> <span>DSH_DESKTOP_DATA_DIR</span> <span>DSH_DESKTOP_DSH_HOME</span> <span>DPA_GITHUB_CLIENT_ID</span> <span>DSH_BUNDLED_SKILL_DIR</span> <span>USERPROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DEEPSEEK_API_KEY</span> <span>DSH_DESKTOP_HARNESS_DIR</span> <span>DPA_SMOKE_APP_ROOT</span> <span>DPA_CLUSTER_RUNTIME</span> <span>ComSpec</span> <span>DPA_GITHUB_CLIENT_ID</span> <span>DSH_HOME</span> <span>DSH_BUNDLED_SKILL_DIR</span> <span>DSH_DESKTOP_DSH_HOME</span> <span>DSH_AGENTS_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

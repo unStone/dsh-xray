@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kitterfast/dsh-ppt-maker — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads.">
+<meta name="description" content="kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kitterfast__dsh-ppt-maker.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kitterfast/dsh-ppt-maker — dsh plugin capability card">
-<meta property="og:description" content="kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads.">
+<meta property="og:description" content="kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kitterfast__dsh-ppt-maker.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ppt-maker", "identifier": "kitterfast/dsh-ppt-maker", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/kitterfast/dsh-ppt-maker", "url": "https://unstone.github.io/dsh-xray/p/kitterfast__dsh-ppt-maker.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ppt-maker", "identifier": "kitterfast/dsh-ppt-maker", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/kitterfast/dsh-ppt-maker", "url": "https://unstone.github.io/dsh-xray/p/kitterfast__dsh-ppt-maker.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/kitterfast/dsh-ppt-maker" rel="nofollow ugc">kitterfast/dsh-ppt-maker source on GitHub</a>
      · <a href="../registry.html#kitterfast__dsh-ppt-maker">this plugin in the registry</a></p>
-  <p>kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads.</p>
+  <p>kitterfast/dsh-ppt-maker is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. _verify/verify-client-bundle.mjs:31</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/cdp/authorize.mjs:51, scripts/cdp/lib.mjs:135</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/deck/deck-render.mjs:267, scripts/deck/deck-render.mjs:267</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. _verify/verify-client-bundle.mjs:31</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/cdp/authorize.mjs:51, scripts/cdp/lib.mjs:135</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commandUi</span> <span>sessions</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span> <span>DSH_PPT_MAKER_INSTALL</span> <span>VOLC_CLICK_WAIT_MS</span> <span>VOLC_GOTO_WAIT_MS</span> <span>VOLC_CDP_HOST</span> <span>VOLC_CDP_PORT</span> <span>VOLC_SHOT_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>schemas.microsoft.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ProgramFiles</span> <span>USERPROFILE</span> <span>DSH_PPT_MAKER_INSTALL</span> <span>VOLC_CLICK_WAIT_MS</span> <span>VOLC_GOTO_WAIT_MS</span> <span>VOLC_CDP_HOST</span> <span>VOLC_CDP_PORT</span> <span>VOLC_SHOT_DIR</span> <span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

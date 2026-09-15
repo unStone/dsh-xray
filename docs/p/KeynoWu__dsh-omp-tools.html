@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#KeynoWu__dsh-omp-tools">this plugin in the registry</a></p>
   <p>KeynoWu/dsh-omp-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can spawn subprocesses, executes system commands, base64 decoding in build output only.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. src/modules/astgrep/src/search.ts:5, src/modules/astgrep/src/search.ts:5</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:1296, lib/client.js:2654</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×20 in authored code, e.g. scripts/build-client.mjs:11, scripts/build-client.mjs:11</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:1292, lib/client.js:2650</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>fs</span> <span>locale</span> <span>remote</span> <span>settingsScope</span> <span>slots</span> <span>subprocess</span> <span>tools</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_FRONTEND</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

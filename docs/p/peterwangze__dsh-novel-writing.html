@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>peterwangze/dsh-novel-writing — capability card (C2) · dsh-xray</title>
-<meta name="description" content="peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
+<meta name="description" content="peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, decodes base64 in development tooling the packa">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/peterwangze__dsh-novel-writing.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="peterwangze/dsh-novel-writing — dsh plugin capability card">
-<meta property="og:description" content="peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
+<meta property="og:description" content="peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, decodes base64 in development tooling the packa">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/peterwangze__dsh-novel-writing.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-novel-writing", "identifier": "peterwangze/dsh-novel-writing", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/peterwangze/dsh-novel-writing", "url": "https://unstone.github.io/dsh-xray/p/peterwangze__dsh-novel-writing.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-novel-writing", "identifier": "peterwangze/dsh-novel-writing", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, decodes base64 in development tooling the package does not ship.", "codeRepository": "https://github.com/peterwangze/dsh-novel-writing", "url": "https://unstone.github.io/dsh-xray/p/peterwangze__dsh-novel-writing.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/peterwangze/dsh-novel-writing" rel="nofollow ugc">peterwangze/dsh-novel-writing source on GitHub</a>
      · <a href="../registry.html#peterwangze__dsh-novel-writing">this plugin in the registry</a></p>
-  <p>peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.</p>
+  <p>peterwangze/dsh-novel-writing is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, decodes base64 in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:31, lib/index.js:997</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/probe-host.mjs:39, scripts/probe-host.mjs:39</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:31, lib/index.js:997</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×19 in development tooling the package does not ship, e.g. scripts/isolated-preset-mount.mjs:33, scripts/isolated-preset-mount.mjs:33</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/probe-nv-bar-geometry.mjs:410, scripts/probe-nv-bar-geometry.mjs:442</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/probe-nv-bar-geometry.mjs:124, scripts/probe-nv-bar-geometry.mjs:126</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/service</span></p>
   
