@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#andrepontesmelo__deep-horizon">this plugin in the registry</a></p>
   <p>andrepontesmelo/deep-horizon is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.</p>
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/adapters/support.ts:37, src/adapters/support.ts:49</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. src/adapters/dsh.ts:50, src/adapters/dsh.ts:50</td></tr></tbody></table>
   
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/session-start</span> <span>agent/turn-stopping</span> <span>tools/pre-execute</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/session-start</span> <span>agent/turn-stopping</span> <span>tools/pre-execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>HORIZON_SUBAGENT</span> <span>HORIZON_HARNESS</span> <span>HORIZON_CLI_TEST_FAIL_RENAMES</span> <span>HORIZON_CLI_TEST_RENAME_ERRNO</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>HORIZON_HARNESS</span> <span>HORIZON_SUBAGENT</span> <span>ZCODE_SESSION_ID</span> <span>HORIZON_SESSION</span> <span>HORIZON_CLI_TEST_FAIL_RENAMES</span> <span>HORIZON_CLI_TEST_RENAME_ERRNO</span> <span>HORIZON_ZCODE_CONFIG</span> <span>HORIZON_HERMES_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

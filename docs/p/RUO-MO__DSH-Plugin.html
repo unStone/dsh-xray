@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>RUO-MO/DSH-Plugin</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH 插件仓库 · 内嵌网页版 DeepSeek 的一体化插件（本地回环反代 + 侧边栏 iframe）</p>
+  <p class="lede">DeepSeek Harness (DSH) 插件仓库：侧边栏内嵌网页版 DeepSeek 聊天 + Token 用量仪表盘。零侵入，本地 127.0.0.1 数据桥/反代，浏览器与桌面端通用。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/RUO-MO/DSH-Plugin" rel="nofollow ugc">RUO-MO/DSH-Plugin source on GitHub</a>
      · <a href="../registry.html#RUO-MO__DSH-Plugin">this plugin in the registry</a></p>
   <p>RUO-MO/DSH-Plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, network server in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. plugin/dsh-deepseek-web/lib/index.js:391</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. plugin/dsh-deepseek-web/lib/index.js:391, plugin/token-usage/lib/index.js:222</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessionQuery</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>chat.deepseek.com</span> <span>fe-static.deepseek.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SKIN_HARNESS_ROOT</span> <span>DSH_EDGE_SHARE</span></p>

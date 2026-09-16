@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>greyoak111/siyuan-codex-bridge — capability card (C3) · dsh-xray</title>
-<meta name="description" content="greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/greyoak111__siyuan-codex-bridge.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="greyoak111/siyuan-codex-bridge — dsh plugin capability card">
-<meta property="og:description" content="greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/greyoak111__siyuan-codex-bridge.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "siyuan-codex-bridge", "identifier": "greyoak111/siyuan-codex-bridge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/greyoak111/siyuan-codex-bridge", "url": "https://unstone.github.io/dsh-xray/p/greyoak111__siyuan-codex-bridge.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "siyuan-codex-bridge", "identifier": "greyoak111/siyuan-codex-bridge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/greyoak111/siyuan-codex-bridge", "url": "https://unstone.github.io/dsh-xray/p/greyoak111__siyuan-codex-bridge.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/greyoak111/siyuan-codex-bridge" rel="nofollow ugc">greyoak111/siyuan-codex-bridge source on GitHub</a>
      · <a href="../registry.html#greyoak111__siyuan-codex-bridge">this plugin in the registry</a></p>
-  <p>greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>greyoak111/siyuan-codex-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SIYUAN_API_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. bridge/mcp-stdio.mjs:47, bridge/mcp-stdio.mjs:481</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SIYUAN_API_TOKEN</td></tr></tbody></table>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>SIYUAN_API_TOKEN</span> <span>SIYUAN_MCP_PROFILE</span> <span>DSH_SIYUAN_HOME</span> <span>SIYUAN_API_URL</span> <span>SIYUAN_MCP_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SIYUAN_API_TOKEN</span> <span>SIYUAN_LAUNCH_ON_CALL</span> <span>SIYUAN_LAUNCH_COMMAND</span> <span>SIYUAN_LAUNCH_TIMEOUT_MS</span> <span>SIYUAN_MCP_PROFILE</span> <span>SIYUAN_APP</span> <span>DSH_SIYUAN_HOME</span> <span>SIYUAN_API_URL</span> <span>SIYUAN_MCP_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

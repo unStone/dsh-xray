@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>WestFox-AwA/dsh-prompt-optimizer</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH Web 插件：在输入框按回车时，先由『传话 AI』把你的话改写成一条可直接发给工作 AI 的命令——档位/权限/上下文可调，并按任务难度自行决定编排强度，确认后再发送</p>
+  <p class="lede">DSH Web 输入框接管（v0.3.9-beta.1 · 优化策略回退到 0.1.1 · 针对 PTC 模式优化，建议在 PTC 模式下使用 · 适用于 dsh-0.1.6-alpha.1）：发送前用独立 AI（传话者）把提示词优化成可直接发给工作 AI 的命令</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/WestFox-AwA/dsh-prompt-optimizer" rel="nofollow ugc">WestFox-AwA/dsh-prompt-optimizer source on GitHub</a>
      · <a href="../registry.html#WestFox-AwA__dsh-prompt-optimizer">this plugin in the registry</a></p>
   <p>WestFox-AwA/dsh-prompt-optimizer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. evidence/gh-api.cjs:7, evidence/gh-api.cjs:7</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. evidence/geometry-check.cjs:32</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. evidence/artifact-check.cjs:6, evidence/artifact-check.cjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. evidence/geometry-check.cjs:32</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>timer</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>uploads.github.com</span></p>

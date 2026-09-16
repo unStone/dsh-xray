@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>duhu2000/dsh-pre-duediligence — capability card (C3) · dsh-xray</title>
-<meta name="description" content="duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta name="description" content="duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/duhu2000__dsh-pre-duediligence.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="duhu2000/dsh-pre-duediligence — dsh plugin capability card">
-<meta property="og:description" content="duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
+<meta property="og:description" content="duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/duhu2000__dsh-pre-duediligence.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-pre-duediligence", "identifier": "duhu2000/dsh-pre-duediligence", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/duhu2000/dsh-pre-duediligence", "url": "https://unstone.github.io/dsh-xray/p/duhu2000__dsh-pre-duediligence.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-pre-duediligence", "identifier": "duhu2000/dsh-pre-duediligence", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/duhu2000/dsh-pre-duediligence", "url": "https://unstone.github.io/dsh-xray/p/duhu2000__dsh-pre-duediligence.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/duhu2000/dsh-pre-duediligence" rel="nofollow ugc">duhu2000/dsh-pre-duediligence source on GitHub</a>
      · <a href="../registry.html#duhu2000__dsh-pre-duediligence">this plugin in the registry</a></p>
-  <p>duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
+  <p>duhu2000/dsh-pre-duediligence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/ui-layout-regression.mjs:3, scripts/ui-layout-regression.mjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. scripts/verify-published.mjs:34, src/image-intake.ts:60</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>conversation</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>tools</span> <span>workspaces</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. scripts/ui-layout-regression.mjs:3, scripts/ui-layout-regression.mjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. scripts/verify-published.mjs:34, src/image-intake.ts:61</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. experimental/dsh-mcp-app-host/src/saved-index.mjs:12, experimental/mcp-app/server/app-server.mjs:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>conversation</span> <span>previsitSavedReports</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>storageDomain</span> <span>tools</span> <span>workspaces</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>slsa.dev</span> <span>api.github.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PREVISIT_PDF_FONT</span> <span>DSH_PREVISIT_DOCX_FONT</span> <span>PREVISIT_CHROME</span> <span>VERIFY_RELEASE_TAG</span> <span>RELEASE_TAG</span> <span>GITHUB_REPOSITORY</span> <span>GITHUB_TOKEN</span></p>
