@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>daha1216/dsh-pocket — capability card (C3) · dsh-xray</title>
-<meta name="description" content="daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.">
+<meta name="description" content="daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, decodes base64 payloads, network server in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/daha1216__dsh-pocket.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="daha1216/dsh-pocket — dsh plugin capability card">
-<meta property="og:description" content="daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.">
+<meta property="og:description" content="daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, decodes base64 payloads, network server in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/daha1216__dsh-pocket.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-pocket", "identifier": "daha1216/dsh-pocket", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.", "codeRepository": "https://github.com/daha1216/dsh-pocket", "url": "https://unstone.github.io/dsh-xray/p/daha1216__dsh-pocket.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-pocket", "identifier": "daha1216/dsh-pocket", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, decodes base64 payloads, network server in build output only.", "codeRepository": "https://github.com/daha1216/dsh-pocket", "url": "https://unstone.github.io/dsh-xray/p/daha1216__dsh-pocket.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>daha1216/dsh-pocket</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">把 DeepSeek Harness 装进口袋：手机扫码同步操控电脑端 DSH（局域网/公网直连 + 移动端抽屉布局），基于上游 v2.10.3 安全加固版</p>
+  <p class="lede">把 DeepSeek Harness 装进口袋：手机扫码同步操控电脑端 DSH（局域网/公网直连 + 移动端抽屉布局）</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/daha1216/dsh-pocket" rel="nofollow ugc">daha1216/dsh-pocket source on GitHub</a>
      · <a href="../registry.html#daha1216__dsh-pocket">this plugin in the registry</a></p>
-  <p>daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.</p>
+  <p>daha1216/dsh-pocket is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, decodes base64 payloads, network server in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×12 in build output only, e.g. lib/index.js:13, lib/index.js:221</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. verify-security.mjs:20</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×12 in build output only, e.g. lib/index.js:13, lib/index.js:224</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. client/client.js:5686</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/proxy.mjs:1104</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>sessionLogDownload</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaces</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>ghproxy.net</span> <span>gh.ddlc.top</span> <span>gh-proxy.com</span> <span>mirrors.tuna.tsinghua.edu.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_POCKET_CLOUDFLARED</span> <span>DSH_POCKET_CLIENT_ID</span> <span>WSL_DISTRO_NAME</span> <span>WSL_INTEROP</span></p>
   <h2>How to read this</h2>

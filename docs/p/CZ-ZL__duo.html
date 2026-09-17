@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CZ-ZL/duo — capability card (C3) · dsh-xray</title>
-<meta name="description" content="CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.">
+<meta name="description" content="CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/CZ-ZL__duo.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CZ-ZL/duo — dsh plugin capability card">
-<meta property="og:description" content="CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.">
+<meta property="og:description" content="CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/CZ-ZL__duo.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "duo", "identifier": "CZ-ZL/duo", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.", "codeRepository": "https://github.com/CZ-ZL/duo", "url": "https://unstone.github.io/dsh-xray/p/CZ-ZL__duo.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "duo", "identifier": "CZ-ZL/duo", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/CZ-ZL/duo", "url": "https://unstone.github.io/dsh-xray/p/CZ-ZL__duo.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>CZ-ZL/duo</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Try changes to your Agent, run your tests, and compare results and costs before you decide. DSH evaluation and optimization plugin with custom evaluators. / 让 Agent 在预算内尝试改进，用测试比较结果和花费，再决定是否采用。</p>
+  <p class="lede">DSH plugin for testing and comparing candidate changes, with recorded results, decisions and costs. Adoption remains under user control. / 在 DSH 中测试和比较候选修改，记录结果、选择依据与费用；是否采用由用户决定。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/CZ-ZL/duo" rel="nofollow ugc">CZ-ZL/duo source on GitHub</a>
      · <a href="../registry.html#CZ-ZL__duo">this plugin in the registry</a></p>
-  <p>CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
+  <p>CZ-ZL/duo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. dsh-plugin/core-bridge.js:1, dsh-plugin/bin/duo.mjs:15</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. dsh-plugin/core-bridge.js:1, dsh-plugin/bin/duo.mjs:15</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>appExit</span> <span>appReady</span> <span>deepseekLlmApiExtensions</span> <span>duoBudget</span> <span>duoContract</span> <span>duoController</span> <span>duoEvaluators</span> <span>duoExecutor</span> <span>duoJournal</span> <span>duoObserver</span> <span>fs</span> <span>llm</span> <span>loader</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>tools/result</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DUO_MODEL_RUN_ENABLED</span> <span>DUO_DSH_PACKAGE</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DUO_MODEL_RUN_ENABLED</span> <span>DUO_DSH_PACKAGE</span> <span>DEEPSEEK_API_KEY</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

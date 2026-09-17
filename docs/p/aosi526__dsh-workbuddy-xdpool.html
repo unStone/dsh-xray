@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>aosi526/dsh-workbuddy-xdpool</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Merge every locally signed-in WorkBuddy account into DeepSeek Harness as one auto-failing-over model pool (multi-account rotation, live credits and model catalog).</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">将 WorkBuddy 桌面 App 里登录过的所有账号自动并入一个 DeepSeek Harness 模型池：无需任何手动配置，你在 WorkBuddy 桌面登录的每个账号都会成为一个池成员；某个账号被限流（429）时，请求会自动切换到下一个可用账号，实现多账号自动容错轮换。</p>
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/aosi526/dsh-workbuddy-xdpool" rel="nofollow ugc">aosi526/dsh-workbuddy-xdpool source on GitHub</a>
      · <a href="../registry.html#aosi526__dsh-workbuddy-xdpool">this plugin in the registry</a></p>
   <p>aosi526/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/shim.ts:152, src/shim.ts:161</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>slots</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/shim.ts:159, src/shim.ts:168</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>settings</span> <span>settingsScope</span> <span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>copilot.tencent.com</span> <span>www.codebuddy.cn</span> <span>www.workbuddy.ai</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.workbuddy.ai</span> <span>copilot.tencent.com</span> <span>www.codebuddy.cn</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
