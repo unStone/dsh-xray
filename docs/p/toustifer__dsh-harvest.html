@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#toustifer__dsh-harvest">this plugin in the registry</a></p>
   <p>toustifer/dsh-harvest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. lib/backends.js:8, lib/extract.js:10</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TAVILY_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/backends.js:8, lib/backends.js:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LINUXDO_COOKIE, TAVILY_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.tavily.com</span> <span>www.bilibili.com</span> <span>www.v2ex.com</span> <span>r.jina.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>TAVILY_API_KEY</span> <span>TAVILY_ENDPOINT</span> <span>USERPROFILE</span> <span>DSH_HARVEST_BIN</span> <span>TAVILY_RESEARCH_ENDPOINT</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.tavily.com</span> <span>t.me</span> <span>linux.do</span> <span>www.bilibili.com</span> <span>www.v2ex.com</span> <span>r.jina.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>XDG_STATE_HOME</span> <span>TAVILY_API_KEY</span> <span>TAVILY_ENDPOINT</span> <span>USERPROFILE</span> <span>TELEGRAM_PYTHON</span> <span>TELEGRAM_MCP_PATH</span> <span>TELEGRAM_SESSION</span> <span>LINUXDO_PYTHON</span> <span>LINUXDO_MCP_PATH</span> <span>LINUXDO_CACHE_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

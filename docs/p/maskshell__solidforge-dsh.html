@@ -52,8 +52,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>maskshell/solidforge-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, tools/pre-execute</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. plugins/hetero-review.host.js:70, plugins/loop-gates.host.js:62</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>subprocess</span> <span>systemPrompt</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>inputTriggers</span> <span>skills</span> <span>subprocess</span> <span>systemPrompt</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>tools/post-execute</span> <span>tools/pre-execute</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>

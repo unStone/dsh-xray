@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ma-pony/deepspider — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, can intercept API traffic.">
+<meta name="description" content="ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ma-pony__deepspider.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ma-pony/deepspider — dsh plugin capability card">
-<meta property="og:description" content="ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, can intercept API traffic.">
+<meta property="og:description" content="ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ma-pony__deepspider.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepspider", "identifier": "ma-pony/deepspider", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, can intercept API traffic.", "codeRepository": "https://github.com/ma-pony/deepspider", "url": "https://unstone.github.io/dsh-xray/p/ma-pony__deepspider.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepspider", "identifier": "ma-pony/deepspider", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.", "codeRepository": "https://github.com/ma-pony/deepspider", "url": "https://unstone.github.io/dsh-xray/p/ma-pony__deepspider.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/ma-pony/deepspider" rel="nofollow ugc">ma-pony/deepspider source on GitHub</a>
      · <a href="../registry.html#ma-pony__deepspider">this plugin in the registry</a></p>
-  <p>ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, can intercept API traffic.</p>
+  <p>ma-pony/deepspider is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, can rewrite the system prompt, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh/cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patchright install chromium</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>apiProxy, systemPrompt</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy, systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/run-unit-tests.mjs:1, scripts/run-unit-tests.mjs:1</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/browser/probe/HookRuntime.js:565</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/browser/interceptors/NetworkInterceptor.js:224</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/smoke-packed-cli.mjs:30, scripts/smoke-packed-cli.mjs:50</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>apiProxy</span> <span>deepSpiderRuntimeManager</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh/cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patchright install chromium</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/run-unit-tests.mjs:1, scripts/run-unit-tests.mjs:1</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/browser/probe/HookRuntime.js:565</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/browser/interceptors/NetworkInterceptor.js:224</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/smoke-packed-cli.mjs:30, scripts/smoke-packed-cli.mjs:50</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>deepSpiderRuntimeManager</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>httpbin.org</span></p>
   
