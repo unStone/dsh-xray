@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>qishuilalala/dsh-voice-mode</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Full-duplex voice plugin for DeepSeek Harness: local zipformer2 streaming ASR (no API key) → editable draft; Edge TTS or local VITS / Kokoro read-aloud with live captions; true barge-in; hardened HTTP</p>
+  <p class="lede">DSH 全双工语音插件：流式语音识别入草稿、语音合成按句朗读 + 实时字幕、开口即打断；本地识别免 API Key，可选唤醒词。 · Full-duplex voice plugin for DeepSeek Harness: streaming speech-to-text into an editable draft, text-to-speech read-aloud with live c</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/qishuilalala/dsh-voice-mode" rel="nofollow ugc">qishuilalala/dsh-voice-mode source on GitHub</a>
      · <a href="../registry.html#qishuilalala__dsh-voice-mode">this plugin in the registry</a></p>
   <p>qishuilalala/dsh-voice-mode is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. plugin/dsh-voice-mode/scripts/verify.mjs:7, plugin/dsh-voice-mode/scripts/verify.mjs:7</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. plugin/dsh-voice-mode/src/client.tsx:1031, plugin/dsh-voice-mode/src/tts-local.ts:472</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_COOKIE</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. plugin/dsh-voice-mode/scripts/verify.mjs:7, plugin/dsh-voice-mode/scripts/verify.mjs:7</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. screenshots/scripts/capture-demo.mjs:87, plugin/dsh-voice-mode/src/client.tsx:1060</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_COOKIE, DSH_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>settings</span> <span>settingsScope</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>huggingface.co</span> <span>hf-mirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>DSH_URL</span> <span>DSH_COOKIE</span> <span>npm_config_registry</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CHROME_PATH</span> <span>LOCALAPPDATA</span> <span>DSH_URL</span> <span>DSH_BASE</span> <span>DSH_TOKEN</span> <span>PLAYWRIGHT_BROWSERS_PATH</span> <span>DSH_COOKIE</span> <span>npm_config_registry</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

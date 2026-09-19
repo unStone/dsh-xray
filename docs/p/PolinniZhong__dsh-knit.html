@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PolinniZhong/dsh-knit — capability card (C2) · dsh-xray</title>
-<meta name="description" content="PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/PolinniZhong__dsh-knit.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PolinniZhong/dsh-knit — dsh plugin capability card">
-<meta property="og:description" content="PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/PolinniZhong__dsh-knit.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-knit", "identifier": "PolinniZhong/dsh-knit", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/PolinniZhong/dsh-knit", "url": "https://unstone.github.io/dsh-xray/p/PolinniZhong__dsh-knit.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-knit", "identifier": "PolinniZhong/dsh-knit", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/PolinniZhong/dsh-knit", "url": "https://unstone.github.io/dsh-xray/p/PolinniZhong__dsh-knit.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>PolinniZhong/dsh-knit</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Agent 一天产出 20 篇文档，你找不到刚才那篇。Knit：DeepSeek Harness（DSH）Web 插件，把工作区最近的 Markdown 文档与图片/视频放到对话旁边的侧边栏，按与当前对话的相关性排序，点开就地预览。零模型调用。 | Recent docs, images &amp; video in the DSH sidebar, ranked by relevance, with i</p>
+  <p class="lede">Agent 一天产出 20 篇文档，你找不到刚才那篇。Knit 把工作区已有的 Markdown 与图片/视频列进 DSH 侧边栏，按对话相关性排序、就地预览；同一份排序也作为 knit_docs 工具给 agent，它读一篇而不是翻五篇。零模型、零网络。 | Recent docs, images &amp; video in the DSH sidebar, ranked by relevance, </p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/PolinniZhong/dsh-knit" rel="nofollow ugc">PolinniZhong/dsh-knit source on GitHub</a>
      · <a href="../registry.html#PolinniZhong__dsh-knit">this plugin in the registry</a></p>
-  <p>PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>PolinniZhong/dsh-knit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. tools/verify-v0.11.mjs:21, tools/verify-v0.11.mjs:21</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
   
   

@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>WestFox-AwA/dsh-prompt-optimizer</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH Web 插件 · 提示词优化器：把用户的一句话补全成完整具体的要求说明（面向 PTC 模式）。0.4 = 需求补全器——只补内容，不写流程/步骤/验收清单/验证纪律/禁令。</p>
+  <p class="lede">DSH Web 插件 · 提示词优化器（SPEC v0.5 依据驱动架构）：把用户的一句话补成『带依据的执行指令』——依据只搬不造（原话／会话上下文／项目文件，每条事实带出处），只补五类缺口（指代定位／验收判据／约束边界／隐含决定／入口锚点），档位＝依据预算，默认面向 PTC 执行体。不写形式模板与验证套话。</p>
   <p class="lede">★ 50+ ·
      <a href="https://github.com/WestFox-AwA/dsh-prompt-optimizer" rel="nofollow ugc">WestFox-AwA/dsh-prompt-optimizer source on GitHub</a>
      · <a href="../registry.html#WestFox-AwA__dsh-prompt-optimizer">this plugin in the registry</a></p>
   <p>WestFox-AwA/dsh-prompt-optimizer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×46 in authored code, e.g. evidence/artifact-check.cjs:6, evidence/artifact-check.cjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. evidence/geometry-check.cjs:32</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. evidence/ptc-lab/server.cjs:49</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×109 in authored code, e.g. evidence/artifact-check.cjs:6, evidence/artifact-check.cjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. evidence/geometry-check.cjs:32</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. evidence/ptc-lab/server.cjs:49</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>timer</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>uploads.github.com</span> <span>cdn.jsdelivr.net</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>REQ</span> <span>REPS</span> <span>DSH_PO_OBSERVER_BUDGET</span> <span>DSH_PROMPT_OPTIMIZER_DIAG</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>APPDATA</span> <span>REQ</span> <span>REPS</span> <span>DSH_PO_STRATEGY</span> <span>DSH_PO_OBSERVER_BUDGET</span> <span>DSH_PO_LENGTH_GATE_ABS</span> <span>DSH_PO_STALL_MS</span> <span>DSH_PO_OUTPUT_BUDGET</span> <span>DSH_PROMPT_OPTIMIZER_DIAG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

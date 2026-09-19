@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ckk-09/dsh-refix — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.">
+<meta name="description" content="ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ckk-09__dsh-refix.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ckk-09/dsh-refix — dsh plugin capability card">
-<meta property="og:description" content="ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.">
+<meta property="og:description" content="ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ckk-09__dsh-refix.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-refix", "identifier": "ckk-09/dsh-refix", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.", "codeRepository": "https://github.com/ckk-09/dsh-refix", "url": "https://unstone.github.io/dsh-xray/p/ckk-09__dsh-refix.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-refix", "identifier": "ckk-09/dsh-refix", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/ckk-09/dsh-refix", "url": "https://unstone.github.io/dsh-xray/p/ckk-09__dsh-refix.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/ckk-09/dsh-refix" rel="nofollow ugc">ckk-09/dsh-refix source on GitHub</a>
      · <a href="../registry.html#ckk-09__dsh-refix">this plugin in the registry</a></p>
-  <p>ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands.</p>
+  <p>ckk-09/dsh-refix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. deploy/static/boot-test.mjs:21, deploy/static/boot-test.mjs:48</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. deploy/static/boot-test.mjs:21, deploy/static/boot-test.mjs:48</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×8 in authored code, e.g. ac/pre3-smoke.mjs:49, ac/pre3-smoke.mjs:69</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>cordisInspect</span> <span>dynamicCordisRunner</span> <span>timer</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>cordis/dynamic-package</span> <span>cordis/dynamic-retract</span> <span>tools/pre-execute</span></p>
   

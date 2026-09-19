@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#wei125775-lab__whalegirl-deskpet">this plugin in the registry</a></p>
   <p>wei125775-lab/whalegirl-deskpet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×14 in authored code, e.g. claude/install.mjs:19, claude/install.mjs:19</td></tr></tbody></table>
-  
-  
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. install.mjs:15, install.mjs:15</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>pet</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/disposed</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>codeload.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>PETPET_EXE</span> <span>CLAUDE_CONFIG_DIR</span> <span>CLAUDE_PROJECTS</span> <span>PET_DIR</span> <span>PETPET_STATE</span> <span>INTERRUPT_WATCH_ONESHOT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>LOCALAPPDATA</span> <span>APPDATA</span> <span>ProgramFiles</span> <span>PETPET_EXE</span> <span>CLAUDE_CONFIG_DIR</span> <span>CLAUDE_PROJECTS</span> <span>PET_DIR</span> <span>PETPET_STATE</span> <span>INTERRUPT_WATCH_ONESHOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

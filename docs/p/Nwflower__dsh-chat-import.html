@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Nwflower/dsh-chat-import</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Import 14+ external agent chat histories (Claude Code, Codex, ChatGPT, Cursor, Gemini, Reasonix, opencode, ZCode, Grok Build, OpenClaw, Pi, Hermes, Kimi CLI, DSH) into DeepSeek Harness as resumable se</p>
+  <p class="lede">Import conversation history from 25+ AI coding agents into DeepSeek Harness as resumable sessions — tool calls, reasoning and results kept intact, with reverse export and sync. | 把 25+ AI 编程 Agent 的聊天</p>
   <p class="lede">★ 100+ ·
      <a href="https://github.com/Nwflower/dsh-chat-import" rel="nofollow ugc">Nwflower/dsh-chat-import source on GitHub</a>
      · <a href="../registry.html#Nwflower__dsh-chat-import">this plugin in the registry</a></p>
   <p>Nwflower/dsh-chat-import is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>locale</span> <span>sessionPersistence</span> <span>slots</span> <span>tools</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>locale</span> <span>sessionPersistence</span> <span>sidebarRightTabs</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/session-start</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>CLINE_DATA_DIR</span> <span>CONTINUE_GLOBAL_DIR</span> <span>DSH_IMPORT_CONTEXT_BRIDGE</span> <span>CLINE_DIR</span> <span>CLINE_SESSION_DATA_DIR</span> <span>APPDATA</span> <span>LOCALAPPDATA</span> <span>DSH_IMPORT_SESSION_HINT</span> <span>TELEAGENT_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>APPDATA</span> <span>CLINE_DATA_DIR</span> <span>CONTINUE_GLOBAL_DIR</span> <span>DSH_IMPORT_CONTEXT_BRIDGE</span> <span>CLINE_DIR</span> <span>CLINE_SESSION_DATA_DIR</span> <span>CLINE_LEGACY_GLOBAL_STORAGE_DIR</span> <span>CLINE_VSCODE_GLOBAL_STORAGE_DIR</span> <span>XDG_CONFIG_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
