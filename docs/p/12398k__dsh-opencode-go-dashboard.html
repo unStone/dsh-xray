@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>12398k/dsh-opencode-go-dashboard — capability card (C3) · dsh-xray</title>
-<meta name="description" content="12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/12398k__dsh-opencode-go-dashboard.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="12398k/dsh-opencode-go-dashboard — dsh plugin capability card">
-<meta property="og:description" content="12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/12398k__dsh-opencode-go-dashboard.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-opencode-go-dashboard", "identifier": "12398k/dsh-opencode-go-dashboard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/12398k/dsh-opencode-go-dashboard", "url": "https://unstone.github.io/dsh-xray/p/12398k__dsh-opencode-go-dashboard.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-opencode-go-dashboard", "identifier": "12398k/dsh-opencode-go-dashboard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, reads credential-class env vars.", "codeRepository": "https://github.com/12398k/dsh-opencode-go-dashboard", "url": "https://unstone.github.io/dsh-xray/p/12398k__dsh-opencode-go-dashboard.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/12398k/dsh-opencode-go-dashboard" rel="nofollow ugc">12398k/dsh-opencode-go-dashboard source on GitHub</a>
      · <a href="../registry.html#12398k__dsh-opencode-go-dashboard">this plugin in the registry</a></p>
-  <p>12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>12398k/dsh-opencode-go-dashboard is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENCODE_API_KEY, OPENCODE_KEY, ZEN_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/test-render.mjs:23, scripts/test-routing.mjs:29</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENCODE_API_KEY, OPENCODE_KEY, ZEN_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>timer</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.googleapis.com</span> <span>opencode.ai</span> <span>oauth2.googleapis.com</span> <span>accounts.google.com</span> <span>daily-cloudcode-pa.googleapis.com</span> <span>cloudcode-pa.googleapis.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>OPENCODE_API_KEY</span> <span>OPENCODE_KEY</span> <span>ZEN_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NeoXider/neoxider-agent-deck — capability card (C2) · dsh-xray</title>
-<meta name="description" content="NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.">
+<meta name="description" content="NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/NeoXider__neoxider-agent-deck.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NeoXider/neoxider-agent-deck — dsh plugin capability card">
-<meta property="og:description" content="NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/NeoXider__neoxider-agent-deck.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "neoxider-agent-deck", "identifier": "NeoXider/neoxider-agent-deck", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/NeoXider/neoxider-agent-deck", "url": "https://unstone.github.io/dsh-xray/p/NeoXider__neoxider-agent-deck.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "neoxider-agent-deck", "identifier": "NeoXider/neoxider-agent-deck", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/NeoXider/neoxider-agent-deck", "url": "https://unstone.github.io/dsh-xray/p/NeoXider__neoxider-agent-deck.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/NeoXider/neoxider-agent-deck" rel="nofollow ugc">NeoXider/neoxider-agent-deck source on GitHub</a>
      · <a href="../registry.html#NeoXider__neoxider-agent-deck">this plugin in the registry</a></p>
-  <p>NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
+  <p>NeoXider/neoxider-agent-deck is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. scripts/platform-matrix.cjs:8, scripts/platform-matrix.cjs:8</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/attachment-preview-smoke.cjs:21</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. scripts/platform-matrix.cjs:8, scripts/platform-matrix.cjs:8</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/attachment-preview-smoke.cjs:21</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/desktop-access.cjs:61, src/device-access.cjs:150</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WIDGET_URL</span> <span>DSH_SMOKE_PROVIDER</span> <span>DSH_SMOKE_MODEL</span> <span>DSH_SMOKE_RECEIPT</span> <span>WIDGET_SCREENSHOT_CHAT_PHASE</span> <span>WIDGET_SCREENSHOT_DELAY</span> <span>WIDGET_SCREENSHOT_MODE</span> <span>WIDGET_SCREENSHOT_SIDE</span> <span>WIDGET_UI_AUDIT_PATH</span> <span>WIDGET_SCREENSHOT_BACKGROUND_OPACITY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WIDGET_URL</span> <span>DSH_SMOKE_PROVIDER</span> <span>DSH_SMOKE_MODEL</span> <span>DSH_SMOKE_RECEIPT</span> <span>WIDGET_SCREENSHOT_CHAT_PHASE</span> <span>DECK_SMOKE_SETTINGS</span> <span>APPDATA</span> <span>WIDGET_SCREENSHOT_DELAY</span> <span>WIDGET_SCREENSHOT_MODE</span> <span>WIDGET_SCREENSHOT_SIDE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
