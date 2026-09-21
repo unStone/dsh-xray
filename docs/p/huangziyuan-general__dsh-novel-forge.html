@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>huangziyuan-general/dsh-novel-forge — capability card (C2) · dsh-xray</title>
-<meta name="description" content="huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval in development tooling the package does not ship.">
+<meta name="description" content="huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, uses eval in development tooling the package does ">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/huangziyuan-general__dsh-novel-forge.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="huangziyuan-general/dsh-novel-forge — dsh plugin capability card">
-<meta property="og:description" content="huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval in development tooling the package does not ship.">
+<meta property="og:description" content="huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, uses eval in development tooling the package does ">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/huangziyuan-general__dsh-novel-forge.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-novel-forge", "identifier": "huangziyuan-general/dsh-novel-forge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/huangziyuan-general/dsh-novel-forge", "url": "https://unstone.github.io/dsh-xray/p/huangziyuan-general__dsh-novel-forge.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-novel-forge", "identifier": "huangziyuan-general/dsh-novel-forge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/huangziyuan-general/dsh-novel-forge", "url": "https://unstone.github.io/dsh-xray/p/huangziyuan-general__dsh-novel-forge.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,12 +46,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">DSH 小说锻炉：把 AI 长篇写作通病变成代码强制的硬约束（事实账本/上下文包/阶段门禁/零费用去AI味扫描/确定性审计/提案制修订）。Novel-writing guardrails plugin for DeepSeek Harness (DSH).</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/huangziyuan-general/dsh-novel-forge" rel="nofollow ugc">huangziyuan-general/dsh-novel-forge source on GitHub</a>
      · <a href="../registry.html#huangziyuan-general__dsh-novel-forge">this plugin in the registry</a></p>
-  <p>huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval in development tooling the package does not ship.</p>
+  <p>huangziyuan-general/dsh-novel-forge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/preview-ui.mjs:654</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/real-boot-test.mjs:19, scripts/real-boot-test.mjs:80</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/preview-ui.mjs:654</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>fs</span> <span>sessions</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span></p>
   
   
