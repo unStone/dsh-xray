@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zmm863-commits/dsh-agnes-studio — capability card (C3) · dsh-xray</title>
-<meta name="description" content="zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.">
+<meta name="description" content="zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zmm863-commits__dsh-agnes-studio.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zmm863-commits/dsh-agnes-studio — dsh plugin capability card">
-<meta property="og:description" content="zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.">
+<meta property="og:description" content="zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zmm863-commits__dsh-agnes-studio.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agnes-studio", "identifier": "zmm863-commits/dsh-agnes-studio", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.", "codeRepository": "https://github.com/zmm863-commits/dsh-agnes-studio", "url": "https://unstone.github.io/dsh-xray/p/zmm863-commits__dsh-agnes-studio.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agnes-studio", "identifier": "zmm863-commits/dsh-agnes-studio", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/zmm863-commits/dsh-agnes-studio", "url": "https://unstone.github.io/dsh-xray/p/zmm863-commits__dsh-agnes-studio.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/zmm863-commits/dsh-agnes-studio" rel="nofollow ugc">zmm863-commits/dsh-agnes-studio source on GitHub</a>
      · <a href="../registry.html#zmm863-commits__dsh-agnes-studio">this plugin in the registry</a></p>
-  <p>zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.</p>
+  <p>zmm863-commits/dsh-agnes-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AGNES_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/ffmpeg.ts:12, src/ffmpeg.ts:67</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. src/anchor-engine.ts:198, src/anchor-engine.ts:230</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MIMO_API_KEY</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: AGNES_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>slots</span> <span>systemPrompt</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>platform.agnes-ai.cn</span> <span>api.agnes-ai.cn</span> <span>api.deepseek.com</span> <span>ark.cn-beijing.volces.com</span> <span>api.minimaxi.com</span> <span>dashscope.aliuncs.com</span> <span>agnes-ai.cn</span> <span>api.example.com</span> <span>dashscope.aliyuncs.com</span> <span>rolldown.rs</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>AGNES_API_KEY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>platform.agnes-ai.cn</span> <span>api.agnes-ai.cn</span> <span>api.deepseek.com</span> <span>ark.cn-beijing.volces.com</span> <span>api.minimaxi.com</span> <span>dashscope.aliuncs.com</span> <span>agnes-ai.cn</span> <span>api.example.com</span> <span>api.xiaomimimo.com</span> <span>token-plan-cn.xiaomimimo.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MIMO_API_KEY</span> <span>AGNES_FFMPEG</span> <span>AGNES_FFPROBE</span> <span>AGNES_SUBTITLE_FONT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

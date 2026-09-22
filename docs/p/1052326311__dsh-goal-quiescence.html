@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>1052326311/dsh-goal-quiescence — capability card (C2) · dsh-xray</title>
-<meta name="description" content="1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.">
+<meta name="description" content="1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/1052326311__dsh-goal-quiescence.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1052326311/dsh-goal-quiescence — dsh plugin capability card">
-<meta property="og:description" content="1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.">
+<meta property="og:description" content="1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/1052326311__dsh-goal-quiescence.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-goal-quiescence", "identifier": "1052326311/dsh-goal-quiescence", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.", "codeRepository": "https://github.com/1052326311/dsh-goal-quiescence", "url": "https://unstone.github.io/dsh-xray/p/1052326311__dsh-goal-quiescence.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-goal-quiescence", "identifier": "1052326311/dsh-goal-quiescence", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/1052326311/dsh-goal-quiescence", "url": "https://unstone.github.io/dsh-xray/p/1052326311__dsh-goal-quiescence.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/1052326311/dsh-goal-quiescence" rel="nofollow ugc">1052326311/dsh-goal-quiescence source on GitHub</a>
      · <a href="../registry.html#1052326311__dsh-goal-quiescence">this plugin in the registry</a></p>
-  <p>1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.</p>
+  <p>1052326311/dsh-goal-quiescence is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/smoke-package.mjs:1, scripts/smoke-package.mjs:1</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>goals</span> <span>subagents</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>subagent/end</span> <span>subagent/start</span> <span>tools/pre-execute</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>subagent/end</span> <span>subagent/start</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
   
   
   <h2>How to read this</h2>

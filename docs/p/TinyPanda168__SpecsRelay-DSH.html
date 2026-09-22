@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>TinyPanda168/SpecsRelay-DSH</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek 网页对话 → 自动整理与澄清需求 → 发送到 DSH 项目启动 Agent；仅支持 DSH Desktop、Pilot Harness、DataElement DSH Desktop 和 myYangyunfan DSH Desktop。</p>
+  <p class="lede">把 DeepSeek 对话整理成开发需求，交给 DSH Agent 执行。仅支持 anywhere-labs DSH Desktop。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/TinyPanda168/SpecsRelay-DSH" rel="nofollow ugc">TinyPanda168/SpecsRelay-DSH source on GitHub</a>
      · <a href="../registry.html#TinyPanda168__SpecsRelay-DSH">this plugin in the registry</a></p>
   <p>TinyPanda168/SpecsRelay-DSH is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. installer/hosts.js:4, installer/hosts.js:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. index.js:399, index.js:445</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. installer/hosts.js:4, installer/hosts.js:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. index.js:418, index.js:464</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>conversation</span> <span>llm</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>webServer</span> <span>workspaces</span></p>
-  
-  <h2>Outbound domains</h2><p class="kv"><span>chat.deepseek.com</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>chat.deepseek.com</span> <span>api.typesafe.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SPECSRELAY_ICON</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

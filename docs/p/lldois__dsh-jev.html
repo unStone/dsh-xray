@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/gate.js:7, lib/gate.js:7</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TYPESAFE_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.typesafe.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>TYPESAFE_API_KEY</span> <span>TYPESAFE_BASE_URL</span> <span>TYPESAFE_DEFAULT_MODEL</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.typesafe.ai</span> <span>console.typesafe.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>TYPESAFE_API_KEY</span> <span>TYPESAFE_BASE_URL</span> <span>TYPESAFE_DEFAULT_MODEL</span> <span>PI_TYPESAFE_ENABLED</span> <span>DSH_JEV_ENABLED</span> <span>DSH_TYPESAFE_ENABLED</span> <span>PI_CODING_AGENT_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

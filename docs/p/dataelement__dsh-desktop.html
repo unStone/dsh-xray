@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>dataelement/dsh-desktop — capability card (C3) · dsh-xray</title>
-<meta name="description" content="dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta name="description" content="dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, can spawn subprocesses, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/dataelement__dsh-desktop.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dataelement/dsh-desktop — dsh plugin capability card">
-<meta property="og:description" content="dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, starts a network server.">
+<meta property="og:description" content="dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, can spawn subprocesses, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/dataelement__dsh-desktop.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "dataelement/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, starts a network server.", "codeRepository": "https://github.com/dataelement/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/dataelement__dsh-desktop.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-desktop", "identifier": "dataelement/dsh-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/dataelement/dsh-desktop", "url": "https://unstone.github.io/dsh-xray/p/dataelement__dsh-desktop.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,15 +46,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DSHDesktop：DeepSeek Harness Desktop / DeepSeek Harness 桌面版</p>
-  <p class="lede">★ 8.1k ·
+  <p class="lede">★ 8.3k ·
      <a href="https://github.com/dataelement/dsh-desktop" rel="nofollow ugc">dataelement/dsh-desktop source on GitHub</a>
      · <a href="../registry.html#dataelement__dsh-desktop">this plugin in the registry</a></p>
-  <p>dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, executes system commands, starts a network server.</p>
+  <p>dataelement/dsh-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It runs code at install time, can rewrite the system prompt, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patch-package &amp;&amp; node scripts/install-brand-assets.mjs &amp;&amp; install-electron --no</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×43 in authored code, e.g. scripts/build-ppt-runtime.mjs:6, scripts/check-recovery-ui.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/main/mobile/lan-mobile-bridge.ts:199, src/main/runtime/harness-runtime.ts:966</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CRASH_ADMIN_TOKEN, DESKTOP_ADMIN_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>invariants</span> <span>loader</span> <span>locale</span> <span>skills</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patch-package &amp;&amp; node scripts/install-brand-assets.mjs &amp;&amp; install-electron --no</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>sandbox, subprocess, systemPrompt, system-prompt/assemble</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×47 in authored code, e.g. scripts/build-ppt-runtime.mjs:6, scripts/check-recovery-ui.mjs:5</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. packages/dsh-image-generation/lib/provider.js:181, packages/ppt-runtime/core/lib/personal-templates.js:137</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×8 in authored code, e.g. scripts/verify-image-electron.mjs:27, scripts/verify-image-electron.mjs:40</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CRASH_ADMIN_TOKEN, DESKTOP_ADMIN_TOKEN</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>credentials</span> <span>invariants</span> <span>loader</span> <span>locale</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>sessionController</span> <span>settings</span> <span>skills</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span> <span>uiConversation</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>api-session/error</span> <span>system-prompt/assemble</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>dshdesktop.com</span> <span>codeload.github.com</span> <span>www.apple.com</span> <span>discord.gg</span> <span>timestamp.digicert.com</span> <span>www.dshdesktop.com</span> <span>mirrors.cloud.tencent.com</span> <span>api.trycloudflare.com</span> <span>registry.npmmirror.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dshdesktop.com</span> <span>codeload.github.com</span> <span>ark.cn-beijing.volces.com</span> <span>api.openai.com</span> <span>schemas.openxmlformats.org</span> <span>www.apple.com</span> <span>discord.gg</span> <span>timestamp.digicert.com</span> <span>www.dshdesktop.com</span> <span>mirrors.cloud.tencent.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ELECTRON_RUN_AS_NODE</span> <span>DRY_RUN</span> <span>Path</span> <span>CRASH_ADMIN_TOKEN</span> <span>DESKTOP_ADMIN_TOKEN</span> <span>CRASH_BASE_URL</span> <span>RELEASE_TAG</span> <span>GITHUB_REF_NAME</span> <span>RECOVERY_UI_SCALE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
