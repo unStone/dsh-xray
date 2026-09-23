@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#toustifer__agentflow">this plugin in the registry</a></p>
   <p>toustifer/agentflow is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh-agentflow/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. skills/agentflow/hooks/version-check.js:8, skills/agentflow/hooks/version-check.js:8</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh-agentflow/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. smoke/hub_mcp_probe.mjs:15, smoke/hub_mcp_probe.mjs:20</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>hub.stifer.xyz</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>CLAUDE_PROJECT_DIR</span> <span>AGENTFLOW_REPO</span> <span>AGENTFLOW_RELEASE_API</span> <span>AGENTFLOW_BIN</span> <span>DSH_AGENTS_HOME</span> <span>AGENTFLOW_DB_PATH</span> <span>TEMP</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>hub.stifer.xyz</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CLAUDE_PROJECT_DIR</span> <span>AGENTFLOW_REPO</span> <span>AGENTFLOW_RELEASE_API</span> <span>AGENTFLOW_BIN</span> <span>DSH_AGENTS_HOME</span> <span>AGENTFLOW_DB_PATH</span> <span>TEMP</span> <span>HUB_API_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

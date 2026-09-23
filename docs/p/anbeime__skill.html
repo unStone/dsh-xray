@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>anbeime/skill — capability card (C0) · dsh-xray</title>
-<meta name="description" content="anbeime/skill is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 0 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.">
+<title>anbeime/skill — capability card (C2) · dsh-xray</title>
+<meta name="description" content="anbeime/skill is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/anbeime__skill.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="anbeime/skill — dsh plugin capability card">
-<meta property="og:description" content="anbeime/skill is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 0 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.">
+<meta property="og:description" content="anbeime/skill is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/anbeime__skill.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,7 +16,7 @@
 <style>
 .plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
 .plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
-.lvl-pill { background:#16a34a; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
 main { max-width:760px; }
 main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
 main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "skill", "identifier": "anbeime/skill", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "anbeime/skill is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 0 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.", "codeRepository": "https://github.com/anbeime/skill", "url": "https://unstone.github.io/dsh-xray/p/anbeime__skill.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "skill", "identifier": "anbeime/skill", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "anbeime/skill is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.", "codeRepository": "https://github.com/anbeime/skill", "url": "https://unstone.github.io/dsh-xray/p/anbeime__skill.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -43,19 +43,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 <main>
   <div class="plugin-head">
     <h1>anbeime/skill</h1>
-    <span class="lvl-pill">C0</span>
+    <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">收录最全、更新最快的技能Skills商店：精选原创技能包（涵盖文档处理、内容创作、编程开发、机器学习、自动化工作流），全部打包好可直接安装使用！同时自动抓取GitHub上万个Skills项目，按分类、更新时间、Star数量整理。The most comprehensive and frequently updated AI Agent skill library, featuring curate</p>
   <p class="lede">★ 7.1k ·
      <a href="https://github.com/anbeime/skill" rel="nofollow ugc">anbeime/skill source on GitHub</a>
      · <a href="../registry.html#anbeime__skill">this plugin in the registry</a></p>
-  <p>anbeime/skill is a DeepSeek Harness plugin rated C0 — no notable capability surface. Scanning 0 code files turned up none of the capabilities we look for: no runtime patch, no prompt or API surface, no subprocess use, no credential-class environment reads and no install-time scripts.</p>
+  <p>anbeime/skill is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ANTHROPIC_API_KEY, FAL_KEY</td></tr></tbody></table>
   
   
-  
-  
-  
+  <h2>Outbound domains</h2><p class="kv"><span>fal.run</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FAL_KEY</span> <span>MEMORY_STORAGE_PATH</span> <span>ANTHROPIC_API_KEY</span> <span>DEFAULT_REFERENCE_IMAGE</span> <span>PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

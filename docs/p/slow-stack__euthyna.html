@@ -46,13 +46,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">⚖️ The audit AI coding agents can&#x27;t skip — deterministic facts (git history, test coverage) and six-gate claim adjudication for code security audits. Not another scanner.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/slow-stack/euthyna" rel="nofollow ugc">slow-stack/euthyna source on GitHub</a>
      · <a href="../registry.html#slow-stack__euthyna">this plugin in the registry</a></p>
   <p>slow-stack/euthyna is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×37 in authored code, e.g. bench/adjudicate.js:29, bench/adjudicate.js:29</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. bench/cases/p4-code-injection/src/rules.js:17, bench/cases/p4b-unreachable-eval/src/rules.js:40</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. tools/fetch-repos.js:54</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. bench/exploits.js:380, bench/exploits.js:384</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>skills</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>skills</span></p>
   
   
   <h2>Environment variables it reads</h2><p class="kv"><span>EUTHYNA_PROXY</span> <span>DSH_APP_ROOT</span> <span>ProgramFiles</span> <span>LOCALAPPDATA</span></p>
