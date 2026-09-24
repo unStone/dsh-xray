@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>MyPanda-Hash/CHENGXIAO</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Pairs two DeepSeek Harness machines over a local network with a one-time code, so one agent can run tasks and exchange files on the other while each machine keeps its own files in place.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">Remote control between DeepSeek Harness machines: pair with a one-time code, run tasks and transfer files on the other machine - LAN direct or cross-network via an end-to-end-encrypted relay (official</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/MyPanda-Hash/CHENGXIAO" rel="nofollow ugc">MyPanda-Hash/CHENGXIAO source on GitHub</a>
      · <a href="../registry.html#MyPanda-Hash__CHENGXIAO">this plugin in the registry</a></p>
   <p>MyPanda-Hash/CHENGXIAO is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/headless.js:1, src/headless.js:91</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/transfer.js:116</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/server.js:67</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/headless.js:1, src/headless.js:98</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. src/service.js:343, src/transfer-client.js:147</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/server.js:120, src/relay/proxy.js:31</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_PEER_INSECURE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_PEER_INSECURE</span> <span>DSH_RELAY_HOST</span> <span>DSH_RELAY_PORT</span> <span>PORT</span> <span>DSH_RELAY_OFFLINE_TTL_MS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

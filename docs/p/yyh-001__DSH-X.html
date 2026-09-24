@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yyh-001/DSH-X — capability card (C2) · dsh-xray</title>
-<meta name="description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yyh-001/DSH-X — dsh plugin capability card">
-<meta property="og:description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-X", "identifier": "yyh-001/DSH-X", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/yyh-001/DSH-X", "url": "https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-X", "identifier": "yyh-001/DSH-X", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/yyh-001/DSH-X", "url": "https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>yyh-001/DSH-X</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness 轻量 Windows 启动器。选一个版本，启动 dsh web。</p>
+  <p class="lede">DeepSeek Harness 轻量启动器：选一个版本，在系统浏览器里启动 dsh web 并管理插件。A lightweight launcher for DeepSeek Harness (Windows / macOS): pick a version, start DSH Web in your browser, manage plugins.</p>
   <p class="lede">★ 100+ ·
      <a href="https://github.com/yyh-001/DSH-X" rel="nofollow ugc">yyh-001/DSH-X source on GitHub</a>
      · <a href="../registry.html#yyh-001__DSH-X">this plugin in the registry</a></p>
-  <p>yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
+  <p>yyh-001/DSH-X is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. registry.js:1, registry.js:186</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/make-promo.mjs:172</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. server.js:2039</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. registry.js:1, registry.js:199</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/make-promo.mjs:172</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. server.js:2405</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_RELEASE_KEY, DSH_RELEASE_PUBKEY</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>npmmirror.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>APPDATA</span> <span>DSH_PROFILE</span> <span>LOCALAPPDATA</span> <span>DSH_PERF_DEBUG</span> <span>npm_config_prefix</span> <span>PORT</span> <span>DSH_VERSIONS_DATA</span> <span>DSH_HOME</span> <span>npm_config_registry</span> <span>NODE_OPTIONS</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>npmmirror.com</span> <span>pnpm.io</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE</span> <span>LOCALAPPDATA</span> <span>DSH_PERF_DEBUG</span> <span>APPDATA</span> <span>npm_config_prefix</span> <span>PORT</span> <span>DSH_VERSIONS_DATA</span> <span>DSH_HOME</span> <span>npm_config_registry</span> <span>NODE_OPTIONS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

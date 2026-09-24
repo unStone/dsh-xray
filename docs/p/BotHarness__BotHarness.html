@@ -46,16 +46,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede"></p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/BotHarness/BotHarness" rel="nofollow ugc">BotHarness/BotHarness source on GitHub</a>
      · <a href="../registry.html#BotHarness__BotHarness">this plugin in the registry</a></p>
   <p>BotHarness/BotHarness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×30 in authored code, e.g. scripts/dev-instance.mjs:14, scripts/dev-instance.mjs:14</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. scripts/e2e-channel-send-failure.mjs:95, scripts/e2e-channel-send-failure.mjs:101</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/e2e-channel-attachment.mjs:111</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. scripts/dev-wsl-connect-relay.cjs:20</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BH_E2E_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×30 in authored code, e.g. scripts/dev-instance.mjs:14, scripts/dev-instance.mjs:14</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×11 in authored code, e.g. scripts/e2e-channel-multiselect.mjs:103, scripts/e2e-channel-multiselect.mjs:104</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/e2e-channel-attachment.mjs:111</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. scripts/dev-wsl-connect-relay.cjs:20</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BH_E2E_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>channelSidebar</span> <span>connection</span> <span>inputTriggers</span> <span>layout</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/created</span> <span>agent/disposed</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>www.docker.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>BH_E2E_TOKEN</span> <span>BH_E2E_ORIGIN</span> <span>BH_E2E_SCREENSHOT</span> <span>BH_E2E_DARK</span> <span>BOTHARNESS_DOCS_TEST_OUTPUT_ROOT</span> <span>DSH_SKILL_REPO</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>docs.docker.com</span> <span>www.docker.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>BH_E2E_TOKEN</span> <span>BH_E2E_ORIGIN</span> <span>BH_E2E_SCREENSHOT</span> <span>BH_E2E_DARK</span> <span>BOTHARNESS_DOCS_TEST_OUTPUT_ROOT</span> <span>DSH_SKILL_REPO</span> <span>DSH_HOME</span> <span>BOTHARNESS_COMPUTER_FORCE_BIND</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

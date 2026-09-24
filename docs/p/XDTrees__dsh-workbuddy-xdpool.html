@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>XDTrees/dsh-workbuddy-xdpool — capability card (C3) · dsh-xray</title>
-<meta name="description" content="XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.">
+<meta name="description" content="XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/XDTrees__dsh-workbuddy-xdpool.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XDTrees/dsh-workbuddy-xdpool — dsh plugin capability card">
-<meta property="og:description" content="XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.">
+<meta property="og:description" content="XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/XDTrees__dsh-workbuddy-xdpool.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-workbuddy-xdpool", "identifier": "XDTrees/dsh-workbuddy-xdpool", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.", "codeRepository": "https://github.com/XDTrees/dsh-workbuddy-xdpool", "url": "https://unstone.github.io/dsh-xray/p/XDTrees__dsh-workbuddy-xdpool.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-workbuddy-xdpool", "identifier": "XDTrees/dsh-workbuddy-xdpool", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/XDTrees/dsh-workbuddy-xdpool", "url": "https://unstone.github.io/dsh-xray/p/XDTrees__dsh-workbuddy-xdpool.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>XDTrees/dsh-workbuddy-xdpool</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">将 WorkBuddy 桌面 App 里登录过的所有账号自动并入一个 DeepSeek Harness 模型池：无需任何手动配置，你在 WorkBuddy 桌面登录的每个账号都会成为一个池成员；某个账号被限流（429）时，请求会自动切换到下一个可用账号，实现多账号自动容错轮换。</p>
+  <p class="lede">把 WorkBuddy 桌面 App 里登录过的所有账号（国内版和国际版都支持），合成一个 DSH 模型池。你在 WorkBuddy 里登过几个号，池里就有几个号——不用手动填表，不用一个个录入。  哪个号被限流了、积分用光了，请求自动换到下一个能用的号上去。你只管问，剩下的它自己处理。  另外附送一整套「积分自动化」：签到、领任务奖励、连登兑换、开猫猫旅行……这些每天都要手动点一遍的活儿，插件在</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/XDTrees/dsh-workbuddy-xdpool" rel="nofollow ugc">XDTrees/dsh-workbuddy-xdpool source on GitHub</a>
      · <a href="../registry.html#XDTrees__dsh-workbuddy-xdpool">this plugin in the registry</a></p>
-  <p>XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.</p>
+  <p>XDTrees/dsh-workbuddy-xdpool is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/shim.ts:159, src/shim.ts:168</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/at-rest.ts:45</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/at-rest.ts:192, src/at-rest.ts:215</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/shim.ts:161, src/shim.ts:170</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>settings</span> <span>settingsScope</span> <span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.workbuddy.ai</span> <span>copilot.tencent.com</span> <span>www.codebuddy.cn</span> <span>www.codebuddy.ai</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.workbuddy.cn</span> <span>www.workbuddy.ai</span> <span>copilot.tencent.com</span> <span>www.codebuddy.cn</span> <span>www.codebuddy.ai</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
