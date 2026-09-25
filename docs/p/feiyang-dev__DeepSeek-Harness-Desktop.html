@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>feiyang-dev/DeepSeek-Harness-Desktop — capability card (C2) · dsh-xray</title>
-<meta name="description" content="feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta name="description" content="feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/feiyang-dev__DeepSeek-Harness-Desktop.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="feiyang-dev/DeepSeek-Harness-Desktop — dsh plugin capability card">
-<meta property="og:description" content="feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
+<meta property="og:description" content="feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/feiyang-dev__DeepSeek-Harness-Desktop.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DeepSeek-Harness-Desktop", "identifier": "feiyang-dev/DeepSeek-Harness-Desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/feiyang-dev/DeepSeek-Harness-Desktop", "url": "https://unstone.github.io/dsh-xray/p/feiyang-dev__DeepSeek-Harness-Desktop.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DeepSeek-Harness-Desktop", "identifier": "feiyang-dev/DeepSeek-Harness-Desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/feiyang-dev/DeepSeek-Harness-Desktop", "url": "https://unstone.github.io/dsh-xray/p/feiyang-dev__DeepSeek-Harness-Desktop.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/feiyang-dev/DeepSeek-Harness-Desktop" rel="nofollow ugc">feiyang-dev/DeepSeek-Harness-Desktop source on GitHub</a>
      · <a href="../registry.html#feiyang-dev__DeepSeek-Harness-Desktop">this plugin in the registry</a></p>
-  <p>feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
+  <p>feiyang-dev/DeepSeek-Harness-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×51 in authored code, e.g. gh-create-release-repo.js:10, gh-create-release-repo.js:10</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×51 in authored code, e.g. gh-create-release-repo.js:10, gh-create-release-repo.js:10</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_PUBLISH_API_KEY</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>uploads.github.com</span> <span>api.deepseekharness.desktop.cwj666.top</span> <span>registry.npmmirror.com</span> <span>mirrors.cloud.tencent.com</span> <span>mirrors.huaweicloud.com</span> <span>registry.npm.taobao.org</span> <span>mirrors.163.com</span> <span>git-scm.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>SystemRoot</span> <span>DSH_UPDATE_API</span> <span>DSH_NPM_REGISTRY</span> <span>Path</span> <span>LOCALAPPDATA</span> <span>USERPROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>DSH_UPDATE_API</span> <span>SystemRoot</span> <span>ELECTRON_DISABLE_SECURITY_WARNINGS</span> <span>DSH_NPM_REGISTRY</span> <span>Path</span> <span>LOCALAPPDATA</span> <span>USERPROFILE</span> <span>DSH_PUBLISH_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. dsh-haven-pipeline/src/bridge.ts:16, dsh-haven-pipeline/src/bridge.ts:104</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>credentials</span> <span>invariants</span> <span>storageDomain</span> <span>tokenMeter</span> <span>tools</span> <span>treasury</span> <span>wallet</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/request</span> <span>synapse/pinned</span> <span>tools/post-execute</span> <span>tools/pre-execute</span> <span>treasury/state-changed</span> <span>wallet/signed</span> <span>xmtp/inbound</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>icp-api.io</span> <span>eips.ethereum.org</span> <span>github.githubassets.com</span> <span>api.githubcopilot.com</span> <span>popup.convos.org</span> <span>sepolia.base.org</span> <span>ethereum.publicnode.com</span> <span>eth.meowrpc.com</span> <span>api.node.glif.io</span> <span>api.calibration.node.glif.io</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>icp-api.io</span> <span>eips.ethereum.org</span> <span>github.githubassets.com</span> <span>api.githubcopilot.com</span> <span>mainnet.base.org</span> <span>popup.convos.org</span> <span>sepolia.base.org</span> <span>ethereum.publicnode.com</span> <span>eth.meowrpc.com</span> <span>api.node.glif.io</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FORK_RPC</span> <span>RPC</span> <span>FORK_FACTORY</span> <span>FACTORY</span> <span>FORK_PK</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

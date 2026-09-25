@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>esengine/DeepSeek-Reasonix — capability card (C2) · dsh-xray</title>
-<meta name="description" content="esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta name="description" content="esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/esengine__DeepSeek-Reasonix.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="esengine/DeepSeek-Reasonix — dsh plugin capability card">
-<meta property="og:description" content="esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:description" content="esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/esengine__DeepSeek-Reasonix.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DeepSeek-Reasonix", "identifier": "esengine/DeepSeek-Reasonix", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/esengine/DeepSeek-Reasonix", "url": "https://unstone.github.io/dsh-xray/p/esengine__DeepSeek-Reasonix.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DeepSeek-Reasonix", "identifier": "esengine/DeepSeek-Reasonix", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/esengine/DeepSeek-Reasonix", "url": "https://unstone.github.io/dsh-xray/p/esengine__DeepSeek-Reasonix.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 35k+ ·
      <a href="https://github.com/esengine/DeepSeek-Reasonix" rel="nofollow ugc">esengine/DeepSeek-Reasonix source on GitHub</a>
      · <a href="../registry.html#esengine__DeepSeek-Reasonix">this plugin in the registry</a></p>
-  <p>esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server.</p>
-  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×53 in authored code, e.g. desktop/electron/scripts/browser-runtime-smoke.mjs:1, desktop/electron/scripts/browser-runtime-smoke.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. desktop/electron/scripts/composer-wiring-smoke.mjs:35, desktop/electron/scripts/draft-smoke.mjs:27</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×24 in authored code, e.g. desktop/frontend/bench/anchored-popover-lifecycle.mjs:18, desktop/frontend/bench/attention-notifications.mjs:17</td></tr></tbody></table>
+  <p>esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.</p>
+  <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×58 in authored code, e.g. npm/build.mjs:1, npm/build.mjs:1</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. output/agent-workbench-v5/verify.cjs:20, output/agent-workbench-v6/verify.cjs:25</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. workers/accounts/src/auth/crypto.ts:15</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, GITHUB_TOKEN, STAR_HISTORY_GITHUB_TOKEN</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>PLAYWRIGHT_BROWSERS_PATH</span> <span>CHROME_EXECUTABLE</span> <span>CHAT_BROWSER</span> <span>PLAYWRIGHT_EXECUTABLE_PATH</span> <span>REASONIX_BROWSER_CYCLES</span> <span>REASONIX_BROWSER_RECORD_SECONDS</span> <span>REASONIX_DESKTOP_SERVICE</span> <span>GITHUB_RUN_ID</span> <span>GITHUB_RUN_ATTEMPT</span> <span>REASONIX_APP_MEMORY_PROFILE</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.example.com</span> <span>relay.example.com</span> <span>api.github.com</span> <span>api.moonshot.cn</span> <span>platform.xiaomi.com</span> <span>reasonix.io</span> <span>mcp.example.com</span> <span>platform.deepseek.com</span> <span>api.siliconflow.cn</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PERF_URL</span> <span>PROBE</span> <span>PERF_CPU</span> <span>PERF_SRC</span> <span>PERF_DELTAS</span> <span>ONB</span> <span>SHOW</span> <span>GITHUB_TOKEN</span> <span>PERF_SCALES</span> <span>PERF_ROUNDS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
