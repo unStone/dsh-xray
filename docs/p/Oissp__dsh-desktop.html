@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Oissp__dsh-desktop">this plugin in the registry</a></p>
   <p>Oissp/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/ensure-electron.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×27 in authored code, e.g. electron/dsh-manager.ts:12, electron/dsh-manager.ts:178</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. electron/credential-store.ts:54</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/ensure-electron.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×28 in authored code, e.g. electron/dsh-manager.ts:12, electron/dsh-manager.ts:193</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. electron/credential-store.ts:54</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>npmmirror.com</span> <span>api.deepseek.com</span> <span>platform.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>VITE_DEV_SERVER_URL</span> <span>npm_node_execpath</span> <span>npm_config_node_execpath</span> <span>npm_node_install_path</span> <span>XDG_CACHE_HOME</span> <span>XDG_RUNTIME_DIR</span> <span>DISPLAY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>VITE_DEV_SERVER_URL</span> <span>npm_node_execpath</span> <span>npm_config_node_execpath</span> <span>npm_node_install_path</span> <span>DSH_DESKTOP_UPDATE_HTTP_IDLE_TIMEOUT_MS</span> <span>XDG_CACHE_HOME</span> <span>XDG_RUNTIME_DIR</span> <span>DISPLAY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
