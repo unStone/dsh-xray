@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>elysia395/dsh-wallpaper-engine — capability card (C3) · dsh-xray</title>
-<meta name="description" content="elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
+<meta name="description" content="elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/elysia395__dsh-wallpaper-engine.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="elysia395/dsh-wallpaper-engine — dsh plugin capability card">
-<meta property="og:description" content="elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.">
+<meta property="og:description" content="elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/elysia395__dsh-wallpaper-engine.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-wallpaper-engine", "identifier": "elysia395/dsh-wallpaper-engine", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/elysia395/dsh-wallpaper-engine", "url": "https://unstone.github.io/dsh-xray/p/elysia395__dsh-wallpaper-engine.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-wallpaper-engine", "identifier": "elysia395/dsh-wallpaper-engine", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64 decoding in build output only.", "codeRepository": "https://github.com/elysia395/dsh-wallpaper-engine", "url": "https://unstone.github.io/dsh-xray/p/elysia395__dsh-wallpaper-engine.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>elysia395/dsh-wallpaper-engine</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">把本机 Wallpaper Engine 的壁纸变成 DSH 网页界面的背景：Video 动态播放、Web 以 iframe 加载、Scene 壁纸提取主纹理作为静态帧；iOS 液态玻璃设置窗口（配色 / 玻璃颜色 / 透明度）、内容分级与类型过滤、自定义壁纸上传、紧凑 CD 架布局、黑胶唱片展示、隐藏 / 恢复、倍速 / 翻转与自动轮播。感谢 Jerry 维护 macOS 版。</p>
+  <p class="lede">把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、</p>
   <p class="lede">★ 100+ ·
      <a href="https://github.com/elysia395/dsh-wallpaper-engine" rel="nofollow ugc">elysia395/dsh-wallpaper-engine source on GitHub</a>
      · <a href="../registry.html#elysia395__dsh-wallpaper-engine">this plugin in the registry</a></p>
-  <p>elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, base64 decoding in build output only.</p>
+  <p>elysia395/dsh-wallpaper-engine is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. scripts/diagnose-web-blank.mjs:36, scripts/diagnose-web-blank.mjs:182</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. lib/we-renderer/glsl/executor.js:25, lib/we-renderer/glsl/executor.js:28</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/scene-player.js:1013, lib/scene-player.js:1019</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/diagnose-web-blank.mjs:115, scripts/diagnose-web-blank.mjs:127</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. scripts/diagnose-web-blank.mjs:36, scripts/diagnose-web-blank.mjs:182</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/verify-client.mjs:1073, scripts/verify-readability.mjs:81</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/scene-player.js:1013, lib/scene-player.js:1019</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/diagnose-web-blank.mjs:115, scripts/diagnose-web-blank.mjs:127</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span></p>

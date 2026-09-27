@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HaydenSmith1121/dsh-opencode-go-plus — capability card (C2) · dsh-xray</title>
-<meta name="description" content="HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/HaydenSmith1121__dsh-opencode-go-plus.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HaydenSmith1121/dsh-opencode-go-plus — dsh plugin capability card">
-<meta property="og:description" content="HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/HaydenSmith1121__dsh-opencode-go-plus.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-opencode-go-plus", "identifier": "HaydenSmith1121/dsh-opencode-go-plus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/HaydenSmith1121/dsh-opencode-go-plus", "url": "https://unstone.github.io/dsh-xray/p/HaydenSmith1121__dsh-opencode-go-plus.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-opencode-go-plus", "identifier": "HaydenSmith1121/dsh-opencode-go-plus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/HaydenSmith1121/dsh-opencode-go-plus", "url": "https://unstone.github.io/dsh-xray/p/HaydenSmith1121__dsh-opencode-go-plus.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,14 +46,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">OpenCode Go model provider for DeepSeek Harness - a maintained fork that keeps the model catalog reachable and configures itself from Settings &gt; Models</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/HaydenSmith1121/dsh-opencode-go-plus" rel="nofollow ugc">HaydenSmith1121/dsh-opencode-go-plus source on GitHub</a>
      · <a href="../registry.html#HaydenSmith1121__dsh-opencode-go-plus">this plugin in the registry</a></p>
-  <p>HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>HaydenSmith1121/dsh-opencode-go-plus is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/runtime-test.mjs:5, scripts/runtime-test.mjs:5</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/runtime-test.mjs:19, scripts/runtime-test.mjs:54</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>modelDirectories</span> <span>remote</span> <span>sessions</span> <span>slots</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>internal/config</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span></p>
   
   <h2>How to read this</h2>

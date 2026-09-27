@@ -46,15 +46,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">给 dsh 对话区叠加 B 站风格吐槽弹幕，可接入 LLM 生成弹幕。/Bilibili-style live-chat danmaku overlay for DeepSeek Harness Web — preset packs, optional LLM quips, drag ball, per-session pools. </p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/huashenglian/dsh-livechat" rel="nofollow ugc">huashenglian/dsh-livechat source on GitHub</a>
      · <a href="../registry.html#huashenglian__dsh-livechat">this plugin in the registry</a></p>
   <p>huashenglian/dsh-livechat is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×14 in build output only, e.g. lib/client.js:1384, lib/client.js:8294</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. lib/vendor/svga.min.js:1, lib/vendor/svga.min.js:1</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/index.js:2629, lib/vendor/svga.min.js:1</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×14 in build output only, e.g. lib/client.js:1418, lib/client.js:8540</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. lib/vendor/svga.min.js:1, lib/vendor/svga.min.js:1</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/index.js:2749, lib/vendor/svga.min.js:1</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>settings</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>api-session/removed</span> <span>dispose</span> <span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.live.bilibili.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.live.bilibili.com</span> <span>live.bilibili.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
