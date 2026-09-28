@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KCNyu/clawock — capability card (C2) · dsh-xray</title>
-<meta name="description" content="KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, installable-looking manifest in fixtures only.">
+<meta name="description" content="KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, installable-looking manifest in fixtures only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/KCNyu__clawock.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KCNyu/clawock — dsh plugin capability card">
-<meta property="og:description" content="KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, installable-looking manifest in fixtures only.">
+<meta property="og:description" content="KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, installable-looking manifest in fixtures only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/KCNyu__clawock.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "clawock", "identifier": "KCNyu/clawock", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, installable-looking manifest in fixtures only.", "codeRepository": "https://github.com/KCNyu/clawock", "url": "https://unstone.github.io/dsh-xray/p/KCNyu__clawock.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "clawock", "identifier": "KCNyu/clawock", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, installable-looking manifest in fixtures only.", "codeRepository": "https://github.com/KCNyu/clawock", "url": "https://unstone.github.io/dsh-xray/p/KCNyu__clawock.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/KCNyu/clawock" rel="nofollow ugc">KCNyu/clawock source on GitHub</a>
      · <a href="../registry.html#KCNyu__clawock">this plugin in the registry</a></p>
-  <p>KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars, installable-looking manifest in fixtures only.</p>
+  <p>KCNyu/clawock is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, reads credential-class env vars, installable-looking manifest in fixtures only.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>NOSTR_PRIVATE_KEY, TAVILY_API_KEY</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: examples/dsh/packages/clawock-dsh/package.json</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. site/tools/shoot_dsh_queue.js:31, site/tools/shoot_dsh_queue.js:31</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>NOSTR_PRIVATE_KEY, TAVILY_API_KEY</td></tr><tr><td>installable-looking manifest in fixtures only</td><td><code>dev_manifest</code></td><td>installable-looking manifest in fixtures only: examples/dsh/packages/clawock-dsh/package.json</td></tr></tbody></table>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.tavily.com</span> <span>njump.me</span> <span>kcnyu.github.io</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>CHROME_EXE</span> <span>NOSTR_TOOLS_PATH</span> <span>OUT</span> <span>TAVILY_API_KEY</span> <span>NOSTR_RELAYS</span> <span>NOSTR_PRIVATE_KEY</span> <span>URL</span> <span>OUT_DIR</span> <span>FRAME_DIR</span> <span>TMP_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CHROME_EXE</span> <span>OUT</span> <span>DSH_URL</span> <span>NOSTR_TOOLS_PATH</span> <span>BUNDLE</span> <span>PLAYWRIGHT</span> <span>WIDTH</span> <span>HEIGHT</span> <span>DSF</span> <span>TAVILY_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

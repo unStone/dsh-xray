@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>JackZo400/dsh-voice-transcribe</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">dsh 插件：本地语音/视频转写（SILK 解码 + faster-whisper），不花 API 钱</p>
+  <p class="lede">dsh 插件：本地语音/视频转写——QQ/微信那种 SILK 语音先解码，再用 SenseVoice 转成文字，全程不花 API 钱（约 0.1 秒/条） · Local speech-to-text for dsh: SILK decoding + SenseVoice (sherpa-onnx int8), no API cost, ~0.1 s per clip.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/JackZo400/dsh-voice-transcribe" rel="nofollow ugc">JackZo400/dsh-voice-transcribe source on GitHub</a>
      · <a href="../registry.html#JackZo400__dsh-voice-transcribe">this plugin in the registry</a></p>
@@ -55,7 +55,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>VOICE_TRANSCRIBE_PYTHON</span> <span>WHISPER_MODEL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>VOICE_TRANSCRIBE_PYTHON</span> <span>AILIN_ASR_SV_DIR</span> <span>VOICE_TRANSCRIBE_MODEL_DIR</span> <span>AILIN_ASR_FIX</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

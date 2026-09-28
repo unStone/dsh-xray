@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#liuhange789__data-asset-inspector">this plugin in the registry</a></p>
   <p>liuhange789/data-asset-inspector is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>True</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/e2e-acceptance/src/dshClient.ts:1, scripts/e2e-acceptance/src/environmentPreparer.ts:4</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/e2e-acceptance/src/dshClient.ts:1, scripts/e2e-acceptance/src/environmentPreparer.ts:4</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN, NATIONAL_API_KEY, PROVINCIAL_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>dsh-plugin.org</span> <span>www.npmjs.com</span> <span>api.npmjs.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>DSH_PROBE_WINDOW_SIZE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>BUSINESS_RULES_PATH</span> <span>POLICY_REFS_PATH</span> <span>NATIONAL_API_KEY</span> <span>NATIONAL_API_ENDPOINT</span> <span>PROVINCIAL_API_KEY</span> <span>PROVINCIAL_API_ENDPOINT</span> <span>STANDARD_DOC_PATH</span> <span>STANDARD_RULES_ENDPOINT</span> <span>GITHUB_TOKEN</span> <span>DSH_PROBE_WINDOW_SIZE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
