@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Ln1m/dsh-vk-suite</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Three-column layout suite for DSH: contract + skeleton + files / composer / viewer / settings / terminal / cmdstrip (8 packages) · 三栏 layout 生态：契约 + 骨架 + 8 个功能包</p>
+  <p class="lede">DSH three-column layout skeleton: slot contract + layout shell, the prerequisite of every other suite · DSH 三栏布局骨架：槽位契约 + 布局外壳，其余家族仓的前置</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Ln1m/dsh-vk-suite" rel="nofollow ugc">Ln1m/dsh-vk-suite source on GitHub</a>
      · <a href="../registry.html#Ln1m__dsh-vk-suite">this plugin in the registry</a></p>
   <p>Ln1m/dsh-vk-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. dsh-vk-terminal/lib/index.js:23, dsh-vk-terminal/lib/index.js:136</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>sessions</span> <span>slots</span> <span>theme</span> <span>webServer</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>theme/change</span></p>
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_ROOT</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. dsh-vk-settings-hub/lib/index.js:8, dsh-vk-settings-hub/lib/index.js:59</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>awesome-dsh-plugin.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_ROOT</span> <span>DSH_HUB_BACKUP_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

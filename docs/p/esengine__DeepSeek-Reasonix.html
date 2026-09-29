@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#esengine__DeepSeek-Reasonix">this plugin in the registry</a></p>
   <p>esengine/DeepSeek-Reasonix is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×26 in authored code, e.g. desktop/electron/packaging/build-host.js:4, desktop/electron/packaging/build-host.js:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. desktop/frontend-next/src/port/cloud_remote.ts:50</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×26 in authored code, e.g. desktop/electron/packaging/build-host.js:4, desktop/electron/packaging/build-host.js:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. desktop/frontend-next/src/port/cloud_link.ts:80</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>relay.example.com</span> <span>reasonix.io</span> <span>api.moonshot.cn</span> <span>id.reasonix.io</span> <span>platform.xiaomi.com</span> <span>mcp.example.com</span> <span>platform.deepseek.com</span> <span>api.siliconflow.cn</span> <span>cloud.siliconflow.cn</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>PERF_URL</span> <span>PROBE</span> <span>PERF_CPU</span> <span>PERF_SRC</span> <span>PERF_DELTAS</span> <span>ONB</span> <span>SHOW</span> <span>PERF_SCALES</span> <span>PERF_ROUNDS</span> <span>PERF_TURNS</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>reasonix.io</span> <span>relay.example.com</span> <span>api.moonshot.cn</span> <span>id.reasonix.io</span> <span>platform.xiaomi.com</span> <span>mcp.example.com</span> <span>platform.deepseek.com</span> <span>api.siliconflow.cn</span> <span>cloud.siliconflow.cn</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PERF_URL</span> <span>PERF_CPU</span> <span>PERF_SRC</span> <span>PERF_DELTAS</span> <span>ONB</span> <span>PERF_SCALES</span> <span>PERF_ROUNDS</span> <span>PERF_TURNS</span> <span>REASONIX_VERSION</span> <span>PERF_KERNEL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

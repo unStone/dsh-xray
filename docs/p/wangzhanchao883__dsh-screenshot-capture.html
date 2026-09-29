@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>wangzhanchao883/dsh-screenshot-capture</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Point-and-shoot screenshot capture plugin for DeepSeek Harness: clipboard watcher + system floating window (comment &amp; key-point, copy/save-doc/save-image) + instant OCR (Tongyi Qianwen) + Obsidian per</p>
+  <p class="lede">Point-and-shoot screenshot capture for DeepSeek Harness: floating window → Obsidian note with comments, key-point marking, host-model OCR (zero config), duplicate-screen guard, per-day merging, evenin</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/wangzhanchao883/dsh-screenshot-capture" rel="nofollow ugc">wangzhanchao883/dsh-screenshot-capture source on GitHub</a>
      · <a href="../registry.html#wangzhanchao883__dsh-screenshot-capture">this plugin in the registry</a></p>
   <p>wangzhanchao883/dsh-screenshot-capture is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. clipboard.mjs:1, clipboard.mjs:61</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>settingsScope</span> <span>slots</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. clipboard.mjs:1, clipboard.mjs:63</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSC_VAULT_PATH</span> <span>SystemRoot</span> <span>DASHSCOPE_API_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSC_VAULT_PATH</span> <span>DASHSCOPE_API_KEY</span> <span>SystemRoot</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

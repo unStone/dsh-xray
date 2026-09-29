@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ALwith-ai/dsh-agent — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.">
+<meta name="description" content="ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ALwith-ai__dsh-agent.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ALwith-ai/dsh-agent — dsh plugin capability card">
-<meta property="og:description" content="ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.">
+<meta property="og:description" content="ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ALwith-ai__dsh-agent.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agent", "identifier": "ALwith-ai/dsh-agent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.", "codeRepository": "https://github.com/ALwith-ai/dsh-agent", "url": "https://unstone.github.io/dsh-xray/p/ALwith-ai__dsh-agent.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agent", "identifier": "ALwith-ai/dsh-agent", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.", "codeRepository": "https://github.com/ALwith-ai/dsh-agent", "url": "https://unstone.github.io/dsh-xray/p/ALwith-ai__dsh-agent.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/ALwith-ai/dsh-agent" rel="nofollow ugc">ALwith-ai/dsh-agent source on GitHub</a>
      · <a href="../registry.html#ALwith-ai__dsh-agent">this plugin in the registry</a></p>
-  <p>ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, reads credential-class env vars.</p>
-  <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALWITH_DSH_OAUTH_CREDENTIALS</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>sessions</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>approval/request</span> <span>session/disposed</span> <span>session/event</span> <span>session/flush</span> <span>system-prompt/assemble</span></p>
+  <p>ALwith-ai/dsh-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, reads credential-class env vars.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALWITH_DSH_OAUTH_CREDENTIALS</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/error</span> <span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>agent/pre-step</span> <span>agent/request</span> <span>approval/request</span> <span>session/disposed</span> <span>session/event</span> <span>session/flush</span> <span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>ALWITH_DSH_SESSIONS_ROOT</span> <span>ALWITH_DSH_PRESET</span> <span>ALWITH_DSH_PROVIDER</span> <span>ALWITH_DSH_MODEL</span> <span>ALWITH_DSH_PROVIDER_ID</span> <span>ALWITH_DSH_TITLE_MODEL</span> <span>ALWITH_DSH_PERSISTENCE</span> <span>ALWITH_DSH_PROJECTS_DIR</span> <span>ALWITH_DSH_WORKSPACE_ROOT</span> <span>ALWITH_DSH_PERMISSION_MODE</span></p>
   <h2>How to read this</h2>
