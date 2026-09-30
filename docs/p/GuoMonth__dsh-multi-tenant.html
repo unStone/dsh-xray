@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GuoMonth/dsh-multi-tenant — capability card (C2) · dsh-xray</title>
-<meta name="description" content="GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest, powerful capability in test/example code only.">
+<meta name="description" content="GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, powerful capability in test/example code only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-multi-tenant.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GuoMonth/dsh-multi-tenant — dsh plugin capability card">
-<meta property="og:description" content="GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest, powerful capability in test/example code only.">
+<meta property="og:description" content="GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, powerful capability in test/example code only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-multi-tenant.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-multi-tenant", "identifier": "GuoMonth/dsh-multi-tenant", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest, powerful capability in test/example code only.", "codeRepository": "https://github.com/GuoMonth/dsh-multi-tenant", "url": "https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-multi-tenant.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-multi-tenant", "identifier": "GuoMonth/dsh-multi-tenant", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, powerful capability in test/example code only.", "codeRepository": "https://github.com/GuoMonth/dsh-multi-tenant", "url": "https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-multi-tenant.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/GuoMonth/dsh-multi-tenant" rel="nofollow ugc">GuoMonth/dsh-multi-tenant source on GitHub</a>
      · <a href="../registry.html#GuoMonth__dsh-multi-tenant">this plugin in the registry</a></p>
-  <p>GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest, powerful capability in test/example code only.</p>
-  <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×66 in authored code, e.g. scripts/artifact-consumer-smoke.mjs:2, scripts/artifact-consumer-smoke.mjs:2</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×16 in authored code, e.g. scripts/native-host-probe/composition.mjs:60, scripts/native-host-probe/composition.mjs:68</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 1 tool regs, no manifest</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: systemPrompt</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>appExit</span> <span>appReady</span> <span>connection</span> <span>llm</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/created</span></p>
+  <p>GuoMonth/dsh-multi-tenant is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, powerful capability in test/example code only.</p>
+  <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. charts/install.mjs:5, charts/install.mjs:5</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. charts/install.mjs:99, charts/install.mjs:103</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. packages/multi-tenant/src/platform/admin.ts:41, packages/multi-tenant/src/platform/ingress.ts:113</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: systemPrompt</td></tr></tbody></table>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_REGRESSION_HOME</span> <span>PROBE_CHROMIUM</span> <span>DSH_REGRESSION_PLATFORM_DEPLOYMENT</span> <span>GITHUB_OUTPUT</span> <span>PROBE_IMAGE</span> <span>PROBE_EVIDENCE_DIR</span> <span>PROBE_PACKAGE_ROOT</span> <span>PROBE_PRINCIPAL</span> <span>DSH_PROBE_CHROMIUM</span> <span>DSH_DEMO_PRINCIPAL</span></p>
+  
+  <h2>Outbound domains</h2><p class="kv"><span>kubernetes.default.svc</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_REPOSITORY</span> <span>GITHUB_SHA</span> <span>GITHUB_RUN_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

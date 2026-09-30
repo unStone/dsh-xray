@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>bonerush/dsh-obsidian-mem — capability card (C2) · dsh-xray</title>
-<meta name="description" content="bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
+<meta name="description" content="bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars in development tool">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/bonerush__dsh-obsidian-mem.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bonerush/dsh-obsidian-mem — dsh plugin capability card">
-<meta property="og:description" content="bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
+<meta property="og:description" content="bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars in development tool">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/bonerush__dsh-obsidian-mem.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-obsidian-mem", "identifier": "bonerush/dsh-obsidian-mem", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/bonerush/dsh-obsidian-mem", "url": "https://unstone.github.io/dsh-xray/p/bonerush__dsh-obsidian-mem.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-obsidian-mem", "identifier": "bonerush/dsh-obsidian-mem", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/bonerush/dsh-obsidian-mem", "url": "https://unstone.github.io/dsh-xray/p/bonerush__dsh-obsidian-mem.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/bonerush/dsh-obsidian-mem" rel="nofollow ugc">bonerush/dsh-obsidian-mem source on GitHub</a>
      · <a href="../registry.html#bonerush__dsh-obsidian-mem">this plugin in the registry</a></p>
-  <p>bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.</p>
+  <p>bonerush/dsh-obsidian-mem is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/git.js:13</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×22 in development tooling the package does not ship, e.g. scripts/check-staged.mjs:18, scripts/check-staged.mjs:18</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/git.js:13</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×26 in development tooling the package does not ship, e.g. scripts/check-staged.mjs:18, scripts/check-staged.mjs:18</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN, GITHUB_TOKEN, MARKETPLACE_TOKEN</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>betterSidebar</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/session-start</span> <span>session/event</span> <span>session/flush</span></p>
   

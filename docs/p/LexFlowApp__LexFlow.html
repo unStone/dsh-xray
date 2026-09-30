@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#LexFlowApp__LexFlow">this plugin in the registry</a></p>
   <p>LexFlowApp/LexFlow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/fix-app-icon.cjs:3, scripts/fix-app-icon.cjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. dsh-plugins/lexflow-archive/src/index.js:843, dsh-plugins/lexflow-archive/src/index.js:852</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. scripts/fix-app-icon.cjs:3, scripts/fix-app-icon.cjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. dsh-plugins/lexflow-archive/src/index.js:843, dsh-plugins/lexflow-archive/src/index.js:852</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>commandUi</span> <span>configForms</span> <span>connection</span> <span>invariants</span> <span>lexflow</span> <span>lexflowArchive</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>settingsSchema</span> <span>slots</span> <span>theme</span> <span>tools</span> <span>uiSession</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>chatgpt.com</span> <span>api.github.com</span> <span>api.openai.com</span> <span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LEXFLOW_FONT_ROOT</span> <span>LEXFLOW_NODE_PATH</span> <span>LOG</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>chatgpt.com</span> <span>api.github.com</span> <span>api.openai.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LEXFLOW_FONT_ROOT</span> <span>LEXFLOW_NODE_PATH</span> <span>LEXFLOW_DATA_ROOT</span> <span>LOG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
