@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ONEOne-1v1/dsh-github-upload — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.">
+<meta name="description" content="ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, eval in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ONEOne-1v1__dsh-github-upload.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ONEOne-1v1/dsh-github-upload — dsh plugin capability card">
-<meta property="og:description" content="ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.">
+<meta property="og:description" content="ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, eval in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ONEOne-1v1__dsh-github-upload.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-github-upload", "identifier": "ONEOne-1v1/dsh-github-upload", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/ONEOne-1v1/dsh-github-upload", "url": "https://unstone.github.io/dsh-xray/p/ONEOne-1v1__dsh-github-upload.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-github-upload", "identifier": "ONEOne-1v1/dsh-github-upload", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, eval in build output only.", "codeRepository": "https://github.com/ONEOne-1v1/dsh-github-upload", "url": "https://unstone.github.io/dsh-xray/p/ONEOne-1v1__dsh-github-upload.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>ONEOne-1v1/dsh-github-upload</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
-  <p class="lede">★ 0 ·
+  <p class="lede">给 DeepSeek Harness 用的动态 Cordis 插件：在界面右下角加一个按钮，把本地项目一键推送到 GitHub —— 绑定账号、选/建仓库、挑要上传的文件、改仓库公开或私密，全程点鼠标，不消耗模型 Token。</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/ONEOne-1v1/dsh-github-upload" rel="nofollow ugc">ONEOne-1v1/dsh-github-upload source on GitHub</a>
      · <a href="../registry.html#ONEOne-1v1__dsh-github-upload">this plugin in the registry</a></p>
-  <p>ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.</p>
+  <p>ONEOne-1v1/dsh-github-upload is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, eval in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/host.js:377</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/test-cleandir.mjs:27, scripts/test-render.mjs:241</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>timer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/host.js:481</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. build/bundle.mjs:50, build/bundle.mjs:163</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×6 in development tooling the package does not ship, e.g. scripts/test-artifact.mjs:103, scripts/test-blobsha.mjs:29</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/preview-serve.mjs:12</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>slots</span> <span>subprocess</span> <span>timer</span> <span>uiWorkspace</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_GHU_DIAG</span> <span>DSH_GHU_DIAG_FILE</span> <span>TEMP</span> <span>TMP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

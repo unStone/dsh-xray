@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>windwhiterain/dsh-subagent-templates</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Named subagent templates for DeepSeek Harness: a template fixes a model, an agent preset, a reasoning effort, and an optional persona, so a delegating agent picks by name instead of configuring a rout</p>
+  <p class="lede">Named subagent templates for DeepSeek Harness: a template fixes a starting route (or the route pool it resolves one from), an agent preset, and an optional persona, so a delegating agent picks by name</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/windwhiterain/dsh-subagent-templates" rel="nofollow ugc">windwhiterain/dsh-subagent-templates source on GitHub</a>
      · <a href="../registry.html#windwhiterain__dsh-subagent-templates">this plugin in the registry</a></p>
@@ -53,7 +53,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sidebarRightTabs</span> <span>slots</span> <span>tools</span> <span>uiWorkspace</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HARNESS_ROOT</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>

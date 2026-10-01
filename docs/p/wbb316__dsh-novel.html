@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>wbb316/dsh-novel</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 插件：小说创作台 —— 给 agent 5 个 novel_* 工具 + 一个能改设定、画关系图、一键续写并流式直播的右侧栏面板</p>
+  <p class="lede">DSH 插件：小说创作台 —— 给 agent 5 个 novel_* 工具 + 一个开书向导 / 设定表单 / 关系图 / 剧情任务栏 / 一键续写流式直播的面板（宿主原生席位，入口在左侧栏）</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/wbb316/dsh-novel" rel="nofollow ugc">wbb316/dsh-novel source on GitHub</a>
      · <a href="../registry.html#wbb316__dsh-novel">this plugin in the registry</a></p>
   <p>wbb316/dsh-novel is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, base64 decoding in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. test-client.mjs:339, test-library.mjs:34</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:554</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>betterSidebar</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. test-client.mjs:347, test-library.mjs:34</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:561</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>purl.org</span> <span>www.idpf.org</span> <span>www.daisy.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_NOVEL_ROOT</span> <span>DSH_NOVEL_CONFIG</span> <span>DSH_BASE</span></p>

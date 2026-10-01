@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GuoMonth/dsh-erp — capability card (C3) · dsh-xray</title>
-<meta name="description" content="GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.">
+<meta name="description" content="GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-erp.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GuoMonth/dsh-erp — dsh plugin capability card">
-<meta property="og:description" content="GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-erp.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-erp", "identifier": "GuoMonth/dsh-erp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/GuoMonth/dsh-erp", "url": "https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-erp.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-erp", "identifier": "GuoMonth/dsh-erp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/GuoMonth/dsh-erp", "url": "https://unstone.github.io/dsh-xray/p/GuoMonth__dsh-erp.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/GuoMonth/dsh-erp" rel="nofollow ugc">GuoMonth/dsh-erp source on GitHub</a>
      · <a href="../registry.html#GuoMonth__dsh-erp">this plugin in the registry</a></p>
-  <p>GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, decodes base64 payloads.</p>
+  <p>GuoMonth/dsh-erp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/worker-client.ts:1, src/worker-client.ts:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/storage/database.ts:118, src/storage/database.ts:150</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: approval</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/worker-client.ts:1, src/worker-client.ts:2</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/storage/database.ts:118, src/storage/database.ts:150</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: approval</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span> <span>tools/result</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>PLAYWRIGHT_BROWSERS_PATH</span> <span>ERP_BROWSER_DIRECTORY</span> <span>ERP_BROWSER_READ_POLICY</span> <span>DSH_HOME</span> <span>ERP_BROWSER_HEADLESS</span> <span>ERP_BROWSER_SANDBOX</span> <span>LOCALAPPDATA</span> <span>XDG_DATA_HOME</span></p>
   <h2>How to read this</h2>

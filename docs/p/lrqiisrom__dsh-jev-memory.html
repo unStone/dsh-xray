@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. eval/harvest-candidates.ts:40, eval/harvest-candidates.ts:40</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/turn-stopping</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>open.bigmodel.cn</span> <span>api.typesafe.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>REPORT_REMEMBER_QUESTION</span> <span>DSH_HOME</span> <span>HARVEST_FRAME</span> <span>HARVEST_ONLY_CLASS</span> <span>HARVEST_OUT_DIR</span> <span>HARVEST_OUT</span> <span>HARVEST_CARRY_FROM</span> <span>HARVEST_FORCE</span> <span>REPORT_DIR</span> <span>REPORT_BATCHES</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>open.bigmodel.cn</span> <span>api.typesafe.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>REPORT_REMEMBER_QUESTION</span> <span>REPORT_BATCHES</span> <span>DSH_HOME</span> <span>HARVEST_FRAME</span> <span>HARVEST_CODEX_DIR</span> <span>HARVEST_CURSOR_DB</span> <span>HARVEST_ONLY_CLASS</span> <span>HARVEST_OUT_DIR</span> <span>HARVEST_OUT</span> <span>HARVEST_CARRY_FROM</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
