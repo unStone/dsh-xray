@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>mokuyoaxis/dsh-iris — capability card (C3) · dsh-xray</title>
-<meta name="description" content="mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.">
+<meta name="description" content="mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/mokuyoaxis__dsh-iris.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mokuyoaxis/dsh-iris — dsh plugin capability card">
-<meta property="og:description" content="mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.">
+<meta property="og:description" content="mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/mokuyoaxis__dsh-iris.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-iris", "identifier": "mokuyoaxis/dsh-iris", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.", "codeRepository": "https://github.com/mokuyoaxis/dsh-iris", "url": "https://unstone.github.io/dsh-xray/p/mokuyoaxis__dsh-iris.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-iris", "identifier": "mokuyoaxis/dsh-iris", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/mokuyoaxis/dsh-iris", "url": "https://unstone.github.io/dsh-xray/p/mokuyoaxis__dsh-iris.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/mokuyoaxis/dsh-iris" rel="nofollow ugc">mokuyoaxis/dsh-iris source on GitHub</a>
      · <a href="../registry.html#mokuyoaxis__dsh-iris">this plugin in the registry</a></p>
-  <p>mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.</p>
+  <p>mokuyoaxis/dsh-iris is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/test.mjs:2, scripts/test.mjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/actions.js:203, lib/actions.js:624</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/test-process.mjs:1, scripts/test-process.mjs:14</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/verify-headless-package.mjs:242</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_WEB_BASE</span> <span>DSH_HOME</span> <span>IRIS_TRUSTED_HOSTS</span> <span>IRIS_IMPORT_WORKBENCH_CONFIG</span> <span>GITHUB_ACTIONS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_WEB_BASE</span> <span>IRIS_IMPORT_WORKBENCH_CONFIG</span> <span>IRIS_TRUSTED_HOSTS</span> <span>IRIS_TEST_TRACE_RESOURCES</span> <span>GITHUB_ACTIONS</span> <span>IRIS_PACKAGE_FIXTURE_VIDEO</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

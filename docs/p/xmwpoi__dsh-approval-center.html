@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>xmwpoi/dsh-approval-center</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 0.1.7-rc.2 的 Windows 审批中控台：通知中心批准/拒绝、并发队列与取消清理、SQLite 审计。通过 GitHub Releases 分发。</p>
+  <p class="lede">DSH 0.1.7-rc.2 的 Windows 审批与主对话通知插件：批准/拒绝、本轮完成与异常提醒、SQLite 审计；子代理通知关闭。GitHub Releases 分发。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/xmwpoi/dsh-approval-center" rel="nofollow ugc">xmwpoi/dsh-approval-center source on GitHub</a>
      · <a href="../registry.html#xmwpoi__dsh-approval-center">this plugin in the registry</a></p>
@@ -53,7 +53,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/dialog.ts:1, src/dialog.ts:1</td></tr></tbody></table>
   
-  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>subagent/end</span> <span>subagent/start</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/disposed</span> <span>session/event</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>

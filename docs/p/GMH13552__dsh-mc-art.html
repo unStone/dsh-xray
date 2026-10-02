@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#GMH13552__dsh-mc-art">this plugin in the registry</a></p>
   <p>GMH13552/dsh-mc-art is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×33 in authored code, e.g. install.mjs:31, install.mjs:31</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×19 in authored code, e.g. install.mjs:70, panel/build.mjs:181</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. panel/build.mjs:146, tools/mcart-plugin/local-fs-shim.js:56</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×63 in authored code, e.g. install.mjs:31, install.mjs:31</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×21 in authored code, e.g. install.mjs:74, panel/build.mjs:218</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×12 in authored code, e.g. panel/build.mjs:183, tools/mcart-plugin/batch-page-test.js:50</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>timer</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>MCART_CLIENT</span> <span>MCART_HOST</span> <span>MCART_RUN</span> <span>MC_ART_SKILL_DIR</span> <span>UI_DEBUG</span> <span>PYTHONIOENCODING</span> <span>MC_ART_REPO</span> <span>DSH_HOME</span> <span>MCART_PRIVATE_MARKERS</span> <span>CHROME_PATH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MCART_HOST</span> <span>MCART_CLIENT</span> <span>MC_ART_SKILL_DIR</span> <span>MCART_PRIVATE_MARKERS</span> <span>MC_ART_PYTHON</span> <span>USERPROFILE</span> <span>UI_DEBUG</span> <span>MCART_REAL_PROJECT</span> <span>PYTHONIOENCODING</span> <span>MCART_RUN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
