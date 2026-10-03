@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>STARDUSTLC666/dsh-remotion — capability card (C3) · dsh-xray</title>
-<meta name="description" content="STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/STARDUSTLC666__dsh-remotion.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STARDUSTLC666/dsh-remotion — dsh plugin capability card">
-<meta property="og:description" content="STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/STARDUSTLC666__dsh-remotion.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-remotion", "identifier": "STARDUSTLC666/dsh-remotion", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/STARDUSTLC666/dsh-remotion", "url": "https://unstone.github.io/dsh-xray/p/STARDUSTLC666__dsh-remotion.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-remotion", "identifier": "STARDUSTLC666/dsh-remotion", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/STARDUSTLC666/dsh-remotion", "url": "https://unstone.github.io/dsh-xray/p/STARDUSTLC666__dsh-remotion.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>STARDUSTLC666/dsh-remotion</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 视频创作技能插件：注册 Remotion 官方 12 个技能（React 编程式视频：动画/音频/字幕/3D/地图/图表），安装即用。</p>
+  <p class="lede">把 Remotion 的 React 视频创作技能接入 DSH。</p>
   <p class="lede">★ 5+ ·
      <a href="https://github.com/STARDUSTLC666/dsh-remotion" rel="nofollow ugc">STARDUSTLC666/dsh-remotion source on GitHub</a>
      · <a href="../registry.html#STARDUSTLC666__dsh-remotion">this plugin in the registry</a></p>
-  <p>STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>STARDUSTLC666/dsh-remotion is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>REMOTION_GOOGLE_MAPS_API_KEY, REMOTION_MAPTILER_KEY</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/media-workbench.ts:2, src/media-workbench.ts:84</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/media-workbench.ts:34, src/media-workbench.ts:34</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>REMOTION_GOOGLE_MAPS_API_KEY, REMOTION_MAPTILER_KEY</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>skills</span> <span>slots</span> <span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.maptiler.com</span> <span>cesium.com</span> <span>cloud.maptiler.com</span> <span>developers.google.com</span> <span>www.maptiler.com</span> <span>tile.googleapis.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>REMOTION_MAPTILER_KEY</span> <span>REMOTION_GOOGLE_MAPS_API_KEY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.maptiler.com</span> <span>www.remotion.dev</span> <span>cesium.com</span> <span>cloud.maptiler.com</span> <span>developers.google.com</span> <span>www.maptiler.com</span> <span>tile.googleapis.com</span> <span>hyperframes.heygen.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>REMOTION_MAPTILER_KEY</span> <span>LOCALAPPDATA</span> <span>APPDATA</span> <span>REMOTION_GOOGLE_MAPS_API_KEY</span> <span>DSH_HOME</span> <span>ProgramFiles</span> <span>SystemRoot</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

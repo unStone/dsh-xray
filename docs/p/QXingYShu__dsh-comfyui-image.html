@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/comfy.js:9, lib/comfy.js:308</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/verify-against-host.mjs:145</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>APPDATA</span> <span>DSH_COMFYUI_PATH</span> <span>COMFYUI_PATH</span> <span>DSH_COMFY_PORT</span> <span>DSH_ZIMAGE_MODELS</span> <span>DSH_QWEN_IMAGE_MODELS</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>DSH_COMFYUI_PATH</span> <span>COMFYUI_PATH</span> <span>APPDATA</span> <span>DSH_COMFY_PORT</span> <span>DSH_ZIMAGE_MODELS</span> <span>DSH_QWEN_IMAGE_MODELS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
