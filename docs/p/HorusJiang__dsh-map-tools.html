@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>HorusJiang/dsh-map-tools</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">给 DeepSeek Harness 的原生地图工具：驾车/公交/步行/骑行路线、地理编码、逆地理编码、POI 搜索。 Map &amp; routing tools for DeepSeek Harness — native tools (no MCP) with a real map card in every answer, via Amap (高德) or free OSM/OSRM.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/HorusJiang/dsh-map-tools" rel="nofollow ugc">HorusJiang/dsh-map-tools source on GitHub</a>
      · <a href="../registry.html#HorusJiang__dsh-map-tools">this plugin in the registry</a></p>
   <p>HorusJiang/dsh-map-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/config-route.ts:13, src/config-route.ts:51</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: AMAP_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/config-file.ts:12, src/config-file.ts:12</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: AMAP_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>console.amap.com</span> <span>uri.amap.com</span> <span>restapi.amap.com</span> <span>nominatim.openstreetmap.org</span> <span>router.project-osrm.org</span> <span>photon.komoot.io</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MAP_TOOLS_CONFIG</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MAP_TOOLS_CONFIG</span> <span>SystemRoot</span> <span>USERNAME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
