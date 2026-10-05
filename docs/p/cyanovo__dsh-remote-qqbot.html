@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cyanovo/dsh-remote-qqbot — capability card (C3) · dsh-xray</title>
+<meta name="description" content="cyanovo/dsh-remote-qqbot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval in development tooling the package does not ship.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/cyanovo__dsh-remote-qqbot.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cyanovo/dsh-remote-qqbot — dsh plugin capability card">
+<meta property="og:description" content="cyanovo/dsh-remote-qqbot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval in development tooling the package does not ship.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/cyanovo__dsh-remote-qqbot.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-remote-qqbot", "identifier": "cyanovo/dsh-remote-qqbot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "cyanovo/dsh-remote-qqbot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/cyanovo/dsh-remote-qqbot", "url": "https://unstone.github.io/dsh-xray/p/cyanovo__dsh-remote-qqbot.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>cyanovo/dsh-remote-qqbot</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede"></p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/cyanovo/dsh-remote-qqbot" rel="nofollow ugc">cyanovo/dsh-remote-qqbot source on GitHub</a>
+     · <a href="../registry.html#cyanovo__dsh-remote-qqbot">this plugin in the registry</a></p>
+  <p>cyanovo/dsh-remote-qqbot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, uses eval in development tooling the package does not ship.</p>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×42 in authored code, e.g. src/screenshot.js:95, src/update.js:29</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/verify-installed.mjs:411</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/update.js:294, server/dsh-web/_admin-shots.mjs:128</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. server/dsh-notes-render/server.mjs:487, server/dsh-web/server.mjs:1081</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ADMIN_PASS, ADMIN_TOKEN, DSW_PASS, OWNER_PASS</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>slots</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/error</span> <span>agent/status</span> <span>tools/pre-execute</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>cyanovo.top</span> <span>api.bot.qq.com</span> <span>api.github.com</span> <span>urlsec.qq.com</span> <span>info.cern.ch</span> <span>bots.qq.com</span> <span>cgi.urlsec.qq.com</span> <span>www.baidu.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span> <span>P1_SERVER</span> <span>DSH_WEB_DATA</span> <span>DSH_WEB_PORT</span> <span>DSH_WEB_HOST</span> <span>DSH_WEB_ROOT</span> <span>DSH_WEB_RETENTION_MS</span> <span>DSH_WEB_PRO_RETENTION_MS</span> <span>DSH_DESKTOP_EXE</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sovero/dsh_plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval / new Function.">
+<meta name="description" content="Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Sovero__dsh_plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sovero/dsh_plugins — dsh plugin capability card">
-<meta property="og:description" content="Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval / new Function.">
+<meta property="og:description" content="Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Sovero__dsh_plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh_plugins", "identifier": "Sovero/dsh_plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval / new Function.", "codeRepository": "https://github.com/Sovero/dsh_plugins", "url": "https://unstone.github.io/dsh-xray/p/Sovero__dsh_plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh_plugins", "identifier": "Sovero/dsh_plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/Sovero/dsh_plugins", "url": "https://unstone.github.io/dsh-xray/p/Sovero__dsh_plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Sovero/dsh_plugins" rel="nofollow ugc">Sovero/dsh_plugins source on GitHub</a>
      · <a href="../registry.html#Sovero__dsh_plugins">this plugin in the registry</a></p>
-  <p>Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval / new Function.</p>
+  <p>Sovero/dsh_plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. dsh-ocean-theme/lib/client.js:2382, dsh-ocean-theme/lib/client.js:2537</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. dsh-poslanik-deep-space/scripts/check.mjs:6, dsh-poslanik-deep-space/scripts/check.mjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. dsh-ocean-theme/tools/smoke.mjs:128</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>theme</span> <span>timer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. dsh-client-voice-eternia/src/capture.js:17, dsh-client-voice-eternia/src/capture.js:192</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. dsh-ocean-theme/tools/smoke.mjs:128</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>theme</span> <span>timer</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>openrouter.ai</span> <span>apihub.agnes-ai.com</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
