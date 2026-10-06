@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Physicolor/dsh-widgets — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Physicolor__dsh-widgets.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Physicolor/dsh-widgets — dsh plugin capability card">
-<meta property="og:description" content="Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Physicolor__dsh-widgets.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-widgets", "identifier": "Physicolor/dsh-widgets", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/Physicolor/dsh-widgets", "url": "https://unstone.github.io/dsh-xray/p/Physicolor__dsh-widgets.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-widgets", "identifier": "Physicolor/dsh-widgets", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/Physicolor/dsh-widgets", "url": "https://unstone.github.io/dsh-xray/p/Physicolor__dsh-widgets.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Physicolor/dsh-widgets</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">A modular widget system for DeepSeek Harness — reusable widgets, adaptive layouts, and a unified design grammar.</p>
+  <p class="lede">A right-side rail of 55 live cards for DeepSeek Harness: session stats, token and cache usage, quota and cost, CPU/GPU/disk/network. One-command install; works on DSH 0.1.x and 0.2.x, web UI and deskt</p>
   <p class="lede">★ 5+ ·
      <a href="https://github.com/Physicolor/dsh-widgets" rel="nofollow ugc">Physicolor/dsh-widgets source on GitHub</a>
      · <a href="../registry.html#Physicolor__dsh-widgets">this plugin in the registry</a></p>
-  <p>Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>Physicolor/dsh-widgets is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×31 in authored code, e.g. scripts/audit-move-only.mjs:20, scripts/audit-move-only.mjs:20</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×37 in authored code, e.g. scripts/audit-move-only.mjs:20, scripts/audit-move-only.mjs:20</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_LIVE_AUTHORITY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>opencode.ai</span> <span>api.commandcode.ai</span> <span>www.gstatic.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_URL</span> <span>CHROME_PATH</span> <span>HOST_BUNDLE</span> <span>PLAYWRIGHT_BROWSERS_PATH</span> <span>LOCALAPPDATA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PORT</span> <span>DSH_HOME</span> <span>DSH_LIVE_AUTHORITY</span> <span>BOUNCE</span> <span>DSH_URL</span> <span>DSH_SESSION_NEEDLE</span> <span>LOCALAPPDATA</span> <span>CHROME_PATH</span> <span>DSH_PLAYWRIGHT_CORE</span> <span>HOST_BUNDLE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

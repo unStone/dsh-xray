@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>zengweicheng666/dsh-svn-tools — capability card (C3) · dsh-xray</title>
-<meta name="description" content="zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, command execution in build output only.">
+<meta name="description" content="zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/zengweicheng666__dsh-svn-tools.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="zengweicheng666/dsh-svn-tools — dsh plugin capability card">
-<meta property="og:description" content="zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, command execution in build output only.">
+<meta property="og:description" content="zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/zengweicheng666__dsh-svn-tools.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-svn-tools", "identifier": "zengweicheng666/dsh-svn-tools", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, command execution in build output only.", "codeRepository": "https://github.com/zengweicheng666/dsh-svn-tools", "url": "https://unstone.github.io/dsh-xray/p/zengweicheng666__dsh-svn-tools.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-svn-tools", "identifier": "zengweicheng666/dsh-svn-tools", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.", "codeRepository": "https://github.com/zengweicheng666/dsh-svn-tools", "url": "https://unstone.github.io/dsh-xray/p/zengweicheng666__dsh-svn-tools.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>zengweicheng666/dsh-svn-tools</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">⚠️ Requires dsh-better-sidebar. SVN (Subversion) tools + sidebar UI for DeepSeek Harness: 33 agent tools with UTF-8 Chinese commit logs, plus an SVN panel in dsh-better-sidebar.</p>
+  <p class="lede">SVN (Subversion) tools for DeepSeek Harness: 33 svn_* agent tools with UTF-8 Chinese commit logs, plus an SVN panel that renders in DSH&#x27;s built-in right Sidebar or dsh-better-sidebar - switchable in S</p>
   <p class="lede">★ 5+ ·
      <a href="https://github.com/zengweicheng666/dsh-svn-tools" rel="nofollow ugc">zengweicheng666/dsh-svn-tools source on GitHub</a>
      · <a href="../registry.html#zengweicheng666__dsh-svn-tools">this plugin in the registry</a></p>
-  <p>zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time, command execution in build output only.</p>
+  <p>zengweicheng666/dsh-svn-tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>preinstall: node scripts/preinstall.cjs</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/index.js:13, lib/index.js:1085</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>betterSidebar</span> <span>llm</span> <span>modules</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webRuntime</span> <span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/index.js:13, lib/index.js:1426</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/verify-offline-modes.mjs:76, scripts/verify-settings.mjs:79</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>webRuntime</span> <span>webServer</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SVN_TOOLS_SKIP_SIDEBAR_CHECK</span> <span>INIT_CWD</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
