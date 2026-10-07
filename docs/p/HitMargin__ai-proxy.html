@@ -46,12 +46,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">多上游 AI API 聚合代理：对外一个 OpenAI 兼容入口，对内适配 10 个上游的协议差异（网页端逆向 / 私有 CLI 网关 / 透传）。Deno 本地 + cloudflared 隧道 + Cloudflare Worker，附 DSH 插件设置面板。</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/HitMargin/ai-proxy" rel="nofollow ugc">HitMargin/ai-proxy source on GitHub</a>
      · <a href="../registry.html#HitMargin__ai-proxy">this plugin in the registry</a></p>
   <p>HitMargin/ai-proxy is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. .tmp-extract-deepseek-cookies.ts:262, .tmp-trae-login.ts:666</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/deepseek-web.ts:499, src/workbuddy.ts:310</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TEST_BRIDGE_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. .tmp-extract-deepseek-cookies.ts:262, .tmp-trae-login.ts:666</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/deepseek-web.ts:542, src/workbuddy.ts:310</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TEST_BRIDGE_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>trae-api-cn.mchost.guru</span> <span>cnb.cool</span> <span>chat.deepseek.com</span> <span>api.commandcode.ai</span> <span>cdn.jsdelivr.net</span> <span>api.trae.cn</span> <span>api.stepfun.ai</span> <span>api.trae.com.cn</span> <span>example-test.trycloudflare.com</span> <span>example.trycloudflare.com</span></p>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Inceptzws/dsh-project-guard — capability card (C2) · dsh-xray</title>
-<meta name="description" content="Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.">
+<meta name="description" content="Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Inceptzws__dsh-project-guard.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Inceptzws/dsh-project-guard — dsh plugin capability card">
-<meta property="og:description" content="Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.">
+<meta property="og:description" content="Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Inceptzws__dsh-project-guard.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-project-guard", "identifier": "Inceptzws/dsh-project-guard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.", "codeRepository": "https://github.com/Inceptzws/dsh-project-guard", "url": "https://unstone.github.io/dsh-xray/p/Inceptzws__dsh-project-guard.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-project-guard", "identifier": "Inceptzws/dsh-project-guard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only.", "codeRepository": "https://github.com/Inceptzws/dsh-project-guard", "url": "https://unstone.github.io/dsh-xray/p/Inceptzws__dsh-project-guard.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Inceptzws/dsh-project-guard</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Permission guard for DeepSeek Harness: workspace work is never interrupted; only the extra permission a call asks for is judged — safe actions pass, system changes ask, destructive ones are refused.</p>
+  <p class="lede">Consequence analysis for DeepSeek Harness: it says what an extra-permission call costs you — the device, your delegated authority, your wider interests. State-based, not guessed.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Inceptzws/dsh-project-guard" rel="nofollow ugc">Inceptzws/dsh-project-guard source on GitHub</a>
      · <a href="../registry.html#Inceptzws__dsh-project-guard">this plugin in the registry</a></p>
-  <p>Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution.</p>
+  <p>Inceptzws/dsh-project-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/state.js:14, lib/state.js:14</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>approval</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>tools/post-execute</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
   
   
   <h2>How to read this</h2>
