@@ -52,10 +52,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>cuteG41cute/dsh-desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. dsh-desktop/tools/preview-probe/drive.mjs:3, dsh-desktop/tools/preview-probe/drive.mjs:107</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×58 in authored code, e.g. dsh-desktop/tools/preview-probe/attach.mjs:21, dsh-desktop/tools/preview-probe/attach.mjs:81</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. dsh-desktop/tools/preview-probe/attach.mjs:26, dsh-desktop/tools/preview-probe/drive.mjs:46</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>settings</span> <span>slots</span> <span>timer</span> <span>tools</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>settings</span> <span>slots</span> <span>timer</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>USERPROFILE</span> <span>DSH_CLEANER_RECYCLE_BIN</span> <span>SystemRoot</span> <span>ProgramFiles</span> <span>ProgramData</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

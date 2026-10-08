@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Miaotofu01__Study-Mate">this plugin in the registry</a></p>
   <p>Miaotofu01/Study-Mate is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars in development tooling the package does not ship, powerful capability in test/example code only.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. bin/antigravity-plugin.mjs:4, bin/antigravity-plugin.mjs:4</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: webServer</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. bin/studymate.mjs:6, bin/studymate.mjs:6</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: webServer</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>conversation</span> <span>inputTriggers</span> <span>sessions</span> <span>slots</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>DSH_HOME</span> <span>LEARN_WORKSPACE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>ComSpec</span> <span>LEARN_WORKSPACE</span> <span>LC_ALL</span> <span>STUDYMATE_LAB_INLINE_WAIT_MS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

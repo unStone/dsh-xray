@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>kee0012/dsh-sidebar-panel</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH（DeepSeek Harness，Web profile）的右侧面板插件：在会话头部右上角新增一个面板折叠按钮，点击展开/收起右侧列。包括概览、文件、改动、工具,。</p>
+  <p class="lede">DSH 右侧栏页签插件：注册一个右栏页签（概览 / 文件 / 改动 / 工具），与内置的文件、文档预览、引导页签并存。概览含 DeepSeek 账户余额、上下文窗口与预算、会话指标与用量分析。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/kee0012/dsh-sidebar-panel" rel="nofollow ugc">kee0012/dsh-sidebar-panel source on GitHub</a>
      · <a href="../registry.html#kee0012__dsh-sidebar-panel">this plugin in the registry</a></p>
   <p>kee0012/dsh-sidebar-panel is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/index.js:21, src/index.js:300</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/index.js:24, src/index.js:784</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>platform.deepseek.com</span> <span>api.deepseek.com</span></p>
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

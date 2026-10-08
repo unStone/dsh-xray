@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>AusertDream/TravelPlanner</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">旅行规划师：DeepSeek Harness (DSH) 的中文旅行规划 agent，实时查 12306 / 飞猪 / 途牛 / 高德，交付单文件 HTML 路书</p>
+  <p class="lede">旅行规划助手：DeepSeek Harness (DSH) 的中文旅行规划 agent，实时查 12306 / 飞猪 / 途牛 / 高德，交付单文件 HTML 路书</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/AusertDream/TravelPlanner" rel="nofollow ugc">AusertDream/TravelPlanner source on GitHub</a>
      · <a href="../registry.html#AusertDream__TravelPlanner">this plugin in the registry</a></p>
   <p>AusertDream/TravelPlanner is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./preset/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. assets/amap-route.mjs:23, assets/amap-route.mjs:53</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. assets/shot-inview.mjs:87, assets/shot.mjs:82</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AMAP_KEY, AMAP_SECURITY_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./preset/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×26 in authored code, e.g. assets/amap-route.mjs:23, assets/amap-route.mjs:53</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. assets/shot-inview.mjs:87, assets/shot.mjs:82</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AMAP_KEY, AMAP_SECURITY_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>webapi.amap.com</span> <span>console.amap.com</span> <span>flyai.open.fliggy.com</span> <span>console.cloud.google.com</span> <span>unsplash.com</span> <span>open.tuniu.com</span> <span>www.python.org</span> <span>open.er-api.com</span> <span>api.frankfurter.app</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>CHROME_PATH</span> <span>DSH_HOME</span> <span>CDP_PORT</span> <span>PATHEXT</span> <span>PYTHON</span> <span>VW</span> <span>VH</span> <span>DSH_DESKTOP_DIR</span> <span>LOCALAPPDATA</span> <span>AMAP_KEY</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>webapi.amap.com</span> <span>console.amap.com</span> <span>flyai.open.fliggy.com</span> <span>console.cloud.google.com</span> <span>unsplash.com</span> <span>open.tuniu.com</span> <span>www.python.org</span> <span>open.er-api.com</span> <span>api.frankfurter.app</span> <span>www.bilibili.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CHROME_PATH</span> <span>DSH_HOME</span> <span>CHROME_BIN</span> <span>CDP_PORT</span> <span>PATHEXT</span> <span>PYTHON</span> <span>VW</span> <span>VH</span> <span>DSH_DESKTOP_DIR</span> <span>LOCALAPPDATA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

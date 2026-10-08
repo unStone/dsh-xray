@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>YuJunZhiXue/dsh-purge</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐</p>
-  <p class="lede">★ 3.6k ·
+  <p class="lede">DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分</p>
+  <p class="lede">★ 3.8k ·
      <a href="https://github.com/YuJunZhiXue/dsh-purge" rel="nofollow ugc">YuJunZhiXue/dsh-purge source on GitHub</a>
      · <a href="../registry.html#YuJunZhiXue__dsh-purge">this plugin in the registry</a></p>
   <p>YuJunZhiXue/dsh-purge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/close-issues-1.1.60.mjs:1, scripts/close-issues-1.1.60.mjs:1</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/index.js:1978, lib/skills.js:615</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/patch-client-dock.mjs:8, scripts/patch-client-dock.mjs:8</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/index.js:2009, lib/skills.js:607</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>redteam</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent-preset/selected</span> <span>agent/inbox/claimed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>session/created</span> <span>session/event</span> <span>subagent/end</span> <span>system-prompt/assemble</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>codeload.github.com</span> <span>fofa.info</span> <span>api.github.com</span> <span>oa.example.com</span> <span>oa.demo.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>codeload.github.com</span> <span>fofa.info</span> <span>oa.example.com</span> <span>oa.demo.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_PERMISSION_MODE</span> <span>TEMP</span> <span>LOCALAPPDATA</span> <span>DSH_DESKTOP_INSTALL</span> <span>DSH_BASE</span> <span>DSH_SYSTEM_PROMPT</span> <span>DSH_PURGE_RESTART</span> <span>APPDATA</span> <span>PORT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

@@ -45,13 +45,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>qlheric/dsh-cvm</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Keep DSH agents from stalling, fake-finishing, or overspending: 4 cognitive guards (task contract / loop detection / evidence-before-done / single injection point) + 1 cost guard (budget nudge). No co</p>
+  <p class="lede">Runtime supervision for DeepSeek Harness agents: 4 cognitive guards (task contract / loop detection / evidence-before-done / single injection) + 1 cost guard. No core changes. Measured: cuts stalls -4</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/qlheric/dsh-cvm" rel="nofollow ugc">qlheric/dsh-cvm source on GitHub</a>
      · <a href="../registry.html#qlheric__dsh-cvm">this plugin in the registry</a></p>
   <p>qlheric/dsh-cvm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. install.mjs:17, install.mjs:17</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. install.mjs:17, install.mjs:17</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessionProjections</span> <span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/turn-stopping</span> <span>subagent/end</span> <span>subagent/start</span></p>
   
