@@ -46,14 +46,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DSH 插件：给非官方（自定义）提供方的模型自动填充推理级别、最大上下文、输出上限与图片模态等参数（数据来自 models.dev），并提供兼容性提升、记住推理级别等用户体验优化。</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/TikaFlow/dsh-model-fix" rel="nofollow ugc">TikaFlow/dsh-model-fix source on GitHub</a>
      · <a href="../registry.html#TikaFlow__dsh-model-fix">this plugin in the registry</a></p>
   <p>TikaFlow/dsh-model-fix is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/probe-backup.ts:43</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>llm</span> <span>locale</span> <span>settings</span> <span>slots</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>settings/document-updated</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>llm/adapters-updated</span> <span>settings/document-updated</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>models.dev</span></p>
   
   <h2>How to read this</h2>

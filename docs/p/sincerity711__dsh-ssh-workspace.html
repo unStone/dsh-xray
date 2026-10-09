@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sincerity711/dsh-ssh-workspace — capability card (C3) · dsh-xray</title>
-<meta name="description" content="sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta name="description" content="sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sincerity711__dsh-ssh-workspace.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sincerity711/dsh-ssh-workspace — dsh plugin capability card">
-<meta property="og:description" content="sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta property="og:description" content="sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sincerity711__dsh-ssh-workspace.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ssh-workspace", "identifier": "sincerity711/dsh-ssh-workspace", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/sincerity711/dsh-ssh-workspace", "url": "https://unstone.github.io/dsh-xray/p/sincerity711__dsh-ssh-workspace.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ssh-workspace", "identifier": "sincerity711/dsh-ssh-workspace", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.", "codeRepository": "https://github.com/sincerity711/dsh-ssh-workspace", "url": "https://unstone.github.io/dsh-xray/p/sincerity711__dsh-ssh-workspace.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/sincerity711/dsh-ssh-workspace" rel="nofollow ugc">sincerity711/dsh-ssh-workspace source on GitHub</a>
      · <a href="../registry.html#sincerity711__dsh-ssh-workspace">this plugin in the registry</a></p>
-  <p>sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  <p>sincerity711/dsh-ssh-workspace is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. scripts/acceptance/container-env.mjs:2, scripts/acceptance/container-env.mjs:2</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×14 in authored code, e.g. scripts/acceptance/container-env.mjs:143, scripts/acceptance/container-env.mjs:146</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>uiWorkspace</span> <span>webServer</span> <span>workspaces</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×19 in authored code, e.g. scripts/acceptance/container-env.mjs:2, scripts/acceptance/container-env.mjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. packages/local/lib/remote-sync.js:224</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×16 in authored code, e.g. scripts/acceptance/container-env.mjs:143, scripts/acceptance/container-env.mjs:146</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>locale</span> <span>profileContext</span> <span>remote</span> <span>sessions</span> <span>slots</span> <span>uiWorkspace</span> <span>webServer</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>deb.debian.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_RD_OLLAMA_BASE_URL</span> <span>DSH_BIN</span> <span>DSH_HARNESS_ROOT</span> <span>DSH_RD_OLLAMA_MODEL</span> <span>DSH_HOME</span> <span>DSH_RD_REMOTE_OLLAMA_BASE_URL</span> <span>CHROME_PATH</span> <span>DSH_REMOTE_DESKTOP_SSH_CONFIG</span> <span>DSH_REMOTE_DESKTOP_HOST</span> <span>DSH_REMOTE_DESKTOP_PORT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_REMOTE_DESKTOP_PORT</span> <span>DSH_RD_OLLAMA_BASE_URL</span> <span>DSH_BIN</span> <span>DSH_HARNESS_ROOT</span> <span>DSH_RD_OLLAMA_MODEL</span> <span>DSH_REMOTE_DESKTOP_HOST</span> <span>DSH_RD_REMOTE_OLLAMA_BASE_URL</span> <span>CHROME_PATH</span> <span>DSH_REMOTE_DESKTOP_SSH_CONFIG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

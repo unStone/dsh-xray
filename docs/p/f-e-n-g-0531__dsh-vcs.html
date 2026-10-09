@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>f-e-n-g-0531/dsh-vcs — capability card (C3) · dsh-xray</title>
-<meta name="description" content="f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/f-e-n-g-0531__dsh-vcs.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="f-e-n-g-0531/dsh-vcs — dsh plugin capability card">
-<meta property="og:description" content="f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/f-e-n-g-0531__dsh-vcs.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-vcs", "identifier": "f-e-n-g-0531/dsh-vcs", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/f-e-n-g-0531/dsh-vcs", "url": "https://unstone.github.io/dsh-xray/p/f-e-n-g-0531__dsh-vcs.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-vcs", "identifier": "f-e-n-g-0531/dsh-vcs", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/f-e-n-g-0531/dsh-vcs", "url": "https://unstone.github.io/dsh-xray/p/f-e-n-g-0531__dsh-vcs.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/f-e-n-g-0531/dsh-vcs" rel="nofollow ugc">f-e-n-g-0531/dsh-vcs source on GitHub</a>
      · <a href="../registry.html#f-e-n-g-0531__dsh-vcs">this plugin in the registry</a></p>
-  <p>f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>f-e-n-g-0531/dsh-vcs is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. vcs.mjs:2, vcs.mjs:20</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×33 in authored code, e.g. vcs.mjs:3, vcs.mjs:22</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. scripts/run-monaco-browser.mjs:30, scripts/run-monaco-browser.mjs:33</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>sessionPersistence</span> <span>sessions</span> <span>webServer</span></p>
   
-  
+  <h2>Outbound domains</h2><p class="kv"><span>subversion.tigris.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>npm_execpath</span> <span>RELEASE_TAG</span> <span>GITHUB_REF_NAME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
