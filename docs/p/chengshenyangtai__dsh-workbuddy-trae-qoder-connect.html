@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>chengshenyangtai/dsh-workbuddy-trae-qoder-connect</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">One DSH plugin for WorkBuddy / Qoder / Trae: auto check-in, multi-channel aggregation, in-session model switching, reasoning effort.</p>
+  <p class="lede">把 WorkBuddy（多账号/企业版）、Trae CN / TRAE SOLO CN、Qoder CN 三家订阅聚合进同一个 DSH 模型选择器：会话内换模型不丢历史、积分倍率、逐模型思考档位、每日自动签到、读图与 Agent 工具调用。One DSH plugin aggregating WorkBuddy / Trae / Qoder subscriptions into one model</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/chengshenyangtai/dsh-workbuddy-trae-qoder-connect" rel="nofollow ugc">chengshenyangtai/dsh-workbuddy-trae-qoder-connect source on GitHub</a>
      · <a href="../registry.html#chengshenyangtai__dsh-workbuddy-trae-qoder-connect">this plugin in the registry</a></p>
@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/export-trae-plain.mjs:42, scripts/export-trae-plain.mjs:42</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. probes/verify-qoder-effort-source.mjs:33, probes/verify-qoder-effort-source.mjs:34</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. scripts/trae-vault.mjs:100, scripts/trae-vault.mjs:220</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. probes/verify-shim-cancel-wiring.mjs:50, probes/verify-shim-cancel-wiring.mjs:66</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>remote</span> <span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>trae-api-cn.mchost.guru</span> <span>gateway.qoder.com.cn</span> <span>api.trae.cn</span> <span>openapi.qoder.com.cn</span> <span>qoder.com.cn</span> <span>copilot.tencent.com</span> <span>www.codebuddy.cn</span> <span>www.workbuddy.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_CONNECT_DIR</span> <span>TRAE_TIMEOUT_MS</span> <span>DSH_HOME</span> <span>QODER_PROMPT</span> <span>QODER_TIMEOUT_MS</span> <span>TRAE_ATTEMPTS</span> <span>DSH_PORT</span> <span>DSH_WEB_URL</span> <span>QODER_DUMP</span> <span>QODER_ROUNDS</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.trae.cn</span> <span>trae-api-cn.mchost.guru</span> <span>gateway.qoder.com.cn</span> <span>openapi.qoder.com.cn</span> <span>qoder.com.cn</span> <span>copilot.tencent.com</span> <span>www.codebuddy.cn</span> <span>www.workbuddy.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_CONNECT_DIR</span> <span>DSH_HOME</span> <span>DSH_PORT</span> <span>DSH_WEB_URL</span> <span>PROBE_DEBUG</span> <span>APPDATA</span> <span>LOCALAPPDATA</span> <span>QODERCN_MACHINE_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

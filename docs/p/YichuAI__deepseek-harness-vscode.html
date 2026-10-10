@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YichuAI/deepseek-harness-vscode — capability card (C2) · dsh-xray</title>
-<meta name="description" content="YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server.">
+<meta name="description" content="YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/YichuAI__deepseek-harness-vscode.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="YichuAI/deepseek-harness-vscode — dsh plugin capability card">
-<meta property="og:description" content="YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server.">
+<meta property="og:description" content="YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/YichuAI__deepseek-harness-vscode.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-vscode", "identifier": "YichuAI/deepseek-harness-vscode", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server.", "codeRepository": "https://github.com/YichuAI/deepseek-harness-vscode", "url": "https://unstone.github.io/dsh-xray/p/YichuAI__deepseek-harness-vscode.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-vscode", "identifier": "YichuAI/deepseek-harness-vscode", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/YichuAI/deepseek-harness-vscode", "url": "https://unstone.github.io/dsh-xray/p/YichuAI__deepseek-harness-vscode.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/YichuAI/deepseek-harness-vscode" rel="nofollow ugc">YichuAI/deepseek-harness-vscode source on GitHub</a>
      · <a href="../registry.html#YichuAI__deepseek-harness-vscode">this plugin in the registry</a></p>
-  <p>YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It starts a network server.</p>
+  <p>YichuAI/deepseek-harness-vscode is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, decodes base64 payloads, starts a network server.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/protocol-test.ts:292, scripts/protocol-test.ts:398</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/protocol-test.ts:165, scripts/protocol-test.ts:1435</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/integration-test.ts:285, src/app/controller.ts:1050</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/protocol-test.ts:455, scripts/protocol-test.ts:613</td></tr></tbody></table>
   
   
   

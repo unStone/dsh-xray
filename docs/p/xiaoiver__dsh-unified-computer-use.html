@@ -46,14 +46,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">Persistent Computer Use REPL and embedded browser for DeepSeek Harness; reuses the host runtime without patches</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/xiaoiver/dsh-unified-computer-use" rel="nofollow ugc">xiaoiver/dsh-unified-computer-use source on GitHub</a>
      · <a href="../registry.html#xiaoiver__dsh-unified-computer-use">this plugin in the registry</a></p>
   <p>xiaoiver/dsh-unified-computer-use is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>sandbox, subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/repl-host.ts:76</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/repl-worker.ts:107</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. dist/client.js:1299, dist/client.js:3033</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>fs</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span></p>
-  
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>sandbox, subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/native-helper.ts:7, src/native-pip.ts:2</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/repl-worker.ts:191</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/playwright-facade.ts:34</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>configForms</span> <span>fs</span> <span>locale</span> <span>remote</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span></p>
   
   
   <h2>How to read this</h2>

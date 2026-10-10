@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PPawnsir/dsh-notes-plugin — capability card (C3) · dsh-xray</title>
-<meta name="description" content="PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.">
+<meta name="description" content="PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/PPawnsir__dsh-notes-plugin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PPawnsir/dsh-notes-plugin — dsh plugin capability card">
-<meta property="og:description" content="PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.">
+<meta property="og:description" content="PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/PPawnsir__dsh-notes-plugin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-notes-plugin", "identifier": "PPawnsir/dsh-notes-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.", "codeRepository": "https://github.com/PPawnsir/dsh-notes-plugin", "url": "https://unstone.github.io/dsh-xray/p/PPawnsir__dsh-notes-plugin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-notes-plugin", "identifier": "PPawnsir/dsh-notes-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/PPawnsir/dsh-notes-plugin", "url": "https://unstone.github.io/dsh-xray/p/PPawnsir__dsh-notes-plugin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/PPawnsir/dsh-notes-plugin" rel="nofollow ugc">PPawnsir/dsh-notes-plugin source on GitHub</a>
      · <a href="../registry.html#PPawnsir__dsh-notes-plugin">this plugin in the registry</a></p>
-  <p>PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.</p>
+  <p>PPawnsir/dsh-notes-plugin is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×201 in authored code, e.g. client.js:28, host.js:27</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/smoke-embed-consumer.mjs:26, scripts/smoke-embed-consumer.mjs:26</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×220 in authored code, e.g. client.js:28, host.js:27</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>fs</span> <span>m-evt</span> <span>n-sg-mtevt</span> <span>sandboxPolicy</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessionTitle</span> <span>sessions</span> <span>slots</span> <span>timer</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/status</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>evil.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DEMO_OUT</span> <span>EDGE_PATH</span> <span>DEMO_KEEP_FRAMES</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span> <span>huggingface.co</span> <span>evil.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SMOKE_CACHE_DIR</span> <span>DEMO_OUT</span> <span>EDGE_PATH</span> <span>DEMO_KEEP_FRAMES</span> <span>DSH_SMOKE_CONSUMER_DIR</span> <span>DSH_SMOKE_RUNS</span> <span>DSH_SMOKE_SRC_ROOT</span> <span>DSH_SMOKE_HOST_PKG_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

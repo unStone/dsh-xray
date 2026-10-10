@@ -51,10 +51,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#Victor-770__dsh-plugin-directory">this plugin in the registry</a></p>
   <p>Victor-770/dsh-plugin-directory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/deploy.mjs:8, scripts/deploy.mjs:8</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. scripts/serve.mjs:19, scripts/serve.mjs:24</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN, INDEXNOW_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/deploy.mjs:8, scripts/deploy.mjs:8</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/serve.mjs:19, scripts/serve.mjs:24</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN, INDEXNOW_KEY</td></tr></tbody></table>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>dsh-plugin-directory.online</span> <span>deepseek.com</span> <span>www.anthropic.com</span> <span>platform.openai.com</span> <span>api.github.com</span> <span>site.pages.dev</span> <span>www.sitemaps.org</span> <span>deepseekharness.io</span> <span>deepseekdocs.com</span> <span>dev.to</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.indexnow.org</span> <span>dsh-plugin-directory.online</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>PORT</span> <span>GITHUB_TOKEN</span> <span>INDEXNOW_BATCH</span> <span>INDEXNOW_ENDPOINT</span> <span>INDEXNOW_KEY</span> <span>DSH_TOMBSTONE_THRESHOLD</span> <span>CLEANROOM_SCENARIO</span> <span>CLEANROOM_REQLOG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
