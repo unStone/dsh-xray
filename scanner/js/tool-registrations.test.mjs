@@ -63,6 +63,9 @@ test('dynamic service lookups are explicitly incomplete', () => {
   const r = result('export function apply(ctx) { ctx.get(service).register({}); }');
   assert.equal(r.registrations.length, 0);
   assert.equal(r.diagnostics.length, 1);
+  const alias = result('export function apply(ctx) { const api = ctx.get(service); api.register({}); }');
+  assert.equal(alias.registrations.length, 0);
+  assert.equal(alias.diagnostics.length, 1);
 });
 
 test('unrelated apply properties and mixed helper arguments are not trusted contexts', () => {

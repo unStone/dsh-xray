@@ -83,6 +83,7 @@ export class Bindings {
     if (member(path)) {
       const parent = this.role(path.get('object'), seen, position);
       if (parent === UNKNOWN) return UNKNOWN;
+      if (parent === CONTEXT && !property(path)) return UNKNOWN;
       if (parent === CONTEXT && property(path) === 'tools') return TOOLS;
       if (parent === TOOLS && property(path) === 'register') return REGISTER;
       return 0;
@@ -91,8 +92,10 @@ export class Bindings {
       const callee = path.get('callee');
       const args = path.get('arguments');
       if (member(callee) && property(callee) === 'get' &&
-          this.role(callee.get('object'), seen, position) === CONTEXT &&
-          args[0]?.isStringLiteral({ value: 'tools' })) return TOOLS;
+          this.role(callee.get('object'), seen, position) === CONTEXT) {
+        if (args[0]?.isStringLiteral({ value: 'tools' })) return TOOLS;
+        if (!args[0]?.isStringLiteral()) return UNKNOWN;
+      }
       if (member(callee) && property(callee) === 'bind' &&
           this.role(callee.get('object'), seen, position) === REGISTER &&
           this.role(args[0], seen, position) === TOOLS) return REGISTER;
