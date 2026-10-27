@@ -8,6 +8,10 @@ on:
         description: 'Re-scan the committed catalog without rediscovering GitHub topics'
         type: boolean
         default: false
+      probe_only:
+        description: 'Validate the first 100 catalog repositories without committing site data'
+        type: boolean
+        default: false
 permissions:
   contents: write
   issues: write
@@ -49,7 +53,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scanner/discover.py all
       - name: scan + render
+        env:
+          XRAY_PROBE_ONLY: ${{ inputs.probe_only }}
         run: |
+          if [ "$XRAY_PROBE_ONLY" = "true" ]; then
+            cd scanner && python pipeline.py 100 8
+            exit 0
+          fi
           # Recollect every old-schema card; a budget must not strand old evidence.
           # Each worker reuses one Node process for package and AST analysis.
           cd scanner && python pipeline.py all 8
@@ -58,6 +68,7 @@ jobs:
           python render_i18n_defaults.py
           python render_pages.py
       - name: commit results
+        if: inputs.probe_only != true
         run: |
           git config user.name 'dsh-xray-bot'
           git config user.email 'bot@dsh-xray'
