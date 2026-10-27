@@ -10,7 +10,7 @@
 
 [Issue #6](https://github.com/unStone/dsh-xray/issues/6): tool registration analysis now follows context injection, service aliases, optional chaining and local helper calls using JS/TS syntax trees. Comments and strings do not count. Confirmed sites carry file:line evidence; incomplete analysis is labelled and does not imply that no tools exist.
 
-The scanner requires Python 3.12+ and Node 24.17+ (24.x). Collection schema 5 invalidates older cached evidence, and the first run refreshes all repositories without the old fixed fetch budget. Budget-deferred results retain their original collection version and show a refresh-pending notice. Per-file compact models keep large repositories within the scanner's memory budget.
+The scanner requires Python 3.12+ and Node 24.17+ (24.x). Collection schema 6 invalidates older cached evidence, and the first run refreshes all repositories without the old fixed fetch budget. Budget-deferred results retain their original collection version and show a refresh-pending notice. Per-file compact models bound AST memory, while dedicated request processes and IDs isolate repository results.
 
 ---
 

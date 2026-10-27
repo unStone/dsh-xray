@@ -1,19 +1,12 @@
-import atexit
-import contextlib
 import json
-import os
 import pathlib
-import selectors
 import subprocess
-import tempfile
 import threading
-import time
+import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TIMEOUT = 90
 LOCAL = threading.local()
-WORKERS = set()
-LOCK = threading.Lock()
 
 
 class AnalysisRuntimeError(RuntimeError):
@@ -26,76 +19,40 @@ class RepositoryAnalysisError(ValueError):
 
 class Worker:
     def __init__(self):
-        scratch = ROOT / 'tmp' / 'analysis'
-        scratch.mkdir(parents=True, exist_ok=True)
-        self.errors = tempfile.TemporaryFile(dir=scratch)
-        try:
-            self.process = subprocess.Popen(
-                ['node', '--max-old-space-size=512', '--expose-gc', str(ROOT / 'scanner/js/worker.mjs')],
-                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.errors)
-        except OSError as error:
-            self.errors.close()
-            raise AnalysisRuntimeError('Cannot start scanner Node worker; run fnm use and npm ci --prefix scanner') from error
-        self.closed = False
-        with LOCK:
-            WORKERS.add(self)
         result = self.request({'version': 1, 'operation': 'ping'})
         version = tuple(int(part) for part in result['node'].split('.'))
         if version < (24, 17, 0) or version[0] != 24:
-            self.close()
             raise AnalysisRuntimeError(f'Scanner needs Node 24.17+ (24.x), got {result["node"]}; run fnm use')
 
     def request(self, payload):
-        if self.closed:
-            raise AnalysisRuntimeError('Scanner Node worker was closed after a previous failure')
+        request_id = uuid.uuid4().hex
+        message = {**payload, 'requestId': request_id}
         try:
-            self.process.stdin.write(json.dumps(payload, ensure_ascii=False).encode() + b'\n')
-            self.process.stdin.flush()
-            response = bytearray()
-            deadline = time.monotonic() + TIMEOUT
-            with selectors.DefaultSelector() as selector:
-                selector.register(self.process.stdout, selectors.EVENT_READ)
-                while not response.endswith(b'\n'):
-                    remaining = deadline - time.monotonic()
-                    if remaining <= 0 or not selector.select(remaining):
-                        raise TimeoutError(f'Node analysis did not finish within {TIMEOUT}s')
-                    chunk = os.read(self.process.stdout.fileno(), 65536)
-                    if not chunk:
-                        self.errors.seek(0)
-                        detail = self.errors.read(2000).decode(errors='replace')
-                        raise RuntimeError(f'Node analysis exited unexpectedly: {detail}')
-                    response.extend(chunk)
-                    if len(response) > 32 * 1024 * 1024:
-                        raise RuntimeError('Node analysis response exceeded 32 MiB')
-            envelope = json.loads(response)
-        except (OSError, ValueError, RuntimeError, TimeoutError) as error:
-            self.close()
+            # communicate() owns both pipes for this request; no shared reader
+            # can attach another repository's response to the current card.
+            completed = subprocess.run(
+                ['node', '--max-old-space-size=512', '--expose-gc', str(ROOT / 'scanner/js/worker.mjs')],
+                input=json.dumps(message, ensure_ascii=False).encode() + b'\n',
+                capture_output=True, timeout=TIMEOUT, check=False)
+        except (OSError, subprocess.TimeoutExpired) as error:
             raise AnalysisRuntimeError(f'Scanner analysis failed: {error}') from error
+        if completed.returncode:
+            detail = completed.stderr.decode(errors='replace')[:2000]
+            raise AnalysisRuntimeError(f'Node analysis exited {completed.returncode}: {detail}')
+        if len(completed.stdout) > 32 * 1024 * 1024:
+            raise AnalysisRuntimeError('Node analysis response exceeded 32 MiB')
+        try:
+            envelope = json.loads(completed.stdout)
+        except (ValueError, UnicodeDecodeError) as error:
+            raise AnalysisRuntimeError(f'Invalid Node analysis JSON: {error}') from error
+        if envelope.get('requestId') != request_id:
+            raise AnalysisRuntimeError(f'Node analysis response request ID does not match {request_id}')
         if 'error' in envelope:
             raise RepositoryAnalysisError(envelope['error'])
         result = envelope.get('result')
         if not isinstance(result, dict) or result.get('version') != 1:
-            self.close()
             raise AnalysisRuntimeError('Invalid scanner analysis response: expected protocol version 1')
         return result
-
-    def close(self):
-        if self.closed:
-            return
-        self.closed = True
-        with contextlib.suppress(OSError):
-            self.process.stdin.close()
-        if self.process.poll() is None:
-            self.process.terminate()
-        try:
-            self.process.wait(timeout=5)
-        except subprocess.TimeoutExpired:
-            self.process.kill()
-            self.process.wait()
-        self.process.stdout.close()
-        self.errors.close()
-        with LOCK:
-            WORKERS.discard(self)
 
 
 def worker():
@@ -122,9 +79,3 @@ def analyze(files, candidates, entries=None, non_runtime=None):
 def package_members(files, root=''):
     return set(worker().request({'version': 1, 'operation': 'membership',
                                  'files': files, 'root': root})['members'])
-
-
-@atexit.register
-def close_workers():
-    for instance in list(WORKERS):
-        instance.close()

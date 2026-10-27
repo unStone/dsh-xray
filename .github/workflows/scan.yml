@@ -61,7 +61,7 @@ jobs:
             exit 0
           fi
           # Recollect every old-schema card; a budget must not strand old evidence.
-          # Each worker reuses one Node process for package and AST analysis.
+          # Each analysis request owns its Node process and stdio streams.
           cd scanner && python pipeline.py all 8
           python render_report.py
           python render_docs.py
