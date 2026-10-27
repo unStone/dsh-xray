@@ -89,7 +89,7 @@ class PipelineTests(unittest.TestCase):
             pipeline.main(workers=1)
         self.assertEqual(download.call_count, 1)
         card = json.loads((self.root / 'docs/data.json').read_text())['plugins'][0]
-        self.assertEqual(card['collect'], 4)
+        self.assertEqual(card['collect'], scan_core.COLLECT_VERSION)
         self.assertEqual(card['tool_regs'], 1)
         self.assertEqual(card['first_seen'], '2026-01-01')
         with patch.object(pipeline, 'fetch_files', side_effect=AssertionError('fresh cache was refetched')):

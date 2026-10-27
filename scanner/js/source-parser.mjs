@@ -1,9 +1,9 @@
 import { parse } from '@babel/parser';
 import traverseModule from '@babel/traverse';
-import { parse as parseVue } from '@vue/compiler-sfc';
-import { parse as parseSvelte } from 'svelte/compiler';
+import { createRequire } from 'node:module';
 
 export const traverse = traverseModule.default;
+const require = createRequire(import.meta.url);
 
 function javascript(source, filename, startLine = 1, lang = '') {
   return parse(source, {
@@ -22,13 +22,13 @@ function javascript(source, filename, startLine = 1, lang = '') {
 
 export function parseSource(source, filename) {
   if (filename.endsWith('.vue')) {
-    const { descriptor, errors } = parseVue(source, { filename });
+    const { descriptor, errors } = require('@vue/compiler-sfc').parse(source, { filename });
     if (errors.length) throw new Error(errors.map(e => e.message ?? e).join('; '));
     return [descriptor.script, descriptor.scriptSetup].filter(Boolean).map(block =>
       javascript(block.content, filename, block.loc.start.line, block.lang));
   }
   if (filename.endsWith('.svelte')) {
-    const component = parseSvelte(source, { modern: true });
+    const component = require('svelte/compiler').parse(source, { modern: true });
     return [component.instance, component.module].filter(Boolean).map(block => {
       const start = block.content.start;
       const end = block.content.end;

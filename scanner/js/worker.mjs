@@ -1,10 +1,16 @@
-import { createInterface } from 'node:readline';
-import { unshippedTooling, validatePath, withPackageTree, packageMembers } from './pack-membership.mjs';
-import { toolRegistrations } from './tool-registrations.mjs';
+import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { validatePath } from './paths.mjs';
+
+const require = createRequire(import.meta.url);
 
 async function analyze(request) {
   if (request.version !== 1) throw new Error(`Unsupported analysis protocol ${request.version}`);
-  if (request.operation === 'ping') return { version: 1, node: process.versions.node };
+  if (request.operation === 'ping') {
+    for (const name of ['@babel/parser', '@babel/traverse', '@npmcli/arborist',
+      'npm-packlist', '@vue/compiler-sfc', 'svelte/compiler']) require.resolve(name);
+    return { version: 1, node: process.versions.node };
+  }
   if (!request.files || Array.isArray(request.files) || typeof request.files !== 'object') throw new Error('files must be an object');
   for (const [path, text] of Object.entries(request.files)) {
     validatePath(path);
@@ -12,6 +18,7 @@ async function analyze(request) {
   }
   for (const entry of request.entries ?? []) validatePath(entry.path);
   if (request.operation === 'membership') {
+    const { withPackageTree, packageMembers } = await import('./pack-membership.mjs');
     if (request.root) validatePath(request.root);
     const members = await withPackageTree(request.files, request.entries ?? [],
       async directory => [...await packageMembers(directory, request.root ?? '')].sort());
@@ -21,7 +28,12 @@ async function analyze(request) {
     if (candidate.root) validatePath(candidate.root);
     candidate.paths.forEach(validatePath);
   }
-  const tooling = await unshippedTooling(request.files, request.entries, request.candidates);
+  const tooling = request.candidates.length
+    ? await (await import('./pack-membership.mjs')).unshippedTooling(request.files, request.entries, request.candidates) : [];
+  if (!Object.keys(request.files).some(path => /\.(ts|tsx|js|mjs|cjs|vue|svelte)$/.test(path))) {
+    return { version: 1, tooling, registrations: [], diagnostics: [] };
+  }
+  const { toolRegistrations } = await import('./tool-registrations.mjs');
   const nonRuntime = new Set([...(request.nonRuntimePaths ?? []), ...tooling]);
   const runtime = toolRegistrations(Object.fromEntries(Object.entries(request.files).filter(([path]) => !nonRuntime.has(path))));
   const development = toolRegistrations(Object.fromEntries(Object.entries(request.files).filter(([path]) => nonRuntime.has(path))));
@@ -30,12 +42,12 @@ async function analyze(request) {
     diagnostics: [...runtime.diagnostics, ...development.diagnostics.map(e => ({ ...e, origin: 'dev' }))] };
 }
 
-for await (const line of createInterface({ input: process.stdin, crlfDelay: Infinity })) {
-  try {
-    const result = await analyze(JSON.parse(line));
-    process.stdout.write(`${JSON.stringify({ result })}\n`);
-  } catch (error) {
-    process.stdout.write(`${JSON.stringify({ error: error.message })}\n`);
-  }
-  if (globalThis.gc) globalThis.gc();
+let requestId = null;
+try {
+  const request = JSON.parse(readFileSync(0, 'utf8'));
+  requestId = request.requestId;
+  const result = await analyze(request);
+  process.stdout.write(JSON.stringify({ requestId, result }));
+} catch (error) {
+  process.stdout.write(JSON.stringify({ requestId, error: error.message }));
 }

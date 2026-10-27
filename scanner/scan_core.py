@@ -56,7 +56,7 @@ APPLY_RE = re.compile(r"export\s+(?:function|const)\s+apply\b|\bapply\s*\(\s*ctx
 # Raw-field schema version. scan_files() stamps it after collection; the pipeline
 # refuses to reuse a cached card collected under a different version, because
 # fields added or split since then cannot be reconstructed without a rescan.
-COLLECT_VERSION = 4
+COLLECT_VERSION = 6
 
 # A diagnostic may carry the literal `node:internal/child_process` in a string
 # or regex without ever importing the module. Execution needs an import-shaped

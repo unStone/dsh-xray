@@ -13,11 +13,12 @@ test('large repositories retain compact summaries rather than all syntax trees',
   files['helper.js'] = 'export function mount(host) { const tools = host.tools; tools.register({name:"real"}); }';
   const run = spawnSync(process.execPath, ['--max-old-space-size=512', '--expose-gc',
     fileURLToPath(new URL('./worker.mjs', import.meta.url))], {
-    input: JSON.stringify({ version: 1, files, entries: [], candidates: [], nonRuntimePaths: [] }) + '\n',
+    input: JSON.stringify({ version: 1, requestId: 'memory-regression', files, entries: [], candidates: [], nonRuntimePaths: [] }) + '\n',
     encoding: 'utf8', timeout: 110000, maxBuffer: 1024 * 1024,
   });
   assert.equal(run.status, 0, run.stderr.slice(-2000));
   const response = JSON.parse(run.stdout);
+  assert.equal(response.requestId, 'memory-regression');
   assert.equal(response.error, undefined);
   assert.equal(response.result.registrations.length, 1);
   assert.equal(response.result.registrations[0].path, 'helper.js');

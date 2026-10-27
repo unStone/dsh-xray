@@ -3,16 +3,10 @@ import { resolve, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Arborist from '@npmcli/arborist';
 import packlist from 'npm-packlist';
+import { validatePath } from './paths.mjs';
+export { validatePath } from './paths.mjs';
 
 const scratch = fileURLToPath(new URL('../../tmp/analysis/', import.meta.url));
-
-export function validatePath(path) {
-  if (typeof path !== 'string' || !path || path.includes('\\') || path.includes('\0') ||
-      posix.isAbsolute(path) || /^[A-Za-z]:/.test(path) ||
-      path.split('/').some(p => !p || p === '.' || p === '..')) {
-    throw new Error(`Invalid repository path: ${JSON.stringify(path)}`);
-  }
-}
 
 export async function withPackageTree(files, entries, callback) {
   await mkdir(scratch, { recursive: true });
