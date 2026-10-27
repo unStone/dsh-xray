@@ -58,6 +58,7 @@ export class Bindings {
       if (parent === CONTEXT && value.key === 'tools') return TOOLS;
       if (parent === TOOLS && value.key === 'register') return REGISTER;
     }
+    if (value.type === 'unknown-projection') return this.role(value.object, seen, position) ? UNKNOWN : 0;
     if (value.type === 'call') {
       const callee = value.callee;
       if (callee?.type === 'member' && callee.key === 'get' && this.role(callee.object, seen, position) === CONTEXT) {

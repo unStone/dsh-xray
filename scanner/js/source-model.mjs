@@ -55,6 +55,7 @@ function compile(filename, source, graph) {
       record.init = expression(value.path.get('init'));
       const keys = projection(value.path.get('id'), path.node.name);
       if (keys) for (const key of keys) record.init = { type: 'member', object: record.init, key };
+      else record.init = { type: 'unknown-projection', object: record.init };
     }
     if (value.path.isImportSpecifier() || value.path.isImportDefaultSpecifier() || value.path.isImportNamespaceSpecifier()) {
       record.imported = { owner: filename, source: value.path.parentPath.node.source.value,

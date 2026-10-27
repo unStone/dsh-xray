@@ -113,7 +113,7 @@ def analyze(files, candidates, entries=None, non_runtime=None):
         if (not isinstance(item, dict) or item.get('path') not in files or
                 not isinstance(item.get('line'), int) or item['line'] < 1 or
                 not isinstance(item.get('reason'), str)):
-            raise AnalysisRuntimeError('Invalid analysis response: malformed file:line evidence')
+            raise AnalysisRuntimeError(f'Invalid analysis response: malformed file:line evidence: {item!r}')
     if any(path not in files for path in result['tooling']):
         raise AnalysisRuntimeError('Invalid analysis response: unknown tooling path')
     return result

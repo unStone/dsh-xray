@@ -92,3 +92,13 @@ test('computed identifiers do not masquerade as static tools or apply keys', () 
   };`);
   assert.equal(entry.registrations.length, 0);
 });
+
+test('object rest does not inherit a tools property that was removed', () => {
+  const r = result(`export function apply(ctx) {
+    const {tools, ...rest} = ctx;
+    tools.register({name:'real'});
+    rest.tools.register({name:'not-present'});
+  }`);
+  assert.equal(r.registrations.length, 1);
+  assert.ok(r.diagnostics.length);
+});
