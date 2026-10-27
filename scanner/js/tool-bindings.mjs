@@ -6,24 +6,7 @@ export const REGISTER = 4;
 export const FACTORY = 8;
 export const UNKNOWN = 16;
 
-export function property(path) {
-  const node = path?.node;
-  if (!node) return null;
-  if (!node.computed && node.property?.type === 'Identifier') return node.property.name;
-  return node.property?.type === 'StringLiteral' ? node.property.value : null;
-}
-
-export function member(path) {
-  return path?.isMemberExpression() || path?.isOptionalMemberExpression();
-}
-
-function unwrap(path) {
-  while (path?.node && ['TSAsExpression', 'TSTypeAssertion', 'TSNonNullExpression',
-    'ParenthesizedExpression', 'TypeCastExpression'].includes(path.node.type)) path = path.get('expression');
-  return path;
-}
-
-export function moduleFor(filename, specifier, modules) {
+function moduleFor(filename, specifier, modules) {
   if (!specifier.startsWith('.')) return null;
   const base = posix.normalize(posix.join(posix.dirname(filename), specifier));
   const candidates = [base, ...['.js', '.mjs', '.cjs', '.ts', '.tsx', '.vue', '.svelte'].map(e => `${base}${e}`),
@@ -33,107 +16,85 @@ export function moduleFor(filename, specifier, modules) {
 }
 
 export class Bindings {
-  constructor(modules) {
-    this.modules = modules;
+  constructor(graph) {
+    this.graph = graph;
     this.roles = new Map();
     this.changed = false;
   }
 
-  add(binding, role) {
-    if (!binding || !role) return;
-    const value = (this.roles.get(binding) ?? 0) | role;
-    if (value !== this.roles.get(binding)) {
-      this.roles.set(binding, value);
-      this.changed = true;
-    }
-  }
-
   bind(pattern, role) {
-    if (pattern?.isAssignmentPattern()) return this.bind(pattern.get('left'), role);
-    if (pattern?.isIdentifier()) {
-      const binding = pattern.scope.getBinding(pattern.node.name);
-      this.add(binding, role || (this.roles.has(binding) ? UNKNOWN : 0));
-    }
-    if (pattern?.isObjectPattern()) {
-      for (const entry of pattern.get('properties')) {
-        if (!entry.isObjectProperty()) continue;
-        const name = entry.node.computed ? entry.node.key.value : entry.node.key.name ?? entry.node.key.value;
-        const value = name === 'tools' && role === CONTEXT ? TOOLS
-          : name === 'register' && role === TOOLS ? REGISTER : 0;
-        this.bind(entry.get('value'), value);
+    if (!pattern) return;
+    if (pattern.type === 'binding' && pattern.id != null) {
+      const value = role || (this.roles.has(pattern.id) ? UNKNOWN : 0);
+      const merged = (this.roles.get(pattern.id) ?? 0) | value;
+      if (merged && merged !== this.roles.get(pattern.id)) {
+        this.roles.set(pattern.id, merged);
+        this.changed = true;
       }
+    }
+    if (pattern.type === 'object') for (const entry of pattern.properties) {
+      const value = entry.key === 'tools' && role === CONTEXT ? TOOLS
+        : entry.key === 'register' && role === TOOLS ? REGISTER
+          : entry.key == null && [CONTEXT, TOOLS].includes(role) ? UNKNOWN : 0;
+      this.bind(entry.value, value);
     }
   }
 
-  role(path, seen = new Set(), position = path?.node?.start) {
-    path = unwrap(path);
-    if (!path?.node) return 0;
-    if (path.isIdentifier()) {
-      const binding = path.scope.getBinding(path.node.name);
-      if (!binding || seen.has(binding)) return 0;
-      if (binding.constantViolations.some(p => p.node.start <= position || p.getFunctionParent() !== path.getFunctionParent())) return UNKNOWN;
-      seen = new Set(seen).add(binding);
-      const assigned = this.roles.get(binding);
+  role(value, seen = new Set(), position = value?.position) {
+    if (!value) return 0;
+    if (value.type === 'identifier') {
+      if (value.id == null || seen.has(value.id)) return 0;
+      const binding = this.graph.bindings[value.id];
+      if (binding.violations.some(v => v.position <= position || v.fn !== value.fn)) return UNKNOWN;
+      const assigned = this.roles.get(value.id);
       if (assigned) return [CONTEXT, TOOLS, REGISTER, FACTORY].includes(assigned) ? assigned : UNKNOWN;
-      if (binding.path.isVariableDeclarator() && binding.path.get('id').isIdentifier()) {
-        return this.role(binding.path.get('init'), seen, position);
+      if (binding.imported && /^(@deepseek-ai\/|@dsh\/|cordis$)/.test(binding.imported.source) &&
+          ['defineTool', 'registerTool'].includes(binding.imported.name)) return FACTORY;
+      return this.role(binding.init, new Set(seen).add(value.id), position);
+    }
+    if (value.type === 'member') {
+      const parent = this.role(value.object, seen, position);
+      if (parent === UNKNOWN || (parent === CONTEXT && !value.key)) return UNKNOWN;
+      if (parent === CONTEXT && value.key === 'tools') return TOOLS;
+      if (parent === TOOLS && value.key === 'register') return REGISTER;
+    }
+    if (value.type === 'call') {
+      const callee = value.callee;
+      if (callee?.type === 'member' && callee.key === 'get' && this.role(callee.object, seen, position) === CONTEXT) {
+        if (value.args[0]?.type === 'string' && value.args[0].value === 'tools') return TOOLS;
+        if (value.args[0]?.type !== 'string') return UNKNOWN;
       }
-      return 0;
+      if (callee?.type === 'member' && callee.key === 'bind' &&
+          this.role(callee.object, seen, position) === REGISTER &&
+          this.role(value.args[0], seen, position) === TOOLS) return REGISTER;
     }
-    if (member(path)) {
-      const parent = this.role(path.get('object'), seen, position);
-      if (parent === UNKNOWN) return UNKNOWN;
-      if (parent === CONTEXT && !property(path)) return UNKNOWN;
-      if (parent === CONTEXT && property(path) === 'tools') return TOOLS;
-      if (parent === TOOLS && property(path) === 'register') return REGISTER;
-      return 0;
-    }
-    if (path.isCallExpression() || path.isOptionalCallExpression()) {
-      const callee = path.get('callee');
-      const args = path.get('arguments');
-      if (member(callee) && property(callee) === 'get' &&
-          this.role(callee.get('object'), seen, position) === CONTEXT) {
-        if (args[0]?.isStringLiteral({ value: 'tools' })) return TOOLS;
-        if (!args[0]?.isStringLiteral()) return UNKNOWN;
-      }
-      if (member(callee) && property(callee) === 'bind' &&
-          this.role(callee.get('object'), seen, position) === REGISTER &&
-          this.role(args[0], seen, position) === TOOLS) return REGISTER;
-    }
-    if (path.isLogicalExpression() || path.isConditionalExpression()) {
-      const left = this.role(path.get(path.isLogicalExpression() ? 'left' : 'consequent'), seen, position);
-      const right = this.role(path.get(path.isLogicalExpression() ? 'right' : 'alternate'), seen, position);
+    if (value.type === 'choice') {
+      const left = this.role(value.left, seen, position);
+      const right = this.role(value.right, seen, position);
       return left === right ? left : left || right ? UNKNOWN : 0;
     }
     return 0;
   }
 
-  target(path, module, seen = new Set()) {
-    path = unwrap(path);
-    if (!path?.node) return null;
-    if (path.isFunction()) return path;
-    if (path.isIdentifier()) {
-      const binding = path.scope.getBinding(path.node.name);
-      if (!binding || seen.has(binding) || !binding.constant) return null;
-      seen = new Set(seen).add(binding);
-      if (binding.path.isFunction()) return binding.path;
-      if (binding.path.isVariableDeclarator()) return this.target(binding.path.get('init'), module, seen);
-      if (binding.path.isImportSpecifier() || binding.path.isImportDefaultSpecifier()) {
-        const declaration = binding.path.parentPath;
-        const imported = moduleFor(module.filename, declaration.node.source.value, this.modules);
-        const name = binding.path.isImportDefaultSpecifier() ? 'default'
-          : binding.path.node.imported.name ?? binding.path.node.imported.value;
-        const exported = imported?.exports.get(name);
-        return exported ? this.target(exported, imported, seen) : null;
-      }
+  importedTarget(binding, name, seen) {
+    const source = moduleFor(binding.imported.owner, binding.imported.source, this.graph.modules);
+    return this.target(source?.exports.get(name), seen);
+  }
+
+  target(value, seen = new Set()) {
+    if (!value) return null;
+    if (value.type === 'function') return value.id;
+    if (value.type === 'identifier') {
+      if (value.id == null || seen.has(value.id)) return null;
+      const binding = this.graph.bindings[value.id];
+      if (!binding.constant) return null;
+      seen = new Set(seen).add(value.id);
+      if (binding.imported && !binding.imported.namespace) return this.importedTarget(binding, binding.imported.name, seen);
+      return this.target(binding.init, seen);
     }
-    if (member(path) && path.get('object').isIdentifier()) {
-      const binding = path.scope.getBinding(path.node.object.name);
-      if (binding?.path.isImportNamespaceSpecifier()) {
-        const imported = moduleFor(module.filename, binding.path.parentPath.node.source.value, this.modules);
-        const exported = imported?.exports.get(property(path));
-        return exported ? this.target(exported, imported, seen) : null;
-      }
+    if (value.type === 'member' && value.object?.type === 'identifier' && value.object.id != null) {
+      const binding = this.graph.bindings[value.object.id];
+      if (binding.imported?.namespace) return this.importedTarget(binding, value.key, seen);
     }
     return null;
   }

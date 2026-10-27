@@ -34,8 +34,8 @@ def scan_repo(repo, first_seen=None):
         card = scan_core.scan_files(source.files, source.entries, source.notes)
         out.update(card)
         out['refresh_status'] = 'current'
-    except analysis.AnalysisRuntimeError:
-        raise
+    except analysis.AnalysisRuntimeError as error:
+        raise analysis.AnalysisRuntimeError(f'{repo["full_name"]}: {error}') from error
     except Exception as e:
         out['status'] = f'skipped: {e}'
         out.update({'type': 'unknown', 'level': -1, 'flags': [], 'injects': [], 'hooks': [],

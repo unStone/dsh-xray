@@ -37,4 +37,5 @@ for await (const line of createInterface({ input: process.stdin, crlfDelay: Infi
   } catch (error) {
     process.stdout.write(`${JSON.stringify({ error: error.message })}\n`);
   }
+  if (globalThis.gc) globalThis.gc();
 }

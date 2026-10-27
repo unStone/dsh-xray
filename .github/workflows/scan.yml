@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '0 2 * * *'
   workflow_dispatch:
+    inputs:
+      reuse_catalog:
+        description: 'Re-scan the committed catalog without rediscovering GitHub topics'
+        type: boolean
+        default: false
 permissions:
   contents: write
   issues: write
@@ -28,7 +33,7 @@ jobs:
       # The per-repo cards drive incremental scanning. Keeping them in the cache
       # rather than in git stops a 35MB tree from being rewritten every day; a
       # cache miss just means one slower full sweep.
-      - uses: actions/cache@v6
+      - uses: actions/cache/restore@v6
         with:
           path: data/scans
           key: scans-${{ github.run_id }}
@@ -38,11 +43,13 @@ jobs:
           npm --prefix scanner test
           python scanner/test_scan_core.py
           python -m unittest discover -s scanner -p 'test_*.py'
-      - name: discover + scan
+      - name: discover
+        if: github.event_name != 'workflow_dispatch' || inputs.reuse_catalog != true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scanner/discover.py all
+      - name: scan + render
         run: |
-          python scanner/discover.py all
           # Recollect every old-schema card; a budget must not strand old evidence.
           # Each worker reuses one Node process for package and AST analysis.
           cd scanner && python pipeline.py all 8
@@ -71,6 +78,13 @@ jobs:
           done
           echo "push failed after 3 attempts - conflicting changes need a human"
           exit 1
+
+      - name: preserve collected cards
+        if: always()
+        uses: actions/cache/save@v6
+        with:
+          path: data/scans
+          key: scans-${{ github.run_id }}
 
       - name: report failure
         if: failure()
