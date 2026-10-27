@@ -1,4 +1,4 @@
-import { createInterface } from 'node:readline';
+import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { validatePath } from './paths.mjs';
 
@@ -42,15 +42,12 @@ async function analyze(request) {
     diagnostics: [...runtime.diagnostics, ...development.diagnostics.map(e => ({ ...e, origin: 'dev' }))] };
 }
 
-for await (const line of createInterface({ input: process.stdin, crlfDelay: Infinity })) {
-  let requestId = null;
-  try {
-    const request = JSON.parse(line);
-    requestId = request.requestId;
-    const result = await analyze(request);
-    process.stdout.write(`${JSON.stringify({ requestId, result })}\n`);
-  } catch (error) {
-    process.stdout.write(`${JSON.stringify({ requestId, error: error.message })}\n`);
-  }
-  if (globalThis.gc) globalThis.gc();
+let requestId = null;
+try {
+  const request = JSON.parse(readFileSync(0, 'utf8'));
+  requestId = request.requestId;
+  const result = await analyze(request);
+  process.stdout.write(JSON.stringify({ requestId, result }));
+} catch (error) {
+  process.stdout.write(JSON.stringify({ requestId, error: error.message }));
 }
