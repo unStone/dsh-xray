@@ -31,7 +31,7 @@ class Worker:
         self.errors = tempfile.TemporaryFile(dir=scratch)
         try:
             self.process = subprocess.Popen(
-                ['node', '--max-old-space-size=512', str(ROOT / 'scanner/js/worker.mjs')],
+                ['node', '--max-old-space-size=512', '--expose-gc', str(ROOT / 'scanner/js/worker.mjs')],
                 stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.errors)
         except OSError as error:
             self.errors.close()

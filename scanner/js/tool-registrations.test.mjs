@@ -80,3 +80,15 @@ test('JSX in JavaScript and typed JSX in Vue are parsed', () => {
   assert.equal(result('export function apply(ctx) { ctx.tools.register({view: <p/>}); }').registrations.length, 1);
   assert.equal(result('<script lang="tsx">export function apply(ctx: Context) { ctx.tools.register({view: <p/>}); }</script>', 'vue').registrations.length, 1);
 });
+
+test('computed identifiers do not masquerade as static tools or apply keys', () => {
+  const destructured = result(`const tools = 'storage'; export function apply(ctx) {
+    const {[tools]: api} = ctx; api.register({});
+  }`);
+  assert.equal(destructured.registrations.length, 0);
+  assert.ok(destructured.diagnostics.length);
+  const entry = result(`const apply = 'other'; export default {
+    [apply](ctx) { ctx.tools.register({}); }
+  };`);
+  assert.equal(entry.registrations.length, 0);
+});
