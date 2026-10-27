@@ -116,6 +116,16 @@ class PipelineTests(unittest.TestCase):
                 pipeline.scan_repo(repo)
         self.assertFalse((self.root / 'data/scans/owner__plugin.json').exists())
 
+    def test_batch_worker_failure_does_not_publish_partial_dataset(self):
+        repos = [{'full_name': f'owner/p{i}', 'stars': i, 'description': '', 'pushed_at': 'same'} for i in range(3)]
+        (self.root / 'data/repos.json').write_text(json.dumps(repos))
+        published = '{"plugins":[],"generated_at":"previous"}'
+        (self.root / 'docs/data.json').write_text(published)
+        with patch.object(pipeline, 'fetch_files', side_effect=analysis.AnalysisRuntimeError('worker stopped')):
+            with self.assertRaisesRegex(analysis.AnalysisRuntimeError, 'worker stopped'):
+                pipeline.main(workers=1)
+        self.assertEqual((self.root / 'docs/data.json').read_text(), published)
+
 
 class PresentationTests(unittest.TestCase):
     def test_partial_and_deferred_are_visible_and_evidence_is_escaped(self):
