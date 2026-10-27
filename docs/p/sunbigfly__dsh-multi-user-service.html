@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sunbigfly/dsh-multi-user-service — capability card (C3) · dsh-xray</title>
-<meta name="description" content="sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, decodes base64 payloads.">
+<meta name="description" content="sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/sunbigfly__dsh-multi-user-service.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sunbigfly/dsh-multi-user-service — dsh plugin capability card">
-<meta property="og:description" content="sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, decodes base64 payloads.">
+<meta property="og:description" content="sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/sunbigfly__dsh-multi-user-service.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-multi-user-service", "identifier": "sunbigfly/dsh-multi-user-service", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, decodes base64 payloads.", "codeRepository": "https://github.com/sunbigfly/dsh-multi-user-service", "url": "https://unstone.github.io/dsh-xray/p/sunbigfly__dsh-multi-user-service.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-multi-user-service", "identifier": "sunbigfly/dsh-multi-user-service", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/sunbigfly/dsh-multi-user-service", "url": "https://unstone.github.io/dsh-xray/p/sunbigfly__dsh-multi-user-service.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>sunbigfly/dsh-multi-user-service</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 多用户服务：在公司或团队服务器上共用一套 DSH，集中管理成员账号、权限、会话、文件与用量。模型、工具、终端、代码和沙箱均沿用 DSH 原生能力。已验证 DSH 0.2.1-rc.2。</p>
+  <p class="lede">在一套 DSH 中提供统一服务账号登录、成员目录边界、权限、会话、文件及用量管理。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/sunbigfly/dsh-multi-user-service" rel="nofollow ugc">sunbigfly/dsh-multi-user-service source on GitHub</a>
      · <a href="../registry.html#sunbigfly__dsh-multi-user-service">this plugin in the registry</a></p>
-  <p>sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, decodes base64 payloads.</p>
+  <p>sunbigfly/dsh-multi-user-service is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes commands in development tooling the package does not ship.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, webServer</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. client.js:1409, carrier/administration.mjs:358</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. carrier/backup.mjs:44, ops/relay.mjs:3</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, webServer</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/build-market-index.mjs:1, scripts/build-market-index.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. client.js:1414, carrier/administration.mjs:358</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. carrier/backup.mjs:44, ops/relay.mjs:3</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>clientModules</span> <span>configEditor</span> <span>connection</span> <span>fs</span> <span>lanToolOrigins</span> <span>layout</span> <span>llm</span> <span>locale</span> <span>pluginManager</span> <span>remoteAccess</span> <span>sandboxPolicy</span> <span>sessionController</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessions</span> <span>shell</span> <span>shellEnv</span> <span>skills</span> <span>slots</span> <span>storageDomain</span> <span>subprocess</span> <span>systemPrompt</span> <span>terminalController</span> <span>tools</span> <span>typert</span> <span>typertGateway</span> <span>webServer</span> <span>workingDirectory</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>session/created</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_LAN_CONTRACT_MODULES</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

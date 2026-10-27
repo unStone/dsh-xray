@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KouzakiUmi/dsh-tool-discovery — capability card (C2) · dsh-xray</title>
-<meta name="description" content="KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, powerful capability in test/example code only.">
+<meta name="description" content="KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, mentions child_process without importing it.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/KouzakiUmi__dsh-tool-discovery.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KouzakiUmi/dsh-tool-discovery — dsh plugin capability card">
-<meta property="og:description" content="KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, powerful capability in test/example code only.">
+<meta property="og:description" content="KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, mentions child_process without importing it.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/KouzakiUmi__dsh-tool-discovery.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tool-discovery", "identifier": "KouzakiUmi/dsh-tool-discovery", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, powerful capability in test/example code only.", "codeRepository": "https://github.com/KouzakiUmi/dsh-tool-discovery", "url": "https://unstone.github.io/dsh-xray/p/KouzakiUmi__dsh-tool-discovery.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tool-discovery", "identifier": "KouzakiUmi/dsh-tool-discovery", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, mentions child_process without importing it.", "codeRepository": "https://github.com/KouzakiUmi/dsh-tool-discovery", "url": "https://unstone.github.io/dsh-xray/p/KouzakiUmi__dsh-tool-discovery.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/KouzakiUmi/dsh-tool-discovery" rel="nofollow ugc">KouzakiUmi/dsh-tool-discovery source on GitHub</a>
      · <a href="../registry.html#KouzakiUmi__dsh-tool-discovery">this plugin in the registry</a></p>
-  <p>KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, powerful capability in test/example code only.</p>
+  <p>KouzakiUmi/dsh-tool-discovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship, mentions child_process without importing it.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/check-repo.mjs:15, scripts/check-repo.mjs:15</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: approval, tools/pre-execute</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/check-repo.mjs:15, scripts/check-repo.mjs:15</td></tr><tr><td>mentions child_process without importing it</td><td><code>exec_ref</code></td><td>mentions child_process ×2 without importing it, e.g. plugin/adapters/dsh/builtin-descriptions-data.mjs:10, plugin/adapters/dsh/builtin-descriptions-data.mjs:11</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: approval, tools/pre-execute</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>locale</span> <span>sessionQuery</span> <span>settingsSchema</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>llm/stream</span> <span>session/disposed</span> <span>session/event</span> <span>system-prompt/assemble</span> <span>tools/change</span></p>
   

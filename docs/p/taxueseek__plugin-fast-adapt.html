@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>taxueseek/plugin-fast-adapt — capability card (C2) · dsh-xray</title>
-<meta name="description" content="taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.">
+<meta name="description" content="taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/taxueseek__plugin-fast-adapt.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="taxueseek/plugin-fast-adapt — dsh plugin capability card">
-<meta property="og:description" content="taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.">
+<meta property="og:description" content="taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/taxueseek__plugin-fast-adapt.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "plugin-fast-adapt", "identifier": "taxueseek/plugin-fast-adapt", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.", "codeRepository": "https://github.com/taxueseek/plugin-fast-adapt", "url": "https://unstone.github.io/dsh-xray/p/taxueseek__plugin-fast-adapt.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "plugin-fast-adapt", "identifier": "taxueseek/plugin-fast-adapt", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.", "codeRepository": "https://github.com/taxueseek/plugin-fast-adapt", "url": "https://unstone.github.io/dsh-xray/p/taxueseek__plugin-fast-adapt.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/taxueseek/plugin-fast-adapt" rel="nofollow ugc">taxueseek/plugin-fast-adapt source on GitHub</a>
      · <a href="../registry.html#taxueseek__plugin-fast-adapt">this plugin in the registry</a></p>
-  <p>taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, executes system commands.</p>
+  <p>taxueseek/plugin-fast-adapt is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands.</p>
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/env-doctor.mjs:14, scripts/env-doctor.mjs:14</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×35 in authored code, e.g. scripts/cli.mjs:6, scripts/cli.mjs:6</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>bundled-plugin</span> <span>llm</span> <span>loose-plugin</span> <span>tools</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PFA_RUNS_DIR</span> <span>DSH_HARNESS_CLONE</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PFA_RUNS_DIR</span> <span>DSH_PFA_DSH_HOME</span> <span>DSH_HARNESS_CLONE</span> <span>PFA_VERIFY_RUNTIME</span> <span>PFA_DOWNSTREAM_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

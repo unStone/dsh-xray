@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>codeadeel/dsh-browser — capability card (C3) · dsh-xray</title>
-<meta name="description" content="codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, starts a network server.">
+<meta name="description" content="codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/codeadeel__dsh-browser.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="codeadeel/dsh-browser — dsh plugin capability card">
-<meta property="og:description" content="codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, starts a network server.">
+<meta property="og:description" content="codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/codeadeel__dsh-browser.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-browser", "identifier": "codeadeel/dsh-browser", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, starts a network server.", "codeRepository": "https://github.com/codeadeel/dsh-browser", "url": "https://unstone.github.io/dsh-xray/p/codeadeel__dsh-browser.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-browser", "identifier": "codeadeel/dsh-browser", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/codeadeel/dsh-browser", "url": "https://unstone.github.io/dsh-xray/p/codeadeel__dsh-browser.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/codeadeel/dsh-browser" rel="nofollow ugc">codeadeel/dsh-browser source on GitHub</a>
      · <a href="../registry.html#codeadeel__dsh-browser">this plugin in the registry</a></p>
-  <p>codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, starts a network server.</p>
+  <p>codeadeel/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, uses eval / new Function, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/browser/session.ts:272</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. src/browser-server.ts:22, src/search-server.ts:30</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, DSH_SEARCH_MCP_KEY, GOOGLE_CSE_API_KEY, GOOGLE_GEMINI_API_KEY, GOOGLE_VERTEX_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. src/browser/session.ts:272</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. panel/tools.js:346</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. src/browser-server.ts:22, src/search-server.ts:49</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BRAVE_API_KEY, DSH_SEARCH_MCP_KEY, GOOGLE_CSE_API_KEY, GOOGLE_GEMINI_API_KEY, GOOGLE_VERTEX_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>www.google.com</span> <span>html.duckduckgo.com</span> <span>discoveryengine.googleapis.com</span> <span>duckduckgo.com</span> <span>www.googleapis.com</span> <span>generativelanguage.googleapis.com</span> <span>api.search.brave.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_BROWSER_API_URL</span> <span>DSH_HOME</span> <span>DSH_BROWSER_VIEWER_URL</span> <span>DSH_SEARCH_URL</span> <span>DSH_SEARCH_CONFIG_URL</span> <span>DSH_BROWSER_DATA_DIR</span> <span>DSH_SEARCH_MCP_KEY</span> <span>SEARCH_PROVIDER_ORDER</span> <span>SEARXNG_URL</span> <span>GOOGLE_CSE_API_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_SEARCH_URL</span> <span>DSH_SEARCH_CONFIG_URL</span> <span>DSH_BROWSER_API_URL</span> <span>DSH_BROWSER_VIEWER_URL</span> <span>DSH_BROWSER_GATEWAY_URL</span> <span>DSH_BROWSER_DATA_DIR</span> <span>DSH_SEARCH_MCP_KEY</span> <span>SEARCH_PROVIDER_ORDER</span> <span>SEARXNG_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#yugejixian__vm-blackbox">this plugin in the registry</a></p>
   <p>yugejixian/vm-blackbox is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. agent/tunnel-host.js:12, agent/tunnel-host.js:82</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. agent/tunnel-host.js:177, agent/tunnel-host.js:191</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. agent/tunnel-host.js:12, agent/tunnel-host.js:97</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. agent/tunnel-host.js:208, agent/tunnel-host.js:224</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>TEMP</span> <span>QA_SHOTS_DIR</span> <span>QA_AGENT_DIR</span> <span>QA_VBOXMANAGE</span> <span>QA_VM_NAME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>TEMP</span> <span>QA_SHOTS_DIR</span> <span>QA_AGENT_DIR</span> <span>SystemRoot</span> <span>QA_VBOXMANAGE</span> <span>QA_VM_NAME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

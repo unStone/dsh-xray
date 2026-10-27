@@ -51,11 +51,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      · <a href="../registry.html#EastMG__dsh-gacha-calendar">this plugin in the registry</a></p>
   <p>EastMG/dsh-gacha-calendar is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. build.mjs:19, build.mjs:19</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. tools/check-host-allow.mjs:64</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. build.mjs:19, build.mjs:19</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. tools/check-host-allow.mjs:64</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>locale</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>wiki.biligame.com</span> <span>is1-ssl.mzstatic.com</span> <span>api.biligame.com</span> <span>bbs-api.miyoushe.com</span> <span>storage.moegirl.org.cn</span> <span>bluearchive-cn.com</span> <span>bestdori.com</span> <span>umamusume.jp</span> <span>umamusume.com</span> <span>yh.wanmei.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_ALLOW_PUBLISH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>SystemRoot</span> <span>windir</span> <span>DSH_ALLOW_PUBLISH</span> <span>DSH_GACHA_CALENDAR_DIR</span> <span>XDG_DATA_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alice39s/agent-stash — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.">
+<meta name="description" content="Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Alice39s__agent-stash.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Alice39s/agent-stash — dsh plugin capability card">
-<meta property="og:description" content="Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.">
+<meta property="og:description" content="Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Alice39s__agent-stash.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "agent-stash", "identifier": "Alice39s/agent-stash", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.", "codeRepository": "https://github.com/Alice39s/agent-stash", "url": "https://unstone.github.io/dsh-xray/p/Alice39s__agent-stash.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "agent-stash", "identifier": "Alice39s/agent-stash", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, decodes base64 payloads.", "codeRepository": "https://github.com/Alice39s/agent-stash", "url": "https://unstone.github.io/dsh-xray/p/Alice39s__agent-stash.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Alice39s/agent-stash</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Personal Agent Skills, Pi &amp; DSH (DeepSeek Harness) plugins</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">Personal Agent Skills &amp; Plugin Packs with Pi / DSH (DeepSeek Harness) / Grok Build / goose / Aider / Kimi Code CLI / Codex / Claude Code / OpenCode / Crush / Qwen Code / Kilo Code / GitHub Copilot CLI</p>
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/Alice39s/agent-stash" rel="nofollow ugc">Alice39s/agent-stash source on GitHub</a>
      · <a href="../registry.html#Alice39s__agent-stash">this plugin in the registry</a></p>
-  <p>Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.</p>
+  <p>Alice39s/agent-stash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, decodes base64 payloads.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. cli/agent-stash.ts:2, cli/agent-stash.ts:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×6 in build output only, e.g. dist/cli/agent-stash.js:2699, dist/cli/agent-stash.js:2701</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/sync-init-prompts.ts:111</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LOG_TOKENS</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>connection</span> <span>locale</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>webServer</span> <span>workspaceRegistry</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. cli/agent-stash.ts:2, cli/agent-stash.ts:2</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. dsh/kit/dist/index.js:266</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/sync-init-prompts.ts:111</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN, LOG_TOKENS</td></tr></tbody></table>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commandUi</span> <span>connection</span> <span>inputTriggers</span> <span>locale</span> <span>sessionController</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOG_TOKENS</span> <span>XDG_CONFIG_HOME</span> <span>GROK_HOME</span> <span>CLINE_DIR</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>google.github.io</span> <span>developer.android.com</span> <span>angular.dev</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_TOKEN</span> <span>LOG_TOKENS</span> <span>XDG_CONFIG_HOME</span> <span>GROK_HOME</span> <span>GITHUB_OUTPUT</span> <span>CLINE_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

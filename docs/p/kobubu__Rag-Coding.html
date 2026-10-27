@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kobubu/Rag-Coding — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars in development tooling the package does not ship.">
+<meta name="description" content="kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kobubu__Rag-Coding.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kobubu/Rag-Coding — dsh plugin capability card">
-<meta property="og:description" content="kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars in development tooling the package does not ship.">
+<meta property="og:description" content="kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kobubu__Rag-Coding.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rag-Coding", "identifier": "kobubu/Rag-Coding", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/kobubu/Rag-Coding", "url": "https://unstone.github.io/dsh-xray/p/kobubu__Rag-Coding.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Rag-Coding", "identifier": "kobubu/Rag-Coding", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/kobubu/Rag-Coding", "url": "https://unstone.github.io/dsh-xray/p/kobubu__Rag-Coding.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/kobubu/Rag-Coding" rel="nofollow ugc">kobubu/Rag-Coding source on GitHub</a>
      · <a href="../registry.html#kobubu__Rag-Coding">this plugin in the registry</a></p>
-  <p>kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars in development tooling the package does not ship.</p>
+  <p>kobubu/Rag-Coding is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>harness/bundle.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/hooks/cli.ts:5, src/hooks/cli.ts:31</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/hooks/daemon.ts:27, src/local-agent/http.ts:11</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: CM_AB_API_KEY, OPENAI_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>harness/bundle.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. evaluation/reliability/run.mjs:7, evaluation/reliability/run.mjs:7</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/hooks/daemon.ts:27, src/local-agent/http.ts:11</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CM_AB_API_KEY, OPENAI_API_KEY</td></tr></tbody></table>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>tools/post-execute</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>tools/post-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>react.dev</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>CM_HOOK_LOG</span> <span>CLAUDE_CONFIG_DIR</span> <span>CM_PROJECT_ROOT</span> <span>CM_INDEX_PATH</span> <span>CM_HOOK_DAEMON</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>CM_HOOK_LOG</span> <span>CLAUDE_CONFIG_DIR</span> <span>CM_PROJECT_ROOT</span> <span>CM_INDEX_PATH</span> <span>CM_HOOK_DAEMON</span> <span>CM_AB_API_KEY</span> <span>OPENAI_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
