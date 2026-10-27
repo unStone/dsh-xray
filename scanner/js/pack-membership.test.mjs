@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
 import { withPackageTree, packageMembers, unshippedTooling } from './pack-membership.mjs';
 
 const cases = [
@@ -45,4 +47,22 @@ test('nested ignore files, nearest package, and lifecycle protection', async () 
   ]), ['packages/p/scripts/check.mjs', 'scripts/private/a.mjs']);
   files['package.json'] = JSON.stringify({ name: 'root', files: ['lib'], scripts: { prepare: 'node scripts/check.mjs' } });
   assert.deepEqual(await unshippedTooling(files, [], [{ root: '', paths: ['scripts/check.mjs'] }]), []);
+});
+
+test('case-distinct archive directories are never silently merged by the host filesystem', async () => {
+  await withPackageTree({ 'package.json': '{"name":"probe"}' }, [], async directory => {
+    await mkdir(join(directory, 'CaseProbe'));
+    let insensitive = false;
+    try {
+      await mkdir(join(directory, 'caseprobe'));
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+      insensitive = true;
+    }
+    const files = { 'package.json': '{"name":"fixture","files":["tools"]}',
+      'Tools/a.mjs': '', 'tools/b.mjs': '' };
+    const operation = () => withPackageTree(files, [], async root => [...await packageMembers(root)]);
+    if (insensitive) await assert.rejects(operation, /collision/i);
+    else assert.ok((await operation()).includes('tools/b.mjs'));
+  });
 });

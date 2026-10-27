@@ -1,5 +1,5 @@
 import { mkdir, mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
-import { dirname, resolve, posix } from 'node:path';
+import { resolve, posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Arborist from '@npmcli/arborist';
 import packlist from 'npm-packlist';
@@ -18,19 +18,36 @@ export async function withPackageTree(files, entries, callback) {
   await mkdir(scratch, { recursive: true });
   const directory = await mkdtemp(resolve(scratch, 'package-'));
   try {
+    const directories = new Set(['.', '']);
+    async function ensureDirectory(relative) {
+      if (directories.has(relative)) return;
+      await ensureDirectory(posix.dirname(relative));
+      try {
+        await mkdir(resolve(directory, relative));
+      } catch (error) {
+        if (error.code === 'EEXIST') throw new Error(`Archive path collision on this filesystem: ${relative}`);
+        throw error;
+      }
+      directories.add(relative);
+    }
     const paths = new Map(entries.map(entry => [entry.path, entry.type]));
     for (const path of Object.keys(files)) paths.set(path, 'file');
     for (const [path, type] of [...paths].sort(([a], [b]) => a.localeCompare(b))) {
       validatePath(path);
       const target = resolve(directory, path);
       if (type === 'directory') {
-        await mkdir(target, { recursive: true });
+        await ensureDirectory(path);
       } else if (type === 'file') {
-        await mkdir(dirname(target), { recursive: true });
+        await ensureDirectory(posix.dirname(path));
         // npm decides membership from paths, stats, manifests and ignore files.
         // No plugin source is evaluated or installed in this tree.
         const metadata = ['package.json', '.npmignore', '.gitignore'].includes(posix.basename(path));
-        await writeFile(target, metadata ? files[path] ?? '' : '');
+        try {
+          await writeFile(target, metadata ? files[path] ?? '' : '', { flag: 'wx' });
+        } catch (error) {
+          if (error.code === 'EEXIST') throw new Error(`Archive path collision on this filesystem: ${path}`);
+          throw error;
+        }
       } else {
         throw new Error(`Unsupported archive entry type for ${path}: ${type}`);
       }
