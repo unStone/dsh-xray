@@ -149,7 +149,14 @@ def main(limit=None, workers=8, budget=None):
         futures = {pool.submit(scan_repo, r, (load_cached(r['full_name'].replace('/', '__')) or {})
                                .get('first_seen')): r for r in todo}
         for i, fut in enumerate(cf.as_completed(futures), 1):
-            results.append(fut.result())
+            try:
+                results.append(fut.result())
+            except analysis.AnalysisRuntimeError:
+                # Executor context cleanup waits for queued work by default.
+                # Cancel it so an environment failure cannot start more downloads.
+                for pending in futures:
+                    pending.cancel()
+                raise
             if i % 50 == 0 or i == len(todo):
                 print(f'[{i}/{len(todo)}] fetched')
 
