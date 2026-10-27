@@ -11,6 +11,7 @@ import sys
 
 import pipeline
 import scan_core
+import analysis
 
 FAILURES = []
 
@@ -283,12 +284,10 @@ def test_entry_points_are_packed_whatever_files_says():
     check('forced-directories-bin/exec', 'exec' in {f['id'] for f in c['flags']}, True)
 
 
-def test_unmodelled_patterns_fail_closed():
-    """A negation reorders the whole walk and extglob is not implemented; when
-    the allowlist cannot be read exactly, nothing is demoted."""
+def test_npm_patterns_do_not_disable_the_allowlist():
     for allow in (['lib', '!lib/secret.js'], ['+(lib|src)'], ['lib/{a..z}.js']):
         c = card({'package.json': _pkg(files=allow), 'scripts/x.mjs': EXEC})
-        check(f'fail-closed/{allow[0]}', 'exec' in {f['id'] for f in c['flags']}, True)
+        check(f'npm-pattern/{allow[0]}', 'exec_tooling' in {f['id'] for f in c['flags']}, True)
 
 
 def test_brace_and_class_patterns_are_understood():
@@ -313,14 +312,14 @@ def test_the_nearest_manifest_governs_in_a_monorepo():
 
 
 def test_globstar_matching():
-    """Pinned directly: this translation is what keeps shipped code visible.
+    """Pinned directly: npm membership keeps shipped code visible.
 
     Every expectation here was checked against `npm pack --dry-run --json` on
     npm 11 with a synthetic tree, so the fixtures track npm rather than a
     reading of its documentation.
     """
     def m(pat, path):
-        return bool(scan_core._pattern_re(pat).match(path))
+        return path in analysis.package_members({'package.json': _pkg(files=[pat]), path: ''})
     check('glob/globstar-direct-child', m('scripts/**/*.mjs', 'scripts/a.mjs'), True)
     check('glob/globstar-nested', m('scripts/**/*.mjs', 'scripts/x/y/a.mjs'), True)
     check('glob/globstar-wrong-ext', m('scripts/**/*.mjs', 'scripts/a.js'), False)
@@ -359,7 +358,7 @@ def test_pack_membership_matches_npm():
         ({'files': ['lib'], 'directories': {'bin': 'scripts'}}, 'scripts/cli.js', True),
     ]
     for fields, path, want in cases:
-        got = scan_core._pack_matcher({'name': 'p'} | fields)(path)
+        got = path in analysis.package_members({'package.json': _pkg(**fields), path: ''})
         check(f'packlist/{fields["files"][0]}/{path}', got, want)
 
 

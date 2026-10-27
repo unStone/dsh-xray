@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-10-27 · npm package membership and tool registration evidence
+
+[Issue #7](https://github.com/unStone/dsh-xray/issues/7): `files` negations no longer disable the entire allowlist. The scanner uses npm's maintained `npm-packlist`, with regression checks against real npm packages, forced entrypoints and nested ignore files. The existing tooling-root and lifecycle safeguards remain.
+
+[Issue #6](https://github.com/unStone/dsh-xray/issues/6): tool registration analysis now follows context injection, service aliases, optional chaining and local helper calls using JS/TS syntax trees. Comments and strings do not count. Confirmed sites carry file:line evidence; incomplete analysis is labelled and does not imply that no tools exist.
+
+The scanner requires Python 3.12+ and Node 24.17+ (24.x). Collection schema 4 invalidates older cached evidence, and the first run refreshes all repositories without the old fixed fetch budget. Budget-deferred results retain their original collection version and show a refresh-pending notice.
+
+---
+
 ## 2026-08-30 · A pack-check script is not a plugin executing commands
 
 [Issue #4](https://github.com/unStone/dsh-xray/issues/4) reported a plugin rated C3 for `exec` in `scripts/check-pack.mjs` — a script its own `package.json` `files` allowlist keeps out of the published tarball. Installing that plugin never puts the file on disk, so the command it runs is a developer's, not a user's.

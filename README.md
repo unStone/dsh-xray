@@ -77,6 +77,10 @@ Plugin authors: show users your capability card.
 
 ## Run it yourself
 
+The scanner needs Python 3.12+ and Node 24.17+ (24.x). Use `fnm use` at the
+repository root, then `npm ci --prefix scanner --ignore-scripts`. Node dependencies
+are used only during scanning; the published site remains static.
+
 ```bash
 python scanner/discover.py all           # enumerate topic:dsh-plugin (needs gh auth)
 cd scanner && python pipeline.py all 24  # download + scan, no git clone
@@ -85,6 +89,12 @@ python render_pages.py                   # plugin pages, collections, sitemap, f
 ```
 
 Outputs: `data/scans/*.json` (full cards), `docs/data.json` (site data), `docs/badge/*.json` (shields endpoints), `docs/p/*.html` (a page per plugin). A daily GitHub Action refreshes all of it.
+
+Package membership uses npm's own `npm-packlist`, including `files` negations,
+forced entrypoints and nested ignore files. Tool registrations are static call
+sites resolved through context injection, service aliases and local helpers;
+counts are not runtime instance counts. Cards expose source evidence and mark
+incomplete analysis or deferred refreshes instead of implying zero tools.
 
 ## Methodology & fair play
 

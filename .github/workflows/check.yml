@@ -1,0 +1,26 @@
+name: scanner checks
+on:
+  pull_request:
+  push:
+    paths:
+      - 'scanner/**'
+      - '.node-version'
+      - '.github/workflows/check.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.node-version'
+          cache: npm
+          cache-dependency-path: scanner/package-lock.json
+      - run: npm ci --prefix scanner --ignore-scripts
+      - run: npm --prefix scanner test
+      - run: python scanner/test_scan_core.py
+      - run: python -m unittest discover -s scanner -p 'test_*.py'
+      - run: python -m compileall -q scanner/*.py

@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-10-27 · npm 发布文件与工具注册证据
+
+[#7](https://github.com/unStone/dsh-xray/issues/7)：`files` 中的否定条目不再使整个白名单失效。扫描器使用 npm 维护的 `npm-packlist`，并通过真实 npm 打包、强制入口和嵌套忽略文件测试；保留工具目录与安装生命周期的既有计分约束。
+
+[#6](https://github.com/unStone/dsh-xray/issues/6)：工具注册通过 JS/TS 语法树跟踪上下文注入、服务别名、可选链和本地 helper。注释和字符串不计数；确认的调用点附文件与行号，分析不完整时明确显示，避免将未知显示为零工具。
+
+扫描环境需要 Python 3.12+ 和 Node 24.17+（24.x）。采集版本升级为 4，旧缓存必须重新采集，首次扫描取消原固定抓取预算。预算延期的结果保留原采集版本，并显示等待刷新。
+
+---
+
 ## 2026-08-30 · 打包自检脚本不等于插件在执行命令
 
 [Issue #4](https://github.com/unStone/dsh-xray/issues/4) 指出:有个插件因为 `scripts/check-pack.mjs` 里的 `exec` 被判为 C3,而这个脚本被它自己 `package.json` 的 `files` 白名单挡在发布包之外。装这个插件,这个文件根本不会落到磁盘上——命令是开发者跑的,不是用户跑的。

@@ -8,83 +8,18 @@ Outputs:
 """
 import concurrent.futures as cf
 import datetime
-import io
 import json
 import pathlib
-import subprocess
 import sys
-import tarfile
 
 import scan_core
+import analysis
+from archive_input import fetch_files
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCANS = ROOT / 'data' / 'scans'
 DOCS = ROOT / 'docs'
-MAX_FILES = 600
-MAX_FILE_SIZE = 1024 * 1024
-MAX_BYTES_READ = 400 * 1024 * 1024  # decompressed budget, not repo size
 LEVEL_COLORS = {0: 'brightgreen', 1: 'green', 2: 'yellow', 3: 'orange'}
-
-
-def wanted(path):
-    if 'node_modules/' in path or path.startswith('.git/'):
-        return False
-    base = path.rsplit('/', 1)[-1]
-    return path.endswith(scan_core.CODE_EXT) or base == 'package.json' or base.upper() == 'SKILL.MD'
-
-
-def fetch_files(full_name, branch=None):
-    """Stream a repo tarball and pull out code files as they pass.
-
-    Downloads from codeload rather than the REST API: public tarballs need no
-    auth there and do not consume the hourly API quota, which matters when a
-    full sweep touches thousands of repositories. Streaming (mode 'r|gz') means
-    repository size barely matters -- we stop once MAX_FILES code files are
-    collected instead of buffering the whole archive.
-    """
-    refs = [f'refs/heads/{b}' for b in dict.fromkeys(filter(None, [branch, 'main', 'master']))]
-    downloaded = False
-    for ref in refs:
-        url = f'https://codeload.github.com/{full_name}/tar.gz/{ref}'
-        proc = subprocess.Popen(['curl', '-sL', '--max-time', '120', '--fail', url],
-                                stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-        files, read = {}, 0
-        try:
-            with tarfile.open(fileobj=proc.stdout, mode='r|gz') as tf:
-                for m in tf:
-                    if read > MAX_BYTES_READ:
-                        break
-                    read += m.size
-                    if not m.isfile() or m.size > MAX_FILE_SIZE:
-                        continue
-                    path = m.name.split('/', 1)[-1]  # strip the tarball root dir
-                    if not wanted(path):
-                        continue
-                    # package.json files are small and carry the manifest -- never
-                    # let the code-file cap truncate them, or which manifest we
-                    # report would depend on tar ordering.
-                    if path.rsplit('/', 1)[-1] != 'package.json' and len(files) >= MAX_FILES:
-                        continue
-                    try:
-                        files[path] = tf.extractfile(m).read().decode('utf-8', errors='ignore')
-                    except Exception:
-                        continue
-            downloaded = True
-        except Exception:
-            pass  # ref missing or archive unreadable; try the next ref
-        finally:
-            try:
-                proc.stdout.close()
-            except Exception:
-                pass
-            proc.terminate()
-            proc.wait(timeout=10)
-        if files:
-            return files
-    # Distinguish "we read the repo and it has no code" from "we never got the
-    # repo": the site reports these differently and conflating them would
-    # overstate coverage.
-    raise ValueError('no scannable code' if downloaded else 'download failed')
 
 
 def scan_repo(repo, first_seen=None):
@@ -95,8 +30,12 @@ def scan_repo(repo, first_seen=None):
            # answer "what showed up in the ecosystem this week".
            'first_seen': first_seen or datetime.date.today().isoformat()}
     try:
-        card = scan_core.scan_files(fetch_files(repo['full_name'], repo.get('default_branch')))
+        source = fetch_files(repo['full_name'], repo.get('default_branch'))
+        card = scan_core.scan_files(source.files, source.entries, source.notes)
         out.update(card)
+        out['refresh_status'] = 'current'
+    except analysis.AnalysisRuntimeError:
+        raise
     except Exception as e:
         out['status'] = f'skipped: {e}'
         out.update({'type': 'unknown', 'level': -1, 'flags': [], 'injects': [], 'hooks': [],
@@ -118,7 +57,8 @@ def top_counted(counts):
 def summarize(card):
     return {k: card.get(k) for k in (
         'repo', 'stars', 'description', 'type', 'level', 'status', 'flags', 'injects', 'hooks',
-        'tool_regs', 'files_scanned', 'pushed_at', 'first_seen')} | {
+        'tool_regs', 'files_scanned', 'pushed_at', 'first_seen', 'collect',
+        'refresh_status', 'tool_reg_evidence', 'tool_reg_analysis')} | {
         'domains': top_counted(card.get('domains')),
         'env': top_counted(card.get('env')),
         'has_patch': any(f['id'] == 'runtime_patch' for f in card.get('flags', [])),
@@ -152,6 +92,7 @@ def main(limit=None, workers=8, budget=None):
               reuse their cached card for free, so a daily run converges toward
               full coverage without re-downloading the whole ecosystem.
     """
+    analysis.worker()
     repos = json.loads((ROOT / 'data' / 'repos.json').read_text())
     if limit:
         repos = repos[:limit]
@@ -171,6 +112,7 @@ def main(limit=None, workers=8, budget=None):
         if fresh:
             cached['stars'] = r['stars']          # stars drift without a push
             cached['description'] = r['description']
+            cached['refresh_status'] = 'current'
             # The card caches what was collected, not what it means: re-derive
             # type/flags/level so a rule change reaches unchanged repositories
             # on the next run instead of being trapped inside the cache.
@@ -194,8 +136,10 @@ def main(limit=None, workers=8, budget=None):
         for r in todo[budget:]:
             stale = load_cached(r['full_name'].replace('/', '__')) or published.get(r['full_name'])
             if stale:
-                if stale.get('status') == 'ok' and stale.get('collect') == scan_core.COLLECT_VERSION:
+                if (stale.get('status') == 'ok' and stale.get('collect') == scan_core.COLLECT_VERSION
+                        and 'behaviors' in stale):
                     stale = scan_core.finalize(stale)
+                stale['refresh_status'] = 'deferred'
                 results.append(stale)
         todo = todo[:budget]
     print(f'{len(results)} cached, {len(todo)} to fetch'
