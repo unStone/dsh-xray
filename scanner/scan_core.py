@@ -9,6 +9,8 @@ This is transparency tooling, not a malice detector. Every flag carries evidence
 import json
 import re
 
+import analysis
+
 CODE_EXT = ('.ts', '.tsx', '.js', '.mjs', '.cjs', '.vue', '.svelte')
 
 DEV_DIR_RE = re.compile(
@@ -31,8 +33,6 @@ TOOLING_ROOT_RE = re.compile(r"^(scripts?|tools?|tooling|benchmarks?|bench|ci|\.
 TOOLING_FILE_RE = re.compile(
     r"^(?:[\w.-]+\.config"
     r"|build|esbuild|rollup|vite|vitest|tsup|webpack|gulpfile|gruntfile)\.(?:m?[jt]s|cjs)$", re.I)
-# npm packs these whatever `files` says (verified against npm 11 packlist).
-ALWAYS_PACKED_RE = re.compile(r"^(package\.json|readme|licen[cs]e)(\.[^/]*)?$", re.I)
 
 LINE_COMMENT_RE = re.compile(r"(?<![:\w])//[^\n]*")
 BLOCK_COMMENT_RE = re.compile(r"/\*.*?\*/", re.S)
@@ -50,14 +50,13 @@ def strip_comments(text):
 URL_RE = re.compile(r"https?://([a-zA-Z0-9][a-zA-Z0-9.-]*\.[a-zA-Z]{2,})")
 INJECT_RE = re.compile(r"(?:export\s+const\s+inject|['\"]?inject['\"]?)\s*[:=]\s*(\[[^\]]{0,400}\])", re.S)
 HOOK_RE = re.compile(r"ctx\.on\s*\(\s*['\"]([^'\"]+)['\"]")
-TOOL_RE = re.compile(r"ctx\.tools\.register|defineTool\s*\(|registerTool\b")
 ENV_RE = re.compile(r"process\.env\.([A-Za-z_][A-Za-z_0-9]*)")
 APPLY_RE = re.compile(r"export\s+(?:function|const)\s+apply\b|\bapply\s*\(\s*ctx\b")
 
-# Raw-field schema version. finalize() stamps it on every card; the pipeline
+# Raw-field schema version. scan_files() stamps it after collection; the pipeline
 # refuses to reuse a cached card collected under a different version, because
 # fields added or split since then cannot be reconstructed without a rescan.
-COLLECT_VERSION = 3
+COLLECT_VERSION = 4
 
 # A diagnostic may carry the literal `node:internal/child_process` in a string
 # or regex without ever importing the module. Execution needs an import-shaped
@@ -98,196 +97,32 @@ def zone_of(path):
 
 
 
-def _expand_braces(pat, depth=0):
-    """`a.{js,ts}` -> ['a.js', 'a.ts']. None for syntax we do not model."""
-    i = pat.find('{')
-    if i < 0:
-        return [pat]
-    if depth > 4:
-        return None
-    level = 0
-    end = None
-    for k in range(i, len(pat)):
-        if pat[k] == '{':
-            level += 1
-        elif pat[k] == '}':
-            level -= 1
-            if level == 0:
-                end = k
-                break
-    if end is None or '..' in pat[i + 1:end]:   # unbalanced, or a {1..9} range
-        return None
-    parts, level, cur = [], 0, ''
-    for ch in pat[i + 1:end]:
-        level += (ch == '{') - (ch == '}')
-        if ch == ',' and level == 0:
-            parts.append(cur)
-            cur = ''
-        else:
-            cur += ch
-    parts.append(cur)
-    out = []
-    for part in parts:
-        sub = _expand_braces(pat[:i] + part + pat[end + 1:], depth + 1)
-        if sub is None or len(out) + len(sub) > 64:
-            return None
-        out.extend(sub)
-    return out
-
-
-def _seg_re(seg):
-    """One path segment of a glob -> regex source. `*` never crosses a `/`."""
-    out, i = [], 0
-    while i < len(seg):
-        ch = seg[i]
-        if ch == '*':
-            out.append('[^/]*')
-        elif ch == '?':
-            out.append('[^/]')
-        elif ch == '[':
-            end = seg.find(']', i + 1)
-            if end == -1:
-                return None
-            body = seg[i + 1:end]
-            out.append('[' + ('^' + body[1:] if body.startswith('!') else body) + ']')
-            i = end + 1
+def tooling_candidates(files):
+    roots = {path[:-len('package.json')].rstrip('/') for path in files
+             if path.rsplit('/', 1)[-1] == 'package.json' and zone_of(path) != 'dev'}
+    candidates = {}
+    for path in files:
+        if not path.endswith(CODE_EXT) or zone_of(path) != 'src':
             continue
-        elif ch in '()|':          # extglob: not modelled
-            return None
-        else:
-            out.append(re.escape(ch))
-        i += 1
-    return ''.join(out)
-
-
-def _pattern_re(pat):
-    """One `files` entry -> compiled regex over package-relative paths.
-
-    npm matches these with minimatch, where `**` spans zero or more path
-    segments -- so `scripts/**/*.mjs` includes the direct child
-    `scripts/proxy.mjs`. Python's fnmatch does not, and a translation that
-    misses that would hide execution code a plugin genuinely ships.
-    """
-    if not isinstance(pat, str):
-        return None
-    pat = pat.strip()
-    while pat.startswith('./'):
-        pat = pat[2:]
-    pat = pat.strip('/')
-    if not pat or pat.startswith('!') or pat.startswith('#'):
-        return None            # negation reorders the whole walk: fail closed
-    variants = _expand_braces(pat)
-    if variants is None:
-        return None
-    alts = []
-    for v in variants:
-        segs = [seg for i, seg in enumerate(v.split('/'))
-                if seg != '**' or i == 0 or v.split('/')[i - 1] != '**']
-        body = ''
-        for i, seg in enumerate(segs):
-            last = i == len(segs) - 1
-            if seg == '**':
-                body += '.*' if last else '(?:[^/]+/)*'
-                continue
-            r = _seg_re(seg)
-            if r is None:
-                return None
-            body += r + ('' if last else '/')
-        alts.append(body)
-    # Naming a directory packs everything under it: `docs/` means `docs/**`.
-    return re.compile('^(?:' + '|'.join(alts) + ')(?:/.*)?$')
-
-
-def _pack_matcher(data):
-    """A predicate "the published package contains this package-relative path",
-    or None when membership is not decidable and the caller must assume it does.
-    """
-    allow = data.get('files')
-    if not isinstance(allow, list) or not allow:
-        return None            # no allowlist: .npmignore/default rules apply
-    scripts = data.get('scripts') or {}
-    if any(k in scripts for k in ('preinstall', 'install', 'postinstall', 'prepare')):
-        # Installing from a git ref runs the checkout rather than the packed
-        # tarball, and an install-time script can reach anything in it.
-        return None
-    pats = []
-    for entry in allow:
-        r = _pattern_re(entry)
-        if r is None:
-            return None        # one pattern we cannot model: demote nothing
-        pats.append(r)
-
-    forced = set()
-
-    def collect(v):
-        if isinstance(v, str):
-            forced.add(v.lstrip('./').strip('/'))
-        elif isinstance(v, dict):
-            for x in v.values():
-                collect(x)
-        elif isinstance(v, list):
-            for x in v:
-                collect(x)
-
-    # npm packs `main` and `bin` whatever `files` says. `exports`, `types` and
-    # friends it does not — but a package whose entry point its own allowlist
-    # excludes is misconfigured rather than tooling, so they are read the
-    # generous way: assume it ships, and keep counting it.
-    for key in ('main', 'module', 'types', 'typings', 'browser', 'bin', 'exports', 'unpkg'):
-        collect(data.get(key))
-    dirs = data.get('directories')
-    collect(list(dirs.values()) if isinstance(dirs, dict) else None)
-    forced.discard('')
-
-    def packed(rel):
-        if ALWAYS_PACKED_RE.match(rel):
-            return True
-        if rel in forced or any(rel.startswith(f + '/') for f in forced):
-            return True
-        return any(r.match(rel) for r in pats)
-
-    return packed
-
-
-def pack_rules(files):
-    """{package directory: matcher-or-None} for every manifest in the tree.
-
-    A file is governed by its nearest ancestor package.json, so a monorepo's
-    `packages/x/package.json` decides what `packages/x/scripts/` ships, not the
-    workspace root.
-    """
-    rules = {}
-    for path, text in files.items():
-        if path.rsplit('/', 1)[-1] != 'package.json' or zone_of(path) == 'dev':
+        owner = max((root for root in roots if not root or path.startswith(root + '/')),
+                    key=len, default=None)
+        if owner is None:
             continue
-        d = path[:-len('package.json')].rstrip('/')
-        try:
-            rules[d] = _pack_matcher(json.loads(text))
-        except Exception:
-            rules[d] = None
-    return rules
+        relative = path[len(owner) + 1:] if owner else path
+        if TOOLING_ROOT_RE.match(relative) or TOOLING_FILE_RE.match(relative):
+            candidates.setdefault(owner, []).append(path)
+    return [{'root': root, 'paths': sorted(paths)} for root, paths in sorted(candidates.items())]
 
 
-def zone_of_file(path, rules):
-    """zone_of, plus the `tool` zone that needs the surrounding package."""
-    z = zone_of(path)
-    if z != 'src' or not rules:
-        return z
-    owner = max((d for d in rules if d == '' or path.startswith(d + '/')),
-                key=len, default=None)
-    if owner is None or rules[owner] is None:
-        return z
-    rel = path[len(owner) + 1:] if owner else path
-    if not (TOOLING_ROOT_RE.match(rel) or TOOLING_FILE_RE.match(rel)):
-        return z
-    return z if rules[owner](rel) else 'tool'
+def zone_of_file(path, tooling):
+    return 'tool' if path in tooling else zone_of(path)
 
 
 def _line(text, pos):
     return text.count('\n', 0, pos) + 1
 
 
-def scan_files(files):
+def scan_files(files, entries=None, notes=None):
     """files: {path: text}. Returns the capability card."""
     card = {
         'manifest': None, 'pkg_name': None, 'deps': [], 'install_scripts': {},
@@ -306,8 +141,25 @@ def scan_files(files):
         # stay visible on the card, so it is reported instead of skipped.
         'dev_injects': set(), 'dev_hooks': set(), 'dev_tool_regs': 0,
         'dev_has_apply': False, 'dev_manifests': [],
+        'collect': COLLECT_VERSION,
+        'tool_reg_evidence': [], 'dev_tool_reg_evidence': [],
     }
-    rules = pack_rules(files)
+    parsed = analysis.analyze(files, tooling_candidates(files), entries,
+                              [path for path in files if zone_of(path) == 'dev'])
+    tooling = set(parsed['tooling'])
+    diagnostics = [item for item in parsed['diagnostics']
+                   if item.get('origin') != 'dev' and zone_of_file(item['path'], tooling) not in ('dev', 'tool')]
+    card['tool_reg_analysis'] = {
+        'status': 'partial' if diagnostics or notes else 'complete',
+        'diagnostics': diagnostics, 'notes': notes or [],
+    }
+    for evidence in parsed['registrations']:
+        zone = zone_of_file(evidence['path'], tooling)
+        field = ('dev_tool_reg_evidence' if zone in ('dev', 'tool') or evidence.get('origin') == 'dev'
+                 else 'tool_reg_evidence')
+        card[field].append(evidence)
+    card['tool_regs'] = len(card['tool_reg_evidence'])
+    card['dev_tool_regs'] = len(card['dev_tool_reg_evidence'])
 
     # Shallowest paths first: in a monorepo the plugin's own root package.json
     # wins, so the reported manifest is deterministic rather than tar-order luck.
@@ -316,8 +168,14 @@ def scan_files(files):
         if base == 'package.json':
             try:
                 data = json.loads(text)
-            except Exception:
-                continue
+            except json.JSONDecodeError as error:
+                if zone_of(path) == 'dev':
+                    continue
+                raise ValueError(f'{path}: invalid package.json: {error}') from error
+            if not isinstance(data, dict):
+                if zone_of(path) == 'dev':
+                    continue
+                raise ValueError(f'{path}: package.json must contain an object')
             if zone_of(path) == 'dev':
                 # A fixture or example manifest is evidence about development,
                 # not the installable surface: it must not classify the repo,
@@ -353,7 +211,7 @@ def scan_files(files):
             continue
 
         card['files_scanned'] += 1
-        zone = zone_of_file(path, rules)
+        zone = zone_of_file(path, tooling)
         text = strip_comments(text)
         # Code that does not reach a user's runtime -- fixtures, examples, and
         # tooling the package excludes -- is recorded apart from the surface it
@@ -366,7 +224,6 @@ def scan_files(files):
                     card['dev_injects'].add(name)
             for m in HOOK_RE.finditer(text):
                 card['dev_hooks'].add(m.group(1))
-            card['dev_tool_regs'] += len(TOOL_RE.findall(text))
         else:
             if APPLY_RE.search(text):
                 card['has_apply'] = True
@@ -375,7 +232,6 @@ def scan_files(files):
                     card['injects'].add(name)
             for m in HOOK_RE.finditer(text):
                 card['hooks'].add(m.group(1))
-            card['tool_regs'] += len(TOOL_RE.findall(text))
         if zone == 'src' and CP_REF_RE.search(text):
             # Mentions of child_process that the exec pattern did not claim:
             # string constants, regexes over stack traces — or an indirect
@@ -531,5 +387,4 @@ def finalize(card):
 
     card['flags'] = flags
     card['level'] = level
-    card['collect'] = COLLECT_VERSION
     return card

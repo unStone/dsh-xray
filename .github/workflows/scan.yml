@@ -6,6 +6,9 @@ on:
 permissions:
   contents: write
   issues: write
+concurrency:
+  group: scheduled-scan
+  cancel-in-progress: false
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -15,6 +18,13 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.node-version'
+          cache: npm
+          cache-dependency-path: scanner/package-lock.json
+      - name: scanner dependencies
+        run: npm ci --prefix scanner --ignore-scripts
       # The per-repo cards drive incremental scanning. Keeping them in the cache
       # rather than in git stops a 35MB tree from being rewritten every day; a
       # cache miss just means one slower full sweep.
@@ -24,18 +34,18 @@ jobs:
           key: scans-${{ github.run_id }}
           restore-keys: scans-
       - name: rule tests
-        run: cd scanner && python test_scan_core.py
+        run: |
+          npm --prefix scanner test
+          python scanner/test_scan_core.py
+          python -m unittest discover -s scanner -p 'test_*.py'
       - name: discover + scan
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scanner/discover.py all
-          # all repos, 24 workers, generous per-run fetch cap: unchanged repos
-          # reuse cached cards, so daily runs converge to full coverage and then
-          # stay cheap. Downloads go to codeload, not the API quota.
-          # The cap sits above the discovered count so a cold cache still lands a
-          # full sweep -- 8000 fetches ran in 30 of the 300 minutes allowed.
-          cd scanner && python pipeline.py all 24 12000
+          # Recollect every old-schema card; a budget must not strand old evidence.
+          # Each worker reuses one Node process for package and AST analysis.
+          cd scanner && python pipeline.py all 8
           python render_report.py
           python render_docs.py
           python render_i18n_defaults.py

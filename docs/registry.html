@@ -108,7 +108,7 @@ function detail(p) {
   const slug = p.repo.replace('/', '__');
   const badgeUrl = `https://img.shields.io/endpoint?url=${encodeURIComponent(SITE + '/badge/' + slug + '.json')}`;
   const badgeMd = `[![dsh-xray](${badgeUrl})](${SITE}/registry.html#${slug})`;
-  let h = '';
+  let h = p.refresh_status === 'deferred' ? `<p class="evid">${t('reg.deferred')}</p>` : '';
   if ((p.flags || []).length) {
     h += `<h4>${t('reg.flags')}</h4>` + p.flags.map(f =>
       `<div>${flagChip(f)} <span class="evid">${esc(f.evidence)}</span></div>`).join('');
@@ -119,7 +119,17 @@ function detail(p) {
     p.hooks.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
   if (p.domains.length) h += `<h4>${t('reg.domains')}</h4><div class="kv">` + p.domains.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
   if (p.env.length) h += `<h4>${t('reg.env')}</h4><div class="kv">` + p.env.map(s => `<span>${esc(s)}</span>`).join('') + '</div>';
-  h += `<h4>·</h4>${t('reg.tools', p.tool_regs, p.files_scanned)}`;
+  const partial = p.tool_reg_analysis?.status === 'partial';
+  h += `<h4>·</h4>${partial ? t('reg.toolsPartial', p.tool_regs) : t('reg.tools', p.tool_regs, p.files_scanned)}`;
+  if (p.tool_reg_evidence?.length) {
+    h += `<h4>${t('reg.toolEvidence')}</h4>` + p.tool_reg_evidence.map(e =>
+      `<div class="evid">${esc(e.path)}:${e.line} · ${esc(e.reason)}</div>`).join('');
+  }
+  if (partial) {
+    h += (p.tool_reg_analysis.diagnostics || []).map(e =>
+      `<div class="evid">${esc(e.path)}:${e.line} · ${esc(e.reason)}</div>`).join('');
+    h += (p.tool_reg_analysis.notes || []).map(n => `<p class="evid">${esc(n)}</p>`).join('');
+  }
   h += `<div class="badge-line"><img src="${badgeUrl}" alt="badge" loading="lazy">
         <span class="mono">${esc(badgeMd)}</span>
         <button onclick='navigator.clipboard.writeText(${JSON.stringify(badgeMd)});this.textContent=${JSON.stringify(t('reg.copied'))}'>${t('reg.copy')}</button></div>`;

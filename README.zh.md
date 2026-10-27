@@ -71,6 +71,9 @@ dsh plugin add https://github.com/unStone/dsh-xray-plugin/releases/download/v0.1
 
 ## 自己跑
 
+扫描器需要 Python 3.12+ 和 Node 24.17+（24.x）。在仓库根目录运行 `fnm use`，
+再执行 `npm ci --prefix scanner --ignore-scripts`。Node 依赖只用于扫描阶段，网站仍为静态产物。
+
 ```bash
 python scanner/discover.py all          # 按 topic:dsh-plugin 枚举全生态(需 gh 登录)
 cd scanner && python pipeline.py all 24 # 下载 + 扫描,不用 git clone
@@ -79,6 +82,10 @@ python render_pages.py                  # 生成插件页、聚合页、sitemap�
 ```
 
 产物:`data/scans/*.json`(完整卡片)、`docs/data.json`(站点数据)、`docs/badge/*.json`(徽章端点)、`docs/p/*.html`(每插件页面)。每日 GitHub Action 自动刷新全部内容。
+
+发布文件使用 npm 官方 `npm-packlist` 判定，支持 `files` 否定规则、强制入口和嵌套忽略文件。
+工具注册通过 AST 跟踪上下文注入、服务别名及本地 helper；计数表示静态注册调用点，
+不代表运行时实例数。卡片展示源码证据，并区分分析不完整和等待刷新，避免将未知结果显示为零工具。
 
 ## 方法与规则
 

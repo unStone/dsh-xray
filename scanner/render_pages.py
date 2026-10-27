@@ -109,6 +109,20 @@ def page(p):
         for f in flags)
     flags_table = (f'<h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th>'
                    f'<th>Evidence</th></tr></thead><tbody>{rows}</tbody></table>') if rows else ''
+    analysis = p.get('tool_reg_analysis') or {}
+    tool_count = p.get('tool_regs', 0)
+    tools = ''
+    if lvl >= 0:
+        text = (f'{tool_count} confirmed registration point(s); analysis is incomplete.'
+                if analysis.get('status') == 'partial' else f'{tool_count} static tool registration point(s).')
+        tools = f'<h2>Tool registrations</h2><p>{esc(text)}</p>'
+        findings = (p.get('tool_reg_evidence') or []) + (analysis.get('diagnostics') or [])
+        if findings:
+            tools += '<ul>' + ''.join(f'<li><code>{esc(e["path"])}:{e["line"]}</code> '
+                                     f'{esc(e["reason"])}</li>' for e in findings) + '</ul>'
+        tools += ''.join(f'<p class="lede">{esc(note)}</p>' for note in analysis.get('notes') or [])
+    freshness = ('<p class="lede">Refresh pending; showing the previous scan.</p>'
+                 if p.get('refresh_status') == 'deferred' else '')
 
     def chips(items, title):
         if not items:
@@ -183,8 +197,10 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
      <a href="https://github.com/{esc(repo)}" rel="nofollow ugc">{esc(repo)} source on GitHub</a>
      · <a href="../registry.html#{esc(slug)}">this plugin in the registry</a></p>
   <p>{esc(summary)}</p>
+  {freshness}
   <p class="lede"><b>{esc(TYPE_TEXT.get(p.get('type'), ''))}</b></p>
   {flags_table}
+  {tools}
   {chips(p.get('injects') or [], 'Services it injects')}
   {chips(p.get('hooks') or [], 'Hooks it attaches')}
   {chips(p.get('domains') or [], 'Outbound domains')}
