@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/xiaoming132887/dsh-rely" rel="nofollow ugc">xiaoming132887/dsh-rely source on GitHub</a>
      · <a href="../registry.html#xiaoming132887__dsh-rely">this plugin in the registry</a></p>
   <p>xiaoming132887/dsh-rely is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. app/src/main/assets/tools/lan-web-proxy.mjs:30, app/src/main/assets/tools/lan-web-proxy.mjs:30</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. scripts/probes/_bench_narrow_before_after.mjs:54, scripts/probes/_test_narrow_perf.mjs:77</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/probes/attachment-read-probe.mjs:41</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. app/src/main/assets/tools/lan-web-proxy.mjs:129</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>app/src/main/assets/android-plugins/fast-mode.mjs:160</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>loader</span> <span>settingsController</span> <span>shellEnv</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/request</span></p>
   

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>git4oc/ZY-Agents — capability card (C2) · dsh-xray</title>
-<meta name="description" content="git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest.">
+<meta name="description" content="git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/git4oc__ZY-Agents.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git4oc/ZY-Agents — dsh plugin capability card">
-<meta property="og:description" content="git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest.">
+<meta property="og:description" content="git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/git4oc__ZY-Agents.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "ZY-Agents", "identifier": "git4oc/ZY-Agents", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest.", "codeRepository": "https://github.com/git4oc/ZY-Agents", "url": "https://unstone.github.io/dsh-xray/p/git4oc__ZY-Agents.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "ZY-Agents", "identifier": "git4oc/ZY-Agents", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.", "codeRepository": "https://github.com/git4oc/ZY-Agents", "url": "https://unstone.github.io/dsh-xray/p/git4oc__ZY-Agents.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,9 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/git4oc/ZY-Agents" rel="nofollow ugc">git4oc/ZY-Agents source on GitHub</a>
      · <a href="../registry.html#git4oc__ZY-Agents">this plugin in the registry</a></p>
-  <p>git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server, ships no manifest.</p>
+  <p>git4oc/ZY-Agents is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, starts a network server.</p>
+  
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. services/kernel-host/src/smoke-agent-loop.mjs:21, services/kernel-host/src/smoke-agent-loop.mjs:200</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. services/kernel-host/src/http-server.mjs:161</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 0 services, 22 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. services/kernel-host/src/smoke-agent-loop.mjs:21, services/kernel-host/src/smoke-agent-loop.mjs:200</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. services/kernel-host/src/http-server.mjs:161</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>services/kernel-host/src/tool-bridge.mjs:83</code> Cannot establish the tools service binding</li></ul>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>ready</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>zhiyu.example.com</span> <span>cdn.jsdelivr.net</span> <span>oa.example.com</span> <span>oa.acme.com</span> <span>api.example.com</span> <span>mcp.example.com</span></p>

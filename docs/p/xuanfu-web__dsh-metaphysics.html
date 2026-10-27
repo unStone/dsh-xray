@@ -50,11 +50,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/xuanfu-web/dsh-metaphysics" rel="nofollow ugc">xuanfu-web/dsh-metaphysics source on GitHub</a>
      · <a href="../registry.html#xuanfu-web__dsh-metaphysics">this plugin in the registry</a></p>
   <p>xuanfu-web/dsh-metaphysics is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×12 in development tooling the package does not ship, e.g. tools/check-assertions.mjs:12, tools/check-assertions.mjs:12</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/check-bundle.mjs:27, tools/check-bundle.mjs:46</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: NPM_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:323</code> tools.register</li><li><code>client.js:14235</code> Cannot establish the tools service binding</li><li><code>client.js:14240</code> Cannot establish the tools service binding</li><li><code>src/app.js:1047</code> Cannot establish the tools service binding</li><li><code>src/app.js:1052</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>nominatim.openstreetmap.org</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>nominatim.openstreetmap.org</span> <span>www.luckclub.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_METRICS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

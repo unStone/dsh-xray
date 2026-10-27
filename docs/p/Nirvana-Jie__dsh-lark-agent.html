@@ -50,12 +50,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Nirvana-Jie/dsh-lark-agent" rel="nofollow ugc">Nirvana-Jie/dsh-lark-agent source on GitHub</a>
      · <a href="../registry.html#Nirvana-Jie__dsh-lark-agent">this plugin in the registry</a></p>
   <p>Nirvana-Jie/dsh-lark-agent is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, powerful capability in test/example code only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. src/lark-cli.ts:1, src/lark-cli.ts:86</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: systemPrompt</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>5 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/dsh-runtime.ts:271</code> tool factory</li><li><code>src/dsh-runtime.ts:276</code> tool factory</li><li><code>src/dsh-runtime.ts:285</code> tool factory</li><li><code>src/dsh-runtime.ts:303</code> tool factory</li><li><code>src/dsh-runtime.ts:335</code> tool factory</li><li><code>src/dsh-runtime.ts:271</code> Cannot establish the tools service binding</li><li><code>src/dsh-runtime.ts:276</code> Cannot establish the tools service binding</li><li><code>src/dsh-runtime.ts:285</code> Cannot establish the tools service binding</li><li><code>src/dsh-runtime.ts:303</code> Cannot establish the tools service binding</li><li><code>src/dsh-runtime.ts:335</code> Cannot establish the tools service binding</li><li><code>src/index.ts:19</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LARKBOT_CLIENT_OUTDIR</span> <span>DSH_LARK_CONFIG</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LARK_CONFIG</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

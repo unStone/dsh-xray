@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/jiangzeyuan/dsh-rivermind" rel="nofollow ugc">jiangzeyuan/dsh-rivermind source on GitHub</a>
      · <a href="../registry.html#jiangzeyuan__dsh-rivermind">this plugin in the registry</a></p>
   <p>jiangzeyuan/dsh-rivermind is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/check-package.mjs:2, scripts/check-package.mjs:2</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/host/dev.ts:9</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/host/dsh.ts:195</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>connection</span> <span>layout</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>session/event</span></p>
   

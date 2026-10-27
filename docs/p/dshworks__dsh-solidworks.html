@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/dshworks/dsh-solidworks" rel="nofollow ugc">dshworks/dsh-solidworks source on GitHub</a>
      · <a href="../registry.html#dshworks__dsh-solidworks">this plugin in the registry</a></p>
   <p>dshworks/dsh-solidworks is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/spawn.js:70</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. scripts/check-dsh-release.mjs:45, scripts/check-dsh-release.mjs:45</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/tools.js:101</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/link.js:64</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/tools.js:52</code> tools.register</li><li><code>lib/tools.js:42</code> Context or tools service passed to an unresolved helper</li></ul>
   
   
   

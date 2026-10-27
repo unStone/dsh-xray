@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/delef/dsh-free-web-search" rel="nofollow ugc">delef/dsh-free-web-search source on GitHub</a>
      · <a href="../registry.html#delef__dsh-free-web-search">this plugin in the registry</a></p>
   <p>delef/dsh-free-web-search is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/engines/common.ts:105</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>8 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/index.ts:327</code> tools.register</li><li><code>src/index.ts:334</code> tools.register</li><li><code>src/index.ts:343</code> tools.register</li><li><code>src/index.ts:350</code> tools.register</li><li><code>src/tools/engine-test.ts:6</code> tool factory</li><li><code>src/tools/platform-search.ts:10</code> tool factory</li><li><code>src/tools/web-fetch.ts:5</code> tool factory</li><li><code>src/tools/web-search.ts:11</code> tool factory</li><li><code>src/index.ts:307</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>commandUi</span> <span>slots</span> <span>web</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>duckduckgo.com</span> <span>www.bing.com</span> <span>api.keenable.ai</span> <span>anysearch.com</span> <span>dashboard.exa.ai</span> <span>app.tavily.com</span> <span>keenable.ai</span> <span>www.perplexity.ai</span> <span>platform.deepseek.com</span> <span>api.anysearch.com</span></p>

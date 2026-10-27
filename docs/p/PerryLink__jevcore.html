@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/PerryLink/jevcore" rel="nofollow ugc">PerryLink/jevcore source on GitHub</a>
      · <a href="../registry.html#PerryLink__jevcore">this plugin in the registry</a></p>
   <p>PerryLink/jevcore is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. tools/verify-submission-artifacts.mjs:37, tools/verify-submission-artifacts.mjs:37</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. packages/mcp/src/bin.ts:49</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENROUTER_API_KEY, TYPESAFE_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>packages/dsh/src/ask.ts:198</code> tool factory</li><li><code>packages/dsh/src/check.ts:210</code> tool factory</li><li><code>packages/dsh/src/index.ts:371</code> tools.register</li><li><code>packages/dsh/src/rank.ts:291</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.typesafe.ai</span> <span>docs.typesafe.ai</span> <span>openrouter.ai</span></p>

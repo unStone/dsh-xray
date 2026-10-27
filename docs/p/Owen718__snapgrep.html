@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Owen718/snapgrep" rel="nofollow ugc">Owen718/snapgrep source on GitHub</a>
      · <a href="../registry.html#Owen718__snapgrep">this plugin in the registry</a></p>
   <p>Owen718/snapgrep is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. src/index-manager.ts:1, src/index-manager.ts:964</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/rg.ts:433, src/zoekt-client.ts:160</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. src/index-manager.ts:262, src/index-manager.ts:265</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>8 static tool registration point(s).</p><ul><li><code>artifacts/pi-extension/pi-fast-grep/src/dsh-plugin.js:184</code> tool factory</li><li><code>artifacts/pi-extension/pi-fast-grep/src/dsh-plugin.js:257</code> tool factory</li><li><code>artifacts/pi-extension/pi-fast-grep/src/dsh-plugin.js:311</code> tools.register</li><li><code>artifacts/pi-extension/pi-fast-grep/src/dsh-plugin.js:312</code> tools.register</li><li><code>src/dsh-plugin.ts:226</code> tool factory</li><li><code>src/dsh-plugin.ts:306</code> tool factory</li><li><code>src/dsh-plugin.ts:362</code> tools.register</li><li><code>src/dsh-plugin.ts:363</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   

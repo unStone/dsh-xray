@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/chshcbz/dsh-plugin-safety-toolkit" rel="nofollow ugc">chshcbz/dsh-plugin-safety-toolkit source on GitHub</a>
      · <a href="../registry.html#chshcbz__dsh-plugin-safety-toolkit">this plugin in the registry</a></p>
   <p>chshcbz/dsh-plugin-safety-toolkit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, command execution in build output only, network server in build output only.</p>
+  
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. dsh-plugin-devkit/lib/shared.mjs:6, dsh-plugin-devkit/lib/shared.mjs:41</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. dsh-plugin-devkit/lib/shared.mjs:51, dsh-plugin-devkit/lib/shared.mjs:52</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>7 static tool registration point(s).</p><ul><li><code>dsh-plugin-devkit/lib/index.js:60</code> tools.register</li><li><code>dsh-plugin-devkit/lib/index.js:69</code> tool factory</li><li><code>dsh-plugin-devkit/lib/index.js:110</code> tool factory</li><li><code>dsh-plugin-devkit/lib/index.js:156</code> tool factory</li><li><code>dsh-plugin-devkit/lib/index.js:185</code> tool factory</li><li><code>dsh-plugin-devkit/lib/index.js:215</code> tool factory</li><li><code>dsh-plugin-devkit/lib/index.js:285</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   
   

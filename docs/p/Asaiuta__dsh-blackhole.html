@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Asaiuta/dsh-blackhole" rel="nofollow ugc">Asaiuta/dsh-blackhole source on GitHub</a>
      · <a href="../registry.html#Asaiuta__dsh-blackhole">this plugin in the registry</a></p>
   <p>Asaiuta/dsh-blackhole is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. build.mjs:21, build.mjs:128</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_EVAL_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>5 static tool registration point(s).</p><ul><li><code>lib/index.js:5665</code> tool factory</li><li><code>lib/tools-plugin.js:1220</code> tools.register</li><li><code>lib/tools-plugin.js:1220</code> tool factory</li><li><code>src/recall-tool.ts:18</code> tools.register</li><li><code>src/recall-tool.ts:18</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>compaction</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>tokenMeter</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api-docs.deepseek.com</span> <span>api.deepseek.com</span></p>

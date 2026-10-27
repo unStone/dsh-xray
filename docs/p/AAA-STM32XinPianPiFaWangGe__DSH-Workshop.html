@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/AAA-STM32XinPianPiFaWangGe/DSH-Workshop" rel="nofollow ugc">AAA-STM32XinPianPiFaWangGe/DSH-Workshop source on GitHub</a>
      · <a href="../registry.html#AAA-STM32XinPianPiFaWangGe__DSH-Workshop">this plugin in the registry</a></p>
   <p>AAA-STM32XinPianPiFaWangGe/DSH-Workshop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, uses eval / new Function, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/host-install.js:18, lib/host-install.js:18</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/test-bundle.mjs:74</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. scripts/serve.mjs:26</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:70</code> Context or tools service passed to an unresolved helper</li><li><code>lib/index.js:75</code> Context or tools service passed to an unresolved helper</li><li><code>lib/index.js:82</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>www.npmjs.com</span> <span>pypi.org</span> <span>codeload.github.com</span> <span>cdn.jsdelivr.net</span></p>

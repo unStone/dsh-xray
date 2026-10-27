@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Aliax-LI/dsh-photoshop-genfill" rel="nofollow ugc">Aliax-LI/dsh-photoshop-genfill source on GitHub</a>
      · <a href="../registry.html#Aliax-LI__dsh-photoshop-genfill">this plugin in the registry</a></p>
   <p>Aliax-LI/dsh-photoshop-genfill is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, eval in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/ps-bridge.js:26</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×2 in build output only, e.g. lib/ps-bridge.js:240, lib/ps-bridge.js:244</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. index.js:313</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>PS_GENFILL_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:624</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>commands</span> <span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>chatgpt2api.343426.xyz</span></p>

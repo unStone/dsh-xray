@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/cstarc/dsh-skill-mcp-bridge" rel="nofollow ugc">cstarc/dsh-skill-mcp-bridge source on GitHub</a>
      · <a href="../registry.html#cstarc__dsh-skill-mcp-bridge">this plugin in the registry</a></p>
   <p>cstarc/dsh-skill-mcp-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, eval in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/index.js:669, src/index.js:734</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:2193</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:131, lib/index.js:132</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/index.js:833</code> tool factory</li><li><code>src/index.js:868</code> tools.register</li><li><code>lib/index.js:8217</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>remote</span> <span>skills</span> <span>slots</span> <span>subprocess</span> <span>timer</span> <span>tools</span> <span>typert</span></p>
   
   

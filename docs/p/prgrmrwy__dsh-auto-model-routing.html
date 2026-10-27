@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/prgrmrwy/dsh-auto-model-routing" rel="nofollow ugc">prgrmrwy/dsh-auto-model-routing source on GitHub</a>
      · <a href="../registry.html#prgrmrwy__dsh-auto-model-routing">this plugin in the registry</a></p>
   <p>prgrmrwy/dsh-auto-model-routing is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/policy-v2-host-probe.mjs:22, scripts/policy-v2-host-probe.mjs:27</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>OPENROUTER_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/index.ts:49</code> tools.register</li><li><code>src/subagent-tool.ts:38</code> tool factory</li><li><code>src/settings-host.ts:16</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>connection</span> <span>llm</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>session/event</span> <span>tools/execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>openrouter.ai</span> <span>api.typesafe.ai</span> <span>api.concentrate.ai</span></p>

@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/lifwsp/dsh-work-planner" rel="nofollow ugc">lifwsp/dsh-work-planner source on GitHub</a>
      · <a href="../registry.html#lifwsp__dsh-work-planner">this plugin in the registry</a></p>
   <p>lifwsp/dsh-work-planner is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/index.ts:1, src/progress.ts:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>12 static tool registration point(s).</p><ul><li><code>dist/index.js:221</code> tools.register</li><li><code>dist/index.js:222</code> tools.register</li><li><code>dist/index.js:223</code> tools.register</li><li><code>dist/tools.js:18</code> tool factory</li><li><code>dist/tools.js:139</code> tool factory</li><li><code>dist/tools.js:166</code> tool factory</li><li><code>src/index.ts:229</code> tools.register</li><li><code>src/index.ts:230</code> tools.register</li><li><code>src/index.ts:231</code> tools.register</li><li><code>src/tools.ts:22</code> tool factory</li><li><code>src/tools.ts:143</code> tool factory</li><li><code>src/tools.ts:172</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>connection</span> <span>skills</span> <span>timer</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>api.liquid.ai</span> <span>openrouter.ai</span> <span>api.typesafe.ai</span></p>

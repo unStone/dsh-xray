@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/MoonlitDropOfBlood/DSH-Desktop" rel="nofollow ugc">MoonlitDropOfBlood/DSH-Desktop source on GitHub</a>
      · <a href="../registry.html#MoonlitDropOfBlood__DSH-Desktop">this plugin in the registry</a></p>
   <p>MoonlitDropOfBlood/DSH-Desktop is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×59 in authored code, e.g. main.js:39, main.js:39</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×15 in authored code, e.g. scripts/check-docs-page.js:9, scripts/repro-corner-hmr.mjs:254</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/repro-corner-hmr.mjs:346, scripts/repro-corner-hmr.mjs:405</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×13 in authored code, e.g. main.js:387, main.js:402</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_DESKTOP_NOTIFY_TOKEN, DSH_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/status</span> <span>approval/request</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>api.github.com</span> <span>gh-proxy.com</span> <span>npmmirror.com</span></p>

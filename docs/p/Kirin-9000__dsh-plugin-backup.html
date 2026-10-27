@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Kirin-9000/dsh-plugin-backup" rel="nofollow ugc">Kirin-9000/dsh-plugin-backup source on GitHub</a>
      · <a href="../registry.html#Kirin-9000__dsh-plugin-backup">this plugin in the registry</a></p>
   <p>Kirin-9000/dsh-plugin-backup is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. index.js:33, index.js:822</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. .tools/verify-client.mjs:205</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:1647</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
   

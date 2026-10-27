@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Anduin9527/dsh-document-evidence" rel="nofollow ugc">Anduin9527/dsh-document-evidence source on GitHub</a>
      · <a href="../registry.html#Anduin9527__dsh-document-evidence">this plugin in the registry</a></p>
   <p>Anduin9527/dsh-document-evidence is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. bridge.js:1, bridge.js:10</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. host-library.js:62, host-library.js:287</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>host-library.js:204</code> tool factory</li><li><code>host-library.js:273</code> tools.register</li><li><code>index.js:80</code> tools.register</li><li><code>index.js:80</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request-error</span> <span>tools/result</span></p>
   

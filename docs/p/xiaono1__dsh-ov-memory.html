@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/xiaono1/dsh-ov-memory" rel="nofollow ugc">xiaono1/dsh-ov-memory source on GitHub</a>
      · <a href="../registry.html#xiaono1__dsh-ov-memory">this plugin in the registry</a></p>
   <p>xiaono1/dsh-ov-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, executes system commands, reads credential-class env vars in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/peer.ts:11, src/peer.ts:11</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: OV_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/session-start</span> <span>session/event</span> <span>session/flush</span> <span>tools/pre-execute</span></p>
   

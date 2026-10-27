@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/knxi/dsh-grsai-canvas" rel="nofollow ugc">knxi/dsh-grsai-canvas source on GitHub</a>
      · <a href="../registry.html#knxi__dsh-grsai-canvas">this plugin in the registry</a></p>
   <p>knxi/dsh-grsai-canvas is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval / new Function, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/upscale.js:20, lib/upscale.js:347</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×9 in authored code, e.g. tools/check-a11y-browser.mjs:53, tools/check-a11y.mjs:99</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:1638, lib/index.js:710</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GH_TOKEN_FILE, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>grsai.dakka.com.cn</span> <span>b.mumu.bio</span> <span>api.apimart.ai</span> <span>api.github.com</span></p>

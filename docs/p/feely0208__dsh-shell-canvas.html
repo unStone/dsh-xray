@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/feely0208/dsh-shell-canvas" rel="nofollow ugc">feely0208/dsh-shell-canvas source on GitHub</a>
      · <a href="../registry.html#feely0208__dsh-shell-canvas">this plugin in the registry</a></p>
   <p>feely0208/dsh-shell-canvas is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. engine/src/encode.mjs:3, engine/src/encode.mjs:8</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. engine/src/validate.mjs:76</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/adapter-system-browser.mjs:204</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. lib/adapter-system-browser.mjs:58, lib/adapter-system-browser.mjs:59</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   
   

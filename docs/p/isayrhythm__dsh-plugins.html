@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/isayrhythm/dsh-plugins" rel="nofollow ugc">isayrhythm/dsh-plugins source on GitHub</a>
      · <a href="../registry.html#isayrhythm__dsh-plugins">this plugin in the registry</a></p>
   <p>isayrhythm/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. plugins/repo-snapshot/lib/index.js:39, plugins/repo-snapshot/lib/index.js:39</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. plugins/model-quota/lib/client.js:504, plugins/repo-snapshot/lib/index.js:285</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALIYUN_OSS_ACCESS_KEY_ID, ALIYUN_OSS_ACCESS_KEY_SECRET</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>remote</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/session-start</span> <span>dispose</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>daily-cloudcode-pa.googleapis.com</span> <span>cloudcode-pa.googleapis.com</span> <span>api.anthropic.com</span> <span>cli-chat-proxy.grok.com</span> <span>api.x.ai</span> <span>cpa.example.com</span> <span>chatgpt.com</span> <span>daily-cloudcode-pa.sandbox.googleapis.com</span> <span>api.kimi.com</span> <span>api.openai.com</span></p>

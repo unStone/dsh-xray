@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/988hj7tczd-oss/dsh-modernize-code" rel="nofollow ugc">988hj7tczd-oss/dsh-modernize-code source on GitHub</a>
      · <a href="../registry.html#988hj7tczd-oss__dsh-modernize-code">this plugin in the registry</a></p>
   <p>988hj7tczd-oss/dsh-modernize-code is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/modernize-tools.ts:62</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/modernize-tools.ts:100</code> tools.register</li><li><code>src/modernize-tools.ts:100</code> tool factory</li><li><code>src/modernize-tools.ts:146</code> tools.register</li><li><code>src/modernize-tools.ts:146</code> tool factory</li><li><code>src/skill-mount.ts:30</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>subprocess</span> <span>tools</span></p>
   
   

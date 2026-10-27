@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Sama05/dsh-download-progress" rel="nofollow ugc">Sama05/dsh-download-progress source on GitHub</a>
      · <a href="../registry.html#Sama05__dsh-download-progress">this plugin in the registry</a></p>
   <p>Sama05/dsh-download-progress is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. lab/e2e-script.mjs:18, lab/e2e-script.mjs:35</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×7 in authored code, e.g. smoke-host.mjs:1198, smoke-host.mjs:1202</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/client/01-prologue.js:54</code> Cannot parse source: Unexpected token (54:0)</li><li><code>src/client/99-plugin.js:59</code> Cannot parse source: Unexpected token (59:2)</li><li><code>src/client/styles-close.js:1</code> Cannot parse source: Unterminated template. (1:1)</li><li><code>src/client/styles-open.js:3</code> Cannot parse source: Unterminated template. (3:17)</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>plugin-manager/install-log</span> <span>plugin-manager/install-state</span> <span>subagent/end</span> <span>subagent/start</span> <span>tools/execute</span> <span>workflow/end</span> <span>workflow/log</span> <span>workflow/phase</span> <span>workflow/start</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>e.com</span> <span>registry.npmmirror.com</span> <span>npmmirror.com</span></p>

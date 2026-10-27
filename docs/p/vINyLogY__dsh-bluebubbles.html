@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/vINyLogY/dsh-bluebubbles" rel="nofollow ugc">vINyLogY/dsh-bluebubbles source on GitHub</a>
      · <a href="../registry.html#vINyLogY__dsh-bluebubbles">this plugin in the registry</a></p>
   <p>vINyLogY/dsh-bluebubbles is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, base64 decoding in build output only, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. client/bindings-ui/lib/client.js:2, client/bindings-ui/lib/client.js:5</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BLUEBUBBLES_PASSWORD</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>compat/chat-completions/src/index.ts:29</code> Context or tools service passed to an unresolved helper</li><li><code>src/index.ts:1117</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>bluebubbles</span> <span>connection</span> <span>fs</span> <span>llm</span> <span>ptcRuntime</span> <span>remote</span> <span>sandboxPolicy</span> <span>shell</span> <span>slots</span> <span>subagents</span> <span>tools</span> <span>typertGateway</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>tools/pre-execute</span></p>
   

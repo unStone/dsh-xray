@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/jjmlovesgit/dsh-plugin-coding-delegate" rel="nofollow ugc">jjmlovesgit/dsh-plugin-coding-delegate source on GitHub</a>
      · <a href="../registry.html#jjmlovesgit__dsh-plugin-coding-delegate">this plugin in the registry</a></p>
   <p>jjmlovesgit/dsh-plugin-coding-delegate is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>plugin/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×80 in authored code, e.g. scripts/attest-unit.cjs:70, scripts/attest-unit.cjs:70</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. scripts/attest-unit.cjs:759, scripts/export-attested-tools.cjs:184</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. scripts/capture-worker-request.cjs:24, scripts/capture-worker-request.cjs:39</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CONTEXT_TOKEN_THRESHOLD, DSH_REVIEWER_PUBKEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>plugin/dist/index.js:846</code> tools.register</li><li><code>plugin/dist/index.js:850</code> tools.register</li><li><code>plugin/src/index.ts:1334</code> tools.register</li><li><code>plugin/src/index.ts:1336</code> tools.register</li><li><code>plugin/dist/index.js:689</code> Context or tools service passed to an unresolved helper</li><li><code>plugin/src/index.ts:1155</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   

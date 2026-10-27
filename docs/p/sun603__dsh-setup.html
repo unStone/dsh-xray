@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/sun603/dsh-setup" rel="nofollow ugc">sun603/dsh-setup source on GitHub</a>
      · <a href="../registry.html#sun603__dsh-setup">this plugin in the registry</a></p>
   <p>sun603/dsh-setup is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It gates tool execution, command execution in build output only, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. plugins/dsh-codex-bridge/lib/index.js:35, plugins/dsh-codex-bridge/lib/index.js:245</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BRIDGE_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>plugins/dsh-chrome-devtools-mcp/lib/index.js:24</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>sessionProjections</span> <span>sessions</span> <span>slots</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/request</span> <span>llm/adapters-updated</span> <span>session/disposed</span> <span>session/event</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
   

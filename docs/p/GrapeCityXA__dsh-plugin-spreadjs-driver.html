@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/GrapeCityXA/dsh-plugin-spreadjs-driver" rel="nofollow ugc">GrapeCityXA/dsh-plugin-spreadjs-driver source on GitHub</a>
      · <a href="../registry.html#GrapeCityXA__dsh-plugin-spreadjs-driver">this plugin in the registry</a></p>
   <p>GrapeCityXA/dsh-plugin-spreadjs-driver is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, uses eval / new Function.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×20 in development tooling the package does not ship, e.g. scripts/install-local.mjs:20, scripts/install-local.mjs:20</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. src/client/executor.ts:101, src/client/executor.ts:181</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/host/live/open-tool.ts:43</code> tool factory</li><li><code>src/host/live/plugin.ts:58</code> tools.register</li><li><code>src/host/live/plugin.ts:61</code> tools.register</li><li><code>src/host/live/plugin.ts:64</code> tools.register</li><li><code>src/host/live/status-tool.ts:10</code> tool factory</li><li><code>src/host/live/tool.ts:14</code> tool factory</li><li><code>src/client/index.ts:77</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>settings/document-updated</span></p>
   

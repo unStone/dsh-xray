@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/andyfan1094/dsh-winrm" rel="nofollow ugc">andyfan1094/dsh-winrm source on GitHub</a>
      · <a href="../registry.html#andyfan1094__dsh-winrm">this plugin in the registry</a></p>
   <p>andyfan1094/dsh-winrm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/smb.ts:11, src/smb.ts:43</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/engine.ts:289, src/powershell.ts:170</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>7 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/tools.ts:58</code> tool factory</li><li><code>src/tools.ts:104</code> tool factory</li><li><code>src/tools.ts:137</code> tool factory</li><li><code>src/tools.ts:208</code> tool factory</li><li><code>src/tools.ts:266</code> tool factory</li><li><code>src/tools.ts:305</code> tool factory</li><li><code>src/tools.ts:344</code> tool factory</li><li><code>src/index.ts:126</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>settingsScope</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   

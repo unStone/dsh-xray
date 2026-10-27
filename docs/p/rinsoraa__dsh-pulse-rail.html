@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/rinsoraa/dsh-pulse-rail" rel="nofollow ugc">rinsoraa/dsh-pulse-rail source on GitHub</a>
      · <a href="../registry.html#rinsoraa__dsh-pulse-rail">this plugin in the registry</a></p>
   <p>rinsoraa/dsh-pulse-rail is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/tap.js:12, lib/tap.js:115</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×10 in development tooling the package does not ship, e.g. tools/ab-compare.mjs:23, tools/ab-compare.mjs:260</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×10 in development tooling the package does not ship, e.g. tools/_load-client.mjs:29, tools/ab-compare.mjs:248</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. tools/harness.mjs:36, tools/host-test.mjs:47</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:165</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   
   

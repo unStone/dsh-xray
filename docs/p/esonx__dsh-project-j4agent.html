@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/esonx/dsh-project-j4agent" rel="nofollow ugc">esonx/dsh-project-j4agent source on GitHub</a>
      · <a href="../registry.html#esonx__dsh-project-j4agent">this plugin in the registry</a></p>
   <p>esonx/dsh-project-j4agent is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×10 in build output only, e.g. lib/host/node-git-state-reader.js:1, lib/host/node-git-state-reader.js:1</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/check-pack.mjs:1, scripts/check-pack.mjs:1</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:82</code> tools.register</li><li><code>lib/host/agent-tools.js:60</code> Cannot establish the tools service binding</li><li><code>lib/host/agent-tools.js:189</code> Cannot establish the tools service binding</li><li><code>lib/host/project-agent-tools.js:790</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>sessions</span> <span>slots</span> <span>tools</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
   
   

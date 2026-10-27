@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/PerryLink/dsh-attention-index" rel="nofollow ugc">PerryLink/dsh-attention-index source on GitHub</a>
      · <a href="../registry.html#PerryLink__dsh-attention-index">this plugin in the registry</a></p>
   <p>PerryLink/dsh-attention-index is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, starts a network server.</p>
+  
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. scripts/bench-run.mjs:24, scripts/bench-run.mjs:114</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. scripts/seed-pilot-tasks.mjs:236, scripts/seed-pilot-tasks.mjs:239</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. scripts/verify-api.mjs:17, scripts/verify-result.mjs:43</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/egress-proxy.mjs:16, scripts/egress-relay.mjs:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_API_KEY_ID, DSH_API_SIGNING_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>perrylink.github.io</span></p>

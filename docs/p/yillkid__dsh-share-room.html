@@ -50,10 +50,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/yillkid/dsh-share-room" rel="nofollow ugc">yillkid/dsh-share-room source on GitHub</a>
      · <a href="../registry.html#yillkid__dsh-share-room">this plugin in the registry</a></p>
   <p>yillkid/dsh-share-room is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. demo/demo-llm.mjs:54</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>SHARE_ROOM_PASSWORD, SHARE_ROOM_SECURE_COOKIE</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>sessions</span> <span>slots</span> <span>typertGateway</span> <span>uiWorkspace</span> <span>webServer</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>domain/changed</span> <span>user-questions/request</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>SHARE_ROOM_SECURE_COOKIE</span> <span>PORT</span> <span>DEMO_DELAY_MS</span> <span>PLAYWRIGHT_FROM</span> <span>BASE</span> <span>OUT</span> <span>SHARE_ROOM_PASSWORD</span> <span>SHARE_ROOM_DIR</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>

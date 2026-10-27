@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/trid11111-arch/dsh-infer-kit" rel="nofollow ugc">trid11111-arch/dsh-infer-kit source on GitHub</a>
      · <a href="../registry.html#trid11111-arch__dsh-infer-kit">this plugin in the registry</a></p>
   <p>trid11111-arch/dsh-infer-kit is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. test-stub.js:11, test-stub.js:11</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. test-stub.js:178, test-stub.js:189</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DAHO_API_KEY, INFER_KIT_DRAFT_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>index.js:500</code> tools.register</li><li><code>index.js:501</code> tools.register</li><li><code>index.js:502</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>inference.dahl.global</span></p>

@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/dsh-plugin-lab/dsh-zhihu-search" rel="nofollow ugc">dsh-plugin-lab/dsh-zhihu-search source on GitHub</a>
      · <a href="../registry.html#dsh-plugin-lab__dsh-zhihu-search">this plugin in the registry</a></p>
   <p>dsh-plugin-lab/dsh-zhihu-search is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/check-declaration.mjs:26, scripts/check-declaration.mjs:26</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ZHIHU_ACCESS_SECRET</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>src/index.ts:506</code> tools.register</li><li><code>src/index.ts:508</code> tools.register</li><li><code>src/index.ts:510</code> tools.register</li><li><code>src/tools/global-search.ts:68</code> tool factory</li><li><code>src/tools/search.ts:97</code> tool factory</li><li><code>src/tools/zhida.ts:49</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>loader/volatile-update</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>developer.zhihu.com</span></p>

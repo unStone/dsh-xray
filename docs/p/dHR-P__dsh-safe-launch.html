@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/dHR-P/dsh-safe-launch" rel="nofollow ugc">dHR-P/dsh-safe-launch source on GitHub</a>
      · <a href="../registry.html#dHR-P__dsh-safe-launch">this plugin in the registry</a></p>
   <p>dHR-P/dsh-safe-launch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, network server in build output only, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. tools/matrix-test.mjs:11, tools/matrix-test.mjs:11</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:205, lib/index.js:207</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/service</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

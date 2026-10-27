@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kdcadmin/dsh_douyin_tools — capability card (C3) · dsh-xray</title>
-<meta name="description" content="kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.">
+<meta name="description" content="kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, network server in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/kdcadmin__dsh_douyin_tools.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kdcadmin/dsh_douyin_tools — dsh plugin capability card">
-<meta property="og:description" content="kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.">
+<meta property="og:description" content="kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, network server in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/kdcadmin__dsh_douyin_tools.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh_douyin_tools", "identifier": "kdcadmin/dsh_douyin_tools", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/kdcadmin/dsh_douyin_tools", "url": "https://unstone.github.io/dsh-xray/p/kdcadmin__dsh_douyin_tools.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh_douyin_tools", "identifier": "kdcadmin/dsh_douyin_tools", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, network server in build output only.", "codeRepository": "https://github.com/kdcadmin/dsh_douyin_tools", "url": "https://unstone.github.io/dsh-xray/p/kdcadmin__dsh_douyin_tools.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/kdcadmin/dsh_douyin_tools" rel="nofollow ugc">kdcadmin/dsh_douyin_tools source on GitHub</a>
      · <a href="../registry.html#kdcadmin__dsh_douyin_tools">this plugin in the registry</a></p>
-  <p>kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.</p>
+  <p>kdcadmin/dsh_douyin_tools is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, network server in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. index.js:33, index.js:1156</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/render-report.mjs:42, tools/smoke-client.mjs:24</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. index.js:33, index.js:1410</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. lib/action-proxy.mjs:8, lib/action-proxy.mjs:26</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:735</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>settings</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>www.douyin.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>ProgramFiles</span> <span>APPDATA</span> <span>DSH_HOME</span> <span>DSH_DOUYIN_HOME</span> <span>DOUYIN_FORCE_COPY</span> <span>USERPROFILE</span> <span>DSH_HOST_MODULES</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>ProgramFiles</span> <span>DSH_HOME</span> <span>APPDATA</span> <span>DSH_DOUYIN_HOME</span> <span>DOUYIN_PROFILE_PORT</span> <span>DOUYIN_FORCE_COPY</span> <span>USERPROFILE</span> <span>DSH_HOST_MODULES</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

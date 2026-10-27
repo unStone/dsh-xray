@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/yueyexiayu/dsh-chrome" rel="nofollow ugc">yueyexiayu/dsh-chrome source on GitHub</a>
      · <a href="../registry.html#yueyexiayu__dsh-chrome">this plugin in the registry</a></p>
   <p>yueyexiayu/dsh-chrome is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. host/bridge.mjs:5, host/bridge.mjs:5</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:45, lib/image.js:62</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. host/bridge.mjs:123</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:52</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>fs</span> <span>slots</span> <span>tools</span></p>
   
   

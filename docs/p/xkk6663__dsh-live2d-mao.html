@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/xkk6663/dsh-live2d-mao" rel="nofollow ugc">xkk6663/dsh-live2d-mao source on GitHub</a>
      · <a href="../registry.html#xkk6663__dsh-live2d-mao">this plugin in the registry</a></p>
   <p>xkk6663/dsh-live2d-mao is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, eval in build output only, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. tools/test_quit_backend.cjs:14, tools/test_quit_backend.cjs:14</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. 澪Agent应用/dist/live2d-pet/libs/pixi.min.js:302, 澪Agent应用/dist/live2d-pet/libs/pixi.min.js:307</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. 澪Agent应用/src/characterCard.js:188, 澪Agent应用/src/characterCard.js:189</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. 澪Agent应用/live2d-desktop/main.js:529, 澪Agent应用/live2d-desktop/main.js:552</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>api.deepseek.com</span> <span>napneko.pages.dev</span> <span>console.volcengine.com</span> <span>pixijs.com</span></p>

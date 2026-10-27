@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wing-tn/astro-ph-researcher" rel="nofollow ugc">wing-tn/astro-ph-researcher source on GitHub</a>
      · <a href="../registry.html#wing-tn__astro-ph-researcher">this plugin in the registry</a></p>
   <p>wing-tn/astro-ph-researcher is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. codex/scripts/open-ui.mjs:2, codex/scripts/open-ui.mjs:16</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/writing.js:207</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. codex/ui/server.mjs:14</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ADS_API_TOKEN, OPENALEX_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:1281</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>doi.org</span> <span>nadc.china-vo.org</span> <span>iopscience.iop.org</span> <span>search.cnki.com.cn</span> <span>ui.adsabs.harvard.edu</span> <span>journals.aps.org</span> <span>api.crossref.org</span> <span>export.arxiv.org</span> <span>arxiv.org</span> <span>kns.cnki.net</span></p>

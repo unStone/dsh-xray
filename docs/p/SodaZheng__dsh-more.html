@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/SodaZheng/dsh-more" rel="nofollow ugc">SodaZheng/dsh-more source on GitHub</a>
      · <a href="../registry.html#SodaZheng__dsh-more">this plugin in the registry</a></p>
   <p>SodaZheng/dsh-more is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×10 in development tooling the package does not ship, e.g. build.mjs:2, build.mjs:18</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/check-desktop-runtime.mjs:204, scripts/check-desktop-runtime.mjs:211</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/platform/dsh/client/settings.ts:59</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>connection</span> <span>sessionPersistence</span> <span>sessionProjections</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>webServer</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>loader/volatile-update</span> <span>settings/document-updated</span></p>
   

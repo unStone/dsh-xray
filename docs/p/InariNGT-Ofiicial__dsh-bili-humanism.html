@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/InariNGT-Ofiicial/dsh-bili-humanism" rel="nofollow ugc">InariNGT-Ofiicial/dsh-bili-humanism source on GitHub</a>
      · <a href="../registry.html#InariNGT-Ofiicial__dsh-bili-humanism">this plugin in the registry</a></p>
   <p>InariNGT-Ofiicial/dsh-bili-humanism is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/media-environment.mjs:1, lib/media-environment.mjs:105</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×6 in development tooling the package does not ship, e.g. scripts/check.mjs:2, scripts/check.mjs:2</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>BILI_HUMANISM_CREDENTIAL_FILE</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>index.js:122</code> tools.register</li><li><code>index.js:123</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/turn-stopping</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.bilibili.com</span> <span>www.bilibili.com</span> <span>pypi.org</span></p>

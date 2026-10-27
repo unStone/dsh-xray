@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/zsagi1368/dsh-webstack" rel="nofollow ugc">zsagi1368/dsh-webstack source on GitHub</a>
      · <a href="../registry.html#zsagi1368__dsh-webstack">this plugin in the registry</a></p>
   <p>zsagi1368/dsh-webstack is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. packages/webstack/src/safety/winproxy.ts:16</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. packages/bridge/extension/background.js:382, packages/bridge/extension/logic.js:228</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. packages/bridge/src/server.ts:120, packages/bridge/src/server.ts:141</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>packages/webstack/lib/index.js:4776</code> tool factory</li><li><code>packages/webstack/lib/index.js:4863</code> tool factory</li><li><code>packages/webstack/lib/index.js:5226</code> tool factory</li><li><code>packages/webstack/src/index.ts:578</code> tool factory</li><li><code>packages/webstack/src/tools/web-tools.ts:50</code> tool factory</li><li><code>packages/webstack/src/tools/web-tools.ts:157</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>web</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>publish.twitter.com</span> <span>api.anysearch.com</span> <span>www.bing.com</span> <span>api.search.brave.com</span> <span>html.duckduckgo.com</span> <span>api.exa.ai</span> <span>api.firecrawl.dev</span> <span>s.jina.ai</span> <span>api.tavily.com</span></p>

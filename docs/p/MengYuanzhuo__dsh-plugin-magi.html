@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/MengYuanzhuo/dsh-plugin-magi" rel="nofollow ugc">MengYuanzhuo/dsh-plugin-magi source on GitHub</a>
      · <a href="../registry.html#MengYuanzhuo__dsh-plugin-magi">this plugin in the registry</a></p>
   <p>MengYuanzhuo/dsh-plugin-magi is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/script-runner.js:14, lib/script-runner.js:217</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. tools/magi-dev-server.mjs:93</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>index.js:63</code> tools.register</li><li><code>index.js:63</code> tool factory</li><li><code>index.js:84</code> tools.register</li><li><code>index.js:84</code> tool factory</li><li><code>index.js:105</code> tools.register</li><li><code>index.js:105</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>llm</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
   

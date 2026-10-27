@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/ImHaoYuan/dsh-mobile-mirror" rel="nofollow ugc">ImHaoYuan/dsh-mobile-mirror source on GitHub</a>
      · <a href="../registry.html#ImHaoYuan__dsh-mobile-mirror">this plugin in the registry</a></p>
   <p>ImHaoYuan/dsh-mobile-mirror is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship, network server in build output only, starts a network server in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/client-test.mjs:121, tools/client-test.mjs:333</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. lib/server.js:1533, lib/server.js:1534</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. tools/cert-test.mjs:76, tools/cert-test.mjs:81</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:207</code> Cannot establish the tools service binding</li><li><code>lib/mirror.js:1935</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   
   

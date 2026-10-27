@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/hviana/dsh-cli-bridge" rel="nofollow ugc">hviana/dsh-cli-bridge source on GitHub</a>
      · <a href="../registry.html#hviana__dsh-cli-bridge">this plugin in the registry</a></p>
   <p>hviana/dsh-cli-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/prepare.mjs:12, scripts/prepare.mjs:12</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/host/tools.ts:237</code> tools.register</li><li><code>src/host/tools.ts:334</code> tool factory</li><li><code>src/host/tools.ts:382</code> tool factory</li><li><code>src/host/tools.ts:436</code> tool factory</li><li><code>src/host/tools.ts:506</code> tool factory</li><li><code>src/host/tools.ts:664</code> tool factory</li><li><code>src/host/channel-routes.ts:81</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>subprocess</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>

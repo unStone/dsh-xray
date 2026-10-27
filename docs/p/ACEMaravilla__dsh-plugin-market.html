@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/ACEMaravilla/dsh-plugin-market" rel="nofollow ugc">ACEMaravilla/dsh-plugin-market source on GitHub</a>
      · <a href="../registry.html#ACEMaravilla__dsh-plugin-market">this plugin in the registry</a></p>
   <p>ACEMaravilla/dsh-plugin-market is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, mentions child_process without importing it, ships no manifest.</p>
+  
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>mentions child_process without importing it</td><td><code>exec_ref</code></td><td>mentions child_process ×1 without importing it, e.g. src/vet.ts:80</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 4 services, 8 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>8 static tool registration point(s).</p><ul><li><code>src/install.ts:88</code> tools.register</li><li><code>src/install.ts:88</code> tool factory</li><li><code>src/report.ts:208</code> tools.register</li><li><code>src/report.ts:208</code> tool factory</li><li><code>src/search.ts:521</code> tools.register</li><li><code>src/search.ts:521</code> tool factory</li><li><code>src/vet.ts:563</code> tools.register</li><li><code>src/vet.ts:563</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>systemPrompt</span> <span>tools</span> <span>web</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>www.npmjs.com</span> <span>unpkg.com</span></p>

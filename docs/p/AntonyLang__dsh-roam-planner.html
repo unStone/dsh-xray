@@ -50,12 +50,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/AntonyLang/dsh-roam-planner" rel="nofollow ugc">AntonyLang/dsh-roam-planner source on GitHub</a>
      · <a href="../registry.html#AntonyLang__dsh-roam-planner">this plugin in the registry</a></p>
   <p>AntonyLang/dsh-roam-planner is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/build-client.mjs:19, scripts/build-client.mjs:19</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. server/mcp.js:13</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>server/tools.js:260</code> tools.register</li></ul><p class="lede">1 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>restapi.amap.com</span> <span>www.openstreetmap.org</span> <span>nominatim.openstreetmap.org</span> <span>router.project-osrm.org</span> <span>api.open-meteo.com</span> <span>www.amap.com</span> <span>a.tile.openstreetmap.org</span> <span>b.tile.openstreetmap.org</span> <span>c.tile.openstreetmap.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>ESBUILD_BINARY_PATH</span> <span>RAILWAY_PYTHON</span> <span>RAILWAY_PYTHONPATH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>RAILWAY_PYTHON</span> <span>RAILWAY_PYTHONPATH</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

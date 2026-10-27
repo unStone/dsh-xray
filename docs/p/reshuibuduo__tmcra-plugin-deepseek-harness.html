@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/reshuibuduo/tmcra-plugin-deepseek-harness" rel="nofollow ugc">reshuibuduo/tmcra-plugin-deepseek-harness source on GitHub</a>
      · <a href="../registry.html#reshuibuduo__tmcra-plugin-deepseek-harness">this plugin in the registry</a></p>
   <p>reshuibuduo/tmcra-plugin-deepseek-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. scripts/local_deployment.mjs:3, scripts/local_deployment.mjs:64</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. scripts/memory_center.mjs:114, scripts/memory_center.mjs:156</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TMCRA_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>dist/index.mjs:2213</code> tools.register</li><li><code>src/index.ts:508</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.tmcra.com</span> <span>tmcra.com</span></p>

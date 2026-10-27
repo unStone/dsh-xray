@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wsnmm3/dsh-session-keeper" rel="nofollow ugc">wsnmm3/dsh-session-keeper source on GitHub</a>
      · <a href="../registry.html#wsnmm3__dsh-session-keeper">this plugin in the registry</a></p>
   <p>wsnmm3/dsh-session-keeper is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, eval in build output only, uses eval in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×14 in development tooling the package does not ship, e.g. scripts/build-all.mjs:12, scripts/build-all.mjs:12</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. lib/client.js:152</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/test-inline-css.mjs:100, scripts/test-tree-shim.mjs:47</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/client.js:1755, lib/client.js:1806</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>locale</span> <span>remote</span> <span>sessionCategories</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>uiWorkspace</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span> <span>domain/changed</span></p>
   

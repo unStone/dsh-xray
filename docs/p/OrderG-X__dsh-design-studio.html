@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OrderG-X/dsh-design-studio — capability card (C2) · dsh-xray</title>
-<meta name="description" content="OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, network server in build output only.">
+<meta name="description" content="OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/OrderG-X__dsh-design-studio.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OrderG-X/dsh-design-studio — dsh plugin capability card">
-<meta property="og:description" content="OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, network server in build output only.">
+<meta property="og:description" content="OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/OrderG-X__dsh-design-studio.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-design-studio", "identifier": "OrderG-X/dsh-design-studio", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, network server in build output only.", "codeRepository": "https://github.com/OrderG-X/dsh-design-studio", "url": "https://unstone.github.io/dsh-xray/p/OrderG-X__dsh-design-studio.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-design-studio", "identifier": "OrderG-X/dsh-design-studio", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.", "codeRepository": "https://github.com/OrderG-X/dsh-design-studio", "url": "https://unstone.github.io/dsh-xray/p/OrderG-X__dsh-design-studio.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/OrderG-X/dsh-design-studio" rel="nofollow ugc">OrderG-X/dsh-design-studio source on GitHub</a>
      · <a href="../registry.html#OrderG-X__dsh-design-studio">this plugin in the registry</a></p>
-  <p>OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, network server in build output only.</p>
+  <p>OrderG-X/dsh-design-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, eval in build output only, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:36</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×3 in build output only, e.g. lib/phone.js:131, lib/phone.js:147</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/browser.js:12, lib/index.js:47</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×12 in build output only, e.g. lib/look.js:105, lib/look.js:106</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/browser.js:230</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×3 in build output only, e.g. lib/phone.js:131, lib/phone.js:147</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>lib/tool.js:11</code> tools.register</li><li><code>lib/tool.js:13</code> tools.register</li><li><code>lib/tool.js:14</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
-  
+  <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>purl.org</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

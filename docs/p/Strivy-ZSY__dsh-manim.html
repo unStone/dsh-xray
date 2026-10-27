@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Strivy-ZSY/dsh-manim" rel="nofollow ugc">Strivy-ZSY/dsh-manim source on GitHub</a>
      · <a href="../registry.html#Strivy-ZSY__dsh-manim">this plugin in the registry</a></p>
   <p>Strivy-ZSY/dsh-manim is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. runtime/setup-runtime.mjs:40, runtime/setup-runtime.mjs:40</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. tools/check-client-modules.mjs:83</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. tools/test-offline.mjs:237, tools/test-offline.mjs:241</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>10 static tool registration point(s).</p><ul><li><code>lib/index.js:2000</code> tool factory</li><li><code>lib/index.js:2142</code> tool factory</li><li><code>lib/index.js:2257</code> tool factory</li><li><code>lib/index.js:2380</code> tool factory</li><li><code>lib/index.js:2491</code> tools.register</li><li><code>src/index.ts:102</code> tools.register</li><li><code>src/tools.ts:156</code> tool factory</li><li><code>src/tools.ts:322</code> tool factory</li><li><code>src/tools.ts:476</code> tool factory</li><li><code>src/tools.ts:620</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   
   

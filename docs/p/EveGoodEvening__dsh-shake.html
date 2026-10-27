@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/EveGoodEvening/dsh-shake" rel="nofollow ugc">EveGoodEvening/dsh-shake source on GitHub</a>
      · <a href="../registry.html#EveGoodEvening__dsh-shake">this plugin in the registry</a></p>
   <p>EveGoodEvening/dsh-shake is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. .verification/contracts/published-contract.mjs:6, .verification/contracts/published-contract.mjs:6</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>.verification/contracts/published-contract.mjs:146</code> tool factory</li><li><code>src/read.ts:123</code> tools.register</li><li><code>src/read.ts:123</code> tool factory</li><li><code>.verification/contracts/published-contract.mjs:146</code> Cannot establish the tools service binding</li><li><code>.verification/contracts/published-contract.mjs:230</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>sessionProjections</span> <span>sessionQuery</span> <span>sessions</span> <span>tokenMeter</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>agent/pre-step</span> <span>llm/stream</span></p>
   

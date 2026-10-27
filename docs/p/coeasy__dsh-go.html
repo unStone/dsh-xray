@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/coeasy/dsh-go" rel="nofollow ugc">coeasy/dsh-go source on GitHub</a>
      · <a href="../registry.html#coeasy__dsh-go">this plugin in the registry</a></p>
   <p>coeasy/dsh-go is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
+  
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. runtime/artifact-installer.mjs:7, runtime/host-bridge.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. runtime/secret-store.mjs:118, runtime/secret-store.mjs:119</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. runtime/client-host.mjs:182</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BRIDGE_TOKEN_FILE</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>dsh-go.pages.dev</span> <span>coeasy.github.io</span> <span>in-toto.io</span> <span>slsa.dev</span></p>

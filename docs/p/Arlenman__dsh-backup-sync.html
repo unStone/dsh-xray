@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Arlenman/dsh-backup-sync" rel="nofollow ugc">Arlenman/dsh-backup-sync source on GitHub</a>
      · <a href="../registry.html#Arlenman__dsh-backup-sync">this plugin in the registry</a></p>
   <p>Arlenman/dsh-backup-sync is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/archive.js:26, lib/archive.js:122</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/cloud-e2e.mjs:15, scripts/cloud-e2e.mjs:113</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: DBS_NAS_PASS</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>dav.jianguoyun.com</span></p>

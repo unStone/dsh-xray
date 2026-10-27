@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/AndyWipe13/dsh-session-management" rel="nofollow ugc">AndyWipe13/dsh-session-management source on GitHub</a>
      · <a href="../registry.html#AndyWipe13__dsh-session-management">this plugin in the registry</a></p>
   <p>AndyWipe13/dsh-session-management is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can intercept API traffic, gates tool execution, executes commands in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>apiProxy, webServer, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×4 in development tooling the package does not ship, e.g. scripts/build.js:7, scripts/build.js:7</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>lib/tools.js:132</code> tools.register</li><li><code>lib/tools.js:137</code> tool factory</li><li><code>src/tools.ts:160</code> tools.register</li><li><code>src/tools.ts:165</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>apiProxy</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   

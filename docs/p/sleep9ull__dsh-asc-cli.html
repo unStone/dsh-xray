@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/sleep9ull/dsh-asc-cli" rel="nofollow ugc">sleep9ull/dsh-asc-cli source on GitHub</a>
      · <a href="../registry.html#sleep9ull__dsh-asc-cli">this plugin in the registry</a></p>
   <p>sleep9ull/dsh-asc-cli is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, gates tool execution, executes system commands.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. scripts/classify-audit.mjs:19, scripts/classify-audit.mjs:19</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>9 static tool registration point(s).</p><ul><li><code>src/tools/apply.ts:72</code> tools.register</li><li><code>src/tools/asc.ts:44</code> tool factory</li><li><code>src/tools/asc.ts:132</code> tools.register</li><li><code>src/tools/common.ts:33</code> tool factory</li><li><code>src/tools/job.ts:39</code> tool factory</li><li><code>src/tools/job.ts:122</code> tools.register</li><li><code>src/tools/plan.ts:54</code> tools.register</li><li><code>src/tools/setup.ts:58</code> tool factory</li><li><code>src/tools/setup.ts:116</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>subprocess</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

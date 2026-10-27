@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wangbobo-coder/dsh-mcp-manager" rel="nofollow ugc">wangbobo-coder/dsh-mcp-manager source on GitHub</a>
      · <a href="../registry.html#wangbobo-coder__dsh-mcp-manager">this plugin in the registry</a></p>
   <p>wangbobo-coder/dsh-mcp-manager is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, uses eval in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/probe.js:20, lib/probe.js:65</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/test-client-load.mjs:69, scripts/test-paths.mjs:51</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:400</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>configEditor</span> <span>locale</span> <span>slots</span> <span>tools</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   
   

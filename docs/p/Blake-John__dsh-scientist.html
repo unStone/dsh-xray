@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Blake-John/dsh-scientist" rel="nofollow ugc">Blake-John/dsh-scientist source on GitHub</a>
      · <a href="../registry.html#Blake-John__dsh-scientist">this plugin in the registry</a></p>
   <p>Blake-John/dsh-scientist is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. pdf-tools.mjs:11, vault-loop-core.mjs:27</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. scripts/check-loader.mjs:87</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lit-tools.mjs:74</code> Cannot establish the tools service binding</li><li><code>pdf-tools.mjs:131</code> Cannot establish the tools service binding</li><li><code>vault-loop-tools.mjs:123</code> Cannot establish the tools service binding</li><li><code>vault-record.mjs:657</code> Cannot establish the tools service binding</li><li><code>vault-study.mjs:1070</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>skills</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/turn-stopping</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.crossref.org</span> <span>w3id.org</span> <span>export.arxiv.org</span> <span>eutils.ncbi.nlm.nih.gov</span> <span>schema.org</span> <span>www.ebi.ac.uk</span> <span>libgen.li</span> <span>arxiv.org</span> <span>api.datacite.org</span></p>

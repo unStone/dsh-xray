@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Samouswolf/DSH-Plugins" rel="nofollow ugc">Samouswolf/DSH-Plugins source on GitHub</a>
      · <a href="../registry.html#Samouswolf__DSH-Plugins">this plugin in the registry</a></p>
   <p>Samouswolf/DSH-Plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, can spawn subprocesses, executes system commands, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. agent-farm/index.mjs:175, agent-farm/index.mjs:205</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AGNES_API_KEY, OPENCODE_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>5 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>agent-farm/index.mjs:262</code> tools.register</li><li><code>agent-farm/index.mjs:395</code> tools.register</li><li><code>agent-farm/index.mjs:807</code> tools.register</li><li><code>agent-farm/index.mjs:828</code> tools.register</li><li><code>evolution-engine/index.mjs:131</code> tools.register</li><li><code>dna-plugin/index.mjs:191</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>fs</span> <span>skills</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>timer</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/turn-stopping</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>apihub.agnes-ai.com</span> <span>opencode.ai</span></p>

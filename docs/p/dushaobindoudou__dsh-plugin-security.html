@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/dushaobindoudou/dsh-plugin-security" rel="nofollow ugc">dushaobindoudou/dsh-plugin-security source on GitHub</a>
      · <a href="../registry.html#dushaobindoudou__dsh-plugin-security">this plugin in the registry</a></p>
   <p>dushaobindoudou/dsh-plugin-security is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. lib/remote.js:13, lib/remote.js:31</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/tool.js:74</code> Cannot establish the tools service binding</li><li><code>lib/tool.js:104</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>pluginManager</span> <span>slots</span> <span>tools</span> <span>typert</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>app-boot/config-reload</span> <span>plugin-manager/changed</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.osv.dev</span></p>

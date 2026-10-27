@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/zhxnix/dsh-wx-preview" rel="nofollow ugc">zhxnix/dsh-wx-preview source on GitHub</a>
      · <a href="../registry.html#zhxnix__dsh-wx-preview">this plugin in the registry</a></p>
   <p>zhxnix/dsh-wx-preview is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh.bundle.patch</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/check.mjs:5, scripts/check.mjs:5</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. web/runtime.js:1298</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/preview-server.mjs:96</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:31</code> tool factory</li><li><code>lib/index.js:127</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>sidebarRightTabs</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
   

@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/MoyaMryia/dsh-steal-code" rel="nofollow ugc">MoyaMryia/dsh-steal-code source on GitHub</a>
      · <a href="../registry.html#MoyaMryia__dsh-steal-code">this plugin in the registry</a></p>
   <p>MoyaMryia/dsh-steal-code is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, ships no manifest.</p>
+  
   <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×15 in authored code, e.g. reference/20-capture.js:7, reference/20-capture.js:7</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. reference/10-receiver.js:170, reference/10-receiver.js:172</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. reference/10-receiver.js:204</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 3 services, 1 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>plugin.mjs:285</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>shell</span> <span>timer</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/turn-stopping</span></p>
   

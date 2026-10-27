@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/tkwkeven/dsh-lark" rel="nofollow ugc">tkwkeven/dsh-lark source on GitHub</a>
      · <a href="../registry.html#tkwkeven__dsh-lark">this plugin in the registry</a></p>
   <p>tkwkeven/dsh-lark is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can rewrite the system prompt, command execution in build output only.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/policies.js:17, lib/policies.js:78</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>5 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/tasks.js:1085</code> tool factory</li><li><code>lib/tasks.js:1725</code> tool factory</li><li><code>lib/tasks.js:1763</code> tool factory</li><li><code>lib/tasks.js:1792</code> tool factory</li><li><code>lib/tasks.js:1820</code> tools.register</li><li><code>lib/tasks.js:1057</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>attachments</span> <span>credentials</span> <span>llm</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>dispose</span> <span>session/event</span></p>
   

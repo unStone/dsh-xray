@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Han-1413141/dsh-wsl-native" rel="nofollow ugc">Han-1413141/dsh-wsl-native source on GitHub</a>
      · <a href="../registry.html#Han-1413141__dsh-wsl-native">this plugin in the registry</a></p>
   <p>Han-1413141/dsh-wsl-native is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. src/connector.mjs:5, src/connector.mjs:141</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/service.mjs:465, src/worker.mjs:160</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_WSL_HANDOFF_SECRET, LOG_TOKENS</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>src/index.mjs:42</code> tools.register</li><li><code>src/index.mjs:42</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span></p>
   

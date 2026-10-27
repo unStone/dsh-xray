@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wee-b/disk-sentinel" rel="nofollow ugc">wee-b/disk-sentinel source on GitHub</a>
      · <a href="../registry.html#wee-b__disk-sentinel">this plugin in the registry</a></p>
   <p>wee-b/disk-sentinel is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, command execution in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt, webServer</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×8 in build output only, e.g. lib/clean.js:92, lib/clean.js:92</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/tools/clean-disk.js:40</code> tool factory</li><li><code>lib/tools/clean-disk.js:207</code> tools.register</li><li><code>lib/tools/dev-env-migrate.js:23</code> tool factory</li><li><code>lib/tools/dev-env-migrate.js:148</code> tools.register</li><li><code>lib/tools/disk-scan.js:36</code> tool factory</li><li><code>lib/tools/disk-scan.js:162</code> tools.register</li><li><code>lib/index.js:125</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>layout</span> <span>sessions</span> <span>sidebarRight</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span> <span>workspaces</span></p>
   
   

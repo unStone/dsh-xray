@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/HaoyanZhang123/dsh-plugin-control-your-schedule" rel="nofollow ugc">HaoyanZhang123/dsh-plugin-control-your-schedule source on GitHub</a>
      · <a href="../registry.html#HaoyanZhang123__dsh-plugin-control-your-schedule">this plugin in the registry</a></p>
   <p>HaoyanZhang123/dsh-plugin-control-your-schedule is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. smoke/composer_e2e.mjs:11, smoke/composer_e2e.mjs:46</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×6 in authored code, e.g. smoke/host_lang_test.mjs:67, smoke/host_lang_test.mjs:71</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. smoke/composer_e2e.mjs:147, smoke/page_e2e.mjs:45</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_WEB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><p class="lede">1 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>slots</span></p>
   
   

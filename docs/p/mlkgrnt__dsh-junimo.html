@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/mlkgrnt/dsh-junimo" rel="nofollow ugc">mlkgrnt/dsh-junimo source on GitHub</a>
      · <a href="../registry.html#mlkgrnt__dsh-junimo">this plugin in the registry</a></p>
   <p>mlkgrnt/dsh-junimo is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/game.js:16, src/game.js:43</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>8 static tool registration point(s).</p><ul><li><code>src/index.js:71</code> tools.register</li><li><code>src/index.js:72</code> tool factory</li><li><code>src/index.js:84</code> tools.register</li><li><code>src/index.js:85</code> tool factory</li><li><code>src/index.js:100</code> tools.register</li><li><code>src/index.js:101</code> tool factory</li><li><code>src/index.js:127</code> tools.register</li><li><code>src/index.js:128</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

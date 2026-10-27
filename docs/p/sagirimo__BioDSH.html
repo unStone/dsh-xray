@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/sagirimo/BioDSH" rel="nofollow ugc">sagirimo/BioDSH source on GitHub</a>
      · <a href="../registry.html#sagirimo__BioDSH">this plugin in the registry</a></p>
   <p>sagirimo/BioDSH is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×32 in authored code, e.g. desktop/scripts/build-delta.mjs:12, desktop/scripts/build-delta.mjs:12</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, E2E_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>packages/dsh-biodsh/lib/skills.js:122</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>skills</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>dispose</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>open.bigmodel.cn</span> <span>registry.npmmirror.com</span> <span>api.deepseek.com</span> <span>api.openai.com</span> <span>api.siliconflow.cn</span> <span>dashscope.aliyuncs.com</span> <span>api.moonshot.cn</span> <span>platform.deepseek.com</span> <span>npmmirror.com</span> <span>hf-mirror.com</span></p>

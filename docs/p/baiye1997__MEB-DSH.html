@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/baiye1997/MEB-DSH" rel="nofollow ugc">baiye1997/MEB-DSH source on GitHub</a>
      · <a href="../registry.html#baiye1997__MEB-DSH">this plugin in the registry</a></p>
   <p>baiye1997/MEB-DSH is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh.bundle.patch</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. workbench/src/dwg-import.js:5, workbench/src/dwg-import.js:31</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. workbench/src/dwg-import.js:45, workbench/src/index.js:68</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. workbench/test-fixtures/preview-acceptance.mjs:8</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>workbench/src/index.js:32</code> tools.register</li><li><code>workbench/src/index.js:32</code> tool factory</li><li><code>workbench/src/index.js:48</code> tools.register</li><li><code>workbench/src/index.js:48</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>storageDomain</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   

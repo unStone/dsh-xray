@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Aurum807/dsh-bilibili-video-summary" rel="nofollow ugc">Aurum807/dsh-bilibili-video-summary source on GitHub</a>
      · <a href="../registry.html#Aurum807__dsh-bilibili-video-summary">this plugin in the registry</a></p>
   <p>Aurum807/dsh-bilibili-video-summary is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/video-material.mjs:27, lib/video-material.mjs:27</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>VIDEOSUM_COOKIE_DIR</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:74</code> tools.register</li><li><code>lib/index.js:74</code> tool factory</li></ul>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>www.bilibili.com</span></p>

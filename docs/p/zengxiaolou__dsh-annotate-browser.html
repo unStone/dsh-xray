@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/zengxiaolou/dsh-annotate-browser" rel="nofollow ugc">zengxiaolou/dsh-annotate-browser source on GitHub</a>
      · <a href="../registry.html#zengxiaolou__dsh-annotate-browser">this plugin in the registry</a></p>
   <p>zengxiaolou/dsh-annotate-browser is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/launcher.js:6, lib/launcher.js:82</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.js:796, lib/index.js:165</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/annotate-server.mjs:54</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>www.deepseek.com</span></p>

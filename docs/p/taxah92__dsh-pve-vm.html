@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/taxah92/dsh-pve-vm" rel="nofollow ugc">taxah92/dsh-pve-vm source on GitHub</a>
      · <a href="../registry.html#taxah92__dsh-pve-vm">this plugin in the registry</a></p>
   <p>taxah92/dsh-pve-vm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. index.js:32, tools/clipboard-read-test.mjs:15</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. tools/guest.js:174, tools/guest.js:175</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. tools/view-test.mjs:117, tools/view-test.mjs:130</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>index.js:38</code> tools.register</li><li><code>tools/console.js:737</code> tool factory</li><li><code>tools/guest.js:534</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>configForms</span> <span>locale</span> <span>slots</span> <span>subprocess</span> <span>tools</span></p>
   
   

@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/QinLuza/dsh-aisketch" rel="nofollow ugc">QinLuza/dsh-aisketch source on GitHub</a>
      · <a href="../registry.html#QinLuza__dsh-aisketch">this plugin in the registry</a></p>
   <p>QinLuza/dsh-aisketch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, uses eval / new Function.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. packages/sketch-core/src/geometry.ts:344, packages/sketch-core/src/geometry.ts:358</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>packages/cards-tool/src/index.ts:228</code> tools.register</li><li><code>packages/cards-tool/src/index.ts:228</code> tool factory</li><li><code>packages/sketch-tool/src/index.ts:282</code> tools.register</li><li><code>packages/sketch-tool/src/index.ts:282</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>uiConversation</span></p>
   
   

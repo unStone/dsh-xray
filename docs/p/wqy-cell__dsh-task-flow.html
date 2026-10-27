@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/wqy-cell/dsh-task-flow" rel="nofollow ugc">wqy-cell/dsh-task-flow source on GitHub</a>
      · <a href="../registry.html#wqy-cell__dsh-task-flow">this plugin in the registry</a></p>
   <p>wqy-cell/dsh-task-flow is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/record-demo.mjs:15, scripts/record-demo.mjs:328</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×32 in authored code, e.g. scripts/record-demo.mjs:92, scripts/record-demo.mjs:103</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/record-demo.mjs:221</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_GH_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>uiConversation</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

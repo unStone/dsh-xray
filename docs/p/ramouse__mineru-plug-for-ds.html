@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/ramouse/mineru-plug-for-ds" rel="nofollow ugc">ramouse/mineru-plug-for-ds source on GitHub</a>
      · <a href="../registry.html#ramouse__mineru-plug-for-ds">this plugin in the registry</a></p>
   <p>ramouse/mineru-plug-for-ds is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It can spawn subprocesses, command execution in build output only.</p>
+  
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. packages/mineru-plugin/lib/entry.js:104, packages/mineru-plugin/lib/entry.js:796</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>packages/mineru-plugin/lib/entry.js:337</code> tools.register</li><li><code>packages/mineru-plugin/lib/entry.js:450</code> tools.register</li><li><code>packages/mineru-plugin/lib/entry.js:528</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>subprocess</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>mineru.net</span></p>

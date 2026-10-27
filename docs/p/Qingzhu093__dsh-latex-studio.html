@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Qingzhu093/dsh-latex-studio" rel="nofollow ugc">Qingzhu093/dsh-latex-studio source on GitHub</a>
      · <a href="../registry.html#Qingzhu093__dsh-latex-studio">this plugin in the registry</a></p>
   <p>Qingzhu093/dsh-latex-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. tools/doctor.mjs:34, tools/doctor.mjs:34</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. tools/build-preview.mjs:43</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/core/render.js:512, lib/vendor/cosmokit.mjs:185</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>lib/tools/daily.js:177</code> tool factory</li><li><code>lib/tools/daily.js:266</code> tool factory</li><li><code>lib/tools/daily.js:329</code> tool factory</li><li><code>lib/tools/daily.js:367</code> tool factory</li><li><code>lib/tools/daily.js:460</code> tools.register</li><li><code>lib/tools/vto.js:1647</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.crossref.org</span></p>

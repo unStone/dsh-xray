@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/hZsFN/dsh-qq-bot" rel="nofollow ugc">hZsFN/dsh-qq-bot source on GitHub</a>
      · <a href="../registry.html#hZsFN__dsh-qq-bot">this plugin in the registry</a></p>
   <p>hZsFN/dsh-qq-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, starts a network server, ships no manifest.</p>
+  
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. index.js:1349</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 5 services, 6 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>index.js:1418</code> tools.register</li><li><code>index.js:1418</code> tool factory</li><li><code>index.js:1477</code> tools.register</li><li><code>index.js:1477</code> tool factory</li><li><code>index.js:1542</code> tools.register</li><li><code>index.js:1542</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agentPresets</span> <span>agents</span> <span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.bot.qq.com</span></p>

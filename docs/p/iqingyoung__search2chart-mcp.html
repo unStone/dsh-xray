@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/iqingyoung/search2chart-mcp" rel="nofollow ugc">iqingyoung/search2chart-mcp source on GitHub</a>
      · <a href="../registry.html#iqingyoung__search2chart-mcp">this plugin in the registry</a></p>
   <p>iqingyoung/search2chart-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, network server in build output only, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. mcp/scripts/selftest.js:4, mcp/scripts/selftest.js:25</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×2 in build output only, e.g. dsh/lib/server.js:28, mcp/lib/httpserver.js:28</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ECHARTS_CDN_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>dsh/index.mjs:19</code> tools.register</li><li><code>dsh/index.mjs:19</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>cdn.jsdelivr.net</span></p>

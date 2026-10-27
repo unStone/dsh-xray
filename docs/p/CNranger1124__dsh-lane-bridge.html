@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/CNranger1124/dsh-lane-bridge" rel="nofollow ugc">CNranger1124/dsh-lane-bridge source on GitHub</a>
      · <a href="../registry.html#CNranger1124__dsh-lane-bridge">this plugin in the registry</a></p>
   <p>CNranger1124/dsh-lane-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>[&#x27;./cordis.patch.yml&#x27;, &#x27;./presets/lane-support.patch.yml&#x27;, &#x27;./presets/lane-chat.patch.yml&#x27;]</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. packages/dsh-lane-bridge/lib/repo.js:8, packages/dsh-lane-bridge/lib/repo.js:8</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. packages/dsh-lane-bridge/lib/repo.js:452</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>packages/dsh-lane-bridge/lib/session-pool.js:163</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessionController</span> <span>sessionQuery</span> <span>sidebarRightTabs</span> <span>slots</span> <span>tools</span> <span>webServer</span> <span>workspaceController</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>

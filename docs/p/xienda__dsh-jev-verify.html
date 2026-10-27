@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/xienda/dsh-jev-verify" rel="nofollow ugc">xienda/dsh-jev-verify source on GitHub</a>
      · <a href="../registry.html#xienda__dsh-jev-verify">this plugin in the registry</a></p>
   <p>xienda/dsh-jev-verify is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>TYPESAFE_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>8 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:1247</code> tools.register</li><li><code>lib/index.js:1285</code> tools.register</li><li><code>lib/index.js:1383</code> tools.register</li><li><code>lib/index.js:1508</code> tools.register</li><li><code>lib/index.js:1569</code> tools.register</li><li><code>lib/index.js:1644</code> tools.register</li><li><code>lib/index.js:1689</code> tools.register</li><li><code>lib/index.js:1758</code> tools.register</li><li><code>lib/index.js:282</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.typesafe.ai</span> <span>api.openai.com</span> <span>api-inference.huggingface.co</span> <span>console.typesafe.ai</span> <span>api.deepseek.com</span></p>

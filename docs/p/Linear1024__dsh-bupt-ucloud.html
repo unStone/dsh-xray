@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Linear1024/dsh-bupt-ucloud" rel="nofollow ugc">Linear1024/dsh-bupt-ucloud source on GitHub</a>
      · <a href="../registry.html#Linear1024__dsh-bupt-ucloud">this plugin in the registry</a></p>
   <p>Linear1024/dsh-bupt-ucloud is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, eval in build output only, decodes base64 payloads.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×1 in build output only, e.g. vendor/schemastery.js:266</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/ucloud.js:74</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:102</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>locale</span> <span>remote</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>credentials/reference-updated</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>ucloud.bupt.edu.cn</span> <span>auth.bupt.edu.cn</span> <span>apiucloud.bupt.edu.cn</span> <span>ocr.byrdocs.org</span></p>

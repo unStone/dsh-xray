@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Ianzhyh/qoder-to-dsh" rel="nofollow ugc">Ianzhyh/qoder-to-dsh source on GitHub</a>
      · <a href="../registry.html#Ianzhyh__qoder-to-dsh">this plugin in the registry</a></p>
   <p>Ianzhyh/qoder-to-dsh is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. lib/secret-store.mjs:4, lib/secret-store.mjs:4</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×8 in build output only, e.g. lib/desktop-auth.mjs:32, lib/desktop-auth.mjs:46</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>dsh-plugin/lib/index.js:243</code> Context or tools service passed to an unresolved helper</li><li><code>dsh-plugin/lib/index.js:248</code> Context or tools service passed to an unresolved helper</li><li><code>dsh-plugin/lib/index.js:963</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>qoder.com</span> <span>api3.qoder.sh</span> <span>qoder.com.cn</span> <span>gateway.qoder.com.cn</span> <span>api2.qoder.sh</span> <span>api1.qoder.sh</span> <span>openapi.qoder.sh</span> <span>openapi.qoder.com.cn</span></p>

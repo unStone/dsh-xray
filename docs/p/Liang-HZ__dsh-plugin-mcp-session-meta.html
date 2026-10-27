@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Liang-HZ/dsh-plugin-mcp-session-meta" rel="nofollow ugc">Liang-HZ/dsh-plugin-mcp-session-meta source on GitHub</a>
      · <a href="../registry.html#Liang-HZ__dsh-plugin-mcp-session-meta">this plugin in the registry</a></p>
   <p>Liang-HZ/dsh-plugin-mcp-session-meta is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, base64 decoding in build output only, ships no manifest.</p>
+  
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. install.mjs:32, install.mjs:32</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:292</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 1 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:173</code> tools.register</li><li><code>lib/index.js:833</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/plugin</span></p>
   

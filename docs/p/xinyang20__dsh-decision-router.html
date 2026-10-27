@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/xinyang20/dsh-decision-router" rel="nofollow ugc">xinyang20/dsh-decision-router source on GitHub</a>
      · <a href="../registry.html#xinyang20__dsh-decision-router">this plugin in the registry</a></p>
   <p>xinyang20/dsh-decision-router is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. local/offline-runtime.mjs:1, local/offline-runtime.mjs:52</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. local/decision-service.mjs:200, local/offline-runtime.mjs:42</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>local/fixture.mjs:45</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>autoModelRouter</span> <span>layout</span> <span>llm</span> <span>locale</span> <span>shortcuts</span> <span>slots</span> <span>tools</span> <span>uiWorkspace</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>agent/request</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.typesafe.ai</span> <span>huggingface.co</span></p>

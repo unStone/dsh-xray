@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/lovedheart/dsh-plugin-telegram" rel="nofollow ugc">lovedheart/dsh-plugin-telegram source on GitHub</a>
      · <a href="../registry.html#lovedheart__dsh-plugin-telegram">this plugin in the registry</a></p>
   <p>lovedheart/dsh-plugin-telegram is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, ships no manifest.</p>
+  
   <p class="lede"><b>Not a plugin — depends on dsh packages but declares no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/index.js:41, src/index.js:41</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 26 tool regs, no manifest</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/index.js:41, src/index.js:41</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 2 services, 2 tool regs, no manifest</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:952</code> tools.register</li><li><code>src/index.js:952</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>subagent/end</span> <span>subagent/start</span> <span>user-questions/request</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.telegram.org</span></p>

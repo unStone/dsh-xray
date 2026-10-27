@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Phocinae/dsh-phocinae" rel="nofollow ugc">Phocinae/dsh-phocinae source on GitHub</a>
      · <a href="../registry.html#Phocinae__dsh-phocinae">this plugin in the registry</a></p>
   <p>Phocinae/dsh-phocinae is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. scripts/verify-artifacts.mjs:18, scripts/verify-artifacts.mjs:18</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: DEEPSEEK_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>index.mjs:113</code> tools.register</li><li><code>index.mjs:123</code> tools.register</li></ul>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>tools/pre-execute</span></p>
   

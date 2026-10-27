@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/viethoang35/dsh-chat-bridge" rel="nofollow ugc">viethoang35/dsh-chat-bridge source on GitHub</a>
      · <a href="../registry.html#viethoang35__dsh-chat-bridge">this plugin in the registry</a></p>
   <p>viethoang35/dsh-chat-bridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It can rewrite the system prompt, executes system commands, reads credential-class env vars.</p>
+  
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. telegram-bridge/src/dsh/headless.mjs:1, telegram-bridge/src/dsh/headless.mjs:38</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, TELEGRAM_BOT_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>5 static tool registration point(s).</p><ul><li><code>plugins/greet-tool/index.mjs:11</code> tools.register</li><li><code>plugins/personal-notes/index.mjs:23</code> tools.register</li><li><code>plugins/personal-notes/index.mjs:48</code> tools.register</li><li><code>plugins/personal-notes/index.mjs:67</code> tools.register</li><li><code>plugins/personal-notes/index.mjs:86</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.telegram.org</span> <span>openrouter.ai</span></p>

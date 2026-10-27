@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/zengpu987-ctrl/dsh-deep-connect" rel="nofollow ugc">zengpu987-ctrl/dsh-deep-connect source on GitHub</a>
      · <a href="../registry.html#zengpu987-ctrl__dsh-deep-connect">this plugin in the registry</a></p>
   <p>zengpu987-ctrl/dsh-deep-connect is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. plugin/index.js:36, plugin/index.js:1077</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. paper/measure.mjs:129, tools/deep-connect-e2e.mjs:469</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. relay/relay.cjs:453, plugin/host/mobile.js:127</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>relay/deno/relay.js:87</code> Cannot parse source: Missing initializer in const declaration. (87:32)</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>deepseekAccount</span> <span>locale</span> <span>slots</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>abc-def.trycloudflare.com</span> <span>api.github.com</span> <span>cdn.jsdelivr.net</span> <span>station.example.com</span> <span>abc.trycloudflare.com</span> <span>api.qrserver.com</span> <span>data.jsdelivr.com</span> <span>codeload.github.com</span> <span>ghproxy.net</span> <span>gh-proxy.com</span></p>

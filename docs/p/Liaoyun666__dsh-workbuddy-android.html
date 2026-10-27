@@ -50,8 +50,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
      <a href="https://github.com/Liaoyun666/dsh-workbuddy-android" rel="nofollow ugc">Liaoyun666/dsh-workbuddy-android source on GitHub</a>
      · <a href="../registry.html#Liaoyun666__dsh-workbuddy-android">this plugin in the registry</a></p>
   <p>Liaoyun666/dsh-workbuddy-android is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, starts a network server.</p>
+  
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/desktop-key.js:16, lib/phone.js:106</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/atrest.js:129</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. tools/mock-api.js:49</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:62</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>copilot.tencent.com</span> <span>www.codebuddy.cn</span> <span>www.workbuddy.ai</span></p>
