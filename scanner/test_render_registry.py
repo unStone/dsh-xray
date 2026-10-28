@@ -26,7 +26,9 @@ def dataset(count=123):
 
 class RegistryBuildTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory(dir=pathlib.Path(__file__).resolve().parent.parent / 'tmp')
+        intermediate = pathlib.Path(__file__).resolve().parent.parent / 'tmp'
+        intermediate.mkdir(exist_ok=True)
+        self.temp = tempfile.TemporaryDirectory(dir=intermediate)
         self.docs = pathlib.Path(self.temp.name)
         (self.docs / 'registry.html').write_text(
             '<body><!--REGISTRY_BOOTSTRAP_START--><!--REGISTRY_BOOTSTRAP_END--></body>')
