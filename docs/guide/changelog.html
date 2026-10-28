@@ -55,6 +55,10 @@
 <h1>Changelog</h1>
 <p><em><a href="changelog.html?lang=zh">中文版</a> · Scan results refresh daily; this page records changes to method and product</em></p>
 <hr>
+<h2>2026-10-28 · Registry first load and pagination</h2>
+<p>The registry now includes the first 50 summaries in its HTML instead of waiting for the complete scan dataset. Search and filters load a compact index when used; capability evidence loads by shard when a row opens. Pagination keeps at most 50 rows in the DOM, including after a search. Failed requests expose a retry action, and hash links still open the relevant evidence card.</p>
+<p>The home page loads a separate statistics file. Daily scanning generates the same assets automatically, while content-addressed current and previous generations keep cached pages consistent with their evidence.</p>
+<hr>
 <h2>2026-10-27 · npm package membership and tool registration evidence</h2>
 <p><a href="https://github.com/unStone/dsh-xray/issues/7">Issue #7</a>: <code>files</code> negations no longer disable the entire allowlist. The scanner uses npm's maintained <code>npm-packlist</code>, with regression checks against real npm packages, forced entrypoints and nested ignore files. The existing tooling-root and lifecycle safeguards remain.</p>
 <p><a href="https://github.com/unStone/dsh-xray/issues/6">Issue #6</a>: tool registration analysis now follows context injection, service aliases, optional chaining and local helper calls using JS/TS syntax trees. Comments and strings do not count. Confirmed sites carry file:line evidence; incomplete analysis is labelled and does not imply that no tools exist.</p>

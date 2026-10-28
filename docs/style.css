@@ -92,6 +92,13 @@ section > h2 { font-size: 26px; letter-spacing: -0.5px; margin-bottom: 10px; }
 .badge-line { display: flex; gap: 8px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
 .badge-line button { border: 1px solid var(--border); background: var(--panel); color: var(--accent); border-radius: 6px; padding: 3px 10px; cursor: pointer; font-size: 12px; }
 .empty { padding: 40px; text-align: center; color: var(--muted); }
+.load-status { color: var(--muted); font-size: 13px; }
+.load-status:not(:empty) { margin: 12px 0; }
+.pagination { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 18px; font-size: 13px; color: var(--muted); }
+.pagination button, .load-status button, .detail > button { border: 1px solid var(--border); background: var(--panel); color: var(--accent); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.pagination button:disabled { opacity: .45; cursor: default; }
+.row-head:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.detail { overflow-wrap: anywhere; }
 
 footer { margin-top: 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); padding-top: 18px; }
 @media (max-width: 720px) {

@@ -198,13 +198,17 @@ xray.mountSwitcher(document.getElementById('langSwitch'));
   document.head.appendChild(el);
 })();
 
-fetch('data.json').then(r => r.json()).then(d => {
-  const ok = d.plugins.filter(p => p.level >= 0);
-  const c = l => ok.filter(p => p.level === l).length;
+fetch('stats.json').then(r => {
+  if (!r.ok) throw new Error(`Statistics: HTTP ${r.status}`);
+  return r.json();
+}).then(d => {
   document.getElementById('liveStat').textContent = xray.t('hero.stat', {
-    scanned: d.scanned, discovered: d.discovered || d.total, c3: c(3), c2: c(2), date: d.generated_at.slice(0, 16).replace('T', ' ')
+    scanned: d.scanned, discovered: d.discovered || d.total, c3: d.levels['3'], c2: d.levels['2'], date: d.generated_at.slice(0, 16).replace('T', ' ')
   });
-}).catch(() => {});
+}).catch(error => {
+  document.getElementById('liveStat').textContent = xray.t('hero.statError');
+  console.error('Statistics failed', error);
+});
 </script>
 </body>
 </html>
