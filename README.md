@@ -90,7 +90,7 @@ python render_pages.py                   # plugin pages, collections, sitemap, f
 
 Outputs: `data/scans/*.json` (full cards), `docs/data.json` (complete machine-readable snapshot), `docs/badge/*.json` (shields endpoints), `docs/p/*.html` (a page per plugin). A daily GitHub Action refreshes all of it.
 
-`python scanner/render_registry.py` builds `docs/stats.json`, the first 50 registry summaries embedded in `registry.html`, and content-addressed search/detail JSON under `docs/registry/`. Search loads a summary index on demand, pagination limits rendered rows to 50, and opening a row loads one of 64 evidence shards. The current and previous generations remain available for cached pages; the complete `data.json` API remains unchanged.
+`python scanner/render_registry.py` builds `docs/stats.json`, the first 50 registry summaries embedded in `registry.html`, and content-addressed client code and search/detail JSON under `docs/registry/`. Search loads index chunks of at most 500 summaries with up to eight concurrent requests; retries retain successful chunks. Pagination limits rendered rows to 50, and opening a row loads one of 64 evidence shards. The current and previous generations remain available for cached pages; the complete `data.json` API remains unchanged.
 
 Package membership uses npm's own `npm-packlist`, including `files` negations,
 forced entrypoints and nested ignore files. Tool registrations are static call
