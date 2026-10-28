@@ -55,7 +55,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. src/client.js:137</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>3 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/index.js:470</code> tools.register</li><li><code>src/index.js:493</code> tools.register</li><li><code>src/index.js:503</code> tools.register</li><li><code>src/client.js:931</code> Context or tools service passed to an unresolved helper</li><li><code>src/session-title-provider.js:10</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>configForms</span> <span>conversation</span> <span>fs</span> <span>llm</span> <span>locale</span> <span>modelDirectories</span> <span>remote</span> <span>sessionTitle</span> <span>sessions</span> <span>sidebarRight</span> <span>slots</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span> <span>session/event</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>connection/reset</span> <span>session/disposed</span> <span>session/event</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>

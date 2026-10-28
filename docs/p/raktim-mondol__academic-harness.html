@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>raktim-mondol/academic-harness — capability card (C3) · dsh-xray</title>
+<meta name="description" content="raktim-mondol/academic-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/raktim-mondol__academic-harness.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="raktim-mondol/academic-harness — dsh plugin capability card">
+<meta property="og:description" content="raktim-mondol/academic-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/raktim-mondol__academic-harness.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "academic-harness", "identifier": "raktim-mondol/academic-harness", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "raktim-mondol/academic-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/raktim-mondol/academic-harness", "url": "https://unstone.github.io/dsh-xray/p/raktim-mondol__academic-harness.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>raktim-mondol/academic-harness</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">Academic Harness as a DeepSeek Harness (DSH) profile plugin: research persona, scientific skills catalogue, living lab notebook, and specialist subagents.</p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/raktim-mondol/academic-harness" rel="nofollow ugc">raktim-mondol/academic-harness source on GitHub</a>
+     · <a href="../registry.html#raktim-mondol__academic-harness">this plugin in the registry</a></p>
+  <p>raktim-mondol/academic-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×85 in authored code, e.g. academic-harness-cli.js:7, academic-harness-cli.js:144</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. image-gen-client.js:105, image-gen-client.js:141</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/test-compute-http.mjs:14, scripts/test-compute-http.mjs:116</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AH_RSI_JUDGE_KEY, BRAVE_API_KEY, CORE_API_KEY, ELICIT_API_KEY, EXA_API_KEY, FUTUREHOUSE_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>105 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>academic-harness.js:388</code> tools.register</li><li><code>academic-harness.js:388</code> tool factory</li><li><code>arxiv-search.js:126</code> tools.register</li><li><code>arxiv-search.js:126</code> tool factory</li><li><code>author-lookup.js:187</code> tool factory</li><li><code>brave-search.js:41</code> tools.register</li><li><code>brave-search.js:41</code> tool factory</li><li><code>citation.js:249</code> tools.register</li><li><code>citation.js:249</code> tool factory</li><li><code>clinicaltrials.js:235</code> tools.register</li><li><code>clinicaltrials.js:235</code> tool factory</li><li><code>consensus-search.js:80</code> tools.register</li><li><code>consensus-search.js:80</code> tool factory</li><li><code>core-search.js:45</code> tools.register</li><li><code>core-search.js:45</code> tool factory</li><li><code>coscientist-rank.js:194</code> tools.register</li><li><code>coscientist-rank.js:194</code> tool factory</li><li><code>coscientist-verify.js:351</code> tool factory</li><li><code>coscientist.js:411</code> tools.register</li><li><code>coscientist.js:411</code> tool factory</li><li><code>crossref-lookup.js:71</code> tools.register</li><li><code>crossref-lookup.js:71</code> tool factory</li><li><code>dataset-search.js:235</code> tools.register</li><li><code>dataset-search.js:235</code> tool factory</li><li><code>elicit-search.js:158</code> tools.register</li><li><code>elicit-search.js:158</code> tool factory</li><li><code>exa-search.js:68</code> tools.register</li><li><code>exa-search.js:68</code> tool factory</li><li><code>figure-audit.js:90</code> tools.register</li><li><code>figure-audit.js:90</code> tool factory</li><li><code>fold-text.js:123</code> tools.register</li><li><code>fold-text.js:123</code> tool factory</li><li><code>funder-policy.js:191</code> tool factory</li><li><code>futurehouse-agent.js:142</code> tools.register</li><li><code>futurehouse-agent.js:142</code> tool factory</li><li><code>grant-search.js:249</code> tools.register</li><li><code>grant-search.js:249</code> tool factory</li><li><code>image-generate.js:24</code> tools.register</li><li><code>image-generate.js:24</code> tool factory</li><li><code>integrity-check.js:335</code> tools.register</li><li><code>integrity-check.js:335</code> tool factory</li><li><code>jina-reader.js:65</code> tools.register</li><li><code>jina-reader.js:65</code> tool factory</li><li><code>journal-policy.js:290</code> tools.register</li><li><code>journal-policy.js:290</code> tool factory</li><li><code>latex-compile.js:63</code> tools.register</li><li><code>latex-compile.js:63</code> tool factory</li><li><code>literature-search.js:153</code> tools.register</li><li><code>literature-search.js:153</code> tool factory</li><li><code>manuscript-citations.js:270</code> tool factory</li><li><code>mermaid-render.js:82</code> tools.register</li><li><code>mermaid-render.js:82</code> tool factory</li><li><code>modal-run.js:81</code> tool factory</li><li><code>notebook.js:79</code> tools.register</li><li><code>notebook.js:79</code> tool factory</li><li><code>openalex-cite.js:67</code> tools.register</li><li><code>openalex-cite.js:67</code> tool factory</li><li><code>openalex-search.js:114</code> tools.register</li><li><code>openalex-search.js:114</code> tool factory</li><li><code>openfda.js:232</code> tools.register</li><li><code>openfda.js:232</code> tool factory</li><li><code>openreview.js:170</code> tool factory</li><li><code>paper-download.js:450</code> tools.register</li><li><code>paper-download.js:450</code> tool factory</li><li><code>paper-fold.js:367</code> tools.register</li><li><code>paper-fold.js:367</code> tool factory</li><li><code>paper-mcp.js:223</code> tools.register</li><li><code>paper-mcp.js:223</code> tool factory</li><li><code>paper-resolve.js:140</code> tools.register</li><li><code>paper-resolve.js:140</code> tool factory</li><li><code>parallel-extract.js:85</code> tools.register</li><li><code>parallel-extract.js:85</code> tool factory</li><li><code>parallel-search.js:44</code> tools.register</li><li><code>parallel-search.js:44</code> tool factory</li><li><code>patent-search.js:145</code> tools.register</li><li><code>patent-search.js:145</code> tool factory</li><li><code>pdf-references.js:178</code> tools.register</li><li><code>pdf-references.js:178</code> tool factory</li><li><code>pdf-to-markdown.js:28</code> tools.register</li><li><code>pdf-to-markdown.js:28</code> tool factory</li><li><code>perplexity-search.js:78</code> tools.register</li><li><code>perplexity-search.js:78</code> tool factory</li><li><code>pubmed-search.js:139</code> tools.register</li><li><code>pubmed-search.js:139</code> tool factory</li><li><code>repo-audit.js:282</code> tools.register</li><li><code>repo-audit.js:282</code> tool factory</li><li><code>review.js:206</code> tool factory</li><li><code>rsi.js:86</code> tools.register</li><li><code>rsi.js:86</code> tool factory</li><li><code>runpod-run.js:91</code> tool factory</li><li><code>sci-inspect.js:30</code> tools.register</li><li><code>sci-inspect.js:30</code> tool factory</li><li><code>scientific-result.js:39</code> tools.register</li><li><code>scientific-result.js:39</code> tool factory</li><li><code>semantic-scholar-search.js:95</code> tools.register</li><li><code>semantic-scholar-search.js:95</code> tool factory</li><li><code>stat-audit.js:85</code> tools.register</li><li><code>stat-audit.js:85</code> tool factory</li><li><code>tavily-search.js:70</code> tools.register</li><li><code>tavily-search.js:70</code> tool factory</li><li><code>vastai-run.js:91</code> tool factory</li><li><code>workflows.js:76</code> tools.register</li><li><code>workflows.js:76</code> tool factory</li><li><code>zvec-index.js:86</code> tools.register</li><li><code>zvec-index.js:86</code> tool factory</li><li><code>author-lookup.js:187</code> Cannot establish the tools service binding</li><li><code>coscientist-verify.js:351</code> Cannot establish the tools service binding</li><li><code>funder-policy.js:191</code> Cannot establish the tools service binding</li><li><code>manuscript-citations.js:270</code> Cannot establish the tools service binding</li><li><code>modal-run.js:81</code> Cannot establish the tools service binding</li><li><code>openreview.js:170</code> Cannot establish the tools service binding</li><li><code>review.js:206</code> Cannot establish the tools service binding</li><li><code>runpod-run.js:91</code> Cannot establish the tools service binding</li><li><code>vastai-run.js:91</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>sessionProjections</span> <span>settings</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/turn-stopping</span> <span>session/created</span> <span>settings/document-updated</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>doi.org</span> <span>arxiv.org</span> <span>openalex.org</span> <span>api.openalex.org</span> <span>core.ac.uk</span> <span>api.crossref.org</span> <span>clinicaltrials.gov</span> <span>v2.sherpa.ac.uk</span> <span>openreview.net</span> <span>cloud.vast.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>AH_ENABLE_OPTIONAL_TOOLS</span> <span>FAKE_MODE</span> <span>GROBID_BASE_URL</span> <span>AH_RSI_JUDGE_URL</span> <span>TEXTFOLD_CLI</span> <span>GEMINI_API_KEY</span> <span>ACADEMIC_HARNESS_MODAL_SKIP_INSTALL</span> <span>ACADEMIC_HARNESS_PYTHON</span> <span>RESEARCHCRAFT_PYTHON</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

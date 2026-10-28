@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>wuyaomin248-stack/dsh-discord</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Discord read/search toolkit for DeepSeek Harness: pull the signed-in token from Edge/Chrome leveldb, then search, archive, download and pick cards/plugins - 20 read-only tools, no browser needed.</p>
+  <p class="lede">DSH Desktop 插件：29 个 Discord 只读工具（搜索 / 归档 / 上下文 / 收件箱 / 附件与角色卡判型），token 直接从浏览器登录态取</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/wuyaomin248-stack/dsh-discord" rel="nofollow ugc">wuyaomin248-stack/dsh-discord source on GitHub</a>
      · <a href="../registry.html#wuyaomin248-stack__dsh-discord">this plugin in the registry</a></p>
   <p>wuyaomin248-stack/dsh-discord is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/check.mjs:12, scripts/check.mjs:12</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/token.js:153</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:124</code> tool factory</li><li><code>lib/index.js:363</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/check.mjs:12, scripts/check.mjs:12</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/token.js:153</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:128</code> tool factory</li><li><code>lib/index.js:375</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>discord.com</span> <span>cdn.discordapp.com</span> <span>discord.gg</span></p>

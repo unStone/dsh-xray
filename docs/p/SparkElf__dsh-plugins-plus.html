@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SparkElf/dsh-plugins-plus — capability card (C3) · dsh-xray</title>
+<meta name="description" content="SparkElf/dsh-plugins-plus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/SparkElf__dsh-plugins-plus.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SparkElf/dsh-plugins-plus — dsh plugin capability card">
+<meta property="og:description" content="SparkElf/dsh-plugins-plus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/SparkElf__dsh-plugins-plus.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins-plus", "identifier": "SparkElf/dsh-plugins-plus", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "SparkElf/dsh-plugins-plus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/SparkElf/dsh-plugins-plus", "url": "https://unstone.github.io/dsh-xray/p/SparkElf__dsh-plugins-plus.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>SparkElf/dsh-plugins-plus</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">SparkElf-maintained independent plugins for DeepSeek Harness (dsh), installable on upstream dsh via profile composition bundles.</p>
+  <p class="lede">★ 1+ ·
+     <a href="https://github.com/SparkElf/dsh-plugins-plus" rel="nofollow ugc">SparkElf/dsh-plugins-plus source on GitHub</a>
+     · <a href="../registry.html#SparkElf__dsh-plugins-plus">this plugin in the registry</a></p>
+  <p>SparkElf/dsh-plugins-plus is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/verify-published-peers.mjs:17, scripts/verify-published-peers.mjs:17</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×15 in authored code, e.g. packages/api-client/src/executor.ts:67, packages/api-client/src/executor.ts:85</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. packages/mobile-bridge-server/src/server.ts:365, packages/ssh-manager/src/forward.ts:128</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DATAOPS_ADMIN_PASSWORD, MOBILE_BRIDGE_SECRET, SMTP_PASSWORD, SSH_AUTH_SOCK</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: MINERU_DEPLOY_SSH_PASSWORD</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>84 static tool registration point(s).</p><ul><li><code>packages/api-client/src/index.ts:88</code> tools.register</li><li><code>packages/api-client/src/index.ts:88</code> tool factory</li><li><code>packages/api-client/src/index.ts:89</code> tools.register</li><li><code>packages/api-client/src/index.ts:89</code> tool factory</li><li><code>packages/api-client/src/index.ts:90</code> tools.register</li><li><code>packages/api-client/src/index.ts:90</code> tool factory</li><li><code>packages/api-client/src/index.ts:109</code> tools.register</li><li><code>packages/api-client/src/index.ts:109</code> tool factory</li><li><code>packages/api-client/src/index.ts:173</code> tools.register</li><li><code>packages/api-client/src/index.ts:173</code> tool factory</li><li><code>packages/api-client/src/index.ts:213</code> tools.register</li><li><code>packages/api-client/src/index.ts:213</code> tool factory</li><li><code>packages/chart/src/index.ts:42</code> tools.register</li><li><code>packages/chart/src/index.ts:42</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:95</code> tools.register</li><li><code>packages/dataops-managed/src/tools.ts:138</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:151</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:166</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:181</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:196</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:211</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:228</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:248</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:272</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:288</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:327</code> tool factory</li><li><code>packages/dataops-managed/src/tools.ts:342</code> tool factory</li><li><code>packages/knowledge-base/src/index.ts:5701</code> tools.register</li><li><code>packages/knowledge-base/src/index.ts:5701</code> tool factory</li><li><code>packages/knowledge-base/src/index.ts:6817</code> tools.register</li><li><code>packages/knowledge-base/src/index.ts:6824</code> tools.register</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:369</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:429</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:463</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:552</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:591</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:645</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:679</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:702</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:780</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:811</code> tool factory</li><li><code>packages/knowledge-base/src/knowledgeTools.ts:831</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:341</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:352</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:368</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:383</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:411</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:438</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:453</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:477</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:488</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:499</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:513</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:533</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:548</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:563</code> tool factory</li><li><code>packages/knowledge-base/src/managementTools.ts:577</code> tool factory</li><li><code>packages/mineru/src/index.ts:223</code> tools.register</li><li><code>packages/mineru/src/index.ts:223</code> tool factory</li><li><code>packages/officecli/src/index.ts:43</code> tools.register</li><li><code>packages/officecli/src/index.ts:43</code> tool factory</li><li><code>packages/query-result-analysis/src/index.ts:411</code> tools.register</li><li><code>packages/query-result-analysis/src/index.ts:411</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:120</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:120</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:121</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:121</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:122</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:122</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:123</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:123</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:124</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:124</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:125</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:125</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:126</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:126</code> tool factory</li><li><code>packages/ssh-manager/src/index.ts:127</code> tools.register</li><li><code>packages/ssh-manager/src/index.ts:127</code> tool factory</li><li><code>packages/task-bus/src/index.ts:136</code> tool factory</li><li><code>packages/task-bus/src/index.ts:290</code> tools.register</li><li><code>packages/task-bus/src/index.ts:313</code> tools.register</li><li><code>packages/task-bus/src/index.ts:325</code> tools.register</li><li><code>packages/task-bus/src/index.ts:361</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>attachments</span> <span>chatFileMentions</span> <span>commands</span> <span>conversation</span> <span>credentials</span> <span>invariants</span> <span>locale</span> <span>sessionController</span> <span>sessions</span> <span>settings</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>skills</span> <span>slots</span> <span>subagents</span> <span>tools</span> <span>uiConversation</span> <span>uiWorkspace</span> <span>webServer</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.tokensfree.eu.cc</span> <span>api.weixin.qq.com</span> <span>schema.getpostman.com</span> <span>api.example.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>SMTP_PORT</span> <span>SMTP_USERNAME</span> <span>SSH_AUTH_SOCK</span> <span>DATAOPS_AI_WORKSPACE_MOUNT_PATH</span> <span>DSH_USER_PATCH</span> <span>DATAOPS_ADMIN_USER</span> <span>DATAOPS_ADMIN_PASSWORD</span> <span>DATAOPS_BASE_URL</span> <span>USERPROFILE</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

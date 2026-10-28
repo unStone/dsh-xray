@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>sundusk/dsh-pet is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/CommandBridge.ts:185, src/LocalStateBridge.ts:92</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/CommandBridge.ts:187, src/LocalStateBridge.ts:94</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>sessionController</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/created</span> <span>session/disposed</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>MOODBALL_COMMAND_SOCKET_PATH</span> <span>MOODBALL_SOCKET_PATH</span> <span>MOODBALL_PROFILE</span> <span>DSH_PROFILE</span> <span>MOODBALL_HARNESS_KIND</span> <span>MOODBALL_HARNESS_TYPE</span> <span>MOODBALL_WEB_URL</span> <span>DSH_WEB_URL</span> <span>MOODBALL_TARGET_ID</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PET_COMMAND_SOCKET_PATH</span> <span>MOODBALL_COMMAND_SOCKET_PATH</span> <span>DSH_PET_SOCKET_PATH</span> <span>MOODBALL_SOCKET_PATH</span> <span>DSH_PET_PROFILE</span> <span>MOODBALL_PROFILE</span> <span>DSH_PROFILE</span> <span>DSH_PET_HARNESS_KIND</span> <span>MOODBALL_HARNESS_KIND</span> <span>DSH_PET_HARNESS_TYPE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

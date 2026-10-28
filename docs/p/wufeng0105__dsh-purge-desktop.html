@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wufeng0105/dsh-purge-desktop — capability card (C3) · dsh-xray</title>
+<meta name="description" content="wufeng0105/dsh-purge-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/wufeng0105__dsh-purge-desktop.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wufeng0105/dsh-purge-desktop — dsh plugin capability card">
+<meta property="og:description" content="wufeng0105/dsh-purge-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/wufeng0105__dsh-purge-desktop.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-purge-desktop", "identifier": "wufeng0105/dsh-purge-desktop", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wufeng0105/dsh-purge-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/wufeng0105/dsh-purge-desktop", "url": "https://unstone.github.io/dsh-xray/p/wufeng0105__dsh-purge-desktop.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>wufeng0105/dsh-purge-desktop</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">DeepSeek Harness 插件：把宿主拦截与模型拒绝分开，用可复算的方式改造官方桌面端（设置页五页签 + 演练台）</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/wufeng0105/dsh-purge-desktop" rel="nofollow ugc">wufeng0105/dsh-purge-desktop source on GitHub</a>
+     · <a href="../registry.html#wufeng0105__dsh-purge-desktop">this plugin in the registry</a></p>
+  <p>wufeng0105/dsh-purge-desktop is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×20 in authored code, e.g. scripts/check-artifact-names.mjs:50, scripts/check-artifact-names.mjs:50</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/index.js:3110, lib/skills.js:721</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>59 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:1776</code> tools.register</li><li><code>lib/index.js:1797</code> tools.register</li><li><code>lib/index.js:1884</code> tools.register</li><li><code>lib/redteam/tools.js:408</code> tools.register</li><li><code>lib/redteam/tools.js:437</code> tools.register</li><li><code>lib/redteam/tools.js:470</code> tools.register</li><li><code>lib/redteam/tools.js:486</code> tools.register</li><li><code>lib/redteam/tools.js:729</code> tools.register</li><li><code>lib/redteam/tools.js:784</code> tools.register</li><li><code>lib/redteam/tools.js:869</code> tools.register</li><li><code>lib/redteam/tools.js:895</code> tools.register</li><li><code>lib/redteam/tools.js:927</code> tools.register</li><li><code>lib/redteam/tools.js:943</code> tools.register</li><li><code>lib/redteam/tools.js:954</code> tools.register</li><li><code>lib/redteam/tools.js:978</code> tools.register</li><li><code>lib/redteam/tools.js:1000</code> tools.register</li><li><code>lib/redteam/tools.js:1013</code> tools.register</li><li><code>lib/redteam/tools.js:1037</code> tools.register</li><li><code>lib/redteam/tools.js:1063</code> tools.register</li><li><code>lib/redteam/tools.js:1084</code> tools.register</li><li><code>lib/redteam/tools.js:1107</code> tools.register</li><li><code>lib/redteam/tools.js:1133</code> tools.register</li><li><code>lib/redteam/tools.js:1159</code> tools.register</li><li><code>lib/redteam/tools.js:1177</code> tools.register</li><li><code>lib/redteam/tools.js:1191</code> tools.register</li><li><code>lib/redteam/tools.js:1206</code> tools.register</li><li><code>lib/redteam/tools.js:1228</code> tools.register</li><li><code>lib/redteam/tools.js:1242</code> tools.register</li><li><code>lib/redteam/tools.js:1262</code> tools.register</li><li><code>lib/redteam/tools.js:1287</code> tools.register</li><li><code>lib/redteam/tools.js:1310</code> tools.register</li><li><code>lib/redteam/tools.js:1325</code> tools.register</li><li><code>lib/redteam/tools.js:1344</code> tools.register</li><li><code>lib/redteam/tools.js:1370</code> tools.register</li><li><code>lib/redteam/tools.js:1384</code> tools.register</li><li><code>lib/redteam/tools.js:1406</code> tools.register</li><li><code>lib/redteam/tools.js:1427</code> tools.register</li><li><code>lib/redteam/tools.js:1457</code> tools.register</li><li><code>lib/redteam/tools.js:1481</code> tools.register</li><li><code>lib/redteam/tools.js:1494</code> tools.register</li><li><code>lib/redteam/tools.js:1530</code> tools.register</li><li><code>lib/redteam/tools.js:1574</code> tools.register</li><li><code>lib/redteam/tools.js:1595</code> tools.register</li><li><code>lib/redteam/tools.js:1617</code> tools.register</li><li><code>lib/redteam/tools.js:1641</code> tools.register</li><li><code>lib/redteam/tools.js:1677</code> tools.register</li><li><code>lib/redteam/tools.js:1688</code> tools.register</li><li><code>lib/redteam/tools.js:1712</code> tools.register</li><li><code>lib/redteam/tools.js:1727</code> tools.register</li><li><code>lib/redteam/tools.js:1746</code> tools.register</li><li><code>lib/redteam/tools.js:1775</code> tools.register</li><li><code>lib/redteam/tools.js:1796</code> tools.register</li><li><code>lib/redteam/tools.js:1813</code> tools.register</li><li><code>lib/redteam/tools.js:1872</code> tools.register</li><li><code>lib/redteam/tools.js:1887</code> tools.register</li><li><code>lib/redteam/tools.js:1938</code> tools.register</li><li><code>lib/redteam/tools.js:1956</code> tools.register</li><li><code>lib/redteam/tools.js:1979</code> tools.register</li><li><code>lib/redteam/tools.js:1996</code> tools.register</li><li><code>lib/index.js:822</code> Context or tools service passed to an unresolved helper</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>redteam</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent-preset/selected</span> <span>agent/inbox/claimed</span> <span>agent/pre-step</span> <span>agent/request</span> <span>session/created</span> <span>session/event</span> <span>subagent/end</span> <span>system-prompt/assemble</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>codeload.github.com</span> <span>fofa.info</span> <span>oa.example.com</span> <span>oa.demo.com</span> <span>api.github.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_SURFACE</span> <span>DSH_BASE</span> <span>DSH_PERMISSION_MODE</span> <span>DSH_DESKTOP_INSTALL</span> <span>LOCALAPPDATA</span> <span>TEMP</span> <span>REDTEAM_HOME</span> <span>DSH_SYSTEM_PROMPT</span> <span>DSH_PURGE_LOG</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>
