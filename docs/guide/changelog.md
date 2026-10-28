@@ -6,9 +6,9 @@
 
 ## 2026-10-28 · Registry first load and pagination
 
-The registry now includes the first 50 summaries in its HTML instead of waiting for the complete scan dataset. Search and filters load a compact index when used; capability evidence loads by shard when a row opens. Pagination keeps at most 50 rows in the DOM, including after a search. Failed requests expose a retry action, and hash links still open the relevant evidence card.
+The registry now includes the first 50 summaries in its HTML instead of waiting for the complete scan dataset. Search and filters load index chunks of at most 500 summaries with up to eight requests in parallel, a progress indicator, and reuse of successful chunks on retry. Capability evidence loads by shard when a row opens. Pagination keeps at most 50 rows in the DOM, including after a search. Failed requests expose a retry action, and hash links still open the relevant evidence card.
 
-The home page loads a separate statistics file. Daily scanning generates the same assets automatically, while content-addressed current and previous generations keep cached pages consistent with their evidence.
+The home page loads a separate statistics file. Daily scanning generates the same assets automatically, while content-addressed client code and current/previous data generations keep cached pages consistent with their evidence.
 
 ---
 

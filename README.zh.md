@@ -83,7 +83,7 @@ python render_pages.py                  # 生成插件页、聚合页、sitemap�
 
 产物:`data/scans/*.json`(完整卡片)、`docs/data.json`(完整机器可读快照)、`docs/badge/*.json`(徽章端点)、`docs/p/*.html`(每插件页面)。每日 GitHub Action 自动刷新全部内容。
 
-`python scanner/render_registry.py` 生成 `docs/stats.json`、内嵌到 `registry.html` 的首批 50 条摘要，以及 `docs/registry/` 下带内容哈希的搜索索引和详情 JSON。搜索时按需加载摘要索引，每页最多渲染 50 条；展开记录时加载 64 个证据分片中的一个。当前和上一代资源保留供缓存页面使用，完整 `data.json` 的接口保持不变。
+`python scanner/render_registry.py` 生成 `docs/stats.json`、内嵌到 `registry.html` 的首批 50 条摘要，以及 `docs/registry/` 下带内容哈希的客户端脚本、搜索索引和详情 JSON。搜索索引每片最多 500 条摘要，最多 8 个请求并发加载，重试复用已成功的分片。每页最多渲染 50 条；展开记录时加载 64 个证据分片中的一个。当前和上一代资源保留供缓存页面使用，完整 `data.json` 的接口保持不变。
 
 发布文件使用 npm 官方 `npm-packlist` 判定，支持 `files` 否定规则、强制入口和嵌套忽略文件。
 工具注册通过 AST 跟踪上下文注入、服务别名及本地 helper；计数表示静态注册调用点，

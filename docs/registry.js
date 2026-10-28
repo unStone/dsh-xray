@@ -10,6 +10,7 @@
   const status = document.getElementById('loadStatus');
   const search = document.getElementById('q');
   const shardRequests = new Map();
+  const searchRequests = new Map();
   let index = null, indexRequest = null, page = 0, lv = 'all', pluginOnly = false, query = '';
   let navigation = 0;
   const esc = value => String(value ?? '').replace(/[&<>"']/g,
@@ -31,7 +32,31 @@
   function loadIndex() {
     if (index) return Promise.resolve(index);
     if (!indexRequest) {
-      indexRequest = fetchJSON(boot.index).then(entries => {
+      const paths = boot.indexes || [boot.index];
+      const parts = new Array(paths.length);
+      let cursor = 0, completed = 0;
+      const loadPart = async () => {
+        while (cursor < paths.length) {
+          const position = cursor++;
+          const path = paths[position];
+          if (!searchRequests.has(path)) {
+            searchRequests.set(path, fetchJSON(path).then(entries => {
+              if (!Array.isArray(entries)) throw new Error(`Invalid search shard: ${path}`);
+              return entries;
+            }).catch(error => { searchRequests.delete(path); throw error; }));
+          }
+          parts[position] = await searchRequests.get(path);
+          completed++;
+          setStatus(t('reg.indexProgress', completed, paths.length));
+        }
+      };
+      const workers = Array.from({length: Math.min(8, paths.length)}, loadPart);
+      // Wait for in-flight requests before exposing retry, so old progress cannot
+      // overwrite a later failure/retry state. Successful chunks remain cached.
+      indexRequest = Promise.allSettled(workers).then(results => {
+        const failure = results.find(result => result.status === 'rejected');
+        if (failure) throw failure.reason;
+        const entries = parts.flat();
         if (!Array.isArray(entries) || entries.length !== boot.total) {
           throw new Error(`Invalid registry index: expected ${boot.total} entries`);
         }

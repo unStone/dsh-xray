@@ -31,7 +31,11 @@ class RegistryBuildTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(dir=intermediate)
         self.docs = pathlib.Path(self.temp.name)
         (self.docs / 'registry.html').write_text(
+            '<head><!--REGISTRY_STYLE_START--><!--REGISTRY_STYLE_END--></head>'
             '<body><!--REGISTRY_BOOTSTRAP_START--><!--REGISTRY_BOOTSTRAP_END--></body>')
+        (self.docs / 'registry.js').write_text('window.registryReady = true;')
+        (self.docs / 'i18n.js').write_text('window.xray = {};')
+        (self.docs / 'style.css').write_text('body { margin: 0; }')
 
     def tearDown(self):
         self.temp.cleanup()
@@ -43,7 +47,7 @@ class RegistryBuildTests(unittest.TestCase):
     def test_index_and_shards_preserve_every_repo_and_evidence(self):
         data = dataset()
         manifest = self.build(data)
-        index = json.loads((self.docs / manifest['index']).read_text())
+        index = [p for path in manifest['indexes'] for p in json.loads((self.docs / path).read_text())]
         self.assertEqual([p['repo'] for p in index], [p['repo'] for p in data['plugins']])
         self.assertEqual(index[-1]['injects'], data['plugins'][-1]['injects'])
         self.assertNotIn('tool_reg_evidence', index[0])
@@ -70,6 +74,9 @@ class RegistryBuildTests(unittest.TestCase):
         self.assertEqual(len(boot['initial']), 50)
         self.assertEqual(boot['index'], manifest['index'])
         self.assertEqual(boot['details'], manifest['details'])
+        self.assertIn(f'<script src="{manifest["app"]}">', page)
+        self.assertIn(f'<script src="{manifest["i18n"]}">', page)
+        self.assertIn(f'<link rel="stylesheet" href="{manifest["style"]}">', page)
         self.assertLess(len(gzip.compress(content.encode())), 12000)
 
     def test_deterministic_outputs_and_one_previous_generation_survives(self):
@@ -99,6 +106,17 @@ class RegistryBuildTests(unittest.TestCase):
         (self.docs / 'registry.html').write_text('<html></html>')
         with self.assertRaisesRegex(ValueError, 'marker'):
             self.build(dataset())
+
+    def test_search_chunks_are_bounded_and_client_code_is_content_addressed(self):
+        first = self.build(dataset(1234))
+        self.assertEqual(len(first['indexes']), 3)
+        for path in first['indexes']:
+            self.assertLessEqual(len(json.loads((self.docs / path).read_text())), 500)
+        (self.docs / 'registry.js').write_text('window.registryReady = 2;')
+        second = self.build(dataset(1234))
+        self.assertNotEqual(first['app'], second['app'])
+        self.assertTrue((self.docs / first['app']).exists())
+        self.assertEqual((self.docs / second['app']).read_text(), 'window.registryReady = 2;')
 
 
 if __name__ == '__main__':
