@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hisence999/dsh-browser — capability card (C3) · dsh-xray</title>
+<meta name="description" content="hisence999/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, decodes base64 payloads, starts a network server.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/hisence999__dsh-browser.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hisence999/dsh-browser — dsh plugin capability card">
+<meta property="og:description" content="hisence999/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, decodes base64 payloads, starts a network server.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/hisence999__dsh-browser.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-browser", "identifier": "hisence999/dsh-browser", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hisence999/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/hisence999/dsh-browser", "url": "https://unstone.github.io/dsh-xray/p/hisence999__dsh-browser.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>hisence999/dsh-browser</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">Chrome 浏览器扩展 + DeepSeek Harness 插件：让 AI Agent 通过 CDP 直接操控你的真实浏览器（继承登录态，无需重登）。</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/hisence999/dsh-browser" rel="nofollow ugc">hisence999/dsh-browser source on GitHub</a>
+     · <a href="../registry.html#hisence999__dsh-browser">this plugin in the registry</a></p>
+  <p>hisence999/dsh-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, decodes base64 payloads, starts a network server.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. src/index.ts:608, src/index.ts:639</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. src/server.ts:198, verify/verify_settings_mount.mjs:140</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>74 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:1736</code> tool factory</li><li><code>lib/index.js:1809</code> tool factory</li><li><code>lib/index.js:1904</code> tool factory</li><li><code>lib/index.js:2003</code> tool factory</li><li><code>lib/index.js:2046</code> tool factory</li><li><code>lib/index.js:2101</code> tool factory</li><li><code>lib/index.js:2142</code> tool factory</li><li><code>lib/index.js:2185</code> tool factory</li><li><code>lib/index.js:2242</code> tool factory</li><li><code>lib/index.js:2282</code> tool factory</li><li><code>lib/index.js:2333</code> tool factory</li><li><code>lib/index.js:2366</code> tool factory</li><li><code>lib/index.js:2389</code> tool factory</li><li><code>lib/index.js:2484</code> tool factory</li><li><code>lib/index.js:2563</code> tool factory</li><li><code>lib/index.js:2624</code> tool factory</li><li><code>lib/index.js:2679</code> tool factory</li><li><code>lib/index.js:2717</code> tool factory</li><li><code>lib/index.js:2815</code> tool factory</li><li><code>lib/index.js:2930</code> tool factory</li><li><code>lib/index.js:2968</code> tool factory</li><li><code>lib/index.js:3046</code> tool factory</li><li><code>lib/index.js:3166</code> tool factory</li><li><code>lib/index.js:3297</code> tool factory</li><li><code>lib/types/index.js:480</code> tools.register</li><li><code>lib/types/index.js:524</code> tool factory</li><li><code>lib/types/index.js:590</code> tool factory</li><li><code>lib/types/index.js:641</code> tool factory</li><li><code>lib/types/index.js:725</code> tool factory</li><li><code>lib/types/index.js:748</code> tool factory</li><li><code>lib/types/index.js:774</code> tool factory</li><li><code>lib/types/index.js:796</code> tool factory</li><li><code>lib/types/index.js:818</code> tool factory</li><li><code>lib/types/index.js:847</code> tool factory</li><li><code>lib/types/index.js:869</code> tool factory</li><li><code>lib/types/index.js:894</code> tool factory</li><li><code>lib/types/index.js:916</code> tool factory</li><li><code>lib/types/index.js:929</code> tool factory</li><li><code>lib/types/index.js:996</code> tool factory</li><li><code>lib/types/index.js:1047</code> tool factory</li><li><code>lib/types/index.js:1091</code> tool factory</li><li><code>lib/types/index.js:1125</code> tool factory</li><li><code>lib/types/index.js:1150</code> tool factory</li><li><code>lib/types/index.js:1218</code> tool factory</li><li><code>lib/types/index.js:1302</code> tool factory</li><li><code>lib/types/index.js:1327</code> tool factory</li><li><code>lib/types/index.js:1376</code> tool factory</li><li><code>lib/types/index.js:1485</code> tool factory</li><li><code>lib/types/index.js:1586</code> tool factory</li><li><code>src/index.ts:673</code> tools.register</li><li><code>src/index.ts:719</code> tool factory</li><li><code>src/index.ts:788</code> tool factory</li><li><code>src/index.ts:844</code> tool factory</li><li><code>src/index.ts:935</code> tool factory</li><li><code>src/index.ts:957</code> tool factory</li><li><code>src/index.ts:983</code> tool factory</li><li><code>src/index.ts:1004</code> tool factory</li><li><code>src/index.ts:1027</code> tool factory</li><li><code>src/index.ts:1054</code> tool factory</li><li><code>src/index.ts:1075</code> tool factory</li><li><code>src/index.ts:1098</code> tool factory</li><li><code>src/index.ts:1120</code> tool factory</li><li><code>src/index.ts:1134</code> tool factory</li><li><code>src/index.ts:1196</code> tool factory</li><li><code>src/index.ts:1247</code> tool factory</li><li><code>src/index.ts:1294</code> tool factory</li><li><code>src/index.ts:1327</code> tool factory</li><li><code>src/index.ts:1354</code> tool factory</li><li><code>src/index.ts:1424</code> tool factory</li><li><code>src/index.ts:1507</code> tool factory</li><li><code>src/index.ts:1532</code> tool factory</li><li><code>src/index.ts:1575</code> tool factory</li><li><code>src/index.ts:1689</code> tool factory</li><li><code>src/index.ts:1787</code> tool factory</li><li><code>lib/index.js:1725</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>invariants</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span></p>
+  
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>CDP_RETRY_FIXED</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>xsllo425/dsh-agent-menu</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness context menus and native sidebar directory actions</p>
+  <p class="lede">DeepSeek Harness 右键菜单增强插件：对话区与侧栏的复制、打开位置、工作区菜单重排、会话删除与汉化</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/xsllo425/dsh-agent-menu" rel="nofollow ugc">xsllo425/dsh-agent-menu source on GitHub</a>
      · <a href="../registry.html#xsllo425__dsh-agent-menu">this plugin in the registry</a></p>
   <p>xsllo425/dsh-agent-menu is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/index.js:20, lib/index.js:118</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/client.js:1412</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. lib/index.js:21, lib/index.js:120</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/client.js:1692</code> Cannot establish the tools service binding</li><li><code>lib/client.js:1714</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

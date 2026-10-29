@@ -46,14 +46,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣</p>
-  <p class="lede">★ 3.2k ·
+  <p class="lede">★ 3.3k ·
      <a href="https://github.com/ranxianglei/billion-context" rel="nofollow ugc">ranxianglei/billion-context source on GitHub</a>
      · <a href="../registry.html#ranxianglei__billion-context">this plugin in the registry</a></p>
   <p>ranxianglei/billion-context is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./dsh.bundle.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×86 in authored code, e.g. scripts/check-dist-thin-install.mjs:14, scripts/check-dist-thin-install.mjs:14</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. src/apig-resign.ts:195, src/encrypt.ts:66</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×15 in authored code, e.g. scripts/release-gate-local.mjs:100, scripts/release-gate-local.mjs:101</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ACP_COUNT_TOKENS_PASSTHROUGH, ACP_PASSTHROUGH, BILI_DSH_AUTHORED_COMPACTION, BILI_ENCRYPTION_KEY, BILI_IMAGE_TOKEN_CAP, BILI_LAUNCH_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/agent/dsh-native.ts:981</code> Cannot establish the tools service binding</li></ul><p class="lede">996 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/agent/dsh-native.ts:981</code> Cannot establish the tools service binding</li></ul><p class="lede">998 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>locale</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/config</span> <span>session/created</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.anthropic.com</span> <span>api.openai.com</span> <span>api.github.com</span> <span>chatgpt.com</span> <span>open.bigmodel.cn</span> <span>models.dev</span> <span>tencent.sso.codebuddy.cn</span> <span>registry.npmmirror.com</span> <span>billion-context.inline</span> <span>generativelanguage.googleapis.com</span></p>

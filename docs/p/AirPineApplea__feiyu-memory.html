@@ -46,14 +46,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Cross-session persona and diary for DeepSeek Harness. A local gate decides what is worth remembering; later conversations get ~2000 tokens of it as a self-memory block in three registers: a persona co</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/AirPineApplea/feiyu-memory" rel="nofollow ugc">AirPineApplea/feiyu-memory source on GitHub</a>
      · <a href="../registry.html#AirPineApplea__feiyu-memory">this plugin in the registry</a></p>
   <p>AirPineApplea/feiyu-memory is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes commands in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. tools/doctor.mjs:33</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>src/host/index.mjs:1774</code> tools.register</li><li><code>src/host/index.mjs:1890</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/host/index.mjs:2178</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>llm</span> <span>sessions</span> <span>slots</span> <span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>agent/turn-stopping</span> <span>session/event</span></p>
   

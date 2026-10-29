@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>YunoSeng/dsh-ensp</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">让 AI 直接开华为 eNSP 做网络实验的 DSH 插件：批量 GUI 驱动 + telnet 下发 + .topo 读写 + 实验报告生成</p>
+  <p class="lede">让 AI 更好地使用华为 eNSP 做网络实验的 DSH 插件：批量 GUI 驱动 + telnet 下发 + .topo 读写 + 实验报告生成</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/YunoSeng/dsh-ensp" rel="nofollow ugc">YunoSeng/dsh-ensp source on GitHub</a>
      · <a href="../registry.html#YunoSeng__dsh-ensp">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. index.js:1</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>7 static tool registration point(s).</p><ul><li><code>index.js:307</code> tool factory</li><li><code>index.js:411</code> tool factory</li><li><code>index.js:571</code> tool factory</li><li><code>index.js:644</code> tool factory</li><li><code>index.js:769</code> tool factory</li><li><code>index.js:848</code> tool factory</li><li><code>index.js:998</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>6 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:307</code> tool factory</li><li><code>index.js:411</code> tool factory</li><li><code>index.js:571</code> tool factory</li><li><code>index.js:644</code> tool factory</li><li><code>index.js:774</code> tool factory</li><li><code>index.js:853</code> tool factory</li><li><code>index.js:989</code> Cannot establish the tools service binding</li><li><code>index.js:1003</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>systemPrompt</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>ProgramFiles</span> <span>USERPROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>ProgramFiles</span> <span>USERPROFILE</span> <span>ENSP_MCP_WORKSPACE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

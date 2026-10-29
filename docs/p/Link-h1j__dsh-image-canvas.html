@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Link-h1j/dsh-image-canvas — capability card (C2) · dsh-xray</title>
-<meta name="description" content="Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship, base64 decoding in build output">
+<meta name="description" content="Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval in development tooling the package does n">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Link-h1j__dsh-image-canvas.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Link-h1j/dsh-image-canvas — dsh plugin capability card">
-<meta property="og:description" content="Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship, base64 decoding in build output">
+<meta property="og:description" content="Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval in development tooling the package does n">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Link-h1j__dsh-image-canvas.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-image-canvas", "identifier": "Link-h1j/dsh-image-canvas", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship, base64 decoding in build output only.", "codeRepository": "https://github.com/Link-h1j/dsh-image-canvas", "url": "https://unstone.github.io/dsh-xray/p/Link-h1j__dsh-image-canvas.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-image-canvas", "identifier": "Link-h1j/dsh-image-canvas", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/Link-h1j/dsh-image-canvas", "url": "https://unstone.github.io/dsh-xray/p/Link-h1j__dsh-image-canvas.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,14 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/Link-h1j/dsh-image-canvas" rel="nofollow ugc">Link-h1j/dsh-image-canvas source on GitHub</a>
      · <a href="../registry.html#Link-h1j__dsh-image-canvas">this plugin in the registry</a></p>
-  <p>Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship, base64 decoding in build output only.</p>
+  <p>Link-h1j/dsh-image-canvas is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, uses eval in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×7 in development tooling the package does not ship, e.g. tools/preview.mjs:15, tools/preview.mjs:15</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/preview.mjs:82, tools/selftest.mjs:103</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/client.body.js:430, lib/client.js:439</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/selftest.mjs:140, tools/shot.mjs:94</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. vendor/_work/cdp-shot.mjs:7, vendor/_work/cdp-shot.mjs:49</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×7 in development tooling the package does not ship, e.g. tools/preview.mjs:15, tools/preview.mjs:15</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. tools/preview.mjs:82, tools/selftest-helpers.mjs:49</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×5 in build output only, e.g. lib/client.body.js:750, lib/client.js:759</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/selftest.mjs:140, tools/shot.mjs:94</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. vendor/_work/serve.mjs:33</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>remote</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>remote</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
   
-  
+  <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>cdn.jsdelivr.net</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_IMAGE_CANVAS_COMFY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
