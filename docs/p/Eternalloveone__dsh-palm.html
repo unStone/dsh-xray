@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eternalloveone/dsh-palm — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.">
+<meta name="description" content="Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, uses eval in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Eternalloveone__dsh-palm.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eternalloveone/dsh-palm — dsh plugin capability card">
-<meta property="og:description" content="Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, uses eval in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Eternalloveone__dsh-palm.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-palm", "identifier": "Eternalloveone/dsh-palm", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/Eternalloveone/dsh-palm", "url": "https://unstone.github.io/dsh-xray/p/Eternalloveone__dsh-palm.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-palm", "identifier": "Eternalloveone/dsh-palm", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/Eternalloveone/dsh-palm", "url": "https://unstone.github.io/dsh-xray/p/Eternalloveone__dsh-palm.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,14 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Eternalloveone/dsh-palm" rel="nofollow ugc">Eternalloveone/dsh-palm source on GitHub</a>
      · <a href="../registry.html#Eternalloveone__dsh-palm">this plugin in the registry</a></p>
-  <p>Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, decodes base64 payloads.</p>
+  <p>Eternalloveone/dsh-palm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can intercept API traffic, executes system commands, uses eval in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>webServer, api/gate</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×29 in authored code, e.g. perf/run-t1.mjs:7, perf/run-t1.mjs:7</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×10 in authored code, e.g. scripts/capture-gif.mjs:595, scripts/capture-gif.mjs:773</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can intercept API traffic</td><td><code>api_intercept</code></td><td>webServer, api/gate</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×30 in authored code, e.g. perf/run-t1.mjs:7, perf/run-t1.mjs:7</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. packages/dsh-palm/scripts/replay-locate.mjs:136</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×11 in authored code, e.g. scripts/capture-gif.mjs:595, scripts/capture-gif.mjs:773</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>connection</span> <span>locale</span> <span>remote</span> <span>sessionController</span> <span>settingsController</span> <span>slots</span> <span>subagents</span> <span>webServer</span> <span>workspaceController</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>api/gate</span> <span>approval/request</span> <span>user-questions/request</span> <span>webserver/index-inject</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>ollama.com</span> <span>your-tunnel.example.com</span> <span>ollama.example.dev</span> <span>api.example-moonshot.dev</span> <span>openrouter.example.dev</span> <span>sctapi.ftqq.com</span> <span>api.day.app</span> <span>api.telegram.org</span> <span>wxpusher.zjiecode.com</span> <span>www.pushplus.plus</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>api/gate</span> <span>approval/request</span> <span>settings/document-updated</span> <span>user-questions/request</span> <span>webserver/index-inject</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span> <span>ollama.com</span> <span>openrouter.ai</span> <span>platform.deepseek.com</span> <span>platform.moonshot.cn</span> <span>your-tunnel.example.com</span> <span>cloud.siliconflow.cn</span> <span>bigmodel.cn</span> <span>platform.openai.com</span> <span>console.anthropic.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PALM_REPO</span> <span>HTTPS_PROXY</span> <span>https_proxy</span> <span>PERF_BASE</span> <span>FFMPEG</span> <span>DSH_PALM_GIT_PROXY</span> <span>PERF_OUT</span> <span>GIF_PROBE</span> <span>FFPROBE</span> <span>DSH_PALM_PATHS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

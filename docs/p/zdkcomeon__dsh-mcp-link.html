@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>zdkcomeon/dsh-mcp-link</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">在 DeepSeek Harness 中集中查看本机 MCP 配置，并将选中的服务接入当前 DSH profile。  dsh-mcp-link 是一个 DSH 插件，提供左侧导航入口和设置页入口，支持扫描系统 MCP 配置、按来源切换、扫描项目工作区、JSON 导入、图形化新增、编辑和移除。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/zdkcomeon/dsh-mcp-link" rel="nofollow ugc">zdkcomeon/dsh-mcp-link source on GitHub</a>
      · <a href="../registry.html#zdkcomeon__dsh-mcp-link">this plugin in the registry</a></p>
   <p>zdkcomeon/dsh-mcp-link is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. scripts/build.mjs:2, scripts/build.mjs:13</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>loader</span> <span>locale</span> <span>slots</span> <span>workspaces</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. scripts/build.mjs:2, scripts/build.mjs:13</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/index.ts:80</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>loader</span> <span>locale</span> <span>slots</span> <span>tools</span> <span>workspaces</span></p>
   
   
   

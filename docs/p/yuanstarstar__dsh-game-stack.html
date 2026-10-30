@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>yuanstarstar/dsh-game-stack — capability card (C2) · dsh-xray</title>
+<meta name="description" content="yuanstarstar/dsh-game-stack is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, network server in build output only.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/yuanstarstar__dsh-game-stack.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yuanstarstar/dsh-game-stack — dsh plugin capability card">
+<meta property="og:description" content="yuanstarstar/dsh-game-stack is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, network server in build output only.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/yuanstarstar__dsh-game-stack.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-game-stack", "identifier": "yuanstarstar/dsh-game-stack", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yuanstarstar/dsh-game-stack is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, network server in build output only.", "codeRepository": "https://github.com/yuanstarstar/dsh-game-stack", "url": "https://unstone.github.io/dsh-xray/p/yuanstarstar__dsh-game-stack.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>yuanstarstar/dsh-game-stack</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">DSH 打游戏插件合集：游戏感知 / 视觉实体 / 游戏学习（规则+流程+闸门+知识库）/ 直播桥 / 启动器，5 个可安装 bundle 一键安装</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/yuanstarstar/dsh-game-stack" rel="nofollow ugc">yuanstarstar/dsh-game-stack source on GitHub</a>
+     · <a href="../registry.html#yuanstarstar__dsh-game-stack">this plugin in the registry</a></p>
+  <p>yuanstarstar/dsh-game-stack is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, network server in build output only.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×15 in build output only, e.g. 01-coach-perceive/bundle/host.js:13, 01-coach-perceive/bundle/host.js:182</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×6 in build output only, e.g. 05-launcher/bundle/scripts/catalog-test.mjs:153, 05-launcher/bundle/scripts/catalog-test.mjs:162</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>54 static tool registration point(s).</p><ul><li><code>01-coach-perceive/bundle/host.js:323</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:343</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:407</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:448</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:481</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:516</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:547</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:591</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:637</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:663</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:698</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:725</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:762</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:792</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:822</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:846</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:871</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:884</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:916</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:967</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:986</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:1008</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:1029</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:1045</code> tools.register</li><li><code>01-coach-perceive/bundle/host.js:1070</code> tools.register</li><li><code>02-game-learn/bundle/lib/coach.js:206</code> tools.register</li><li><code>02-game-learn/bundle/lib/coach.js:291</code> tools.register</li><li><code>02-game-learn/bundle/lib/coach.js:422</code> tools.register</li><li><code>02-game-learn/bundle/lib/coach.js:531</code> tools.register</li><li><code>02-game-learn/bundle/lib/guard.js:785</code> tools.register</li><li><code>02-game-learn/bundle/lib/guard.js:795</code> tools.register</li><li><code>02-game-learn/bundle/lib/guard.js:842</code> tools.register</li><li><code>02-game-learn/bundle/lib/guard.js:880</code> tools.register</li><li><code>02-game-learn/bundle/lib/guard.js:913</code> tools.register</li><li><code>02-game-learn/bundle/lib/guard.js:969</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:951</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:961</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:992</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1050</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1074</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1100</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1179</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1218</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1259</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1303</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1351</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1395</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1429</code> tools.register</li><li><code>02-game-learn/bundle/lib/rules.js:1469</code> tools.register</li><li><code>03-cv-recall/bundle/host.js:395</code> tools.register</li><li><code>03-cv-recall/bundle/host.js:562</code> tools.register</li><li><code>03-cv-recall/bundle/host.js:616</code> tools.register</li><li><code>04-live-bridge/bundle/lib/tools.js:42</code> tools.register</li><li><code>05-launcher/bundle/index.js:242</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
+  
+  <h2>Outbound domains</h2><p class="kv"><span>www.bilibili.com</span> <span>api.bilibili.com</span> <span>api.live.bilibili.com</span> <span>live.bilibili.com</span> <span>passport.bilibili.com</span> <span>api.github.com</span> <span>openspeech.bytedance.com</span> <span>cdn.jsdelivr.net</span> <span>fastly.jsdelivr.net</span> <span>gh-proxy.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_LAUNCHER_BRIDGE_DIR</span> <span>DSH_HOME</span> <span>SystemRoot</span> <span>DSH_COACH_PYTHON</span> <span>DSH_CV_PYTHON</span> <span>REAL_GITHUB</span> <span>APPDATA</span> <span>LOCALAPPDATA</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

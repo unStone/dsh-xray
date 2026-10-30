@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>reviso-si/reviso-dsh — capability card (C3) · dsh-xray</title>
-<meta name="description" content="reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta name="description" content="reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/reviso-si__reviso-dsh.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="reviso-si/reviso-dsh — dsh plugin capability card">
-<meta property="og:description" content="reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/reviso-si__reviso-dsh.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "reviso-dsh", "identifier": "reviso-si/reviso-dsh", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/reviso-si/reviso-dsh", "url": "https://unstone.github.io/dsh-xray/p/reviso-si__reviso-dsh.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "reviso-dsh", "identifier": "reviso-si/reviso-dsh", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/reviso-si/reviso-dsh", "url": "https://unstone.github.io/dsh-xray/p/reviso-si__reviso-dsh.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/reviso-si/reviso-dsh" rel="nofollow ugc">reviso-si/reviso-dsh source on GitHub</a>
      · <a href="../registry.html#reviso-si__reviso-dsh">this plugin in the registry</a></p>
-  <p>reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
+  <p>reviso-si/reviso-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/check-packed-install.mjs:1, scripts/check-packed-install.mjs:1</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>REVISO_DSH_CLI_CREDENTIALS</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:85</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/check-packed-install.mjs:1, scripts/check-packed-install.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. host/deck-assets.js:11</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>REVISO_DSH_CLI_CREDENTIALS</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:90</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>credentials</span> <span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>reviso.work</span></p>

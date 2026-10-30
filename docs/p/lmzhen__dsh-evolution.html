@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lmzhen/dsh-evolution — capability card (C2) · dsh-xray</title>
+<meta name="description" content="lmzhen/dsh-evolution is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/lmzhen__dsh-evolution.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lmzhen/dsh-evolution — dsh plugin capability card">
+<meta property="og:description" content="lmzhen/dsh-evolution is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/lmzhen__dsh-evolution.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#d97706; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-evolution", "identifier": "lmzhen/dsh-evolution", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "lmzhen/dsh-evolution is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars.", "codeRepository": "https://github.com/lmzhen/dsh-evolution", "url": "https://unstone.github.io/dsh-xray/p/lmzhen__dsh-evolution.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>lmzhen/dsh-evolution</h1>
+    <span class="lvl-pill">C2</span>
+  </div>
+  <p class="lede">Hermes-inspired agent self-evolution plugin family, purpose-built for DeepSeek Harness</p>
+  <p class="lede">★ 5+ ·
+     <a href="https://github.com/lmzhen/dsh-evolution" rel="nofollow ugc">lmzhen/dsh-evolution source on GitHub</a>
+     · <a href="../registry.html#lmzhen__dsh-evolution">this plugin in the registry</a></p>
+  <p>lmzhen/dsh-evolution is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It command execution in build output only, executes commands in development tooling the package does not ship, reads credential-class env vars.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. packages/evolution-merge-engine/vendor/skill-merge-pipeline/tools/rank-server.js:4, packages/evolution-merge-engine/vendor/skill-merge-pipeline/tools/release-check.js:7</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×10 in development tooling the package does not ship, e.g. packages/evolution-merge-engine/scripts/verify-package.mjs:3, packages/evolution-merge-engine/scripts/verify-package.mjs:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>packages/evolution-maintenance/src/tools.ts:61</code> tools.register</li><li><code>packages/evolution-maintenance/src/tools.ts:62</code> tool factory</li><li><code>packages/evolution-merge/src/index.ts:252</code> tools.register</li><li><code>packages/evolution-commands/src/doctor-view.ts:316</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/doctor-view.ts:351</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/index.ts:430</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/index.ts:851</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/index.ts:934</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/index.ts:984</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/index.ts:1470</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-commands/src/index.ts:1785</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-learning-graph/src/index.ts:582</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-learning-graph/src/index.ts:674</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-learning-graph/src/index.ts:717</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-learning-graph/src/index.ts:760</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-merge/src/index.ts:131</code> Context or tools service passed to an unresolved helper</li><li><code>packages/evolution-merge/src/index.ts:155</code> Context or tools service passed to an unresolved helper</li></ul><p class="lede">456 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>evolutionIo</span> <span>evolutionState</span> <span>locale</span> <span>slots</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>internal/config</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.siliconflow.cn</span> <span>hf-mirror.com</span> <span>api.deepseek.com</span> <span>huggingface.co</span> <span>api.bamboonode.dev</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SKILL_MERGE_MODELS_ROOT</span> <span>SKILL_MERGE_CORPUS</span> <span>DEEPSEEK_API_KEY</span> <span>DSH_SKILL_MERGE_CACHE</span> <span>HF_ENDPOINT</span> <span>SKILL_MERGE_INT8</span> <span>BENCH_BASELINE</span> <span>PARITY_GOLDEN_DIR</span> <span>DSH_EVOLUTION_SESSION_QUERY</span> <span>LOCALAPPDATA</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

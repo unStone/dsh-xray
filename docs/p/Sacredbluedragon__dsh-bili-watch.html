@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sacredbluedragon/dsh-bili-watch — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Sacredbluedragon__dsh-bili-watch.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sacredbluedragon/dsh-bili-watch — dsh plugin capability card">
-<meta property="og:description" content="Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Sacredbluedragon__dsh-bili-watch.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bili-watch", "identifier": "Sacredbluedragon/dsh-bili-watch", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/Sacredbluedragon/dsh-bili-watch", "url": "https://unstone.github.io/dsh-xray/p/Sacredbluedragon__dsh-bili-watch.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bili-watch", "identifier": "Sacredbluedragon/dsh-bili-watch", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/Sacredbluedragon/dsh-bili-watch", "url": "https://unstone.github.io/dsh-xray/p/Sacredbluedragon__dsh-bili-watch.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,18 +46,18 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">给模型看 B 站视频的 DSH 插件：字幕、转写、抽帧 OCR、评论与弹幕；支持 b23.tv 短链，抽帧缓存目录可换。</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">★ 5+ ·
      <a href="https://github.com/Sacredbluedragon/dsh-bili-watch" rel="nofollow ugc">Sacredbluedragon/dsh-bili-watch source on GitHub</a>
      · <a href="../registry.html#Sacredbluedragon__dsh-bili-watch">this plugin in the registry</a></p>
-  <p>Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>Sacredbluedragon/dsh-bili-watch is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×23 in authored code, e.g. index.js:12, index.js:12</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. index.js:12, index.js:12</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. tools/verify.mjs:118</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>slots</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.bilibili.com</span> <span>www.bilibili.com</span> <span>passport.bilibili.com</span> <span>hf-mirror.com</span> <span>comment.bilibili.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>BILI_WATCH_DEPS</span> <span>BILI_WATCH_PROJ</span> <span>BILI_WATCH_CACHE</span> <span>BILI_WATCH_FFMPEG</span> <span>HF_ENDPOINT</span> <span>BILI_WATCH_SEEN</span> <span>BILI_WATCH_YTDLP</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>BILI_WATCH_CACHE</span> <span>BILI_WATCH_DEPS</span> <span>BILI_WATCH_PROJ</span> <span>BILI_WATCH_FFMPEG</span> <span>HF_ENDPOINT</span> <span>SystemRoot</span> <span>BILI_WATCH_SEEN</span> <span>BILI_WATCH_YTDLP</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

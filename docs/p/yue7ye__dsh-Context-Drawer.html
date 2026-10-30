@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>yue7ye/dsh-Context-Drawer</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness plugin: pick calendar dates and remove the finished turns of those dates from the model-visible context. The chat transcript and the append-only session log stay untouched.</p>
+  <p class="lede">DeepSeek Harness plugin with exactly one job: when the conversation context reaches a threshold (default 50%), move older messages into a folder associated with that conversation, then release the old</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/yue7ye/dsh-Context-Drawer" rel="nofollow ugc">yue7ye/dsh-Context-Drawer source on GitHub</a>
      · <a href="../registry.html#yue7ye__dsh-Context-Drawer">this plugin in the registry</a></p>
@@ -54,8 +54,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>slots</span> <span>webServer</span></p>
-  
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>sessions</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
   
   
   <h2>How to read this</h2>

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>wangyuanchuan2022/dsh-agents — capability card (C3) · dsh-xray</title>
-<meta name="description" content="wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/wangyuanchuan2022__dsh-agents.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wangyuanchuan2022/dsh-agents — dsh plugin capability card">
-<meta property="og:description" content="wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/wangyuanchuan2022__dsh-agents.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agents", "identifier": "wangyuanchuan2022/dsh-agents", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/wangyuanchuan2022/dsh-agents", "url": "https://unstone.github.io/dsh-xray/p/wangyuanchuan2022__dsh-agents.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-agents", "identifier": "wangyuanchuan2022/dsh-agents", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/wangyuanchuan2022/dsh-agents", "url": "https://unstone.github.io/dsh-xray/p/wangyuanchuan2022__dsh-agents.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/wangyuanchuan2022/dsh-agents" rel="nofollow ugc">wangyuanchuan2022/dsh-agents source on GitHub</a>
      · <a href="../registry.html#wangyuanchuan2022__dsh-agents">this plugin in the registry</a></p>
-  <p>wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>wangyuanchuan2022/dsh-agents is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×22 in authored code, e.g. scripts/fetch-grammar-wasm.mjs:6, scripts/fetch-grammar-wasm.mjs:6</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×25 in authored code, e.g. scripts/fetch-grammar-wasm.mjs:6, scripts/fetch-grammar-wasm.mjs:6</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. tools/constraint-mutation-verify.mjs:637</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>3 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:1148</code> tools.register</li><li><code>lib/index.js:1149</code> tools.register</li><li><code>lib/index.js:1172</code> tools.register</li><li><code>lib/agent-reply.js:412</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>session/disposed</span> <span>session/event</span></p>

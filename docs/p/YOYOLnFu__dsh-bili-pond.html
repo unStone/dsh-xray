@@ -52,11 +52,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>YOYOLnFu/dsh-bili-pond is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. index.js:25, index.js:1030</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. tools/test-guard-watermark.mjs:38, tools/test-guard.mjs:36</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:693</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. index.js:25, index.js:1253</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. tools/test-guard-watermark.mjs:38, tools/test-guard.mjs:36</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:839</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>settings</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.bilibili.com</span> <span>www.bilibili.com</span> <span>space.bilibili.com</span> <span>pypi.tuna.tsinghua.edu.cn</span> <span>mirrors.ustc.edu.cn</span> <span>mirrors.aliyun.com</span> <span>passport.bilibili.com</span> <span>hf-mirror.com</span> <span>pypi.org</span> <span>docs.astral.sh</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.bilibili.com</span> <span>api.bilibili.com</span> <span>space.bilibili.com</span> <span>pypi.tuna.tsinghua.edu.cn</span> <span>mirrors.ustc.edu.cn</span> <span>mirrors.aliyun.com</span> <span>passport.bilibili.com</span> <span>hf-mirror.com</span> <span>pypi.org</span> <span>docs.astral.sh</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>APPDATA</span> <span>DSH_PROFILE_DIR</span> <span>DSH_PROFILE</span> <span>BILI_DUTY_PIP_MIRROR</span> <span>DSH_HOST_MODULES</span> <span>BILI_DUTY_HF_ENDPOINT</span> <span>BILI_DUTY_AV_PIN</span> <span>SystemRoot</span> <span>USERPROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

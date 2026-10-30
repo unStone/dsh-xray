@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LEEKINBUN-dsh-tools/dsh-backroom — capability card (C3) · dsh-xray</title>
-<meta name="description" content="LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/LEEKINBUN-dsh-tools__dsh-backroom.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LEEKINBUN-dsh-tools/dsh-backroom — dsh plugin capability card">
-<meta property="og:description" content="LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/LEEKINBUN-dsh-tools__dsh-backroom.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-backroom", "identifier": "LEEKINBUN-dsh-tools/dsh-backroom", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/LEEKINBUN-dsh-tools/dsh-backroom", "url": "https://unstone.github.io/dsh-xray/p/LEEKINBUN-dsh-tools__dsh-backroom.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-backroom", "identifier": "LEEKINBUN-dsh-tools/dsh-backroom", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/LEEKINBUN-dsh-tools/dsh-backroom", "url": "https://unstone.github.io/dsh-xray/p/LEEKINBUN-dsh-tools__dsh-backroom.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/LEEKINBUN-dsh-tools/dsh-backroom" rel="nofollow ugc">LEEKINBUN-dsh-tools/dsh-backroom source on GitHub</a>
      · <a href="../registry.html#LEEKINBUN-dsh-tools__dsh-backroom">this plugin in the registry</a></p>
-  <p>LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>LEEKINBUN-dsh-tools/dsh-backroom is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BACKROOM_KEY_FILE, DSH_BACKROOM_TOKEN_BUDGET</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:1241</code> tools.register</li><li><code>lib/index.js:1348</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. tools/web-debug.mjs:22, tools/web-debug.mjs:154</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. tools/web-debug.mjs:80</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_BACKROOM_KEY_FILE, DSH_BACKROOM_TOKEN_BUDGET</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:1342</code> tools.register</li><li><code>lib/index.js:1449</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   
   
