@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>TencentCloud/tencentmeeting-cli is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands.</p>
   
   <p class="lede"><b>A skill, not an installable plugin — ships SKILL.md with no plugin manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/cleanup.js</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. scripts/cleanup.js:5, scripts/cleanup.js:5</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/cleanup.js</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×10 in authored code, e.g. scripts/cleanup.js:20, scripts/cleanup.js:20</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>TMEET_CLI_CONFIG_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

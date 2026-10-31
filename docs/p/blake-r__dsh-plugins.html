@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>blake-r/dsh-plugins — capability card (C3) · dsh-xray</title>
-<meta name="description" content="blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta name="description" content="blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, gates tool execution.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/blake-r__dsh-plugins.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="blake-r/dsh-plugins — dsh plugin capability card">
-<meta property="og:description" content="blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta property="og:description" content="blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, gates tool execution.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/blake-r__dsh-plugins.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "blake-r/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/blake-r/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/blake-r__dsh-plugins.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugins", "identifier": "blake-r/dsh-plugins", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, gates tool execution.", "codeRepository": "https://github.com/blake-r/dsh-plugins", "url": "https://unstone.github.io/dsh-xray/p/blake-r__dsh-plugins.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/blake-r/dsh-plugins" rel="nofollow ugc">blake-r/dsh-plugins source on GitHub</a>
      · <a href="../registry.html#blake-r__dsh-plugins">this plugin in the registry</a></p>
-  <p>blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
+  <p>blake-r/dsh-plugins is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, gates tool execution.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/check.mjs:3, scripts/check.mjs:3</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>packages/dsh-tool-trajectory-recall/src/dsh-tool-trajectory-recall.mjs:590</code> tools.register</li><li><code>packages/dsh-tool-trajectory-recall/src/dsh-tool-trajectory-recall.mjs:591</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>web</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>system-prompt/assemble</span> <span>tools/pre-execute</span></p>
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>USERPROFILE</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>approval, sandbox, subprocess, systemPrompt, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. scripts/check.mjs:3, scripts/check.mjs:3</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. packages/dsh-im-multiagent/src/channels/shared/image-prompt.mjs:339</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>10 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>packages/dsh-tool-node/src/dsh-tool-node.mjs:292</code> tools.register</li><li><code>packages/dsh-tool-node/src/dsh-tool-node.mjs:292</code> tool factory</li><li><code>packages/dsh-tool-node/src/dsh-tool-node.mjs:391</code> tools.register</li><li><code>packages/dsh-tool-node/src/dsh-tool-node.mjs:391</code> tool factory</li><li><code>packages/dsh-tool-python/src/dsh-tool-python.mjs:329</code> tools.register</li><li><code>packages/dsh-tool-python/src/dsh-tool-python.mjs:329</code> tool factory</li><li><code>packages/dsh-tool-python/src/dsh-tool-python.mjs:428</code> tools.register</li><li><code>packages/dsh-tool-python/src/dsh-tool-python.mjs:428</code> tool factory</li><li><code>packages/dsh-tool-trajectory-recall/src/dsh-tool-trajectory-recall.mjs:751</code> tools.register</li><li><code>packages/dsh-tool-trajectory-recall/src/dsh-tool-trajectory-recall.mjs:752</code> tools.register</li><li><code>packages/dsh-im-multiagent/src/channels/shared/semantic/artifact.mjs:652</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>commands</span> <span>connection</span> <span>credentials</span> <span>llm</span> <span>locale</span> <span>remote</span> <span>sandbox</span> <span>sandboxPolicy</span> <span>sessionPersistence</span> <span>sessionQuery</span> <span>sessions</span> <span>skills</span> <span>slots</span> <span>storageDomain</span> <span>subprocess</span> <span>systemPrompt</span> <span>tokenMeter</span> <span>tools</span> <span>uiConversation</span> <span>uiWorkspace</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>approval/request</span> <span>session/disposed</span> <span>session/event</span> <span>system-prompt/assemble</span> <span>tools/post-execute</span> <span>tools/pre-execute</span> <span>tools/result</span> <span>user-questions/request</span> <span>webserver/index-inject</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.telegram.org</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>NODE</span> <span>USERPROFILE</span> <span>PYTHON</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>qftuftfutg/apk-devkit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>/cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/runner.js:2, lib/runner.js:57</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>/cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/runner.js:2, lib/runner.js:123</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>plugin.mjs:99</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>APK_WORKSPACE</span> <span>JAVA_HOME</span> <span>APK_TOOLS_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>APK_WORKSPACE</span> <span>JAVA_HOME</span> <span>APK_TOOLS_DIR</span> <span>ComSpec</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

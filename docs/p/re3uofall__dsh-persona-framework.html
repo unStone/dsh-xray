@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>re3uofall/dsh-persona-framework</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 人格框架插件：只给框架，不含人格。四层切分（劲→闸→标→嘴）、72 个模块、R1–R27 规则体；外挂注入，不覆盖不改写人格文件。带出口自检、结构自检、槽位体检、判据自反与框架自反、索引预算自适应。</p>
+  <p class="lede">DSH 人格框架插件：只给框架，不含人格。四层切分（劲→闸→标→嘴）、83 个模块、R1–R28 规则体；外挂注入，不覆盖不改写人格文件。9 个工具（取原文／出口自检／结构自检／槽位体检／长文压缩／心情／下一步／体检／跑程序）、31 个程序、发版三道闸。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/re3uofall/dsh-persona-framework" rel="nofollow ugc">re3uofall/dsh-persona-framework source on GitHub</a>
      · <a href="../registry.html#re3uofall__dsh-persona-framework">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. release-check.mjs:19, release-check.mjs:19</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:842</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:845</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_ROOT</span> <span>DSH_PROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

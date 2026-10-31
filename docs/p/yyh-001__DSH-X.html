@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yyh-001/DSH-X — capability card (C3) · dsh-xray</title>
-<meta name="description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta name="description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yyh-001/DSH-X — dsh plugin capability card">
-<meta property="og:description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.">
+<meta property="og:description" content="yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-X", "identifier": "yyh-001/DSH-X", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.", "codeRepository": "https://github.com/yyh-001/DSH-X", "url": "https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-X", "identifier": "yyh-001/DSH-X", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/yyh-001/DSH-X", "url": "https://unstone.github.io/dsh-xray/p/yyh-001__DSH-X.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 500+ ·
      <a href="https://github.com/yyh-001/DSH-X" rel="nofollow ugc">yyh-001/DSH-X source on GitHub</a>
      · <a href="../registry.html#yyh-001__DSH-X">this plugin in the registry</a></p>
-  <p>yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, decodes base64 payloads.</p>
+  <p>yyh-001/DSH-X is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×66 in authored code, e.g. apply-update.mjs:11, apply-update.mjs:60</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. settings.js:449, skills.js:418</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. server.js:7032, scripts/bench-startup.mjs:51</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_RELEASE_KEY, DSH_RELEASE_PUBKEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>plugins/dsh-x-memory/lib/index.js:257</code> tools.register</li><li><code>plugins/dsh-x-sync/lib/index.js:354</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
-  
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×68 in authored code, e.g. apply-update.mjs:11, apply-update.mjs:60</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. plugins/dsh-x-sidebar-browser/index.js:545</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. settings.js:449, skills.js:418</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. server.js:7463, scripts/bench-startup.mjs:51</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_RELEASE_KEY, DSH_RELEASE_PUBKEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>plugins/dsh-x-memory/lib/index.js:257</code> tools.register</li><li><code>plugins/dsh-x-sidebar-browser/index.js:539</code> tools.register</li><li><code>plugins/dsh-x-sync/lib/index.js:354</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/disposed</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>registry.npmmirror.com</span> <span>api.github.com</span> <span>s3.us-east-1.amazonaws.com</span> <span>dav.jianguoyun.com</span> <span>gh-proxy.com</span> <span>ghfast.top</span> <span>awesome-dsh-plugin.com</span> <span>codeload.github.com</span> <span>npmmirror.com</span> <span>www.electronjs.org</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>APPDATA</span> <span>DSH_PERF_DEBUG</span> <span>DSH_UPDATE_FEED</span> <span>DSH_CORE_PACKAGE</span> <span>DSH_NPM</span> <span>DSH_HOME</span> <span>DSH_PROFILE</span> <span>APPIMAGE</span> <span>PORT</span> <span>DSH_VERSIONS_DATA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>APPDATA</span> <span>DSH_UPDATE_FEED</span> <span>DSH_CORE_PACKAGE</span> <span>DSH_NPM</span> <span>DSH_HOME</span> <span>DSH_PROFILE</span> <span>APPIMAGE</span> <span>PORT</span> <span>DSH_VERSIONS_DATA</span> <span>DSH_AGENTS_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

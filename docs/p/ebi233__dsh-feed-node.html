@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ebi233/dsh-feed-node — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.">
+<meta name="description" content="ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ebi233__dsh-feed-node.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ebi233/dsh-feed-node — dsh plugin capability card">
-<meta property="og:description" content="ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.">
+<meta property="og:description" content="ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ebi233__dsh-feed-node.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-feed-node", "identifier": "ebi233/dsh-feed-node", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.", "codeRepository": "https://github.com/ebi233/dsh-feed-node", "url": "https://unstone.github.io/dsh-xray/p/ebi233__dsh-feed-node.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-feed-node", "identifier": "ebi233/dsh-feed-node", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, starts a network server.", "codeRepository": "https://github.com/ebi233/dsh-feed-node", "url": "https://unstone.github.io/dsh-xray/p/ebi233__dsh-feed-node.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/ebi233/dsh-feed-node" rel="nofollow ugc">ebi233/dsh-feed-node source on GitHub</a>
      · <a href="../registry.html#ebi233__dsh-feed-node">this plugin in the registry</a></p>
-  <p>ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, starts a network server.</p>
+  <p>ebi233/dsh-feed-node is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, command execution in build output only, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/server.mjs:409</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>memory-long/lib/index.js:49</code> tools.register</li><li><code>plugin/index.js:31</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. memory-scoped/lib/friend-recall.mjs:3</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/server.mjs:409</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>memory-long/lib/index.js:49</code> tools.register</li><li><code>memory-scoped/lib/index.js:111</code> tools.register</li><li><code>plugin/index.js:31</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>www.douyin.com</span> <span>www.xiaohongshu.com</span> <span>edith.xiaohongshu.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_HOST_MODULES</span> <span>FEED_NODE_URL</span> <span>FEED_PORT</span> <span>XHS_PORT</span> <span>PROFILE_DIR</span> <span>SHOTS_DIR</span> <span>BROWSER_PATH</span> <span>EDGE_PATH</span> <span>LONG_MEMORY_FILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_HOST_MODULES</span> <span>LONG_MEMORY_FILE</span> <span>LONG_MEMORY_MAX</span> <span>ARCHIVE_DIR</span> <span>FEED_NODE_URL</span> <span>FEED_PORT</span> <span>XHS_PORT</span> <span>PROFILE_DIR</span> <span>SHOTS_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

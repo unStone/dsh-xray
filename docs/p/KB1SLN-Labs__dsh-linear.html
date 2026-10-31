@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KB1SLN-Labs/dsh-linear — capability card (C3) · dsh-xray</title>
-<meta name="description" content="KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<meta name="description" content="KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/KB1SLN-Labs__dsh-linear.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KB1SLN-Labs/dsh-linear — dsh plugin capability card">
-<meta property="og:description" content="KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/KB1SLN-Labs__dsh-linear.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-linear", "identifier": "KB1SLN-Labs/dsh-linear", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/KB1SLN-Labs/dsh-linear", "url": "https://unstone.github.io/dsh-xray/p/KB1SLN-Labs__dsh-linear.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-linear", "identifier": "KB1SLN-Labs/dsh-linear", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/KB1SLN-Labs/dsh-linear", "url": "https://unstone.github.io/dsh-xray/p/KB1SLN-Labs__dsh-linear.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/KB1SLN-Labs/dsh-linear" rel="nofollow ugc">KB1SLN-Labs/dsh-linear source on GitHub</a>
      · <a href="../registry.html#KB1SLN-Labs__dsh-linear">this plugin in the registry</a></p>
-  <p>KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
+  <p>KB1SLN-Labs/dsh-linear is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. index.js:1253, test-mcp-bridge.js:496</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. test-mcp-bridge.js:155, test-mcp-bridge.js:215</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LINEAR_APIKEY, LINEAR_API_KEY, LINEAR_KEY, LINEAR_MCP_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:378</code> tools.register</li><li><code>index.js:1560</code> tools.register</li><li><code>test-image-runtime.mjs:13</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. test.js:1746, test.js:1746</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. test.js:331, test.js:547</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>LINEAR_APIKEY, LINEAR_API_KEY, LINEAR_KEY, LINEAR_MCP_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:534</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.linear.app</span> <span>mcp.linear.app</span> <span>linear.app</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>LINEAR_API_KEY</span> <span>LINEAR_MCP_TOKEN</span> <span>APPDATA</span> <span>DSH_LINEAR_TOOLS</span> <span>DSH_LINEAR_SCHEMA</span> <span>DSH_LINEAR_MCP_SDK</span> <span>DSH_LINEAR_MCP_SDK_TRANSPORT</span> <span>DSH_LINEAR_MCP_SDK_TYPES</span> <span>DSH_LINEAR_MCP_SDK_ZOD</span> <span>LINEAR_MCP_DISABLED</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.linear.app</span> <span>linear.app</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LINEAR_API_KEY</span> <span>USERPROFILE</span> <span>APPDATA</span> <span>DSH_LINEAR_TOOLS</span> <span>DSH_LINEAR_SCHEMA</span> <span>DSH_ROOT</span> <span>LINEAR_TEST_PROFILE</span> <span>LINEAR_MCP_TOKEN</span> <span>LINEAR_APIKEY</span> <span>LINEAR_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

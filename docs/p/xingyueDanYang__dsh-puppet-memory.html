@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>xingyueDanYang/dsh-puppet-memory — capability card (C3) · dsh-xray</title>
-<meta name="description" content="xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/xingyueDanYang__dsh-puppet-memory.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xingyueDanYang/dsh-puppet-memory — dsh plugin capability card">
-<meta property="og:description" content="xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/xingyueDanYang__dsh-puppet-memory.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-puppet-memory", "identifier": "xingyueDanYang/dsh-puppet-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/xingyueDanYang/dsh-puppet-memory", "url": "https://unstone.github.io/dsh-xray/p/xingyueDanYang__dsh-puppet-memory.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-puppet-memory", "identifier": "xingyueDanYang/dsh-puppet-memory", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/xingyueDanYang/dsh-puppet-memory", "url": "https://unstone.github.io/dsh-xray/p/xingyueDanYang__dsh-puppet-memory.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/xingyueDanYang/dsh-puppet-memory" rel="nofollow ugc">xingyueDanYang/dsh-puppet-memory source on GitHub</a>
      · <a href="../registry.html#xingyueDanYang__dsh-puppet-memory">this plugin in the registry</a></p>
-  <p>xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>xingyueDanYang/dsh-puppet-memory is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. 脱敏检查.mjs:10, 脱敏检查.mjs:10</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>4 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:6127</code> tools.register</li><li><code>index.js:6909</code> tools.register</li><li><code>index.js:6942</code> tools.register</li><li><code>index.js:6967</code> tools.register</li><li><code>index.js:1996</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. cloudbackup.js:22, cloudbackup.js:22</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_MEMORY_BACKUP_PASS</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:6988</code> tools.register</li><li><code>index.js:7907</code> tools.register</li><li><code>index.js:7940</code> tools.register</li><li><code>index.js:7965</code> tools.register</li><li><code>index.js:2278</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/session-start</span> <span>agent/turn-stopping</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MEMORY_DIR</span> <span>QQ_WATCH_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MEMORY_DIR</span> <span>DSH_MEMORY_BACKUP_PASS</span> <span>QQ_WATCH_DIR</span> <span>DSH_MEMORY_SEARCH_ENGINE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

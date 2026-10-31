@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>jeskoky-pixel/amadeus-qq</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">QQ scenes and continuous chat for DeepSeek Harness through NapCat</p>
+  <p class="lede">QQ conversations through NapCat with persistent DSH Sessions and Scene permissions. 连接 QQ 与 DSH，保留连续会话与场景权限。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/jeskoky-pixel/amadeus-qq" rel="nofollow ugc">jeskoky-pixel/amadeus-qq source on GitHub</a>
      · <a href="../registry.html#jeskoky-pixel__amadeus-qq">this plugin in the registry</a></p>
   <p>jeskoky-pixel/amadeus-qq is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>[&#x27;./cordis.patch.yml&#x27;, &#x27;./preset.patch.yml&#x27;]</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/audio.js:3, src/audio.js:208</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. src/audio.js:144, src/files.js:136</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/index.js:60</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>[&#x27;./cordis.patch.yml&#x27;, &#x27;./preset.patch.yml&#x27;]</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. scripts/release-audit.mjs:1, scripts/release-audit.mjs:1</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. src/audio.js:144, src/files.js:136</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/index.js:61</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>sessionController</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/service</span> <span>tools/change</span></p>
   
