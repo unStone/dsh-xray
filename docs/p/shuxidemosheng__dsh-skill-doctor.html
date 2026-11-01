@@ -53,8 +53,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×6 in development tooling the package does not ship, e.g. scripts/e2e-headless.mjs:17, scripts/e2e-headless.mjs:17</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: E2E_API_KEY_ENV</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>5 static tool registration point(s).</p><ul><li><code>src/index.ts:64</code> tools.register</li><li><code>src/tools/doctor.ts:18</code> tool factory</li><li><code>src/tools/explain.ts:21</code> tool factory</li><li><code>src/tools/lint.ts:18</code> tool factory</li><li><code>src/tools/plugin.ts:28</code> tool factory</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>tools</span> <span>workingDirectory</span></p>
+  <h2>Tool registrations</h2><p>5 static tool registration point(s).</p><ul><li><code>src/index.ts:64</code> tools.register</li><li><code>src/tools/doctor.ts:60</code> tool factory</li><li><code>src/tools/explain.ts:21</code> tool factory</li><li><code>src/tools/lint.ts:19</code> tool factory</li><li><code>src/tools/plugin.ts:16</code> tool factory</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>skills</span> <span>slots</span> <span>tools</span> <span>workingDirectory</span></p>
   
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>

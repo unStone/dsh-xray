@@ -45,18 +45,18 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>19952730389/dsh-app-updater</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness 插件：检测本机所有已安装 Windows 应用是否有新版本，并从各自官网下载全量安装包一键静默更新（不需要打开被检测的软件）。Detect installed Windows apps and update them one-click with the vendor&#x27;s full installer.</p>
+  <p class="lede">DeepSeek Harness 插件：检测本机已安装应用是否有新版本，并从各自官网下载全量安装包一键静默更新（Windows/winget、macOS/Homebrew，按本机 ARM64/x64 选包）。Detect installed apps and update them one-click with the vendor&#x27;s full installer.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/19952730389/dsh-app-updater" rel="nofollow ugc">19952730389/dsh-app-updater source on GitHub</a>
      · <a href="../registry.html#19952730389__dsh-app-updater">this plugin in the registry</a></p>
   <p>19952730389/dsh-app-updater is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×8 in build output only, e.g. lib/index.js:14, lib/index.js:331</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×8 in build output only, e.g. lib/index.js:15, lib/index.js:396</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
   
-  
+  <h2>Outbound domains</h2><p class="kv"><span>formulae.brew.sh</span> <span>mirrors.tuna.tsinghua.edu.cn</span> <span>mirrors.ustc.edu.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>DSH_HOME</span> <span>windir</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

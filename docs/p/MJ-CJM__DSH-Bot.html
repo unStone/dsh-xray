@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MJ-CJM/DSH-Bot — capability card (C3) · dsh-xray</title>
+<meta name="description" content="MJ-CJM/DSH-Bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/MJ-CJM__DSH-Bot.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MJ-CJM/DSH-Bot — dsh plugin capability card">
+<meta property="og:description" content="MJ-CJM/DSH-Bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/MJ-CJM__DSH-Bot.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DSH-Bot", "identifier": "MJ-CJM/DSH-Bot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MJ-CJM/DSH-Bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/MJ-CJM/DSH-Bot", "url": "https://unstone.github.io/dsh-xray/p/MJ-CJM__DSH-Bot.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>MJ-CJM/DSH-Bot</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">Personal agents with memory and workspace group chats for DeepSeek Harness.</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/MJ-CJM/DSH-Bot" rel="nofollow ugc">MJ-CJM/DSH-Bot source on GitHub</a>
+     · <a href="../registry.html#MJ-CJM__DSH-Bot">this plugin in the registry</a></p>
+  <p>MJ-CJM/DSH-Bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, system-prompt/assemble, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×49 in authored code, e.g. scripts/b2b-runtime.mjs:5, scripts/b2b-runtime.mjs:173</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×14 in authored code, e.g. scripts/b2b-runtime.mjs:25, scripts/b2b-runtime.mjs:153</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: approval, webServer</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>9 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>packages/dsh-bot/src/host/delegate/tool.ts:78</code> tool factory</li><li><code>packages/dsh-bot/src/host/groups/worker-tool.ts:44</code> tool factory</li><li><code>packages/dsh-bot/src/host/memory/tools.ts:47</code> tool factory</li><li><code>packages/dsh-bot/src/host/memory/tools.ts:85</code> tool factory</li><li><code>packages/dsh-bot/src/host/memory/tools.ts:98</code> tool factory</li><li><code>packages/dsh-bot/src/host/memory/tools.ts:112</code> tool factory</li><li><code>packages/dsh-bot/src/host/messaging/tool.ts:64</code> tool factory</li><li><code>packages/dsh-bot/src/host/notifications/tool.ts:66</code> tool factory</li><li><code>packages/dsh-bot/src/host/tools/bot-manage.ts:284</code> tool factory</li><li><code>packages/dsh-bot/src/client/index.tsx:132</code> Context or tools service passed to an unresolved helper</li><li><code>packages/dsh-bot/src/client/index.tsx:183</code> Context or tools service passed to an unresolved helper</li><li><code>packages/dsh-bot/src/client/index.tsx:184</code> Context or tools service passed to an unresolved helper</li><li><code>packages/dsh-bot/src/client/index.tsx:293</code> Context or tools service passed to an unresolved helper</li><li><code>packages/dsh-bot/src/host/activity/tracker.ts:21</code> Context or tools service passed to an unresolved helper</li><li><code>packages/dsh-bot/src/host/bot-context.ts:184</code> Cannot establish the tools service binding</li><li><code>packages/dsh-bot/src/host/delegate/tool.ts:77</code> Cannot establish the tools service binding</li><li><code>packages/dsh-bot/src/host/groups/worker-tool.ts:60</code> Cannot establish the tools service binding</li><li><code>packages/dsh-bot/src/host/messaging/tool.ts:64</code> Cannot establish the tools service binding</li><li><code>packages/dsh-bot/src/host/notifications/tool.ts:65</code> Cannot establish the tools service binding</li><li><code>packages/dsh-bot/src/host/tools/bot-manage.ts:283</code> Cannot establish the tools service binding</li><li><code>packages/dsh-bot/src/host/tools/bot-manage.ts:482</code> Context or tools service passed to an unresolved helper</li></ul><p class="lede">46 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
+  <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>agents</span> <span>dshBots</span> <span>layout</span> <span>llm</span> <span>loader</span> <span>locale</span> <span>remote</span> <span>sessionController</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>storageDomain</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span> <span>typert</span> <span>uiWorkspace</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent-preset/selected</span> <span>agent/created</span> <span>agent/inbox/claimed</span> <span>agent/inbox/discarded</span> <span>agent/inbox/inserted</span> <span>agent/pre-step</span> <span>agent/request</span> <span>agent/status</span> <span>connection/reset</span> <span>credentials/reference-updated</span> <span>dsh-bot/changed</span> <span>llm/stream</span> <span>schedule/changed</span> <span>session/event</span> <span>system-prompt/assemble</span> <span>tools/execute</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_BOT_ARTIFACT</span> <span>DSH_BOT_E2E_DIR</span> <span>DSH_BOT_E2E_PACKAGE</span> <span>DSH_BOT_CHROMIUM</span> <span>B2B_SCREENSHOTS</span> <span>B2B_NATIVE_BLANK_FIXTURE</span> <span>B2B_CRASH_WINDOW</span> <span>FILTER</span> <span>DP_RELEASE_SCREENSHOTS</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>
