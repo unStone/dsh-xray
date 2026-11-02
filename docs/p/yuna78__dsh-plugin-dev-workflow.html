@@ -45,16 +45,16 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>yuna78/dsh-plugin-dev-workflow</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Auditable Request → Feedback → Task → Verify → Completion workflow for DSH</p>
+  <p class="lede">Lightweight dev workflow for DSH: a dev-assistant preset, a read-only kanban, and decisions that stay in the repo</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/yuna78/dsh-plugin-dev-workflow" rel="nofollow ugc">yuna78/dsh-plugin-dev-workflow source on GitHub</a>
      · <a href="../registry.html#yuna78__dsh-plugin-dev-workflow">this plugin in the registry</a></p>
   <p>yuna78/dsh-plugin-dev-workflow is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. verify/preview.mjs:17, verify/preview.mjs:17</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. verify/preview.mjs:45, verify/smoke.mjs:183</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:322</code> tools.register</li><li><code>index.js:248</code> Cannot establish the tools service binding</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span> <span>workingDirectory</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. verify/preview.mjs:17, verify/preview.mjs:17</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. verify/preview.mjs:45, verify/smoke.mjs:201</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:357</code> tools.register</li><li><code>index.js:264</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>slots</span> <span>tools</span> <span>workingDirectory</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DW_CHROME</span> <span>PW_CHROME</span></p>

@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>SkyWingDN/dsh-fairy-zzz</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">Unofficial performance-optimized edition of the Fairy III / Zenless Zone Zero H.D.D skin for DeepSeek Harness. Modified by SkyWingDN, based on AssassinVIX/fairy-zzz-plugin (MIT) and Chengzhibense/Fair</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">第三方修改版（非官方），基于 AssassinVIX/fairy-zzz-plugin（MIT）与 Chengzhibense/Fairy-DSH（Apache-2.0）修改。Fairy Ⅲ / 绝区零 H.D.D 皮肤 for DeepSeek Harness：性能优化 + 用量气泡 / 拖拽眼徽 / 外观三档 / 欢迎页文案 + 可选本地 GPT-SoVITS 语音。</p>
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/SkyWingDN/dsh-fairy-zzz" rel="nofollow ugc">SkyWingDN/dsh-fairy-zzz source on GitHub</a>
      · <a href="../registry.html#SkyWingDN__dsh-fairy-zzz">this plugin in the registry</a></p>
   <p>SkyWingDN/dsh-fairy-zzz is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. index.js:4, index.js:409</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. index.js:4, index.js:422</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>slots</span> <span>theme</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>FAIRY_VOICE_HOME</span> <span>FAIRY_TTS_DIR</span> <span>FAIRY_CACHE_DIR</span> <span>FAIRY_TTS_PORT</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FAIRY_VOICE_HOME</span> <span>FAIRY_TTS_DIR</span> <span>FAIRY_CACHE_DIR</span> <span>FAIRY_TTS_PORT</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

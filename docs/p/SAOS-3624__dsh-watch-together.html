@@ -46,17 +46,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">陪看：让只会读文字的模型跟着你的真实播放进度一段段看视频（DSH 插件）。A DSH plugin that watches a video together with a text-only agent — one segment at a time, lines spoken at the right second.</p>
-  <p class="lede">★ 5+ ·
+  <p class="lede">★ 10+ ·
      <a href="https://github.com/SAOS-3624/dsh-watch-together" rel="nofollow ugc">SAOS-3624/dsh-watch-together source on GitHub</a>
      · <a href="../registry.html#SAOS-3624__dsh-watch-together">this plugin in the registry</a></p>
   <p>SAOS-3624/dsh-watch-together is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. bin/tts.mjs:21, bin/watch.mjs:26</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/chat-server.js:48</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WATCH_COOKIES</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/index.js:116</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>www.bilibili.com</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. bin/tts.mjs:21, bin/watch.mjs:26</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/chat-server.js:50</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WATCH_COOKIES</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>src/index.js:117</code> tools.register</li><li><code>src/index.js:125</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>webserver/index-inject</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.python.org</span> <span>www.bilibili.com</span> <span>www.gyan.dev</span> <span>ffmpeg.org</span> <span>learn.microsoft.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_WATCH_NO_WIDGET</span> <span>WATCH_PORT</span> <span>DSH_STORYBOARD_SRC</span> <span>DSH_FLOAT_PYTHON</span> <span>WATCH_WORK</span> <span>WATCH_COOKIES</span> <span>WATCH_OUT</span> <span>LOCALAPPDATA</span> <span>USERPROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

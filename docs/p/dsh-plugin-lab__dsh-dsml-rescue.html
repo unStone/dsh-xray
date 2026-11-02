@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>dsh-plugin-lab/dsh-dsml-rescue</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH Plugin: Auto-continues turns stalled by DSML tool-call markup leaking into reasoning. | 当 DSML 工具调用标记泄漏进推理过程导致回合停滞时，自动续跑。</p>
+  <p class="lede">DSH Plugin: Auto-continues turns that stall on leaked DSML tool-call markup, wherever the route puts it — the reasoning or the visible text. | 当 DSML 工具调用标记泄漏在消息末尾（推理或正文皆可）导致回合停滞时，自动续跑。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/dsh-plugin-lab/dsh-dsml-rescue" rel="nofollow ugc">dsh-plugin-lab/dsh-dsml-rescue source on GitHub</a>
      · <a href="../registry.html#dsh-plugin-lab__dsh-dsml-rescue">this plugin in the registry</a></p>
   <p>dsh-plugin-lab/dsh-dsml-rescue is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×9 in development tooling the package does not ship, e.g. scripts/check-declaration.mjs:26, scripts/check-declaration.mjs:26</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/mock-stall-server.mjs:55</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×9 in development tooling the package does not ship, e.g. scripts/check-declaration.mjs:26, scripts/check-declaration.mjs:26</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/mock-stall-server.mjs:83</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>agents</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/turn-stopping</span> <span>session/event</span></p>

@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>ElioFanyu/dsh-recovery is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, eval in build output only, base64 decoding in build output only.</p>
   
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. app/backend/awesome.js:20, app/backend/awesome.js:20</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. restart-button/payload/lib/main.js:3060, restart-button/payload/lib/main.js:3062</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. restart-button/payload/lib/main.js:2693, restart-button/payload/lib/main.js:2694</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×13 in authored code, e.g. app/backend/awesome.js:20, app/backend/awesome.js:20</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×3 in build output only, e.g. restart-button/payload/lib/main.js:3060, restart-button/payload/lib/main.js:3062</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. restart-button/payload/lib/main.js:2693, restart-button/payload/lib/main.js:2694</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
   <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>DSH_DESKTOP_OPEN_DEVTOOLS</span> <span>LOCALAPPDATA</span> <span>ProgramFiles</span> <span>APPDATA</span> <span>DSH_PNPM_ENTRY</span> <span>DSH_DESKTOP_UPDATE_HTTP_IDLE_TIMEOUT_MS</span> <span>DSH_DESKTOP_PNPM_ENTRY</span> <span>DSH_DESKTOP_DSH_DIR</span> <span>DSH_DESKTOP_PRIMARY_RUNTIME_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>DSH_DESKTOP_OPEN_DEVTOOLS</span> <span>LOCALAPPDATA</span> <span>ProgramFiles</span> <span>APPDATA</span> <span>DSH_PNPM_ENTRY</span> <span>PNPM_HOME</span> <span>npm_config_store_dir</span> <span>DSH_DESKTOP_UPDATE_HTTP_IDLE_TIMEOUT_MS</span> <span>DSH_DESKTOP_PNPM_ENTRY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
