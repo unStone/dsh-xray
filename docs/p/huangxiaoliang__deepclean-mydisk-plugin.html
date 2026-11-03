@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>huangxiaoliang/deepclean-mydisk-plugin — capability card (C2) · dsh-xray</title>
-<meta name="description" content="huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server in development tooling the package does not ship.">
+<meta name="description" content="huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, starts a network server in development">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/huangxiaoliang__deepclean-mydisk-plugin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="huangxiaoliang/deepclean-mydisk-plugin — dsh plugin capability card">
-<meta property="og:description" content="huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server in development tooling the package does not ship.">
+<meta property="og:description" content="huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, starts a network server in development">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/huangxiaoliang__deepclean-mydisk-plugin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepclean-mydisk-plugin", "identifier": "huangxiaoliang/deepclean-mydisk-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/huangxiaoliang/deepclean-mydisk-plugin", "url": "https://unstone.github.io/dsh-xray/p/huangxiaoliang__deepclean-mydisk-plugin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepclean-mydisk-plugin", "identifier": "huangxiaoliang/deepclean-mydisk-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/huangxiaoliang/deepclean-mydisk-plugin", "url": "https://unstone.github.io/dsh-xray/p/huangxiaoliang__deepclean-mydisk-plugin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>huangxiaoliang/deepclean-mydisk-plugin</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepClean MyDisk — DSH 原生侧边栏磁盘清理插件（只读体检 + 可撤销清理 + 空间可视化 + 相似照片 + 跨盘搬家）</p>
+  <p class="lede">DeepClean MyDisk — DSH 侧边栏磁盘工具：只读体检、可撤销清理（移入废纸篓/隔离区）、空间分析、相似照片、跨盘移动、AI 辅助；支持 macOS 与 Windows。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/huangxiaoliang/deepclean-mydisk-plugin" rel="nofollow ugc">huangxiaoliang/deepclean-mydisk-plugin source on GitHub</a>
      · <a href="../registry.html#huangxiaoliang__deepclean-mydisk-plugin">this plugin in the registry</a></p>
-  <p>huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server in development tooling the package does not ship.</p>
+  <p>huangxiaoliang/deepclean-mydisk-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, starts a network server in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. lib/index.js:11, lib/index.js:11</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/preview.mjs:30</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>lib/index.js:644</code> tools.register</li><li><code>lib/index.js:644</code> tool factory</li><li><code>lib/index.js:654</code> tools.register</li><li><code>lib/index.js:654</code> tool factory</li><li><code>lib/index.js:691</code> tools.register</li><li><code>lib/index.js:691</code> tool factory</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/index.js:11, lib/index.js:11</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. scripts/windows-ci/cases.mjs:8, scripts/windows-ci/cases.mjs:66</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/preview.mjs:58</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>10 static tool registration point(s).</p><ul><li><code>lib/index.js:1385</code> tools.register</li><li><code>lib/index.js:1385</code> tool factory</li><li><code>lib/index.js:1395</code> tools.register</li><li><code>lib/index.js:1395</code> tool factory</li><li><code>lib/index.js:1439</code> tools.register</li><li><code>lib/index.js:1439</code> tool factory</li><li><code>lib/index.js:1453</code> tools.register</li><li><code>lib/index.js:1453</code> tool factory</li><li><code>lib/index.js:1464</code> tools.register</li><li><code>lib/index.js:1464</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DEEPCLEAN_TRASH_DIR</span> <span>LOCALAPPDATA</span> <span>DSH_HOME</span> <span>SystemDrive</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DEEPCLEAN_TRASH_DIR</span> <span>LOCALAPPDATA</span> <span>DSH_HOME</span> <span>DEEPCLEAN_AUDIT_MAX_BYTES</span> <span>DEEPCLEAN_CLOUD_ROOTS</span> <span>APPDATA</span> <span>SystemDrive</span> <span>DEEPCLEAN_NO_OPEN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

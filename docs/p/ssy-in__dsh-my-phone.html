@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ssy-in/dsh-my-phone — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta name="description" content="ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 in development tooling the package does not ship, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ssy-in__dsh-my-phone.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ssy-in/dsh-my-phone — dsh plugin capability card">
-<meta property="og:description" content="ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta property="og:description" content="ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 in development tooling the package does not ship, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ssy-in__dsh-my-phone.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-my-phone", "identifier": "ssy-in/dsh-my-phone", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/ssy-in/dsh-my-phone", "url": "https://unstone.github.io/dsh-xray/p/ssy-in__dsh-my-phone.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-my-phone", "identifier": "ssy-in/dsh-my-phone", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 in development tooling the package does not ship, starts a network server.", "codeRepository": "https://github.com/ssy-in/dsh-my-phone", "url": "https://unstone.github.io/dsh-xray/p/ssy-in__dsh-my-phone.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/ssy-in/dsh-my-phone" rel="nofollow ugc">ssy-in/dsh-my-phone source on GitHub</a>
      · <a href="../registry.html#ssy-in__dsh-my-phone">this plugin in the registry</a></p>
-  <p>ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  <p>ssy-in/dsh-my-phone is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 in development tooling the package does not ship, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/tunnel.js:4, src/tunnel.js:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/gate.js:1313, src/gate.js:1333</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/tunnel.js:4, src/tunnel.js:4</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. tools/submit-stores.cjs:86</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/gate.js:1313, src/gate.js:1333</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>webserver/index-inject</span></p>

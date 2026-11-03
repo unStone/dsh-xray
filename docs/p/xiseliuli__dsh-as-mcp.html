@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>xiseliuli/dsh-as-mcp — capability card (C3) · dsh-xray</title>
-<meta name="description" content="xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.">
+<meta name="description" content="xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/xiseliuli__dsh-as-mcp.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xiseliuli/dsh-as-mcp — dsh plugin capability card">
-<meta property="og:description" content="xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.">
+<meta property="og:description" content="xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/xiseliuli__dsh-as-mcp.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-as-mcp", "identifier": "xiseliuli/dsh-as-mcp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/xiseliuli/dsh-as-mcp", "url": "https://unstone.github.io/dsh-xray/p/xiseliuli__dsh-as-mcp.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-as-mcp", "identifier": "xiseliuli/dsh-as-mcp", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.", "codeRepository": "https://github.com/xiseliuli/dsh-as-mcp", "url": "https://unstone.github.io/dsh-xray/p/xiseliuli__dsh-as-mcp.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>xiseliuli/dsh-as-mcp</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">dsh-as-mcp</p>
+  <p class="lede">Expose a running DeepSeek Harness as an MCP server, so Claude Code, Codex or any MCP client can drive its workspaces, sessions, files, shell and agent tools, and read token usage and cost receipts.</p>
   <p class="lede">★ 5+ ·
      <a href="https://github.com/xiseliuli/dsh-as-mcp" rel="nofollow ugc">xiseliuli/dsh-as-mcp source on GitHub</a>
      · <a href="../registry.html#xiseliuli__dsh-as-mcp">this plugin in the registry</a></p>
-  <p>xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.</p>
+  <p>xiseliuli/dsh-as-mcp is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/mcp/http.ts:133</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_AS_MCP_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. tools/clean-probe-sessions.mjs:56, tools/clean-probe-sessions.mjs:56</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. tools/check-docs.mjs:285, tools/check-docs.mjs:330</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. scripts/exercise.mjs:933, tools/live-checks.mjs:686</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. tools/shapes.mjs:117, tools/shapes.mjs:118</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_AS_MCP_TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>locale</span> <span>slots</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_AS_MCP_TOKEN</span> <span>DSH_HOME</span> <span>DSH_AS_MCP_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_AS_MCP_TOKEN</span> <span>DSH_AS_MCP_URL</span> <span>DSH_RUNTIME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

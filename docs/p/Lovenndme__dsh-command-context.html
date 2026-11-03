@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lovenndme/dsh-command-context — capability card (C2) · dsh-xray</title>
-<meta name="description" content="Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, decodes base64 in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Lovenndme__dsh-command-context.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lovenndme/dsh-command-context — dsh plugin capability card">
-<meta property="og:description" content="Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, decodes base64 in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Lovenndme__dsh-command-context.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-command-context", "identifier": "Lovenndme/dsh-command-context", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/Lovenndme/dsh-command-context", "url": "https://unstone.github.io/dsh-xray/p/Lovenndme__dsh-command-context.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-command-context", "identifier": "Lovenndme/dsh-command-context", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, decodes base64 in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/Lovenndme/dsh-command-context", "url": "https://unstone.github.io/dsh-xray/p/Lovenndme__dsh-command-context.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,13 +46,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">A /context slash command for DeepSeek Harness: context window usage, free space, and a per-category breakdown of what fills the prompt.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/Lovenndme/dsh-command-context" rel="nofollow ugc">Lovenndme/dsh-command-context source on GitHub</a>
      · <a href="../registry.html#Lovenndme__dsh-command-context">this plugin in the registry</a></p>
-  <p>Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>Lovenndme/dsh-command-context is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, decodes base64 in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. tools/sync-market-entry.mjs:71</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN, MARKET_TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>commands</span> <span>sessions</span> <span>slots</span> <span>tokenMeter</span></p>
   
