@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>SMPcosy/dsh-memnexus</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 统一长期记忆中枢插件：本地持久记忆 + L0~L3 分层蒸馏 + 上下文压缩结构化摘要 + Hindsight 桥接 + 可视化记忆管理面板</p>
+  <p class="lede">统一长期记忆中枢：L0–L3 分层蒸馏 + 混合检索 + 可视化面板（DSH 插件）</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/SMPcosy/dsh-memnexus" rel="nofollow ugc">SMPcosy/dsh-memnexus source on GitHub</a>
      · <a href="../registry.html#SMPcosy__dsh-memnexus">this plugin in the registry</a></p>
@@ -53,7 +53,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. smoke-hindsight.mjs:56, smoke-hindsight.mjs:79</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>HINDSIGHT_API_KEY, HINDSIGHT_API_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/tools.js:355</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/tools.js:378</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/turn-stopping</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.hindsight.vectorize.io</span></p>

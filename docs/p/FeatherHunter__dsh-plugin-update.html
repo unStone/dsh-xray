@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FeatherHunter/dsh-plugin-update — capability card (C2) · dsh-xray</title>
-<meta name="description" content="FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 in development tooling the package does not ship, starts a network server, reads credential-class env vars in development tooling the pac">
+<meta name="description" content="FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/FeatherHunter__dsh-plugin-update.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FeatherHunter/dsh-plugin-update — dsh plugin capability card">
-<meta property="og:description" content="FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 in development tooling the package does not ship, starts a network server, reads credential-class env vars in development tooling the pac">
+<meta property="og:description" content="FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/FeatherHunter__dsh-plugin-update.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-update", "identifier": "FeatherHunter/dsh-plugin-update", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 in development tooling the package does not ship, starts a network server, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/FeatherHunter/dsh-plugin-update", "url": "https://unstone.github.io/dsh-xray/p/FeatherHunter__dsh-plugin-update.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-plugin-update", "identifier": "FeatherHunter/dsh-plugin-update", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/FeatherHunter/dsh-plugin-update", "url": "https://unstone.github.io/dsh-xray/p/FeatherHunter__dsh-plugin-update.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/FeatherHunter/dsh-plugin-update" rel="nofollow ugc">FeatherHunter/dsh-plugin-update source on GitHub</a>
      · <a href="../registry.html#FeatherHunter__dsh-plugin-update">this plugin in the registry</a></p>
-  <p>FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 in development tooling the package does not ship, starts a network server, reads credential-class env vars in development tooling the package does not ship.</p>
+  <p>FeatherHunter/dsh-plugin-update is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars in development tooling the package does not ship.</p>
   
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/core/executor.ts:1263</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/panel-layout-probe.mjs:231</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. demo/server.mjs:105, demo/static.mjs:7</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: NODE_AUTH_TOKEN, NPM_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×31 in authored code, e.g. selftest/tooling/process.ts:7, selftest/tooling/process.ts:7</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. selftest/real-machine/cdp/cdp-client.ts:240, selftest/real-machine/cdp/cdp-client.ts:245</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×6 in authored code, e.g. demo/server.mjs:105, demo/static.mjs:7</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: NODE_AUTH_TOKEN, NPM_TOKEN</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: webServer</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>SHOWCASE_THEME</span> <span>SHOWCASE_SCENARIO</span> <span>SHOWCASE_OUT</span> <span>DEMO_HOME</span> <span>DEMO_PLUGIN</span> <span>DEMO_PREFIX</span> <span>DEMO_PORT</span> <span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_VERIFY_PLAYWRIGHT</span> <span>ELECTRON_RUN_AS_NODE</span> <span>DSH_PROFILE</span> <span>DSH_SHELL</span> <span>SHOWCASE_THEME</span> <span>SHOWCASE_SCENARIO</span> <span>SHOWCASE_OUT</span> <span>DEMO_HOME</span> <span>DEMO_PLUGIN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>afeack/dsh-mobile-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. plugins/dsh-mobile-harness/lib/cloudflared.js:14, plugins/dsh-mobile-harness/lib/tailscale.js:9</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. tools/dsh-tunnel-proxy.mjs:226</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>plugins/dsh-mobile-harness/lib/index.js:81</code> tools.register</li><li><code>plugins/dsh-mobile-harness/lib/phone-tool.js:128</code> tool factory</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×9 in build output only, e.g. plugins/dsh-mobile-harness/lib/cloudflared.js:14, plugins/dsh-mobile-harness/lib/picker.js:9</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. tools/dsh-tunnel-proxy.mjs:226, plugins/dsh-mobile-harness/tools/diagnose.mjs:72</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>plugins/dsh-mobile-harness/lib/index.js:115</code> tools.register</li><li><code>plugins/dsh-mobile-harness/lib/phone-tool.js:128</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>frp-cat.com</span> <span>schemas.android.com</span> <span>ghfast.top</span> <span>gh-proxy.com</span> <span>ghproxy.net</span> <span>hk.gh-proxy.com</span> <span>github.moeyy.xyz</span> <span>gh.llkk.cc</span> <span>kkgithub.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>frp-cat.com</span> <span>schemas.android.com</span> <span>ghfast.top</span> <span>gh-proxy.com</span> <span>ghproxy.net</span> <span>hk.gh-proxy.com</span> <span>github.moeyy.xyz</span> <span>gh.llkk.cc</span> <span>kkgithub.com</span> <span>registry.npmmirror.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_DIAGNOSE_FRP_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

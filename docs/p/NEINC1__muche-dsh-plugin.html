@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NEINC1/muche-dsh-plugin — capability card (C2) · dsh-xray</title>
-<meta name="description" content="NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/NEINC1__muche-dsh-plugin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NEINC1/muche-dsh-plugin — dsh plugin capability card">
-<meta property="og:description" content="NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/NEINC1__muche-dsh-plugin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "muche-dsh-plugin", "identifier": "NEINC1/muche-dsh-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/NEINC1/muche-dsh-plugin", "url": "https://unstone.github.io/dsh-xray/p/NEINC1__muche-dsh-plugin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "muche-dsh-plugin", "identifier": "NEINC1/muche-dsh-plugin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/NEINC1/muche-dsh-plugin", "url": "https://unstone.github.io/dsh-xray/p/NEINC1__muche-dsh-plugin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/NEINC1/muche-dsh-plugin" rel="nofollow ugc">NEINC1/muche-dsh-plugin source on GitHub</a>
      · <a href="../registry.html#NEINC1__muche-dsh-plugin">this plugin in the registry</a></p>
-  <p>NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>NEINC1/muche-dsh-plugin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/desktop/helper-process.js:1, lib/desktop/helper-process.js:24</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/check-cohort-compat.mjs:4, scripts/desktop-smoke.mjs:5</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>connection</span> <span>settings</span> <span>slots</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/claimed</span> <span>approval/request</span> <span>dispose</span> <span>loader/volatile-update</span> <span>session/event</span> <span>user-questions/request</span></p>
-  
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/claimed</span> <span>approval/request</span> <span>loader/volatile-update</span> <span>session/event</span> <span>user-questions/request</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>reactjs.org</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MUCHE_HELPER_SMOKE_PNG</span> <span>MUCHE_HELPER_SMOKE_OFFSCREEN</span> <span>MUCHE_HELPER_CHAT_SMOKE</span> <span>MUCHE_HELPER_CHAT_SMOKE_PNG</span> <span>MUCHE_PIPE_FD</span> <span>DSH_HOME</span> <span>MUCHE_HELPER_SMOKE</span> <span>MUCHE_HELPER_DRAG_SMOKE</span> <span>MUCHE_HOST_PID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
