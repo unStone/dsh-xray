@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>fj7937290-sys/dsh-video-remix</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">把文案变成带配音的讲解视频：文字卡片或 AI 画面，17 种中文音色。Turn a script into a narrated explainer video.</p>
+  <p class="lede">把文案变成带配音的视频：文字卡片 / 网页搜图 / AI 画面三种模式，17 种中文音色可试听、可上传自定义声音。Turn a script into a narrated video: text cards, web-searched stills, or AI footage, with 17 Chinese voices.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/fj7937290-sys/dsh-video-remix" rel="nofollow ugc">fj7937290-sys/dsh-video-remix source on GitHub</a>
      · <a href="../registry.html#fj7937290-sys__dsh-video-remix">this plugin in the registry</a></p>
@@ -53,10 +53,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. index.js:12, index.js:43</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AGNES_API_KEY, ITINGNAO_API_KEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>index.js:541</code> tools.register</li><li><code>index.js:542</code> tools.register</li><li><code>index.js:543</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>index.js:668</code> tools.register</li><li><code>index.js:669</code> tools.register</li><li><code>index.js:670</code> tools.register</li><li><code>index.js:671</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.itingnao.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>cn.bing.com</span> <span>api.itingnao.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>VIDEO_EYES_FFMPEG</span> <span>FFMPEG_PATH</span> <span>ITINGNAO_API_KEY</span> <span>AGNES_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

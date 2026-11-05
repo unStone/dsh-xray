@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>keyblues/dsh-icp</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness (DSH) 插件：原生工信部 ICP 备案查询（网站 / APP / 小程序 / 快应用 + 四类违法违规黑名单）——Node 进程内直连官方接口并本地求解滑块验证码，无需 MCP 服务、外部服务或 API Key。Native MIIT ICP filing lookup for DSH.</p>
+  <p class="lede">MIIT ICP filing lookup for DeepSeek Harness (DSH) — websites, apps, mini programs, quick apps and the four violation blacklists. DSH 插件：工信部 ICP 备案查询。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/keyblues/dsh-icp" rel="nofollow ugc">keyblues/dsh-icp source on GitHub</a>
      · <a href="../registry.html#keyblues__dsh-icp">this plugin in the registry</a></p>
   <p>keyblues/dsh-icp is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, base64 decoding in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/miit.js:454, lib/miit.js:455</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>index.js:451</code> tools.register</li><li><code>index.js:452</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×2 in build output only, e.g. lib/miit.js:453, lib/miit.js:454</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>index.js:445</code> tools.register</li><li><code>index.js:446</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>beian.miit.gov.cn</span> <span>hlwicpfwc.miit.gov.cn</span></p>

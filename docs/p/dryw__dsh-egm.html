@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>dryw/dsh-egm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. diagrams/render.mjs:31, diagrams/render.mjs:31</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>reviewer-host.js:121</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./adapters/dsh/cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. adapters/dsh/check_upstream.mjs:30, adapters/dsh/check_upstream.mjs:30</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN, GITHUB_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>adapters/dsh/reviewer-host.js:131</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>skills</span> <span>subagents</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>d2lang.com</span> <span>api.github.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>D2</span> <span>GITHUB_API_URL</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.github.com</span> <span>d2lang.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GITHUB_API_URL</span> <span>GITHUB_TOKEN</span> <span>GH_TOKEN</span> <span>D2</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

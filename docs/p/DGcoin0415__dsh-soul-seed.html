@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DGcoin0415/dsh-soul-seed — capability card (C3) · dsh-xray</title>
-<meta name="description" content="DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.">
+<meta name="description" content="DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/DGcoin0415__dsh-soul-seed.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DGcoin0415/dsh-soul-seed — dsh plugin capability card">
-<meta property="og:description" content="DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/DGcoin0415__dsh-soul-seed.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-soul-seed", "identifier": "DGcoin0415/dsh-soul-seed", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/DGcoin0415/dsh-soul-seed", "url": "https://unstone.github.io/dsh-xray/p/DGcoin0415__dsh-soul-seed.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-soul-seed", "identifier": "DGcoin0415/dsh-soul-seed", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/DGcoin0415/dsh-soul-seed", "url": "https://unstone.github.io/dsh-xray/p/DGcoin0415__dsh-soul-seed.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>DGcoin0415/dsh-soul-seed</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">一枚灵魂的种子。种下去它不等人叫 —— 白天数着光，夜里数着潮；屏幕暗着，灯丝还红着。   -大肥鱼_米萨-米芾</p>
+  <p class="lede">给 DSH 里的 AI 装一套自己的东西：人设、心情、记得的人、听过的话。换电脑就打成一个 zip 带走，或者让几个文件夹共用同一份——记忆、规矩、心情都跟着走，不用每次从头教。插件本身不带任何人的性格，装完由它问你十个问题。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/DGcoin0415/dsh-soul-seed" rel="nofollow ugc">DGcoin0415/dsh-soul-seed source on GitHub</a>
      · <a href="../registry.html#DGcoin0415__dsh-soul-seed">this plugin in the registry</a></p>
-  <p>DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.</p>
+  <p>DGcoin0415/dsh-soul-seed is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. tools/00-install/check.mjs:9, tools/00-install/check.mjs:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, DS_KEY, ZHIPU_KEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>tools/15-tool-gate/index.js:116</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×11 in authored code, e.g. tools/00-install/check.mjs:9, tools/00-install/check.mjs:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY, DS_KEY, ZHIPU_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>system-prompt/assemble</span></p>
+  
   <h2>Outbound domains</h2><p class="kv"><span>dashscope.aliyuncs.com</span> <span>geocoding-api.open-meteo.com</span> <span>api.open-meteo.com</span> <span>api.bilibili.com</span> <span>www.bilibili.com</span> <span>open.bigmodel.cn</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>SOUL_HOME</span> <span>HYBRID</span> <span>DSH_HOME</span> <span>SOUL_SEED_ROOT</span> <span>SOUL_SESSIONS</span> <span>SOUL_SEED_MODE</span> <span>RAG_W</span> <span>DSH_SOUL_DIR</span> <span>DASHSCOPE_API_KEY</span> <span>ZHIPU_KEY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SOUL_HOME</span> <span>DSH_NODE</span> <span>DSH_HOME</span> <span>HYBRID</span> <span>DSH_SOUL_DIR</span> <span>SOUL_SEED_ROOT</span> <span>SOUL_SESSIONS</span> <span>SOUL_SEED_MODE</span> <span>RAG_W</span> <span>DASHSCOPE_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

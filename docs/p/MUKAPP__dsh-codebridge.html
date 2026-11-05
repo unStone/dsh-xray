@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MUKAPP/dsh-codebridge — capability card (C3) · dsh-xray</title>
-<meta name="description" content="MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, powerful capability in test/example code only.">
+<meta name="description" content="MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/MUKAPP__dsh-codebridge.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MUKAPP/dsh-codebridge — dsh plugin capability card">
-<meta property="og:description" content="MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, powerful capability in test/example code only.">
+<meta property="og:description" content="MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/MUKAPP__dsh-codebridge.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codebridge", "identifier": "MUKAPP/dsh-codebridge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, powerful capability in test/example code only.", "codeRepository": "https://github.com/MUKAPP/dsh-codebridge", "url": "https://unstone.github.io/dsh-xray/p/MUKAPP__dsh-codebridge.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codebridge", "identifier": "MUKAPP/dsh-codebridge", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.", "codeRepository": "https://github.com/MUKAPP/dsh-codebridge", "url": "https://unstone.github.io/dsh-xray/p/MUKAPP__dsh-codebridge.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/MUKAPP/dsh-codebridge" rel="nofollow ugc">MUKAPP/dsh-codebridge source on GitHub</a>
      · <a href="../registry.html#MUKAPP__dsh-codebridge">this plugin in the registry</a></p>
-  <p>MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, powerful capability in test/example code only.</p>
+  <p>MUKAPP/dsh-codebridge is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. verification/run.mjs:4, verification/run.mjs:32</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: systemPrompt, tools/pre-execute</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>8 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/catalog.ts:15</code> tool factory</li><li><code>src/execute.ts:14</code> tool factory</li><li><code>src/index.ts:17</code> tools.register</li><li><code>src/index.ts:18</code> tools.register</li><li><code>verification/probe.mjs:19</code> tools.register</li><li><code>verification/probe.mjs:19</code> tool factory</li><li><code>verification/probe.mjs:25</code> tools.register</li><li><code>verification/probe.mjs:25</code> tool factory</li><li><code>verification/probe.mjs:36</code> Context or tools service passed to an unresolved helper</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>ptcRuntime</span> <span>sandboxPolicy</span> <span>sessions</span> <span>tools</span> <span>workingDirectory</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. verification/run.mjs:4, verification/run.mjs:54</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: tools/pre-execute</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>10 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/catalog.ts:16</code> tool factory</li><li><code>src/execute.ts:18</code> tool factory</li><li><code>src/index.ts:21</code> tools.register</li><li><code>src/index.ts:22</code> tools.register</li><li><code>verification/probe.mjs:19</code> tools.register</li><li><code>verification/probe.mjs:19</code> tool factory</li><li><code>verification/probe.mjs:25</code> tools.register</li><li><code>verification/probe.mjs:25</code> tool factory</li><li><code>verification/restart-probe.mjs:25</code> tools.register</li><li><code>verification/restart-probe.mjs:25</code> tool factory</li><li><code>verification/probe.mjs:36</code> Context or tools service passed to an unresolved helper</li><li><code>verification/restart-probe.mjs:56</code> Context or tools service passed to an unresolved helper</li><li><code>verification/restart-probe.mjs:97</code> Context or tools service passed to an unresolved helper</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>locale</span> <span>ptcRuntime</span> <span>sandboxPolicy</span> <span>sessionPersistence</span> <span>sessionProjections</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>workingDirectory</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>loader/volatile-update</span> <span>session/disposed</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>CODEBRIDGE_RESTART_PHASE</span> <span>CODEBRIDGE_RESTART_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

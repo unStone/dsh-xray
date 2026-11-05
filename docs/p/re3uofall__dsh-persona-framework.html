@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>re3uofall/dsh-persona-framework</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 人格框架插件：只给框架，不含人格。四层切分（劲→闸→标→嘴）、88 个模块各一份正文按编号随框架注入、10 个工具、31 个程序。外挂注入，不覆盖、不改写人格文件；发版前过体检闸。</p>
+  <p class="lede">DSH 人格框架插件：只给框架，不含人格。四层切分（劲→闸→标→嘴）、88 个模块各一份正文按编号随框架注入、10 个工具、31 个程序、9 个附加插件（记忆分层／人格同一／人格出现／日记／碗外探索／人格自学／思考成果／看图／情绪）。外挂注入，不覆盖、不改写人格文件；发版前过体检闸。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/re3uofall/dsh-persona-framework" rel="nofollow ugc">re3uofall/dsh-persona-framework source on GitHub</a>
      · <a href="../registry.html#re3uofall__dsh-persona-framework">this plugin in the registry</a></p>
   <p>re3uofall/dsh-persona-framework is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. release-check.mjs:19, release-check.mjs:19</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>7 static tool registration point(s).</p><ul><li><code>addons/dsh-persona-memory/index.js:536</code> tools.register</li><li><code>addons/dsh-persona-vision/index.js:289</code> tools.register</li><li><code>addons/persona-diary-plugin/index.js:346</code> tools.register</li><li><code>addons/persona-explore-plugin/index.js:478</code> tools.register</li><li><code>addons/persona-grow-plugin/index.js:203</code> tools.register</li><li><code>addons/persona-results-plugin/index.js:136</code> tools.register</li><li><code>index.js:1296</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer, system-prompt/assemble</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. release-check.mjs:19, release-check.mjs:19</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>9 static tool registration point(s).</p><ul><li><code>addons/dsh-persona-affect/index.js:154</code> tools.register</li><li><code>addons/dsh-persona-appear/index.js:138</code> tools.register</li><li><code>addons/dsh-persona-memory/index.js:682</code> tools.register</li><li><code>addons/dsh-persona-vision/index.js:289</code> tools.register</li><li><code>addons/persona-diary-plugin/index.js:346</code> tools.register</li><li><code>addons/persona-explore-plugin/index.js:478</code> tools.register</li><li><code>addons/persona-grow-plugin/index.js:203</code> tools.register</li><li><code>addons/persona-results-plugin/index.js:136</code> tools.register</li><li><code>index.js:1326</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/inserted</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/inbox/inserted</span> <span>session/event</span> <span>system-prompt/assemble</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PERSONA_DIR</span> <span>SystemRoot</span> <span>WINDIR</span> <span>USERPROFILE</span> <span>DSH_PROFILE</span> <span>TEMP</span> <span>TMP</span> <span>DSH_HOME</span> <span>DSH_ROOT</span> <span>PERSONA_WS</span></p>
   <h2>How to read this</h2>

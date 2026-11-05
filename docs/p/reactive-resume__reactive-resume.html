@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>reactive-resume/reactive-resume — capability card (C3) · dsh-xray</title>
-<meta name="description" content="reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.">
+<meta name="description" content="reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/reactive-resume__reactive-resume.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="reactive-resume/reactive-resume — dsh plugin capability card">
-<meta property="og:description" content="reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.">
+<meta property="og:description" content="reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/reactive-resume__reactive-resume.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "reactive-resume", "identifier": "reactive-resume/reactive-resume", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/reactive-resume/reactive-resume", "url": "https://unstone.github.io/dsh-xray/p/reactive-resume__reactive-resume.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "reactive-resume", "identifier": "reactive-resume/reactive-resume", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/reactive-resume/reactive-resume", "url": "https://unstone.github.io/dsh-xray/p/reactive-resume__reactive-resume.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,14 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 45k+ ·
      <a href="https://github.com/reactive-resume/reactive-resume" rel="nofollow ugc">reactive-resume/reactive-resume source on GitHub</a>
      · <a href="../registry.html#reactive-resume__reactive-resume">this plugin in the registry</a></p>
-  <p>reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.</p>
+  <p>reactive-resume/reactive-resume is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. apps/mobile/src/auth/session.ts:102, apps/mobile/src/preview/resources.ts:95</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_SECRET</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><p class="lede">1579 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. apps/mobile/scripts/harness.mjs:19</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. apps/mobile/src/auth/session.ts:102, apps/mobile/src/preview/resources.ts:95</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>AUTH_SECRET</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><p class="lede">1477 source file(s) omitted by size/count/encoding limits; tool count is incomplete</p>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.apache.org</span> <span>docs.rxresu.me</span> <span>schema.org</span> <span>discord.gg</span> <span>opensource.org</span> <span>rxresu.me</span> <span>www.sitemaps.org</span> <span>amruthpillai.com</span> <span>www.reddit.com</span> <span>crowdin.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.apache.org</span> <span>docs.rxresu.me</span> <span>opensource.org</span> <span>schema.org</span> <span>discord.gg</span> <span>rxresu.me</span> <span>www.sitemaps.org</span> <span>amruthpillai.com</span> <span>www.reddit.com</span> <span>crowdin.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>MOBILE_BUILD_NUMBER</span> <span>EXPO_MOBILE_WEB_PREVIEW</span> <span>MOBILE_UPDATE_CHANNEL</span> <span>EXPO_OS</span> <span>PORT</span> <span>VERCEL_ENV</span> <span>ALLOW_PREVIEW_MIGRATIONS</span> <span>VERCEL</span> <span>APP_URL</span> <span>DATABASE_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

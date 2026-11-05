@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Lumos-789/malo-browser</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">Scripted browser demo tool: scene-driven Electron stage, headless 1080p30 recording with evidence, director console and loopback control API.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Lumos-789/malo-browser" rel="nofollow ugc">Lumos-789/malo-browser source on GitHub</a>
      · <a href="../registry.html#Lumos-789__malo-browser">this plugin in the registry</a></p>
   <p>Lumos-789/malo-browser is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/main/tools.ts:2, src/main/tools.ts:42</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. scripts/malo-smoke.mjs:263, scripts/malo-web-probe.mjs:295</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. scripts/malo-smoke.mjs:49, scripts/malo-smoke.mjs:53</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEMO_CONTROL_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. src/main/tools.ts:2, src/main/tools.ts:72</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. src/main/cdp-page.ts:145, src/main/electron-page-driver.ts:282</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. src/main/control/server.ts:180, src/main/malo/broker-server.ts:74</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: DEMO_CONTROL_TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:13</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>skills</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>www.baidu.com</span> <span>www.zhihu.com</span> <span>www.taobao.com</span> <span>www.bilibili.com</span> <span>www.reddit.com</span> <span>threejs.org</span> <span>www.openstreetmap.org</span> <span>www.gov.cn</span> <span>www.nytimes.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DEMO_DEBUG</span> <span>DEMO_CONTROL_URL</span> <span>DEMO_CONTROL_TOKEN</span> <span>MALO_BROKER_FILE</span> <span>MALO_PROBE_OUT</span> <span>MALO_PROBE_INTERVAL_MS</span> <span>MALO_PROBE_TIMEOUT_MS</span> <span>MALO_PROBE_SETTLE_MS</span> <span>MALO_PROBE_ONLY</span> <span>MALO_BROWSER_ACCOUNTS</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.example.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DEMO_DEBUG</span> <span>MALO_BROWSER_ACCOUNTS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -53,9 +53,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/process.mjs:1, src/process.mjs:11</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GITHUB_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>7 static tool registration point(s).</p><ul><li><code>index.mjs:18</code> tools.register</li><li><code>index.mjs:22</code> tools.register</li><li><code>src/background-review.mjs:105</code> tools.register</li><li><code>src/background-review.mjs:109</code> tools.register</li><li><code>src/background-review.mjs:113</code> tools.register</li><li><code>src/background-review.mjs:117</code> tools.register</li><li><code>src/background-review.mjs:130</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>8 static tool registration point(s).</p><ul><li><code>index.mjs:25</code> tools.register</li><li><code>index.mjs:29</code> tools.register</li><li><code>src/background-review.mjs:106</code> tools.register</li><li><code>src/background-review.mjs:110</code> tools.register</li><li><code>src/background-review.mjs:119</code> tools.register</li><li><code>src/background-review.mjs:123</code> tools.register</li><li><code>src/background-review.mjs:136</code> tools.register</li><li><code>src/review-child-plugin.mjs:9</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>dispose</span> <span>llm/stream</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span></p>
   <h2>How to read this</h2>
