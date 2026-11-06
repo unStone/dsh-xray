@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>edison7009/EchoBird — capability card (C2) · dsh-xray</title>
-<meta name="description" content="edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time.">
+<meta name="description" content="edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/edison7009__EchoBird.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="edison7009/EchoBird — dsh plugin capability card">
-<meta property="og:description" content="edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time.">
+<meta property="og:description" content="edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/edison7009__EchoBird.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "EchoBird", "identifier": "edison7009/EchoBird", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time.", "codeRepository": "https://github.com/edison7009/EchoBird", "url": "https://unstone.github.io/dsh-xray/p/edison7009__EchoBird.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "EchoBird", "identifier": "edison7009/EchoBird", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands.", "codeRepository": "https://github.com/edison7009/EchoBird", "url": "https://unstone.github.io/dsh-xray/p/edison7009__EchoBird.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 3.5k ·
      <a href="https://github.com/edison7009/EchoBird" rel="nofollow ugc">edison7009/EchoBird source on GitHub</a>
      · <a href="../registry.html#edison7009__EchoBird">this plugin in the registry</a></p>
-  <p>edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time.</p>
+  <p>edison7009/EchoBird is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It runs code at install time, executes system commands.</p>
   
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patch-package</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: patch-package --error-on-fail &amp;&amp; node scripts/verify-dependency-patches.mjs &amp;&amp; node scripts/sync-catalogs.mjs</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. vite.config.ts:5, vite.config.ts:5</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   

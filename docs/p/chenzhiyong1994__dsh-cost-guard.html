@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>chenzhiyong1994/dsh-cost-guard — capability card (C2) · dsh-xray</title>
-<meta name="description" content="chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, ships no manifest.">
+<meta name="description" content="chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/chenzhiyong1994__dsh-cost-guard.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chenzhiyong1994/dsh-cost-guard — dsh plugin capability card">
-<meta property="og:description" content="chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, ships no manifest.">
+<meta property="og:description" content="chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/chenzhiyong1994__dsh-cost-guard.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cost-guard", "identifier": "chenzhiyong1994/dsh-cost-guard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, ships no manifest.", "codeRepository": "https://github.com/chenzhiyong1994/dsh-cost-guard", "url": "https://unstone.github.io/dsh-xray/p/chenzhiyong1994__dsh-cost-guard.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cost-guard", "identifier": "chenzhiyong1994/dsh-cost-guard", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship.", "codeRepository": "https://github.com/chenzhiyong1994/dsh-cost-guard", "url": "https://unstone.github.io/dsh-xray/p/chenzhiyong1994__dsh-cost-guard.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/chenzhiyong1994/dsh-cost-guard" rel="nofollow ugc">chenzhiyong1994/dsh-cost-guard source on GitHub</a>
      · <a href="../registry.html#chenzhiyong1994__dsh-cost-guard">this plugin in the registry</a></p>
-  <p>chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It uses eval / new Function, ships no manifest.</p>
+  <p>chenzhiyong1994/dsh-cost-guard is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, uses eval in development tooling the package does not ship.</p>
   
-  <p class="lede"><b>Not installable — has plugin code but no manifest to install it by</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/check.js:16, scripts/check.js:54</td></tr><tr><td>ships no manifest</td><td><code>no_manifest</code></td><td>uses 1 services, 0 tool regs, no manifest</td></tr></tbody></table>
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/check.cjs:26</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>timer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/request</span> <span>session/disposed</span> <span>session/event</span></p>
-  
-  
+  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>session/disposed</span> <span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api-docs.deepseek.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

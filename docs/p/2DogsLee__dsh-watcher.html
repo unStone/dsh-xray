@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>2DogsLee/dsh-watcher</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DeepSeek Harness (DSH) 插件 API 面自动比对引擎：升级前一条命令看清插件依赖的 API/配置字段变了没有 · Auto diff engine for DSH plugin-breaking changes, with CI watch &amp; agent skill</p>
-  <p class="lede">★ 1+ ·
+  <p class="lede">DeepSeek Harness (DSH) 插件 API 面自动比对引擎 + 本地挂载体检 + 升级预告：升级前一条命令看清插件依赖的 API/配置/挂载链路变了没有</p>
+  <p class="lede">★ 0 ·
      <a href="https://github.com/2DogsLee/dsh-watcher" rel="nofollow ugc">2DogsLee/dsh-watcher source on GitHub</a>
      · <a href="../registry.html#2DogsLee__dsh-watcher">this plugin in the registry</a></p>
   <p>2DogsLee/dsh-watcher is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. ast-diff/index.mjs:10, ast-diff/index.mjs:10</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. ast-diff/index.mjs:10, ast-diff/index.mjs:10</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_RUNTIME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

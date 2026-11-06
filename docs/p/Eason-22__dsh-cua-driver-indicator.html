@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Eason-22/dsh-cua-driver-indicator</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">Precision layer for DSH&#x27;s built-in Cua Driver computer control: checks the click point is not covered before clicking, verifies the click actually landed, clicks controls by name, runs up to 5 verifie</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Eason-22/dsh-cua-driver-indicator" rel="nofollow ugc">Eason-22/dsh-cua-driver-indicator source on GitHub</a>
      · <a href="../registry.html#Eason-22__dsh-cua-driver-indicator">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/check-package.mjs:20, scripts/check-package.mjs:20</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:1108</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>5 static tool registration point(s).</p><ul><li><code>lib/index.js:1120</code> tools.register</li><li><code>lib/index.js:1121</code> tools.register</li><li><code>lib/index.js:1122</code> tools.register</li><li><code>lib/index.js:1123</code> tools.register</li><li><code>lib/index.js:1127</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>session/event</span> <span>tools/execute</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span> <span>SNAP_CLICK_GEOMETRY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>wulun811/LiuHe is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×49 in authored code, e.g. malong/host-config.js:10, malong/host-config.js:10</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. malong/tools/tool-security-review/handler.js:21</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. malong/code-index.js:2264</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>malong/dsh/dsh-bridge.mjs:312</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×63 in authored code, e.g. malong/host-config.js:10, malong/host-config.js:10</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. malong/tools/tool-security-review/handler.js:21</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×3 in authored code, e.g. malong/code-index.js:2306, malong/scripts/acceptance-dsh-host.mjs:71</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>malong/dsh/dsh-bridge.mjs:320</code> tools.register</li></ul>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>MALONG_SOCKET</span> <span>MALONG_PARSE_BIN</span> <span>MALONG_PARSE_BIN_ALT</span> <span>MALONG_INTERFACE</span> <span>MALONG_PYTHON</span> <span>MALONG_TEST_DB_BUSY_TIMEOUT_MS</span> <span>MALONG_PORT</span> <span>MALONG_SH</span> <span>MALONG_TEST_HEARTBEAT_MS</span> <span>MALONG_TEST_READBACK_MISMATCH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>MALONG_SOCKET</span> <span>MALONG_PARSE_BIN</span> <span>MALONG_PARSE_BIN_ALT</span> <span>MALONG_TRACE</span> <span>MALONG_INTERFACE</span> <span>MALONG_PYTHON</span> <span>MALONG_TEST_DB_BUSY_TIMEOUT_MS</span> <span>MALONG_STATE_DIR</span> <span>MALONG_PORT</span> <span>MALONG_SH</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

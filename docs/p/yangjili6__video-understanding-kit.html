@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>yangjili6/video-understanding-kit is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. asr.mjs:5, asr.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. serve-preview.mjs:70</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. asr.mjs:5, asr.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. serve-preview.mjs:70</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>dsh-plugin/index.js:1170</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>huggingface.co</span> <span>www.bilibili.com</span> <span>api.bilibili.com</span> <span>hf-mirror.com</span> <span>fastly.jsdelivr.net</span> <span>gcore.jsdelivr.net</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_ASR_APP_DIR</span> <span>ASR_SILENCE_DB</span> <span>ASR_MIN_SILENCE</span> <span>ASR_MAX_SEG</span> <span>SUBS_SKIP_TH</span> <span>SUBS_PROBE_N</span> <span>FFMPEG_BIN</span> <span>IMAGEMAGICK_HOME</span> <span>DET_MAX_SIDE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SUBS_DET_WORKERS</span> <span>DSH_HOME</span> <span>DSH_ASR_APP_DIR</span> <span>ASR_SILENCE_DB</span> <span>ASR_MIN_SILENCE</span> <span>ASR_MAX_SEG</span> <span>CALIB_TTL_MS</span> <span>CALIBRATE_RESULT</span> <span>SUBS_SKIP_TH</span> <span>SUBS_PROBE_N</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -54,10 +54,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>FEISHU_APP_SECRET, FEISHU_CREDENTIALS_PATH</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>locale</span> <span>sessionPersistence</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaceRegistry</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>approval</span> <span>connection</span> <span>locale</span> <span>sessionQuery</span> <span>sessions</span> <span>slots</span> <span>webServer</span> <span>workspaceRegistry</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>FEISHU_ALLOWED_CHATS</span> <span>DSH_HOME</span> <span>FEISHU_CREDENTIALS_PATH</span> <span>FEISHU_QR_PATH</span> <span>FEISHU_NOTIFY_CHATS</span> <span>FEISHU_PROJECTS_ROOT</span> <span>FEISHU_STATE_PATH</span> <span>FEISHU_REBIND</span> <span>FEISHU_APP_ID</span> <span>FEISHU_APP_SECRET</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FEISHU_ALLOWED_CHATS</span> <span>DSH_HOME</span> <span>FEISHU_CREDENTIALS_PATH</span> <span>FEISHU_QR_PATH</span> <span>FEISHU_NOTIFY_CHATS</span> <span>FEISHU_PROJECTS_ROOT</span> <span>FEISHU_STATE_PATH</span> <span>FEISHU_REBIND</span> <span>FEISHU_ALLOWED_USERS</span> <span>FEISHU_APP_ID</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

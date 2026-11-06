@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luca4Don3/dsh-shell — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.">
+<meta name="description" content="Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Luca4Don3__dsh-shell.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Luca4Don3/dsh-shell — dsh plugin capability card">
-<meta property="og:description" content="Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.">
+<meta property="og:description" content="Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Luca4Don3__dsh-shell.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-shell", "identifier": "Luca4Don3/dsh-shell", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/Luca4Don3/dsh-shell", "url": "https://unstone.github.io/dsh-xray/p/Luca4Don3__dsh-shell.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-shell", "identifier": "Luca4Don3/dsh-shell", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.", "codeRepository": "https://github.com/Luca4Don3/dsh-shell", "url": "https://unstone.github.io/dsh-xray/p/Luca4Don3__dsh-shell.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,12 +49,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/Luca4Don3/dsh-shell" rel="nofollow ugc">Luca4Don3/dsh-shell source on GitHub</a>
      · <a href="../registry.html#Luca4Don3__dsh-shell">this plugin in the registry</a></p>
-  <p>Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, can spawn subprocesses, executes system commands.</p>
+  <p>Luca4Don3/dsh-shell is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, powerful capability in test/example code only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>subprocess, systemPrompt</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. selection.mjs:3, selection.mjs:3</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: sandbox</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>terminal.mjs:42</code> Context or tools service passed to an unresolved helper</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>loader</span> <span>locale</span> <span>sandboxPolicy</span> <span>sessionProjections</span> <span>shell</span> <span>shellSelection</span> <span>slots</span> <span>subprocess</span> <span>systemPrompt</span> <span>terminals</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. selection.mjs:3, selection.mjs:3</td></tr><tr><td>powerful capability in test/example code only</td><td><code>dev_surface</code></td><td>in code that does not ship: sandbox, subprocess</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>terminal.mjs:41</code> Context or tools service passed to an unresolved helper</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>loader</span> <span>locale</span> <span>shell</span> <span>shellSelection</span> <span>slots</span> <span>systemPrompt</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>internal/config</span></p>
   
   

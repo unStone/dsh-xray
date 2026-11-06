@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>omdsh-dev/dsh-sidechain</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH 侧会话插件：/side 持续性侧会话（Codex 风格）与 /btw 一次性侧问（Claude 风格）——在临时 fork 中运行、不写入主会话历史；Web UI 右侧链面板内嵌对话，主会话保持不变</p>
+  <p class="lede">DSH 侧会话插件：/btw 后台侧问，/side 独立追问；继承已完成上下文，使用 DSH 原生侧栏标签，主会话保持可用。</p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/omdsh-dev/dsh-sidechain" rel="nofollow ugc">omdsh-dev/dsh-sidechain source on GitHub</a>
      · <a href="../registry.html#omdsh-dev__dsh-sidechain">this plugin in the registry</a></p>
@@ -54,7 +54,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/build-market.mjs:2, scripts/build-market.mjs:2</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>locale</span> <span>remote</span> <span>sessionProjections</span> <span>sessions</span> <span>slots</span> <span>subagents</span></p>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>locale</span> <span>sessionProjections</span> <span>sessions</span> <span>sidebarRight</span> <span>slots</span> <span>subagents</span> <span>uiConversation</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>

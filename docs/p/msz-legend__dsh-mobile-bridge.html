@@ -45,18 +45,18 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>msz-legend/dsh-mobile-bridge</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Use your phone as a secure remote for DSH Desktop — scan to pair, reuse the same web UI, streaming replies &amp; tool approvals on mobile. 手机浏览器安全接入 DSH Desktop：扫码配对、复用现有 Web UI、流式回显、工具审批。MIT</p>
+  <p class="lede">Use your phone as a secure remote for DSH Desktop — bind with a password, reuse the same web UI, streaming replies &amp; tool approvals on mobile. 手机浏览器安全接入 DSH Desktop：密码绑定、复用现有 Web UI、流式回显、工具审批。MIT</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/msz-legend/dsh-mobile-bridge" rel="nofollow ugc">msz-legend/dsh-mobile-bridge source on GitHub</a>
      · <a href="../registry.html#msz-legend__dsh-mobile-bridge">this plugin in the registry</a></p>
   <p>msz-legend/dsh-mobile-bridge is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only, network server in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/cloudflare-setup.js:9, lib/cloudflared.js:15</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/edge.js:413</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×9 in build output only, e.g. lib/cloudflare-setup.js:9, lib/cloudflared.js:15</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×1 in build output only, e.g. lib/edge.js:411</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>tools/pre-execute</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>qyapi.weixin.qq.com</span> <span>dsh.example.com</span> <span>api.telegram.org</span> <span>ntfy.sh</span> <span>api.day.app</span> <span>open.feishu.cn</span> <span>oapi.dingtalk.com</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>tools/pre-execute</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>dsh.example.com</span> <span>qyapi.weixin.qq.com</span> <span>api.telegram.org</span> <span>www.natfrp.com</span> <span>ntfy.sh</span> <span>api.day.app</span> <span>open.feishu.cn</span> <span>oapi.dingtalk.com</span></p>
   
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
