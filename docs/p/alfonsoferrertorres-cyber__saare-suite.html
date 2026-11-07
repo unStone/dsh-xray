@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>alfonsoferrertorres-cyber/saare-suite — capability card (C2) · dsh-xray</title>
-<meta name="description" content="alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.">
+<meta name="description" content="alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/alfonsoferrertorres-cyber__saare-suite.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="alfonsoferrertorres-cyber/saare-suite — dsh plugin capability card">
-<meta property="og:description" content="alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.">
+<meta property="og:description" content="alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/alfonsoferrertorres-cyber__saare-suite.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "saare-suite", "identifier": "alfonsoferrertorres-cyber/saare-suite", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/alfonsoferrertorres-cyber/saare-suite", "url": "https://unstone.github.io/dsh-xray/p/alfonsoferrertorres-cyber__saare-suite.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "saare-suite", "identifier": "alfonsoferrertorres-cyber/saare-suite", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.", "codeRepository": "https://github.com/alfonsoferrertorres-cyber/saare-suite", "url": "https://unstone.github.io/dsh-xray/p/alfonsoferrertorres-cyber__saare-suite.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/alfonsoferrertorres-cyber/saare-suite" rel="nofollow ugc">alfonsoferrertorres-cyber/saare-suite source on GitHub</a>
      · <a href="../registry.html#alfonsoferrertorres-cyber__saare-suite">this plugin in the registry</a></p>
-  <p>alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads, reads credential-class env vars.</p>
+  <p>alfonsoferrertorres-cyber/saare-suite is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It decodes base64 payloads.</p>
   
   <p class="lede"><b>No dsh integration found — this repository carries the dsh-plugin topic but shows no sign of connecting to dsh</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. control-plane/authMiddleware.js:26, control-plane/keyManager.js:61</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×4 in authored code, e.g. apps/control-plane/src/middleware/authMiddleware.js:26, apps/control-plane/src/middleware/zeroTrustMiddleware.js:73</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   
-  <h2>Outbound domains</h2><p class="kv"><span>vault.saare.es</span> <span>api.saare.es</span> <span>saare.es</span> <span>api.safecreative.org</span> <span>generativelanguage.googleapis.com</span> <span>api.openai.com</span> <span>api.anthropic.com</span> <span>api.deepseek.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DATABASE_URL</span> <span>SQLITE_PATH</span> <span>STRIPE_SECRET_KEY</span> <span>STRIPE_WEBHOOK_SECRET</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>vault.saare.es</span> <span>api.saare.es</span> <span>saare.es</span> <span>generativelanguage.googleapis.com</span> <span>api.openai.com</span> <span>api.anthropic.com</span> <span>api.deepseek.com</span> <span>console.saare.es</span> <span>api.safecreative.org</span></p>
+  
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

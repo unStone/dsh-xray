@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hackernotfound/dsh-tacit — capability card (C2) · dsh-xray</title>
-<meta name="description" content="hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
+<meta name="description" content="hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/hackernotfound__dsh-tacit.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hackernotfound/dsh-tacit — dsh plugin capability card">
-<meta property="og:description" content="hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
+<meta property="og:description" content="hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/hackernotfound__dsh-tacit.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tacit", "identifier": "hackernotfound/dsh-tacit", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/hackernotfound/dsh-tacit", "url": "https://unstone.github.io/dsh-xray/p/hackernotfound__dsh-tacit.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tacit", "identifier": "hackernotfound/dsh-tacit", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/hackernotfound/dsh-tacit", "url": "https://unstone.github.io/dsh-xray/p/hackernotfound__dsh-tacit.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,10 +49,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/hackernotfound/dsh-tacit" rel="nofollow ugc">hackernotfound/dsh-tacit source on GitHub</a>
      · <a href="../registry.html#hackernotfound__dsh-tacit">this plugin in the registry</a></p>
-  <p>hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
+  <p>hackernotfound/dsh-tacit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, reads credential-class env vars in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×12 in development tooling the package does not ship, e.g. scripts/check-ci-logs.mjs:18, scripts/check-ci-logs.mjs:18</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×12 in development tooling the package does not ship, e.g. scripts/check-ci-logs.mjs:18, scripts/check-ci-logs.mjs:18</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: TACIT_SMOKE_COOKIE</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>client/src/00-header.js:44</code> Cannot parse source: Unexpected token (44:0)</li><li><code>client/src/99-footer.js:1</code> Cannot parse source: Unexpected token (1:2)</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>internal/service</span></p>

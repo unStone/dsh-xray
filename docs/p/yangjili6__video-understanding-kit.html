@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>yangjili6/video-understanding-kit</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH专用，这个工具不同于传统的AI理解视频流程（定时切帧-切出的帧猜测上下文），而是以5-15FPS一帧来尽可能获取视频的内容，再以网格的形式存入每一帧；网格使用预训练模型进行分组（相同的场景/内容会尽可能在一个网格大组中），这样你的AI在使用了这个插件/工具后能够更好的形容看到的视频，并且不会花什么token；我接下来会在缩短完成这个流程所需要的时长上做努力（目前中端手机在OCR与ASR全开启</p>
+  <p class="lede">DSH专用，这个工具不同于传统的AI理解视频流程（定时切帧-切出的帧猜测上下文），而是以5-12FPS一帧来尽可能获取视频的内容，再以网格的形式存入每一帧；网格使用预训练模型进行分组（相同的场景/内容会尽可能在一个网格大组中），这样你的AI在使用了这个插件/工具后能够更好的形容看到的视频，并且不会花什么token；我接下来会在缩短完成这个流程所需要的时长上做努力（目前中端手机在OCR与ASR全开启</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/yangjili6/video-understanding-kit" rel="nofollow ugc">yangjili6/video-understanding-kit source on GitHub</a>
      · <a href="../registry.html#yangjili6__video-understanding-kit">this plugin in the registry</a></p>
@@ -53,7 +53,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. asr.mjs:5, asr.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. serve-preview.mjs:70</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>dsh-plugin/index.js:1170</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>dsh-plugin/index.js:1213</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>huggingface.co</span> <span>www.bilibili.com</span> <span>api.bilibili.com</span> <span>hf-mirror.com</span> <span>fastly.jsdelivr.net</span> <span>gcore.jsdelivr.net</span></p>

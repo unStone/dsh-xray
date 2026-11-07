@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>cjjchina3088191870-sudo/dsh-plugin-miku-theme</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness 初音未来主题，青绿与粉紫星光风格，支持浅深色外观与手机布局</p>
+  <p class="lede">DeepSeek Harness 初音未来与玫瑰女王双主题套装，原创虚拟玫瑰女王、统一主题管理、手机布局及电脑与手机独立启动视频。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/cjjchina3088191870-sudo/dsh-plugin-miku-theme" rel="nofollow ugc">cjjchina3088191870-sudo/dsh-plugin-miku-theme source on GitHub</a>
      · <a href="../registry.html#cjjchina3088191870-sudo__dsh-plugin-miku-theme">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:80</code> Cannot establish the tools service binding</li><li><code>src/index.mjs:22</code> Cannot establish the tools service binding</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>ekkoSkins</span></p>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>integrated/src/index.mjs:68</code> Cannot establish the tools service binding</li><li><code>lib/index.js:419</code> Cannot establish the tools service binding</li><li><code>lib/index.js:544</code> Cannot establish the tools service binding</li><li><code>src/index.mjs:24</code> Cannot establish the tools service binding</li><li><code>themes/rose/src/index.mjs:24</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>slots</span> <span>theme</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>webserver/index-inject</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MIKU_TOOLCHAIN</span> <span>EKKO_THEME_SOURCE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MIKU_TOOLCHAIN</span> <span>EKKO_THEME_SOURCE</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

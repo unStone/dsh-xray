@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>SAOS-3624/dsh-see-now is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×28 in authored code, e.g. debug/audio-check.mjs:14, debug/audio-check.mjs:40</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. debug/live.mjs:356</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/index.js:1229</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×38 in authored code, e.g. debug/audio-check.mjs:14, debug/audio-check.mjs:40</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. debug/live.mjs:356</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>src/index.js:1429</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>attachments</span> <span>locale</span> <span>sessionController</span> <span>slots</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.example.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>PLAY</span> <span>DSH_HOME</span> <span>DSH_SEE_NO_WINDOW</span> <span>DSH_TOOLS_PATH</span> <span>ASR_URL</span> <span>DSH_SEE_NOW_DEBUG</span> <span>DSH_SEE_WINDOW</span> <span>DSH_LLM_DEEPSEEK_PATH</span> <span>LOCALAPPDATA</span> <span>TEST_MEDIA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PLAY</span> <span>DSH_HOME</span> <span>DSH_SEE_NO_WINDOW</span> <span>DSH_SEE_NOW_DEBUG</span> <span>DSH_TOOLS_PATH</span> <span>ASR_URL</span> <span>DSH_SEE_WINDOW</span> <span>DSH_LLM_DEEPSEEK_PATH</span> <span>LOCALAPPDATA</span> <span>TEST_MEDIA</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

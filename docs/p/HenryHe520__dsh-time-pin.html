@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HenryHe520/dsh-time-pin — capability card (C2) · dsh-xray</title>
-<meta name="description" content="HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/HenryHe520__dsh-time-pin.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HenryHe520/dsh-time-pin — dsh plugin capability card">
-<meta property="og:description" content="HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/HenryHe520__dsh-time-pin.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-time-pin", "identifier": "HenryHe520/dsh-time-pin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/HenryHe520/dsh-time-pin", "url": "https://unstone.github.io/dsh-xray/p/HenryHe520__dsh-time-pin.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-time-pin", "identifier": "HenryHe520/dsh-time-pin", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/HenryHe520/dsh-time-pin", "url": "https://unstone.github.io/dsh-xray/p/HenryHe520__dsh-time-pin.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/HenryHe520/dsh-time-pin" rel="nofollow ugc">HenryHe520/dsh-time-pin source on GitHub</a>
      · <a href="../registry.html#HenryHe520__dsh-time-pin">this plugin in the registry</a></p>
-  <p>HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>HenryHe520/dsh-time-pin is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:328</code> tools.register</li><li><code>lib/tools.js:217</code> tool factory</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/preflight.mjs:13, scripts/preflight.mjs:13</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:347</code> tools.register</li><li><code>lib/tools.js:217</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>sessionProjections</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>loader/volatile-update</span> <span>tools/post-execute</span></p>
   

@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>JHboy203/dsh-plugin-installer</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 侧栏「插件 / Skill 安装」：GitHub / Release / 压缩包 / 本地目录 → 下载·解包·预检·快照·安装·诊断·回滚；MCP 与 Skill 也可装；AI 模型可自选（默认跟随 DSH），首次打开有引导；支持自定义搜索来源；安装零 token。 | DSH sidebar installer for plugins, Skills and MCP: determin</p>
+  <p class="lede">DSH 侧栏「插件 / Skill 安装」：GitHub / 压缩包 / 本地目录 → 下载·解包·预检·快照·安装·诊断·回滚；MCP 与 Skill 也装；回滚按 pre/post/now 三方比对，不吃你装完后的手改；覆盖本地改过的 Skill 前自动导出 patch；诊断固定一条「第十步 · 重启 DSH 才生效」；AI 模型可自选。 | DSH sidebar installer: th</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/JHboy203/dsh-plugin-installer" rel="nofollow ugc">JHboy203/dsh-plugin-installer source on GitHub</a>
      · <a href="../registry.html#JHboy203__dsh-plugin-installer">this plugin in the registry</a></p>
   <p>JHboy203/dsh-plugin-installer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. dev/audit.mjs:526, dev/git-commit.mjs:16</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. dev/hosttest.mjs:514, dev/hosttest.mjs:3666</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. dev/hosttest.mjs:1314, dev/hosttest.mjs:1317</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_GITHUB_TOKEN, GH_TOKEN, GITHUB_TOKEN, TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. dev/audit.mjs:526, dev/git-commit.mjs:16</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×4 in authored code, e.g. dev/hosttest.mjs:516, dev/hosttest.mjs:3793</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. dev/hosttest.mjs:1441, dev/hosttest.mjs:1444</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_GITHUB_TOKEN, GH_TOKEN, GITHUB_TOKEN, TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:657</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>layout</span> <span>slots</span> <span>timer</span> <span>tools</span> <span>webServer</span></p>
   
