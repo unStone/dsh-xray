@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. tools/probe-peer-ranges.mjs:7, tools/probe-peer-ranges.mjs:7</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>lib/index.js:208</code> tools.register</li><li><code>lib/index.js:208</code> tool factory</li><li><code>src/index.ts:233</code> tools.register</li><li><code>src/index.ts:234</code> tool factory</li></ul>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>lib/index.js:219</code> tools.register</li><li><code>lib/index.js:219</code> tool factory</li><li><code>src/index.ts:246</code> tools.register</li><li><code>src/index.ts:247</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span> <span>webServer</span></p>
   
-  
-  
+  <h2>Outbound domains</h2><p class="kv"><span>openrouter.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_APP_ROOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

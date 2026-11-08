@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>reina0721/dsh-bot — capability card (C3) · dsh-xray</title>
-<meta name="description" content="reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads, reads credential-class env vars in development tooling the package ">
+<meta name="description" content="reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/reina0721__dsh-bot.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="reina0721/dsh-bot — dsh plugin capability card">
-<meta property="og:description" content="reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads, reads credential-class env vars in development tooling the package ">
+<meta property="og:description" content="reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/reina0721__dsh-bot.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bot", "identifier": "reina0721/dsh-bot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/reina0721/dsh-bot", "url": "https://unstone.github.io/dsh-xray/p/reina0721__dsh-bot.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-bot", "identifier": "reina0721/dsh-bot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars in development tooling the package does not ship.", "codeRepository": "https://github.com/reina0721/dsh-bot", "url": "https://unstone.github.io/dsh-xray/p/reina0721__dsh-bot.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,14 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/reina0721/dsh-bot" rel="nofollow ugc">reina0721/dsh-bot source on GitHub</a>
      · <a href="../registry.html#reina0721__dsh-bot">this plugin in the registry</a></p>
-  <p>reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 payloads, reads credential-class env vars in development tooling the package does not ship.</p>
+  <p>reina0721/dsh-bot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, reads credential-class env vars in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×16 in development tooling the package does not ship, e.g. scripts/build-release.mjs:4, scripts/build-release.mjs:4</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. client.js:6953, src/http/routes.js:251</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: OPENCODE_GO_API_KEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>client.js:8033</code> Cannot establish the tools service binding</li><li><code>client.js:8034</code> Cannot establish the tools service binding</li><li><code>src/runtime/agent.js:243</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/sandbox/drivers/local-linux.js:1, src/sandbox/drivers/local-linux.js:88</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×6 in authored code, e.g. client.js:7971, src/http/routes.js:453</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: OPENCODE_GO_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>client.js:9466</code> Cannot establish the tools service binding</li><li><code>client.js:9467</code> Cannot establish the tools service binding</li><li><code>src/runtime/agent.js:322</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span> <span>theme/change</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>zh.wikipedia.org</span> <span>api.example.com</span> <span>api.github.com</span> <span>www.bilibili.com</span> <span>api.openai.com</span> <span>opencode.ai</span> <span>api.commandcode.ai</span> <span>api.openalex.org</span> <span>api.bilibili.com</span> <span>api.anthropic.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>zh.wikipedia.org</span> <span>api.example.com</span> <span>api.github.com</span> <span>api.openai.com</span> <span>opencode.ai</span> <span>api.commandcode.ai</span> <span>www.bilibili.com</span> <span>api.openalex.org</span> <span>api.anthropic.com</span> <span>api.deepseek.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_BOT_DATA_DIR</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

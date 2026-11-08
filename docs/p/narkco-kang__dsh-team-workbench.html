@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>narkco-kang/dsh-team-workbench</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">智能体团队 · 技能管理工作台：17 人具名智能体，每人专属表情与配色，可回退模型路由，三级审批流水线（DSH Desktop 工作台）</p>
+  <p class="lede">智能体团队 · DSH 网页客户端插件：具名智能体团队、可回退模型路由、私聊/群聊、部门=一个智能体（子智能体并行+汇总）、记录检索、分层记忆、语音输入与头像素材库</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/narkco-kang/dsh-team-workbench" rel="nofollow ugc">narkco-kang/dsh-team-workbench source on GitHub</a>
      · <a href="../registry.html#narkco-kang__dsh-team-workbench">this plugin in the registry</a></p>
   <p>narkco-kang/dsh-team-workbench is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, decodes base64 payloads.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×17 in authored code, e.g. scripts/ensure-react.mjs:20, scripts/ensure-react.mjs:20</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/render-client.mjs:90, scripts/smoke-client.mjs:39</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. dsh/library.js:117</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>11 static tool registration point(s).</p><ul><li><code>dsh/chat.js:665</code> tools.register</li><li><code>dsh/chat.js:665</code> tools.register</li><li><code>dsh/skills.js:335</code> tools.register</li><li><code>dsh/skills.js:352</code> tools.register</li><li><code>dsh/skills.js:362</code> tools.register</li><li><code>dsh/skills.js:369</code> tools.register</li><li><code>dsh/skills.js:376</code> tools.register</li><li><code>dsh/team.js:1118</code> tools.register</li><li><code>dsh/team.js:1118</code> tools.register</li><li><code>dsh/team.js:1118</code> tools.register</li><li><code>dsh/team.js:1118</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×21 in authored code, e.g. dsh/platforms.js:5, dsh/stt.js:12</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/render-client.mjs:90, scripts/smoke-client.mjs:39</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. dsh/library.js:117</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>12 static tool registration point(s).</p><ul><li><code>dsh/chat.js:2178</code> tools.register</li><li><code>dsh/chat.js:2178</code> tools.register</li><li><code>dsh/chat.js:2178</code> tools.register</li><li><code>dsh/skills.js:335</code> tools.register</li><li><code>dsh/skills.js:352</code> tools.register</li><li><code>dsh/skills.js:362</code> tools.register</li><li><code>dsh/skills.js:369</code> tools.register</li><li><code>dsh/skills.js:376</code> tools.register</li><li><code>dsh/team.js:1662</code> tools.register</li><li><code>dsh/team.js:1662</code> tools.register</li><li><code>dsh/team.js:1662</code> tools.register</li><li><code>dsh/team.js:1662</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>tools</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span> <span>api.moonshot.cn</span> <span>openrouter.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_REACT_DIR</span> <span>DSH_PROFILE</span> <span>AGENCY_DIR</span> <span>AGENCY_COMMIT</span> <span>AGENCY_VERSION</span> <span>PYTHON</span> <span>DSH_BIN</span> <span>FAKE_ARGV_LOG</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.minimax.chat</span> <span>api.openai.com</span> <span>open.bigmodel.cn</span> <span>api.deepseek.com</span> <span>api.moonshot.cn</span> <span>openrouter.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>TW_WORK_GRACE_MS</span> <span>DSH_REACT_DIR</span> <span>DSH_PROFILE</span> <span>TW_MEMORY_MODE</span> <span>TW_MEMORY_TRACE</span> <span>TW_REUSE_AGENTS</span> <span>AGENCY_DIR</span> <span>AGENCY_COMMIT</span> <span>AGENCY_VERSION</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

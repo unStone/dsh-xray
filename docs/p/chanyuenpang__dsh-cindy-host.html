@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>chanyuenpang/dsh-cindy-host — capability card (C3) · dsh-xray</title>
-<meta name="description" content="chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 in development tooling the package does not ship, starts a network ">
+<meta name="description" content="chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/chanyuenpang__dsh-cindy-host.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chanyuenpang/dsh-cindy-host — dsh plugin capability card">
-<meta property="og:description" content="chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 in development tooling the package does not ship, starts a network ">
+<meta property="og:description" content="chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/chanyuenpang__dsh-cindy-host.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cindy-host", "identifier": "chanyuenpang/dsh-cindy-host", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 in development tooling the package does not ship, starts a network server in development tooling the package does not ship.", "codeRepository": "https://github.com/chanyuenpang/dsh-cindy-host", "url": "https://unstone.github.io/dsh-xray/p/chanyuenpang__dsh-cindy-host.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-cindy-host", "identifier": "chanyuenpang/dsh-cindy-host", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/chanyuenpang/dsh-cindy-host", "url": "https://unstone.github.io/dsh-xray/p/chanyuenpang__dsh-cindy-host.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,14 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 5+ ·
      <a href="https://github.com/chanyuenpang/dsh-cindy-host" rel="nofollow ugc">chanyuenpang/dsh-cindy-host source on GitHub</a>
      · <a href="../registry.html#chanyuenpang__dsh-cindy-host">this plugin in the registry</a></p>
-  <p>chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship, decodes base64 in development tooling the package does not ship, starts a network server in development tooling the package does not ship.</p>
+  <p>chanyuenpang/dsh-cindy-host is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, decodes base64 payloads, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×16 in development tooling the package does not ship, e.g. tools/file-peer-rtc-smoke.mjs:18, tools/file-peer-rtc-smoke.mjs:18</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. tools/acceptance.mjs:300, tools/attachment-probe.mjs:185</td></tr><tr><td>starts a network server in development tooling the package does not ship</td><td><code>net_server_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. tools/file-peer-ice-deadline-probe.mjs:8, tools/file-peer-ice-deadline-probe.mjs:9</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CINDY_AUTH_BASE_URL</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/credential-command.js:1, src/credential-command.js:15</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×2 in authored code, e.g. src/credential-store.js:113, src/host-attachment-media.js:30</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/cindy-browser-auth.js:62, src/cindy-browser-auth.js:88</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>CINDY_AUTH_BASE_URL</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>settings</span> <span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>approval/request</span> <span>session/event</span> <span>settings/document-updated</span> <span>user-questions/request</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>auth.cindy.com.cn</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>auth.cindy.com.cn</span> <span>hotfix.cindy.com.cn</span> <span>hotfix.cindy.app</span> <span>device-link.cindy.com.cn</span> <span>auth.cindy.app</span> <span>device-link.cindy.app</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>DSH_HOME</span> <span>DSH_PROFILE</span> <span>CINDY_AUTH_BASE_URL</span> <span>CINDY_CLIENT_TYPE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

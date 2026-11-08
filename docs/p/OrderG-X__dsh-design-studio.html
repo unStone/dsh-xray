@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>OrderG-X/dsh-design-studio</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DSH 设计工作台：模型画的界面摆上画布，点一下就改。 · Design canvas for DeepSeek Harness (DSH): screens in device frames, click an element to edit it, versions, export, phone preview.</p>
+  <p class="lede">DSH 设计工作台：模型画的界面摆上画布，点一下就改，还有设计市场。 · Design canvas for DeepSeek Harness (DSH): web, app, mini program and desktop screens in device frames, click or draw to edit, a design market of templates, export </p>
   <p class="lede">★ 10+ ·
      <a href="https://github.com/OrderG-X/dsh-design-studio" rel="nofollow ugc">OrderG-X/dsh-design-studio source on GitHub</a>
      · <a href="../registry.html#OrderG-X__dsh-design-studio">this plugin in the registry</a></p>
@@ -55,7 +55,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×3 in build output only, e.g. lib/browser.js:12, lib/index.js:48</td></tr><tr><td>eval in build output only</td><td><code>eval_bundled</code></td><td>×35 in build output only, e.g. lib/browser.js:279, lib/browser.js:297</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. lib/browser.js:263, lib/handoff.js:825</td></tr><tr><td>network server in build output only</td><td><code>net_server_bundled</code></td><td>×3 in build output only, e.g. lib/phone.js:131, lib/phone.js:147</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>lib/tool.js:11</code> tools.register</li><li><code>lib/tool.js:13</code> tools.register</li><li><code>lib/tool.js:14</code> tools.register</li><li><code>lib/tool.js:15</code> tools.register</li><li><code>lib/tool.js:16</code> tools.register</li><li><code>lib/tool.js:17</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentPresets</span> <span>tools</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>session/event</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>session/event</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>schemas.openxmlformats.org</span> <span>purl.org</span> <span>gitee.com</span> <span>registry.npmmirror.com</span> <span>mirrors.cloud.tencent.com</span> <span>repo.huaweicloud.com</span> <span>creativecommons.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>TARO_ENV</span> <span>DSH_DESIGN_SYSTEMS_DIR</span> <span>DSH_DESIGN_LIBRARY_DIR</span> <span>DSH_DESIGN_GALLERY_CACHE</span></p>
   <h2>How to read this</h2>

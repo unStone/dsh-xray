@@ -45,17 +45,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Vansnc/dsh-feiyu-say</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede"></p>
+  <p class="lede">阿里百炼 TTS 合成语音（WAV）；可选把语音条自动发成 QQ 语音条</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Vansnc/dsh-feiyu-say" rel="nofollow ugc">Vansnc/dsh-feiyu-say source on GitHub</a>
      · <a href="../registry.html#Vansnc__dsh-feiyu-say">this plugin in the registry</a></p>
   <p>Vansnc/dsh-feiyu-say is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×6 in build output only, e.g. lib/bailian.mjs:184, lib/bailian.mjs:184</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/host.js:140</code> Cannot establish the tools service binding</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>slots</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>settings/document-updated</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/bailian.mjs:184, lib/bailian.mjs:184</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DASHSCOPE_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/host.js:141</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/disposed</span> <span>settings/document-updated</span> <span>tools/result</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_PROFILE_DIR</span> <span>DSH_HOST_MODULES</span> <span>DASHSCOPE_API_KEY</span></p>
   <h2>How to read this</h2>
