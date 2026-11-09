@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>belowthetree/dsh-shape</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">以插件形式为 dsh 添加一个快速自定义 dsh 界面、功能的能力，你可以用这个插件即时添加一个窗口、更改 UI 或者新增工具</p>
+  <p class="lede">以插件形式为 dsh 添加一个快速自定义 dsh 界面、功能的能力，你可以用这个插件即时添加一个窗口、更改 UI 或者新增工具。内置搜索、工作区切换功能</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/belowthetree/dsh-shape" rel="nofollow ugc">belowthetree/dsh-shape source on GitHub</a>
      · <a href="../registry.html#belowthetree__dsh-shape">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×2 in development tooling the package does not ship, e.g. scripts/check-client-bundle.mjs:68, scripts/gen-capability-fallback.mjs:67</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>9 static tool registration point(s).</p><ul><li><code>tools.js:537</code> tools.register</li><li><code>tools.js:585</code> tools.register</li><li><code>tools.js:661</code> tools.register</li><li><code>tools.js:701</code> tools.register</li><li><code>tools.js:770</code> tools.register</li><li><code>tools.js:805</code> tools.register</li><li><code>tools.js:842</code> tools.register</li><li><code>tools.js:889</code> tools.register</li><li><code>tools.js:924</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>11 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>tools.js:669</code> tools.register</li><li><code>tools.js:717</code> tools.register</li><li><code>tools.js:793</code> tools.register</li><li><code>tools.js:833</code> tools.register</li><li><code>tools.js:902</code> tools.register</li><li><code>tools.js:937</code> tools.register</li><li><code>tools.js:981</code> tools.register</li><li><code>tools.js:1035</code> tools.register</li><li><code>tools.js:1083</code> tools.register</li><li><code>tools.js:1135</code> tools.register</li><li><code>tools.js:1170</code> tools.register</li><li><code>shapes/workspace-tab-switch/client/index.js:923</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>sessions</span> <span>skills</span> <span>slots</span> <span>tools</span> <span>uiWorkspace</span> <span>webServer</span> <span>workspaces</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>NODE_DEBUG</span> <span>SHAPE_CHROME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>SHAPE_CHROME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JayZz210l/deepseek-harness-for-ide — capability card (C2) · dsh-xray</title>
-<meta name="description" content="JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
+<meta name="description" content="JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/JayZz210l__deepseek-harness-for-ide.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JayZz210l/deepseek-harness-for-ide — dsh plugin capability card">
-<meta property="og:description" content="JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.">
+<meta property="og:description" content="JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/JayZz210l__deepseek-harness-for-ide.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-for-ide", "identifier": "JayZz210l/deepseek-harness-for-ide", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.", "codeRepository": "https://github.com/JayZz210l/deepseek-harness-for-ide", "url": "https://unstone.github.io/dsh-xray/p/JayZz210l__deepseek-harness-for-ide.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "deepseek-harness-for-ide", "identifier": "JayZz210l/deepseek-harness-for-ide", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/JayZz210l/deepseek-harness-for-ide", "url": "https://unstone.github.io/dsh-xray/p/JayZz210l__deepseek-harness-for-ide.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 10+ ·
      <a href="https://github.com/JayZz210l/deepseek-harness-for-ide" rel="nofollow ugc">JayZz210l/deepseek-harness-for-ide source on GitHub</a>
      · <a href="../registry.html#JayZz210l__deepseek-harness-for-ide">this plugin in the registry</a></p>
-  <p>JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It reads credential-class env vars.</p>
+  <p>JayZz210l/deepseek-harness-for-ide is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It executes system commands, decodes base64 payloads, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Not installable — declares only dsh.client, which dsh plugin add cannot install</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_IDE_BRIDGE_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. scripts/smoke-bundled-runtime.mjs:1, scripts/smoke-bundled-runtime.mjs:40</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. scripts/smoke-bundled-runtime.mjs:89</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. scripts/smoke-bundled-runtime.mjs:21, scripts/smoke-bundled-runtime.mjs:27</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_IDE_BRIDGE_TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/main/resources/dsh/ide-bridge.mjs:69</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agentDefaultModel</span> <span>agents</span> <span>attachments</span> <span>directoryPicker</span> <span>inputTriggers</span> <span>llm</span> <span>sessionQuery</span> <span>sessions</span> <span>subagents</span> <span>tools</span> <span>userQuestions</span> <span>workspaceRegistry</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_IDE_BRIDGE_IMPL</span> <span>DSH_IDE_BRIDGE_URL</span> <span>DSH_IDE_BRIDGE_TOKEN</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_IDE_BRIDGE_URL</span> <span>DSH_IDE_BRIDGE_TOKEN</span> <span>DSH_IDE_BRIDGE_IMPL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

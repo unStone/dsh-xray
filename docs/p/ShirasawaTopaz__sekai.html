@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ShirasawaTopaz/sekai — capability card (C3) · dsh-xray</title>
-<meta name="description" content="ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.">
+<meta name="description" content="ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/ShirasawaTopaz__sekai.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ShirasawaTopaz/sekai — dsh plugin capability card">
-<meta property="og:description" content="ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.">
+<meta property="og:description" content="ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/ShirasawaTopaz__sekai.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sekai", "identifier": "ShirasawaTopaz/sekai", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.", "codeRepository": "https://github.com/ShirasawaTopaz/sekai", "url": "https://unstone.github.io/dsh-xray/p/ShirasawaTopaz__sekai.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "sekai", "identifier": "ShirasawaTopaz/sekai", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/ShirasawaTopaz/sekai", "url": "https://unstone.github.io/dsh-xray/p/ShirasawaTopaz__sekai.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/ShirasawaTopaz/sekai" rel="nofollow ugc">ShirasawaTopaz/sekai source on GitHub</a>
      · <a href="../registry.html#ShirasawaTopaz__sekai">this plugin in the registry</a></p>
-  <p>ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, starts a network server.</p>
+  <p>ShirasawaTopaz/sekai is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×4 in build output only, e.g. plugins/sekai-dsh/lib/shared.js:17, plugins/sekai-dsh/lib/shared.js:192</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. plugins/sekai-dsh/scripts/smoke.mjs:188, plugins/sekai-dsh/scripts/smoke.mjs:218</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/install-dsh-plugin.mjs:21, scripts/install-dsh-plugin.mjs:381</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×5 in authored code, e.g. plugins/sekai-dsh/scripts/smoke.mjs:217, plugins/sekai-dsh/scripts/smoke.mjs:247</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>FAKE_WORKER_LIFETIME_MS</span> <span>FAKE_WORKER_EXIT</span> <span>FAKE_WORKER_HOLD</span> <span>FAKE_PROMPT_IDS</span> <span>FAKE_PROMPT_DELAY_MS</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>FAKE_WORKER_LIFETIME_MS</span> <span>FAKE_WORKER_EXIT</span> <span>FAKE_WORKER_REACHED</span> <span>FAKE_WORKER_SWITCHED</span> <span>FAKE_WORKER_HOLD</span> <span>FAKE_PROMPT_IDS</span> <span>FAKE_PROMPT_DELAY_MS</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

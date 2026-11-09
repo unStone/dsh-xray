@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>enkolesnikov/MaxDSHBot — capability card (C3) · dsh-xray</title>
-<meta name="description" content="enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
+<meta name="description" content="enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/enkolesnikov__MaxDSHBot.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="enkolesnikov/MaxDSHBot — dsh plugin capability card">
-<meta property="og:description" content="enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.">
+<meta property="og:description" content="enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/enkolesnikov__MaxDSHBot.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MaxDSHBot", "identifier": "enkolesnikov/MaxDSHBot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.", "codeRepository": "https://github.com/enkolesnikov/MaxDSHBot", "url": "https://unstone.github.io/dsh-xray/p/enkolesnikov__MaxDSHBot.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "MaxDSHBot", "identifier": "enkolesnikov/MaxDSHBot", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only, reads credential-class env vars.", "codeRepository": "https://github.com/enkolesnikov/MaxDSHBot", "url": "https://unstone.github.io/dsh-xray/p/enkolesnikov__MaxDSHBot.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>enkolesnikov/MaxDSHBot</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH → MAX messenger plugin: agent replies + remote control (chat, commands, approvals, questions, progress, files) + observability (events, TODO progress, quiet modes, daily digest)</p>
+  <p class="lede">DSH → MAX messenger plugin: agent replies, remote control (25+ commands, approvals, plan review, model/session/workspace), GUI settings, reply threads, tables, schedules, webhook, voice STT, cost &amp; bu</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/enkolesnikov/MaxDSHBot" rel="nofollow ugc">enkolesnikov/MaxDSHBot source on GitHub</a>
      · <a href="../registry.html#enkolesnikov__MaxDSHBot">this plugin in the registry</a></p>
-  <p>enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, reads credential-class env vars.</p>
+  <p>enkolesnikov/MaxDSHBot is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, gates tool execution, command execution in build output only, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MAX_BOT_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×1 in build output only, e.g. dsh-max-notify/lib/workspace-tools.mjs:8</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>MAX_BOT_TOKEN, MAX_NOTIFY_WEBHOOK_SECRET</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
-  
+  <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/error</span> <span>approval/request</span> <span>goal/changed</span> <span>session/disposed</span> <span>session/event</span> <span>subagent/end</span> <span>tools/pre-execute</span> <span>user-questions/request</span></p>
-  <h2>Outbound domains</h2><p class="kv"><span>platform-api2.max.ru</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>MAX_BOT_TOKEN</span> <span>MAX_API_BASE</span> <span>DSH_HOME</span> <span>MAX_CHAT_ID</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>api.openai.com</span> <span>platform-api2.max.ru</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>MAX_BOT_TOKEN</span> <span>MAX_API_BASE</span> <span>MAX_CHAT_ID</span> <span>MAX_NOTIFY_WEBHOOK_URL</span> <span>MAX_NOTIFY_WEBHOOK_SECRET</span> <span>MAX_NOTIFY_WEBHOOK_TYPES</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Hope2023Dcr/dsh-gallery</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH (DeepSeek Harness) 产出画廊插件：侧栏实时浏览 Agent 产出，图片自动刷新、文件原生预览、右键管理隐藏/删除。Output gallery plugin for DSH: auto-refresh image thumbnails, native file preview, zero dependencies.</p>
+  <p class="lede">DSH 产出画廊: 图片 / 文件 / 音视频实时可见与当场校验; 反馈篮 6 种判定攒成决策草稿, 人工确认后送回对话. Output gallery for DeepSeek Harness: live image, file and media gallery with an annotation basket and human-approved decision drafts.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Hope2023Dcr/dsh-gallery" rel="nofollow ugc">Hope2023Dcr/dsh-gallery source on GitHub</a>
      · <a href="../registry.html#Hope2023Dcr__dsh-gallery">this plugin in the registry</a></p>
   <p>Hope2023Dcr/dsh-gallery is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×7 in authored code, e.g. publish.mjs:22, publish.mjs:22</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/client/00-head.js:53</code> Cannot parse source: Unexpected token (53:0)</li><li><code>src/client/12-entry.js:107</code> Cannot parse source: Unexpected token (107:2)</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×9 in authored code, e.g. publish.mjs:22, publish.mjs:22</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/client/00-head.js:53</code> Cannot parse source: Unexpected token (53:0)</li><li><code>src/client/12-entry.js:107</code> Cannot parse source: Unexpected token (107:2)</li><li><code>src/client/13-entry.js:204</code> Cannot parse source: Unexpected token (204:2)</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_GALLERY_DEBUG</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

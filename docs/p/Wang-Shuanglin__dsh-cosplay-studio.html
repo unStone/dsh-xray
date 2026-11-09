@@ -46,17 +46,17 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C2</span>
   </div>
   <p class="lede">Cosplay Studio for the DSH web GUI: deploy ComfyUI (Z-Image-Turbo) with a self-test, then generate a live-action cosplay photo set from a character name, a reference image, or a hot-character pick.</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/Wang-Shuanglin/dsh-cosplay-studio" rel="nofollow ugc">Wang-Shuanglin/dsh-cosplay-studio source on GitHub</a>
      · <a href="../registry.html#Wang-Shuanglin__dsh-cosplay-studio">this plugin in the registry</a></p>
   <p>Wang-Shuanglin/dsh-cosplay-studio is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. lib/comfy.js:10, lib/comfy.js:187</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:270</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×7 in build output only, e.g. lib/comfy.js:10, lib/comfy.js:187</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/index.js:279</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>webServer</span></p>
-  
-  <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span> <span>api.openai.com</span> <span>api.github.com</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>hf-mirror.com</span> <span>www.bing.com</span> <span>api.openai.com</span> <span>api.github.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>COMFYUI_PATH</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

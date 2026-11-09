@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alice-Marx/dsh-boot-animation — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.">
+<meta name="description" content="Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Alice-Marx__dsh-boot-animation.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Alice-Marx/dsh-boot-animation — dsh plugin capability card">
-<meta property="og:description" content="Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.">
+<meta property="og:description" content="Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Alice-Marx__dsh-boot-animation.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-boot-animation", "identifier": "Alice-Marx/dsh-boot-animation", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.", "codeRepository": "https://github.com/Alice-Marx/dsh-boot-animation", "url": "https://unstone.github.io/dsh-xray/p/Alice-Marx__dsh-boot-animation.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-boot-animation", "identifier": "Alice-Marx/dsh-boot-animation", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, starts a network server.", "codeRepository": "https://github.com/Alice-Marx/dsh-boot-animation", "url": "https://unstone.github.io/dsh-xray/p/Alice-Marx__dsh-boot-animation.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Alice-Marx/dsh-boot-animation" rel="nofollow ugc">Alice-Marx/dsh-boot-animation source on GitHub</a>
      · <a href="../registry.html#Alice-Marx__dsh-boot-animation">this plugin in the registry</a></p>
-  <p>Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.</p>
+  <p>Alice-Marx/dsh-boot-animation is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function, decodes base64 payloads, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. verify/verify-custom-clips.mjs:40, verify/verify-custom-clips.mjs:46</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>entry.js:497</code> Cannot establish the tools service binding</li><li><code>entry.js:533</code> Cannot establish the tools service binding</li><li><code>entry.js:571</code> Cannot establish the tools service binding</li><li><code>src/custom-clips.js:152</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×1 in authored code, e.g. verify/verify-splash-vendor.mjs:55</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. entry.js:2346</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. verify/verify-custom-clips.mjs:40, verify/verify-custom-clips.mjs:46</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>entry.js:818</code> Cannot establish the tools service binding</li><li><code>entry.js:854</code> Cannot establish the tools service binding</li><li><code>entry.js:892</code> Cannot establish the tools service binding</li><li><code>entry.js:1002</code> Cannot establish the tools service binding</li><li><code>entry.js:1018</code> Cannot establish the tools service binding</li><li><code>entry.js:1045</code> Cannot establish the tools service binding</li><li><code>entry.js:1086</code> Cannot establish the tools service binding</li><li><code>entry.js:1110</code> Cannot establish the tools service binding</li><li><code>entry.js:1145</code> Cannot establish the tools service binding</li><li><code>entry.js:1178</code> Cannot establish the tools service binding</li><li><code>entry.js:1210</code> Cannot establish the tools service binding</li><li><code>entry.js:1250</code> Cannot establish the tools service binding</li><li><code>entry.js:1294</code> Cannot establish the tools service binding</li><li><code>entry.js:1326</code> Cannot establish the tools service binding</li><li><code>entry.js:1347</code> Cannot establish the tools service binding</li><li><code>entry.js:1385</code> Cannot establish the tools service binding</li><li><code>entry.js:1437</code> Cannot establish the tools service binding</li><li><code>entry.js:1477</code> Cannot establish the tools service binding</li><li><code>entry.js:1486</code> Cannot establish the tools service binding</li><li><code>entry.js:1501</code> Cannot establish the tools service binding</li><li><code>entry.js:1516</code> Cannot establish the tools service binding</li><li><code>entry.js:1553</code> Cannot establish the tools service binding</li><li><code>entry.js:1596</code> Cannot establish the tools service binding</li><li><code>entry.js:1641</code> Cannot establish the tools service binding</li><li><code>entry.js:1684</code> Cannot establish the tools service binding</li><li><code>entry.js:1728</code> Cannot establish the tools service binding</li><li><code>entry.js:1762</code> Cannot establish the tools service binding</li><li><code>src/custom-clips.js:152</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>webServer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>webserver/index-inject</span></p>
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_STORE_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

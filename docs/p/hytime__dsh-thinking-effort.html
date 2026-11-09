@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hytime/dsh-thinking-effort — capability card (C2) · dsh-xray</title>
-<meta name="description" content="hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta name="description" content="hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/hytime__dsh-thinking-effort.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hytime/dsh-thinking-effort — dsh plugin capability card">
-<meta property="og:description" content="hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.">
+<meta property="og:description" content="hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/hytime__dsh-thinking-effort.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-thinking-effort", "identifier": "hytime/dsh-thinking-effort", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.", "codeRepository": "https://github.com/hytime/dsh-thinking-effort", "url": "https://unstone.github.io/dsh-xray/p/hytime__dsh-thinking-effort.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-thinking-effort", "identifier": "hytime/dsh-thinking-effort", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.", "codeRepository": "https://github.com/hytime/dsh-thinking-effort", "url": "https://unstone.github.io/dsh-xray/p/hytime__dsh-thinking-effort.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,11 +49,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 50+ ·
      <a href="https://github.com/hytime/dsh-thinking-effort" rel="nofollow ugc">hytime/dsh-thinking-effort source on GitHub</a>
      · <a href="../registry.html#hytime__dsh-thinking-effort">this plugin in the registry</a></p>
-  <p>hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime.</p>
+  <p>hytime/dsh-thinking-effort is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/host/legacy-watcher.ts:118</code> Context or tools service passed to an unresolved helper</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/check-entries.mjs:17, scripts/check-entries.mjs:17</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>packages/composer/src/thinking-slider/index.ts:107</code> Context or tools service passed to an unresolved helper</li><li><code>src/client/index.ts:43</code> Context or tools service passed to an unresolved helper</li><li><code>src/client/index.ts:46</code> Context or tools service passed to an unresolved helper</li><li><code>src/client/index.ts:47</code> Context or tools service passed to an unresolved helper</li><li><code>src/entries/compaction.ts:13</code> Context or tools service passed to an unresolved helper</li><li><code>src/entries/migration.ts:13</code> Context or tools service passed to an unresolved helper</li><li><code>src/entries/opencode.ts:13</code> Context or tools service passed to an unresolved helper</li><li><code>src/entries/subagent.ts:14</code> Context or tools service passed to an unresolved helper</li><li><code>src/entries/subagent.ts:18</code> Context or tools service passed to an unresolved helper</li><li><code>src/index.ts:28</code> Context or tools service passed to an unresolved helper</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>llm</span> <span>locale</span> <span>modelDirectories</span> <span>remote</span> <span>sessions</span> <span>settings</span> <span>slots</span> <span>timer</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/pre-step</span> <span>agent/request</span> <span>llm/stream</span></p>
   
