@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Enumerate the whole `dsh-plugin` topic, working around GitHub's 1000-result cap.
+"""Enumerate the `dsh-plugin` topic, working around GitHub's 1000-result cap.
 
-GitHub search returns at most 1000 results per query, and the topic holds ~7k
-repositories. We partition by star bucket and, when a bucket still exceeds the
-cap, recursively halve its creation-date window until every slice fits.
+GitHub search returns at most 1000 results per query and answers at most 30
+requests per minute, so a full enumeration (mode `all`) costs hundreds of
+sleep-paced requests. That is why it only runs weekly: on the other days,
+mode `delta` searches just the repos pushed since a couple of days back --
+a handful of pages -- and merges them into the committed catalog. Deltas
+cannot see topic departures, old repositories that only now gained the
+topic, or quiet renames; the weekly full sweep is what keeps those honest.
 
 Writes data/repos.json sorted by stars. Requires `gh` CLI auth (or GH_TOKEN).
 """
@@ -72,9 +76,9 @@ def fetch_all(q, seen, out):
             return
 
 
-def walk(base_q, lo, hi, seen, out, depth=0):
-    """Enumerate base_q within [lo, hi], halving the window while over the cap."""
-    q = f'{base_q} created:{lo}..{hi}'
+def walk(base_q, lo, hi, seen, out, depth=0, field='created'):
+    """Enumerate base_q within [lo, hi] on a date field, halving while over the cap."""
+    q = f'{base_q} {field}:{lo}..{hi}'
     total = query(q).get('total_count', 0)
     if total == 0:
         return
@@ -88,7 +92,34 @@ def walk(base_q, lo, hi, seen, out, depth=0):
     walk(base_q, mid + datetime.timedelta(days=1), hi, seen, out, depth + 1)
 
 
-def main(limit=None):
+def merge(catalog, updates):
+    """Fold freshly discovered entries into the catalog, matching by node id.
+
+    Search results carry the current full_name, so a renamed repository that
+    was pushed recently arrives here under its new name and lands on the old
+    entry -- which is exactly what makes rename aliases work on delta days.
+    Entries recorded before node ids were kept match by name instead, so a
+    delta run cannot duplicate them.
+    """
+    by_node, by_name = {}, {}
+    for r in catalog:
+        if r.get('node_id'):
+            by_node[r['node_id']] = r
+        by_name[r['full_name']] = r
+    for u in updates:
+        target = by_node.get(u.get('node_id')) or by_name.get(u['full_name'])
+        if target is None:
+            catalog.append(u)
+            target = u
+        target.update(u)
+        if u.get('node_id'):
+            by_node[u['node_id']] = target
+        by_name[u['full_name']] = target
+    catalog.sort(key=lambda r: -r['stars'])
+    return catalog
+
+
+def main(limit=None, mode='all'):
     today = datetime.date.today()
     # The catalog on disk is the previous run's view; the node-id diff against
     # it is what records renames while they are still fresh.
@@ -96,17 +127,32 @@ def main(limit=None):
         previous = json.loads(OUT.read_text())
     except Exception:
         previous = []
-    seen, out = set(), []
-    for bucket in STAR_BUCKETS:
-        base = f'{TOPIC} stars:{bucket}'
-        total = query(base).get('total_count', 0)
-        before = len(out)
-        if total <= CAP:
-            fetch_all(base, seen, out)
-        else:
-            walk(base, EPOCH, today, seen, out)
-        print(f'stars:{bucket:8} reported={total:5} collected={len(out) - before:5} running={len(out)}')
-    out.sort(key=lambda r: -r['stars'])
+    if mode == 'delta':
+        # A repo that merely changed name without pushing is invisible here;
+        # the weekly full sweep picks those renames up. The catalog is re-read
+        # (rather than reusing `previous`) because merge() mutates its entries
+        # in place, and `previous` must stay the untouched pre-merge view for
+        # the node-id rename diff below.
+        try:
+            catalog = json.loads(OUT.read_text())
+        except Exception:
+            catalog = []
+        updates = []
+        walk(TOPIC, today - datetime.timedelta(days=2), today, set(), updates, field='pushed')
+        out = merge(catalog, updates)
+        print(f'delta: {len(updates)} pushed repo(s) merged into {len(out)}')
+    else:
+        seen, out = set(), []
+        for bucket in STAR_BUCKETS:
+            base = f'{TOPIC} stars:{bucket}'
+            total = query(base).get('total_count', 0)
+            before = len(out)
+            if total <= CAP:
+                fetch_all(base, seen, out)
+            else:
+                walk(base, EPOCH, today, seen, out)
+            print(f'stars:{bucket:8} reported={total:5} collected={len(out) - before:5} running={len(out)}')
+        out.sort(key=lambda r: -r['stars'])
     if limit:
         out = out[:limit]
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -117,8 +163,13 @@ def main(limit=None):
         print(f'aliased {len(added) - len(previous_aliases)} renamed repos -> {ALIASES}')
     ALIASES.parent.mkdir(parents=True, exist_ok=True)
     ALIASES.write_text(json.dumps(added, ensure_ascii=False, indent=1, sort_keys=True))
-    print(f'discovered {len(out)} repos -> {OUT}')
+    print(f'discovered {len(out)} repos ({mode}) -> {OUT}')
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1] != 'all' else None)
+    args = list(sys.argv[1:])
+    mode = 'all'
+    if args and args[0] in ('all', 'delta'):
+        mode = args.pop(0)
+    limit = int(args[0]) if args and args[0] != 'all' else None
+    main(limit, mode)

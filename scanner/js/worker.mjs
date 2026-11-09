@@ -1,4 +1,3 @@
-import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { validatePath } from './paths.mjs';
 
@@ -42,12 +41,50 @@ async function analyze(request) {
     diagnostics: [...runtime.diagnostics, ...development.diagnostics.map(e => ({ ...e, origin: 'dev' }))] };
 }
 
-let requestId = null;
-try {
-  const request = JSON.parse(readFileSync(0, 'utf8'));
-  requestId = request.requestId;
-  const result = await analyze(request);
-  process.stdout.write(JSON.stringify({ requestId, result }));
-} catch (error) {
-  process.stdout.write(JSON.stringify({ requestId, error: error.message }));
+// One JSON request document per line, one JSON response per line, until stdin
+// closes. Residing across requests keeps babel and the pack-membership imports
+// warm: the one-shot worker paid a node start plus those imports for every
+// repository. A failing request answers with an error envelope and does NOT
+// take the worker down -- only stdin EOF or a process crash ends the loop.
+//
+// Framing is byte-level on 0x0A, not readline: JSON strings cannot contain a
+// raw newline, but readline also splits on U+2028/U+2029, which are legal
+// inside JSON strings and appear in real plugin sources -- one-shot workers
+// dodged that by reading all of stdin, and a resident one cannot.
+const frames = [];
+let busy = false;
+
+function pump() {
+  if (busy || frames.length === 0) return;
+  busy = true;
+  const line = frames.shift();
+  void (async () => {
+    let requestId = null;
+    try {
+      const request = JSON.parse(line);
+      requestId = request.requestId;
+      const result = await analyze(request);
+      process.stdout.write(JSON.stringify({ requestId, result }) + '\n');
+    } catch (error) {
+      process.stdout.write(JSON.stringify({ requestId, error: error.message }) + '\n');
+    } finally {
+      // Parse allocations are per-request; reclaim them now so RSS tracks the
+      // current repository instead of the busiest one seen all day.
+      if (typeof globalThis.gc === 'function') globalThis.gc();
+      busy = false;
+      pump();
+    }
+  })();
 }
+
+let buffer = Buffer.alloc(0);
+process.stdin.on('data', chunk => {
+  buffer = Buffer.concat([buffer, chunk]);
+  let index;
+  while ((index = buffer.indexOf(0x0A)) !== -1) {
+    frames.push(buffer.subarray(0, index).toString('utf8'));
+    buffer = buffer.subarray(index + 1);
+  }
+  pump();
+});
+process.stdin.on('end', () => process.exit(0));

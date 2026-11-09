@@ -1,13 +1,19 @@
 name: scan
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 2 * * 0'      # Sunday: full topic enumeration (catches departures,
+                             # old repos newly carrying the topic, and quiet renames)
+    - cron: '0 2 * * 1-6'    # Mon-Sat: delta discovery, only repos pushed recently
   workflow_dispatch:
     inputs:
-      reuse_catalog:
-        description: 'Re-scan the committed catalog without rediscovering GitHub topics'
-        type: boolean
-        default: false
+      discovery:
+        description: 'Topic discovery mode'
+        type: choice
+        default: 'full'
+        options:
+          - full
+          - delta
+          - skip
       probe_only:
         description: 'Validate the first 100 catalog repositories without committing site data'
         type: boolean
@@ -48,10 +54,22 @@ jobs:
           python scanner/test_scan_core.py
           python -m unittest discover -s scanner -p 'test_*.py'
       - name: discover
-        if: github.event_name != 'workflow_dispatch' || inputs.reuse_catalog != true
+        if: github.event_name != 'workflow_dispatch' || inputs.discovery != 'skip'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scanner/discover.py all
+        run: |
+          mode="${{ inputs.discovery }}"
+          if [ -z "$mode" ]; then
+            # Search API answers 30 requests/minute, so full enumeration is
+            # inherently sleep-paced; GITHUB_EVENT_SCHEDULE carries the cron
+            # that fired and Sunday's is the one allowed to pay for it.
+            if [ "$GITHUB_EVENT_SCHEDULE" = "0 2 * * 0" ]; then mode=full; else mode=delta; fi
+          fi
+          if [ "$mode" = "delta" ]; then
+            python scanner/discover.py delta
+          else
+            python scanner/discover.py all
+          fi
       - name: scan + render
         env:
           XRAY_PROBE_ONLY: ${{ inputs.probe_only }}
@@ -62,7 +80,11 @@ jobs:
           fi
           # Recollect every old-schema card; a budget must not strand old evidence.
           # Each analysis request owns its Node process and stdio streams.
-          cd scanner && python pipeline.py all 8
+          # The budget caps how many repos are fetched in one run: normally
+          # unused (a day's pushes fit well under it), but after a cache miss
+          # it bounds the run and the remaining cards converge over the
+          # following days instead of blowing the job timeout.
+          cd scanner && python pipeline.py all 16 2500
           python render_report.py
           python render_docs.py
           python render_i18n_defaults.py
