@@ -15,6 +15,8 @@ import json
 import pathlib
 import subprocess
 
+import aliases
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DOCS = ROOT / 'docs'
 OUT = DOCS / 'p'
@@ -219,6 +221,80 @@ main h2 {{ font-size:16px; margin:26px 0 6px; }}
 </body>
 </html>
 """
+
+
+def redirect_page(old_slug, target_slug):
+    """Static stand-in for the 301 GitHub Pages cannot serve.
+
+    The canonical points at the current card so crawlers fold the old URL into
+    it; the meta refresh and location.replace move people arriving from old
+    links (issue #17). Alias pages never enter the sitemap: it lists only
+    canonical URLs.
+    """
+    target_url = f'{SITE}/p/{target_slug}.html'
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(old_slug.replace('__', '/'))} has moved · dsh-xray</title>
+<link rel="canonical" href="{target_url}">
+<meta http-equiv="refresh" content="0; url={target_url}">
+<meta name="robots" content="noarchive">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <h1>{esc(old_slug.replace('__', '/'))} has moved</h1>
+  <p class="lede">The repository or its owner was renamed. Its capability card now lives at
+     <a href="{target_url}">{esc(target_slug.replace('__', '/'))}</a>.</p>
+  <p>You should be redirected automatically; if nothing happens, follow the link above.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+<script>location.replace({json.dumps(target_url)});</script>
+</body>
+</html>
+"""
+
+
+def write_alias_pages(alias_map, keep, out_dir):
+    """Serve every aliased old path whose target card exists.
+
+    Stubs are written whether or not the old file survived: a rename normally
+    leaves the file in place to be rewritten here, and a map backfilled after
+    the fact (issue #17) repairs an already-deleted path on the next render.
+
+    GitHub frees a name on rename, so an unrelated repository can later claim
+    the old owner__repo slug; a live card for that slug outranks the
+    historical alias and must not be overwritten by a redirect.
+    """
+    written = []
+    for old_slug, target in alias_map.items():
+        target = aliases.resolve(alias_map, target)
+        if (old_slug != target and f'{target}.html' in keep
+                and f'{old_slug}.html' not in keep):
+            (out_dir / f'{old_slug}.html').write_text(redirect_page(old_slug, target))
+            written.append(old_slug)
+    return written
+
+
+def sweep_stale(keep, alias_map, out_dir):
+    """Delete cards for repos that left the topic, sparing rename aliases."""
+    removed = []
+    for stale in out_dir.glob('*.html'):
+        if stale.name not in keep and stale.stem not in alias_map:
+            stale.unlink()
+            removed.append(stale.name)
+    return removed
 
 
 COLLECTIONS = [
@@ -455,9 +531,14 @@ def main():
         keep.add(f'{slug}.html')
         (OUT / f'{slug}.html').write_text(page(p))
 
-    for stale in OUT.glob('*.html'):       # repos that left the topic
-        if stale.name not in keep:
-            stale.unlink()
+    # A renamed repository's old path becomes a redirect to the new card
+    # instead of a 404 (issue #17); only repos that truly left the topic lose
+    # their page.
+    alias_map = aliases.load()
+    written = write_alias_pages(alias_map, keep, OUT)
+    removed = sweep_stale(keep, alias_map, OUT)
+    if written or removed:
+        print(f'aliases: {len(written)} redirect page(s) written, {len(removed)} stale page(s) removed')
 
     today = datetime.date.today().isoformat()
     coll_dir = DOCS / 'c'

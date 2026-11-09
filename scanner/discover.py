@@ -14,8 +14,11 @@ import subprocess
 import sys
 import time
 
+import aliases
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data' / 'repos.json'
+ALIASES = aliases.ALIASES
 TOPIC = 'topic:dsh-plugin'
 STAR_BUCKETS = ['>=100', '10..99', '5..9', '2..4', '1', '0']
 EPOCH = datetime.date(2008, 1, 1)
@@ -54,6 +57,11 @@ def fetch_all(q, seen, out):
             seen.add(r['full_name'])
             out.append({
                 'full_name': r['full_name'],
+                # The one identifier that survives account and repository
+                # renames; full_name does not. This is what lets the next run
+                # tell a rename apart from a delete-plus-new-repo and keep the
+                # old card path alive as an alias (issue #17).
+                'node_id': r.get('node_id'),
                 'stars': r['stargazers_count'],
                 'description': (r.get('description') or '')[:200],
                 'size_kb': r.get('size', 0),
@@ -82,6 +90,12 @@ def walk(base_q, lo, hi, seen, out, depth=0):
 
 def main(limit=None):
     today = datetime.date.today()
+    # The catalog on disk is the previous run's view; the node-id diff against
+    # it is what records renames while they are still fresh.
+    try:
+        previous = json.loads(OUT.read_text())
+    except Exception:
+        previous = []
     seen, out = set(), []
     for bucket in STAR_BUCKETS:
         base = f'{TOPIC} stars:{bucket}'
@@ -97,6 +111,12 @@ def main(limit=None):
         out = out[:limit]
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1))
+    previous_aliases = aliases.load()
+    added = aliases.update(out, previous)
+    if len(added) > len(previous_aliases):
+        print(f'aliased {len(added) - len(previous_aliases)} renamed repos -> {ALIASES}')
+    ALIASES.parent.mkdir(parents=True, exist_ok=True)
+    ALIASES.write_text(json.dumps(added, ensure_ascii=False, indent=1, sort_keys=True))
     print(f'discovered {len(out)} repos -> {OUT}')
 
 
