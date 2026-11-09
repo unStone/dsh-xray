@@ -14,6 +14,7 @@ import sys
 
 import scan_core
 import analysis
+import aliases
 from archive_input import fetch_files
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -65,13 +66,35 @@ def summarize(card):
     }
 
 
-def write_badge(card):
+def write_badge(card, alias_sources=None):
     slug = card['repo'].replace('/', '__')
     level = card['level']
     msg = f"C{level} · {len(card['flags'])} flags" if level >= 0 else 'unscanned'
-    (DOCS / 'badge' / f'{slug}.json').write_text(json.dumps({
+    body = json.dumps({
         'schemaVersion': 1, 'label': 'dsh-xray',
-        'message': msg, 'color': LEVEL_COLORS.get(level, 'lightgrey')}))
+        'message': msg, 'color': LEVEL_COLORS.get(level, 'lightgrey')})
+    # Badge paths are never swept, so a pre-rename badge would otherwise serve
+    # a level frozen at rename time forever; mirror it under the old slugs
+    # (issue #17).
+    for s in [slug] + (alias_sources or {}).get(slug, []):
+        (DOCS / 'badge' / f'{s}.json').write_text(body)
+
+
+def first_seen(slug, alias_map):
+    """The card's original first_seen, falling back across renames.
+
+    The cache is keyed by slug, so after a rename the new card would otherwise
+    carry the rename date and the feed would re-announce the plugin as new.
+    """
+    card = load_cached(slug)
+    if card and card.get('first_seen'):
+        return card['first_seen']
+    for old_slug in alias_map:
+        if old_slug != slug and aliases.resolve(alias_map, old_slug) == slug:
+            card = load_cached(old_slug)
+            if card and card.get('first_seen'):
+                return card['first_seen']
+    return None
 
 
 def load_cached(slug):
@@ -98,6 +121,13 @@ def main(limit=None, workers=8, budget=None):
         repos = repos[:limit]
     SCANS.mkdir(parents=True, exist_ok=True)
     (DOCS / 'badge').mkdir(parents=True, exist_ok=True)
+
+    alias_map = aliases.load()
+    badge_aliases = {}
+    for old_slug, target in alias_map.items():
+        target = aliases.resolve(alias_map, target)
+        if old_slug != target:
+            badge_aliases.setdefault(target, []).append(old_slug)
 
     results, todo = [], []
     for r in repos:
@@ -146,8 +176,8 @@ def main(limit=None, workers=8, budget=None):
           + (f', {dropped} deferred to a later run (budget {budget})' if dropped else ''))
 
     with cf.ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(scan_repo, r, (load_cached(r['full_name'].replace('/', '__')) or {})
-                               .get('first_seen')): r for r in todo}
+        futures = {pool.submit(scan_repo, r, first_seen(r['full_name'].replace('/', '__'),
+                                                        alias_map)): r for r in todo}
         for i, fut in enumerate(cf.as_completed(futures), 1):
             try:
                 results.append(fut.result())
@@ -161,7 +191,7 @@ def main(limit=None, workers=8, budget=None):
                 print(f'[{i}/{len(todo)}] fetched')
 
     for card in results:
-        write_badge(card)
+        write_badge(card, badge_aliases)
     results.sort(key=lambda c: -c['stars'])
     ok = [c for c in results if c['status'] == 'ok']
     (DOCS / 'data.json').write_text(json.dumps({
