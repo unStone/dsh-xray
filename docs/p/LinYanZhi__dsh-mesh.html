@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>LinYanZhi/dsh-mesh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×42 in authored code, e.g. tools/ops/mesh-restart.mjs:12, tools/ops/mesh-restart.mjs:12</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×11 in authored code, e.g. tools/pc-helper/pc-desktop-helper.mjs:44, tools/phone-kit/phone-pc-daemon.mjs:42</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_MESH_HOST_TOKEN_FILE</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×55 in authored code, e.g. tools/ops/mesh-restart.mjs:12, tools/ops/mesh-restart.mjs:12</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×15 in authored code, e.g. tools/pc-helper/pc-desktop-helper.mjs:44, tools/phone-kit/phone-pc-daemon.mjs:42</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_MESH_HOST_TOKEN_FILE, SAKURA_TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>slots</span> <span>tools</span> <span>webServer</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>relay.example.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MESH_HOME</span> <span>DSH_MESH_HOST_TOKEN_FILE</span> <span>DSH_MESH_HOST_PORT</span> <span>LOCALAPPDATA</span> <span>DSH_MESH_REPO</span> <span>DSH_MESH_PORT</span> <span>DSH_PC_DESKTOP_DIRECT</span> <span>DSH_HOME</span> <span>DSH_NODE_EXEC</span> <span>COMPUTERNAME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>relay.example.com</span> <span>api.natfrp.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_MESH_HOME</span> <span>DSH_MESH_HOST_TOKEN_FILE</span> <span>DSH_MESH_REPO</span> <span>DSH_MESH_HOST_PORT</span> <span>LOCALAPPDATA</span> <span>DSH_HOME</span> <span>DSH_MESH_PORT</span> <span>DSH_PC_DESKTOP_DIRECT</span> <span>DSH_NODE_EXEC</span> <span>SystemDrive</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>brungcm/dsh-server-resources</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Server resources panel for DeepSeek Harness: live CPU, RAM, swap and disk, with rankings of top processes, folders and files.</p>
+  <p class="lede">Resources panel for DeepSeek Harness on Linux, macOS and Windows: live CPU, RAM, swap and disk, with rankings of top processes, folders and files. Read-only, zero dependencies.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/brungcm/dsh-server-resources" rel="nofollow ugc">brungcm/dsh-server-resources source on GitHub</a>
      · <a href="../registry.html#brungcm__dsh-server-resources">this plugin in the registry</a></p>
   <p>brungcm/dsh-server-resources is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, command execution in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:11, lib/index.js:243</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/platform/shared.js:2, lib/platform/shared.js:42</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>betterSidebar</span> <span>connection</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>SystemDrive</span> <span>DSR_HIDE_COMMAND_LINES</span> <span>DSR_SHELL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
