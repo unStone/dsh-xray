@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yu-bobo/dsh-commit-journal — capability card (C3) · dsh-xray</title>
-<meta name="description" content="yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.">
+<meta name="description" content="yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/yu-bobo__dsh-commit-journal.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yu-bobo/dsh-commit-journal — dsh plugin capability card">
-<meta property="og:description" content="yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.">
+<meta property="og:description" content="yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/yu-bobo__dsh-commit-journal.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-commit-journal", "identifier": "yu-bobo/dsh-commit-journal", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.", "codeRepository": "https://github.com/yu-bobo/dsh-commit-journal", "url": "https://unstone.github.io/dsh-xray/p/yu-bobo__dsh-commit-journal.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-commit-journal", "identifier": "yu-bobo/dsh-commit-journal", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/yu-bobo/dsh-commit-journal", "url": "https://unstone.github.io/dsh-xray/p/yu-bobo__dsh-commit-journal.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/yu-bobo/dsh-commit-journal" rel="nofollow ugc">yu-bobo/dsh-commit-journal source on GitHub</a>
      · <a href="../registry.html#yu-bobo__dsh-commit-journal">this plugin in the registry</a></p>
-  <p>yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server.</p>
+  <p>yu-bobo/dsh-commit-journal is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/ui/server.ts:404</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>20 static tool registration point(s).</p><ul><li><code>src/index.ts:18</code> tools.register</li><li><code>src/index.ts:19</code> tool factory</li><li><code>src/tools/registerTools.ts:32</code> tools.register</li><li><code>src/tools/registerTools.ts:33</code> tool factory</li><li><code>src/tools/registerTools.ts:54</code> tools.register</li><li><code>src/tools/registerTools.ts:55</code> tool factory</li><li><code>src/tools/registerTools.ts:138</code> tools.register</li><li><code>src/tools/registerTools.ts:139</code> tool factory</li><li><code>src/tools/registerTools.ts:156</code> tools.register</li><li><code>src/tools/registerTools.ts:157</code> tool factory</li><li><code>src/tools/registerTools.ts:176</code> tools.register</li><li><code>src/tools/registerTools.ts:177</code> tool factory</li><li><code>src/tools/registerTools.ts:228</code> tools.register</li><li><code>src/tools/registerTools.ts:229</code> tool factory</li><li><code>src/tools/registerTools.ts:273</code> tools.register</li><li><code>src/tools/registerTools.ts:274</code> tool factory</li><li><code>src/tools/registerTools.ts:321</code> tools.register</li><li><code>src/tools/registerTools.ts:322</code> tool factory</li><li><code>src/tools/registerTools.ts:364</code> tools.register</li><li><code>src/tools/registerTools.ts:365</code> tool factory</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×1 in authored code, e.g. src/providers/local/index.ts:4</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/ui/server.ts:419</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>20 static tool registration point(s).</p><ul><li><code>src/index.ts:18</code> tools.register</li><li><code>src/index.ts:19</code> tool factory</li><li><code>src/tools/registerTools.ts:32</code> tools.register</li><li><code>src/tools/registerTools.ts:33</code> tool factory</li><li><code>src/tools/registerTools.ts:54</code> tools.register</li><li><code>src/tools/registerTools.ts:55</code> tool factory</li><li><code>src/tools/registerTools.ts:162</code> tools.register</li><li><code>src/tools/registerTools.ts:163</code> tool factory</li><li><code>src/tools/registerTools.ts:180</code> tools.register</li><li><code>src/tools/registerTools.ts:181</code> tool factory</li><li><code>src/tools/registerTools.ts:201</code> tools.register</li><li><code>src/tools/registerTools.ts:202</code> tool factory</li><li><code>src/tools/registerTools.ts:257</code> tools.register</li><li><code>src/tools/registerTools.ts:258</code> tool factory</li><li><code>src/tools/registerTools.ts:302</code> tools.register</li><li><code>src/tools/registerTools.ts:303</code> tool factory</li><li><code>src/tools/registerTools.ts:350</code> tools.register</li><li><code>src/tools/registerTools.ts:351</code> tool factory</li><li><code>src/tools/registerTools.ts:393</code> tools.register</li><li><code>src/tools/registerTools.ts:394</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>xxx.devops.aliyuncs.com</span> <span>timor.tech</span> <span>openapi-rdc.aliyuncs.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_COMMIT_JOURNAL_HOME</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_COMMIT_JOURNAL_HOME</span> <span>DSH_COMMIT_JOURNAL_GIT</span> <span>Path</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
