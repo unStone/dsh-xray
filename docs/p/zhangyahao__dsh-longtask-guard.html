@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>zhangyahao/dsh-longtask-guard</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Long-task guard for DeepSeek Harness: externalize bulky session history to project files and rescue reasoning-only turns.</p>
+  <p class="lede">长任务上下文护栏：把臃肿的会话历史外化到项目文件，让长会话不因上下文过大而中断；正文为空的回合会把 reasoning 归档并补一条可见消息。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/zhangyahao/dsh-longtask-guard" rel="nofollow ugc">zhangyahao/dsh-longtask-guard source on GitHub</a>
      · <a href="../registry.html#zhangyahao__dsh-longtask-guard">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>index.js:451</code> tools.register</li><li><code>index.js:479</code> tools.register</li><li><code>index.js:495</code> tools.register</li><li><code>index.js:524</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>index.js:552</code> tools.register</li><li><code>index.js:587</code> tools.register</li><li><code>index.js:606</code> tools.register</li><li><code>index.js:638</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>session/event</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_PROFILE_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

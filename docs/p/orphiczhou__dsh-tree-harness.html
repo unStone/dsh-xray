@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>orphiczhou/dsh-tree-harness — capability card (C3) · dsh-xray</title>
-<meta name="description" content="orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta name="description" content="orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/orphiczhou__dsh-tree-harness.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="orphiczhou/dsh-tree-harness — dsh plugin capability card">
-<meta property="og:description" content="orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
+<meta property="og:description" content="orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/orphiczhou__dsh-tree-harness.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tree-harness", "identifier": "orphiczhou/dsh-tree-harness", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/orphiczhou/dsh-tree-harness", "url": "https://unstone.github.io/dsh-xray/p/orphiczhou__dsh-tree-harness.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-tree-harness", "identifier": "orphiczhou/dsh-tree-harness", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/orphiczhou/dsh-tree-harness", "url": "https://unstone.github.io/dsh-xray/p/orphiczhou__dsh-tree-harness.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>orphiczhou/dsh-tree-harness</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH（DeepSeek Harness）树形任务分解执行 Harness + 插件集合：tree-engine（8 个 tree_* 工具）/ meta-loop（六阶段门禁+面板）/ agent-introspect（self_spec）/ session-tree（单包 v1.0.4）。</p>
+  <p class="lede">DSH 会话树体系：tree-engine v0.6.0（9 个 tree_* 工具 + 竹节接力 + 叶写面护栏 + tree_doctor 自检）+ session-tree v1.3.6（侧栏会话树 / tree_send / 50% 自交接 / 随包 Skill；含 Agent 安装指南）。先读项目全景地图或 docs/README.md。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/orphiczhou/dsh-tree-harness" rel="nofollow ugc">orphiczhou/dsh-tree-harness source on GitHub</a>
      · <a href="../registry.html#orphiczhou__dsh-tree-harness">this plugin in the registry</a></p>
-  <p>orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
+  <p>orphiczhou/dsh-tree-harness is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. packages/dsh-tree-engine/index.js:25, packages/dsh-tree-engine/index.js:257</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>5 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>packages/dsh-agent-introspect/index.js:116</code> tools.register</li><li><code>packages/dsh-meta-loop/index.js:94</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1255</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1259</code> tools.register</li><li><code>packages/dsh-tree-engine/index.js:810</code> tools.register</li><li><code>packages/dsh-meta-loop/index.js:152</code> Cannot establish the tools service binding</li><li><code>packages/dsh-meta-loop/index.js:153</code> Cannot establish the tools service binding</li><li><code>packages/dsh-meta-loop/index.js:154</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. scripts/check-doc-links.mjs:3, scripts/check-doc-links.mjs:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>packages/dsh-agent-introspect/index.js:116</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1381</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1385</code> tools.register</li><li><code>packages/dsh-tree-engine/index.js:850</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>sidebarRight</span> <span>slots</span> <span>uiWorkspace</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>DSH_HOME</span> <span>DSH_SESSION_ID</span> <span>TREE_ENGINE_TRUSTED_HOSTS</span> <span>TREE_ENGINE_MECHANISM</span> <span>TREE_ENGINE_JUDGE_ASSIGNEE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>GH_TOKEN</span> <span>DSH_MIRROR_DIR</span> <span>DSH_HOME</span> <span>DSH_SESSION_ID</span> <span>TREE_ENGINE_MECHANISM</span> <span>TREE_ENGINE_JUDGE_ASSIGNEE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
