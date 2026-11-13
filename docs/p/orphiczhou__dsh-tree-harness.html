@@ -53,9 +53,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×12 in authored code, e.g. scripts/check-doc-links.mjs:3, scripts/check-doc-links.mjs:3</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>GH_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>packages/dsh-agent-introspect/index.js:116</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1381</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1385</code> tools.register</li><li><code>packages/dsh-tree-engine/index.js:850</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>packages/dsh-agent-introspect/index.js:116</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1593</code> tools.register</li><li><code>packages/dsh-session-tree/index.js:1597</code> tools.register</li><li><code>packages/dsh-tree-engine/index.js:1015</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>sidebarRight</span> <span>slots</span> <span>uiWorkspace</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>GH_TOKEN</span> <span>DSH_MIRROR_DIR</span> <span>DSH_HOME</span> <span>DSH_SESSION_ID</span> <span>TREE_ENGINE_MECHANISM</span> <span>TREE_ENGINE_JUDGE_ASSIGNEE</span></p>
   <h2>How to read this</h2>

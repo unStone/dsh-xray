@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MrLukezy/dsh-codequest — capability card (C3) · dsh-xray</title>
-<meta name="description" content="MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta name="description" content="MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/MrLukezy__dsh-codequest.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MrLukezy/dsh-codequest — dsh plugin capability card">
-<meta property="og:description" content="MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.">
+<meta property="og:description" content="MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/MrLukezy__dsh-codequest.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codequest", "identifier": "MrLukezy/dsh-codequest", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.", "codeRepository": "https://github.com/MrLukezy/dsh-codequest", "url": "https://unstone.github.io/dsh-xray/p/MrLukezy__dsh-codequest.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-codequest", "identifier": "MrLukezy/dsh-codequest", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.", "codeRepository": "https://github.com/MrLukezy/dsh-codequest", "url": "https://unstone.github.io/dsh-xray/p/MrLukezy__dsh-codequest.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,14 +49,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/MrLukezy/dsh-codequest" rel="nofollow ugc">MrLukezy/dsh-codequest source on GitHub</a>
      · <a href="../registry.html#MrLukezy__dsh-codequest">this plugin in the registry</a></p>
-  <p>MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, reads credential-class env vars.</p>
+  <p>MrLukezy/dsh-codequest is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ADMIN_PASS, DSH_SHARED_SECRET, JWT_SECRET, STEAM_API_KEY</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×1 in authored code, e.g. server/server.mjs:1037</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ADMIN_PASS, DSH_SHARED_SECRET, JWT_SECRET, STEAM_API_KEY</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>specs.openid.net</span> <span>steamcommunity.com</span> <span>api.steampowered.com</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>specs.openid.net</span> <span>www.lukezystudio.cn</span> <span>steamcommunity.com</span> <span>api.steampowered.com</span> <span>guide.lukezystudio.cn</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_SHARED_SECRET</span> <span>BASE_PATH</span> <span>STEAM_REALM</span> <span>DSH_CODEQUEST_CLOUD</span> <span>DSH_HOME</span> <span>PORT</span> <span>JWT_SECRET</span> <span>ADMIN_USER</span> <span>ADMIN_PASS</span> <span>STEAM_API_KEY</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin

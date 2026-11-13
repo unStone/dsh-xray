@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>system-prompt/assemble</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DSH_CHAT_BRIDGE_AI_KEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>index.js:504</code> tools.register</li><li><code>index.js:574</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>3 static tool registration point(s).</p><ul><li><code>index.js:661</code> tools.register</li><li><code>index.js:744</code> tools.register</li><li><code>index.js:791</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>system-prompt/assemble</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.wna.me</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_CHAT_BRIDGE_HOST</span> <span>DSH_CHAT_BRIDGE_AI_KEY</span> <span>DSH_PROFILE</span> <span>DSH_RESOURCES</span> <span>LOCALAPPDATA</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_RESOURCES</span> <span>LOCALAPPDATA</span> <span>DSH_CHAT_BRIDGE_HOST</span> <span>DSH_CHAT_BRIDGE_AI_KEY</span> <span>DSH_PROFILE</span> <span>PROBE_MAX_FILES</span> <span>PROBE_MAX_HITS</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

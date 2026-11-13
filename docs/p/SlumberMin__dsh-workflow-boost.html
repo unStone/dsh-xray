@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>SlumberMin/dsh-workflow-boost</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">14 workflow modules for DeepSeek Harness: microcompact, focus chain, stuck detector, turn guard, edit checks, checkpoints, evidence-gated goals, repo map, cache attribution, memory lint, hooks, handof</p>
+  <p class="lede">15 workflow modules for DeepSeek Harness: microcompact, focus chain, stuck detector, turn guard, edit checks, checkpoints, evidence-gated goals, repo map, cache attribution, memory lint, hooks, handof</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/SlumberMin/dsh-workflow-boost" rel="nofollow ugc">SlumberMin/dsh-workflow-boost source on GitHub</a>
      · <a href="../registry.html#SlumberMin__dsh-workflow-boost">this plugin in the registry</a></p>
@@ -53,10 +53,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/shared.js:2, lib/shared.js:297</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:106</code> Context or tools service passed to an unresolved helper</li><li><code>lib/cache-report.js:330</code> Cannot establish the tools service binding</li><li><code>lib/checkpoint.js:697</code> Cannot establish the tools service binding</li><li><code>lib/goal-gate.js:426</code> Cannot establish the tools service binding</li><li><code>lib/handoff-notes.js:536</code> Cannot establish the tools service binding</li><li><code>lib/memory-lint.js:464</code> Cannot establish the tools service binding</li><li><code>lib/review-gate.js:323</code> Cannot establish the tools service binding</li></ul>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:109</code> Context or tools service passed to an unresolved helper</li><li><code>lib/cache-report.js:330</code> Cannot establish the tools service binding</li><li><code>lib/checkpoint.js:697</code> Cannot establish the tools service binding</li><li><code>lib/goal-gate.js:426</code> Cannot establish the tools service binding</li><li><code>lib/handoff-notes.js:536</code> Cannot establish the tools service binding</li><li><code>lib/memory-lint.js:464</code> Cannot establish the tools service binding</li><li><code>lib/review-gate.js:323</code> Cannot establish the tools service binding</li><li><code>lib/style-pack.js:285</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>session/event</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>loader/volatile-update</span> <span>session/event</span> <span>tools/post-execute</span> <span>tools/pre-execute</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>platform.claude.com</span> <span>www.techtimes.com</span> <span>traictory.com</span> <span>research.aimultiple.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>ComSpec</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
