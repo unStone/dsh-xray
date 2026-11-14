@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>Watchcats211/dsh-podwave is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×24 in authored code, e.g. scripts/release.mjs:5, scripts/release.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/host.js:303, src/host.js:354</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×30 in authored code, e.g. scripts/release.mjs:5, scripts/release.mjs:5</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/host.js:307, src/host.js:358</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>gh-proxy.com</span> <span>api.deepseek.com</span> <span>modelscope.cn</span> <span>www.xiaoyuzhoufm.com</span> <span>api.github.com</span> <span>huggingface.co</span> <span>hf-mirror.com</span> <span>docs.astral.sh</span> <span>pypi.tuna.tsinghua.edu.cn</span> <span>api.xiaoyuzhoufm.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>PODWAVE_FFMPEG</span> <span>PODWAVE_LLAMA_SERVER</span> <span>PODWAVE_LLAMA</span> <span>PODWAVE_FFPROBE</span> <span>PODWAVE_DATA_DIR</span> <span>PODWAVE_PICK_FOLDER</span> <span>PATHEXT</span> <span>PODWAVE_UV</span> <span>PODWAVE_UPDATE_REGISTRY</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>PODWAVE_FFMPEG</span> <span>PODWAVE_LLAMA_SERVER</span> <span>PODWAVE_LLAMA</span> <span>PODWAVE_FFPROBE</span> <span>PODWAVE_DATA_DIR</span> <span>SystemRoot</span> <span>windir</span> <span>PODWAVE_PICK_FOLDER</span> <span>PATHEXT</span> <span>PODWAVE_UV</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

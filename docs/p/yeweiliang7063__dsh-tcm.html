@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>yeweiliang7063/dsh-tcm</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">DSH 中医预设「岐黄经方」插件：systemPrompt 变量 + 中医资料库设置 + 经方预设</p>
+  <p class="lede">DSH 中医预设「岐黄经方（学习版）」2.2.1：先给一行大白话结论，再按经方思路七段讲清辨证定位、治则治法、方名与加减方向、推荐穴位、配伍禁忌、药典用量警示、调护与就医提示；危险动作打 🚨⚠️ 标签，古文翻成白话。只讲思路，不给剂量，不出处方笺。《npm 上的 dsh-tcm 1.3.0 是旧版、已废弃，请勿安装   》！！！    </p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/yeweiliang7063/dsh-tcm" rel="nofollow ugc">yeweiliang7063/dsh-tcm source on GitHub</a>
      · <a href="../registry.html#yeweiliang7063__dsh-tcm">this plugin in the registry</a></p>
   <p>yeweiliang7063/dsh-tcm is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. install.mjs:16, install.mjs:16</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×6 in authored code, e.g. install.mjs:21, install.mjs:21</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>systemPrompt</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>llm/stream</span> <span>session/event</span></p>
   
-  
-  <h2>Environment variables it reads</h2><p class="kv"><span>TCM_KB_PATH</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>TCM_KB_PATH</span> <span>TCM_PROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
