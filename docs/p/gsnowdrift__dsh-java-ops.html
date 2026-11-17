@@ -45,15 +45,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>gsnowdrift/dsh-java-ops</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">DeepSeek Harness 插件：Java/Spring Boot 服务启停、重启、构建与 SQL 查询</p>
+  <p class="lede">给 AI 装上操作 Java 服务的手：编译、启停重启、调接口、读数据库，自己改、自己启、自己验。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/gsnowdrift/dsh-java-ops" rel="nofollow ugc">gsnowdrift/dsh-java-ops source on GitHub</a>
      · <a href="../registry.html#gsnowdrift__dsh-java-ops">this plugin in the registry</a></p>
   <p>gsnowdrift/dsh-java-ops is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, can spawn subprocesses, command execution in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:866, lib/index.js:1300</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:1948</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/index.js:996, lib/index.js:1430</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:2107</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>connection</span> <span>locale</span> <span>sessions</span> <span>slots</span> <span>subprocess</span> <span>tools</span></p>
   
   

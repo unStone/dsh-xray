@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hj178250/dsh-exam-gen — capability card (C3) · dsh-xray</title>
-<meta name="description" content="hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time.">
+<meta name="description" content="hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/hj178250__dsh-exam-gen.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hj178250/dsh-exam-gen — dsh plugin capability card">
-<meta property="og:description" content="hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time.">
+<meta property="og:description" content="hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/hj178250__dsh-exam-gen.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-exam-gen", "identifier": "hj178250/dsh-exam-gen", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time.", "codeRepository": "https://github.com/hj178250/dsh-exam-gen", "url": "https://unstone.github.io/dsh-xray/p/hj178250__dsh-exam-gen.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-exam-gen", "identifier": "hj178250/dsh-exam-gen", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.", "codeRepository": "https://github.com/hj178250/dsh-exam-gen", "url": "https://unstone.github.io/dsh-xray/p/hj178250__dsh-exam-gen.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/hj178250/dsh-exam-gen" rel="nofollow ugc">hj178250/dsh-exam-gen source on GitHub</a>
      · <a href="../registry.html#hj178250__dsh-exam-gen">this plugin in the registry</a></p>
-  <p>hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, runs code at install time.</p>
+  <p>hj178250/dsh-exam-gen is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>runs code at install time</td><td><code>install_script</code></td><td>postinstall: node scripts/patch-tool-cards.mjs</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>4 static tool registration point(s).</p><ul><li><code>dist/index.js:28</code> tools.register</li><li><code>dist/index.js:329</code> tools.register</li><li><code>src/index.ts:63</code> tools.register</li><li><code>src/index.ts:406</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>tools</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/index.ts:13, src/index.ts:538</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>10 static tool registration point(s).</p><ul><li><code>dist/index.js:68</code> tools.register</li><li><code>dist/index.js:557</code> tools.register</li><li><code>dist/index.js:658</code> tools.register</li><li><code>dist/index.js:715</code> tools.register</li><li><code>dist/index.js:798</code> tools.register</li><li><code>src/index.ts:107</code> tools.register</li><li><code>src/index.ts:686</code> tools.register</li><li><code>src/index.ts:800</code> tools.register</li><li><code>src/index.ts:861</code> tools.register</li><li><code>src/index.ts:946</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>sessions</span> <span>tools</span></p>
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_EXAM_ADMIN</span> <span>DSH_EXAM_PROVIDER</span> <span>DSH_EXAM_MODEL</span> <span>DSH_EXAM_SEED_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_EXAM_SEED_DIR</span> <span>DSH_EXAM_ADMIN</span> <span>DSH_EXAM_PROVIDER</span> <span>DSH_EXAM_MODEL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
