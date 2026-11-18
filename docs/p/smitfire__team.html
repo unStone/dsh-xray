@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>smitfire/team — capability card (C3) · dsh-xray</title>
-<meta name="description" content="smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.">
+<meta name="description" content="smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/smitfire__team.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="smitfire/team — dsh plugin capability card">
-<meta property="og:description" content="smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.">
+<meta property="og:description" content="smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/smitfire__team.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "team", "identifier": "smitfire/team", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.", "codeRepository": "https://github.com/smitfire/team", "url": "https://unstone.github.io/dsh-xray/p/smitfire__team.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "team", "identifier": "smitfire/team", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.", "codeRepository": "https://github.com/smitfire/team", "url": "https://unstone.github.io/dsh-xray/p/smitfire__team.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/smitfire/team" rel="nofollow ugc">smitfire/team source on GitHub</a>
      · <a href="../registry.html#smitfire__team">this plugin in the registry</a></p>
-  <p>smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, reads credential-class env vars.</p>
+  <p>smitfire/team is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, gates tool execution, executes system commands.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. src/core/ocr-runner.ts:1, src/core/ocr-runner.ts:1</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, OCR_LLM_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>16 static tool registration point(s).</p><ul><li><code>dist/dsh/index.js:194</code> tools.register</li><li><code>dist/dsh/index.js:194</code> tool factory</li><li><code>dist/dsh/index.js:221</code> tools.register</li><li><code>dist/dsh/index.js:221</code> tool factory</li><li><code>dist/dsh/index.js:338</code> tools.register</li><li><code>dist/dsh/index.js:338</code> tool factory</li><li><code>dist/dsh/index.js:399</code> tools.register</li><li><code>dist/dsh/index.js:399</code> tool factory</li><li><code>src/dsh/index.ts:288</code> tools.register</li><li><code>src/dsh/index.ts:289</code> tool factory</li><li><code>src/dsh/index.ts:319</code> tools.register</li><li><code>src/dsh/index.ts:320</code> tool factory</li><li><code>src/dsh/index.ts:439</code> tools.register</li><li><code>src/dsh/index.ts:440</code> tool factory</li><li><code>src/dsh/index.ts:505</code> tools.register</li><li><code>src/dsh/index.ts:506</code> tool factory</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, tools/pre-execute</td></tr><tr><td>gates tool execution</td><td><code>tool_gate</code></td><td>hook: tools/pre-execute</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×16 in authored code, e.g. src/core/ocr-runner.ts:1, src/core/ocr-runner.ts:1</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DEEPSEEK_API_KEY, OCR_LLM_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>16 static tool registration point(s).</p><ul><li><code>dist/dsh/index.js:502</code> tools.register</li><li><code>dist/dsh/index.js:502</code> tool factory</li><li><code>dist/dsh/index.js:529</code> tools.register</li><li><code>dist/dsh/index.js:529</code> tool factory</li><li><code>dist/dsh/index.js:769</code> tools.register</li><li><code>dist/dsh/index.js:769</code> tool factory</li><li><code>dist/dsh/index.js:830</code> tools.register</li><li><code>dist/dsh/index.js:830</code> tool factory</li><li><code>src/dsh/index.ts:629</code> tools.register</li><li><code>src/dsh/index.ts:630</code> tool factory</li><li><code>src/dsh/index.ts:660</code> tools.register</li><li><code>src/dsh/index.ts:661</code> tool factory</li><li><code>src/dsh/index.ts:904</code> tools.register</li><li><code>src/dsh/index.ts:905</code> tool factory</li><li><code>src/dsh/index.ts:970</code> tools.register</li><li><code>src/dsh/index.ts:971</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>subagents</span> <span>systemPrompt</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>agent/disposed</span> <span>agent/pre-step</span> <span>tools/result</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/assistant-stream</span> <span>agent/disposed</span> <span>agent/pre-step</span> <span>agent/request-error</span> <span>agent/status</span> <span>agent/turn-stopping</span> <span>subagent/end</span> <span>tools/pre-execute</span> <span>tools/result</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>api.deepseek.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>OCR_LLM_TOKEN</span> <span>DEEPSEEK_API_KEY</span> <span>OCR_PATH_PREFIX</span> <span>OCR_LLM_URL</span> <span>OCR_LLM_MODEL</span></p>
   <h2>How to read this</h2>

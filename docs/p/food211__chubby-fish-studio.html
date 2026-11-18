@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>food211/chubby-fish-studio — capability card (C3) · dsh-xray</title>
-<meta name="description" content="food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.">
+<meta name="description" content="food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 payloads.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/food211__chubby-fish-studio.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="food211/chubby-fish-studio — dsh plugin capability card">
-<meta property="og:description" content="food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.">
+<meta property="og:description" content="food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 payloads.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/food211__chubby-fish-studio.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "chubby-fish-studio", "identifier": "food211/chubby-fish-studio", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.", "codeRepository": "https://github.com/food211/chubby-fish-studio", "url": "https://unstone.github.io/dsh-xray/p/food211__chubby-fish-studio.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "chubby-fish-studio", "identifier": "food211/chubby-fish-studio", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 payloads.", "codeRepository": "https://github.com/food211/chubby-fish-studio", "url": "https://unstone.github.io/dsh-xray/p/food211__chubby-fish-studio.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,13 +49,13 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/food211/chubby-fish-studio" rel="nofollow ugc">food211/chubby-fish-studio source on GitHub</a>
      · <a href="../registry.html#food211__chubby-fish-studio">this plugin in the registry</a></p>
-  <p>food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, decodes base64 payloads.</p>
+  <p>food211/chubby-fish-studio is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval in development tooling the package does not ship, decodes base64 payloads.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×3 in authored code, e.g. client.js:10218, client.js:10797</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>10 static tool registration point(s).</p><ul><li><code>index.js:896</code> tools.register</li><li><code>index.js:925</code> tools.register</li><li><code>index.js:989</code> tools.register</li><li><code>index.js:1039</code> tools.register</li><li><code>index.js:1122</code> tools.register</li><li><code>index.js:1140</code> tools.register</li><li><code>index.js:1153</code> tools.register</li><li><code>index.js:1244</code> tools.register</li><li><code>index.js:1346</code> tools.register</li><li><code>index.js:1863</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>webServer</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. index.js:77, index.js:309</td></tr><tr><td>uses eval in development tooling the package does not ship</td><td><code>eval_tooling</code></td><td>×1 in development tooling the package does not ship, e.g. scripts/check-locale.mjs:16</td></tr><tr><td>decodes base64 payloads</td><td><code>base64_decode</code></td><td>×5 in authored code, e.g. client.js:10379, client.js:11300</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>11 static tool registration point(s).</p><ul><li><code>index.js:1281</code> tools.register</li><li><code>index.js:1310</code> tools.register</li><li><code>index.js:1374</code> tools.register</li><li><code>index.js:1424</code> tools.register</li><li><code>index.js:1507</code> tools.register</li><li><code>index.js:1561</code> tools.register</li><li><code>index.js:1579</code> tools.register</li><li><code>index.js:1670</code> tools.register</li><li><code>index.js:1772</code> tools.register</li><li><code>index.js:2382</code> tools.register</li><li><code>index.js:2424</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>uiWorkspace</span> <span>webServer</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>dispose</span> <span>locale/change</span></p>
   
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>DSH_HOME</span> <span>MPX_SRC</span></p>
   <h2>How to read this</h2>

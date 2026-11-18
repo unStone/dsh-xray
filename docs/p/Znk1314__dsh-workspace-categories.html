@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Znk1314/dsh-workspace-categories — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.">
+<meta name="description" content="Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Znk1314__dsh-workspace-categories.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Znk1314/dsh-workspace-categories — dsh plugin capability card">
-<meta property="og:description" content="Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.">
+<meta property="og:description" content="Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Znk1314__dsh-workspace-categories.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-workspace-categories", "identifier": "Znk1314/dsh-workspace-categories", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.", "codeRepository": "https://github.com/Znk1314/dsh-workspace-categories", "url": "https://unstone.github.io/dsh-xray/p/Znk1314__dsh-workspace-categories.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-workspace-categories", "identifier": "Znk1314/dsh-workspace-categories", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.", "codeRepository": "https://github.com/Znk1314/dsh-workspace-categories", "url": "https://unstone.github.io/dsh-xray/p/Znk1314__dsh-workspace-categories.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -45,14 +45,14 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Znk1314/dsh-workspace-categories</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">把dsh桌面端侧边栏的工作区归入自定义分类。 每个分类是一个圆角矩形框，里面放着归入它的工作区和各自的会话； 长按标题即可拖动归类与排序，便于管理对话</p>
+  <p class="lede">为 DSH 侧边栏工作区分组：自定义分类、全部/最近/分类三种视图、两级可收起、长按拖动归类。告别无限下滑找会话。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Znk1314/dsh-workspace-categories" rel="nofollow ugc">Znk1314/dsh-workspace-categories source on GitHub</a>
      · <a href="../registry.html#Znk1314__dsh-workspace-categories">this plugin in the registry</a></p>
-  <p>Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, uses eval / new Function.</p>
+  <p>Znk1314/dsh-workspace-categories is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. tools/test-folds.cjs:35, tools/test-regressions.cjs:35</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. tools/run-all.mjs:6, tools/run-all.mjs:6</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×3 in authored code, e.g. tools/test-folds.cjs:35, tools/test-regressions.cjs:35</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>sessions</span> <span>slots</span> <span>uiWorkspace</span> <span>workspaces</span></p>
   

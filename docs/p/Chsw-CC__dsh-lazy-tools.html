@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Chsw-CC/dsh-lazy-tools</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">On-demand tool and skill loading for DeepSeek Assistant: one toolbox replaces the standing tool catalog, cutting prompt tokens.</p>
+  <p class="lede">On-demand tool loading for DeepSeek Harness: the core set stays native, the long tail sits behind one toolbox entry, so about 36k tokens of tool schemas stop riding along with every request.</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/Chsw-CC/dsh-lazy-tools" rel="nofollow ugc">Chsw-CC/dsh-lazy-tools source on GitHub</a>
      · <a href="../registry.html#Chsw-CC__dsh-lazy-tools">this plugin in the registry</a></p>
@@ -53,7 +53,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:414</code> tool factory</li><li><code>lib/index.js:568</code> tools.register</li></ul>
+  <h2>Tool registrations</h2><p>2 static tool registration point(s).</p><ul><li><code>lib/index.js:516</code> tool factory</li><li><code>lib/index.js:730</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>systemPrompt</span> <span>tools</span></p>
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>agent/pre-step</span> <span>tools/change</span></p>
   

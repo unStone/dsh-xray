@@ -46,18 +46,18 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">微信读书笔记 × DeepSeek Harness / AI 工作流：Markdown 同步导出、全文搜索、阅读洞察、SM-2 笔记漫游、会话内 Agent 工具与跨宿主 MCP 服务 | WeRead notes × DeepSeek Harness &amp; AI: Markdown sync &amp; export, full-text search, reading insights, SM-2 no</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/wangjianghu/weread-dsh" rel="nofollow ugc">wangjianghu/weread-dsh source on GitHub</a>
      · <a href="../registry.html#wangjianghu__weread-dsh">this plugin in the registry</a></p>
   <p>wangjianghu/weread-dsh is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can rewrite the system prompt, executes system commands, uses eval / new Function.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. build.mjs:10, build.mjs:10</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. smoke.mjs:1032, smoke.mjs:2523</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. smoke.mjs:2668, smoke.mjs:2670</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:874</code> Cannot establish the tools service binding</li><li><code>index.js:1084</code> Cannot establish the tools service binding</li><li><code>index.js:1832</code> Cannot establish the tools service binding</li><li><code>parts/00-head.js:1051</code> Cannot parse source: Unexpected token (1051:0)</li><li><code>parts/90-tail.js:610</code> Cannot parse source: Unexpected token (610:2)</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can rewrite the system prompt</td><td><code>prompt_surface</code></td><td>systemPrompt, webServer</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. build.mjs:10, build.mjs:10</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. smoke.mjs:1056, smoke.mjs:2555</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×4 in authored code, e.g. smoke.mjs:2700, smoke.mjs:2702</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WEREAD_DSH_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>index.js:884</code> Cannot establish the tools service binding</li><li><code>index.js:1129</code> Cannot establish the tools service binding</li><li><code>index.js:1883</code> Cannot establish the tools service binding</li><li><code>parts/00-head.js:1051</code> Cannot parse source: Unexpected token (1051:0)</li><li><code>parts/90-tail.js:610</code> Cannot parse source: Unexpected token (610:2)</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>fs</span> <span>inputTriggers</span> <span>locale</span> <span>slots</span> <span>systemPrompt</span> <span>tools</span> <span>webServer</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>weread.qq.com</span> <span>evil.example.com</span> <span>i.weread.qq.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>WEREAD_DSH_URL</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>WEREAD_DSH_TOKEN</span> <span>WEREAD_DSH_URL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
