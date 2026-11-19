@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>trexwb/dsh-wb-free-model — capability card (C3) · dsh-xray</title>
-<meta name="description" content="trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta name="description" content="trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/trexwb__dsh-wb-free-model.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="trexwb/dsh-wb-free-model — dsh plugin capability card">
-<meta property="og:description" content="trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.">
+<meta property="og:description" content="trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/trexwb__dsh-wb-free-model.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-wb-free-model", "identifier": "trexwb/dsh-wb-free-model", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.", "codeRepository": "https://github.com/trexwb/dsh-wb-free-model", "url": "https://unstone.github.io/dsh-xray/p/trexwb__dsh-wb-free-model.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-wb-free-model", "identifier": "trexwb/dsh-wb-free-model", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.", "codeRepository": "https://github.com/trexwb/dsh-wb-free-model", "url": "https://unstone.github.io/dsh-xray/p/trexwb__dsh-wb-free-model.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -49,15 +49,15 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p class="lede">★ 0 ·
      <a href="https://github.com/trexwb/dsh-wb-free-model" rel="nofollow ugc">trexwb/dsh-wb-free-model source on GitHub</a>
      · <a href="../registry.html#trexwb__dsh-wb-free-model">this plugin in the registry</a></p>
-  <p>trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
+  <p>trexwb/dsh-wb-free-model is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×4 in authored code, e.g. src/runtime.js:19, src/runtime.js:19</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. src/runtime.js:238, src/runtime.js:241</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×2 in authored code, e.g. src/relay.js:17, src/relay.js:63</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. src/o2a/relay-bun.js:24</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>WB_FREE_MODEL_CREDENTIAL</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/native.js:391</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>llm</span> <span>locale</span> <span>slots</span></p>
   
-  <h2>Outbound domains</h2><p class="kv"><span>api.kilo.ai</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>WB_FREE_MODEL_NPM_REGISTRY</span> <span>WB_FREE_MODEL_OPENCODE</span> <span>DSH_WB_FREE_MODEL_BIN</span> <span>DSH_HOME</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>opencode.ai</span> <span>api.kilo.ai</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>WB_FREE_MODEL_BASE</span> <span>WB_FREE_MODEL_KILO_BASE</span> <span>WB_FREE_MODEL_BUN</span> <span>WB_FREE_MODEL_RELAY</span> <span>DSH_HOME</span> <span>RELAY_TARGET</span> <span>RELAY_PORT</span> <span>WB_FREE_MODEL_BUN_VERSION</span> <span>WB_FREE_MODEL_CREDENTIAL</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

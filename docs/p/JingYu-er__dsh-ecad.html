@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JingYu-er/dsh-ecad — capability card (C3) · dsh-xray</title>
+<meta name="description" content="JingYu-er/dsh-ecad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/JingYu-er__dsh-ecad.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JingYu-er/dsh-ecad — dsh plugin capability card">
+<meta property="og:description" content="JingYu-er/dsh-ecad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/JingYu-er__dsh-ecad.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-ecad", "identifier": "JingYu-er/dsh-ecad", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "JingYu-er/dsh-ecad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.", "codeRepository": "https://github.com/JingYu-er/dsh-ecad", "url": "https://unstone.github.io/dsh-xray/p/JingYu-er__dsh-ecad.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>JingYu-er/dsh-ecad</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">DSH-插件：通过kicad和tscircuit无头绘制原理图和pcb,自动完成校验，并一键导出gerber，step文件|DSH Plugin: Headlessly draw schematics and PCBs with KiCad and TSCircuit, automatically complete validation, and export Gerber and STEP fi</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/JingYu-er/dsh-ecad" rel="nofollow ugc">JingYu-er/dsh-ecad source on GitHub</a>
+     · <a href="../registry.html#JingYu-er__dsh-ecad">this plugin in the registry</a></p>
+  <p>JingYu-er/dsh-ecad is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, can spawn subprocesses, executes system commands.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>can spawn subprocesses</td><td><code>subprocess_service</code></td><td>inject: subprocess</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. src/types.ts:96, src/data/search-roots.ts:16</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>2 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/engine/tool-events.js:103</code> tools.register</li><li><code>src/engine/tool-events.ts:106</code> tools.register</li><li><code>.patch-s1701-docs.mjs:11</code> Cannot parse source: Missing semicolon. (11:85)</li><li><code>lib/tools/datasheet.js:51</code> Cannot establish the tools service binding</li><li><code>lib/tools/datasheet.js:154</code> Cannot establish the tools service binding</li><li><code>lib/tools/datasheet.js:247</code> Cannot establish the tools service binding</li><li><code>lib/tools/datasheet.js:338</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:99</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:177</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:336</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:512</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:596</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:705</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:770</code> Cannot establish the tools service binding</li><li><code>lib/tools/ecad.js:836</code> Cannot establish the tools service binding</li><li><code>lib/tools/gen.js:19</code> Cannot establish the tools service binding</li><li><code>lib/tools/import-circuit.js:145</code> Cannot establish the tools service binding</li><li><code>lib/tools/layout.js:21</code> Cannot establish the tools service binding</li><li><code>lib/tools/part-import.js:14</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:263</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:390</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2033</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2034</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2035</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2036</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2037</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2038</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2039</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2040</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2041</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2042</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2043</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2044</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2225</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2314</code> Cannot establish the tools service binding</li><li><code>lib/tools/pcb.js:2315</code> Cannot establish the tools service binding</li><li><code>lib/tools/pdf.js:427</code> Cannot establish the tools service binding</li><li><code>lib/tools/sch-draw.js:91</code> Cannot establish the tools service binding</li><li><code>lib/tools/sch-draw.js:292</code> Cannot establish the tools service binding</li><li><code>lib/tools/sch-edit.js:27</code> Cannot establish the tools service binding</li><li><code>lib/tools/schematic.js:296</code> Cannot establish the tools service binding</li><li><code>lib/tools/schematic.js:363</code> Cannot establish the tools service binding</li><li><code>lib/tools/schematic.js:428</code> Cannot establish the tools service binding</li><li><code>lib/tools/schematic.js:491</code> Cannot establish the tools service binding</li><li><code>lib/tools/schematic.js:664</code> Cannot establish the tools service binding</li><li><code>src/tools/datasheet.ts:69</code> Cannot establish the tools service binding</li><li><code>src/tools/datasheet.ts:173</code> Cannot establish the tools service binding</li><li><code>src/tools/datasheet.ts:272</code> Cannot establish the tools service binding</li><li><code>src/tools/datasheet.ts:371</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:118</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:202</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:371</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:570</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:664</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:786</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:850</code> Cannot establish the tools service binding</li><li><code>src/tools/ecad.ts:931</code> Cannot establish the tools service binding</li><li><code>src/tools/gen.ts:25</code> Cannot establish the tools service binding</li><li><code>src/tools/import-circuit.ts:160</code> Cannot establish the tools service binding</li><li><code>src/tools/layout.ts:27</code> Cannot establish the tools service binding</li><li><code>src/tools/part-import.ts:18</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:257</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:376</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1986</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1987</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1988</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1989</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1990</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1991</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1992</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1993</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1994</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1995</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1996</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:1997</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:2200</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:2307</code> Cannot establish the tools service binding</li><li><code>src/tools/pcb.ts:2308</code> Cannot establish the tools service binding</li><li><code>src/tools/pdf.ts:489</code> Cannot establish the tools service binding</li><li><code>src/tools/sch-draw.ts:126</code> Cannot establish the tools service binding</li><li><code>src/tools/sch-draw.ts:327</code> Cannot establish the tools service binding</li><li><code>src/tools/sch-edit.ts:62</code> Cannot establish the tools service binding</li><li><code>src/tools/schematic.ts:363</code> Cannot establish the tools service binding</li><li><code>src/tools/schematic.ts:433</code> Cannot establish the tools service binding</li><li><code>src/tools/schematic.ts:502</code> Cannot establish the tools service binding</li><li><code>src/tools/schematic.ts:568</code> Cannot establish the tools service binding</li><li><code>src/tools/schematic.ts:746</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>jobs</span> <span>slots</span> <span>subprocess</span> <span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/created</span> <span>dispose</span> <span>session/event</span></p>
+  <h2>Outbound domains</h2><p class="kv"><span>www.lcsc.com</span> <span>wmsc.lcsc.com</span> <span>easyeda.com</span> <span>kicad-mod-cache.tscircuit.com</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span> <span>windir</span> <span>USERPROFILE</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>

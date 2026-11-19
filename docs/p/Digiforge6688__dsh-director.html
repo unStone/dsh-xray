@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digiforge6688/dsh-director — capability card (C3) · dsh-xray</title>
+<meta name="description" content="Digiforge6688/dsh-director is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.">
+<link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Digiforge6688__dsh-director.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Digiforge6688/dsh-director — dsh plugin capability card">
+<meta property="og:description" content="Digiforge6688/dsh-director is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.">
+<meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Digiforge6688__dsh-director.html">
+<meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<style>
+.plugin-head { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:22px 0 6px; }
+.plugin-head h1 { font-size:26px; letter-spacing:-0.5px; }
+.lvl-pill { background:#dc2626; color:#fff; font-weight:700; border-radius:8px; padding:3px 12px; font-size:14px; }
+main { max-width:760px; }
+main table { border-collapse:collapse; width:100%; margin:12px 0; font-size:13.5px; }
+main th, main td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
+main th { background:var(--chip-bg); }
+main h2 { font-size:16px; margin:26px 0 6px; }
+.kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
+.lede { color:var(--muted); margin:8px 0 4px; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-director", "identifier": "Digiforge6688/dsh-director", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Digiforge6688/dsh-director is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.", "codeRepository": "https://github.com/Digiforge6688/dsh-director", "url": "https://unstone.github.io/dsh-xray/p/Digiforge6688__dsh-director.html"}</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <a class="brand" href="../">dsh-<span>xray</span></a>
+  <div class="links">
+    <a href="../registry.html">Registry</a>
+    <a href="../report.html">Report</a>
+    <a href="../levels.html">Levels</a>
+    <a href="../guide/plugins.html">How it works</a>
+    <a href="../guide/changelog.html">Changelog</a>
+    <a href="https://github.com/unStone/dsh-xray">GitHub</a>
+  </div>
+</nav>
+<main>
+  <div class="plugin-head">
+    <h1>Digiforge6688/dsh-director</h1>
+    <span class="lvl-pill">C3</span>
+  </div>
+  <p class="lede">DSH导演（dsh-director）· 在 DSH 里做精品影视、多集短剧、创意视频、带货视频：ZipX 负责剧本→分镜→关键帧→配音→成片，DSH 负责对话、审批与交付。注册：www.zipx.ai（国际）/ www.zipx.vip（中国）。</p>
+  <p class="lede">★ 0 ·
+     <a href="https://github.com/Digiforge6688/dsh-director" rel="nofollow ugc">Digiforge6688/dsh-director source on GitHub</a>
+     · <a href="../registry.html#Digiforge6688__dsh-director">this plugin in the registry</a></p>
+  <p>Digiforge6688/dsh-director is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, uses eval / new Function, starts a network server.</p>
+  
+  <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. scripts/audit-plan.mjs:9, scripts/audit-plan.mjs:9</td></tr><tr><td>uses eval / new Function</td><td><code>eval</code></td><td>×2 in authored code, e.g. scripts/check-panel.mjs:69, scripts/sync-locale.mjs:44</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×14 in authored code, e.g. scripts/check-account-route.mjs:32, scripts/check-account-route.mjs:63</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>DshAuth, ZIPX_DIALOGUE_TOKEN, ZIPX_TOKEN, ZIPX_TOKEN_FILE</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>44 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>src/index.ts:1336</code> tools.register</li><li><code>src/index.ts:1629</code> tool factory</li><li><code>src/index.ts:1648</code> tool factory</li><li><code>src/index.ts:1690</code> tool factory</li><li><code>src/index.ts:1719</code> tool factory</li><li><code>src/index.ts:1771</code> tool factory</li><li><code>src/index.ts:1789</code> tool factory</li><li><code>src/index.ts:1827</code> tool factory</li><li><code>src/index.ts:1849</code> tool factory</li><li><code>src/index.ts:1876</code> tool factory</li><li><code>src/index.ts:1886</code> tool factory</li><li><code>src/index.ts:1896</code> tool factory</li><li><code>src/index.ts:1916</code> tool factory</li><li><code>src/index.ts:1943</code> tool factory</li><li><code>src/index.ts:1987</code> tool factory</li><li><code>src/index.ts:2097</code> tool factory</li><li><code>src/index.ts:2126</code> tool factory</li><li><code>src/index.ts:2145</code> tool factory</li><li><code>src/index.ts:2166</code> tool factory</li><li><code>src/index.ts:2183</code> tool factory</li><li><code>src/index.ts:2209</code> tool factory</li><li><code>src/index.ts:2230</code> tool factory</li><li><code>src/index.ts:2246</code> tool factory</li><li><code>src/index.ts:2290</code> tool factory</li><li><code>src/index.ts:2312</code> tool factory</li><li><code>src/index.ts:2331</code> tool factory</li><li><code>src/index.ts:2516</code> tool factory</li><li><code>src/index.ts:2558</code> tool factory</li><li><code>src/index.ts:2594</code> tool factory</li><li><code>src/index.ts:2674</code> tool factory</li><li><code>src/index.ts:2699</code> tool factory</li><li><code>src/index.ts:2755</code> tool factory</li><li><code>src/index.ts:2777</code> tool factory</li><li><code>src/index.ts:2806</code> tool factory</li><li><code>src/index.ts:2859</code> tool factory</li><li><code>src/index.ts:2881</code> tool factory</li><li><code>src/index.ts:2907</code> tool factory</li><li><code>src/index.ts:2942</code> tool factory</li><li><code>src/index.ts:3000</code> tool factory</li><li><code>src/index.ts:3040</code> tool factory</li><li><code>src/index.ts:3072</code> tool factory</li><li><code>src/index.ts:3101</code> tool factory</li><li><code>src/index.ts:3130</code> tool factory</li><li><code>src/index.ts:3148</code> tool factory</li><li><code>src/client/00-header.js:33</code> Cannot parse source: Unexpected token (33:0)</li><li><code>src/client/85-commands.js:9</code> Cannot establish the tools service binding</li><li><code>src/client/90-apply.js:123</code> Context or tools service passed to an unresolved helper</li><li><code>src/client/90-apply.js:124</code> Context or tools service passed to an unresolved helper</li><li><code>src/client/99-footer.js:2</code> Cannot parse source: Unexpected token (2:2)</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>timer</span> <span>tools</span></p>
+  
+  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DshOrigin</span> <span>DshAuth</span> <span>ZipxProject</span> <span>ZIPX_TOKEN</span> <span>ZIPX_TOKEN_FILE</span> <span>ZIPX_BACKEND</span> <span>ZIPX_PROJECT_ID</span> <span>ZIPX_BASE_URL</span> <span>ZIPX_WEB_URL</span> <span>ZipxTitle</span></p>
+  <h2>How to read this</h2>
+  <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
+  can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
+  that you can see this before installing. See <a href="../levels.html">the levels explained</a>
+  and <a href="../report.html?doc=plugins">how dsh plugins work</a>.</p>
+  <p>Findings come from static analysis of shipped code; nothing is executed. Think a flag
+  is wrong? <a href="https://github.com/unStone/dsh-xray/issues">Open an issue</a> — every
+  flag cites the file and line it came from.</p>
+</main>
+<footer>Apache-2.0 · <a href="https://github.com/unStone/dsh-xray">dsh-xray</a></footer>
+</div>
+</body>
+</html>
