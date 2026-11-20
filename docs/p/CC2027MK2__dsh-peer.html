@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>CC2027MK2/dsh-peer is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, starts a network server, reads credential-class env vars.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. index.js:586</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>PEER_TOKEN</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×1 in authored code, e.g. index.js:1998</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>PEER_TOKEN</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   
   <h2>Hooks it attaches</h2><p class="kv"><span>agent/error</span> <span>dispose</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>PEER_ASK_TIMEOUT</span> <span>DSH_PEER_DATA</span> <span>SMOKE_PORT</span> <span>PEER_TOKEN</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PEER_DATA</span> <span>PEER_ASK_TIMEOUT</span> <span>SMOKE_PORT</span> <span>PEER_TOKEN</span> <span>PROBE_SLOT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

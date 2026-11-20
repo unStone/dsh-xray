@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aliax-LI/dsh-gpt-image — capability card (C3) · dsh-xray</title>
-<meta name="description" content="Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.">
+<meta name="description" content="Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, base64 decoding in build output only.">
 <link rel="canonical" href="https://unstone.github.io/dsh-xray/p/Aliax-LI__dsh-gpt-image.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Aliax-LI/dsh-gpt-image — dsh plugin capability card">
-<meta property="og:description" content="Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.">
+<meta property="og:description" content="Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, base64 decoding in build output only.">
 <meta property="og:url" content="https://unstone.github.io/dsh-xray/p/Aliax-LI__dsh-gpt-image.html">
 <meta property="og:image" content="https://unstone.github.io/dsh-xray/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +25,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
 .kv span { background:var(--chip-bg); border-radius:6px; padding:2px 8px; font-size:12.5px; display:inline-block; margin:2px 2px 2px 0; }
 .lede { color:var(--muted); margin:8px 0 4px; }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-gpt-image", "identifier": "Aliax-LI/dsh-gpt-image", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.", "codeRepository": "https://github.com/Aliax-LI/dsh-gpt-image", "url": "https://unstone.github.io/dsh-xray/p/Aliax-LI__dsh-gpt-image.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "dsh-gpt-image", "identifier": "Aliax-LI/dsh-gpt-image", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any", "description": "Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, base64 decoding in build output only.", "codeRepository": "https://github.com/Aliax-LI/dsh-gpt-image", "url": "https://unstone.github.io/dsh-xray/p/Aliax-LI__dsh-gpt-image.html"}</script>
 </head>
 <body>
 <div class="wrap">
@@ -46,18 +46,18 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <span class="lvl-pill">C3</span>
   </div>
   <p class="lede">DSH plugin: GPT-Image reverse-channel generation/editing with a cross-platform 4K upscale chain and a native settings page</p>
-  <p class="lede">★ 0 ·
+  <p class="lede">★ 1+ ·
      <a href="https://github.com/Aliax-LI/dsh-gpt-image" rel="nofollow ugc">Aliax-LI/dsh-gpt-image source on GitHub</a>
      · <a href="../registry.html#Aliax-LI__dsh-gpt-image">this plugin in the registry</a></p>
-  <p>Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, base64 decoding in build output only, decodes base64 in development tooling the package does not ship.</p>
+  <p>Aliax-LI/dsh-gpt-image is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, command execution in build output only, executes commands in development tooling the package does not ship, base64 decoding in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/upscale.js:22, lib/upscale.js:43</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/api.js:368</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/probe-format.mjs:44, scripts/probe-format.mjs:65</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>APIYI_API_KEY, GPT_IMAGE_API_KEY</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:532</code> tools.register</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×2 in build output only, e.g. lib/upscale.js:22, lib/upscale.js:43</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×8 in development tooling the package does not ship, e.g. scripts/publish-npm.mjs:2, scripts/publish-npm.mjs:2</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×1 in build output only, e.g. lib/api.js:363</td></tr><tr><td>decodes base64 in development tooling the package does not ship</td><td><code>base64_decode_tooling</code></td><td>×3 in development tooling the package does not ship, e.g. scripts/probe-format.mjs:44, scripts/probe-format.mjs:65</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>APIYI_API_KEY, GPT_IMAGE_API_KEY</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:512</code> tools.register</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>api.example.com</span></p>
-  <h2>Environment variables it reads</h2><p class="kv"><span>GPT_IMAGE_REALESRGAN</span> <span>GPT_IMAGE_MODELS</span> <span>GPT_IMAGE_BASE_URL</span> <span>GPT_IMAGE_API_KEY</span> <span>APIYI_API_KEY</span> <span>GPT_IMAGE_MODEL</span> <span>GPT_IMAGE_OUTPUT_DIR</span> <span>GPT_IMAGE_BODY_STALL_MS</span> <span>GPT_IMAGE_NO_FALLBACK</span> <span>GPT_IMAGE_UPSCALE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>GPT_IMAGE_REALESRGAN</span> <span>GPT_IMAGE_MODELS</span> <span>GPT_IMAGE_BASE_URL</span> <span>GPT_IMAGE_API_KEY</span> <span>APIYI_API_KEY</span> <span>GPT_IMAGE_MODEL</span> <span>GPT_IMAGE_BODY_STALL_MS</span> <span>GPT_IMAGE_NO_FALLBACK</span> <span>GPT_IMAGE_UPSCALE</span> <span>PATHEXT</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
