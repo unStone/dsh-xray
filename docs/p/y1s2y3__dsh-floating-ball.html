@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>y1s2y3/dsh-floating-ball</h1>
     <span class="lvl-pill">C3</span>
   </div>
-  <p class="lede">非官方 DSH 悬浮球（Windows 置顶）：任务跑完没有，一眼就知道。dsh-floating-ball · 非官方社区自制</p>
+  <p class="lede">非官方 DSH 悬浮球（Windows 置顶）：任务跑完没有，一眼就知道。dsh-session-ball-plugin · 非官方社区自制</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/y1s2y3/dsh-floating-ball" rel="nofollow ugc">y1s2y3/dsh-floating-ball source on GitHub</a>
      · <a href="../registry.html#y1s2y3__dsh-floating-ball">this plugin in the registry</a></p>
   <p>y1s2y3/dsh-floating-ball is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, reads credential-class env vars in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. deploy.mjs:29, deploy.mjs:29</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. deploy.mjs:29, deploy.mjs:29</td></tr><tr><td>reads credential-class env vars in development tooling the package does not ship</td><td><code>token_env_tooling</code></td><td>in development tooling the package does not ship: GH_TOKEN</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/session-ball.js:38</code> Context or tools service passed to an unresolved helper</li></ul>
   
   
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_PROFILE_DIR</span> <span>LOCALAPPDATA</span> <span>DSH_INSTALL_NAME</span> <span>DSH_PROFILE</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>LOCALAPPDATA</span> <span>DSH_PROFILE_DIR</span> <span>DSH_BALL_DIR</span> <span>DSH_PROFILE</span> <span>DSH_INSTALL_NAME</span> <span>DSH_BALL_NO_SPAWN</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
