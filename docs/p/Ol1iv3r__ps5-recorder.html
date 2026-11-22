@@ -52,10 +52,10 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>Ol1iv3r/ps5-recorder is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, starts a network server.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×3 in authored code, e.g. dev-tools/remux-test.mjs:1, ps5-recorder/index.js:12</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×8 in authored code, e.g. dev-tools/e2e-test.mjs:11, dev-tools/e2e-test.mjs:16</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>ps5-recorder/index.js:1145</code> Cannot establish the tools service binding</li></ul>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×5 in authored code, e.g. dev-tools/cover-api-test.mjs:5, dev-tools/cover-test.mjs:8</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×10 in authored code, e.g. dev-tools/cover-api-test.mjs:42, dev-tools/cover-api-test.mjs:47</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>ps5-recorder/index.js:1362</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>slots</span> <span>webServer</span></p>
-  
+  <h2>Hooks it attaches</h2><p class="kv"><span>theme/change</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>studio.youtube.com</span> <span>www.googleapis.com</span> <span>youtu.be</span> <span>oauth2.googleapis.com</span> <span>upload.mock</span> <span>accounts.google.com</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>FFMPEG_PATH</span> <span>FFPROBE_PATH</span></p>
   <h2>How to read this</h2>
