@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>Lee2277-t/dsh-skill-index</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">在 Harness 里检索本机技能库：skill_search 与 skill_catalog 两个工具，让 agent 找得到没进系统提示的技能。</p>
+  <p class="lede">在 Harness 里检索本机技能库：五个工具（search/read/active/drop/catalog），默认扫描常见技能目录，先给约 300 token 摘要，要用才读全文。</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/Lee2277-t/dsh-skill-index" rel="nofollow ugc">Lee2277-t/dsh-skill-index source on GitHub</a>
      · <a href="../registry.html#Lee2277-t__dsh-skill-index">this plugin in the registry</a></p>
@@ -53,11 +53,11 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>6 static tool registration point(s).</p><ul><li><code>index.js:252</code> tools.register</li><li><code>index.js:253</code> tool factory</li><li><code>index.js:309</code> tools.register</li><li><code>index.js:310</code> tool factory</li><li><code>index.js:360</code> tools.register</li><li><code>index.js:361</code> tool factory</li></ul>
+  <h2>Tool registrations</h2><p>10 static tool registration point(s).</p><ul><li><code>index.js:811</code> tools.register</li><li><code>index.js:812</code> tool factory</li><li><code>index.js:932</code> tools.register</li><li><code>index.js:933</code> tool factory</li><li><code>index.js:983</code> tools.register</li><li><code>index.js:984</code> tool factory</li><li><code>index.js:1246</code> tools.register</li><li><code>index.js:1247</code> tool factory</li><li><code>index.js:1283</code> tools.register</li><li><code>index.js:1284</code> tool factory</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span></p>
   
-  
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>TEMP</span> <span>USERPROFILE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

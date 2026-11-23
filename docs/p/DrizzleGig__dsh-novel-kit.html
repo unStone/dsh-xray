@@ -45,19 +45,19 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>DrizzleGig/dsh-novel-kit</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Novel-writing engine for DSH: seven novel_* tools take a chapter from plan to committed text, with a six-tab panel; reads beat/fade/voice/fanfic ledgers in place.</p>
+  <p class="lede">给长篇与同人写作的工作台：剧情决策、世界契约、长篇记忆、文风四段依据每次动笔前装配好；一章一条链（计划→开章→写→检查→落账，中断可恢复）。同人世界观逐条审阅后应用，草稿切作品不丢，默认关闭不占工具列表。</p>
   <p class="lede">★ 1+ ·
      <a href="https://github.com/DrizzleGig/dsh-novel-kit" rel="nofollow ugc">DrizzleGig/dsh-novel-kit source on GitHub</a>
      · <a href="../registry.html#DrizzleGig__dsh-novel-kit">this plugin in the registry</a></p>
   <p>DrizzleGig/dsh-novel-kit is a DeepSeek Harness plugin rated C2 — one powerful capability or sensitive behavior. It patches the dsh runtime, executes commands in development tooling the package does not ship.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×5 in development tooling the package does not ship, e.g. scripts/publish.mjs:6, scripts/publish.mjs:6</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:17</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>remote</span> <span>sidebarRight</span> <span>sidebarRightTabs</span> <span>slots</span> <span>tools</span> <span>typert</span> <span>workingDirectory</span></p>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes commands in development tooling the package does not ship</td><td><code>exec_tooling</code></td><td>×8 in development tooling the package does not ship, e.g. scripts/publish.mjs:16, scripts/publish.mjs:16</td></tr></tbody></table>
+  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>index.js:28</code> tools.register</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>agents</span> <span>commands</span> <span>remote</span> <span>slots</span> <span>tools</span> <span>typert</span> <span>workingDirectory</span></p>
   
   
-  
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_NOVEL_KIT_STATE_DIR</span> <span>DSH_HOME</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is
