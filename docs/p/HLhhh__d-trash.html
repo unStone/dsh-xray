@@ -52,12 +52,12 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   <p>HLhhh/d-trash is a DeepSeek Harness plugin rated C3 — powerful capability combined with sensitive behavior. It patches the dsh runtime, executes system commands, base64 decoding in build output only.</p>
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
-  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×8 in authored code, e.g. scripts/generator-regressions.mjs:7, scripts/generator-regressions.mjs:7</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. dist/client.js:2030, dist/client.js:3764</td></tr></tbody></table>
+  <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>executes system commands</td><td><code>exec</code></td><td>×18 in authored code, e.g. scripts/compatibility.mjs:9, scripts/compatibility.mjs:9</td></tr><tr><td>base64 decoding in build output only</td><td><code>base64_decode_bundled</code></td><td>×3 in build output only, e.g. dist/client.js:2062, dist/client.js:3796</td></tr></tbody></table>
   <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
   <h2>Services it injects</h2><p class="kv"><span>locale</span> <span>remote</span> <span>sessionPersistence</span> <span>slots</span> <span>storageDomain</span> <span>typert</span> <span>workspaceRegistry</span> <span>workspaces</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>domain/changed</span> <span>internal/plugin</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>api-session/removed</span> <span>domain/changed</span> <span>internal/plugin</span></p>
   
-  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_HOME</span> <span>DSH_INSTALL_DIR</span> <span>DSH_PROFILE_DIR</span></p>
+  <h2>Environment variables it reads</h2><p class="kv"><span>DSH_INSTALL_DIR</span> <span>DSH_HOME</span> <span>DSH_PROFILE_DIR</span> <span>DSH_NODE_EXECUTABLE</span></p>
   <h2>How to read this</h2>
   <p>Levels measure capability surface and transparency, not maliciousness. A C3 plugin
   can be entirely legitimate — a desktop shell genuinely needs subprocesses. The point is

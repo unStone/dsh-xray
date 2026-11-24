@@ -45,7 +45,7 @@ main h2 { font-size:16px; margin:26px 0 6px; }
     <h1>ferrisching/dsh-reakit</h1>
     <span class="lvl-pill">C2</span>
   </div>
-  <p class="lede">Batteries-included REA integration for DeepSeek Harness: managed Node/REA runtime, global tool switch, live composer status indicator, on-demand optional tool setup, and in-place runtime upgrades.</p>
+  <p class="lede">Batteries-included REA integration for DeepSeek Harness: managed Node/REA runtime, 255 tools with automatic per-task selection, seamless off/manual/auto switching, and forward-only runtime upgrades.</p>
   <p class="lede">★ 0 ·
      <a href="https://github.com/ferrisching/dsh-reakit" rel="nofollow ugc">ferrisching/dsh-reakit source on GitHub</a>
      · <a href="../registry.html#ferrisching__dsh-reakit">this plugin in the registry</a></p>
@@ -53,9 +53,9 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>command execution in build output only</td><td><code>exec_bundled</code></td><td>×5 in build output only, e.g. lib/bootstrap.js:1, lib/bootstrap.js:133</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>0 static tool registration point(s).</p>
+  <h2>Tool registrations</h2><p>0 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/tool-visibility.js:45</code> Cannot establish the tools service binding</li><li><code>lib/tool-visibility.js:57</code> Cannot establish the tools service binding</li></ul>
   <h2>Services it injects</h2><p class="kv"><span>configForms</span> <span>connection</span> <span>slots</span> <span>tools</span></p>
-  <h2>Hooks it attaches</h2><p class="kv"><span>tools/execute</span></p>
+  <h2>Hooks it attaches</h2><p class="kv"><span>agent/pre-step</span> <span>tools/execute</span></p>
   <h2>Outbound domains</h2><p class="kv"><span>www.npmjs.com</span> <span>api-docs.deepseek.com</span> <span>developers.openai.com</span> <span>jdk.java.net</span> <span>www.hopperapp.com</span> <span>hex-rays.com</span> <span>www.pnfsoftware.com</span> <span>developer.android.com</span> <span>apktool.org</span> <span>www.chromium.org</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>SystemRoot</span></p>
   <h2>How to read this</h2>
