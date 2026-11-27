@@ -53,8 +53,8 @@ main h2 { font-size:16px; margin:26px 0 6px; }
   
   <p class="lede"><b>Installable plugin — declares a dsh.bundle manifest</b></p>
   <h2>What it can do</h2><table><thead><tr><th>Capability</th><th>Flag</th><th>Evidence</th></tr></thead><tbody><tr><td>patches the dsh runtime</td><td><code>runtime_patch</code></td><td>./cordis.patch.yml</td></tr><tr><td>starts a network server</td><td><code>net_server</code></td><td>×2 in authored code, e.g. 06_tests/smoke.mjs:23, 06_tests/smoke.mjs:96</td></tr><tr><td>reads credential-class env vars</td><td><code>token_env</code></td><td>ALTARE_TOKEN</td></tr></tbody></table>
-  <h2>Tool registrations</h2><p>1 static tool registration point(s).</p><ul><li><code>lib/index.js:28</code> tools.register</li></ul>
-  <h2>Services it injects</h2><p class="kv"><span>tools</span></p>
+  <h2>Tool registrations</h2><p>1 confirmed registration point(s); analysis is incomplete.</p><ul><li><code>lib/index.js:75</code> tools.register</li><li><code>lib/index.js:44</code> Cannot establish the tools service binding</li></ul>
+  <h2>Services it injects</h2><p class="kv"><span>slots</span> <span>tools</span></p>
   
   <h2>Outbound domains</h2><p class="kv"><span>console.altare.gg</span></p>
   <h2>Environment variables it reads</h2><p class="kv"><span>ALTARE_TOKEN</span> <span>USERPROFILE</span></p>
